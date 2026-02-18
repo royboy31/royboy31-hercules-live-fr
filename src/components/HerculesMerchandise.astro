@@ -1,0 +1,208 @@
+---
+// Hercules Merchandise - About Section
+import ContactFormPopup from './ContactFormPopup.tsx';
+---
+
+<section class="hercules-section">
+  <div class="hercules-container">
+    <!-- Content Column -->
+    <div class="content-column">
+      <h2 class="section-heading">
+        Hercules Merchandise – <span class="highlight">Custom Sportswear and Merchandise</span>
+      </h2>
+      <div class="description">
+        <p>At <strong>Hercules Merchandise</strong>, we design and deliver high-quality, eco-conscious <strong>teamwear and branded sports gear</strong> for <strong>sports clubs, associations, and businesses</strong> across the UK and Europe. Whether you're gearing up for match day or strengthening your brand presence, we bring your identity to life through expertly crafted, fully customisable products.</p>
+        <p>From <strong>scarves and beanies to kits, training wear, and promotional items</strong>, all our products are made to order and personalised with your logo, colours, and designs. We combine years of industry experience with a commitment to sustainable production – most of our items are proudly made in Europe.</p>
+        <p>We offer <strong>fast turnaround times</strong> and reliable delivery across Europe, ensuring you get what you need, when you need it.</p>
+        <p>If you'd like to discuss your project or get a quote, <strong>we'd love to hear from you</strong>.</p>
+      </div>
+      <div class="cta-wrapper">
+        <ContactFormPopup
+          client:visible
+          triggerType="button"
+          triggerText="Contact Us Now"
+        />
+      </div>
+    </div>
+
+    <!-- Image Column -->
+    <div class="image-column">
+      <img
+        src="/images/about-hercules.webp"
+        alt="Hercules Merchandise - Custom Sportswear"
+        class="about-image"
+        loading="lazy"
+        width="600"
+        height="400"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hercules-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .hercules-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 66px 0;
+  }
+
+  .content-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #253461;
+    text-align: left;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+
+  .section-heading .highlight {
+    color: #469ADC;
+  }
+
+  .description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #5F5F5F;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .description p {
+    margin: 0 0 15px 0;
+  }
+
+  .description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .description strong {
+    font-weight: 700;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 50px;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    cursor: pointer;
+  }
+
+  .cta-button:hover {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  .cta-wrapper {
+    align-self: flex-start;
+  }
+
+  .cta-wrapper :global(.contact-trigger-button) {
+    display: inline-block;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .cta-wrapper :global(.contact-trigger-button:hover) {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  .image-column {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 600 / 400;
+    border-radius: 30px;
+    object-fit: cover;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 1024px) {
+    .section-heading {
+      font-size: 30px;
+    }
+
+    .description {
+      font-size: 15px;
+    }
+
+    .cta-button {
+      font-size: 14px;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 767px) {
+    .hercules-container {
+      flex-direction: column;
+      padding: 35px 20px;
+    }
+
+    .content-column {
+      width: 100%;
+      text-align: center;
+    }
+
+    .section-heading {
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+    }
+
+    .cta-button {
+      align-self: center;
+      margin-bottom: 24px;
+    }
+
+    .cta-wrapper {
+      align-self: center;
+    }
+
+    .image-column {
+      width: 100%;
+    }
+  }
+</style>

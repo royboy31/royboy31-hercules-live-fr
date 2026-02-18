@@ -1,0 +1,26 @@
+name = "hercules-product-sync-fr"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+WC_STORE_URL = "https://staging.hercules-merchandising.fr"
+WEBHOOK_SECRET = "hercules-webhook-secret-fr-2024"
+GITHUB_OWNER = "royboy31"
+GITHUB_REPO = "hercules-live-fr"
+GITHUB_WORKFLOW = "deploy.yml"
+GITHUB_REF = "production"
+
+[[kv_namespaces]]
+binding = "PRODUCTS_KV"
+id = "bcf4f95a944f4d3bb688432881ea4e55"
+
+[triggers]
+crons = ["0 3 * * *"]
+
+[env.production]
+[env.production.vars]
+WC_STORE_URL = "https://hercules-merchandising.fr"
+
+[[env.production.kv_namespaces]]
+binding = "PRODUCTS_KV"
+id = "PRODUCTION_KV_ID_HERE"

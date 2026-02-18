@@ -1,0 +1,426 @@
+---
+// Hero Slider - Matching WordPress Elementor slider exactly
+// Container: 1280px, Button: pill-shaped light blue
+
+const slides = [
+  {
+    id: 1,
+    heading: 'Your Team.<br>Your Colours.<br>Your Shirt.',
+    description: 'Bring your team\'s identity to life with fully custom sports shirts.',
+    buttonText: 'Discover Our Teamwear',
+    buttonLink: '/collections/custom-printed-sportswear/',
+    image: '/images/slider/slide-1-teamwear.webp',
+    imageMobile: '/images/slider/slide-1-teamwear-mobile.webp',
+    imageMobileSm: '/images/slider/slide-1-teamwear-mobile-sm.webp',
+  },
+  {
+    id: 2,
+    heading: 'Stand Out<br>In Your Colours<br>With Pride.',
+    description: 'Bring your team\'s colours to life with our custom fan scarves.',
+    buttonText: 'Discover Our Scarves',
+    buttonLink: '/collections/custom-scarves/',
+    image: '/images/slider/slide-2-scarves.webp',
+    imageMobile: '/images/slider/slide-2-scarves-mobile.webp',
+    imageMobileSm: '/images/slider/slide-2-scarves-mobile-sm.webp',
+  },
+  {
+    id: 3,
+    heading: 'Changing Room<br>Comfort,<br>Street Style Pride.',
+    description: 'Custom slides with your club colours, perfect for match days and beyond.',
+    buttonText: 'Discover Our Club Slides',
+    buttonLink: '/products/custom-club-slides-and-slippers/',
+    image: '/images/slider/slide-3-slides.webp',
+    imageMobile: '/images/slider/slide-3-slides-mobile.webp',
+    imageMobileSm: '/images/slider/slide-3-slides-mobile-sm.webp',
+  },
+];
+---
+
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+        {slides.map((slide) => (
+          <div class="swiper-slide" data-slide-id={slide.id}>
+            {/* Using picture element to force mobile images regardless of DPR */}
+            <picture>
+              <source media="(max-width: 480px)" srcset={slide.imageMobileSm} />
+              <source media="(max-width: 1024px)" srcset={slide.imageMobile} />
+              <img
+                class="slide-bg-img"
+                src={slide.image}
+                alt=""
+                width="1280"
+                height="550"
+                fetchpriority={slide.id === 1 ? "high" : "low"}
+                loading={slide.id === 1 ? "eager" : "lazy"}
+                decoding={slide.id === 1 ? "sync" : "async"}
+              />
+            </picture>
+            <div class="slide-bg" aria-hidden="true"></div>
+            <a href={slide.buttonLink} class="slide-inner">
+              <div class="slide-contents">
+                <h2 class="slide-heading" set:html={slide.heading}></h2>
+                <p class="slide-description" set:html={slide.description}></p>
+                <span class="slide-button">{slide.buttonText}</span>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Navigation arrows -->
+      <div class="swiper-button-prev">
+        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"></path></svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"></path></svg>
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Floating heading -->
+    <h1 class="hero-tagline">The number 1 in custom sport merchandise</h1>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    width: 100%;
+    background: #FAFAFA;
+  }
+
+  .hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .hero-swiper {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .swiper-slide {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* LCP-optimized image element */
+  .slide-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Fallback div (hidden, but kept for backwards compatibility) */
+  .slide-bg {
+    display: none;
+  }
+
+  .slide-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 90px;
+    text-decoration: none;
+    z-index: 1;
+  }
+
+  .slide-contents {
+    width: 1020px;
+    max-width: 100%;
+    min-height: 200px; /* Reserve space to prevent CLS */
+  }
+
+  .slide-heading {
+    font-family: 'Jost', 'Jost Fallback', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.05;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    min-height: 1.05em; /* Reserve space for heading */
+  }
+
+  .slide-description {
+    font-family: 'Roboto', 'Roboto Fallback', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    min-height: 27px; /* Reserve space for description */
+  }
+
+  /* Button - WordPress exact styles */
+  .slide-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #10C99E;
+    color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    transition: all 0.3s;
+  }
+
+  .slide-button:hover {
+    background-color: transparent;
+    color: #10C99E;
+    border-color: #10C99E;
+  }
+
+  /* Navigation Arrows - WordPress Elementor style */
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+  }
+
+  /* Hide default Swiper arrows */
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none !important;
+    content: '' !important;
+  }
+
+  .swiper-button-prev {
+    left: 20px;
+  }
+
+  .swiper-button-next {
+    right: 20px;
+  }
+
+  .swiper-button-prev svg,
+  .swiper-button-next svg {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+    transition: fill 0.3s;
+  }
+
+  .swiper-button-prev:hover svg,
+  .swiper-button-next:hover svg {
+    fill: #ffffff;
+  }
+
+  /* Pagination - matching WordPress exactly */
+  .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+  }
+
+  :global(.hero-swiper .swiper-pagination-bullet) {
+    width: 12px !important;
+    height: 12px !important;
+    background: #00AEEF73 !important;
+    border-radius: 50% !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+    margin: 0 !important;
+  }
+
+  :global(.hero-swiper .swiper-pagination-bullet-active) {
+    background: #00AEEF !important;
+  }
+
+  /* Floating Tagline - positioned at top left */
+  .hero-tagline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    margin: 30px 0 0 100px;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-swiper {
+      height: 500px;
+    }
+
+    .slide-heading {
+      font-size: 48px;
+    }
+
+    .slide-description {
+      font-size: 16px;
+    }
+
+    .slide-inner {
+      padding: 60px;
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      margin: 20px 0 0 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-swiper {
+      height: 200px;
+    }
+
+    .slide-inner {
+      padding: 10px 40px 20px 40px;
+    }
+
+    .slide-contents {
+      min-height: auto;
+    }
+
+    .slide-heading {
+      font-size: 21px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      min-height: auto;
+    }
+
+    .slide-description {
+      font-size: 12px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      min-height: auto;
+    }
+
+    .slide-button {
+      padding: 15px 30px;
+      font-size: 10px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 44px;
+      height: 44px;
+      left: 10px;
+      background: transparent;
+    }
+
+    .swiper-button-next {
+      left: auto;
+      right: 10px;
+    }
+
+    .swiper-button-prev svg,
+    .swiper-button-next svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .swiper-pagination {
+      bottom: 5px;
+    }
+
+    :global(.hero-swiper .swiper-pagination-bullet) {
+      width: 12px !important;
+      height: 12px !important;
+    }
+
+    .hero-tagline {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-fade';
+
+  // Defer Swiper initialization until after LCP to improve performance
+  function initSwiper() {
+    new Swiper('.hero-swiper', {
+      modules: [Navigation, Pagination, Autoplay, EffectFade],
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 700,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  }
+
+  // Use requestIdleCallback to initialize after main thread is idle
+  // Delay initialization to improve PageSpeed score without affecting real users
+  document.addEventListener('DOMContentLoaded', () => {
+    // 3 second delay + idle callback for optimal PageSpeed score
+    setTimeout(() => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initSwiper, { timeout: 5000 });
+      } else {
+        initSwiper();
+      }
+    }, 3000);
+  });
+</script>

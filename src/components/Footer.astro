@@ -1,0 +1,778 @@
+---
+// Global Footer Component - Matches WordPress Elementor footer exactly
+import ContactFormPopup from './ContactFormPopup.tsx';
+---
+
+<footer class="site-footer">
+  <!-- Newsletter Section -->
+  <div class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2 class="newsletter-heading">Interested?</h2>
+        <form class="newsletter-form" id="newsletter-form" action="/api/newsletter" method="POST">
+          <div class="form-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="Subscribe to newsletter"
+              required
+              class="newsletter-input"
+              id="newsletter-email"
+            />
+            <button type="submit" class="newsletter-button" id="newsletter-submit">Send</button>
+          </div>
+          <div class="newsletter-message" id="newsletter-message"></div>
+        </form>
+        <p class="newsletter-description">
+          Be the first to see our latest sports merchandise – Subscribe to our newsletter!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <div class="main-footer">
+    <div class="footer-container">
+      <!-- Logo Column -->
+      <div class="footer-column logo-column">
+        <a href="/">
+          <img
+            src="/images/hercules-logo-original1.webp"
+            srcset="/images/hercules-logo-original1.webp 1x, /images/hercules-logo-original1-2x.webp 2x"
+            alt="Hercules Merchandise"
+            class="footer-logo"
+            loading="lazy"
+            width="176"
+            height="78"
+          />
+        </a>
+      </div>
+
+      <!-- About Us Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">About Us</h3>
+        <ul class="footer-links">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/blogs/uk">Blog</a></li>
+          <li><a href="/deliveries-and-returns/">Delivery & Returns</a></li>
+          <li><a href="/payment-methods/">Payment Methods</a></li>
+          <li><a href="/contact-us/">Contact</a></li>
+          <li><a href="/my-account/">My Account</a></li>
+        </ul>
+      </div>
+
+      <!-- Sports Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Sports</h3>
+        <ul class="footer-links">
+          <li><a href="/collections/football/">Football</a></li>
+          <li><a href="/collections/rugby/">Rugby</a></li>
+          <li><a href="/collections/basketball/">Basketball</a></li>
+          <li><a href="/collections/running/">Running</a></li>
+          <li><a href="/collections/cycling/">Cycling</a></li>
+          <li><a href="/collections/volleyball/">Volleyball</a></li>
+        </ul>
+      </div>
+
+      <!-- Products Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Products</h3>
+        <ul class="footer-links">
+          <li><a href="/collections/custom-scarves/">Scarves</a></li>
+          <li><a href="/collections/custom-beanies/">Beanies</a></li>
+          <li><a href="/collections/custom-printed-sportswear/">Sportswear</a></li>
+          <li><a href="/collections/custom-pennants/">Pennants</a></li>
+          <li><a href="/collections/accessories/">Accessories</a></li>
+          <li><a href="/collections/tifo/">Tifo</a></li>
+        </ul>
+      </div>
+
+      <!-- Reseller Column -->
+      <div class="footer-column reseller-column">
+        <div class="reseller-top">
+          <h3 class="footer-heading">Reseller or professional club?</h3>
+          <p class="footer-text">We offer bulk discounts.</p>
+        </div>
+        <div class="reseller-bottom">
+          <ContactFormPopup client:visible triggerType="button" triggerText="Contact" triggerClassName="footer-cta-popup" />
+          <div class="footer-phone">
+          <a href="tel:+442039664881">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
+            <span>(+44) 0203 9664881</span>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="bottom-footer">
+    <div class="footer-container bottom-container">
+      <!-- Row 1: Legal links, Payment icons, Language switcher -->
+      <div class="bottom-footer-row">
+        <div class="legal-links">
+          <a href="/legal-notice/">Legal Notice</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+        </div>
+        <div class="payment-icons">
+          <img src="/images/pay-her-2.png" alt="Payment Methods" loading="lazy" width="300" height="30" />
+        </div>
+        <div class="language-switcher">
+          <button class="language-current" type="button">
+<img src="/images/flags/uk-flag.png" alt="UK Flag - Current Language" width="24" height="24" loading="lazy" />
+            <span>United Kingdom</span>
+            <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <ul class="language-dropdown">
+            <li>
+              <a href="https://hercules-merchandise.de/" target="_blank">
+<img src="/images/german.png" alt="German Flag - Visit German Website" width="24" height="24" loading="lazy" />
+                <span>Germany</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://hercules-merchandising.fr/" target="_blank">
+<img src="/images/flags/fr-flag.png" alt="French Flag - Visit French Website" width="24" height="24" loading="lazy" />
+                <span>France</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.hercules-merchandise.nl/" target="_blank">
+<img src="/images/flags/nl-flag.png" alt="Dutch Flag - Visit Dutch Website" width="24" height="24" loading="lazy" />
+                <span>Netherlands</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Row 2: Copyright -->
+      <div class="copyright">
+        © 2025. Hercules Merchandise UK. All rights reserved | Design & Development by <a href="/design-by-perelweb">Perel Web Studio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    width: 100%;
+  }
+
+  /* Newsletter Section */
+  .newsletter-section {
+    background-image: url('/images/footer-newsletter-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    margin: 0 auto;
+    max-width: 1280px;
+    position: relative;
+    z-index: 2;
+    height: auto;
+    min-height: unset;
+  }
+
+  .newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+  }
+
+  .newsletter-container {
+    position: relative;
+    padding: 100px 50px;
+    height: auto;
+  }
+
+  .newsletter-content {
+    max-width: 500px;
+  }
+
+  .newsletter-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+  }
+
+  .newsletter-form {
+    margin-bottom: 15px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 10px;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+  }
+
+  .newsletter-input::placeholder {
+    color: #5F5F5F;
+  }
+
+  .newsletter-button {
+    padding: 12px 24px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #10C99E;
+    border: 1px solid #10C99E;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .newsletter-button:hover {
+    background-color: transparent;
+    color: #FFFFFF;
+  }
+
+  .newsletter-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .newsletter-message {
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    display: none;
+  }
+
+  .newsletter-message.success {
+    display: block;
+    color: #10C99E;
+  }
+
+  .newsletter-message.error {
+    display: block;
+    color: #ff6b6b;
+  }
+
+  .newsletter-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  /* Main Footer */
+  .main-footer {
+    background-color: #E8F5FF;
+    margin-top: -170px;
+    padding: 250px 0 30px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .logo-column {
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo {
+    max-width: 170px;
+    height: auto;
+  }
+
+  .footer-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #253461;
+    margin: 0 0 15px 0;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #253461;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .footer-links a:hover {
+    color: #469ADC;
+    transform: translateX(3px);
+  }
+
+  .reseller-column {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .reseller-top {
+    /* Top content stays at top */
+  }
+
+  .reseller-bottom {
+    /* Bottom content pushed down via justify-content: space-between */
+  }
+
+  .footer-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #253461;
+    margin: 0 0 15px 0;
+  }
+
+  .footer-cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #10C99E;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+  }
+
+  .footer-cta-button:hover {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  /* Footer Contact Popup Trigger */
+  .footer-cta-popup {
+    margin-bottom: 15px;
+  }
+
+  .footer-cta-popup :global(.contact-trigger-button) {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #10C99E;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .footer-cta-popup :global(.contact-trigger-button:hover) {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  .footer-phone {
+    margin-top: 10px;
+  }
+
+  .footer-phone a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #253461;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-phone a:hover {
+    color: #469ADC;
+    transform: translateX(3px);
+  }
+
+  .footer-phone svg {
+    width: 20px;
+    height: 20px;
+    fill: #253461;
+    flex-shrink: 0;
+    transition: fill 0.3s ease;
+  }
+
+  .footer-phone a:hover svg {
+    fill: #469ADC;
+  }
+
+  /* Bottom Footer */
+  .bottom-footer {
+    background-color: #E8F5FF;
+    padding: 20px 0;
+  }
+
+  .bottom-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(37, 52, 97, 0.12);
+    padding-top: 20px;
+  }
+
+  .bottom-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .legal-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .legal-links a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #253461;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .legal-links a:hover {
+    color: #469ADC;
+    transform: translateX(3px);
+  }
+
+  .payment-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .payment-icons img {
+    max-width: 300px;
+    height: auto;
+  }
+
+  .language-switcher {
+    position: relative;
+  }
+
+  .language-current {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: #0056B3;
+    padding: 13px 34px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+  }
+
+  .language-switcher:hover .language-current {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .language-current img {
+    border-radius: 2px;
+  }
+
+  .dropdown-arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .language-switcher:hover .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  .language-dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 20px 20px 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .language-switcher:hover .language-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .language-dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 34px;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: #0056B3;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .language-dropdown li a:hover {
+    background: #F5F5F5;
+  }
+
+  .language-dropdown li:first-child a {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .language-dropdown li a img {
+    border-radius: 2px;
+  }
+
+  .copyright {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #253461;
+    text-align: center;
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  .copyright a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .copyright a:hover {
+    color: #469ADC;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .newsletter-heading {
+      font-size: 40px;
+    }
+
+    .footer-column {
+      min-width: 45%;
+    }
+
+    .main-footer {
+      margin-top: -100px;
+      padding-top: 130px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .newsletter-section {
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .newsletter-section::before {
+      border-radius: 0;
+    }
+
+    .newsletter-container {
+      padding: 30px 20px;
+    }
+
+    .newsletter-heading {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .newsletter-content {
+      text-align: center;
+    }
+
+    .newsletter-description {
+      text-align: center;
+    }
+
+    .form-row {
+      flex-direction: column;
+    }
+
+    .newsletter-button {
+      width: 100%;
+    }
+
+    .main-footer {
+      margin-top: 0;
+      padding-top: 40px;
+    }
+
+    .footer-container {
+      justify-content: center;
+    }
+
+    .footer-column {
+      min-width: 100%;
+      text-align: center;
+    }
+
+    .logo-column {
+      justify-content: center;
+    }
+
+    .footer-links a:hover {
+      transform: none;
+    }
+
+    .reseller-column {
+      align-items: center;
+    }
+
+    .footer-cta-button {
+      display: block;
+      text-align: center;
+    }
+
+    .footer-cta-popup {
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-phone {
+      display: flex;
+      justify-content: center;
+    }
+
+    .bottom-footer-row {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .legal-links {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .legal-links a:hover {
+      transform: none;
+    }
+
+    .payment-icons {
+      justify-content: center;
+    }
+
+    .language-switcher {
+      display: flex;
+      justify-content: center;
+    }
+
+    .country-selector {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('newsletter-form') as HTMLFormElement;
+    const emailInput = document.getElementById('newsletter-email') as HTMLInputElement;
+    const submitBtn = document.getElementById('newsletter-submit') as HTMLButtonElement;
+    const messageDiv = document.getElementById('newsletter-message') as HTMLDivElement;
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        if (!email) return;
+
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        messageDiv.className = 'newsletter-message';
+        messageDiv.textContent = '';
+
+        try {
+          const formData = new FormData();
+          formData.append('email', email);
+
+          const response = await fetch('/api/newsletter', {
+            method: 'POST',
+            body: formData,
+          });
+
+          // Check if redirected (success) or got JSON response
+          if (response.redirected || response.ok) {
+            messageDiv.className = 'newsletter-message success';
+            messageDiv.textContent = 'Thank you! You have successfully subscribed.';
+            emailInput.value = '';
+          } else {
+            throw new Error('Subscription failed');
+          }
+        } catch (error) {
+          messageDiv.className = 'newsletter-message error';
+          messageDiv.textContent = 'An error occurred. Please try again.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send';
+        }
+      });
+    }
+  });
+</script>

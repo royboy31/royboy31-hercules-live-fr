@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Privacy Policy';
+const pageDescription = 'Privacy policy for GBI Ventures Ltd - how we collect, use, and safeguard your information on hercules-merchandising.fr.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="page"
+>
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+            <span class="separator"><img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" /></span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Privacy Policy</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="page-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <h1>Privacy Policy</h1>
+
+        <div class="content-card">
+          <div class="intro">
+            <p><strong>GBI Ventures Ltd</strong> ("we," "our," "us") respects your privacy and is committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information when you use our website, https://www.hercules-merchandising.fr ("Site").</p>
+            <p>We may update this policy from time to time. Changes will be announced on the Site or by email and will take effect thirty (30) days after publication.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>1. Information We Collect</h2>
+            <h3>Personal Data You Provide</h3>
+            <p>We collect personal details you provide when:</p>
+            <ul>
+              <li>Placing an order</li>
+              <li>Creating a customer account</li>
+              <li>Filling out a contact form</li>
+              <li>Subscribing to our newsletter</li>
+            </ul>
+            <p>This may include:</p>
+            <ul>
+              <li>Name</li>
+              <li>Postal address</li>
+              <li>Email address</li>
+            </ul>
+
+            <h3>Technical Data Collected Automatically</h3>
+            <p>Like many websites, we automatically collect certain technical information, such as:</p>
+            <ul>
+              <li>Your IP address and internet service provider</li>
+              <li>Date and time of access</li>
+              <li>The website that referred you to our Site</li>
+              <li>Your operating system and browser type</li>
+              <li>Pages and sections of the Site you visit</li>
+              <li>Files viewed, submitted, or downloaded</li>
+            </ul>
+            <p>We use this data for website administration, analytics, and improvements.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>2. How We Collect Information</h2>
+            <p>You can browse the Site without providing personal data. We store personal data only when you voluntarily provide it to us.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your personal data to:</p>
+            <ul>
+              <li>Process and deliver your orders</li>
+              <li>Send you information you request</li>
+              <li>Send you newsletters (if you subscribed)</li>
+              <li>Notify you about new products, special offers, or updates (our own marketing only)</li>
+            </ul>
+            <p>You can unsubscribe from newsletters or marketing emails at any time by clicking the "Unsubscribe" link in the email or updating your account settings.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>4. Sharing Your Information</h2>
+            <p>We do not sell or rent your data to third parties. We only share it when necessary to:</p>
+            <ul>
+              <li>Deliver your products</li>
+              <li>Process payments or verify creditworthiness</li>
+              <li>Conduct security checks</li>
+            </ul>
+            <p>We may also disclose your data if required by law or at the request of competent authorities. Your data may be processed outside the European Economic Area (EEA), subject to appropriate safeguards.</p>
+            <p>Information posted in public areas of the Site (e.g., comments or reviews) may be visible to anyone.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>5. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access the personal data we hold about you</li>
+              <li>Request corrections if your data is inaccurate</li>
+              <li>Object to your data being used for direct marketing</li>
+            </ul>
+            <p>To exercise these rights, contact us using the details below and provide sufficient proof of identity.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>6. Security</h2>
+            <p>We take appropriate technical, administrative, and physical measures to protect your data. Access to personal data is limited to employees who need it to perform their duties.</p>
+            <p>While we take reasonable steps to secure our systems, no method of online transmission or storage is 100% secure. If you are concerned about sharing certain information online, you may choose not to do so.</p>
+          </div>
+
+          <div class="legal-section">
+            <h2>7. Contact Us</h2>
+            <p><strong>GBI Ventures Ltd</strong><br>
+            8 Northumberland Avenue<br>
+            WC2N 5BY London<br>
+            United Kingdom<br>
+            Company No. 15416150</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb-section {
+    background: #FAFAFA;
+    padding: 15px 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #469ADC;
+  }
+
+  .breadcrumb li:last-child span {
+    color: #469ADC;
+  }
+
+  .breadcrumb .separator {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-section {
+    background: #FAFAFA;
+    padding: 40px 0 80px;
+  }
+
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #253461;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  .content-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .intro {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+
+  .intro p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    margin: 0 0 10px;
+  }
+
+  .intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+
+  .legal-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .legal-section h2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #253461;
+    margin: 0 0 12px;
+  }
+
+  .legal-section h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #253461;
+    margin: 20px 0 10px;
+  }
+
+  .legal-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    margin: 0 0 10px;
+  }
+
+  .legal-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+  }
+
+  .legal-section li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    padding: 4px 0 4px 24px;
+    position: relative;
+  }
+
+  .legal-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: #469ADC;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .content-card {
+      padding: 30px 20px;
+    }
+
+    .legal-section h2 {
+      font-size: 18px;
+    }
+  }
+</style>

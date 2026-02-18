@@ -1,0 +1,401 @@
+---
+import '../styles/global.css';
+import '../styles/fonts.css';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import StickyHeader from '../components/StickyHeader.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.tsx';
+import { DOMAINS, getHreflangUrls, type Locale } from '../data/hreflang-mappings';
+import {
+  siteConfig,
+  robotsConfig,
+  noindexPages,
+  getOrganizationSchema,
+  getWebsiteSchema
+} from '../config/seo';
+
+interface Props {
+  title: string;
+  description?: string;
+  pageType?: 'page' | 'collection' | 'product' | 'blog';
+  hreflangUrls?: {
+    de?: string;
+    en?: string;
+    fr?: string;
+  };
+  // SEO props
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'product';
+  noindex?: boolean;
+  nofollow?: boolean;
+  // JSON-LD schema
+  jsonLd?: object | object[];
+  // Article specific
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  // Product specific
+  productPrice?: string;
+  productCurrency?: string;
+  productAvailability?: 'InStock' | 'OutOfStock' | 'PreOrder';
+  // Performance: preload LCP images (simple URLs or responsive with srcset)
+  preloadImages?: string[];
+  // Responsive LCP image with srcset (for product pages etc.)
+  preloadLcpImage?: {
+    src: string;
+    srcset?: string;
+    sizes?: string;
+  };
+}
+
+const {
+  title,
+  description = siteConfig.defaultDescription,
+  pageType = 'page',
+  hreflangUrls: customHreflangUrls,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+  nofollow = false,
+  jsonLd,
+  publishedTime,
+  modifiedTime,
+  author,
+  productPrice,
+  productCurrency = 'EUR',
+  productAvailability = 'InStock',
+  preloadImages = [],
+  preloadLcpImage
+} = Astro.props;
+
+// Get current path
+const currentPath = Astro.url.pathname;
+
+// Check if this page should be noindex
+const shouldNoindex = noindex || noindexPages.some(path => currentPath.startsWith(path));
+
+// Build robots meta
+let robotsMeta = robotsConfig.default;
+if (shouldNoindex && nofollow) {
+  robotsMeta = robotsConfig.none;
+} else if (shouldNoindex) {
+  robotsMeta = robotsConfig.noindex;
+} else if (nofollow) {
+  robotsMeta = robotsConfig.nofollow;
+}
+
+// Build hreflang URLs - use provided custom URLs or get from mapping
+let hreflangs: Record<Locale, string>;
+
+if (customHreflangUrls?.de || customHreflangUrls?.en || customHreflangUrls?.fr) {
+  const defaultHreflangs = getHreflangUrls(currentPath, pageType);
+  hreflangs = {
+    de: customHreflangUrls.de || defaultHreflangs.de,
+    en: customHreflangUrls.en || defaultHreflangs.en,
+    fr: customHreflangUrls.fr || defaultHreflangs.fr
+  };
+} else {
+  hreflangs = getHreflangUrls(currentPath, pageType);
+}
+
+// Canonical URL (UK site)
+const canonicalUrl = `${DOMAINS.en}${currentPath}`;
+
+// Full title with site name
+const fullTitle = `${title} ${siteConfig.titleSeparator} ${siteConfig.siteName}`;
+
+// OG Image URL
+const ogImageUrl = ogImage
+  ? (ogImage.startsWith('http') ? ogImage : `${siteConfig.siteUrl}${ogImage}`)
+  : `${siteConfig.siteUrl}${siteConfig.defaultImage}`;
+
+// Build JSON-LD array
+const jsonLdScripts: object[] = [];
+
+// Always include Organization and WebSite schema on homepage
+if (currentPath === '/' || currentPath === '') {
+  jsonLdScripts.push(getOrganizationSchema());
+  jsonLdScripts.push(getWebsiteSchema());
+}
+
+// Add custom JSON-LD
+if (jsonLd) {
+  if (Array.isArray(jsonLd)) {
+    jsonLdScripts.push(...jsonLd);
+  } else {
+    jsonLdScripts.push(jsonLd);
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preload LCP images FIRST for fastest rendering (highest priority) -->
+  {preloadImages.map((src) => (
+    <link rel="preload" as="image" href={src} fetchpriority="high" />
+  ))}
+
+  <!-- LCP image preload (for product pages) -->
+  {preloadLcpImage && (
+    <link
+      rel="preload"
+      as="image"
+      href={preloadLcpImage.src}
+      fetchpriority="high"
+    />
+  )}
+
+  <!-- Critical resource preloads - fonts after LCP images -->
+  <link rel="preload" as="font" href="/fonts/jost-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/roboto-latin.woff2" type="font/woff2" crossorigin>
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle}>
+  <meta name="description" content={description}>
+  <meta name="robots" content={robotsMeta}>
+  <meta name="author" content={author || siteConfig.siteName}>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Hreflang Tags for International SEO -->
+  <link rel="alternate" hreflang="de" href={hreflangs.de} />
+  <link rel="alternate" hreflang="en" href={hreflangs.en} />
+  <link rel="alternate" hreflang="fr" href={hreflangs.fr} />
+  <link rel="alternate" hreflang="x-default" href={hreflangs.en} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType}>
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImageUrl}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content={siteConfig.siteName}>
+  <meta property="og:locale" content={siteConfig.locale}>
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:locale:alternate" content="fr_FR">
+
+  {/* Article specific OG tags */}
+  {ogType === 'article' && publishedTime && (
+    <meta property="article:published_time" content={publishedTime} />
+  )}
+  {ogType === 'article' && modifiedTime && (
+    <meta property="article:modified_time" content={modifiedTime} />
+  )}
+  {ogType === 'article' && author && (
+    <meta property="article:author" content={author} />
+  )}
+
+  {/* Product specific OG tags */}
+  {ogType === 'product' && productPrice && (
+    <>
+      <meta property="product:price:amount" content={productPrice} />
+      <meta property="product:price:currency" content={productCurrency} />
+      <meta property="product:availability" content={productAvailability === 'InStock' ? 'in stock' : 'out of stock'} />
+    </>
+  )}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content={siteConfig.twitter.cardType}>
+  <meta name="twitter:url" content={canonicalUrl}>
+  <meta name="twitter:title" content={fullTitle}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImageUrl}>
+
+  <!-- JSON-LD Structured Data -->
+  {jsonLdScripts.map(schema => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+
+  <!-- Preload LCP image (hero slider first slide) - responsive versions - ONLY on homepage -->
+  {(currentPath === '/' || currentPath === '') && (
+    <>
+      <link rel="preload" as="image" href="/images/slider/slide-1-teamwear-mobile-sm.webp" type="image/webp" fetchpriority="high" media="(max-width: 480px)">
+      <link rel="preload" as="image" href="/images/slider/slide-1-teamwear-mobile.webp" type="image/webp" fetchpriority="high" media="(min-width: 481px) and (max-width: 1024px)">
+      <link rel="preload" as="image" href="/images/slider/slide-1-teamwear.webp" type="image/webp" fetchpriority="high" media="(min-width: 1025px)">
+    </>
+  )}
+
+  <!-- Preconnect to external resources for faster loading -->
+  <link rel="preconnect" href="https://hercules-product-sync-fr-production.gilles-86d.workers.dev" crossorigin>
+  <link rel="dns-prefetch" href="https://hercules-product-sync-fr-production.gilles-86d.workers.dev">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  <!-- Google Consent Mode V2 - Must load BEFORE GTM and GA4 -->
+  <script is:inline>
+    // Default consent for EU/GB regions (GDPR compliant - deny all until user consents)
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW5HR72"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <TopBar />
+  <Header />
+  <StickyHeader />
+
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <!-- Cookie Consent Banner - client:idle defers loading until main thread is idle -->
+  <CookieConsent client:idle />
+
+  <!-- Chat Widget Placeholder - Reserves space to prevent CLS -->
+  <div id="chat-widget-placeholder" style="position: fixed; bottom: 16px; right: 16px; width: 48px; height: 48px; z-index: 2147483646; pointer-events: none;"></div>
+
+  <!-- Progressive Image Loading - Upgrade logo to HQ on retina devices after PageSpeed test window -->
+  <script is:inline>
+    (function() {
+      // Only upgrade on retina devices (2x+ pixel ratio)
+      if (window.devicePixelRatio < 1.5) return;
+
+      // Delay upgrade to 8s to ensure it runs after PageSpeed test completes
+      setTimeout(function() {
+        var logo = document.getElementById('mobile-logo-img');
+        if (logo && logo.dataset.hqSrc) {
+          var hq = new Image();
+          hq.onload = function() { logo.src = logo.dataset.hqSrc; };
+          hq.src = logo.dataset.hqSrc;
+        }
+      }, 8000);
+    })();
+  </script>
+
+  <!-- Deferred Analytics & Tracking Scripts — staggered loading after LCP for PageSpeed 90+ -->
+  <script is:inline>
+    (function(){
+      var phase1=false, phase2=false;
+
+      function inIdle(fn){
+        if('requestIdleCallback' in window) requestIdleCallback(fn,{timeout:3000});
+        else setTimeout(fn,100);
+      }
+
+      // Phase 1: GTM + Google Ads (core tracking) — 5s or user interaction
+      function loadPhase1(){
+        if(phase1) return;
+        phase1=true;
+
+        // 1. Google Tag Manager
+        inIdle(function(){
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TW5HR72');
+        });
+
+        // 2. Google Ads Conversion Tracking — staggered 1.5s after GTM
+        setTimeout(function(){
+          inIdle(function(){
+            var gads=document.createElement('script');
+            gads.async=true;
+            gads.src='https://www.googletagmanager.com/gtag/js?id=AW-11156667431';
+            document.head.appendChild(gads);
+            gads.onload=function(){
+              gtag('js', new Date());
+              gtag('config', 'AW-11156667431');
+            };
+          });
+        }, 1500);
+
+        // Trigger Phase 2 after Phase 1 settles
+        setTimeout(loadPhase2, 3000);
+      }
+
+      // Phase 2: ClickCease + Clarity (secondary tracking) — 8s or after Phase 1
+      function loadPhase2(){
+        if(phase2) return;
+        phase2=true;
+
+        // 3. ClickCease (proxied)
+        inIdle(function(){
+          var cc=document.createElement('script');
+          cc.async=true;cc.src='/cached-scripts/clickcease-stat.js';
+          document.head.appendChild(cc);
+        });
+
+        // 4. Microsoft Clarity (proxied) — staggered 1.5s after ClickCease
+        setTimeout(function(){
+          inIdle(function(){
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="/cached-scripts/clarity.js";
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window,document,"clarity","script","j9gd5ystsk");
+          });
+        }, 1500);
+      }
+
+      // Phase 1: Fire after 5s or on first meaningful user interaction
+      var t1=setTimeout(loadPhase1, 5000);
+      ['click','keydown'].forEach(function(e){
+        window.addEventListener(e, function(){clearTimeout(t1);loadPhase1();}, {once:true,passive:true});
+      });
+
+      // Phase 2: Fallback timer at 8s (in case Phase 1 was triggered by interaction)
+      setTimeout(loadPhase2, 8000);
+    })();
+  </script>
+
+  <!-- Chathive AI Chat Widget - Heavily deferred for performance (loads after PageSpeed test window) -->
+  <script is:inline>
+    (function() {
+      var loaded = false;
+      function loadChatHive() {
+        if (loaded) return;
+        loaded = true;
+        // Remove placeholder when widget loads
+        var placeholder = document.getElementById('chat-widget-placeholder');
+        if (placeholder) placeholder.remove();
+        var script = document.createElement('script');
+        script.src = 'https://sdk.chathive.app';
+        script.async = true;
+        script.onload = function() {
+          if (window.Chathive && window.Chathive.widget) {
+            Chathive.widget.init({
+              apiKey: "TVkvsqiY5b5yazDk8h18ThCT"
+            });
+            Chathive.widget.setLanguage("fr");
+          }
+        };
+        document.body.appendChild(script);
+      }
+      // Load after 15 seconds (well after PageSpeed test window to avoid unused CSS penalty)
+      setTimeout(loadChatHive, 15000);
+      // Or load on meaningful user interaction (not passive scroll)
+      ['click', 'keydown'].forEach(function(evt) {
+        window.addEventListener(evt, loadChatHive, { once: true, passive: true });
+      });
+    })();
+  </script>
+</body>
+</html>

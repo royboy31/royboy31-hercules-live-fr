@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Payment Methods';
+const pageDescription = 'Hercules Merchandise offers secure payment by Visa, Mastercard, Maestro, Apple Pay, Google Pay and bank transfer.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="page"
+>
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+            <span class="separator"><img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" /></span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Payment Methods</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="page-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <h1>Payment Methods</h1>
+
+        <div class="content-card">
+          <p>Hercules Merchandise offers secure payment by Visa, Mastercard, Maestro, Apple Pay or Google Pay. Contact us for payment by bank transfer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb-section {
+    background: #FAFAFA;
+    padding: 15px 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #469ADC;
+  }
+
+  .breadcrumb li:last-child span {
+    color: #469ADC;
+  }
+
+  .breadcrumb .separator {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-section {
+    background: #FAFAFA;
+    padding: 40px 0 80px;
+  }
+
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #253461;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  .content-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .content-card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .content-card {
+      padding: 30px 20px;
+    }
+  }
+</style>

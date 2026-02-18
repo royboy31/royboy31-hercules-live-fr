@@ -1,0 +1,488 @@
+{
+  "category": {
+    "id": 306,
+    "name": "Handtücher",
+    "slug": "handtucher",
+    "description": "",
+    "count": 2,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 12270,
+      "name": "Jacquard-Webhandtuch",
+      "slug": "jacquard-webhandtuch",
+      "permalink": "https://staging.hercules-merchandise.de/products/jacquard-webhandtuch/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Individuell gefertigtes Jacquard-Webhandtuch</h2>\n<p>Suchen Sie ein Handtuch, das alltägliche Funktionalität mit erstklassiger Individualisierung verbindet? Unsere <strong>Jacquard-Webhandtücher</strong> sind die perfekte Wahl. Anstatt auf den Stoff zu drucken, wird das Design direkt in das Handtuch eingewebt – wodurch eine langlebige, hochwertige Oberfläche entsteht, die niemals verblasst oder sich ablöst.</p>\n<p>Diese Handtücher werden mit Sorgfalt und Handwerkskunst in Europa hergestellt und sind ein Favorit für Vereine, Veranstaltungen und Marken, die mit einem Produkt auffallen möchten, das sich so gut anfühlt, wie es aussieht.</p>\n<h3>Produktmerkmale</h3>\n<ul>\n<li><strong>Material:</strong> Hochwertige Frottee-Baumwolle mit Jacquard-Webung</li>\n<li><strong>Individualisierung:</strong> Zweifarbige gefärbte Webung ohne Designbeschränkungen</li>\n<li><strong>Verfügbare Größen:</strong>\n<ul>\n<li>100 × 30 cm – kompaktes Sport- oder Fitnesshandtuch</li>\n<li>100 × 50 cm – vielseitiges Handtuch</li>\n<li>140 × 70 cm – Badetuch oder Strandtuch in voller Größe</li>\n</ul>\n</li>\n<li><strong>Produktion:</strong> 100 % hergestellt in Europa</li>\n<li><strong>Produktion:</strong> 4 bis 6 Wochen</li>\n</ul>\n<h3>Warum Jacquard-Webhandtücher wählen?</h3>\n<p>Die Jacquard-Webung bietet eine hochwertige Alternative zu bedruckten Handtüchern. Da das Design Teil der Webung selbst ist:</p>\n<ul>\n<li><strong>Hält länger</strong> als Oberflächendrucke, wobei die Farben in den Stoff eingewebt sind</li>\n<li><strong>Behält Form und Detail</strong> Wäsche für Wäsche</li>\n<li><strong>Sieht hochwertig aus</strong> mit einer strukturierten, eleganten Oberfläche</li>\n<li><strong>Fühlt sich weich und saugfähig an</strong>, perfekt für den täglichen Gebrauch oder als Fanartikel</li>\n</ul>\n<p>Dies macht sie zu einer ausgezeichneten Wahl für:</p>\n<ul>\n<li><strong>Sportvereine</strong> – ideal für Fanartikel oder Turniergeschenke</li>\n<li><strong>Firmengeschenke</strong> – professionell, nützlich und unvergesslich</li>\n<li><strong>Veranstaltungen</strong> – praktische und stilvolle Andenken für Teilnehmer</li>\n</ul>\n<h3>Individualisierungsoptionen</h3>\n<p>Es steht Ihnen frei, Ihre zwei Farben zu wählen und Muster, Logos oder Slogans ohne Designbeschränkungen zu erstellen. Zusätzliche Optionen, wie z. B. <strong>gestickte Logos</strong> oder <strong>Markenetiketten</strong>, können einen zusätzlichen Hauch von Qualität verleihen.</p>\n<h3>Bestellung &amp; Lieferung</h3>\n<p>Jacquard-Webhandtücher sind ab 500 Stück erhältlich und lassen sich problemlos für größere Mengen skalieren. Die gesamte Produktion wird in Europa durchgeführt, was eine gleichbleibende Qualität und zuverlässige Lieferung garantiert.</p>\n<h3>Ein Handtuch, das über das Spiel hinausgeht</h3>\n<p>Ob im Fitnessstudio, auf dem Spielfeld oder am Strand, ein <strong>individuelles Jacquard-Handtuch</strong> ist mehr als nur ein praktischer Gegenstand – es ist ein Teil Ihrer Markenidentität. Mit seinem hochwertigen Aussehen und seiner strapazierfähigen Webart ist es ein Produkt, das Ihre Unterstützer, Mitglieder oder Kunden jahrelang nutzen und schätzen werden.</p>",
+      "short_description": "",
+      "sku": "custom-jacquard-scarves",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 306,
+          "name": "Handtücher",
+          "slug": "handtucher"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 12275,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-1-300x300.png",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12279,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-9.jpg",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-9-300x225.jpg",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12274,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-2-300x300.png",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12278,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-6.jpg",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-6-300x225.jpg",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12277,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-7.jpg",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-7-300x225.jpg",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12276,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-8.jpg",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-8-300x225.jpg",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12273,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-3-300x300.png",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12272,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-4-300x300.png",
+          "alt": "Jacquard-Webhandtuch"
+        },
+        {
+          "id": 12271,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Jacquard-Woven-Towel-5-300x300.png",
+          "alt": "Jacquard-Webhandtuch"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 22,
+          "name": "Größe",
+          "options": [
+            "100 x 30 cm",
+            "100 x 50 cm",
+            "140 x 70 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 12280,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "100-x-30-cm"
+            }
+          ]
+        },
+        {
+          "id": 12281,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "100-x-50-cm"
+            }
+          ]
+        },
+        {
+          "id": 12282,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "140-x-70-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4332,
+      "name": "Individuell bedrucktes Handtuch",
+      "slug": "personalisierte-handtucher",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-handtucher/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"122\" data-end=\"174\"><strong data-start=\"126\" data-end=\"174\">Individuell bedruckte Sublimation-Handtücher</strong></h3>\n<p data-start=\"176\" data-end=\"587\">Suchen Sie ein <strong data-start=\"191\" data-end=\"234\">auffälliges Vereins- oder Werbehandtuch</strong>, das Komfort mit einem <strong data-start=\"258\" data-end=\"292\">brillanten, langlebigen Design</strong> vereint?<br data-start=\"301\" data-end=\"304\" />Unsere <strong data-start=\"311\" data-end=\"350\">individuell sublimierten Handtücher</strong> kombinieren <strong data-start=\"363\" data-end=\"383\">angenehme Haptik</strong> mit <strong data-start=\"388\" data-end=\"417\">vollfarbigen Druckmotiven</strong>, die auch nach häufigem Waschen <strong data-start=\"450\" data-end=\"470\">nicht verblassen</strong>.<br data-start=\"471\" data-end=\"474\" />Perfekt für <strong data-start=\"486\" data-end=\"538\">Sportvereine, Events, Hotels oder Firmenpräsente</strong> – praktisch und zugleich ein echter Blickfang.</p>\n<hr data-start=\"589\" data-end=\"592\" />\n<h3 data-start=\"594\" data-end=\"622\"><strong data-start=\"598\" data-end=\"622\">Produkteigenschaften</strong></h3>\n<ul data-start=\"624\" data-end=\"1152\">\n<li data-start=\"624\" data-end=\"733\">\n<p data-start=\"626\" data-end=\"733\"><strong data-start=\"626\" data-end=\"639\">Material:</strong> Weiße Baumwollunterlage mit glatter <strong data-start=\"676\" data-end=\"701\">Mikrofaser-Oberfläche</strong> für brillante Druckergebnisse</p>\n</li>\n<li data-start=\"734\" data-end=\"853\">\n<p data-start=\"736\" data-end=\"853\"><strong data-start=\"736\" data-end=\"754\">Druckqualität:</strong> Vollfarbiger Sublimationsdruck mit gestochen scharfen Details und langanhaltender Farbintensität</p>\n</li>\n<li data-start=\"854\" data-end=\"970\">\n<p data-start=\"856\" data-end=\"970\"><strong data-start=\"856\" data-end=\"875\">Haptik &amp; Dicke:</strong> Leichter und dünner als klassische Frotteehandtücher – <strong data-start=\"931\" data-end=\"968\">schnelltrocknend und platzsparend</strong></p>\n</li>\n<li data-start=\"971\" data-end=\"1059\">\n<p data-start=\"973\" data-end=\"1059\"><strong data-start=\"973\" data-end=\"996\">Nachhaltige Option:</strong> Auch in einer <strong data-start=\"1011\" data-end=\"1046\">Version aus recyceltem Material</strong> erhältlich</p>\n</li>\n<li data-start=\"1060\" data-end=\"1152\">\n<p data-start=\"1062\" data-end=\"1152\"><strong data-start=\"1062\" data-end=\"1077\">Produktion:</strong> <strong data-start=\"1078\" data-end=\"1096\">Made in Europe</strong> – für gleichbleibende Qualität und kurze Lieferzeiten</p>\n</li>\n</ul>\n<hr data-start=\"1154\" data-end=\"1157\" />\n<h3 data-start=\"1159\" data-end=\"1204\"><strong data-start=\"1163\" data-end=\"1204\">Warum Sublimations-Handtücher wählen?</strong></h3>\n<p data-start=\"1206\" data-end=\"1430\">Im Gegensatz zu bestickten oder siebgedruckten Handtüchern ermöglicht der <strong data-start=\"1280\" data-end=\"1301\">Sublimationsdruck</strong>, dass Ihr Design <strong data-start=\"1319\" data-end=\"1345\">die gesamte Oberfläche</strong> der Mikrofaser-Schicht abdeckt – <strong data-start=\"1379\" data-end=\"1414\">ohne Farb- oder Motivbegrenzung</strong>.<br data-start=\"1415\" data-end=\"1418\" />Ideal für:</p>\n<ul data-start=\"1431\" data-end=\"1741\">\n<li data-start=\"1431\" data-end=\"1498\">\n<p data-start=\"1433\" data-end=\"1498\"><strong data-start=\"1433\" data-end=\"1450\">Sportvereine:</strong> Teamlogos, Sponsoren-Branding oder Fanartikel</p>\n</li>\n<li data-start=\"1499\" data-end=\"1580\">\n<p data-start=\"1501\" data-end=\"1580\"><strong data-start=\"1501\" data-end=\"1528\">Events &amp; Werbeaktionen:</strong> Farbstarke Giveaways, die wirklich genutzt werden</p>\n</li>\n<li data-start=\"1581\" data-end=\"1653\">\n<p data-start=\"1583\" data-end=\"1653\"><strong data-start=\"1583\" data-end=\"1599\">Unternehmen:</strong> Hochwertige Werbeartikel mit starkem Markenauftritt</p>\n</li>\n<li data-start=\"1654\" data-end=\"1741\">\n<p data-start=\"1656\" data-end=\"1741\"><strong data-start=\"1656\" data-end=\"1673\">Einzelhandel:</strong> Stilvolle, individuell bedruckte Handtücher für Ihre Produktlinie</p>\n</li>\n</ul>\n<hr data-start=\"1743\" data-end=\"1746\" />\n<h3 data-start=\"1748\" data-end=\"1770\"><strong data-start=\"1752\" data-end=\"1770\">Lieferoptionen</strong></h3>\n<p data-start=\"1772\" data-end=\"1820\">Wir bieten zwei Produktionszeiten zur Auswahl:</p>\n<ul data-start=\"1821\" data-end=\"1939\">\n<li data-start=\"1821\" data-end=\"1879\">\n<p data-start=\"1823\" data-end=\"1879\"><strong data-start=\"1823\" data-end=\"1845\">Schnellproduktion:</strong> 3–4 Wochen (Standardlieferzeit)</p>\n</li>\n<li data-start=\"1880\" data-end=\"1939\">\n<p data-start=\"1882\" data-end=\"1939\"><strong data-start=\"1882\" data-end=\"1901\">Sparproduktion:</strong> 5–6 Wochen (günstigerer Stückpreis)</p>\n</li>\n</ul>\n<p data-start=\"1941\" data-end=\"2032\">Für <strong data-start=\"1945\" data-end=\"1963\">größere Mengen</strong> oder <strong data-start=\"1969\" data-end=\"1995\">spezielle Eventtermine</strong> beraten wir Sie gerne individuell.</p>\n<hr data-start=\"2034\" data-end=\"2037\" />\n<h3 data-start=\"2039\" data-end=\"2076\"><strong data-start=\"2043\" data-end=\"2076\">Bestellung &amp; Personalisierung</strong></h3>\n<p data-start=\"2078\" data-end=\"2402\">Sie können <strong data-start=\"2089\" data-end=\"2111\">Ihr eigenes Design</strong> liefern oder unser Team beauftragen, ein individuelles Motiv zu erstellen.<br data-start=\"2186\" data-end=\"2189\" />Mit dem <strong data-start=\"2197\" data-end=\"2260\">Sublimationsdruck sind der Gestaltung keine Grenzen gesetzt</strong> – von Fotos bis zu komplexen Mustern.<br data-start=\"2298\" data-end=\"2301\" />Das Motiv wird <strong data-start=\"2316\" data-end=\"2352\">direkt in die Fasern eingebrannt</strong> und <strong data-start=\"2357\" data-end=\"2391\">blättert, reißt oder verblasst</strong> niemals.</p>\n<hr data-start=\"2404\" data-end=\"2407\" />\n<h3 data-start=\"2409\" data-end=\"2440\"><strong data-start=\"2413\" data-end=\"2440\">Jetzt Angebot anfordern</strong></h3>\n<p data-start=\"2442\" data-end=\"2708\">Ob <strong data-start=\"2445\" data-end=\"2473\">kleine Vereinsbestellung</strong> oder <strong data-start=\"2479\" data-end=\"2508\">Großproduktion für Events</strong> – wir helfen Ihnen, <strong data-start=\"2529\" data-end=\"2556\">individuelle Handtücher</strong> zu gestalten, die ebenso <strong data-start=\"2582\" data-end=\"2608\">praktisch wie stilvoll</strong> sind.<br data-start=\"2614\" data-end=\"2617\" />Kontaktieren Sie uns für ein <strong data-start=\"2646\" data-end=\"2706\">kostenloses Design-Mock-up und ein persönliches Angebot.</strong></p>",
+      "short_description": "",
+      "sku": "custom-printed-sublimated-or-embroidered-towels",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 295,
+          "name": "Fitness",
+          "slug": "fitness"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 306,
+          "name": "Handtücher",
+          "slug": "handtucher"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 316,
+          "name": "Nachhaltigkeit",
+          "slug": "nachhaltigkeit"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 314,
+          "name": "Sommer",
+          "slug": "sommer"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 8330,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels3-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels3-16-300x300.png",
+          "alt": "Hercules Merchandise towel"
+        },
+        {
+          "id": 8331,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_65.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_65-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8332,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_66.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_66-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8334,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels18-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8336,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels4-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8337,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels5-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8338,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_62.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_62-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8339,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels6-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8340,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels7-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8341,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels16-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8342,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_68.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_68-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8343,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_63-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8344,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels8-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8346,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels9-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8347,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels10-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 58,
+          "name": "Fabrik",
+          "options": [
+            "Fabrik 1: 3-4 Wochen Lieferzeit",
+            "Fabrik 2: 5-6 Wochen Lieferzeit, die günstigste Option",
+            "Nachhaltige Option: 3-4 Wochen Lieferzeit"
+          ]
+        },
+        {
+          "id": 35,
+          "name": "Maße",
+          "options": [
+            "100 x 50 cm",
+            "140 x 70 cm",
+            "160 x 80 cm",
+            "180 x 100 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 11547,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "100-x-50"
+            }
+          ]
+        },
+        {
+          "id": 11548,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "140-x-70-cm"
+            }
+          ]
+        },
+        {
+          "id": 11549,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "160-x-80-cm"
+            }
+          ]
+        },
+        {
+          "id": 11550,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "180-x-100-cm"
+            }
+          ]
+        },
+        {
+          "id": 11551,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "fabrik-2-5-6-wochen-lieferzeit-die-guenstigste-option"
+            },
+            {
+              "name": "Maße",
+              "value": "100-x-50"
+            }
+          ]
+        },
+        {
+          "id": 11552,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "fabrik-2-5-6-wochen-lieferzeit-die-guenstigste-option"
+            },
+            {
+              "name": "Maße",
+              "value": "140-x-70-cm"
+            }
+          ]
+        },
+        {
+          "id": 11553,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "fabrik-2-5-6-wochen-lieferzeit-die-guenstigste-option"
+            },
+            {
+              "name": "Maße",
+              "value": "160-x-80-cm"
+            }
+          ]
+        },
+        {
+          "id": 11555,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "100-x-50"
+            }
+          ]
+        },
+        {
+          "id": 11556,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "140-x-70-cm"
+            }
+          ]
+        },
+        {
+          "id": 11557,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "160-x-80-cm"
+            }
+          ]
+        },
+        {
+          "id": 11558,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "180-x-100-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.603Z"
+}

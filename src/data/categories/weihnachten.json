@@ -1,0 +1,944 @@
+{
+  "category": {
+    "id": 321,
+    "name": "Weihnachten",
+    "slug": "weihnachten",
+    "description": "Feiern Sie die Saison in Stil mit unserer personalisierten Weihnachtskollektion, die entworfen wurde, um Ihren Unterstützern, Kunden oder Veranstaltungsgästen festliche Stimmung zu verleihen.",
+    "count": 6,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 10122,
+      "name": "Klassische Socken",
+      "slug": "klassische-socken",
+      "permalink": "https://staging.hercules-merchandise.de/products/klassische-socken/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Klassische Socken</h2>\n<p data-start=\"250\" data-end=\"538\">Werten Sie Ihr Vereins-, Marken- oder Firmengeschenk mit unseren <strong data-start=\"301\" data-end=\"324\">klassisch gewebten Socken</strong> auf, die vollständig mit Ihren Farben, Ihrem Logo und Ihrem Design personalisiert sind. Diese bequemen und stilvollen Socken sind ideal für die Stadt oder in Kombination mit einem Anzug – perfekt für den täglichen Gebrauch, geschäftliche Anlässe oder als unvergessliches Werbegeschenk.</p>\n<p data-start=\"540\" data-end=\"769\">Mit <strong data-start=\"545\" data-end=\"587\">europäischen oder chinesischen Produktionsoptionen</strong> können Sie wählen, was Ihrem Zeitplan und Budget entspricht. Wenn Sie sich für die <strong data-start=\"656\" data-end=\"679\">europäische Produktion</strong> entscheiden, können Sie außerdem <strong data-start=\"711\" data-end=\"768\">eine Verpackungslösung direkt im Preisrechner auswählen</strong>.</p>\n<h3 data-section-id=\"1sb5zx1\" data-start=\"771\" data-end=\"791\">Produktdetails:</h3>\n<ul data-start=\"792\" data-end=\"1120\">\n<li data-start=\"792\" data-end=\"847\">\n<p data-start=\"794\" data-end=\"847\"><strong data-start=\"794\" data-end=\"806\">Material</strong>: <span style=\"font-weight: 400\">80 % Baumwolle, 17 % Polyamid, 3 % Elastan</span></p>\n</li>\n<li data-start=\"848\" data-end=\"887\">\n<p data-start=\"850\" data-end=\"887\"><strong data-start=\"850\" data-end=\"859\">Größen</strong>: 35/37, 38/40, 41/43, 44/46</p>\n</li>\n<li data-start=\"888\" data-end=\"968\">\n<p data-start=\"890\" data-end=\"968\"><strong data-start=\"890\" data-end=\"909\">Bis zu 5 Farben</strong> pro Design (mehr sind je nach Motiv möglich)</p>\n</li>\n<li data-start=\"969\" data-end=\"1007\">\n<p data-start=\"971\" data-end=\"1007\"><strong data-start=\"971\" data-end=\"988\">Mindestbestellmenge</strong>: 50 Paar pro Größe</p>\n</li>\n<li data-start=\"1008\" data-end=\"1051\">\n<p data-start=\"1010\" data-end=\"1051\"><strong data-start=\"1010\" data-end=\"1034\">Produktionsstandorte</strong>: Europa oder China</p>\n</li>\n<li data-start=\"1052\" data-end=\"1120\">\n<p data-start=\"1054\" data-end=\"1120\"><strong data-start=\"1054\" data-end=\"1071\">Lieferzeit</strong>: 4 bis 5 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"1122\" data-end=\"1284\">Wir bieten eine große Auswahl an Lager-Garnfarben. Designs mit mehr als 5 Farben sind möglicherweise dennoch realisierbar – kontaktieren Sie uns einfach, um zu prüfen, was für Ihr Projekt möglich ist.</p>\n<p data-start=\"1286\" data-end=\"1440\"><strong data-start=\"1289\" data-end=\"1311\">Optionale Verpackung</strong> (nur Europa): Wählen Sie aus verschiedenen Präsentationsoptionen – direkt im <strong data-start=\"1384\" data-end=\"1404\">Preisrechner</strong>, wenn Sie die europäische Produktion auswählen.</p>\n<p data-start=\"1442\" data-end=\"1539\">Haben Sie Fragen zu Designbeschränkungen oder möchten Sie eine Großbestellung aufgeben? Wir helfen Ihnen gerne weiter.</p>",
+      "short_description": "",
+      "sku": "classic-socks",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 258,
+          "name": "Personalisierte Textilien",
+          "slug": "personalisierte-textilien"
+        },
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 308,
+          "name": "Schuhwerk",
+          "slug": "schuhwerk"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8626,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks8-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8622,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_21-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8623,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_16-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8625,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks1-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8627,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks2-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8628,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks3-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8632,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_22-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8633,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks10-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8634,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_18-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8637,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks5-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 10123,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4385,
+      "name": "Personalisierte Tasse",
+      "slug": "personalisierte-tasse",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-tasse/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"97\" data-end=\"134\"><strong data-start=\"101\" data-end=\"132\">Individuell bedruckte Tasse</strong></h3>\n<p data-start=\"136\" data-end=\"382\">Wahrscheinlich das <strong data-start=\"155\" data-end=\"178\">beliebteste Produkt</strong>, das Sie an Ihre Mitglieder oder Fans verteilen können.<br data-start=\"234\" data-end=\"237\" />Fast jeder hat zu Hause eine <strong data-start=\"266\" data-end=\"284\">Lieblingstasse</strong> seines Vereins oder Lieblingskünstlers – sorgen Sie dafür, dass auch <strong data-start=\"354\" data-end=\"368\">Ihre Tasse</strong> dazugehört!</p>\n<p data-start=\"384\" data-end=\"398\"><strong data-start=\"384\" data-end=\"396\">Details:</strong></p>\n<ul data-start=\"399\" data-end=\"563\">\n<li data-start=\"399\" data-end=\"420\">\n<p data-start=\"401\" data-end=\"420\">Material: Keramik</p>\n</li>\n<li data-start=\"421\" data-end=\"443\">\n<p data-start=\"423\" data-end=\"443\">Vollfarbiger Druck</p>\n</li>\n<li data-start=\"444\" data-end=\"472\">\n<p data-start=\"446\" data-end=\"472\">Fassungsvermögen: 300 ml</p>\n</li>\n<li data-start=\"473\" data-end=\"495\">\n<p data-start=\"475\" data-end=\"495\">Bedruckt in Europa</p>\n</li>\n<li data-start=\"496\" data-end=\"563\">\n<p data-start=\"498\" data-end=\"563\">Lieferzeit: ca. 3 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"565\" data-end=\"808\">Die beliebtesten Modelle sind die <strong data-start=\"599\" data-end=\"628\">weißen Sublimationstassen</strong>. Diese werden in <strong data-start=\"646\" data-end=\"667\">Asien hergestellt</strong>, der <strong data-start=\"673\" data-end=\"707\">Druck erfolgt jedoch in Europa</strong>.<br data-start=\"708\" data-end=\"711\" />Beim <strong data-start=\"716\" data-end=\"737\">Sublimationsdruck</strong> wird der Aufdruck vollfarbig und dauerhaft auf die Tasse übertragen.</p>\n<p data-start=\"810\" data-end=\"940\">Wir bieten auch <strong data-start=\"826\" data-end=\"879\">Tassen, die komplett in Europa hergestellt werden</strong>, an. Hier verwenden wir einen <strong data-start=\"910\" data-end=\"937\">einfarbigen Direktdruck</strong>.</p>\n<p data-start=\"942\" data-end=\"1046\">Auch <strong data-start=\"947\" data-end=\"975\">Tassen mit Reliefprägung</strong> sind möglich – kontaktieren Sie uns gerne für weitere Informationen.</p>",
+      "short_description": "",
+      "sku": "custom-printed-mugs",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 310,
+          "name": "Trinkflaschen",
+          "slug": "trinkflaschen"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8479,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug10-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug10-16-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8480,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug1-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8481,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug13-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8482,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug4-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8483,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug8-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8484,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mug_15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mug_15-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8485,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug11-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8486,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug2-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8487,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug12-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8488,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug7-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8489,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug9-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        },
+        {
+          "id": 8490,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemug3-300x300.png",
+          "alt": "Hercules Merchandise mug"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4387,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4190,
+      "name": "Personalisierte Weihnachtskugeln",
+      "slug": "personalisierte-weihnachtskugeln",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-weihnachtskugeln/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"35\"><strong data-start=\"0\" data-end=\"33\">Individuelle Weihnachtskugeln</strong></h3>\n<p data-start=\"37\" data-end=\"241\">Das perfekte <strong data-start=\"50\" data-end=\"72\">Weihnachtsgeschenk</strong>? Suchen Sie nicht weiter – wir fertigen für Sie <strong data-start=\"121\" data-end=\"173\">personalisierte Weihnachtskugeln aus echtem Glas</strong>! Wählen Sie aus <strong data-start=\"190\" data-end=\"222\">über 50 verschiedenen Farben</strong> für Ihre Kugeln.</p>\n<p data-start=\"243\" data-end=\"421\">Ihr <strong data-start=\"247\" data-end=\"255\">Logo</strong> wird per <strong data-start=\"265\" data-end=\"280\">Tampondruck</strong> hochwertig auf die Kugeln gedruckt. Jede Kugel wird in einer <strong data-start=\"342\" data-end=\"362\">Schutzverpackung</strong> geliefert, um Bruch während des Transports zu vermeiden.</p>\n<p data-start=\"423\" data-end=\"619\">Die Kugeln haben einen <strong data-start=\"446\" data-end=\"471\">Durchmesser von 60 mm</strong>. Bei <strong data-start=\"477\" data-end=\"498\">Sets mit 2 Kugeln</strong> beträgt der Durchmesser <strong data-start=\"523\" data-end=\"532\">80 mm</strong>. Die Preise für <strong data-start=\"549\" data-end=\"570\">2er- und 4er-Sets</strong> beinhalten bereits eine <strong data-start=\"595\" data-end=\"616\">weiße Geschenkbox</strong>.</p>\n<ul>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"621\" data-end=\"634\">Material:</strong> 100 % Glas</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"648\" data-end=\"658\">Druck:</strong> 1- bis 4-farbig</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"677\" data-end=\"692\">Verpackung:</strong> 3 Varianten verfügbar</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"717\" data-end=\"732\" data-is-only-node=\"\">Produktion:</strong> Hergestellt in Europa</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"757\" data-end=\"772\">Lieferzeit:</strong> ca. 5 Wochen (Expresslieferung möglich)</li>\n</ul>\n<p data-start=\"816\" data-end=\"993\">Zusätzlich zum Druck Ihres Logos können Sie die Kugeln mit <strong data-start=\"875\" data-end=\"886\">Glitzer</strong> veredeln lassen oder eine <strong data-start=\"913\" data-end=\"931\">Vollbedruckung</strong> wählen. Für diese Extras kontaktieren Sie uns bitte direkt.</p>\n<p data-start=\"995\" data-end=\"1230\" data-is-last-node=\"\" data-is-only-node=\"\">Sie wünschen eine <strong data-start=\"1013\" data-end=\"1050\">individuell bedruckte Geschenkbox</strong>? Kein Problem – wir bieten Boxen für <strong data-start=\"1088\" data-end=\"1110\">1, 2 oder 4 Kugeln</strong>, die auf Wunsch <strong data-start=\"1127\" data-end=\"1151\">vollflächig bedruckt</strong> werden können. Sprechen Sie uns gerne an, um alle Möglichkeiten zu besprechen.</p>",
+      "short_description": "",
+      "sku": "custom-printed-christmas-baubles",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 254,
+          "name": "Fußballschals",
+          "slug": "fussballschals"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 11861,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-1-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11862,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-7-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11857,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-5-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11856,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-4-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11855,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-3-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11854,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-2-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11853,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-6-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 25,
+          "name": "Anzahl der Druckfarben",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": 24,
+          "name": "Anzahl",
+          "options": [
+            "1 Stück",
+            "2 Stück",
+            "4 Stück"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4192,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "1"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4193,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "2"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4194,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "3"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4195,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "4"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4196,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "1"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4197,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "2"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4198,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "3"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4199,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "4"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4200,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "1"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4201,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "2"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4202,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "3"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4203,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "4"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4187,
+      "name": "Personalisierte Decke",
+      "slug": "personalisierte-decke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-decke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<article class=\"text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" data-turn-id=\"request-68d110ac-127c-8323-a2d2-a4fb13be6186-45\" data-testid=\"conversation-turn-812\" data-scroll-anchor=\"true\" data-turn=\"assistant\">\n<div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"171a07a0-8ee5-4179-8668-dd536a62b8df\" data-message-model-slug=\"gpt-5\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\">\n<h3 data-start=\"0\" data-end=\"24\"><strong data-start=\"0\" data-end=\"22\">Personalisierte Decke</strong></h3>\n<p data-start=\"26\" data-end=\"377\">Sind Sie ein echter Fußballfan, der sich im Winter nicht vom kalten Wetter abhalten lässt? Dann ist unsere <strong data-start=\"133\" data-end=\"157\">Premium-Fußballdecke</strong> genau das Richtige für Sie! Diese hochwertige, extra warme Decke ist die perfekte Kombination aus <strong data-start=\"256\" data-end=\"287\">Komfort, Stil und Teamgeist</strong> – ideal, um sich gemütlich einzukuscheln und gleichzeitig Ihre Vereinsfarben zu zeigen.</p>\n<p data-start=\"379\" data-end=\"623\"><strong data-start=\"379\" data-end=\"392\">Material:</strong> 100 % Polyester<br data-start=\"408\" data-end=\"411\" /><strong data-start=\"411\" data-end=\"420\">Maße:</strong> 120 x 150 cm<br data-start=\"433\" data-end=\"436\" /><strong data-start=\"436\" data-end=\"446\">Druck:</strong> Vollfarbdruck auf einer Seite<br data-start=\"476\" data-end=\"479\" /><strong data-start=\"479\" data-end=\"494\">Unterseite:</strong> Dicke Lage aus Kunstlammfell<br data-start=\"523\" data-end=\"526\" data-is-only-node=\"\" /><strong data-start=\"526\" data-end=\"541\">Produktion:</strong> Hergestellt in Europa<br data-start=\"563\" data-end=\"566\" /><strong data-start=\"566\" data-end=\"581\">Lieferzeit:</strong> ca. 5 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"625\" data-end=\"905\">Gefertigt aus hochwertigem Polyester sorgt die Decke für <strong data-start=\"682\" data-end=\"710\">optimale Wärmeisolierung</strong> – selbst an den kältesten Winterabenden. Ihre <strong data-start=\"757\" data-end=\"786\">weiche, flauschige Textur</strong> vermittelt ein Gefühl purer Gemütlichkeit und macht sie zu einem unverzichtbaren Begleiter in der kalten Jahreszeit.</p>\n<p data-start=\"907\" data-end=\"1162\">Zeigen Sie Ihre <strong data-start=\"923\" data-end=\"949\">Vereinstreue mit Stil!</strong> Die Decke kann <strong data-start=\"965\" data-end=\"1003\">vollflächig in Ihren Vereinsfarben</strong> bedruckt werden – inklusive <strong data-start=\"1032\" data-end=\"1078\">Logo, Schriftzug oder individuellem Design</strong>. So wird sie zu einem echten Hingucker, ob auf dem Sofa, im Bett oder im Stadion.</p>\n<p data-start=\"1164\" data-end=\"1352\">Wir legen großen Wert auf <strong data-start=\"1190\" data-end=\"1221\">europäische Premiumqualität</strong>. Jede Decke wird unter strengen Qualitätsstandards gefertigt, um <strong data-start=\"1287\" data-end=\"1332\">Langlebigkeit und dauerhafte Kuschelwärme</strong> zu gewährleisten.</p>\n<p data-start=\"1354\" data-end=\"1473\">Ob beim spannenden Match, auf der Couch oder als extra Wärmeschicht im Bett – diese Decke passt zu jeder Gelegenheit.</p>\n<p data-start=\"1475\" data-end=\"1653\" data-is-last-node=\"\" data-is-only-node=\"\">Suchen Sie ein <strong data-start=\"1490\" data-end=\"1530\">originelles Geschenk für Fußballfans</strong> in Ihrem Umfeld? Diese personalisierte Decke ist das perfekte Präsent, das garantiert das ganze Jahr über Freude bereitet.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</article>",
+      "short_description": "",
+      "sku": "custom-blanket",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7345,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket24-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket24-21-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7346,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket33.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket33-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7347,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket26-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7348,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket21-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7349,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket35-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7350,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket29-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7351,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket38.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket38-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7352,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket14-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7353,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket2-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7354,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket45-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7355,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket34.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket34-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7356,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket36.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket36-300x300.png",
+          "alt": "Personalisierte Decke"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4189,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4162,
+      "name": "Personalisierter Weihnachtspullover",
+      "slug": "personalisierter-weihnachtspullover",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-weihnachtspullover/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p data-start=\"41\" data-end=\"437\">Machen Sie diese <strong data-start=\"58\" data-end=\"78\">Weihnachtssaison</strong> zu etwas ganz Besonderem mit unseren <strong data-start=\"116\" data-end=\"167\">individuell gestrickten Weihnachtspullovern</strong> – die perfekte Kombination aus <strong data-start=\"199\" data-end=\"242\">festlichem Charme und persönlicher Note</strong>.<br data-start=\"243\" data-end=\"246\" />Ob für die <strong data-start=\"257\" data-end=\"276\" data-is-only-node=\"\">Weihnachtsfeier</strong>, als <strong data-start=\"282\" data-end=\"314\">einzigartiges Kundengeschenk</strong> oder für den <strong data-start=\"328\" data-end=\"361\">einheitlichen Vereinsauftritt</strong> – diese Pullover vereinen <strong data-start=\"388\" data-end=\"425\">Wärme, Komfort und Individualität</strong> in einem.</p>\n<p data-start=\"439\" data-end=\"881\">Jeder Pullover wird aus <strong data-start=\"463\" data-end=\"500\">hochwertigem, weichem Strickstoff</strong> gefertigt und <strong data-start=\"515\" data-end=\"548\">individuell auf Maß gestrickt</strong>. Wählen Sie aus klassischen Designs mit <strong data-start=\"589\" data-end=\"640\">Schneeflocken, Rentieren oder Weihnachtsmännern</strong> oder entscheiden Sie sich für <strong data-start=\"671\" data-end=\"746\">moderne, minimalistische Muster, witzige Sprüche oder Ihr eigenes Motiv</strong>.<br data-start=\"747\" data-end=\"750\" />Auch <strong data-start=\"755\" data-end=\"792\">Namen, Logos oder Lieblingszitate</strong> können problemlos eingearbeitet werden – Ihrer Kreativität sind keine Grenzen gesetzt!</p>\n<p data-start=\"883\" data-end=\"1069\"><strong data-start=\"883\" data-end=\"896\">Material:</strong> 100 % Acrylgarn<br data-start=\"912\" data-end=\"915\" /><strong data-start=\"915\" data-end=\"926\">Farben:</strong> Bis zu 5 verschiedene<br data-start=\"948\" data-end=\"951\" /><strong data-start=\"951\" data-end=\"962\">Größen:</strong> S bis 5XL<br data-start=\"972\" data-end=\"975\" data-is-only-node=\"\" /><strong data-start=\"975\" data-end=\"990\">Produktion:</strong> Hergestellt in China<br data-start=\"1011\" data-end=\"1014\" /><strong data-start=\"1014\" data-end=\"1029\">Lieferzeit:</strong> 5–8 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"1071\" data-end=\"1248\">Wir bieten alle Größen von <strong data-start=\"1098\" data-end=\"1111\">S bis 5XL</strong> an und haben die gängigsten Garnfarben stets auf Lager.<br data-start=\"1167\" data-end=\"1170\" />Ab <strong data-start=\"1173\" data-end=\"1186\">200 Stück</strong> kann sogar eine <strong data-start=\"1203\" data-end=\"1227\">eigene Pantone-Farbe</strong> realisiert werden.</p>\n<p data-start=\"1250\" data-end=\"1491\" data-is-last-node=\"\" data-is-only-node=\"\">Stechen Sie in dieser Weihnachtssaison hervor – mit einem <strong data-start=\"1308\" data-end=\"1376\">Weihnachtspullover, der so einzigartig ist wie Ihre Feier selbst</strong>.<br data-start=\"1377\" data-end=\"1380\" /><strong data-start=\"1380\" data-end=\"1441\">Bestellen Sie jetzt Ihren gestrickten Weihnachts-Pullover</strong> und bringen Sie festliche Stimmung in jede Runde!</p>",
+      "short_description": "",
+      "sku": "custom-christmas-jumpers",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 258,
+          "name": "Personalisierte Textilien",
+          "slug": "personalisierte-textilien"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7279,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper7-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper7-21-300x300.png",
+          "alt": "Hercules Merchandise Christmas jumper"
+        },
+        {
+          "id": 7280,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper2-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7281,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper10-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7282,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper5-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7283,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper9-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7284,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper4-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4164,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4153,
+      "name": "Personalisiertes Kuscheltier",
+      "slug": "personalisiertes-kuscheltier",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-kuscheltier/",
+      "type": "variable",
+      "featured": false,
+      "description": "<article class=\"text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" data-turn-id=\"request-68d110ac-127c-8323-a2d2-a4fb13be6186-8\" data-testid=\"conversation-turn-850\" data-scroll-anchor=\"true\" data-turn=\"assistant\">\n<div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"e5fab68a-e6f4-491c-88b8-bf1e16d2edd0\" data-message-model-slug=\"gpt-5\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\">\n<h3 data-start=\"0\" data-end=\"31\"><strong data-start=\"0\" data-end=\"29\">Personalisiertes Kuscheltier</strong></h3>\n<p data-start=\"33\" data-end=\"462\"><strong data-start=\"33\" data-end=\"74\">Gestalten Sie Ihr eigenes Plüschtier!</strong><br data-start=\"74\" data-end=\"77\" />Verwirklichen Sie Ihre Ideen mit einem <strong data-start=\"116\" data-end=\"161\">vollständig individuellen Kuscheltier</strong> – ganz nach Ihren Wünschen.<br data-start=\"189\" data-end=\"192\" />Wählen Sie <strong data-start=\"203\" data-end=\"252\">eigene Farben, Formen, Stoffe und Stickereien</strong>, um ein einzigartiges Plüschtier zu kreieren, das perfekt zu Ihrer <strong data-start=\"320\" data-end=\"372\">Marke, Ihrem Verein oder einem besonderen Anlass</strong> passt.<br data-start=\"379\" data-end=\"382\" />Jedes Stück wird mit <strong data-start=\"403\" data-end=\"423\">Liebe zum Detail</strong> und <strong data-start=\"428\" data-end=\"449\">höchster Qualität</strong> gefertigt.</p>\n<p data-start=\"464\" data-end=\"744\"><strong data-start=\"464\" data-end=\"477\">Material:</strong> Superweicher Plüschstoff<br data-start=\"502\" data-end=\"505\" /><strong data-start=\"505\" data-end=\"521\">Anpassungen:</strong> Individuelle Farben, Formen, Druck- und Stickoptionen<br data-start=\"575\" data-end=\"578\" /><strong data-start=\"578\" data-end=\"588\" data-is-only-node=\"\">Größe:</strong> Durchschnittlich 20 cm hoch<br data-start=\"616\" data-end=\"619\" /><strong data-start=\"619\" data-end=\"638\">Zertifizierung:</strong> EN71 geprüft (sicher für Kinder)<br data-start=\"671\" data-end=\"674\" /><strong data-start=\"674\" data-end=\"689\">Produktion:</strong> Hergestellt in China<br data-start=\"710\" data-end=\"713\" /><strong data-start=\"713\" data-end=\"728\">Lieferzeit:</strong> ca. 14 Wochen</p>\n<p data-start=\"746\" data-end=\"919\">Erhältlich in <strong data-start=\"760\" data-end=\"784\">verschiedenen Größen</strong>, passend zu Ihrem Bedarf.<br data-start=\"810\" data-end=\"813\" />Jedes Kuscheltier kann mit <strong data-start=\"840\" data-end=\"894\">gestickten Logos, Namen oder individuellen Details</strong> personalisiert werden.</p>\n<p data-start=\"921\" data-end=\"1152\" data-is-last-node=\"\" data-is-only-node=\"\">Sie haben bereits ein Design oder möchten eines erstellen lassen?<br data-start=\"986\" data-end=\"989\" /><strong data-start=\"989\" data-end=\"1020\">Senden Sie uns Ihre Vorlage</strong>, und wir erarbeiten gemeinsam mit Ihnen Ihr ganz persönliches Plüschtier – <strong data-start=\"1096\" data-end=\"1152\" data-is-last-node=\"\">einzigartig, hochwertig und garantiert zum Knuddeln!</strong></p>\n</div>\n</div>\n</div>\n</div>\n<div class=\"z-0 flex min-h-[46px] justify-start\"></div>\n<div class=\"mt-3 w-full empty:hidden\">\n<div class=\"text-center\"></div>\n</div>\n</div>\n</div>\n</article>\n<div class=\"pointer-events-none h-px w-px\" aria-hidden=\"true\" data-edge=\"true\"></div>",
+      "short_description": "",
+      "sku": "plush-toy",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7248,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche1-45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche1-45-300x300.png",
+          "alt": "Personalisiertes Kuscheltier"
+        },
+        {
+          "id": 7250,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche2-300x300.png",
+          "alt": "Personalisiertes Kuscheltier"
+        },
+        {
+          "id": 7251,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche3-300x300.png",
+          "alt": "Personalisiertes Kuscheltier"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4155,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.647Z"
+}

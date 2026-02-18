@@ -1,0 +1,58 @@
+---
+interface Props {
+  id: number;
+  name: string;
+  slug: string;
+  price: string;
+  regular_price: string;
+  on_sale: boolean;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
+const { id, name, slug, price, regular_price, on_sale, image } = Astro.props;
+---
+
+<div class="product-card card group">
+  <a href={`/products/${slug}`} class="block">
+    <div class="aspect-square overflow-hidden bg-gray-100">
+      <img
+        src={image.src}
+        alt={image.alt}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="p-4">
+      <h3 class="font-medium text-lg text-primary mb-2 group-hover:text-accent transition-colors">
+        {name}
+      </h3>
+
+      <div class="flex items-center gap-2">
+        {on_sale ? (
+          <>
+            <span class="text-xl font-semibold text-accent">
+              £{parseFloat(price).toFixed(2)}
+            </span>
+            <span class="text-sm text-text-secondary line-through">
+              £{parseFloat(regular_price).toFixed(2)}
+            </span>
+          </>
+        ) : (
+          <span class="text-xl font-semibold text-primary">
+            £{parseFloat(price).toFixed(2)}
+          </span>
+        )}
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+  .product-card {
+    height: 100%;
+  }
+</style>

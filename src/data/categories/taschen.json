@@ -1,0 +1,462 @@
+{
+  "category": {
+    "id": 309,
+    "name": "Taschen",
+    "slug": "taschen",
+    "description": "",
+    "count": 3,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 4561,
+      "name": "Personalisierter Rucksack",
+      "slug": "personalisierter-rucksack",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-rucksack/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2><span data-mce-fragent=\"1\">Personalisierter Rucksack</span></h2>\n<p data-start=\"130\" data-end=\"418\">Unsere Rucksäcke werden in Europa hergestellt und bedruckt. Auf den Fotos sehen Sie, welche Bereiche der Taschen bedruckbar sind – der übrige Teil des Rucksacks ist schwarz. Der Druck erfolgt im <strong data-start=\"325\" data-end=\"350\">Sublimationsverfahren</strong>, daher gibt es <strong data-start=\"366\" data-end=\"415\">keine Einschränkung bei der Anzahl der Farben</strong>.</p>\n<p data-start=\"420\" data-end=\"434\"><strong data-start=\"420\" data-end=\"432\">Details:</strong></p>\n<ul data-start=\"435\" data-end=\"613\">\n<li data-start=\"435\" data-end=\"464\">\n<p data-start=\"437\" data-end=\"464\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"465\" data-end=\"499\">\n<p data-start=\"467\" data-end=\"499\">Vollfarbiger Sublimationsdruck</p>\n</li>\n<li data-start=\"500\" data-end=\"522\">\n<p data-start=\"502\" data-end=\"522\">3 Größen verfügbar</p>\n</li>\n<li data-start=\"523\" data-end=\"547\">\n<p data-start=\"525\" data-end=\"547\">Produktion in Europa</p>\n</li>\n<li data-start=\"548\" data-end=\"613\">\n<p data-start=\"550\" data-end=\"613\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"615\" data-end=\"633\"><strong data-start=\"615\" data-end=\"631\">Ausstattung:</strong></p>\n<ul data-start=\"634\" data-end=\"778\">\n<li data-start=\"634\" data-end=\"663\">\n<p data-start=\"636\" data-end=\"663\">Separates Fach für Schuhe</p>\n</li>\n<li data-start=\"664\" data-end=\"716\">\n<p data-start=\"666\" data-end=\"716\">Vorderfach für Dokumente oder kleine Gegenstände</p>\n</li>\n<li data-start=\"717\" data-end=\"739\">\n<p data-start=\"719\" data-end=\"739\">Insgesamt 3 Fächer</p>\n</li>\n<li data-start=\"740\" data-end=\"778\">\n<p data-start=\"742\" data-end=\"778\">2 längenverstellbare Schultergurte</p>\n</li>\n</ul>\n<p data-start=\"780\" data-end=\"793\"><strong data-start=\"780\" data-end=\"791\">Größen:</strong></p>\n<ul data-start=\"794\" data-end=\"874\">\n<li data-start=\"794\" data-end=\"820\">\n<p data-start=\"796\" data-end=\"820\">Klein: 28 × 21 × 44 cm</p>\n</li>\n<li data-start=\"821\" data-end=\"848\">\n<p data-start=\"823\" data-end=\"848\">Mittel: 34 × 23 × 46 cm</p>\n</li>\n<li data-start=\"849\" data-end=\"874\">\n<p data-start=\"851\" data-end=\"874\">Groß: 34 × 23 × 50 cm</p>\n</li>\n</ul>",
+      "short_description": "",
+      "sku": "backpack-custom",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 295,
+          "name": "Fitness",
+          "slug": "fitness"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 290,
+          "name": "Laufen",
+          "slug": "laufen"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 309,
+          "name": "Taschen",
+          "slug": "taschen"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8732,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag2-9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag2-9-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8733,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebackpack1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebackpack1-300x300.png",
+          "alt": "Hercules Merchandise backpack"
+        },
+        {
+          "id": 8734,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag3-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8735,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag4-300x200.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8736,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag5-300x200.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8737,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag6-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8738,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag7-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8739,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag8-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 43,
+          "name": "Größe",
+          "options": [
+            "Groß",
+            "Klein",
+            "Medium"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4563,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "klein"
+            }
+          ]
+        },
+        {
+          "id": 4564,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "medium"
+            }
+          ]
+        },
+        {
+          "id": 4565,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "gross"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4556,
+      "name": "Personalisierte Sporttasche",
+      "slug": "sport-bag-customs",
+      "permalink": "https://staging.hercules-merchandise.de/products/sport-bag-customs/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2><span data-mce-fragent=\"1\">Personalisierte Sporttasche</span></h2>\n<p data-start=\"135\" data-end=\"418\">Unsere Sporttaschen werden in Europa produziert und bedruckt. Auf den Fotos sehen Sie die bedruckbaren Bereiche. Pro Seite können Sie <strong data-start=\"269\" data-end=\"298\">zwei verschiedene Designs</strong> wählen. Der Druck erfolgt im <strong data-start=\"328\" data-end=\"353\">Sublimationsverfahren</strong>, daher gibt es <strong data-start=\"369\" data-end=\"415\">keine Begrenzung bei der Anzahl der Farben</strong>.</p>\n<p data-start=\"420\" data-end=\"434\"><strong data-start=\"420\" data-end=\"432\">Details:</strong></p>\n<ul data-start=\"435\" data-end=\"622\">\n<li data-start=\"435\" data-end=\"464\">\n<p data-start=\"437\" data-end=\"464\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"465\" data-end=\"499\">\n<p data-start=\"467\" data-end=\"499\">Vollfarbiger Sublimationsdruck</p>\n</li>\n<li data-start=\"500\" data-end=\"522\">\n<p data-start=\"502\" data-end=\"522\">3 Größen verfügbar</p>\n</li>\n<li data-start=\"523\" data-end=\"547\">\n<p data-start=\"525\" data-end=\"547\">Produktion in Europa</p>\n</li>\n<li data-start=\"548\" data-end=\"622\">\n<p data-start=\"550\" data-end=\"622\">Standard-Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"624\" data-end=\"642\"><strong data-start=\"624\" data-end=\"640\">Ausstattung:</strong></p>\n<ul data-start=\"643\" data-end=\"801\">\n<li data-start=\"643\" data-end=\"675\">\n<p data-start=\"645\" data-end=\"675\">Separates Schuhfach am Boden</p>\n</li>\n<li data-start=\"676\" data-end=\"745\">\n<p data-start=\"678\" data-end=\"745\">Schultergurt + 2 Tragegriffe (verbinden sich per Klettverschluss)</p>\n</li>\n<li data-start=\"746\" data-end=\"801\">\n<p data-start=\"748\" data-end=\"801\">5 Standfüße am Boden, damit die Tasche gerade steht</p>\n</li>\n</ul>\n<p data-start=\"803\" data-end=\"816\"><strong data-start=\"803\" data-end=\"814\">Größen:</strong></p>\n<ul data-start=\"817\" data-end=\"897\">\n<li data-start=\"817\" data-end=\"843\">\n<p data-start=\"819\" data-end=\"843\">Klein: 42 × 31 × 24 cm</p>\n</li>\n<li data-start=\"844\" data-end=\"871\">\n<p data-start=\"846\" data-end=\"871\">Mittel: 47 × 33 × 26 cm</p>\n</li>\n<li data-start=\"872\" data-end=\"897\">\n<p data-start=\"874\" data-end=\"897\">Groß: 52 × 35 × 28 cm</p>\n</li>\n</ul>",
+      "short_description": "",
+      "sku": "sport-bag-customs",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 309,
+          "name": "Taschen",
+          "slug": "taschen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8729,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag2_797e65f7-e72b-41d0-b35d-62cd131f8538-13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag2_797e65f7-e72b-41d0-b35d-62cd131f8538-13-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8730,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag1-300x300.png",
+          "alt": "Hercules Merchandise sports bag"
+        },
+        {
+          "id": 8731,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag3_70c05be9-bce4-4481-a010-f0d52fbb05ff.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportsbag3_70c05be9-bce4-4481-a010-f0d52fbb05ff-300x450.png",
+          "alt": "Hercules Merchandise sports bag"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 43,
+          "name": "Größe",
+          "options": [
+            "Groß",
+            "Klein",
+            "Medium"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4558,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "klein"
+            }
+          ]
+        },
+        {
+          "id": 4559,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "medium"
+            }
+          ]
+        },
+        {
+          "id": 4560,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "gross"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4362,
+      "name": "Personalisierter Turnbeutel",
+      "slug": "personalisierter-turnbeutel",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-turnbeutel/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"114\" data-end=\"159\"><strong data-start=\"118\" data-end=\"157\">Personalisierter Turnbeutel</strong></h3>\n<p data-start=\"161\" data-end=\"374\">Diese <strong data-start=\"167\" data-end=\"205\">individuell anpassbaren Turnbeutel</strong> bestehen aus <strong data-start=\"219\" data-end=\"238\">100 % Polyester</strong> und sind <strong data-start=\"248\" data-end=\"272\">komplett wasserdicht</strong>. Dadurch eignen sie sich ideal für <strong data-start=\"308\" data-end=\"342\">nasse oder schmutzige Kleidung</strong> nach dem Spiel oder Training.</p>\n<p data-start=\"376\" data-end=\"676\">Sie können zwischen verschiedenen Varianten mit <strong data-start=\"424\" data-end=\"454\">Standard-Hintergrundfarben</strong> wählen, bei denen das <strong data-start=\"477\" data-end=\"507\">Logo einseitig aufgedruckt</strong> wird.<br data-start=\"513\" data-end=\"516\" />Alternativ ist auch ein <strong data-start=\"540\" data-end=\"581\">vollständig personalisierter Rucksack</strong> möglich, bei dem die <strong data-start=\"603\" data-end=\"666\">Vorder- und Rückseite vollflächig mit Ihrem Design bedruckt</strong> werden.</p>\n<p data-start=\"678\" data-end=\"692\"><strong data-start=\"678\" data-end=\"690\">Details:</strong></p>\n<ul data-start=\"693\" data-end=\"922\">\n<li data-start=\"693\" data-end=\"722\">\n<p data-start=\"695\" data-end=\"722\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"723\" data-end=\"745\">\n<p data-start=\"725\" data-end=\"745\">Vollfarbiger Druck</p>\n</li>\n<li data-start=\"746\" data-end=\"808\">\n<p data-start=\"748\" data-end=\"808\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"809\" data-end=\"829\">\n<p data-start=\"811\" data-end=\"829\">Maße: 41 × 33 cm</p>\n</li>\n<li data-start=\"830\" data-end=\"854\">\n<p data-start=\"832\" data-end=\"854\">Produktion in Europa</p>\n</li>\n<li data-start=\"855\" data-end=\"922\">\n<p data-start=\"857\" data-end=\"922\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"924\" data-end=\"1050\">Der Rucksack kann zudem in <strong data-start=\"951\" data-end=\"965\">Trikotform</strong> gefertigt werden – bei dieser Variante ist nur ein <strong data-start=\"1017\" data-end=\"1039\">vollfarbiger Druck</strong> möglich.</p>",
+      "short_description": "",
+      "sku": "custom-printed-drawstring-bags",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 295,
+          "name": "Fitness",
+          "slug": "fitness"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 316,
+          "name": "Nachhaltigkeit",
+          "slug": "nachhaltigkeit"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 309,
+          "name": "Taschen",
+          "slug": "taschen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8385,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag1-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag1-16-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8386,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_27.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_27-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8387,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_17-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8388,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_23-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8389,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag12-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8390,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag2-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8391,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag3-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8392,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag4-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8393,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag5-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8394,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag8-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8395,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_24.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_24-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8396,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_18-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8397,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_drawstring_bag_20-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8398,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag9-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        },
+        {
+          "id": 8399,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedrawstringbag6-300x300.png",
+          "alt": "Hercules Merchandise draw string bag"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4364,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.639Z"
+}

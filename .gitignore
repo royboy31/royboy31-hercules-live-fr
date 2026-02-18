@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary
+tmp/
+*.tmp
+
+# Sensitive / internal docs (contain API tokens, credentials, internal notes)
+CLAUDE.md
+TODO-*.md
+TODAYS-PROGRESS-*.md
+ASTRO-FR-MIGRATION-PLAN.md
+ASTRO-UK-LOCALIZATION-PLAN.md
+UK-ASTRO-PENDING-TASKS.md
+UK-STAGING-IMPLEMENTATION-PLAN.md
+BASEBALL-CAP-SYNC-VERIFICATION.md
+BUG-REPORT-BASEBALL-CAP-CONFIGURATOR.md
+CART-LOCALSTORAGE-PLAN.md
+PRODUCT-SYNC-TEST-REPORT.md
+PROGRESS-*.md
+QA-CHECKLIST*.md
+QA-CHECKLIST*.csv
+cart-localstorage-implementation.md
+live-plan.md
+speed-issue.md
+stickey-header-menu.md
+new\ sticky\ header\ proposal.md
+docs/
+core-web-vitals/
+core-web-vitals-agent/
+exports/
+qa/
+*.lnk
+*:Zone.Identifier
+
+# Local scripts
+sync-remaining-products.sh
+debug.log
+slider-arrow.html

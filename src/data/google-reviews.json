@@ -1,0 +1,40 @@
+{
+  "reviews": [
+    {
+      "author": "James Wilson",
+      "rating": 5,
+      "text": "Excellent quality and fast delivery! The fan scarves turned out perfect. Highly recommended!",
+      "time": "2 weeks ago"
+    },
+    {
+      "author": "Sarah Thompson",
+      "rating": 5,
+      "text": "Great service and wonderful advice. The jerseys for our team are fantastic. Will definitely order again!",
+      "time": "1 month ago"
+    },
+    {
+      "author": "David Brown",
+      "rating": 5,
+      "text": "Professional handling from start to finish. The quality of the merchandise impressed us greatly.",
+      "time": "1 month ago"
+    },
+    {
+      "author": "Emma Clarke",
+      "rating": 5,
+      "text": "Quick communication and fair prices. The personalised beanies are a hit with our fans!",
+      "time": "2 months ago"
+    },
+    {
+      "author": "Mark Taylor",
+      "rating": 5,
+      "text": "First-class work! The design team perfectly brought our vision to life. Very satisfied!",
+      "time": "2 months ago"
+    },
+    {
+      "author": "Rachel Davies",
+      "rating": 5,
+      "text": "Great products, fair prices and super friendly customer service. Can only recommend!",
+      "time": "3 months ago"
+    }
+  ]
+}

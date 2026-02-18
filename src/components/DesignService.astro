@@ -1,0 +1,242 @@
+---
+// Design Service Section - "Bring Your Vision to Life"
+import ContactFormPopup from './ContactFormPopup.tsx';
+---
+
+<section class="design-service-section">
+  <div class="design-service-container">
+    <!-- Image Column -->
+    <div class="image-column">
+      <div class="image-wrapper">
+        <img
+          src="/images/design/design-herc-3-optimized.webp"
+          alt="Custom Design Service"
+          class="main-image"
+          loading="lazy"
+          width="500"
+          height="400"
+        />
+      </div>
+      <div class="arrow-wrapper">
+        <img
+          src="/images/design/arrow.png"
+          alt=""
+          class="arrow-image"
+          loading="lazy"
+          width="200"
+          height="100"
+        />
+      </div>
+    </div>
+
+    <!-- Content Column -->
+    <div class="content-column">
+      <h2 class="section-heading">
+        Bring Your Vision to Life – <span class="highlight">Get a Custom Design!</span>
+      </h2>
+      <div class="description">
+        <p>Need personalised sports gear or teamwear? Our team of real designers will turn your idea into a unique, professional design – completely free. Whether it's for a sports team, club, or business, we'll create something that fits your style, from football kits to scarves and more.</p>
+        <p>Just tell us what you're looking for, and we'll take care of the rest.</p>
+      </div>
+      <div class="cta-wrapper">
+        <ContactFormPopup
+          client:visible
+          triggerType="button"
+          triggerText="Ask for your free design"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .design-service-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .design-service-container {
+    display: flex;
+    flex-direction: row;
+    background-image: url('/images/design/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 30px;
+    position: relative;
+  }
+
+  .image-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+
+  .main-image {
+    width: 75%;
+    height: auto;
+  }
+
+  .arrow-wrapper {
+    position: absolute;
+    right: -48px;
+    bottom: 13px;
+  }
+
+  .arrow-image {
+    width: 244px;
+    height: 95px;
+  }
+
+  .content-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+
+  .section-heading .highlight {
+    color: #469ADC;
+  }
+
+  .description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .description p {
+    margin: 0 0 15px 0;
+  }
+
+  .description p:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 50px;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    cursor: pointer;
+  }
+
+  .cta-wrapper {
+    align-self: flex-start;
+  }
+
+  .cta-wrapper :global(.contact-trigger-button) {
+    display: inline-block;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .cta-wrapper :global(.contact-trigger-button:hover) {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  .cta-button:hover {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  /* Tablet Responsive */
+  @media (max-width: 1024px) {
+    .section-heading {
+      font-size: 30px;
+    }
+
+    .description {
+      font-size: 15px;
+    }
+
+    .cta-button {
+      font-size: 13px;
+    }
+
+    .arrow-wrapper {
+      display: none;
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 767px) {
+    .design-service-container {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .image-column {
+      width: 100%;
+      order: 99999;
+    }
+
+    .main-image {
+      width: 100%;
+    }
+
+    .content-column {
+      width: 100%;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .section-heading {
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+    }
+
+    .cta-button {
+      align-self: center;
+    }
+
+    .cta-wrapper {
+      align-self: center;
+    }
+
+    .arrow-wrapper {
+      display: none;
+    }
+  }
+</style>

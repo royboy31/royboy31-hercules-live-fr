@@ -1,0 +1,620 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  siteConfig,
+  getArticleSchema,
+  getBreadcrumbSchema,
+  truncateDescription,
+  stripHtml
+} from '../../../config/seo';
+
+const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+
+// Get the post slug from the URL
+const { slug } = Astro.params;
+
+// Fetch post details
+let post = null;
+try {
+  const postRes = await fetch(`${WORKER_URL}/post/${slug}`);
+  if (postRes.ok) {
+    post = await postRes.json();
+  }
+} catch (error) {
+  console.error('Error fetching post:', error);
+}
+
+// If post not found, return 404
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+// Fetch other posts for "Related Posts" section
+let relatedPosts: any[] = [];
+try {
+  const postsRes = await fetch(`${WORKER_URL}/posts`);
+  if (postsRes.ok) {
+    const allPosts = await postsRes.json();
+    // Filter out current post and take 4 for sidebar
+    relatedPosts = allPosts
+      .filter((p: any) => p.slug !== slug)
+      .slice(0, 4);
+  }
+} catch (error) {
+  console.error('Error fetching related posts:', error);
+}
+
+// Clean broken emoji ? characters from WordPress content
+// (MySQL utf8 encoding drops 4-byte emojis to ?)
+function cleanContent(html: string): string {
+  // Remove lone ? at the start of headings (broken emojis)
+  // e.g. "? 1. Keep Colours Simple" -> "1. Keep Colours Simple"
+  return html.replace(/(<h[1-6][^>]*>)\s*\?\s*/gi, '$1');
+}
+
+// Format date for display (UK format: "26 July 2025")
+function formatDate(dateStr: string) {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Generate static paths for all posts
+export async function getStaticPaths() {
+  const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+
+  try {
+    const res = await fetch(`${WORKER_URL}/posts`);
+    if (!res.ok) return [];
+
+    const posts = await res.json();
+    return posts.map((post: any) => ({
+      params: { slug: post.slug }
+    }));
+  } catch (error) {
+    console.error('Error generating static paths:', error);
+    return [];
+  }
+}
+
+// SEO configuration
+const metaDescription = post.excerpt
+  ? truncateDescription(stripHtml(post.excerpt))
+  : truncateDescription(post.title);
+
+const canonicalUrl = `${siteConfig.siteUrl}/blogs/uk/${slug}`;
+const postImage = post.featuredImage || post.localFeaturedImage || '';
+
+// Format dates for schema
+const publishedDate = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
+const modifiedDate = post.modified ? new Date(post.modified).toISOString() : publishedDate;
+
+// Generate JSON-LD schemas
+const jsonLdSchemas = [];
+
+// Article/BlogPosting schema
+jsonLdSchemas.push(getArticleSchema({
+  title: post.title,
+  description: metaDescription,
+  image: postImage,
+  url: canonicalUrl,
+  datePublished: publishedDate,
+  dateModified: modifiedDate,
+  author: siteConfig.siteName,
+  type: 'BlogPosting'
+}));
+
+// Breadcrumb schema
+jsonLdSchemas.push(getBreadcrumbSchema([
+  { name: 'Home', url: siteConfig.siteUrl },
+  { name: 'Blog', url: `${siteConfig.siteUrl}/blogs/uk` },
+  { name: post.title, url: canonicalUrl }
+]));
+
+---
+
+<BaseLayout
+  title={post.title}
+  description={metaDescription}
+  pageType="blog"
+  ogType="article"
+  ogImage={postImage}
+  publishedTime={publishedDate}
+  modifiedTime={modifiedDate}
+  author={siteConfig.siteName}
+  jsonLd={jsonLdSchemas}
+>
+  <!-- Main Content Area -->
+  <div class="blog-single">
+    <div class="container">
+      <!-- Post Title (Full Width) - Comes FIRST -->
+      <header class="post-header">
+        <h1>{post.title}</h1>
+      </header>
+
+      <!-- Breadcrumb - Below Title -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">
+          <svg width="21" height="21" viewBox="0 0 256 512" fill="#00AEEF">
+            <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
+          </svg>
+        </span>
+        <a href="/blogs/uk">Blogs</a>
+        <span class="separator">
+          <svg width="21" height="21" viewBox="0 0 256 512" fill="#00AEEF">
+            <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
+          </svg>
+        </span>
+        <span class="current">{post.title}</span>
+      </nav>
+
+      <!-- Two Column Layout -->
+      <div class="blog-layout">
+        <!-- Left Column: Content (65%) -->
+        <article class="blog-content">
+          <!-- Featured Image -->
+          {postImage && (
+            <div class="featured-image">
+              <img src={postImage} alt={post.title} />
+            </div>
+          )}
+
+          <!-- Post Info (Date) -->
+          <div class="post-info">
+            <time datetime={post.date}>{formatDate(post.date)}</time>
+          </div>
+
+          <!-- Post Content -->
+          <div class="post-body" set:html={cleanContent(post.content)} />
+
+          <!-- Share Section -->
+          <div class="share-section">
+            <span class="share-label">Share:</span>
+            <div class="share-icons">
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+                <svg width="16" height="16" viewBox="0 0 320 512" fill="currentColor">
+                  <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+                </svg>
+              </a>
+              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+                <svg width="16" height="16" viewBox="0 0 512 512" fill="currentColor">
+                  <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                </svg>
+              </a>
+              <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(canonicalUrl)}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor">
+                  <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right Column: Sidebar (35%) -->
+        <aside class="blog-sidebar">
+          <!-- CTA Box -->
+          <div class="cta-box">
+            <div class="cta-content">
+              <h2 class="cta-heading-main">Number 1</h2>
+              <h3 class="cta-heading-sub">in custom sports merchandise</h3>
+              <p class="cta-description">We specialise in the production of custom-designed, personalised sports merchandise such as football scarves, jackets, hoodies, fanwear and teamwear.</p>
+              <a href="/collections/custom-printed-sportswear/" class="cta-button">Discover Products</a>
+            </div>
+          </div>
+
+          <!-- Related Posts -->
+          {relatedPosts.length > 0 && (
+            <div class="sidebar-related">
+              <h4 class="sidebar-heading">Related Posts</h4>
+              <div class="related-list">
+                {relatedPosts.map((rp) => (
+                  <a href={`/blogs/uk/${rp.slug}`} class="related-item">
+                    {rp.slug && (
+                      <div class="related-thumb">
+                        <img src={`${WORKER_URL}/post-image/${rp.slug}`} alt={rp.title} loading="lazy" />
+                      </div>
+                    )}
+                    <div class="related-info">
+                      <h5>{rp.title}</h5>
+                      {rp.excerpt && (
+                        <p>{stripHtml(rp.excerpt).substring(0, 80)}...</p>
+                      )}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Background */
+  .blog-single {
+    background: #FAFAFA;
+    padding: 6% 0 5%;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Post Header (Title) - Comes FIRST */
+  .post-header {
+    text-align: center;
+    padding: 0 15% 0;
+  }
+
+  /* Breadcrumb - Below Title */
+  .breadcrumb {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #787878;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #00AEEF;
+  }
+
+  .breadcrumb .separator {
+    display: flex;
+    align-items: center;
+    margin: 0 2px;
+  }
+
+  .breadcrumb .separator svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .breadcrumb .current {
+    color: #00AEEF;
+  }
+
+  .post-header h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: #253461;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 15px;
+    }
+
+    .post-header h1 {
+      font-size: 43px;
+    }
+
+    .post-header {
+      padding: 0 0 30px;
+    }
+  }
+
+  /* Two Column Layout */
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 10px;
+    padding-top: 100px;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-layout {
+      grid-template-columns: 100%;
+    }
+  }
+
+  /* Left Column: Blog Content */
+  .blog-content {
+    background: transparent;
+  }
+
+  /* Featured Image */
+  .featured-image {
+    margin-bottom: 20px;
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+  }
+
+  /* Post Info (Date) */
+  .post-info {
+    padding: 15px 0;
+    border-bottom: 5px dotted #4a4a4a;
+    margin-bottom: 30px;
+  }
+
+  .post-info time {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #4a4a4a;
+  }
+
+  /* Post Body Content */
+  .post-body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #4a4a4a;
+  }
+
+  .post-body :global(h2) {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #253461;
+    margin: 35px 0 20px;
+  }
+
+  .post-body :global(h3) {
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #253461;
+    margin: 30px 0 15px;
+  }
+
+  .post-body :global(p) {
+    margin: 0 0 20px;
+  }
+
+  .post-body :global(a) {
+    color: #469ADC;
+    text-decoration: underline;
+  }
+
+  .post-body :global(a:hover) {
+    color: #253461;
+  }
+
+  .post-body :global(img) {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .post-body :global(ul) {
+    margin: 0 0 20px;
+    padding-left: 25px;
+    list-style-type: disc;
+  }
+
+  .post-body :global(ol) {
+    margin: 0 0 20px;
+    padding-left: 25px;
+    list-style-type: decimal;
+  }
+
+  .post-body :global(li) {
+    margin-bottom: 10px;
+  }
+
+  .post-body :global(blockquote) {
+    border-left: 4px solid #469ADC;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #5F5F5F;
+  }
+
+  /* Share Section */
+  .share-section {
+    border-top: 1px solid rgba(22, 22, 63, 0.2);
+    border-bottom: 1px solid rgba(22, 22, 63, 0.2);
+    padding: 20px 0;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .share-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #16163f;
+  }
+
+  .share-icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .share-icons a {
+    color: #16163f;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .share-icons a:hover {
+    color: #d3b574;
+  }
+
+  /* Right Column: Sidebar */
+  .blog-sidebar {
+    padding-left: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-sidebar {
+      padding-left: 0;
+      margin-top: 40px;
+    }
+  }
+
+  /* CTA Box */
+  .cta-box {
+    background-image: url('/images/blog/sidebar-cta-bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 80px;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 28, 58, 0.73);
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  .cta-heading-main {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+
+  .cta-heading-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  .cta-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #fff;
+    margin: 0 0 30px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
+    background: #10C99E;
+    border: 1px solid #10C99E;
+    border-radius: 100px;
+    padding: 15px 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: transparent;
+    color: #10C99E;
+  }
+
+  /* Sidebar Related Posts */
+  .sidebar-related {
+    margin-top: 80px;
+  }
+
+  .sidebar-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: #16163f;
+    margin: 0 0 25px;
+  }
+
+  .related-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .related-item {
+    display: flex;
+    gap: 18px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .related-item:hover {
+    opacity: 0.8;
+  }
+
+  .related-thumb {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 120px;
+  }
+
+  .related-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+  }
+
+  .related-info {
+    flex: 1;
+  }
+
+  .related-info h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #4a4a4a;
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+
+  .related-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 1.2em;
+    color: #4a4a4a;
+    margin: 0;
+  }
+</style>

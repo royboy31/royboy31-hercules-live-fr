@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/seo';
+
+const pageTitle = 'Design by perelweb | Hercules Merchandise';
+const pageDescription = 'This website was designed and developed by perelweb.be - a professional web development studio for modern, high-performance websites.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="page"
+>
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">
+          <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+            <path d="M1.5 1L6.5 6L1.5 11" stroke="#469ADC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="current">Design by perelweb</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="developer-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <h1>Design by perelweb</h1>
+
+        <div class="developer-card">
+          <div class="developer-info">
+            <h2>Developed by perelweb.be</h2>
+            <p class="tagline">Professional web development with passion</p>
+
+            <div class="description">
+              <p>
+                Our modern, high-performance website was developed by
+                <a href="https://perelweb.be" target="_blank" rel="noopener" class="developer-link">
+                  perelweb.be
+                </a>
+                - a specialised web development studio that focuses on creating
+                fast, user-friendly and SEO-optimised websites.
+              </p>
+
+              <p>
+                Using cutting-edge technology and a focus on performance, perelweb.be
+                has transformed our vision into a digital reality. The result is a website
+                that not only looks great but also loads lightning-fast and works perfectly
+                on all devices.
+              </p>
+            </div>
+
+            <div class="services-list">
+              <h3>Services from perelweb.be:</h3>
+              <ul>
+                <li>Modern web development with Astro & React</li>
+                <li>E-commerce solutions & WooCommerce integration</li>
+                <li>Performance optimisation & Core Web Vitals</li>
+                <li>SEO optimisation for better visibility</li>
+                <li>Responsive design for all devices</li>
+                <li>Cloudflare integration & CDN optimisation</li>
+              </ul>
+            </div>
+
+            <div class="cta-section">
+              <p>Looking for a reliable partner for your web project?</p>
+              <a href="https://perelweb.be" target="_blank" rel="noopener" class="cta-button">
+                Visit perelweb.be
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb-section {
+    background: #FAFAFA;
+    padding: 15px 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #469ADC;
+  }
+
+  .breadcrumb .current {
+    color: #469ADC;
+  }
+
+  .breadcrumb .separator {
+    display: flex;
+    align-items: center;
+  }
+
+  .developer-section {
+    background: #FAFAFA;
+    padding: 40px 0 80px;
+  }
+
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #253461;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  .developer-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .developer-info h2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #253461;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    color: #469ADC;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
+  .description {
+    margin-bottom: 30px;
+  }
+
+  .description p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    margin-bottom: 15px;
+  }
+
+  .developer-link {
+    color: #469ADC;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .developer-link:hover {
+    color: #10C99E;
+    text-decoration: underline;
+  }
+
+  .services-list {
+    background: #F8FAFC;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  .services-list h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #253461;
+    margin-bottom: 15px;
+  }
+
+  .services-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .services-list li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #5F5F5F;
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+  }
+
+  .services-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310C99E'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #E8E8E8;
+  }
+
+  .cta-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #5F5F5F;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #10C99E;
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #0eb389;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(16, 201, 158, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .developer-card {
+      padding: 30px 20px;
+    }
+
+    .developer-info h2 {
+      font-size: 22px;
+    }
+
+    .tagline {
+      font-size: 16px;
+    }
+
+    .services-list {
+      padding: 20px;
+    }
+  }
+</style>

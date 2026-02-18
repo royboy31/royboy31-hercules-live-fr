@@ -1,0 +1,2906 @@
+{
+  "category": {
+    "id": 278,
+    "name": "Kopfbedeckung",
+    "slug": "kopfbedeckung",
+    "description": "Suchen Sie eine personalisierte Kopfbedeckung, die Ihr Team, Ihren Verein oder Ihre Marke repräsentiert? Bei Hercules Merchandise kreieren wir personalisierte Mützen, Fischerhüte und Radmützen, die Qualität, Komfort und eine auffällig visuelle Identität vereinen.",
+    "count": 15,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 10949,
+      "name": "Trucker Cap",
+      "slug": "personalisierte-trucker-cap",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-trucker-cap/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Trucker Cap</h2>\n<p data-start=\"253\" data-end=\"586\">Ergänzen Sie Ihre Merchandise-Artikel mit einer atmungsaktiven, Retro-inspirierten Note mit unseren <strong>personalisierten Trucker Caps</strong> – eine perfekte Passform für <strong data-start=\"365\" data-end=\"381\">Sportvereine</strong>, <strong data-start=\"383\" data-end=\"396\">Festivals</strong>, <strong data-start=\"398\" data-end=\"412\">Werbeaktionen</strong> und <strong data-start=\"418\" data-end=\"438\">Lifestyle-Marken</strong>. Diese Caps sind bereits ab <strong data-start=\"465\" data-end=\"477\">10 Stück</strong> erhältlich und vereinen Komfort, Sichtbarkeit und Belüftung und bieten gleichzeitig ein hervorragendes Branding-Potenzial.</p>\n<p data-start=\"588\" data-end=\"827\">Jede Cap verfügt über eine <strong data-start=\"608\" data-end=\"635\">strukturierte Baumwollfront</strong>, eine <strong data-start=\"639\" data-end=\"664\">Netzrückseite für Luftzirkulation</strong> und einen verstellbaren <strong data-start=\"684\" data-end=\"712\">Kunststoff-Snapback-Verschluss</strong>. Das vordere Panel ist ideal für die individuelle Gestaltung und ermöglicht es Ihnen, Ihr Logo oder Ihre Botschaft mit auffallender Klarheit zu präsentieren.</p>\n<p data-start=\"829\" data-end=\"896\">Wir bieten verschiedene Dekorationsmöglichkeiten, die zu Ihrem Stil und Budget passen:</p>\n<ul data-start=\"898\" data-end=\"1074\">\n<li data-start=\"898\" data-end=\"926\">\n<p data-start=\"900\" data-end=\"926\"><strong data-start=\"900\" data-end=\"924\">2D- und 3D-Stickerei</strong></p>\n</li>\n<li data-start=\"927\" data-end=\"979\">\n<p data-start=\"929\" data-end=\"979\"><strong data-start=\"929\" data-end=\"946\">Gedruckte Logos</strong></p>\n</li>\n<li data-start=\"980\" data-end=\"1016\">\n<p data-start=\"982\" data-end=\"1016\"><strong data-start=\"982\" data-end=\"1014\">Gewebte oder Sublimations-Patches</strong></p>\n</li>\n<li data-start=\"1017\" data-end=\"1074\">\n<p data-start=\"1019\" data-end=\"1074\"><strong data-start=\"1019\" data-end=\"1046\">Premium-Lederpatches</strong> für einen robusten, modernen Look</p>\n</li>\n</ul>\n<p data-start=\"1076\" data-end=\"1316\">Alle Sonderanfertigungen werden in <strong data-start=\"1103\" data-end=\"1113\">Europa</strong> hergestellt, wodurch Sie Zugang zu zuverlässiger Qualität und Lieferung innerhalb von ca. <strong data-start=\"1173\" data-end=\"1189\">3 Wochen</strong> erhalten. Egal, ob Sie für ein Team, eine Veranstaltung oder eine Einzelhandelskollektion bestellen, unsere Trucker Caps sind so gefertigt, dass sie beeindrucken und lange halten.</p>\n<p data-start=\"1318\" data-end=\"1544\"><strong data-start=\"1318\" data-end=\"1332\">Wichtige Spezifikationen:</strong><br data-start=\"1332\" data-end=\"1335\" /><strong data-start=\"1335\" data-end=\"1352\">Vorderseite:</strong> 100 % Baumwolle<br data-start=\"1364\" data-end=\"1367\" /><strong data-start=\"1367\" data-end=\"1376\">Rückseite:</strong> Mesh (Polyester)<br data-start=\"1393\" data-end=\"1396\" /><strong data-start=\"1396\" data-end=\"1404\">Passform:</strong> Einheitsgröße mit Snapback-Verschluss<br data-start=\"1444\" data-end=\"1447\" /><strong data-start=\"1447\" data-end=\"1462\">Dekoration:</strong> In Europa angebracht<br data-start=\"1480\" data-end=\"1483\" /><strong data-start=\"1483\" data-end=\"1501\">Mindestbestellmenge:</strong> 10 Stück<br data-start=\"1511\" data-end=\"1514\" /><strong data-start=\"1514\" data-end=\"1532\">Lieferzeit:</strong> Ungefähr 4 Wochen</p>\n<p data-start=\"1546\" data-end=\"1746\">Benötigen Sie Hilfe, um Ihre Idee in eine fertige Cap zu verwandeln? Unser Team unterstützt Sie bei der Designplatzierung, der Patchauswahl und der Farbanpassung, um sicherzustellen, dass Ihre <strong>personalisierte</strong> <strong data-start=\"1697\" data-end=\"1719\">Trucker Cap</strong> perfekt zu Ihrer Marke passt.</p>",
+      "short_description": "",
+      "sku": "",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 10950,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap12-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10952,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap02.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap02-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10953,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap06.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap06-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10954,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap04.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap04-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10955,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap08.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap08-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10956,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap13-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10957,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap14-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10958,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap16-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10959,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap17-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10960,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap22-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        },
+        {
+          "id": 10961,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap24.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Trucker-cap24-300x300.png",
+          "alt": "Hercules Merchandise Trucker cap"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 10963,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 10946,
+      "name": "Snapback",
+      "slug": "personalisierte-snapback-cap",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-snapback-cap/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Snapback Caps</h2>\n<p data-start=\"275\" data-end=\"576\">Setze ein Zeichen mit unseren <strong>personalisierten Snapback Caps</strong>, entworfen für <strong data-start=\"347\" data-end=\"368\">Streetwear-Marken</strong>, <strong data-start=\"370\" data-end=\"389\">Fanartikel</strong>, <strong data-start=\"391\" data-end=\"407\">Sportteams</strong> und <strong data-start=\"413\" data-end=\"436\">Business-Promotions</strong>. Mit einer Mindestbestellmenge von nur <strong data-start=\"471\" data-end=\"484\">10 Stück</strong> kannst du unsere Premium-Snapbacks mit deinen eigenen Grafiken, Logos oder Schriftzügen personalisieren.</p>\n<p data-start=\"578\" data-end=\"660\">Wähle aus einer Vielzahl von <strong data-start=\"608\" data-end=\"630\">Dekorationsmethoden</strong>, um dein Design zum Leben zu erwecken:</p>\n<ul data-start=\"662\" data-end=\"939\">\n<li data-start=\"662\" data-end=\"712\">\n<p data-start=\"664\" data-end=\"712\"><strong data-start=\"664\" data-end=\"683\">Flache Stickerei</strong> für elegante, langlebige Optik</p>\n</li>\n<li data-start=\"713\" data-end=\"762\">\n<p data-start=\"715\" data-end=\"762\"><strong data-start=\"715\" data-end=\"738\">Erhöhte 3D-Nähte</strong>, damit dein Logo hervorsticht</p>\n</li>\n<li data-start=\"763\" data-end=\"826\">\n<p data-start=\"765\" data-end=\"826\"><strong data-start=\"765\" data-end=\"797\">Siebdruck oder Transferdruck</strong> für saubere grafische Oberflächen</p>\n</li>\n<li data-start=\"827\" data-end=\"886\">\n<p data-start=\"829\" data-end=\"886\"><strong data-start=\"829\" data-end=\"860\">Gewebte oder sublimierte Aufnäher</strong> für farbenfrohe Designs</p>\n</li>\n<li data-start=\"887\" data-end=\"939\">\n<p data-start=\"889\" data-end=\"939\"><strong data-start=\"889\" data-end=\"908\">Lederaufnäher</strong> für eine stilvolle, haptische Note</p>\n</li>\n</ul>\n<p data-start=\"941\" data-end=\"1224\">Die gesamte Individualisierung erfolgt in <strong data-start=\"977\" data-end=\"1011\">europäischen Produktionsstätten</strong>, was <strong data-start=\"1022\" data-end=\"1045\">schnelle Lieferzeiten</strong> und gleichbleibende Handwerkskunst gewährleistet. Unsere Standard-Snapback verfügt über eine <strong data-start=\"1109\" data-end=\"1139\">strukturierte sechsteilige Krone</strong>, einen <strong data-start=\"1143\" data-end=\"1157\">flachen Schirm</strong> und den legendären <strong data-start=\"1174\" data-end=\"1198\">Kunststoff-Schnappverschluss</strong> zur einfachen Größenanpassung.</p>\n<p data-start=\"1226\" data-end=\"1522\">Das Branding wird typischerweise auf der <strong data-start=\"1263\" data-end=\"1283\">Vorderseite der Kappe</strong> angebracht, aber wir bieten auch Seiten- und Rückseitenplatzierungen an, um die Sichtbarkeit und das kreative Layout zu maximieren. Egal, ob du eine Tanzgruppe ausstattest, eine Modelinie auf den Markt bringst oder deine Marke bewirbst, unsere Snapbacks bieten Komfort, Haltbarkeit und visuelle Wirkung.</p>\n<p data-start=\"1524\" data-end=\"1666\"><strong data-start=\"1524\" data-end=\"1544\">Produktdetails:</strong><br data-start=\"1544\" data-end=\"1547\" /><strong data-start=\"1547\" data-end=\"1558\">Material:</strong> 100 % Baumwolle<br data-start=\"1570\" data-end=\"1573\" /><strong data-start=\"1573\" data-end=\"1584\">Herkunft:</strong> In Europa veredelt<br data-start=\"1604\" data-end=\"1607\" /><strong data-start=\"1607\" data-end=\"1628\">Mindestmenge:</strong> 10 Stück<br data-start=\"1637\" data-end=\"1640\" /><strong data-start=\"1640\" data-end=\"1654\">Lieferzeit:</strong> Ungefähr 4 Wochen</p>\n<p data-start=\"1668\" data-end=\"1802\">Hast du ein bestimmtes Farbschema oder Layout im Sinn? Unser Team arbeitet mit dir zusammen, um sicherzustellen, dass deine Snapback perfekt zu deiner Vision passt.</p>",
+      "short_description": "",
+      "sku": "",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 10948,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Snapback-cap01.jpg",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Snapback-cap01-300x291.jpg",
+          "alt": "Hercules Merchandise Snapback cap"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 10962,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 10105,
+      "name": "Basecap",
+      "slug": "baseball-cap",
+      "permalink": "https://staging.hercules-merchandise.de/products/baseball-cap/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Basecaps</h2>\n<p data-start=\"237\" data-end=\"517\">Entdecken Sie unsere <strong>personalisierten Baseball Caps</strong>, die perfekte Wahl für <strong>Sportmannschaften</strong>, <strong>Vereine</strong>, <strong>Firmenveranstaltungen</strong> oder <strong>Werbekampagnen</strong>. Bereits ab <strong>10 Stück</strong> können Sie unsere hochwertigen <strong>Baumwollcaps</strong> mit Ihrem eigenen Logo, Text oder Emblem personalisieren.</p>\n<p>Wir bieten eine breite Palette von <strong>Dekorationstechniken</strong>, einschließlich:</p>\n<ul>\n<li><strong>2D-Stickerei</strong> für saubere und haltbare Designs</li>\n<li><strong>3D-Puffstickerei</strong> für auffällige, erhabene Logos</li>\n<li><strong>Siebdruck</strong> für scharfe, grafische Details</li>\n<li><strong>Gewebte Aufnäher</strong> und <strong>Sublimationsaufnäher</strong> für vollfarbiges Branding</li>\n<li><strong>Echtlederaufnäher</strong> für ein hochwertiges, strukturiertes Finish</li>\n</ul>\n<p>&nbsp;</p>\n<p>Alle Dekorationen werden in <strong>Europa</strong> angebracht, was <strong>kurze Lieferzeiten</strong>, gleichbleibende Qualität und professionelle Ergebnisse gewährleistet. Unsere Standard-Basecap besteht aus <strong>100 % Baumwolle</strong> und verfügt über einen gebogenen Schirm, ein strukturiertes Vorderteil, Belüftungslöcher und einen verstellbaren <strong>Metallverschluss</strong> auf der Rückseite.</p>\n<p>Die Stickerei wird am häufigsten auf dem <strong>vorderen Teil</strong> angebracht, aber wir können auch Designs an der <strong>Seite oder Rückseite</strong> anbringen, je nach Ihren Branding-Anforderungen. Egal, ob Sie Team-Merchandise, Werbegeschenke für Veranstaltungen oder stilvolle Arbeitskleidung kreieren, diese Lagerkappen bieten sowohl Komfort als auch Sichtbarkeit.</p>\n<p><strong>Spezifikationen:</strong><br />\n<strong>Material:</strong> 100 % Baumwolle<br />\n<strong>Produktion:</strong> veredelt in Europa<br />\n<strong>Mindestbestellmenge:</strong> 10 Stück<br />\n<strong>Lieferzeit:</strong> ca. 4 Wochen</p>\n<p>Suchen Sie ein bestimmtes Design, eine bestimmte Farbkombination oder Platzierung? Unser Team hilft Ihnen gerne dabei, eine Basecap zu kreieren, die wirklich Ihre eigene ist.</p>",
+      "short_description": "",
+      "sku": "",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 10723,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/HerculesMerchandisecap21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/HerculesMerchandisecap21-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10728,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-015.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-015-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10725,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-019.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-019-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10767,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules_Merchandise_cap_68.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules_Merchandise_cap_68-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10730,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-030.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-030-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10724,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-023.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-023-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10766,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-034.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-034-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10726,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-038.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-038-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10735,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-058.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-058-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10729,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-086.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-086-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10736,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-064.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-064-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10734,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-004.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-004-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10733,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-007.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-007-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10727,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-028.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-028-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10754,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-053.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-053-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10731,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-045.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-045-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10732,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-002.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-002-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10737,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-072.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-072-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10738,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-076.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-076-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10758,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-067.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-067-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10741,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-011.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-011-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10750,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-041.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-041-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10752,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-049.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-049-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10768,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/HerculesMerchandisecap23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/HerculesMerchandisecap23-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10743,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-017.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-017-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10770,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/HerculesMerchandisecap42.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/HerculesMerchandisecap42-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10769,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules_Merchandise_cap_70.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules_Merchandise_cap_70-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10746,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-032.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-032-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10756,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-060.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-060-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10762,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-084.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-084-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10757,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-065.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-065-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10745,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-025.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-025-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10747,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-036.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-036-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10748,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-040.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-040-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10740,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-009.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-009-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10755,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-055.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-055-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10751,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-047.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-047-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10759,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-069.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-069-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10742,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-013.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-013-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10749,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-043.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-043-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10753,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-051.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-051-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10760,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-074.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-074-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10761,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-077.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-077-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10744,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-021.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-021-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10765,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-089.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-089-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10763,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-093.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-093-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10764,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-092.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-092-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10739,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-005.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/07/Hercules-Merchandise-cap-005-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 10106,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4588,
+      "name": "Bedruckte Mütze",
+      "slug": "bedruckte-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/bedruckte-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Bedruckte Mütze</h2>\n<p>Dein Design enthält viele Details und/oder viele Farben? Dann ist es schwierig, dieses Muster zu stricken, und wir empfehlen unsere <strong>bedruckten Mützen</strong>.</p>\n<p>Eine bedruckte Mütze hat eine Schicht Polyester, auf die das Design buchstäblich gedruckt wird. Du kannst sogar ein farbiges Bild auf die Mütze drucken.</p>\n<ul>\n<li>70 % Acryl, 30 % Polyester</li>\n<li>Vollfarbdruck</li>\n<li>Mit oder ohne Bommel</li>\n<li>Hergestellt in Europa</li>\n<li>Lieferzeit: ca. 4 Wochen (<a href=\"#q-1\">Eilige Lieferung?</a>)</li>\n</ul>\n<p>Für den Umschlag und den Bommel verwenden wir unser Standardgarn, das in verschiedenen Farben erhältlich ist. Bitte beachte, dass eine bedruckte Mütze mit Polyester weniger dick und daher weniger warm ist als unsere gestrickten Mützen.</p>",
+      "short_description": "",
+      "sku": "custom-printed-beanies",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8819,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedbeaniehat1-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedbeaniehat1-7-300x300.png",
+          "alt": "Hercules Merchandise printed beanie hat"
+        },
+        {
+          "id": 8820,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedbeaniehat2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedbeaniehat2-300x300.png",
+          "alt": "Hercules Merchandise printed beanie hat"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4590,
+          "attributes": [
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4591,
+          "attributes": [
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4523,
+      "name": "Zopfmuster-Mütze",
+      "slug": "personalisierte-zopfmuster-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-zopfmuster-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2><span data-sheets-root=\"1\">Zopfmuster-Mütze</span></h2>\n<p data-start=\"109\" data-end=\"277\">Das <strong data-start=\"113\" data-end=\"136\">Zopfmuster-Stricken</strong> ist eine Stricktechnik, mit der sich überkreuzte Strukturen erzeugen lassen. So verleihen Sie Ihren Mützen einen besonders schönen Effekt.</p>\n<p data-start=\"279\" data-end=\"459\">Die Mütze kann in <strong data-start=\"297\" data-end=\"326\">bis zu 2 Farben gestrickt</strong> werden. Da der Pompon in <strong data-start=\"352\" data-end=\"380\">1, 2 oder sogar 3 Farben</strong> gestaltet werden kann, sind insgesamt bis zu <strong data-start=\"426\" data-end=\"448\">5 Farben pro Mütze</strong> möglich.</p>\n<p data-start=\"461\" data-end=\"475\"><strong data-start=\"461\" data-end=\"473\">Details:</strong></p>\n<ul data-start=\"476\" data-end=\"681\">\n<li data-start=\"476\" data-end=\"501\">\n<p data-start=\"478\" data-end=\"501\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"502\" data-end=\"531\">\n<p data-start=\"504\" data-end=\"531\">Bis zu 2 Farben im Strick</p>\n</li>\n<li data-start=\"532\" data-end=\"590\">\n<p data-start=\"534\" data-end=\"590\">Pompon wahlweise 1-, 2- oder 3-farbig oder ohne Pompon</p>\n</li>\n<li data-start=\"591\" data-end=\"615\">\n<p data-start=\"593\" data-end=\"615\">Produktion in Europa</p>\n</li>\n<li data-start=\"616\" data-end=\"681\">\n<p data-start=\"618\" data-end=\"681\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"683\" data-end=\"923\"><strong data-start=\"683\" data-end=\"698\">Veredelung:</strong><br data-start=\"698\" data-end=\"701\" />Wie bei allen anderen Mützen können auch hier <strong data-start=\"747\" data-end=\"769\">detaillierte Logos</strong> angebracht werden – per <strong data-start=\"794\" data-end=\"807\">Stickerei</strong> oder <strong data-start=\"813\" data-end=\"835\">gewebtem Abzeichen</strong>. Eine besonders kreative Variante ist die <strong data-start=\"878\" data-end=\"920\">Applikation von Buchstaben aus Frottee</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-cable-knitted-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8663,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie1-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie1-16-300x300.png",
+          "alt": "Hercules Merchandise cable knit beanie"
+        },
+        {
+          "id": 8665,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie4-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie4-1-300x300.png",
+          "alt": "Hercules Merchandise cable knit beanie"
+        },
+        {
+          "id": 8666,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie2-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie2-1-300x300.png",
+          "alt": "Hercules Merchandise cable knit beanie"
+        },
+        {
+          "id": 8667,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie3-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecable-knitbeanie3-1-300x300.png",
+          "alt": "Hercules Merchandise cable knit beanie"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit Stickerei",
+            "Ohne Stickerei"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit Bommel",
+            "Ohne Bommel"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4525,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne-bommel"
+            }
+          ]
+        },
+        {
+          "id": 4526,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne-bommel"
+            }
+          ]
+        },
+        {
+          "id": 4527,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        },
+        {
+          "id": 4528,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4517,
+      "name": "Alaska Mütze",
+      "slug": "alaska-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/alaska-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierte <span data-sheets-root=\"1\">Alaska Mütze</span></h2>\n<p data-start=\"124\" data-end=\"304\">Diese Mütze kann in <strong data-start=\"144\" data-end=\"173\">bis zu 2 Farben gestrickt</strong> werden. Durch die Verwendung eines <strong data-start=\"209\" data-end=\"230\">sehr dicken Garns</strong> wirkt das Strickmuster besonders klar und erzeugt einen schönen Effekt.</p>\n<p data-start=\"306\" data-end=\"320\"><strong data-start=\"306\" data-end=\"318\">Details:</strong></p>\n<ul data-start=\"321\" data-end=\"517\">\n<li data-start=\"321\" data-end=\"346\">\n<p data-start=\"323\" data-end=\"346\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"347\" data-end=\"374\">\n<p data-start=\"349\" data-end=\"374\">Bis zu 2 Farben möglich</p>\n</li>\n<li data-start=\"375\" data-end=\"426\">\n<p data-start=\"377\" data-end=\"426\">Pompon in 1, 2 oder 3 Farben – oder ohne Pompon</p>\n</li>\n<li data-start=\"427\" data-end=\"451\">\n<p data-start=\"429\" data-end=\"451\">Produktion in Europa</p>\n</li>\n<li data-start=\"452\" data-end=\"517\">\n<p data-start=\"454\" data-end=\"517\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"519\" data-end=\"623\"><strong data-start=\"519\" data-end=\"534\">Veredelung:</strong><br data-start=\"534\" data-end=\"537\" />Zur Mütze kann ein <strong data-start=\"556\" data-end=\"566\">Pompon</strong> ergänzt werden sowie ein <strong data-start=\"592\" data-end=\"620\">Abzeichen mit Ihrem Logo</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-alaska-hat-with-embroidery",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8650,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat6-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat6-15-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8651,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_19-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8652,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat1-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8653,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat11-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8654,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat15-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8655,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat8-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8656,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_21-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8657,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat4-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8658,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat13-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8659,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat17-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit Stickerei",
+            "Ohne Stickerei"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit Bommel",
+            "Ohne Pompon"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4519,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "withou-pompon"
+            }
+          ]
+        },
+        {
+          "id": 4520,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "withou-pompon"
+            }
+          ]
+        },
+        {
+          "id": 4521,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        },
+        {
+          "id": 4522,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4514,
+      "name": "Schlichte Standard Mütze",
+      "slug": "schlichte-standard-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/schlichte-standard-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2><span data-sheets-root=\"1\">Schlichte Standard Mütze</span></h2>\n<p data-start=\"115\" data-end=\"369\">Unser Basic-Angebot besteht aus einer <strong data-start=\"160\" data-end=\"181\">einfarbigen Mütze</strong>, auf die wir Ihr Logo per <strong data-start=\"208\" data-end=\"221\">Stickerei</strong> aufbringen. Unsere Fabrik ist ein absoluter Spezialist für Stickereien – so können wir bei jedem Logo ein <strong data-start=\"328\" data-end=\"354\">fantastisches Ergebnis</strong> garantieren.</p>\n<p data-start=\"371\" data-end=\"514\">Sie können aus <strong data-start=\"386\" data-end=\"407\">15 Standardfarben</strong> für die Mütze wählen. Dank des elastischen Materials passt sie sich flexibel an – <strong data-start=\"490\" data-end=\"511\">One Size fits all</strong>.</p>\n<p data-start=\"516\" data-end=\"530\"><strong data-start=\"516\" data-end=\"528\">Details:</strong></p>\n<ul data-start=\"531\" data-end=\"733\">\n<li data-start=\"531\" data-end=\"554\">\n<p data-start=\"533\" data-end=\"554\">Material: Acrylgarn</p>\n</li>\n<li data-start=\"555\" data-end=\"577\">\n<p data-start=\"557\" data-end=\"577\">Einheitliche Farbe</p>\n</li>\n<li data-start=\"578\" data-end=\"595\">\n<p data-start=\"580\" data-end=\"595\">Breite: 22 cm</p>\n</li>\n<li data-start=\"596\" data-end=\"611\">\n<p data-start=\"598\" data-end=\"611\">Ohne Pompon</p>\n</li>\n<li data-start=\"612\" data-end=\"656\">\n<p data-start=\"614\" data-end=\"656\">Produktion in China, Stickerei in Europa</p>\n</li>\n<li data-start=\"657\" data-end=\"733\">\n<p data-start=\"659\" data-end=\"733\">Standard-Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"735\" data-end=\"969\">Hinweis: Da es sich um eine <strong data-start=\"766\" data-end=\"789\">vorgefertigte Mütze</strong> handelt, ist es nicht möglich, ein Muster oder einen eingewebten Text hinzuzufügen.</p>\n<p data-start=\"735\" data-end=\"969\">Für eine maßgeschneiderte Strickmütze wählen Sie bitte unser Modell <strong data-start=\"947\" data-end=\"966\">Standard Mütze.</strong></p>",
+      "short_description": "",
+      "sku": "cutom-basic-beanie-hats-with-embroidery",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8638,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_13-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_13-15-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8639,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_35-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8640,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_19-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8641,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_16-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8642,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasicbeaniehatwithembroidery5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasicbeaniehatwithembroidery5-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8643,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_14-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8644,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_37.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_37-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8645,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_21-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8646,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_17-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8647,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasicbeaniehatwithembroidery1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasicbeaniehatwithembroidery1-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8648,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasicbeaniehatwithembroidery2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasicbeaniehatwithembroidery2-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        },
+        {
+          "id": 8649,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basic_beanie_hat_with_embroidery_7-300x300.png",
+          "alt": "Hercules_Merchandise_basic_beanie_hat_with_embroidery"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4516,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4320,
+      "name": "Personalisierte Cap",
+      "slug": "personalisierte-cap",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-cap/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"139\" data-end=\"188\"><strong data-start=\"143\" data-end=\"186\">Vollständig individuell gefertigte Caps</strong></h3>\n<p data-start=\"190\" data-end=\"669\">Unsere <strong data-start=\"197\" data-end=\"235\">vollständig maßgeschneiderten Caps</strong> bieten <strong data-start=\"243\" data-end=\"275\">absolute Gestaltungsfreiheit</strong> – ideal für <strong data-start=\"288\" data-end=\"326\">Vereine, Marken und Organisationen</strong>, die einzigartige und auffällige Kopfbedeckungen wünschen.<br data-start=\"385\" data-end=\"388\" />Ab <strong data-start=\"391\" data-end=\"404\">200 Stück</strong> kann <strong data-start=\"410\" data-end=\"434\">jedes Detail der Cap</strong> individuell angepasst werden: Form, Farbkombinationen, Verschlussart, Schirmform und sogar die Farbe der Ösen.<br data-start=\"545\" data-end=\"548\" />Alle Caps werden <strong data-start=\"565\" data-end=\"593\">auf Bestellung gefertigt</strong>, sodass Sie ein <strong data-start=\"610\" data-end=\"649\">einzigartiges Produkt von Grund auf</strong> gestalten können.</p>\n<p data-start=\"671\" data-end=\"863\">Die Herstellung erfolgt in <strong data-start=\"698\" data-end=\"707\">Asien</strong> mit einer <strong data-start=\"718\" data-end=\"759\">Standard-Lieferzeit von ca. 14 Wochen</strong>.<br data-start=\"760\" data-end=\"763\" />Die längere Produktionszeit gewährleistet höchste Qualität – selbst bei aufwendigen Techniken wie:</p>\n<ul data-start=\"864\" data-end=\"1037\">\n<li data-start=\"864\" data-end=\"884\">\n<p data-start=\"866\" data-end=\"884\"><strong data-start=\"866\" data-end=\"882\">3D-Stickerei</strong></p>\n</li>\n<li data-start=\"885\" data-end=\"918\">\n<p data-start=\"887\" data-end=\"918\"><strong data-start=\"887\" data-end=\"916\">Allover-Sublimationsdruck</strong></p>\n</li>\n<li data-start=\"919\" data-end=\"952\">\n<p data-start=\"921\" data-end=\"952\"><strong data-start=\"921\" data-end=\"950\">Silikon- oder PVC-Patches</strong></p>\n</li>\n<li data-start=\"953\" data-end=\"981\">\n<p data-start=\"955\" data-end=\"981\"><strong data-start=\"955\" data-end=\"979\">Vintage-Wash-Effekte</strong></p>\n</li>\n<li data-start=\"982\" data-end=\"1011\">\n<p data-start=\"984\" data-end=\"1011\"><strong data-start=\"984\" data-end=\"1009\">Gravierte Verschlüsse</strong></p>\n</li>\n<li data-start=\"1012\" data-end=\"1037\">\n<p data-start=\"1014\" data-end=\"1037\"><strong data-start=\"1014\" data-end=\"1035\">Gewebte Abzeichen</strong></p>\n</li>\n</ul>\n<p data-start=\"1039\" data-end=\"1219\">Darüber hinaus können Sie auch das <strong data-start=\"1074\" data-end=\"1110\">Innenleben individuell gestalten</strong> – etwa durch <strong data-start=\"1124\" data-end=\"1171\">eigene Etiketten, Bänder oder Schweißbänder</strong> – für ein vollständig gebrandetes Endprodukt.</p>\n<p data-start=\"1221\" data-end=\"1235\"><strong data-start=\"1221\" data-end=\"1233\">Details:</strong></p>\n<ul data-start=\"1236\" data-end=\"1369\">\n<li data-start=\"1236\" data-end=\"1278\">\n<p data-start=\"1238\" data-end=\"1278\">Material: in der Regel 100 % Baumwolle</p>\n</li>\n<li data-start=\"1279\" data-end=\"1300\">\n<p data-start=\"1281\" data-end=\"1300\">Produktion: Asien</p>\n</li>\n<li data-start=\"1301\" data-end=\"1369\">\n<p data-start=\"1303\" data-end=\"1369\">Lieferzeit: ca. 14 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"1371\" data-end=\"1761\">Ob für Ihre <strong data-start=\"1383\" data-end=\"1411\">eigene Merchandise-Linie</strong>, als <strong data-start=\"1417\" data-end=\"1437\">Team-Ausstattung</strong> oder für ein <strong data-start=\"1451\" data-end=\"1464\">Großevent</strong> – vollständig maßgeschneiderte Caps bieten die <strong data-start=\"1512\" data-end=\"1528\">Flexibilität</strong>, jedes gewünschte Design, jede Farbe und jedes Branding umzusetzen.<br data-start=\"1596\" data-end=\"1599\" />Beliebte Modelle sind <strong data-start=\"1621\" data-end=\"1679\">Baseballcaps, Trucker-Caps, Snapbacks, Five-Panel-Caps</strong> und mehr – alle in <strong data-start=\"1699\" data-end=\"1736\">Größe, Struktur, Stoff und Finish</strong> individuell anpassbar.</p>\n<p data-start=\"1763\" data-end=\"2106\">Die <strong data-start=\"1767\" data-end=\"1790\">Mindestbestellmenge</strong> für maßgeschneiderte Caps beträgt <strong data-start=\"1825\" data-end=\"1838\">200 Stück</strong>.<br data-start=\"1839\" data-end=\"1842\" />Die Produktion erfolgt im Ausland, aber unser <strong data-start=\"1888\" data-end=\"1909\">europäisches Team</strong> begleitet jeden Schritt des kreativen Prozesses – von der Designentwicklung über Muster bis zur finalen Auslieferung – für <strong data-start=\"2033\" data-end=\"2103\">klare Kommunikation, exakte Ergebnisse und höchste Zuverlässigkeit</strong>.</p>\n<p data-start=\"2108\" data-end=\"2246\">Wenn Sie <strong data-start=\"2117\" data-end=\"2150\">professionell gefertigte Caps</strong> wünschen, die <strong data-start=\"2165\" data-end=\"2210\">perfekt auf Ihre Anforderungen abgestimmt</strong> sind, ist dies die ideale Lösung.</p>",
+      "short_description": "",
+      "sku": "custom-made-baseball-caps",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 10702,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-12-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 10708,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-19-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 8301,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap8-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap8-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 8292,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap10-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap10-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 8304,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap11-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap11-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 8305,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap12-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap12-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 8308,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap13-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap13-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 8310,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap14-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap14-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 8324,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap15-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecap15-1-300x300.png",
+          "alt": "Hercules Merchandise cap"
+        },
+        {
+          "id": 10701,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-11-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 10709,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-16-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 10705,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-17-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 10704,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-14-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 10703,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-13-300x300.png",
+          "alt": "Cap custom made Asia"
+        },
+        {
+          "id": 10706,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Cap-custom-made-Asia-18-300x300.png",
+          "alt": "Cap custom made Asia"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 10711,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4273,
+      "name": "Personalisierte Business Mütze",
+      "slug": "personalisierte-business-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-business-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"112\" data-end=\"147\"><strong data-start=\"116\" data-end=\"147\">Individuelle Business-Mütze</strong></h3>\n<p data-start=\"149\" data-end=\"423\">Suchen Sie eine <strong data-start=\"165\" data-end=\"199\">personalisierte Business-Mütze</strong>, die nicht nur im Stadion, sondern auch <strong data-start=\"240\" data-end=\"253\">außerhalb</strong> getragen werden kann?<br data-start=\"275\" data-end=\"278\" />Oder möchten Sie eine <strong data-start=\"300\" data-end=\"346\">hochwertige Mütze für Ihre Geschäftskunden</strong> gestalten?<br data-start=\"357\" data-end=\"360\" />Diese <strong data-start=\"366\" data-end=\"398\">klassische, stilvolle Beanie</strong> ist die perfekte Wahl.</p>\n<p data-start=\"425\" data-end=\"606\">Die Mütze wird aus <strong data-start=\"444\" data-end=\"464\">melierten Garnen</strong> gefertigt – also aus einer Mischung verschiedener Farbtöne.<br data-start=\"524\" data-end=\"527\" />Die beliebtesten Farben sind <strong data-start=\"556\" data-end=\"568\">Hellgrau</strong>, <strong data-start=\"570\" data-end=\"584\">Dunkelgrau</strong> und <strong data-start=\"589\" data-end=\"603\">Dunkelblau</strong>.</p>\n<p data-start=\"608\" data-end=\"622\"><strong data-start=\"608\" data-end=\"620\">Details:</strong></p>\n<ul data-start=\"623\" data-end=\"837\">\n<li data-start=\"623\" data-end=\"677\">\n<p data-start=\"625\" data-end=\"677\">Material: <strong data-start=\"635\" data-end=\"675\">Acryl mit einem kleinen Anteil Lycra</strong></p>\n</li>\n<li data-start=\"678\" data-end=\"709\">\n<p data-start=\"680\" data-end=\"709\">Bis zu <strong data-start=\"687\" data-end=\"699\">7 Farben</strong> möglich</p>\n</li>\n<li data-start=\"710\" data-end=\"729\">\n<p data-start=\"712\" data-end=\"729\"><strong data-start=\"712\" data-end=\"727\">Ohne Bommel</strong></p>\n</li>\n<li data-start=\"730\" data-end=\"758\">\n<p data-start=\"732\" data-end=\"758\"><strong data-start=\"732\" data-end=\"756\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"759\" data-end=\"837\">\n<p data-start=\"761\" data-end=\"837\"><strong data-start=\"761\" data-end=\"785\">Standard-Lieferzeit:</strong> 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"839\" data-end=\"1055\">Eine klassische Business-Mütze wird in der Regel aus <strong data-start=\"892\" data-end=\"913\">einem Garnfarbton</strong> gefertigt.<br data-start=\"924\" data-end=\"927\" />Auf Wunsch kann jedoch ein <strong data-start=\"954\" data-end=\"974\">weiterer Farbton</strong> integriert werden – z. B. eine <strong data-start=\"1006\" data-end=\"1052\">dezente Streifenlinie in der Umschlagkante</strong>.</p>\n<p>Das <strong data-start=\"104\" data-end=\"112\">Logo</strong> wird über ein <strong data-start=\"127\" data-end=\"143\">Lederetikett</strong> auf der Mütze angebracht.<br data-start=\"169\" data-end=\"172\" />Das Leder ist in mehreren Farben erhältlich – <strong data-start=\"218\" data-end=\"242\" data-is-only-node=\"\">Blau, Schwarz, Braun</strong> und <strong data-start=\"247\" data-end=\"254\">Rot</strong>.<br data-start=\"255\" data-end=\"258\" />Kontaktieren Sie uns jetzt, um Ihr <strong data-start=\"299\" data-end=\"323\">individuelles Design</strong> zu besprechen.</p>",
+      "short_description": "",
+      "sku": "custom-business-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8062,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedbusinessbeanie3-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedbusinessbeanie3-20-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8063,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedbusinessbeanie2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedbusinessbeanie2-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8064,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedbusinessbeanie1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedbusinessbeanie1-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit Bommel",
+            "Ohne Bommel"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4275,
+          "attributes": [
+            {
+              "name": "Bommel",
+              "value": "ohne-bommel"
+            }
+          ]
+        },
+        {
+          "id": 4276,
+          "attributes": [
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4269,
+      "name": "Personalisierte Vintage Mütze",
+      "slug": "personalisierte-vintage-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-vintage-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"120\" data-end=\"154\"><strong data-start=\"124\" data-end=\"154\">Personalisierte Vintage-Mütze</strong></h3>\n<p data-start=\"156\" data-end=\"386\">Erweitern Sie Ihr Sortiment um diese <strong data-start=\"193\" data-end=\"222\">modische Rippstrick-Mütze</strong> im <strong data-start=\"226\" data-end=\"242\">Vintage-Stil</strong>.<br data-start=\"243\" data-end=\"246\" />Die Mütze ist in <strong data-start=\"263\" data-end=\"283\">mehrere Streifen</strong> unterteilt, wobei <strong data-start=\"302\" data-end=\"344\">abwechselnd dickere und dünnere Linien</strong> ein markantes <strong data-start=\"359\" data-end=\"375\">Rippenmuster</strong> ergeben.</p>\n<p data-start=\"388\" data-end=\"575\">Es ist möglich, in den <strong data-start=\"411\" data-end=\"456\">vertieften Linien unterschiedliche Farben</strong> einzuarbeiten – auf diese Weise können sogar <strong data-start=\"502\" data-end=\"533\">Buchstaben oder Schriftzüge</strong> direkt in das Design integriert werden.</p>\n<p data-start=\"577\" data-end=\"591\"><strong data-start=\"577\" data-end=\"589\">Details:</strong></p>\n<ul data-start=\"592\" data-end=\"813\">\n<li data-start=\"592\" data-end=\"621\">\n<p data-start=\"594\" data-end=\"621\">Material: <strong data-start=\"604\" data-end=\"619\">100 % Acryl</strong></p>\n</li>\n<li data-start=\"622\" data-end=\"653\">\n<p data-start=\"624\" data-end=\"653\">Bis zu <strong data-start=\"631\" data-end=\"643\">3 Farben</strong> möglich</p>\n</li>\n<li data-start=\"654\" data-end=\"710\">\n<p data-start=\"656\" data-end=\"710\"><strong data-start=\"656\" data-end=\"671\">Ohne Bommel</strong> (Bommel in bis zu 3 Farben optional)</p>\n</li>\n<li data-start=\"711\" data-end=\"739\">\n<p data-start=\"713\" data-end=\"739\"><strong data-start=\"713\" data-end=\"737\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"740\" data-end=\"813\">\n<p data-start=\"742\" data-end=\"813\"><strong data-start=\"742\" data-end=\"757\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"815\" data-end=\"987\">Zusätzlich zur eingewebten Schrift können Sie auch ein <strong data-start=\"870\" data-end=\"879\">Badge</strong> oder eine <strong data-start=\"890\" data-end=\"918\">Stickerei mit Ihrem Logo</strong> anbringen lassen – für ein <strong data-start=\"946\" data-end=\"984\">hochwertiges, individuelles Finish</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-vintage-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8056,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_6-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_6-20-300x300.png",
+          "alt": "Hercules_Merchandise_vintage_beanie_hat"
+        },
+        {
+          "id": 8057,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat1-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8058,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat3-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8059,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat2-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8060,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_8-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8061,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat4-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4271,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4272,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4265,
+      "name": "Personalisierte Wendemütze",
+      "slug": "personalisierte-wendemutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-wendemutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"122\" data-end=\"153\"><strong data-start=\"126\" data-end=\"153\">Personalisierte Wendemütze</strong></h3>\n<p data-start=\"155\" data-end=\"326\"><strong data-start=\"155\" data-end=\"173\">2 Mützen in 1!</strong><br data-start=\"173\" data-end=\"176\" />Sie können sich nicht zwischen zwei Designs entscheiden? Kein Problem – wir fertigen <strong data-start=\"261\" data-end=\"315\">eine Wendemütze mit zwei unterschiedlichen Designs</strong> für Sie.</p>\n<p data-start=\"328\" data-end=\"565\">Die Mütze wird auf die gleiche Weise wie unsere Standard-Mütze hergestellt, besteht jedoch aus <strong data-start=\"424\" data-end=\"444\">zwei Lagen Stoff</strong>.<br data-start=\"445\" data-end=\"448\" />Ein <strong data-start=\"452\" data-end=\"480\">Bommel ist nicht möglich</strong>, dafür kann die Mütze mit <strong data-start=\"507\" data-end=\"546\">Stickereien oder gewebten Abzeichen</strong> versehen werden.</p>\n<p data-start=\"567\" data-end=\"581\"><strong data-start=\"567\" data-end=\"579\">Details:</strong></p>\n<ul data-start=\"582\" data-end=\"783\">\n<li data-start=\"582\" data-end=\"636\">\n<p data-start=\"584\" data-end=\"636\">Material: <strong data-start=\"594\" data-end=\"634\">Acryl mit einem kleinen Anteil Lycra</strong></p>\n</li>\n<li data-start=\"637\" data-end=\"660\">\n<p data-start=\"639\" data-end=\"660\">Bis zu <strong data-start=\"646\" data-end=\"658\">7 Farben</strong></p>\n</li>\n<li data-start=\"661\" data-end=\"680\">\n<p data-start=\"663\" data-end=\"680\"><strong data-start=\"663\" data-end=\"678\">Ohne Bommel</strong></p>\n</li>\n<li data-start=\"681\" data-end=\"709\">\n<p data-start=\"683\" data-end=\"709\"><strong data-start=\"683\" data-end=\"707\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"710\" data-end=\"783\">\n<p data-start=\"712\" data-end=\"783\"><strong data-start=\"712\" data-end=\"727\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"785\" data-end=\"885\">Diese Wendemütze kann auch in einer <strong data-start=\"821\" data-end=\"865\">kleineren Version für Kinder bis 8 Jahre</strong> gefertigt werden.</p>",
+      "short_description": "",
+      "sku": "custom-reversible-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8046,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_12-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_12-20-300x300.png",
+          "alt": "Hercules Merchandise reversible beanie"
+        },
+        {
+          "id": 8047,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_16-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8048,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie1-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8049,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie2-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8050,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie4-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8051,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie9-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8052,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_14-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8053,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_reversible_beanie_18-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8054,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie6-300x300.png",
+          "alt": "Personalisierte Wendemütze"
+        },
+        {
+          "id": 8055,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisereversiblebeanie10-300x300.png",
+          "alt": "Hercules Merchandise reversible beanie"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit Stickerei",
+            "Ohne Stickerei"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4267,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            }
+          ]
+        },
+        {
+          "id": 4268,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4259,
+      "name": "Personalisierte Wintermütze",
+      "slug": "personalisierte-wintermutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-wintermutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"123\" data-end=\"155\"><strong data-start=\"127\" data-end=\"155\">Individuelle Wintermütze</strong></h3>\n<p data-start=\"157\" data-end=\"441\">Mit unserer <strong data-start=\"169\" data-end=\"208\">personalisierten Winter-Strickmütze</strong> trotzen Sie jeder Kälte!<br data-start=\"233\" data-end=\"236\" />Die Mütze wird mit <strong data-start=\"255\" data-end=\"289\">dickem Garn und groben Maschen</strong> gestrickt, was sie besonders <strong data-start=\"319\" data-end=\"341\">warm und voluminös</strong> macht.<br data-start=\"348\" data-end=\"351\" />Der <strong data-start=\"355\" data-end=\"367\">Umschlag</strong> sorgt zusätzlich für ein <strong data-start=\"393\" data-end=\"438\">angenehm warmes Gefühl an Stirn und Ohren</strong>.</p>\n<p data-start=\"443\" data-end=\"737\">Am oberen Teil wird häufig der <strong data-start=\"474\" data-end=\"516\">Vereinsname direkt in das Strickmuster</strong> eingearbeitet – auf Wunsch auch mit <strong data-start=\"553\" data-end=\"576\">markanten Elementen</strong> wie <strong data-start=\"581\" data-end=\"611\">Sternen oder Schneeflocken</strong>.<br data-start=\"612\" data-end=\"615\" />Ein <strong data-start=\"619\" data-end=\"627\">Logo</strong> wird <strong data-start=\"633\" data-end=\"653\">auf dem Umschlag</strong> entweder <strong data-start=\"663\" data-end=\"678\">aufgestickt</strong> oder über ein <strong data-start=\"693\" data-end=\"723\">gewebtes Abzeichen </strong>angebracht.</p>\n<p data-start=\"739\" data-end=\"753\"><strong data-start=\"739\" data-end=\"751\">Details:</strong></p>\n<ul data-start=\"754\" data-end=\"970\">\n<li data-start=\"754\" data-end=\"783\">\n<p data-start=\"756\" data-end=\"783\">Material: <strong data-start=\"766\" data-end=\"781\">100 % Acryl</strong></p>\n</li>\n<li data-start=\"784\" data-end=\"807\">\n<p data-start=\"786\" data-end=\"807\">Bis zu <strong data-start=\"793\" data-end=\"805\">3 Farben</strong></p>\n</li>\n<li data-start=\"808\" data-end=\"867\">\n<p data-start=\"810\" data-end=\"867\"><strong data-start=\"810\" data-end=\"820\">Bommel</strong> in 1, 2 oder 3 Farben – oder <strong data-start=\"850\" data-end=\"865\">ohne Bommel</strong></p>\n</li>\n<li data-start=\"868\" data-end=\"896\">\n<p data-start=\"870\" data-end=\"896\"><strong data-start=\"870\" data-end=\"894\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"897\" data-end=\"970\">\n<p data-start=\"899\" data-end=\"970\"><strong data-start=\"899\" data-end=\"914\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"972\" data-end=\"1179\">Wir empfehlen die <strong data-start=\"990\" data-end=\"1043\">Wintermütze vor allem für kräftige, grobe Designs</strong>.<br data-start=\"1044\" data-end=\"1047\" />Wenn Ihr Design <strong data-start=\"1063\" data-end=\"1079\">mehr Details</strong> enthält oder <strong data-start=\"1093\" data-end=\"1114\">mehr als 3 Farben</strong> umfasst, empfehlen wir stattdessen unsere <strong data-start=\"1157\" data-end=\"1176\">Standard-Mütze</strong></p>\n<p data-start=\"1181\" data-end=\"1291\">Für Kinder stellen wir eine <strong data-start=\"1209\" data-end=\"1242\">kleinere Version (19 × 18 cm)</strong> her, geeignet für Kinder <strong data-start=\"1268\" data-end=\"1288\">bis etwa 8 Jahre</strong></p>",
+      "short_description": "",
+      "sku": "custom-winter-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 10144,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Winter-beanie-036.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Winter-beanie-036-300x300.png",
+          "alt": "Hercules Merchandise Winter beanie"
+        },
+        {
+          "id": 7997,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat67-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat67-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 7999,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat55-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat55-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8000,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat59-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat59-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8002,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat51-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat51-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8003,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat9-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat9-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8005,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat1-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat1-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8007,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat23-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat23-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8009,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_71-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_71-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8011,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat63-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat63-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8012,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat47-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat47-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8014,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat3-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat3-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8015,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat7-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat7-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8017,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat15-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat15-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8018,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat18-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat18-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8019,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat33-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat33-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8021,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat4-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat4-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8022,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat35-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat35-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8024,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat25-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat25-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8025,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat29-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat29-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8027,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat6-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat6-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8028,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat31-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat31-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8030,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat8-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat8-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8032,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat49-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat49-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8035,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat20-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat20-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8038,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_73-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_73-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8040,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat37-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat37-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8041,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat53-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat53-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8042,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat57-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat57-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8043,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat61-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat61-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8044,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat65-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat65-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8045,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat69-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat69-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4261,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4262,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4263,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        },
+        {
+          "id": 4264,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4253,
+      "name": "Personalisierte Standard-Mütze",
+      "slug": "custom-football-beanie-hats",
+      "permalink": "https://staging.hercules-merchandise.de/products/custom-football-beanie-hats/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"117\" data-end=\"152\"><strong data-start=\"121\" data-end=\"152\">Personalisierte Standard-Mütze</strong></h3>\n<p data-start=\"154\" data-end=\"444\">Unsere <strong data-start=\"161\" data-end=\"179\">Standard-Mütze</strong> ist das <strong data-start=\"188\" data-end=\"210\">beliebteste Modell</strong> in unserem Sortiment.<br data-start=\"232\" data-end=\"235\" />Sie wird mit einem <strong data-start=\"254\" data-end=\"269\">feinen Garn</strong> gestrickt und enthält zusätzlich <strong data-start=\"303\" data-end=\"312\">Lycra</strong>, wodurch die Maschen eng aneinanderliegen.<br data-start=\"355\" data-end=\"358\" />So können selbst <strong data-start=\"375\" data-end=\"399\">detailreiche Designs</strong> präzise in die Mütze eingearbeitet werden.</p>\n<p data-start=\"446\" data-end=\"687\">Sie können optional einen <strong data-start=\"472\" data-end=\"502\">Bommel in beliebiger Farbe</strong> hinzufügen.<br data-start=\"514\" data-end=\"517\" />Die Mütze kann <strong data-start=\"532\" data-end=\"558\">mit oder ohne Umschlag</strong> produziert werden.<br data-start=\"577\" data-end=\"580\" />Text oder Schriftzüge können sowohl <strong data-start=\"616\" data-end=\"634\">im oberen Teil</strong> als auch <strong data-start=\"644\" data-end=\"664\">auf dem Umschlag</strong> eingestrickt werden.</p>\n<p data-start=\"689\" data-end=\"703\"><strong data-start=\"689\" data-end=\"701\">Details:</strong></p>\n<ul data-start=\"704\" data-end=\"961\">\n<li data-start=\"704\" data-end=\"758\">\n<p data-start=\"706\" data-end=\"758\">Material: <strong data-start=\"716\" data-end=\"756\">Acryl mit einem kleinen Anteil Lycra</strong></p>\n</li>\n<li data-start=\"759\" data-end=\"782\">\n<p data-start=\"761\" data-end=\"782\">Bis zu <strong data-start=\"768\" data-end=\"780\">5 Farben</strong></p>\n</li>\n<li data-start=\"783\" data-end=\"804\">\n<p data-start=\"785\" data-end=\"804\"><strong data-start=\"785\" data-end=\"796\">Breite:</strong> 22 cm</p>\n</li>\n<li data-start=\"805\" data-end=\"858\">\n<p data-start=\"807\" data-end=\"858\"><strong data-start=\"807\" data-end=\"818\">Bommel:</strong> 1, 2 oder 3 Farben – oder ohne Bommel</p>\n</li>\n<li data-start=\"859\" data-end=\"887\">\n<p data-start=\"861\" data-end=\"887\"><strong data-start=\"861\" data-end=\"885\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"888\" data-end=\"961\">\n<p data-start=\"890\" data-end=\"961\"><strong data-start=\"890\" data-end=\"905\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"963\" data-end=\"1270\">Für <strong data-start=\"967\" data-end=\"989\">detaillierte Logos</strong> empfehlen wir <strong data-start=\"1004\" data-end=\"1017\">Stickerei</strong> oder ein <strong data-start=\"1027\" data-end=\"1048\">Abzeichen (Badge)</strong>.<br data-start=\"1049\" data-end=\"1052\" />Letzteres kann <strong data-start=\"1067\" data-end=\"1077\">gewebt</strong> (höhere Qualität) oder <strong data-start=\"1101\" data-end=\"1113\">gedruckt</strong> (mehr Detailtreue) sein.<br data-start=\"1138\" data-end=\"1141\" />Bei <strong data-start=\"1145\" data-end=\"1170\">kleineren Stückzahlen</strong> wird in der Regel <strong data-start=\"1189\" data-end=\"1202\">Stickerei</strong> verwendet – wir beraten Sie gerne, welche Option am besten passt.</p>\n<p data-start=\"1272\" data-end=\"1380\">Für Kinder bieten wir eine <strong data-start=\"1299\" data-end=\"1332\">kleinere Version (19 × 18 cm)</strong> an, geeignet für Kinder <strong data-start=\"1357\" data-end=\"1377\">bis etwa 8 Jahre</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-football-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 7916,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat51-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat51-20-300x300.png",
+          "alt": "Hercules Merchandise standard knitted beanie hat"
+        },
+        {
+          "id": 7917,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_147.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_147-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7918,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat71.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat71-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7919,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_108.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_108-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7920,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_120.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_120-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7921,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_148.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_148-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7922,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_144.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_144-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7923,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat67.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat67-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7924,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat47.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat47-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7925,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_128.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_128-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7926,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_112.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_112-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7927,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat97.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat97-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7928,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_132.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_132-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7929,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_140.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_140-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7930,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_149.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_149-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7931,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat104.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat104-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7932,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat101.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat101-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7933,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat88.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat88-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7934,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat55.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat55-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7935,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_136.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_136-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7936,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_124.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_124-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7937,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat39.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat39-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7938,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat83.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat83-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7939,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat90.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat90-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7940,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat43.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat43-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7941,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat59.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat59-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7942,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat63-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7943,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat75.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat75-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7944,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat4-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7945,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat3-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7946,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat6-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7947,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat11-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7948,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat16-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7949,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat31.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat31-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7950,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat79.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat79-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7951,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat23-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7952,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat35-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7953,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat1-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7954,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat7-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7955,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat20-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7956,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat13-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7957,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat9-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7958,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat53.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat53-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7959,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat10-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7960,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat73.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat73-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7961,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_122.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_122-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7962,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_110.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_110-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7963,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_146.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_146-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7964,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat49.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat49-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7965,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_130.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_130-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7966,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_134.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_134-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7967,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat99.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat99-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7968,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat106.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat106-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7969,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat69.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat69-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7970,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_114.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_114-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7971,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_142.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_142-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7972,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat102.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat102-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7973,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_126.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_126-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7974,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat91.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat91-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7975,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_138.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_138-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7976,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat56.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat56-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7977,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat41.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat41-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7978,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat85.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat85-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7979,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat86.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat86-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7980,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat45-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7981,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat77.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat77-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4255,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        },
+        {
+          "id": 4256,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        },
+        {
+          "id": 4257,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4258,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4213,
+      "name": "Personalisierter Fischerhut",
+      "slug": "personalisierter-fischerhut",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-fischerhut/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"52\"><strong data-start=\"0\" data-end=\"50\">Personalisierter Fischerhut</strong></h3>\n<p data-start=\"54\" data-end=\"316\">Wir bedrucken Ihren <strong data-start=\"74\" data-end=\"101\">Fischerhut </strong>vollständig nach Ihren Wünschen – wahlweise <strong data-start=\"146\" data-end=\"165\">auf einer Seite</strong> oder sogar <strong data-start=\"177\" data-end=\"196\">innen und außen</strong>. So können Sie <strong data-start=\"212\" data-end=\"241\">zwei verschiedene Designs</strong> kombinieren und den Hut einfach umdrehen, um einen neuen Look zu zeigen.</p>\n<p data-start=\"318\" data-end=\"339\"><strong data-start=\"318\" data-end=\"337\">Produktdetails:</strong></p>\n<ul data-start=\"340\" data-end=\"555\">\n<li data-start=\"340\" data-end=\"369\">\n<p data-start=\"342\" data-end=\"369\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"370\" data-end=\"415\">\n<p data-start=\"372\" data-end=\"415\">Vollfarbiger Druck (ein- oder zweiseitig)</p>\n</li>\n<li data-start=\"416\" data-end=\"468\">\n<p data-start=\"418\" data-end=\"468\">Wasserdicht – idealer Schutz vor Sonne und Regen</p>\n</li>\n<li data-start=\"469\" data-end=\"493\">\n<p data-start=\"471\" data-end=\"493\">Produktion in Europa</p>\n</li>\n<li data-start=\"494\" data-end=\"555\">\n<p data-start=\"496\" data-end=\"555\">Lieferzeit: ca. 4–6 Wochen (<strong data-start=\"524\" data-end=\"552\">Expresslieferung möglich</strong>)</p>\n</li>\n</ul>\n<p data-start=\"557\" data-end=\"706\">Der Fischerhut besteht aus robustem Polyester und ist somit <strong data-start=\"617\" data-end=\"636\">wasserabweisend</strong>, <strong data-start=\"638\" data-end=\"654\">pflegeleicht</strong> und <strong data-start=\"659\" data-end=\"703\">ideal für Outdoor-Events oder Fanartikel</strong>.</p>\n<p data-start=\"708\" data-end=\"914\" data-is-last-node=\"\" data-is-only-node=\"\">Auf Wunsch bieten wir auch <b>Baumwoll-Fischerhüte</b> an, die zusätzlich mit <strong data-start=\"783\" data-end=\"809\">Stickereien oder Logos</strong> veredelt werden können.<br data-start=\"833\" data-end=\"836\" />Kontaktieren Sie uns für weitere Informationen oder ein individuelles Angebot.</p>",
+      "short_description": "",
+      "sku": "custom-made-bucket-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 316,
+          "name": "Nachhaltigkeit",
+          "slug": "nachhaltigkeit"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 314,
+          "name": "Sommer",
+          "slug": "sommer"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 7383,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_64-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_64-21-300x300.png",
+          "alt": "Hercules Merchandise bucket hat"
+        },
+        {
+          "id": 7384,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_66.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_66-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7385,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_67.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_67-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7386,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_65.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_65-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7387,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat29-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7388,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat14-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7389,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_38.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_38-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7390,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat10-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7391,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_42.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_42-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7392,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_61.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_61-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7393,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_50.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_50-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7394,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_54.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_54-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7395,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat6-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7396,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat22-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7397,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat34.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat34-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7398,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat1-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7399,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat33.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat33-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7401,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat16-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7402,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_40.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_40-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7403,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_63-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7404,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat12-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7405,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_52.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_52-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7406,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_56.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_56-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7407,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_44.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_44-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7408,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat8-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7409,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat24.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat24-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7410,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat36.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat36-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7411,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat4-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7412,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat18-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7413,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat9-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7414,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat5-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7415,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat13-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7416,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat21-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7417,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat2-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "1-seitig",
+            "Doppelseitig"
+          ]
+        },
+        {
+          "id": 27,
+          "name": "Produktion",
+          "options": [
+            "Dickere Qualität (China)",
+            "Dickere Qualität (Europa)",
+            "Werbequalität (Europa)"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4215,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-seitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "werbequalitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4216,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-seitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4217,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-seitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-china"
+            }
+          ]
+        },
+        {
+          "id": 4218,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "doppelseitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "werbequalitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4219,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "doppelseitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4220,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "doppelseitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-china"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4159,
+      "name": "Personalisierte Radsportmütze",
+      "slug": "personalisierte-radsportmutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-radsportmutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"32\"><strong data-start=\"0\" data-end=\"30\">Individuelle Radsportmütze</strong></h3>\n<p data-start=\"34\" data-end=\"458\">Heben Sie Ihr <strong data-start=\"48\" data-end=\"68\">Radsporterlebnis</strong> auf das nächste Level mit unseren <strong>personalisierten Radsportmützen</strong> – wo <strong data-start=\"140\" data-end=\"167\">Stil auf Funktionalität</strong> trifft.<br data-start=\"175\" data-end=\"178\" />Ob Freizeitfahrer, Wettkampfsportler oder Vereinsradler – unsere Mützen sorgen für <strong data-start=\"259\" data-end=\"322\">Komfort, Atmungsaktivität und ein professionelles Auftreten</strong> bei jeder Fahrt. Gestalten Sie Ihre <strong data-start=\"359\" data-end=\"397\" data-is-only-node=\"\">eigene, einzigartige Radsportmütze</strong> mit <strong data-start=\"402\" data-end=\"455\">individuellem Design, Vereinslogo oder Teamfarben</strong>.</p>\n<p data-start=\"460\" data-end=\"631\"><strong data-start=\"460\" data-end=\"473\">Material:</strong> 100 % Polyester<br data-start=\"489\" data-end=\"492\" /><strong data-start=\"492\" data-end=\"502\">Druck:</strong> Vollfarbdruck auf einer Seite<br data-start=\"532\" data-end=\"535\" /><strong data-start=\"535\" data-end=\"550\">Produktion:</strong> Hergestellt in China<br data-start=\"571\" data-end=\"574\" /><strong data-start=\"574\" data-end=\"589\" data-is-only-node=\"\">Lieferzeit:</strong> ca. 6 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"633\" data-end=\"920\">Unsere Mützen bestehen aus <strong data-start=\"658\" data-end=\"699\">elastischem, atmungsaktivem Polyester</strong>, das Sie auch auf langen Strecken <strong data-start=\"734\" data-end=\"763\">angenehm kühl und trocken</strong> hält. Die <strong data-start=\"774\" data-end=\"802\">passgenaue, bequeme Form</strong> bleibt auch bei intensiven Fahrten stabil. Dank verstellbarer Optionen sitzt die Mütze bei jeder Kopfgröße perfekt.</p>\n<p data-start=\"922\" data-end=\"1051\">Sie schützt zuverlässig vor <strong data-start=\"950\" data-end=\"975\">Sonne, Regen und Wind</strong> – und kann sowohl <strong data-start=\"994\" data-end=\"1012\">unter dem Helm</strong> als auch <strong data-start=\"1022\" data-end=\"1041\">allein getragen</strong> werden.</p>\n<p data-start=\"1053\" data-end=\"1444\">Geben Sie sich nicht mit Standardlösungen zufrieden: Setzen Sie ein <strong data-start=\"1121\" data-end=\"1147\">persönliches Statement</strong> mit einer <strong data-start=\"1158\" data-end=\"1197\">individuell gestalteten Radsportmütze</strong>, die Ihren Stil unterstreicht und Ihre Performance unterstützt.<br data-start=\"1261\" data-end=\"1264\" />Ideal für <strong data-start=\"1274\" data-end=\"1322\">Teams, Clubs, Events oder Einzelbestellungen</strong> – diese Mützen sind weit mehr als nur ein Accessoire: Sie sind ein Symbol für <strong data-start=\"1401\" data-end=\"1441\">Leidenschaft, Teamgeist und Qualität</strong>.</p>\n<p data-start=\"1446\" data-end=\"1562\" data-is-last-node=\"\" data-is-only-node=\"\"><strong data-start=\"1446\" data-end=\"1504\">Bestellen Sie jetzt Ihre personalisierte Radsportmütze</strong> und treten Sie stilvoll auf – egal, wohin die Fahrt geht!</p>",
+      "short_description": "",
+      "sku": "custom-cycling-cap",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7267,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap18-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap18-21-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7268,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap13-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7269,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap10-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7270,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap3-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7271,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap20-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7272,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap15-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7273,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap12-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7274,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap5-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7275,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap17-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7276,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap6-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7277,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap8-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        },
+        {
+          "id": 7278,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingcap2-300x300.png",
+          "alt": "Personalisierte Radsportmütze"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4161,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.615Z"
+}

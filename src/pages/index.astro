@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Slider from '../components/Slider.astro';
+import TopPerformer from '../components/TopPerformer.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import DesignService from '../components/DesignService.astro';
+import HerculesMerchandise from '../components/HerculesMerchandise.astro';
+import TrustLogos from '../components/TrustLogos.astro';
+import CustomerReviews from '../components/CustomerReviews.astro';
+import homepageData from '../data/homepage-products.json';
+import { siteConfig } from '../config/seo';
+
+const products = homepageData.products;
+
+// SEO configuration for homepage
+const pageTitle = 'Custom Football Scarves and Personalised Merchandise';
+const pageDescription = 'Your specialist for over 15 years: Custom football and fan scarves, personalised beanies and football merchandise. Made in Europe. Order small quantities now.';
+const ogImage = `${siteConfig.siteUrl}${siteConfig.defaultImage}`;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="page"
+  ogImage={ogImage}
+>
+  <!-- Hero Slider Section -->
+  <Slider />
+
+  <!-- Top Performer in the Spotlight Section -->
+  <TopPerformer products={products} />
+
+  <!-- Why Choose Us Section -->
+  <WhyChooseUs />
+
+  <!-- Design Service Section -->
+  <DesignService />
+
+  <!-- Hercules Merchandise About Section -->
+  <HerculesMerchandise />
+
+  <!-- They Trust Us - Trust Logos Section -->
+  <TrustLogos />
+
+  <!-- What Customers Say About Us - Customer Reviews Section -->
+  <CustomerReviews />
+</BaseLayout>

@@ -1,0 +1,315 @@
+---
+// Top-Performer im RAMPENLICHT - Matching WordPress Elementor exactly
+// Container: 1280px, Cards: #E9F5FF bg, 30px border-radius, 30px padding
+
+interface Product {
+  id: number;
+  name: string;
+  slug: string;
+  image: string;
+  alt: string;
+}
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+
+<section class="top-performer-section">
+  <div class="top-performer-container">
+    <!-- Section Heading -->
+    <h2 class="section-heading">
+      Top Performers in the <span class="highlight">SPOTLIGHT</span>
+    </h2>
+
+    <!-- Product Carousel -->
+    <div class="carousel-wrapper">
+      <div class="swiper top-performer-swiper">
+        <div class="swiper-wrapper">
+          {products.map((product) => (
+            <div class="swiper-slide">
+              <div class="product-card">
+                <a href={`/products/${product.slug}`} class="product-link">
+                  <div class="product-image">
+                    <img
+                      src={product.image}
+                      alt={product.alt || product.name}
+                      loading="lazy"
+                      width="225"
+                      height="225"
+                    />
+                  </div>
+                  <h3 class="product-title">{product.name}</h3>
+                  <span class="product-button">Discover More</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Navigation Arrows - Outside swiper for positioning -->
+      <div class="carousel-button-prev">
+        <svg aria-hidden="true" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M646 125C629 125 613 133 604 142L308 442C296 454 292 471 292 487 292 504 296 521 308 533L604 854C617 867 629 875 646 875 663 875 679 871 692 858 704 846 713 829 713 812 713 796 708 779 692 767L438 487 692 225C700 217 708 204 708 187 708 171 704 154 692 142 675 129 663 125 646 125Z"></path></svg>
+      </div>
+      <div class="carousel-button-next">
+        <svg aria-hidden="true" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M696 533C708 521 713 504 713 487 713 471 708 454 696 446L400 146C388 133 375 125 354 125 338 125 325 129 313 142 300 154 292 171 292 187 292 204 296 221 308 233L563 492 304 771C292 783 288 800 288 817 288 833 296 850 308 863 321 871 338 875 354 875 371 875 388 867 400 854L696 533Z"></path></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .top-performer-section {
+    width: 100%;
+    padding: 60px 0 50px;
+    background: #ffffff;
+  }
+
+  .top-performer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  /* Section Heading */
+  .section-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: #253461;
+    margin: 0 0 50px 0;
+  }
+
+  .section-heading .highlight {
+    color: #469ADC;
+  }
+
+  /* Carousel Wrapper */
+  .carousel-wrapper {
+    position: relative;
+    padding: 0 50px;
+  }
+
+  .top-performer-swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Make all slides equal height */
+  .top-performer-swiper :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+
+  .top-performer-swiper :global(.swiper-slide) {
+    height: auto;
+  }
+
+  /* Product Card */
+  .product-card {
+    background-color: #E9F5FF;
+    border-radius: 30px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+  }
+
+  .product-image {
+    width: 225px;
+    height: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .product-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: #253461;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .product-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #E9F5FF;
+    color: #469ADC;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid #00AEEF;
+    border-radius: 100px;
+    transition: all 0.3s;
+    margin-top: auto;
+  }
+
+  .product-link:hover .product-button {
+    background-color: #00AEEF;
+    color: #ffffff;
+    border-color: #00AEEF;
+  }
+
+  /* Navigation Arrows - WordPress Elementor style */
+  .carousel-button-prev,
+  .carousel-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 25px;
+    color: #00AEEF;
+    transition: color 0.3s;
+  }
+
+  .carousel-button-prev {
+    left: 0;
+  }
+
+  .carousel-button-next {
+    right: 0;
+  }
+
+  .carousel-button-prev svg,
+  .carousel-button-next svg {
+    width: 1em;
+    height: 1em;
+    fill: #00AEEF;
+    transition: fill 0.3s;
+  }
+
+  .carousel-button-prev:hover svg,
+  .carousel-button-next:hover svg {
+    fill: #253461;
+  }
+
+  .carousel-button-prev.swiper-button-disabled,
+  .carousel-button-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .product-image {
+      width: 180px;
+      height: 180px;
+    }
+
+    .carousel-wrapper {
+      padding: 0 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .top-performer-section {
+      padding: 30px 0 40px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      padding: 20px;
+    }
+
+    .product-image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .product-button {
+      padding: 12px 30px;
+      font-size: 12px;
+    }
+
+    .carousel-wrapper {
+      padding: 0 30px;
+    }
+
+    .carousel-button-prev,
+    .carousel-button-next {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+
+  function initSwiper() {
+    new Swiper('.top-performer-swiper', {
+      modules: [Navigation, Autoplay],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      initialSlide: 0,
+      speed: 500,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: '.carousel-button-next',
+        prevEl: '.carousel-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
+
+  // Initialize Swiper when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    initSwiper();
+  });
+</script>

@@ -1,0 +1,400 @@
+---
+/**
+ * Wishlist Page - Displays saved wishlist items from localStorage
+ * Styling matches category archive pages
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const seo = {
+  title: 'Wishlist - Hercules Merchandise',
+  description: 'Your saved wishlist items at Hercules Merchandise',
+  noindex: true,
+};
+---
+
+<BaseLayout {...seo}>
+  <section class="wishlist-page">
+    <div class="wishlist-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li>
+            <span class="separator">
+              <img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" style="aspect-ratio: 6/12;" />
+            </span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Wishlist</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <h1 class="page-title">Wishlist</h1>
+        <p id="wishlist-count" class="wishlist-count"></p>
+      </header>
+
+      <!-- Empty State -->
+      <div id="wishlist-empty" class="wishlist-empty">
+        <div class="empty-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none">
+            <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z" fill="#dcdcdc"/>
+          </svg>
+        </div>
+        <p class="empty-text">Your wishlist is empty.</p>
+        <p class="empty-subtext">Save your favourite products by clicking the heart icon.</p>
+        <a href="/collections/custom-printed-sportswear/" class="browse-btn">Browse Products</a>
+      </div>
+
+      <!-- Wishlist Products Grid -->
+      <ul id="wishlist-grid" class="products" style="display: none;"></ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .wishlist-page {
+    width: 100%;
+    padding: 0;
+    background: #FAFAFA;
+    min-height: 60vh;
+  }
+
+  .wishlist-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    box-sizing: border-box;
+  }
+
+  /* Breadcrumb - matches archive page */
+  .breadcrumb {
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #787878;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #253461;
+  }
+
+  .breadcrumb .separator {
+    margin: 0 10px;
+    color: #787878;
+  }
+
+  .breadcrumb li:last-child span[itemprop="name"] {
+    color: #469ADC;
+  }
+
+  /* Page Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .page-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #253461;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+  }
+
+  .wishlist-count {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #626262;
+    margin: 0;
+  }
+
+  /* Empty State */
+  .wishlist-empty {
+    text-align: center;
+    padding: 60px 20px 80px;
+  }
+
+  .empty-icon {
+    margin-bottom: 25px;
+  }
+
+  .empty-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #253461;
+    margin: 0 0 10px;
+  }
+
+  .empty-subtext {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #626262;
+    margin: 0 0 30px;
+  }
+
+  .browse-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #10C99E;
+    color: #fff;
+    border-radius: 50px;
+    transition: all 0.2s;
+  }
+
+  .browse-btn:hover {
+    background: transparent;
+    color: #10C99E;
+    box-shadow: inset 0 0 0 2px #10C99E;
+  }
+
+  /* Product Grid - matches archive page */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (max-width: 1024px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .wishlist-container {
+      padding: 0 10px 40px;
+    }
+
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .page-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Product Card - matches CategoryProductCard */
+  .products :global(.product) {
+    list-style: none;
+    text-align: center;
+    border: 1px solid #DCDCDC;
+    border-radius: 20px;
+    padding: 20px 15px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s;
+  }
+
+  .products :global(.product:hover) {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .products :global(.product-link) {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .products :global(.product-image) {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+  }
+
+  .products :global(.product-title) {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #253461;
+    margin: 0 0 15px;
+    line-height: 1.3;
+  }
+
+  .products :global(.product-btn) {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #469ADC;
+    color: #FFFFFF;
+    border: 1px solid #469ADC;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    margin-top: auto;
+    align-self: center;
+  }
+
+  .products :global(.product-btn:hover) {
+    background-color: transparent;
+    color: #469ADC;
+  }
+
+  /* Remove Button */
+  .products :global(.remove-btn) {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 5;
+    padding: 0;
+  }
+
+  .products :global(.remove-btn:hover) {
+    border-color: #10C99E;
+    background: #E0F9F3;
+  }
+
+  .products :global(.remove-btn svg) {
+    width: 18px;
+    height: 18px;
+    fill: #10C99E;
+  }
+
+  /* Card fade out animation */
+  .products :global(.product.removing) {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.25s ease;
+  }
+</style>
+
+<script>
+  import { getWishlist, removeFromWishlist, type WishlistItem } from '../components/WishlistButton';
+
+  function renderWishlist() {
+    const items = getWishlist();
+    const emptyEl = document.getElementById('wishlist-empty');
+    const gridEl = document.getElementById('wishlist-grid');
+    const countEl = document.getElementById('wishlist-count');
+
+    if (!emptyEl || !gridEl || !countEl) return;
+
+    if (items.length === 0) {
+      emptyEl.style.display = 'block';
+      gridEl.style.display = 'none';
+      countEl.textContent = '';
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+    gridEl.style.display = 'grid';
+    countEl.textContent = `${items.length} ${items.length === 1 ? 'product' : 'products'} saved`;
+
+    // Sort by most recently added
+    const sortedItems = [...items].sort((a, b) => (b.addedAt || 0) - (a.addedAt || 0));
+
+    gridEl.innerHTML = sortedItems.map(item => `
+      <li class="product" data-id="${item.id}">
+        <button class="remove-btn" aria-label="Remove from wishlist" title="Remove">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </button>
+        <a href="/products/${item.slug}/" class="product-link">
+          ${item.thumbnail
+            ? `<img src="${item.thumbnail}" alt="${item.name}" class="product-image" loading="lazy" />`
+            : `<div class="product-image"></div>`
+          }
+          <h2 class="product-title">${item.name || 'Product'}</h2>
+        </a>
+        <a href="/products/${item.slug}/" class="product-btn">Discover More</a>
+      </li>
+    `).join('');
+
+    // Add remove event listeners
+    gridEl.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const card = btn.closest('.product') as HTMLElement;
+        const id = parseInt(card?.dataset.id || '0', 10);
+        if (id) {
+          card.classList.add('removing');
+          setTimeout(() => {
+            removeFromWishlist(id);
+            renderWishlist();
+          }, 250);
+        }
+      });
+    });
+  }
+
+  // Initial render
+  renderWishlist();
+
+  // Listen for wishlist updates
+  window.addEventListener('hercules:wishlist-updated', () => {
+    renderWishlist();
+  });
+</script>

@@ -1,0 +1,799 @@
+---
+// Header component matching WordPress Elementor header exactly
+// Container: 1280px, Logo: 70%, Icons: 22px/15px radius, Nav: 16px Jost
+// Menu data fetched from shared cache (single API call for all components)
+import MobileMenu from './MobileMenu.astro';
+import ProductSearch from './ProductSearch.tsx';
+import UserSession from './UserSession.tsx';
+import ContactFormPopup from './ContactFormPopup.tsx';
+import WishlistCount from './WishlistCount.tsx';
+import GoogleReviewsBadge from './GoogleReviewsBadge.astro';
+import { getMenuData } from '../data/menu-data';
+
+// Get menu data from shared cache (fetched once per build)
+const menuData = await getMenuData();
+const { sportarten, produkte, themen, directLinks } = menuData;
+---
+
+<!-- Desktop Header -->
+<header class="header" id="main-header">
+  <!-- Main Header Row -->
+  <div class="header-main">
+    <div class="header-container">
+      <!-- Logo - use original size image for desktop (172px display width) -->
+      <div class="header-logo-wrap">
+        <a href="/" class="header-logo">
+          <img
+            src="/images/hercules-logo-original1.webp"
+            srcset="/images/hercules-logo-original1.webp 1x, /images/hercules-logo-original1-2x.webp 2x"
+            alt="Hercules Merchandise"
+            width="172"
+            height="76"
+          />
+        </a>
+      </div>
+
+      <!-- Search Bar - Full Width with React Component -->
+      <div class="header-search">
+        <ProductSearch client:idle placeholder="Search products..." />
+      </div>
+
+      <!-- Header Icons - client:idle to break critical request chain -->
+      <div class="header-icons">
+        <UserSession client:idle type="account" />
+
+        <WishlistCount client:idle />
+
+        <UserSession client:idle type="cart" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Row -->
+  <nav class="header-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-menu">
+        <!-- Dropdown Menus -->
+        <div class="nav-item has-dropdown" data-menu="sportarten">
+          <button class="nav-link">
+            SPORTS
+            <svg class="nav-arrow" viewBox="0 0 320 512"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <ul class="mega-menu-list with-icons">
+                {sportarten.map((item) => (
+                  <li>
+                    <a href={item.href}>
+                      {item.icon_url && <img src={item.icon_url} alt={`${item.label} Category Icon`} width="24" height="24" />}
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item has-dropdown" data-menu="produkte">
+          <button class="nav-link">
+            PRODUCTS
+            <svg class="nav-arrow" viewBox="0 0 320 512"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <ul class="mega-menu-list with-icons">
+                {produkte.map((item) => (
+                  <li>
+                    <a href={item.href}>
+                      {item.icon_url && <img src={item.icon_url} alt={`${item.label} Category Icon`} width="24" height="24" />}
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item has-dropdown" data-menu="themen">
+          <button class="nav-link">
+            THEMES
+            <svg class="nav-arrow" viewBox="0 0 320 512"><path d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"/></svg>
+          </button>
+          <div class="mega-menu">
+            <div class="mega-menu-inner">
+              <ul class="mega-menu-list with-icons">
+                {themen.map((item) => (
+                  <li>
+                    <a href={item.href}>
+                      {item.icon_url && <img src={item.icon_url} alt={`${item.label} Collection Icon`} width="24" height="24" />}
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Links -->
+        {directLinks.map((link) => (
+          <a href={link.href} class="nav-direct-link">{link.label}</a>
+        ))}
+      </div>
+
+      <!-- Contact Button -->
+      <ContactFormPopup client:idle triggerType="button" triggerText="CONTACT" triggerClassName="nav-cta-popup" />
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Header -->
+<header class="mobile-header" id="mobile-header">
+  <!-- Top Bar - Google Reviews (Dark Blue Background) - Dynamic Badge -->
+  <div class="mobile-topbar">
+    <div class="mobile-topbar-reviews">
+      <GoogleReviewsBadge class="google-reviews-link" showReviewCount={false} />
+    </div>
+  </div>
+
+  <!-- Logo & Icons Row -->
+  <div class="mobile-header-inner">
+    <div class="mobile-logo-wrap">
+      <a href="/" class="mobile-logo">
+        <img
+          id="mobile-logo-img"
+          src="/images/hercules-logo-mobile-1x.webp"
+          alt="Hercules Merchandise"
+          width="140"
+          height="63"
+          data-hq-src="/images/hercules-logo-mobile-2x.webp"
+        />
+      </a>
+    </div>
+    <div class="mobile-actions">
+      <button class="mobile-btn mobile-search-btn" aria-label="Search" id="mobile-search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M21.3248 20.1752L16.2396 15.0909C17.7135 13.3214 18.4485 11.0518 18.2916 8.75419C18.1347 6.45658 17.0981 4.3079 15.3974 2.75513C13.6967 1.20236 11.4628 0.365042 9.16039 0.417367C6.85803 0.469692 4.66448 1.40763 3.03605 3.03606C1.40761 4.6645 0.469677 6.85805 0.417352 9.16041C0.365027 11.4628 1.20234 13.6967 2.75512 15.3974C4.30789 17.0981 6.45657 18.1348 8.75417 18.2916C11.0518 18.4485 13.3214 17.7135 15.0909 16.2396L20.1751 21.3249C20.2506 21.4003 20.3403 21.4602 20.4389 21.5011C20.5375 21.5419 20.6432 21.563 20.75 21.563C20.8567 21.563 20.9625 21.5419 21.0611 21.5011C21.1597 21.4602 21.2493 21.4003 21.3248 21.3249C21.4003 21.2494 21.4602 21.1597 21.5011 21.0611C21.5419 20.9625 21.5629 20.8568 21.5629 20.75C21.5629 20.6432 21.5419 20.5375 21.5011 20.4389C21.4602 20.3403 21.4003 20.2507 21.3248 20.1752ZM2.06249 9.375C2.06249 7.92873 2.49136 6.51493 3.29487 5.3124C4.09837 4.10986 5.24043 3.1726 6.57662 2.61913C7.9128 2.06567 9.3831 1.92086 10.8016 2.20301C12.2201 2.48517 13.523 3.18161 14.5457 4.20428C15.5684 5.22696 16.2648 6.52992 16.547 7.94841C16.8291 9.36689 16.6843 10.8372 16.1309 12.1734C15.5774 13.5096 14.6401 14.6516 13.4376 15.4551C12.2351 16.2586 10.8213 16.6875 9.37499 16.6875C7.43625 16.6854 5.57754 15.9142 4.20664 14.5433C2.83575 13.1725 2.06464 11.3137 2.06249 9.375Z" fill="#253461"></path>
+        </svg>
+      </button>
+      <ContactFormPopup client:idle triggerType="icon" triggerClassName="mobile-contact-popup" />
+      <button class="mobile-hamburger" id="mobile-menu-toggle" aria-label="Menu">
+        &#9776;
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Search Overlay -->
+<div class="mobile-search-overlay" id="mobile-search-overlay">
+  <div class="mobile-search-container">
+    <button class="mobile-search-close" id="mobile-search-close" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ProductSearch client:idle placeholder="Search products..." />
+  </div>
+</div>
+
+<MobileMenu />
+
+<style>
+  /* Desktop Header - EXACT WordPress Elementor CSS */
+  /* Mobile-first: hidden by default, shown on desktop */
+  .header {
+    display: none;
+    background: #fff;
+    position: relative;
+    z-index: 100;
+    font-family: 'Jost', sans-serif;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Explicit mobile hiding for safety */
+  @media (max-width: 768px) {
+    .header {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .header {
+      display: block;
+    }
+  }
+
+  /* Main Header Row - elementor-element-f7f2fa7 */
+  .header-main {
+    background: #fff;
+    padding: 5px 0;
+  }
+
+  .header-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  /* Logo wrapper - elementor-element-222f227 */
+  .header-logo-wrap {
+    flex-shrink: 0;
+    padding: 10px 10px 10px 0;
+  }
+
+  .header-logo {
+    display: block;
+  }
+
+  /* Logo - 172px width */
+  .header-logo img {
+    width: 172px;
+    height: auto;
+    display: block;
+  }
+
+  /* Search - 708px width, 144px gap from logo */
+  .header-search {
+    width: 708px;
+    flex-shrink: 0;
+    margin-left: 144px;
+    padding-bottom: 10px;
+  }
+
+  /* Override ProductSearch component styles to match header */
+  .header-search :global(.product-search-input) {
+    height: 44px;
+    padding: 12px 45px 12px 18px;
+    font-size: 16px;
+    border: 1px solid #253461;
+    border-radius: 15px;
+    color: #253461;
+  }
+
+  .header-search :global(.product-search-input::placeholder) {
+    color: #253461;
+  }
+
+  /* Header Icons - right aligned, center vertically */
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-bottom: 10px;
+  }
+
+  /* Icon buttons - elementor-element-5bdc66d, dd73c14, d8c5621 */
+  .header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #253461;
+    border-radius: 15px;
+    color: #253461;
+    background: transparent;
+    transition: all 0.3s;
+  }
+
+  .header-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .header-icon:hover {
+    border-color: #469ADC;
+  }
+
+  .header-icon:hover svg path {
+    fill: #469ADC;
+  }
+
+  /* Cart count badge */
+  .cart-icon {
+    position: relative;
+  }
+
+  .cart-icon :global(.cart-count-badge) {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #10C99E;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    line-height: 1;
+  }
+
+
+  /* Navigation - elementor-element-93ee650 */
+  .header-nav {
+    background: #fff;
+    padding-bottom: 3px;
+  }
+
+  .nav-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Align first nav item with header content above */
+  .nav-menu > :first-child .nav-link {
+    padding-left: 0;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  /* Navigation links with dropdown - cyan blue */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 14px 22px;
+    background: none;
+    border: none;
+    font-family: 'Jost', Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #00aeef;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #253461;
+  }
+
+  .nav-arrow {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s, fill 0.3s;
+    fill: #253461;
+  }
+
+  .nav-item:hover .nav-arrow {
+    transform: rotate(180deg);
+    fill: #00aeef;
+  }
+
+  /* Direct links (no submenu) - dark blue */
+  .nav-direct-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 25px;
+    font-family: 'Jost', Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #253461;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-direct-link:hover {
+    color: #00aeef;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 28px;
+    background: #333333;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid #333333;
+    border-radius: 50px;
+    transition: all 0.25s ease-in-out;
+  }
+
+  .nav-cta:hover {
+    background: #4F4F4F;
+    border-color: #4F4F4F;
+  }
+
+  /* Contact Popup Trigger - Desktop - matching WordPress LIVE site exactly */
+  .nav-cta-popup :global(.contact-trigger-button) {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    font-family: 'Jost', Sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #10C99E;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+  }
+
+  .nav-cta-popup :global(.contact-trigger-button:hover) {
+    background: #0eb38c;
+    border-color: #0eb38c;
+  }
+
+  /* Mega Menu - Full Width matching WordPress Elementor styling */
+  .mega-menu {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: white;
+    border-top: 1px solid #FAFAFA;
+    box-shadow: 0px 23px 4px -21px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mega-menu-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .mega-menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    gap: 0 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+  }
+
+  .mega-menu-list.with-icons {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .mega-menu-list li a {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 39px;
+    padding: 0 15px;
+    color: #253461;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  .mega-menu-list li a:hover {
+    background: #F5F5F5;
+    color: #469ADC;
+  }
+
+  .mega-menu-list li a img {
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    margin-right: calc(17px * 0.25);
+  }
+
+  /* Mobile Header - Exact Elementor Styles */
+  /* Mobile-first: shown by default, hidden on desktop */
+  .mobile-header {
+    display: block;
+    background: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  /* Explicit mobile visibility for safety */
+  @media (max-width: 768px) {
+    .mobile-header {
+      display: block !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-header {
+      display: none !important;
+    }
+  }
+
+  /* Top Bar - Dark Blue Background (#253461) */
+  .mobile-topbar {
+    background-color: #253461;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .mobile-topbar-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 6px;
+    padding-top: 6px;
+  }
+
+  .mobile-topbar-reviews a {
+    display: inline-block;
+  }
+
+  .mobile-topbar-reviews img,
+  .mobile-topbar-reviews svg {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 306 / 36;
+  }
+
+  /* Logo & Icons Row */
+  .mobile-header-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 10px;
+    background: #FFFFFF;
+  }
+
+  .mobile-logo-wrap {
+    width: 40%;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-logo img {
+    width: 100%;
+    height: auto;
+    max-width: 140px;
+  }
+
+  .mobile-actions {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Search Button - White bg, dark blue border */
+  .mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 13px;
+    transition: all 0.2s;
+  }
+
+  .mobile-search-btn {
+    background-color: #FFFFFF;
+    color: #253461;
+    fill: #253461;
+    border: 1px solid #253461;
+  }
+
+  .mobile-search-btn:hover,
+  .mobile-search-btn:focus {
+    background-color: #FFFFFF;
+    color: #253461;
+    border-color: #253461;
+  }
+
+  .mobile-search-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Contact/Mail Button - Green bg */
+  .mobile-contact-btn {
+    background-color: #10C99E;
+    color: #FFFFFF;
+    fill: #FFFFFF;
+    border: 1px solid #10C99E;
+  }
+
+  .mobile-contact-btn:hover,
+  .mobile-contact-btn:focus {
+    background-color: #FFFFFF;
+    color: #10C99E;
+    border-color: #10C99E;
+  }
+
+  .mobile-contact-btn:hover svg,
+  .mobile-contact-btn:focus svg {
+    fill: #10C99E;
+  }
+
+  .mobile-contact-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Mobile Contact Popup Trigger */
+  .mobile-contact-popup :global(.contact-trigger-icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    border: 1px solid #10C99E;
+    border-radius: 5px;
+    padding: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .mobile-contact-popup :global(.contact-trigger-icon:hover),
+  .mobile-contact-popup :global(.contact-trigger-icon:focus) {
+    background-color: #FFFFFF;
+    color: #10C99E;
+    border-color: #10C99E;
+  }
+
+  .mobile-contact-popup :global(.contact-trigger-icon svg) {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+
+  /* Hamburger Menu Button - Brand blue (#253461), same size as other icons */
+  .mobile-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #FFFFFF;
+    cursor: pointer;
+    background-color: #253461;
+    border: 1px solid #253461;
+    border-radius: 5px;
+    padding: 13px;
+    line-height: 1;
+    transition: all 0.2s;
+  }
+
+  .mobile-hamburger:hover,
+  .mobile-hamburger:focus {
+    background-color: #FFFFFF;
+    color: #253461;
+    border-color: #253461;
+  }
+
+  /* Mobile Search Overlay */
+  .mobile-search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-search-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .mobile-search-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    color: #253461;
+    cursor: pointer;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+
+  .mobile-search-close:hover {
+    color: #469ADC;
+  }
+
+  /* Adjust ProductSearch in mobile overlay */
+  .mobile-search-container :global(.product-search-results) {
+    position: relative;
+    max-height: calc(100vh - 200px);
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuToggle?.addEventListener('click', () => {
+    document.body.classList.add('mobile-menu-open');
+  });
+
+  // Mobile search toggle
+  const mobileSearchBtn = document.getElementById('mobile-search-btn');
+  const mobileSearchOverlay = document.getElementById('mobile-search-overlay');
+  const mobileSearchClose = document.getElementById('mobile-search-close');
+
+  mobileSearchBtn?.addEventListener('click', () => {
+    mobileSearchOverlay?.classList.add('active');
+    // Focus the search input
+    setTimeout(() => {
+      const searchInput = mobileSearchOverlay?.querySelector('input');
+      searchInput?.focus();
+    }, 100);
+  });
+
+  mobileSearchClose?.addEventListener('click', () => {
+    mobileSearchOverlay?.classList.remove('active');
+  });
+
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileSearchOverlay?.classList.contains('active')) {
+      mobileSearchOverlay.classList.remove('active');
+    }
+  });
+</script>

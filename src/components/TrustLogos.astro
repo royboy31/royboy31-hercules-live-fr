@@ -1,0 +1,241 @@
+---
+// They Trust Us - Trust Logos Section
+// Pure CSS animation - no JavaScript required for continuous scroll
+// This eliminates the critical request chain from Swiper.js
+
+const logosRow1 = [
+  { src: '/images/logos/Glasgow-Saints.webp', alt: 'Glasgow Saints' },
+  { src: '/images/logos/Glasgow-Tigers.webp', alt: 'Glasgow Tigers' },
+  { src: '/images/logos/afc-1.webp', alt: 'AFC' },
+  { src: '/images/logos/aof.webp', alt: 'AOF' },
+  { src: '/images/logos/Arbroath-FC.webp', alt: 'Arbroath FC' },
+  { src: '/images/logos/Banbury-United.webp', alt: 'Banbury United' },
+  { src: '/images/logos/Barnet-FC.webp', alt: 'Barnet FC' },
+  { src: '/images/logos/Basingstoke-FC.webp', alt: 'Basingstoke FC' },
+  { src: '/images/logos/bbc.webp', alt: 'BBC' },
+  { src: '/images/logos/Blackburn-Hawks.webp', alt: 'Blackburn Hawks' },
+  { src: '/images/logos/Bromley-FC.webp', alt: 'Bromley FC' },
+  { src: '/images/logos/Bury-FC.webp', alt: 'Bury FC' },
+  { src: '/images/logos/Camden-Town-Brewery.webp', alt: 'Camden Town Brewery' },
+  { src: '/images/logos/Cardiff-Bay-FC.webp', alt: 'Cardiff Bay FC' },
+  { src: '/images/logos/Chelsea-Women.webp', alt: 'Chelsea Women' },
+  { src: '/images/logos/Clapton-CFC.webp', alt: 'Clapton CFC' },
+  { src: '/images/logos/Djurgardens-IF.webp', alt: 'Djurgardens IF' },
+  { src: '/images/logos/Doncaster-Rovers.webp', alt: 'Doncaster Rovers' },
+  { src: '/images/logos/Dorchester-Town-FC.webp', alt: 'Dorchester Town FC' },
+  { src: '/images/logos/Durham-United-FC.webp', alt: 'Durham United FC' },
+  { src: '/images/logos/East-Grinstead-Hockey-Club.webp', alt: 'East Grinstead Hockey Club' },
+  { src: '/images/logos/Enfield-Town.webp', alt: 'Enfield Town' },
+  { src: '/images/logos/Farnham-Town-FC.webp', alt: 'Farnham Town FC' },
+  { src: '/images/logos/Gateshead-FC.webp', alt: 'Gateshead FC' },
+  { src: '/images/logos/Gillingham-Football-Club.webp', alt: 'Gillingham Football Club' },
+];
+
+const logosRow2 = [
+  { src: '/images/logos/Harrogate-Town-AFC.webp', alt: 'Harrogate Town AFC' },
+  { src: '/images/logos/Hayes-Yeading-UFC.webp', alt: 'Hayes & Yeading UFC' },
+  { src: '/images/logos/Imperial-College-Football-Club.webp', alt: 'Imperial College Football Club' },
+  { src: '/images/logos/Kings-College-London.webp', alt: 'Kings College London' },
+  { src: '/images/logos/Leyton-Orient-FC.webp', alt: 'Leyton Orient FC' },
+  { src: '/images/logos/Liverpool-FC.webp', alt: 'Liverpool FC' },
+  { src: '/images/logos/London-Celta.webp', alt: 'London Celta' },
+  { src: '/images/logos/London-Irish.webp', alt: 'London Irish' },
+  { src: '/images/logos/Moet-Chandon.webp', alt: 'Moet Chandon' },
+  { src: '/images/logos/Norwich-United-FC.webp', alt: 'Norwich United FC' },
+  { src: '/images/logos/Oxford-Saints.webp', alt: 'Oxford Saints' },
+  { src: '/images/logos/Red-Bull-Racing.webp', alt: 'Red Bull Racing' },
+  { src: '/images/logos/Salford-Red-Devils.webp', alt: 'Salford Red Devils' },
+  { src: '/images/logos/sap.webp', alt: 'SAP' },
+  { src: '/images/logos/Sony-Music.webp', alt: 'Sony Music' },
+  { src: '/images/logos/Stamford-AFC.webp', alt: 'Stamford AFC' },
+  { src: '/images/logos/Stenhousemuir-Football-Club.webp', alt: 'Stenhousemuir Football Club' },
+  { src: '/images/logos/Swansea-Union.webp', alt: 'Swansea Union' },
+  { src: '/images/logos/The-National-Gallery.webp', alt: 'The National Gallery' },
+  { src: '/images/logos/Tinder.webp', alt: 'Tinder' },
+  { src: '/images/logos/Wealdstone-FC.webp', alt: 'Wealdstone FC' },
+  { src: '/images/logos/Whitley-Warriors.webp', alt: 'Whitley Warriors' },
+  { src: '/images/logos/Witham-Town-FC.webp', alt: 'Witham Town FC' },
+  { src: '/images/logos/wix.webp', alt: 'Wix' },
+];
+---
+
+<section class="trust-section">
+  <div class="trust-container">
+    <h2 class="section-heading">They Trust Us</h2>
+
+    <!-- Row 1: Left to Right (CSS animation) -->
+    <div class="marquee-container">
+      <div class="marquee-track marquee-ltr">
+        {/* First set of logos */}
+        {logosRow1.map((logo) => (
+          <div class="logo-item">
+            <figure class="logo-figure">
+              <img src={logo.src} alt={logo.alt} loading="lazy" width="218" height="100" />
+            </figure>
+          </div>
+        ))}
+        {/* Duplicate for seamless loop */}
+        {logosRow1.map((logo) => (
+          <div class="logo-item" aria-hidden="true">
+            <figure class="logo-figure">
+              <img src={logo.src} alt="" loading="lazy" width="218" height="100" />
+            </figure>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Row 2: Right to Left (CSS animation) -->
+    <div class="marquee-container">
+      <div class="marquee-track marquee-rtl">
+        {/* First set of logos */}
+        {logosRow2.map((logo) => (
+          <div class="logo-item">
+            <figure class="logo-figure">
+              <img src={logo.src} alt={logo.alt} loading="lazy" width="218" height="100" />
+            </figure>
+          </div>
+        ))}
+        {/* Duplicate for seamless loop */}
+        {logosRow2.map((logo) => (
+          <div class="logo-item" aria-hidden="true">
+            <figure class="logo-figure">
+              <img src={logo.src} alt="" loading="lazy" width="218" height="100" />
+            </figure>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-section {
+    background-color: #F4F4F4;
+    padding: 60px 0;
+    margin-top: 50px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .trust-container {
+    width: 100%;
+  }
+
+  .section-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #253461;
+    text-align: center;
+    margin: 0 0 40px 0;
+    padding: 0 20px;
+  }
+
+  /* Marquee container hides overflow */
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  /* Track contains logos and animates */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+  }
+
+  /* Left to right animation */
+  .marquee-ltr {
+    animation: scroll-ltr 60s linear infinite;
+  }
+
+  /* Right to left animation */
+  .marquee-rtl {
+    animation: scroll-rtl 60s linear infinite;
+  }
+
+  @keyframes scroll-ltr {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-rtl {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Pause animation on hover */
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-figure {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-figure img {
+    width: 218.13px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-figure img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .logo-figure img {
+      width: 180px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .section-heading {
+      font-size: 28px;
+    }
+
+    .logo-figure img {
+      width: 140px;
+    }
+
+    /* Faster animation on mobile for better UX */
+    .marquee-ltr,
+    .marquee-rtl {
+      animation-duration: 40s;
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-ltr,
+    .marquee-rtl {
+      animation: none;
+    }
+  }
+</style>

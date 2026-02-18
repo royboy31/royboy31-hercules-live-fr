@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustLogos from '../components/TrustLogos.astro';
+import ContactFormPopup from '../components/ContactFormPopup.tsx';
+
+const pageTitle = 'About Hercules Merchandise';
+const pageDescription = 'For over 10 years, Hercules Merchandising has been committed to offering you innovative and top-quality sports items. Number 1 in Sports Merchandise in the UK.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="page"
+>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>About Us</h1>
+        <h2 class="hero-subtitle">Hercules Merchandise</h2>
+        <p>For over 10 years, Hercules Merchandising has been committed to offering you innovative and top-quality sports items.</p>
+        <p class="hero-highlight">Number 1 in Sports Merchandise<br>in the UK</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Company Info (Text Left + Image Right) -->
+  <section class="about-section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-text">
+          <h2>Hercules Merchandise</h2>
+          <p>Establishes itself as the number 1 custom sports equipment supplier and wholesaler in the UK for sports clubs (Football, Rugby, Basketball, and many more!).</p>
+          <p>We support and supply high-quality items to clubs of various scales, ranging from amateur to professional levels. From small to very large series, we support projects with the same care, as evidenced by our <strong>97% customer satisfaction rate.</strong></p>
+          <p>Our expertise reflects the superior quality of our products and a fast, exclusive professional service.</p>
+          <p>We constantly strive to improve our service quality. Logistic innovation is at the heart of our concerns.</p>
+          <p><strong>Product Ranges:</strong></p>
+          <p>Our textile products are mainly of European origin: Exchange pennants and custom mini-pennants, fan scarves, football and rugby jerseys, stadium cushions, supporter flags, car flags, embroidered badges, key rings, and many more!</p>
+          <div class="cta-wrapper">
+            <ContactFormPopup client:visible triggerType="button" triggerText="Contact Us Now" triggerClassName="about-cta" />
+          </div>
+        </div>
+        <div class="col-image">
+          <img src="/images/about-hercules-hero.png" alt="Hercules Merchandise products" loading="lazy" width="550" height="500" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Philosophy (Image Left + Text Right) -->
+  <section class="about-section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-image">
+          <img src="/images/about-fans.png" alt="Sports fans with Hercules merchandise" loading="lazy" width="550" height="400" />
+        </div>
+        <div class="col-text">
+          <p>We would like to offer you the opportunity to quickly and easily order both fan merchandise (the derivative products) and sports equipment. We provide beautiful designs and a simple and clear ordering process. Everything should go smoothly from the very first order. We hope to become your one-stop-shop for all sports-related items.</p>
+          <p>At Hercules Merchandise, we opt for a very targeted offering, with the most popular items for sports club or events. Everything is custom made, with your own design and logo. Thanks to our largely European production, we can deliver quickly and in small quantities. Take a quick look at our range and choose the most suitable items.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- They Trust Us -->
+  <TrustLogos />
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero-section {
+    background-color: #444444;
+    background-image: url('/images/about-hero-banner.jpg');
+    background-size: cover;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 572px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(286deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+    opacity: 0.5;
+  }
+
+  .hero-container {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    width: 100%;
+  }
+
+  .hero-text {
+    max-width: 550px;
+  }
+
+  h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    line-height: 60px;
+    margin: 0 0 5px;
+  }
+
+  .hero-subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 45px;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  .hero-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    margin: 0 0 15px;
+  }
+
+  .hero-highlight {
+    font-family: 'Jost', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 20px;
+  }
+
+  /* About Sections */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .about-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+  }
+
+  .about-section-alt {
+    background: #FAFAFA;
+  }
+
+  .two-col {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .two-col-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .col-text {
+    flex: 1;
+  }
+
+  .col-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .col-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .col-text h2 {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #253461;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+
+  .col-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    margin: 0 0 15px;
+  }
+
+  .col-text strong {
+    color: #253461;
+  }
+
+  .cta-wrapper {
+    margin-top: 25px;
+  }
+
+  .about-cta :global(.contact-trigger-button) {
+    display: inline-block;
+    padding: 15px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #10C99E;
+    border: 1px solid #10C99E;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .about-cta :global(.contact-trigger-button:hover) {
+    background-color: transparent;
+    color: #10C99E;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 300px;
+    }
+
+    .hero-container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    .hero-subtitle {
+      font-size: 28px;
+    }
+
+    .hero-highlight {
+      font-size: 18px;
+    }
+
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .about-section {
+      padding: 40px 0;
+    }
+
+    .two-col,
+    .two-col-reverse {
+      flex-direction: column;
+    }
+
+    .two-col {
+      gap: 30px;
+    }
+
+    .col-text h2 {
+      font-size: 24px;
+    }
+
+    .col-image img {
+      border-radius: 10px;
+    }
+  }
+</style>

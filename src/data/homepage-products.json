@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 10105,
+      "name": "Baseball Cap",
+      "slug": "baseball-cap",
+      "image": "/images/products/HerculesMerchandisecap21.webp",
+      "alt": "Hercules Merchandise cap"
+    },
+    {
+      "id": 4381,
+      "name": "Custom Club Slides",
+      "slug": "custom-club-slides-and-slippers",
+      "image": "/images/products/Hercules-Merchandise-slides-63.webp",
+      "alt": "Hercules Merchandise slides"
+    },
+    {
+      "id": 4294,
+      "name": "Custom Printed Pennant",
+      "slug": "custom-printed-pennants",
+      "image": "/images/products/HerculesMerchandiseprintedpennant7-17.webp",
+      "alt": "Hercules Merchandise printed pennant"
+    },
+    {
+      "id": 4332,
+      "name": "Custom Printed Towel",
+      "slug": "custom-sublimated-towels",
+      "image": "/images/products/HerculesMerchandisetowels3-16.webp",
+      "alt": "Hercules Merchandise towels"
+    },
+    {
+      "id": 4280,
+      "name": "Custom Football Shirt",
+      "slug": "custom-football-shirts",
+      "image": "/images/products/Hercules_Merchandise_football_kit_99-19.webp",
+      "alt": "Hercules Merchandise football kit"
+    },
+    {
+      "id": 6721,
+      "name": "Custom HD Football Scarf",
+      "slug": "custom-football-scarf",
+      "image": "/images/products/HerculesMerchandisecustomfootballscarf102_c547ca87-7aa5-4360-a060-bf1176e710a0-23.webp",
+      "alt": "Hercules Merchandise custom football scarf"
+    },
+    {
+      "id": 4253,
+      "name": "Standard Beanie Hat",
+      "slug": "custom-football-beanie-hats",
+      "image": "/images/products/HerculesMerchandisestandardknittedbeaniehat51-20.webp",
+      "alt": "Hercules Merchandise standard knitted beanie hat"
+    },
+    {
+      "id": 4213,
+      "name": "Custom Bucket Hat",
+      "slug": "custom-made-bucket-hats",
+      "image": "/images/products/Hercules_Merchandise_bucket_hat_64-21.webp",
+      "alt": "Hercules Merchandise bucket hat"
+    }
+  ]
+}

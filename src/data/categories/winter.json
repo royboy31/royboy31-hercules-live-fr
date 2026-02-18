@@ -1,0 +1,2714 @@
+{
+  "category": {
+    "id": 315,
+    "name": "Winter",
+    "slug": "winter",
+    "description": "",
+    "count": 10,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 6721,
+      "name": "Personalisierter HD-Fußballschal",
+      "slug": "personalisierter-fussballschal",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-fussballschal/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierter HD-Fußballschal</h2>\n<p>Der HD-Fußballschal ist mit Abstand unser beliebtester Fanschal. Der Schal ist modisch, extrem weich und sehr angenehm zu tragen.</p>\n<p>Der HD-Fußballschal ist fein gestrickt und bringt die kleinsten Details gut zur Geltung. Die Strickdichte sorgt dafür, dass die Farben sehr leuchtend sind.</p>\n<p>Dieser personalisierter Fußballschal wird buchstäblich nach der Identität deines Vereins hergestellt. Wir helfen dir mit einem Design, das die Farben deines Teams, den Namen deines Vereins, natürlich dein Logo oder Wappen enthält, und wir können sogar Dinge wie deinen Slogan oder das Gründungsjahr hinzufügen.</p>\n<p>Wir produzieren Fußballschals, Rugby-Schals, Basketballschals, Hockey-Schals und viele andere Sportarten. Aber ein individueller Schal kann auch ein perfektes Firmengeschenk sein oder für jede Art von Veranstaltung verwendet werden.</p>\n<p>Beachte, dass der HD-Fußballschal ein Strickschal ist. Sehr kleine Details, Farbschattierungen oder geschwungene Elemente können nicht immer wiedergegeben werden. Hast du ein Design mit vielen Details? In diesem Fall empfehlen wir dir, dich für einen gewebten oder einen bedruckten Schal zu entscheiden. Kontaktiere uns, wenn du Zweifel hast.</p>\n<p>Der HD-Fußballschal ist schlauchförmig gestrickt, was bedeutet, dass es keine Nähte an den Seiten gibt. Nach dem Stricken werden die Fransen an beiden Enden angenäht und der Schal wird gebügelt, um ihn flach zu machen.</p>\n<ul>\n<li>Material: Acryl mit etwas Lycra</li>\n<li>Standardabmessungen: 140 x 18 cm (ohne Fransen)</li>\n<li>Bis zu 7 verschiedene Farben</li>\n<li>Auf jeder Seite ein anderes Design möglich</li>\n<li>Quasten bis zu 3 Farben</li>\n<li>Hergestellt in Europa</li>\n<li>Lieferzeit: 4 bis 6 Wochen (<a href=\"#kd-faq-sec\">Eilige Lieferung?</a>)</li>\n</ul>",
+      "short_description": "",
+      "sku": "custom-football-scarf",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 254,
+          "name": "Fußballschals",
+          "slug": "fussballschals"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 7418,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf102_c547ca87-7aa5-4360-a060-bf1176e710a0-23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf102_c547ca87-7aa5-4360-a060-bf1176e710a0-23-300x300.png",
+          "alt": "Hercules Merchandise custom football scarf"
+        },
+        {
+          "id": 7419,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_258-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_258-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7420,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf240-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf240-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7421,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_332-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_332-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7422,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf119-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf119-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7423,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_273-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_273-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7424,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_279-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_279-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7425,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_310-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_310-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7426,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf139-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf139-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7427,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_298-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_298-2-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7428,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_281-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_281-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7429,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf183-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf183-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7430,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf162-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf162-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7431,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf194-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf194-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7432,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_266-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_266-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7433,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf127-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf127-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7434,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_253-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_253-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7435,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_302-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_302-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7436,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf135-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf135-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7437,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_314-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_314-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7438,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_327-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_327-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7439,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_290-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_290-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7440,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_261-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_261-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7441,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_280-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_280-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7442,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_318-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_318-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7443,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf244-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf244-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7444,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_322-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_322-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7445,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf166-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf166-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7446,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf106-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf106-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7447,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf231-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf231-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7448,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf158.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf158-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7449,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_270.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_270-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7450,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf53.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf53-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7451,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf206.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf206-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7452,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf211.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf211-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7453,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf115.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf115-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7454,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf130.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf130-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7455,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf123.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf123-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7456,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf94.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf94-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7457,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf143.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf143-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7458,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf98.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf98-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7459,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf71.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf71-300x298.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7460,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf212.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf212-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7461,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf235.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf235-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7462,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf202.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf202-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7463,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf227.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf227-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7464,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf247.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf247-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7465,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf91.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf91-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7466,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf75.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf75-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7467,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf41.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf41-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7468,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf154.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf154-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7469,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf67.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf67-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7470,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf84.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf84-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7471,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf61.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf61-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7472,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf57.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf57-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7473,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf49.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf49-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7474,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf87.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf87-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7475,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf95.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf95-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7476,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf90.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf90-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7477,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf86.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf86-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7478,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf104.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf104-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7479,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_260.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_260-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7480,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf128.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf128-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7481,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_300.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_300-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7482,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf121.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf121-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7483,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_276.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_276-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7484,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_311-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_311-1-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7485,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_286.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_286-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7486,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf142.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf142-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7487,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_287.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_287-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7488,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf185.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf185-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7489,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf164.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf164-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7490,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf242.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf242-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7491,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf196.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf196-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7492,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_268.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_268-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7493,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_256.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_256-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7494,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_304.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_304-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7495,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_264.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_264-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7496,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf138.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf138-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7497,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_316.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_316-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7498,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_329.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_329-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7499,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf125.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf125-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7500,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf74.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf74-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7501,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf81.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf81-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7502,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf134.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf134-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7503,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_320.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_320-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7504,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf146.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf146-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7505,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf70.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf70-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7506,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf156.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf156-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7507,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_324.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_custom_football_scarf_324-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7508,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf168.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf168-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7509,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf204.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf204-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7510,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf216.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf216-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7511,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf228.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf228-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7512,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf233.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf233-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7513,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf237.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf237-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7514,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf245.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf245-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        },
+        {
+          "id": 7515,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf249.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomfootballscarf249-300x300.png",
+          "alt": "Personalisierter HD-Fußballschal"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 1,
+          "name": "Format",
+          "options": [
+            "120 x 15 cm (für Kinder)",
+            "140 x 18 cm (standard)",
+            "160 x 18 cm (extra lang)",
+            "180 x 18 cm (ultra lang)"
+          ]
+        },
+        {
+          "id": 28,
+          "name": "Farbe",
+          "options": [
+            "1-5 Farben",
+            "5+ Farben"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 6732,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "120-x-15-cm-fur-kinder"
+            },
+            {
+              "name": "Farbe",
+              "value": "1-5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6733,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "120-x-15-cm-fur-kinder"
+            },
+            {
+              "name": "Farbe",
+              "value": "5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6734,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "140-x-18-cm-standard"
+            },
+            {
+              "name": "Farbe",
+              "value": "1-5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6735,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "140-x-18-cm-standard"
+            },
+            {
+              "name": "Farbe",
+              "value": "5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6736,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "160-x-18-cm-extra-lang"
+            },
+            {
+              "name": "Farbe",
+              "value": "1-5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6737,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "160-x-18-cm-extra-lang"
+            },
+            {
+              "name": "Farbe",
+              "value": "5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6738,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "180-x-18-cm-ultra-lang"
+            },
+            {
+              "name": "Farbe",
+              "value": "1-5-farben"
+            }
+          ]
+        },
+        {
+          "id": 6739,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "180-x-18-cm-ultra-lang"
+            },
+            {
+              "name": "Farbe",
+              "value": "5-farben"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4538,
+      "name": "Personalisierter Regenschirm",
+      "slug": "personalisierter-regenschirm",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-regenschirm/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierter Regenschirm</h2>\n<p data-start=\"125\" data-end=\"344\">Dieser personalisierte Regenschirm lässt sich ganz einfach in einer Sporttasche, einem Rucksack oder einer Handtasche verstauen. Jeder Schirm wird mit einer <strong data-start=\"282\" data-end=\"297\">Schutzhülle</strong> geliefert, die sich bequem überziehen lässt.</p>\n<p data-start=\"346\" data-end=\"476\">Ihr Logo kann in <strong data-start=\"363\" data-end=\"406\">1 Farbe, 2 Farben oder im Vollfarbdruck</strong> aufgebracht werden – wahlweise auf <strong data-start=\"442\" data-end=\"473\">1, 2 oder sogar 4 Segmenten</strong>.</p>\n<ul data-start=\"477\" data-end=\"557\">\n<li data-start=\"477\" data-end=\"520\">\n<p data-start=\"479\" data-end=\"520\"><strong data-start=\"479\" data-end=\"507\">1- oder 2-farbiger Druck</strong>: Siebdruck</p>\n</li>\n<li data-start=\"521\" data-end=\"557\">\n<p data-start=\"523\" data-end=\"557\"><strong data-start=\"523\" data-end=\"540\">Vollfarbdruck</strong>: Transferdruck</p>\n</li>\n</ul>\n<p data-start=\"559\" data-end=\"573\"><strong data-start=\"559\" data-end=\"571\">Details:</strong></p>\n<ul data-start=\"574\" data-end=\"783\">\n<li data-start=\"574\" data-end=\"615\">\n<p data-start=\"576\" data-end=\"615\">Material: Polyester mit Metallgestell</p>\n</li>\n<li data-start=\"616\" data-end=\"646\">\n<p data-start=\"618\" data-end=\"646\">Druck: 1, 2 oder Vollfarbe</p>\n</li>\n<li data-start=\"647\" data-end=\"669\">\n<p data-start=\"649\" data-end=\"669\">Durchmesser: 90 cm</p>\n</li>\n<li data-start=\"670\" data-end=\"715\">\n<p data-start=\"672\" data-end=\"715\">Produktion in China, Bedruckung in Europa</p>\n</li>\n<li data-start=\"716\" data-end=\"783\">\n<p data-start=\"718\" data-end=\"783\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"785\" data-end=\"922\"><strong data-start=\"785\" data-end=\"806\">Farben verfügbar:</strong> Weiß, Schwarz, Rot, Gelb, Navyblau, Königsblau, Hellblau, Grün und Orange.<br data-start=\"881\" data-end=\"884\" />Maximale Logogröße: <strong data-start=\"904\" data-end=\"920\">230 × 140 mm</strong></p>\n<p data-start=\"924\" data-end=\"1094\">Hinweis: Dieser Schirm ist relativ leicht und daher <strong data-start=\"979\" data-end=\"1011\">nicht für stürmisches Wetter</strong> geeignet. Wenn Sie einen robusteren Schirm wünschen, kontaktieren Sie uns bitte.</p>",
+      "short_description": "",
+      "sku": "custom-printed-umbrellas",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8694,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella2-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella2-14-300x300.png",
+          "alt": "Hercules Merchandise umbrella"
+        },
+        {
+          "id": 8695,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella1-300x300.png",
+          "alt": "Hercules Merchandise umbrella"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 21,
+          "name": "Drucken",
+          "options": [
+            "1-farbiges Logo",
+            "Vollfarbiges Logo"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4540,
+          "attributes": [
+            {
+              "name": "Drucken",
+              "value": "1-farbiges-logo"
+            }
+          ]
+        },
+        {
+          "id": 4541,
+          "attributes": [
+            {
+              "name": "Drucken",
+              "value": "vollfarbiges-logo"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4421,
+      "name": "Personalisierte Regenjacke",
+      "slug": "personalisierte-regenjacke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-regenjacke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"96\" data-end=\"138\"><strong data-start=\"100\" data-end=\"136\">Individuell bedruckte Regenjacke</strong></h3>\n<p data-start=\"140\" data-end=\"423\">Brauchen Sie zuverlässigen Schutz bei Regen? Unsere <strong data-start=\"192\" data-end=\"236\">vollständig personalisierten Regenjacken</strong> sind nicht nur <strong data-start=\"252\" data-end=\"288\">funktional und 100 % wasserdicht</strong>, sondern sehen auch richtig gut aus. Die gesamte Oberfläche der Jacke kann mit einem <strong data-start=\"374\" data-end=\"404\">Design im Stil Ihrer Marke</strong> bedruckt werden.</p>\n<p data-start=\"425\" data-end=\"583\">Auch die <strong data-start=\"434\" data-end=\"458\">Innenseite der Jacke</strong> kann bedruckt werden – das verleiht ihr einen hochwertigen Look. Ihr Team wird mit diesen Jacken garantiert <strong data-start=\"567\" data-end=\"580\">auffallen</strong>!</p>\n<p data-start=\"585\" data-end=\"599\"><strong data-start=\"585\" data-end=\"597\">Details:</strong></p>\n<ul data-start=\"600\" data-end=\"817\">\n<li data-start=\"600\" data-end=\"629\">\n<p data-start=\"602\" data-end=\"629\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"630\" data-end=\"663\">\n<p data-start=\"632\" data-end=\"663\">Unbegrenzte Farben und Muster</p>\n</li>\n<li data-start=\"664\" data-end=\"726\">\n<p data-start=\"666\" data-end=\"726\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"727\" data-end=\"751\">\n<p data-start=\"729\" data-end=\"751\">Produktion in Europa</p>\n</li>\n<li data-start=\"752\" data-end=\"817\">\n<p data-start=\"754\" data-end=\"817\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"819\" data-end=\"1030\">Alle Jacken sind mit einer <strong data-start=\"846\" data-end=\"856\">Kapuze</strong> ausgestattet und verfügen über <strong data-start=\"888\" data-end=\"929\">zwei Seitentaschen mit Reißverschluss</strong>. Zudem können sie dank <strong data-start=\"953\" data-end=\"980\">verstellbarer Gummizüge</strong> individuell angepasst und enger gezogen werden.</p>",
+      "short_description": "",
+      "sku": "custom-printed-rain-jackets",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8556,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_6-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_6-16-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8557,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket1-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8558,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_9-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8559,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket3-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8560,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_8-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8561,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket4-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8562,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket2-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4423,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4418,
+      "name": "Personalisierte Trainer-Jacke",
+      "slug": "personalisierte-trainer-jacke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-trainer-jacke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"100\" data-end=\"143\"><strong data-start=\"104\" data-end=\"141\">Individuell bedruckte Coach-Jacke</strong></h3>\n<p data-start=\"145\" data-end=\"391\">Kleiden Sie alle <strong data-start=\"162\" data-end=\"195\">Trainer und Auswechselspieler</strong> Ihres Teams in eine <strong data-start=\"216\" data-end=\"258\">vollflächig bedruckte, warme Windjacke</strong>. Mit diesen Trainings-Jacken sorgen Sie für ein <strong data-start=\"303\" data-end=\"332\">professionelles Auftreten</strong> und halten gleichzeitig <strong data-start=\"357\" data-end=\"388\">alle warm und windgeschützt</strong>.</p>\n<p data-start=\"393\" data-end=\"566\">Die Jacken bestehen aus <strong data-start=\"417\" data-end=\"436\">100 % Polyester</strong> und sind <strong data-start=\"446\" data-end=\"465\">wasserabweisend</strong> – perfekt für verregnete Spieltage. Dank des <strong data-start=\"511\" data-end=\"534\">dicken Innenfutters</strong> sind sie zudem angenehm warm.</p>\n<p data-start=\"568\" data-end=\"752\">Auch die <strong data-start=\"577\" data-end=\"591\">Innenseite</strong> kann individuell bedruckt werden, was der Jacke einen besonders <strong data-start=\"656\" data-end=\"682\">hochwertigen Charakter</strong> verleiht. Ihr Team wird mit diesen Jacken garantiert <strong data-start=\"736\" data-end=\"750\">auffallen!</strong></p>\n<p data-start=\"754\" data-end=\"768\"><strong data-start=\"754\" data-end=\"766\">Details:</strong></p>\n<ul data-start=\"769\" data-end=\"994\">\n<li data-start=\"769\" data-end=\"798\">\n<p data-start=\"771\" data-end=\"798\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"799\" data-end=\"840\">\n<p data-start=\"801\" data-end=\"840\">Unbegrenzte Farben und Muster möglich</p>\n</li>\n<li data-start=\"841\" data-end=\"903\">\n<p data-start=\"843\" data-end=\"903\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"904\" data-end=\"928\">\n<p data-start=\"906\" data-end=\"928\">Produktion in Europa</p>\n</li>\n<li data-start=\"929\" data-end=\"994\">\n<p data-start=\"931\" data-end=\"994\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"996\" data-end=\"1188\">Alle Jacken sind mit einer <strong data-start=\"1023\" data-end=\"1040\">warmen Kapuze</strong> ausgestattet und verfügen über <strong data-start=\"1072\" data-end=\"1113\">zwei Seitentaschen mit Reißverschluss</strong>.<br data-start=\"1114\" data-end=\"1117\" />Ein <strong data-start=\"1121\" data-end=\"1155\">unverzichtbares Kleidungsstück</strong> für jeden Verein mit Anspruch!</p>",
+      "short_description": "",
+      "sku": "custom-printed-coach-jackets",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 11667,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-15-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11663,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-11-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11653,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-01.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-01-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11658,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-06.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-06-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11662,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-10-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11665,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-13-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11654,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-02.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-02-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11660,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-08.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-08-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11666,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-14-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11664,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-12-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11655,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-03.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-03-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4420,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4412,
+      "name": "Personalisierter Trainingsanzug",
+      "slug": "personalisierter-trainingsanzug",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-trainingsanzug/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"97\" data-end=\"144\"><strong data-start=\"101\" data-end=\"142\">Individuell bedruckter Trainingsanzug</strong></h3>\n<p data-start=\"146\" data-end=\"525\">Ein <strong data-start=\"150\" data-end=\"205\">personalisierter Trainingsanzug mit Jacke und Hose</strong> ist für jeden Sportverein unverzichtbar. Die Außenseite der Jacke wird <strong data-start=\"277\" data-end=\"313\">vollflächig individuell bedruckt</strong> – Sie können also <strong data-start=\"332\" data-end=\"359\">jedes gewünschte Design</strong> umsetzen, mit einer <strong data-start=\"380\" data-end=\"412\">unbegrenzten Anzahl an Logos</strong>.<br data-start=\"413\" data-end=\"416\" />Fügen Sie Sponsorenlogos hinzu und <strong data-start=\"451\" data-end=\"522\">finanzieren Sie die Trainingsbekleidung teilweise über Werbeflächen</strong>.</p>\n<p data-start=\"527\" data-end=\"718\">Die Trainingsjacken bestehen aus <strong data-start=\"560\" data-end=\"594\">weichem, elastischem Polyester</strong>. Dadurch sind sie <strong data-start=\"613\" data-end=\"635\">angenehm zu tragen</strong> und gleichzeitig <strong data-start=\"653\" data-end=\"672\">strapazierfähig</strong> – perfekt für intensive Trainingseinheiten.</p>\n<p data-start=\"720\" data-end=\"734\"><strong data-start=\"720\" data-end=\"732\">Details:</strong></p>\n<ul data-start=\"735\" data-end=\"960\">\n<li data-start=\"735\" data-end=\"764\">\n<p data-start=\"737\" data-end=\"764\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"765\" data-end=\"806\">\n<p data-start=\"767\" data-end=\"806\">Unbegrenzte Farben und Muster möglich</p>\n</li>\n<li data-start=\"807\" data-end=\"869\">\n<p data-start=\"809\" data-end=\"869\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"870\" data-end=\"894\">\n<p data-start=\"872\" data-end=\"894\">Produktion in Europa</p>\n</li>\n<li data-start=\"895\" data-end=\"960\">\n<p data-start=\"897\" data-end=\"960\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"962\" data-end=\"1313\">Die Innenseite der Jacke ist immer <strong data-start=\"997\" data-end=\"1005\">weiß</strong>, der <strong data-start=\"1011\" data-end=\"1021\">Kragen</strong> kann in der gewünschten Farbe gefertigt werden. Die <strong data-start=\"1074\" data-end=\"1083\">Größe</strong> ist am Kragen angegeben.<br data-start=\"1108\" data-end=\"1111\" />Sie können zwischen einem <strong data-start=\"1137\" data-end=\"1170\">kurzen Reißverschluss (¼-Zip)</strong> oder einem <strong data-start=\"1182\" data-end=\"1214\">durchgehenden Reißverschluss</strong> wählen. Die Variante mit durchgehendem Reißverschluss verfügt über <strong data-start=\"1282\" data-end=\"1310\">Seitentaschen mit Zipper</strong>.</p>\n<p data-start=\"1315\" data-end=\"1661\">Die <strong data-start=\"1319\" data-end=\"1337\">Trainingshosen</strong> bestehen aus einem etwas <strong data-start=\"1363\" data-end=\"1386\">schwereren Material</strong> als die Jacken und halten die Beine angenehm warm.<br data-start=\"1437\" data-end=\"1440\" />Sie sind <strong data-start=\"1449\" data-end=\"1467\">nur in Schwarz</strong> erhältlich und <strong data-start=\"1483\" data-end=\"1503\">nicht bedruckbar</strong>, können jedoch mit <strong data-start=\"1523\" data-end=\"1562\">Initialen oder Nummern im Flexdruck</strong> personalisiert werden.<br data-start=\"1585\" data-end=\"1588\" />Kontaktieren Sie uns gerne, um mehr über die Möglichkeiten zu erfahren.</p>",
+      "short_description": "",
+      "sku": "custom-printed-tracksuits",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8536,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_20-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_20-16-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8537,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit16-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8538,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit1-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8539,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit10-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8540,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit4-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8541,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_23-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8542,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit18-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8543,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit2-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8544,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit13-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8545,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_22-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8546,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit3-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8547,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit11-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8548,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit17-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8549,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit6-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "1/4-Reißverschluss",
+            "Durchgehender Reißverschluss"
+          ]
+        },
+        {
+          "id": 39,
+          "name": "Hose",
+          "options": [
+            "Mit Hose",
+            "Ohne Hose"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4414,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-4-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "ohne-hose"
+            }
+          ]
+        },
+        {
+          "id": 4415,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-4-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "mit-hose"
+            }
+          ]
+        },
+        {
+          "id": 4416,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "durchgehender-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "ohne-hose"
+            }
+          ]
+        },
+        {
+          "id": 4417,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "durchgehender-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "mit-hose"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4391,
+      "name": "Individuell gewebter Aufnäher",
+      "slug": "individuell-gewebter-aufnaher",
+      "permalink": "https://staging.hercules-merchandise.de/products/individuell-gewebter-aufnaher/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"94\" data-end=\"133\"><strong data-start=\"98\" data-end=\"131\">Individuell gewebter Aufnäher</strong></h3>\n<p data-start=\"135\" data-end=\"307\">Suchen Sie <strong data-start=\"146\" data-end=\"215\">Aufnäher zur Personalisierung Ihrer Shirts oder anderer Textilien</strong>? Wir bieten <strong data-start=\"228\" data-end=\"283\">vollständig individuell gefertigte, gewebte Aufnäher</strong> in höchster Qualität.</p>\n<p data-start=\"309\" data-end=\"323\"><strong data-start=\"309\" data-end=\"321\">Details:</strong></p>\n<ul data-start=\"324\" data-end=\"509\">\n<li data-start=\"324\" data-end=\"349\">\n<p data-start=\"326\" data-end=\"349\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"350\" data-end=\"382\">\n<p data-start=\"352\" data-end=\"382\">Bis zu 6 verschiedene Farben</p>\n</li>\n<li data-start=\"383\" data-end=\"405\">\n<p data-start=\"385\" data-end=\"405\">Maße: 65 bis 90 mm</p>\n</li>\n<li data-start=\"406\" data-end=\"441\">\n<p data-start=\"408\" data-end=\"441\">Produktion in Europa oder China</p>\n</li>\n<li data-start=\"442\" data-end=\"509\">\n<p data-start=\"444\" data-end=\"509\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"511\" data-end=\"770\">Standardmäßig werden unsere Aufnäher so hergestellt, dass sie <strong data-start=\"573\" data-end=\"596\">auf Stoff aufgenäht</strong> werden können.<br data-start=\"611\" data-end=\"614\" />Gegen einen kleinen Aufpreis kann auf der Rückseite ein <strong data-start=\"670\" data-end=\"697\">spezieller Textilkleber</strong> aufgebracht werden – so lässt sich der Aufnäher <strong data-start=\"746\" data-end=\"767\">einfach aufbügeln</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-woven-badges-for-football-and-rugby",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8497,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges1-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges1-16-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8498,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges2-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8499,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges3-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8500,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges4-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "Aufklebe-Abzeichen",
+            "Aufnäher"
+          ]
+        },
+        {
+          "id": 38,
+          "name": "Anzahl der Farben",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4393,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "id": 4394,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "id": 4395,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 4396,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 4397,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "id": 4398,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "id": 4399,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "id": 4400,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 4401,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 4402,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "6"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4259,
+      "name": "Personalisierte Wintermütze",
+      "slug": "personalisierte-wintermutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-wintermutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"123\" data-end=\"155\"><strong data-start=\"127\" data-end=\"155\">Individuelle Wintermütze</strong></h3>\n<p data-start=\"157\" data-end=\"441\">Mit unserer <strong data-start=\"169\" data-end=\"208\">personalisierten Winter-Strickmütze</strong> trotzen Sie jeder Kälte!<br data-start=\"233\" data-end=\"236\" />Die Mütze wird mit <strong data-start=\"255\" data-end=\"289\">dickem Garn und groben Maschen</strong> gestrickt, was sie besonders <strong data-start=\"319\" data-end=\"341\">warm und voluminös</strong> macht.<br data-start=\"348\" data-end=\"351\" />Der <strong data-start=\"355\" data-end=\"367\">Umschlag</strong> sorgt zusätzlich für ein <strong data-start=\"393\" data-end=\"438\">angenehm warmes Gefühl an Stirn und Ohren</strong>.</p>\n<p data-start=\"443\" data-end=\"737\">Am oberen Teil wird häufig der <strong data-start=\"474\" data-end=\"516\">Vereinsname direkt in das Strickmuster</strong> eingearbeitet – auf Wunsch auch mit <strong data-start=\"553\" data-end=\"576\">markanten Elementen</strong> wie <strong data-start=\"581\" data-end=\"611\">Sternen oder Schneeflocken</strong>.<br data-start=\"612\" data-end=\"615\" />Ein <strong data-start=\"619\" data-end=\"627\">Logo</strong> wird <strong data-start=\"633\" data-end=\"653\">auf dem Umschlag</strong> entweder <strong data-start=\"663\" data-end=\"678\">aufgestickt</strong> oder über ein <strong data-start=\"693\" data-end=\"723\">gewebtes Abzeichen </strong>angebracht.</p>\n<p data-start=\"739\" data-end=\"753\"><strong data-start=\"739\" data-end=\"751\">Details:</strong></p>\n<ul data-start=\"754\" data-end=\"970\">\n<li data-start=\"754\" data-end=\"783\">\n<p data-start=\"756\" data-end=\"783\">Material: <strong data-start=\"766\" data-end=\"781\">100 % Acryl</strong></p>\n</li>\n<li data-start=\"784\" data-end=\"807\">\n<p data-start=\"786\" data-end=\"807\">Bis zu <strong data-start=\"793\" data-end=\"805\">3 Farben</strong></p>\n</li>\n<li data-start=\"808\" data-end=\"867\">\n<p data-start=\"810\" data-end=\"867\"><strong data-start=\"810\" data-end=\"820\">Bommel</strong> in 1, 2 oder 3 Farben – oder <strong data-start=\"850\" data-end=\"865\">ohne Bommel</strong></p>\n</li>\n<li data-start=\"868\" data-end=\"896\">\n<p data-start=\"870\" data-end=\"896\"><strong data-start=\"870\" data-end=\"894\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"897\" data-end=\"970\">\n<p data-start=\"899\" data-end=\"970\"><strong data-start=\"899\" data-end=\"914\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"972\" data-end=\"1179\">Wir empfehlen die <strong data-start=\"990\" data-end=\"1043\">Wintermütze vor allem für kräftige, grobe Designs</strong>.<br data-start=\"1044\" data-end=\"1047\" />Wenn Ihr Design <strong data-start=\"1063\" data-end=\"1079\">mehr Details</strong> enthält oder <strong data-start=\"1093\" data-end=\"1114\">mehr als 3 Farben</strong> umfasst, empfehlen wir stattdessen unsere <strong data-start=\"1157\" data-end=\"1176\">Standard-Mütze</strong></p>\n<p data-start=\"1181\" data-end=\"1291\">Für Kinder stellen wir eine <strong data-start=\"1209\" data-end=\"1242\">kleinere Version (19 × 18 cm)</strong> her, geeignet für Kinder <strong data-start=\"1268\" data-end=\"1288\">bis etwa 8 Jahre</strong></p>",
+      "short_description": "",
+      "sku": "custom-winter-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 10144,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Winter-beanie-036.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Winter-beanie-036-300x300.png",
+          "alt": "Hercules Merchandise Winter beanie"
+        },
+        {
+          "id": 7997,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat67-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat67-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 7999,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat55-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat55-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8000,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat59-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat59-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8002,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat51-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat51-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8003,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat9-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat9-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8005,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat1-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat1-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8007,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat23-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat23-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8009,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_71-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_71-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8011,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat63-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat63-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8012,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat47-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat47-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8014,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat3-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat3-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8015,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat7-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat7-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8017,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat15-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat15-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8018,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat18-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat18-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8019,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat33-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat33-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8021,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat4-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat4-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8022,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat35-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat35-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8024,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat25-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat25-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8025,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat29-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat29-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8027,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat6-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat6-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8028,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat31-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat31-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8030,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat8-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat8-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8032,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat49-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat49-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8035,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat20-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat20-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8038,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_73-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_knitted_winter_beanie_hat_73-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8040,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat37-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat37-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8041,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat53-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat53-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8042,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat57-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat57-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8043,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat61-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat61-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8044,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat65-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat65-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        },
+        {
+          "id": 8045,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat69-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseknittedwinterbeaniehat69-1-300x300.png",
+          "alt": "Personalisierte Wintermütze"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4261,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4262,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4263,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        },
+        {
+          "id": 4264,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4253,
+      "name": "Personalisierte Standard-Mütze",
+      "slug": "custom-football-beanie-hats",
+      "permalink": "https://staging.hercules-merchandise.de/products/custom-football-beanie-hats/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"117\" data-end=\"152\"><strong data-start=\"121\" data-end=\"152\">Personalisierte Standard-Mütze</strong></h3>\n<p data-start=\"154\" data-end=\"444\">Unsere <strong data-start=\"161\" data-end=\"179\">Standard-Mütze</strong> ist das <strong data-start=\"188\" data-end=\"210\">beliebteste Modell</strong> in unserem Sortiment.<br data-start=\"232\" data-end=\"235\" />Sie wird mit einem <strong data-start=\"254\" data-end=\"269\">feinen Garn</strong> gestrickt und enthält zusätzlich <strong data-start=\"303\" data-end=\"312\">Lycra</strong>, wodurch die Maschen eng aneinanderliegen.<br data-start=\"355\" data-end=\"358\" />So können selbst <strong data-start=\"375\" data-end=\"399\">detailreiche Designs</strong> präzise in die Mütze eingearbeitet werden.</p>\n<p data-start=\"446\" data-end=\"687\">Sie können optional einen <strong data-start=\"472\" data-end=\"502\">Bommel in beliebiger Farbe</strong> hinzufügen.<br data-start=\"514\" data-end=\"517\" />Die Mütze kann <strong data-start=\"532\" data-end=\"558\">mit oder ohne Umschlag</strong> produziert werden.<br data-start=\"577\" data-end=\"580\" />Text oder Schriftzüge können sowohl <strong data-start=\"616\" data-end=\"634\">im oberen Teil</strong> als auch <strong data-start=\"644\" data-end=\"664\">auf dem Umschlag</strong> eingestrickt werden.</p>\n<p data-start=\"689\" data-end=\"703\"><strong data-start=\"689\" data-end=\"701\">Details:</strong></p>\n<ul data-start=\"704\" data-end=\"961\">\n<li data-start=\"704\" data-end=\"758\">\n<p data-start=\"706\" data-end=\"758\">Material: <strong data-start=\"716\" data-end=\"756\">Acryl mit einem kleinen Anteil Lycra</strong></p>\n</li>\n<li data-start=\"759\" data-end=\"782\">\n<p data-start=\"761\" data-end=\"782\">Bis zu <strong data-start=\"768\" data-end=\"780\">5 Farben</strong></p>\n</li>\n<li data-start=\"783\" data-end=\"804\">\n<p data-start=\"785\" data-end=\"804\"><strong data-start=\"785\" data-end=\"796\">Breite:</strong> 22 cm</p>\n</li>\n<li data-start=\"805\" data-end=\"858\">\n<p data-start=\"807\" data-end=\"858\"><strong data-start=\"807\" data-end=\"818\">Bommel:</strong> 1, 2 oder 3 Farben – oder ohne Bommel</p>\n</li>\n<li data-start=\"859\" data-end=\"887\">\n<p data-start=\"861\" data-end=\"887\"><strong data-start=\"861\" data-end=\"885\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"888\" data-end=\"961\">\n<p data-start=\"890\" data-end=\"961\"><strong data-start=\"890\" data-end=\"905\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"963\" data-end=\"1270\">Für <strong data-start=\"967\" data-end=\"989\">detaillierte Logos</strong> empfehlen wir <strong data-start=\"1004\" data-end=\"1017\">Stickerei</strong> oder ein <strong data-start=\"1027\" data-end=\"1048\">Abzeichen (Badge)</strong>.<br data-start=\"1049\" data-end=\"1052\" />Letzteres kann <strong data-start=\"1067\" data-end=\"1077\">gewebt</strong> (höhere Qualität) oder <strong data-start=\"1101\" data-end=\"1113\">gedruckt</strong> (mehr Detailtreue) sein.<br data-start=\"1138\" data-end=\"1141\" />Bei <strong data-start=\"1145\" data-end=\"1170\">kleineren Stückzahlen</strong> wird in der Regel <strong data-start=\"1189\" data-end=\"1202\">Stickerei</strong> verwendet – wir beraten Sie gerne, welche Option am besten passt.</p>\n<p data-start=\"1272\" data-end=\"1380\">Für Kinder bieten wir eine <strong data-start=\"1299\" data-end=\"1332\">kleinere Version (19 × 18 cm)</strong> an, geeignet für Kinder <strong data-start=\"1357\" data-end=\"1377\">bis etwa 8 Jahre</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-football-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 7916,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat51-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat51-20-300x300.png",
+          "alt": "Hercules Merchandise standard knitted beanie hat"
+        },
+        {
+          "id": 7917,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_147.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_147-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7918,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat71.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat71-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7919,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_108.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_108-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7920,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_120.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_120-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7921,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_148.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_148-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7922,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_144.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_144-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7923,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat67.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat67-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7924,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat47.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat47-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7925,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_128.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_128-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7926,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_112.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_112-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7927,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat97.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat97-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7928,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_132.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_132-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7929,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_140.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_140-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7930,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_149.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_149-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7931,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat104.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat104-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7932,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat101.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat101-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7933,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat88.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat88-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7934,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat55.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat55-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7935,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_136.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_136-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7936,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_124.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_124-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7937,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat39.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat39-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7938,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat83.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat83-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7939,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat90.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat90-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7940,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat43.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat43-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7941,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat59.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat59-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7942,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat63-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7943,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat75.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat75-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7944,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat4-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7945,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat3-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7946,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat6-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7947,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat11-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7948,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat16-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7949,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat31.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat31-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7950,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat79.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat79-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7951,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat23-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7952,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat35-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7953,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat1-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7954,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat7-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7955,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat20-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7956,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat13-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7957,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat9-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7958,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat53.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat53-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7959,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat10-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7960,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat73.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat73-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7961,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_122.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_122-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7962,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_110.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_110-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7963,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_146.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_146-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7964,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat49.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat49-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7965,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_130.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_130-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7966,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_134.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_134-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7967,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat99.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat99-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7968,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat106.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat106-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7969,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat69.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat69-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7970,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_114.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_114-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7971,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_142.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_142-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7972,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat102.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat102-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7973,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_126.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_126-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7974,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat91.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat91-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7975,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_138.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_standard_knitted_beanie_hat_138-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7976,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat56.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat56-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7977,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat41.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat41-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7978,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat85.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat85-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7979,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat86.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat86-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7980,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat45-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        },
+        {
+          "id": 7981,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat77.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestandardknittedbeaniehat77-300x300.png",
+          "alt": "Personalisierte Standard-Mütze"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4255,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        },
+        {
+          "id": 4256,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit"
+            }
+          ]
+        },
+        {
+          "id": 4257,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4258,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            },
+            {
+              "name": "Bommel",
+              "value": "ohne"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4187,
+      "name": "Personalisierte Decke",
+      "slug": "personalisierte-decke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-decke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<article class=\"text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" data-turn-id=\"request-68d110ac-127c-8323-a2d2-a4fb13be6186-45\" data-testid=\"conversation-turn-812\" data-scroll-anchor=\"true\" data-turn=\"assistant\">\n<div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"171a07a0-8ee5-4179-8668-dd536a62b8df\" data-message-model-slug=\"gpt-5\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\">\n<h3 data-start=\"0\" data-end=\"24\"><strong data-start=\"0\" data-end=\"22\">Personalisierte Decke</strong></h3>\n<p data-start=\"26\" data-end=\"377\">Sind Sie ein echter Fußballfan, der sich im Winter nicht vom kalten Wetter abhalten lässt? Dann ist unsere <strong data-start=\"133\" data-end=\"157\">Premium-Fußballdecke</strong> genau das Richtige für Sie! Diese hochwertige, extra warme Decke ist die perfekte Kombination aus <strong data-start=\"256\" data-end=\"287\">Komfort, Stil und Teamgeist</strong> – ideal, um sich gemütlich einzukuscheln und gleichzeitig Ihre Vereinsfarben zu zeigen.</p>\n<p data-start=\"379\" data-end=\"623\"><strong data-start=\"379\" data-end=\"392\">Material:</strong> 100 % Polyester<br data-start=\"408\" data-end=\"411\" /><strong data-start=\"411\" data-end=\"420\">Maße:</strong> 120 x 150 cm<br data-start=\"433\" data-end=\"436\" /><strong data-start=\"436\" data-end=\"446\">Druck:</strong> Vollfarbdruck auf einer Seite<br data-start=\"476\" data-end=\"479\" /><strong data-start=\"479\" data-end=\"494\">Unterseite:</strong> Dicke Lage aus Kunstlammfell<br data-start=\"523\" data-end=\"526\" data-is-only-node=\"\" /><strong data-start=\"526\" data-end=\"541\">Produktion:</strong> Hergestellt in Europa<br data-start=\"563\" data-end=\"566\" /><strong data-start=\"566\" data-end=\"581\">Lieferzeit:</strong> ca. 5 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"625\" data-end=\"905\">Gefertigt aus hochwertigem Polyester sorgt die Decke für <strong data-start=\"682\" data-end=\"710\">optimale Wärmeisolierung</strong> – selbst an den kältesten Winterabenden. Ihre <strong data-start=\"757\" data-end=\"786\">weiche, flauschige Textur</strong> vermittelt ein Gefühl purer Gemütlichkeit und macht sie zu einem unverzichtbaren Begleiter in der kalten Jahreszeit.</p>\n<p data-start=\"907\" data-end=\"1162\">Zeigen Sie Ihre <strong data-start=\"923\" data-end=\"949\">Vereinstreue mit Stil!</strong> Die Decke kann <strong data-start=\"965\" data-end=\"1003\">vollflächig in Ihren Vereinsfarben</strong> bedruckt werden – inklusive <strong data-start=\"1032\" data-end=\"1078\">Logo, Schriftzug oder individuellem Design</strong>. So wird sie zu einem echten Hingucker, ob auf dem Sofa, im Bett oder im Stadion.</p>\n<p data-start=\"1164\" data-end=\"1352\">Wir legen großen Wert auf <strong data-start=\"1190\" data-end=\"1221\">europäische Premiumqualität</strong>. Jede Decke wird unter strengen Qualitätsstandards gefertigt, um <strong data-start=\"1287\" data-end=\"1332\">Langlebigkeit und dauerhafte Kuschelwärme</strong> zu gewährleisten.</p>\n<p data-start=\"1354\" data-end=\"1473\">Ob beim spannenden Match, auf der Couch oder als extra Wärmeschicht im Bett – diese Decke passt zu jeder Gelegenheit.</p>\n<p data-start=\"1475\" data-end=\"1653\" data-is-last-node=\"\" data-is-only-node=\"\">Suchen Sie ein <strong data-start=\"1490\" data-end=\"1530\">originelles Geschenk für Fußballfans</strong> in Ihrem Umfeld? Diese personalisierte Decke ist das perfekte Präsent, das garantiert das ganze Jahr über Freude bereitet.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</article>",
+      "short_description": "",
+      "sku": "custom-blanket",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7345,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket24-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket24-21-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7346,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket33.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket33-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7347,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket26-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7348,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket21-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7349,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket35-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7350,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket29-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7351,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket38.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket38-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7352,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket14-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7353,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket2-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7354,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket45-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7355,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket34.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket34-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7356,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket36.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket36-300x300.png",
+          "alt": "Personalisierte Decke"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4189,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4162,
+      "name": "Personalisierter Weihnachtspullover",
+      "slug": "personalisierter-weihnachtspullover",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-weihnachtspullover/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p data-start=\"41\" data-end=\"437\">Machen Sie diese <strong data-start=\"58\" data-end=\"78\">Weihnachtssaison</strong> zu etwas ganz Besonderem mit unseren <strong data-start=\"116\" data-end=\"167\">individuell gestrickten Weihnachtspullovern</strong> – die perfekte Kombination aus <strong data-start=\"199\" data-end=\"242\">festlichem Charme und persönlicher Note</strong>.<br data-start=\"243\" data-end=\"246\" />Ob für die <strong data-start=\"257\" data-end=\"276\" data-is-only-node=\"\">Weihnachtsfeier</strong>, als <strong data-start=\"282\" data-end=\"314\">einzigartiges Kundengeschenk</strong> oder für den <strong data-start=\"328\" data-end=\"361\">einheitlichen Vereinsauftritt</strong> – diese Pullover vereinen <strong data-start=\"388\" data-end=\"425\">Wärme, Komfort und Individualität</strong> in einem.</p>\n<p data-start=\"439\" data-end=\"881\">Jeder Pullover wird aus <strong data-start=\"463\" data-end=\"500\">hochwertigem, weichem Strickstoff</strong> gefertigt und <strong data-start=\"515\" data-end=\"548\">individuell auf Maß gestrickt</strong>. Wählen Sie aus klassischen Designs mit <strong data-start=\"589\" data-end=\"640\">Schneeflocken, Rentieren oder Weihnachtsmännern</strong> oder entscheiden Sie sich für <strong data-start=\"671\" data-end=\"746\">moderne, minimalistische Muster, witzige Sprüche oder Ihr eigenes Motiv</strong>.<br data-start=\"747\" data-end=\"750\" />Auch <strong data-start=\"755\" data-end=\"792\">Namen, Logos oder Lieblingszitate</strong> können problemlos eingearbeitet werden – Ihrer Kreativität sind keine Grenzen gesetzt!</p>\n<p data-start=\"883\" data-end=\"1069\"><strong data-start=\"883\" data-end=\"896\">Material:</strong> 100 % Acrylgarn<br data-start=\"912\" data-end=\"915\" /><strong data-start=\"915\" data-end=\"926\">Farben:</strong> Bis zu 5 verschiedene<br data-start=\"948\" data-end=\"951\" /><strong data-start=\"951\" data-end=\"962\">Größen:</strong> S bis 5XL<br data-start=\"972\" data-end=\"975\" data-is-only-node=\"\" /><strong data-start=\"975\" data-end=\"990\">Produktion:</strong> Hergestellt in China<br data-start=\"1011\" data-end=\"1014\" /><strong data-start=\"1014\" data-end=\"1029\">Lieferzeit:</strong> 5–8 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"1071\" data-end=\"1248\">Wir bieten alle Größen von <strong data-start=\"1098\" data-end=\"1111\">S bis 5XL</strong> an und haben die gängigsten Garnfarben stets auf Lager.<br data-start=\"1167\" data-end=\"1170\" />Ab <strong data-start=\"1173\" data-end=\"1186\">200 Stück</strong> kann sogar eine <strong data-start=\"1203\" data-end=\"1227\">eigene Pantone-Farbe</strong> realisiert werden.</p>\n<p data-start=\"1250\" data-end=\"1491\" data-is-last-node=\"\" data-is-only-node=\"\">Stechen Sie in dieser Weihnachtssaison hervor – mit einem <strong data-start=\"1308\" data-end=\"1376\">Weihnachtspullover, der so einzigartig ist wie Ihre Feier selbst</strong>.<br data-start=\"1377\" data-end=\"1380\" /><strong data-start=\"1380\" data-end=\"1441\">Bestellen Sie jetzt Ihren gestrickten Weihnachts-Pullover</strong> und bringen Sie festliche Stimmung in jede Runde!</p>",
+      "short_description": "",
+      "sku": "custom-christmas-jumpers",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 258,
+          "name": "Personalisierte Textilien",
+          "slug": "personalisierte-textilien"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7279,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper7-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper7-21-300x300.png",
+          "alt": "Hercules Merchandise Christmas jumper"
+        },
+        {
+          "id": 7280,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper2-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7281,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper10-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7282,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper5-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7283,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper9-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        },
+        {
+          "id": 7284,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseChristmasjumper4-300x300.png",
+          "alt": "Personalisierter Weihnachtspullover"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4164,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.650Z"
+}

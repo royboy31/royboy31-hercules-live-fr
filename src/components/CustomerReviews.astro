@@ -1,0 +1,93 @@
+---
+// Customer Reviews Section - What Customers Say About Us
+// Uses the same hosted TrustIndex widget as the live site (FR_TRUSTINDEX_WIDGET_ID_HERE)
+// This loads fresh data directly from Google via TrustIndex CDN, always showing current review count
+---
+
+<section class="reviews-section" id="review-section">
+  <div class="reviews-container">
+    <h2 class="section-heading">
+      What Customers <span class="highlight">Say About Us</span>
+    </h2>
+
+    <!-- TrustIndex Widget Container - loaded via IntersectionObserver after page load -->
+    <div id="trustindex-widget-home"></div>
+    <script is:inline>
+      (function() {
+        var container = document.getElementById('trustindex-widget-home');
+        if (!container) return;
+        var section = container.closest('.reviews-section');
+        function loadWidget() {
+          var script = document.createElement('script');
+          script.src = 'https://cdn.trustindex.io/loader.js?FR_TRUSTINDEX_WIDGET_ID_HERE';
+          script.defer = true;
+          script.async = true;
+          container.appendChild(script);
+        }
+        if (section && 'IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+              loadWidget();
+              observer.disconnect();
+            }
+          }, { rootMargin: '400px 0px', threshold: 0 });
+          observer.observe(section);
+        } else {
+          window.addEventListener('load', loadWidget);
+        }
+      })();
+    </script>
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 0 50px 0;
+  }
+
+  .reviews-container {
+    width: 100%;
+  }
+
+  .section-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #253461;
+    text-align: center;
+    margin: 0 0 55px 0;
+  }
+
+  .section-heading .highlight {
+    color: #469ADC;
+  }
+
+  /* Hide only TrustIndex branding/powered-by links, not the review count link */
+  :global(.ti-widget .ti-footer-text a[href*="trustindex"]),
+  :global(.ti-widget a[title*="Trustindex"]),
+  :global(.ti-widget a[title*="trustindex"]) {
+    display: none !important;
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .section-heading {
+      font-size: 30px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .reviews-section {
+      padding: 40px 20px;
+    }
+
+    .section-heading {
+      font-size: 28px;
+    }
+  }
+</style>

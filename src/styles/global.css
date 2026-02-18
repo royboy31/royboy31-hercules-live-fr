@@ -1,0 +1,308 @@
+@import "tailwindcss";
+
+/* Font fallback definitions to prevent CLS (Cumulative Layout Shift)
+ * These fallback fonts have adjusted metrics to match the web fonts,
+ * preventing text reflow when web fonts load */
+@font-face {
+  font-family: 'Jost Fallback';
+  src: local('Arial');
+  size-adjust: 100%;
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Roboto Fallback';
+  src: local('Arial');
+  size-adjust: 100%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* Design Tokens from Hercules WordPress Site */
+@theme {
+  /* Brand Colors */
+  --color-primary: #253461;
+  --color-primary-light: #3a4a7a;
+  --color-primary-dark: #1a2545;
+
+  --color-accent: #10C99E;
+  --color-accent-hover: #10A380;
+  --color-accent-light: #E0F9F3;
+
+  --color-secondary: #469ADC;
+  --color-secondary-hover: #3584c4;
+
+  /* Text Colors */
+  --color-text-primary: #253461;
+  --color-text-secondary: #8D8D8D;
+  --color-text-muted: #666666;
+  --color-text-light: #BCBCBC;
+
+  /* UI Colors */
+  --color-border: #DCDCDC;
+  --color-border-light: #E6E6E6;
+  --color-border-dark: #DFDFDF;
+
+  --color-bg-selected: #E0F9F3;
+  --color-bg-tooltip: #253461;
+  --color-bg-gray: #f5f5f5;
+
+  /* Font Family - includes metric-adjusted fallbacks to prevent CLS */
+  --font-family-sans: 'Jost', 'Jost Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-body: 'Roboto', 'Roboto Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 15px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-size-5xl: 36px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 15px;
+  --radius-xl: 20px;
+  --radius-2xl: 25px;
+  --radius-full: 50px;
+  --radius-round: 83px;
+
+  /* Shadows */
+  --shadow-sm: 0px 0px 10px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 0px 25px 5px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0px 4px 30px rgba(0, 0, 0, 0.15);
+
+  /* Spacing */
+  --spacing-container: 1280px;
+}
+
+/* Base Styles */
+html {
+  font-family: var(--font-family-sans);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+  background-color: #FAFAFA;
+}
+
+/* Typography - Using 600 weight to match WordPress production site */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-sans);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+/* Button Base Styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-4 font-medium text-white rounded-full;
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-4 font-medium rounded-full;
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+  max-width: var(--spacing-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+  @apply rounded-xl overflow-hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea,
+select {
+  @apply w-full px-4 py-3 rounded-xl transition-all duration-200;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family-sans);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(16, 201, 158, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Swiper Custom Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+  background: white;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-border) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-accent) !important;
+}
+
+/* Performance: content-visibility for below-fold sections */
+/* This allows the browser to skip rendering of off-screen content */
+.lazy-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px; /* Estimated height to prevent layout shift */
+}
+
+/* Apply to specific below-fold sections on homepage */
+.top-performer-section,
+.why-choose-section,
+.design-service-section,
+.hercules-merchandise-section,
+.trust-logos-section,
+.customer-reviews-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
+}
+
+/* Footer can also benefit */
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Optimize Swiper containers to reduce forced reflows */
+.swiper {
+  contain: layout style;
+}
+
+.swiper-wrapper {
+  will-change: transform;
+}
+
+.swiper-slide {
+  contain: layout style paint;
+}
+
+/* Reduce reflow scope for product cards */
+.product-card,
+.category-product-card {
+  contain: layout style;
+}
+
+/* Optimize header for scroll performance */
+#sticky-header {
+  will-change: transform, opacity;
+  contain: layout style;
+}
+
+/* Change TrustIndex review stars to Google yellow (#fbbc04) */
+.ti-widget .ti-stars img,
+.ti-widget .ti-stars img.ti-star,
+.ti-widget .ti-stars img.ti-star.f,
+.ti-widget .ti-review-item .ti-stars img,
+.ti-stars.star-lg img.ti-star.f,
+.ti-stars img.ti-star,
+img.ti-star.f,
+img.ti-star {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(54%) saturate(2143%) hue-rotate(357deg) brightness(101%) contrast(103%) !important;
+}

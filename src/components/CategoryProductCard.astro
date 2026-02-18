@@ -1,0 +1,648 @@
+---
+/**
+ * CategoryProductCard - Product card for category archive pages
+ * Matches WordPress WooCommerce styling from staging.hercules-merchandise.de
+ *
+ * THUMBNAILS:
+ * - MOBILE (<768px): Fixed 25% width per thumbnail - 4 images = full width, 2 images = 50% (no Swiper)
+ * - DESKTOP: Swiper with FreeMode for smooth touch scrolling (lazy initialized)
+ *
+ * PERFORMANCE:
+ * - Swiper only initializes on desktop when card enters viewport (IntersectionObserver)
+ * - Images remain lazy loaded
+ * - Graceful degradation: CSS flexbox works if JS fails
+ */
+import WishlistButton from './WishlistButton.tsx';
+
+interface Props {
+  product: {
+    id: number;
+    name: string;
+    slug: string;
+    price: string;
+    regular_price?: string;
+    on_sale?: boolean;
+    images: Array<{ src: string; alt: string }>;
+    categories?: Array<{ slug: string; name: string }>;
+    variations?: Array<{
+      conditional_prices?: Array<{ qty: number; price: number }>;
+    }>;
+    // Badge fields from custom meta
+    made_in_europe?: boolean;
+    green_product?: boolean;
+    made_in_uk?: boolean;
+    // USP features for card display
+    card_features?: string[];
+    // Number of images cached in KV (from Worker sync)
+    cached_image_count?: number;
+  };
+  /** Product index in grid - used for fetchpriority (first 6 get high priority) */
+  index?: number;
+}
+
+const { product, index = 0 } = Astro.props;
+
+// First 3 products are above the fold on mobile (1 col) and tablet (2 col)
+// These get eager loading to improve LCP
+// Only the very first product gets fetchpriority="high" (actual LCP candidate)
+const isAboveFold = index < 3;
+const isLCPCandidate = index === 0;
+
+const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+
+// Get gallery images from Worker KV cache
+// Use cached_image_count from product data to know exactly how many images are available
+// Fall back to images array length with a max of 10 if cached_image_count is 0, null, or undefined
+// NOTE: Using || instead of ?? because cached_image_count can be 0 when sync hasn't updated it yet
+//
+// Image sizing (cached in KV during product sync - exact WordPress sizes):
+// - Main images: 361x361 WebP (~10-15KB) - exact match for 361px display
+// - Thumbnails: 100x100 WebP (~2-5KB) - displayed at 83px (slight buffer for retina)
+const imageCount = product.cached_image_count || Math.min(product.images?.length || 0, 10);
+const galleryImages = (product.images || []).slice(0, imageCount).map((img, index) => {
+  // Worker URL format: /image/{slug} for index 0, /image/{slug}/{index} for gallery
+  const baseUrl = index === 0
+    ? `${WORKER_URL}/image/${product.slug}`
+    : `${WORKER_URL}/image/${product.slug}/${index}`;
+  return {
+    thumb: `${baseUrl}?size=thumb`,  // 100x100 cached thumbnail (~2-5KB)
+    main: baseUrl,                    // 361x361 cached main image (~10-15KB WebP)
+    original: img.src,                // Original WordPress URL (full resolution)
+    alt: img.alt || product.name
+  };
+});
+
+// Worker main image URL - 361x361 cached WebP image
+const workerImageUrl = `${WORKER_URL}/image/${product.slug}`;
+// Original WordPress URL - full resolution for progressive upgrade
+const originalImageUrl = product.images?.[0]?.src || workerImageUrl;
+
+// Format price - just show the base price like WooCommerce does
+let priceDisplay = '';
+if (product.price) {
+  const price = parseFloat(product.price);
+  if (!isNaN(price)) {
+    priceDisplay = `£${price.toFixed(2)}`;
+  }
+}
+
+// Badge display based on custom meta fields (NOT categories)
+const isMadeInEurope = product.made_in_europe === true;
+const isSustainable = product.green_product === true;
+const isMadeInUk = product.made_in_uk === true;
+
+// Card features (USP list)
+const cardFeatures = product.card_features || [];
+---
+
+<li class="product">
+  <!-- Wishlist Button - positioned top-right -->
+  <div class="kd-wishlist-wrapper">
+    <WishlistButton
+      productId={product.id}
+      productName={product.name}
+      productSlug={product.slug}
+      productPrice={priceDisplay}
+      productThumbnail={workerImageUrl}
+      size={18}
+      client:visible
+    />
+  </div>
+
+  <a href={`/products/${product.slug}`} class="woocommerce-LoopProduct-link">
+    <!-- Badges - positioned top-left like WordPress -->
+    {(isMadeInEurope || isSustainable || isMadeInUk) && (
+      <div class="kd-archive-badges-wrapper">
+        {isSustainable && (
+          <img
+            src="/images/badges/green-option.svg"
+            alt="Eco-friendly Product Badge"
+            class="kd-product-badge kd-badge-eco"
+          />
+        )}
+        {isMadeInEurope && (
+          <img
+            src="/images/badges/made-in-europe.svg"
+            alt="Made in Europe Badge"
+            class="kd-product-badge kd-badge-eu"
+          />
+        )}
+        {isMadeInUk && (
+          <img
+            src="/images/badges/made-in-uk.svg"
+            alt="Made in UK Badge"
+            class="kd-product-badge kd-badge-uk"
+          />
+        )}
+      </div>
+    )}
+
+    <!-- Product Gallery -->
+    <div class="kd-product-gallery" data-product-slug={product.slug}>
+      <!-- Main Image - Progressive Loading: Worker cached (361x361) first, then original WordPress -->
+      <div class="kd-main-image">
+        <img
+          src={workerImageUrl}
+          data-full-src={originalImageUrl}
+          data-upgraded="false"
+          alt={product.name}
+          loading={isAboveFold ? "eager" : "lazy"}
+          fetchpriority={isLCPCandidate ? "high" : "auto"}
+          class="kd-main-img kd-progressive-img"
+          width="361"
+          height="361"
+        />
+      </div>
+
+      <!-- Thumbnail Swiper Carousel - Lazy Initialized -->
+      <!-- Show thumbnails even with 1 image so users see the gallery section -->
+      {galleryImages.length >= 1 && (
+        <div class="kd-thumbnails-wrapper">
+          <div class="swiper kd-thumb-swiper" data-gallery={JSON.stringify(galleryImages)}>
+            <div class="swiper-wrapper">
+              {galleryImages.slice(0, 4).map((img, idx) => (
+                <div class="swiper-slide">
+                  <button
+                    type="button"
+                    class={`kd-thumb-btn${idx === 0 ? ' active' : ''}`}
+                    data-thumb-src={img.thumb}
+                    data-main-src={img.main}
+                    data-original-src={img.original}
+                    aria-label={`Thumbnail ${idx + 1}`}
+                  >
+                    <img
+                      src={img.thumb}
+                      alt=""
+                      loading="lazy"
+                      class="kd-thumb"
+                      width="83"
+                      height="83"
+                    />
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+
+    <h2 class="woocommerce-loop-product__title">{product.name}</h2>
+
+    <!-- Card Features (USP list with checkmarks) -->
+    {cardFeatures.length > 0 && (
+      <ul class="kd-single-card-qty-list">
+        {cardFeatures.map(feature => (
+          <li>{feature}</li>
+        ))}
+      </ul>
+    )}
+  </a>
+  <a href={`/products/${product.slug}`} class="button product_type_variable">
+    Discover More
+  </a>
+</li>
+
+<style>
+  .product {
+    list-style: none;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 20px 15px 20px 15px;
+    background-color: #FFFFFF;
+    border-color: #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .woocommerce-LoopProduct-link {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    min-width: 0;
+  }
+
+  /* Wishlist button - positioned top-right */
+  .kd-wishlist-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 15;
+  }
+
+  /* Badges - positioned top-left like WordPress */
+  .kd-archive-badges-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    z-index: 10;
+  }
+
+  .kd-product-badge {
+    display: block;
+  }
+
+  .kd-badge-eco {
+    width: 50px;
+    height: auto;
+  }
+
+  .kd-badge-eu {
+    width: 55px;
+    height: 55px;
+  }
+
+  .kd-badge-uk {
+    width: 50px;
+    height: auto;
+  }
+
+  /* Product Gallery */
+  .kd-product-gallery {
+    width: 100%;
+    margin-bottom: 10px;
+    min-width: 0;
+  }
+
+  .kd-main-image {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .kd-main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+  }
+
+  /* Progressive Image Loading - smooth transition when upgrading to high-res WebP */
+  .kd-progressive-img {
+    transition: opacity 0.2s ease-out;
+  }
+
+  /* Thumbnail Swiper Carousel */
+  .kd-thumbnails-wrapper {
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  .kd-thumb-swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .kd-thumb-swiper .swiper-wrapper {
+    /* Flexbox fallback before Swiper initializes */
+    display: flex;
+    gap: 8px;
+  }
+
+  .kd-thumb-swiper .swiper-slide {
+    width: auto !important;
+    flex-shrink: 0;
+  }
+
+  .kd-thumb-btn {
+    background: #F2F2F2;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.2s, opacity 0.2s;
+    opacity: 0.85;
+    width: 83px;
+    height: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kd-thumb-btn:hover,
+  .kd-thumb-btn.active {
+    border-color: #469ADC;
+    opacity: 1;
+  }
+
+  .kd-thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .woocommerce-loop-product__title {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #253461;
+    padding: 0;
+    margin: 10px 0 5px 0;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  /* Card features list with checkmarks */
+  .kd-single-card-qty-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    text-align: left;
+    align-self: center;
+  }
+
+  .kd-single-card-qty-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    color: #626262;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .kd-single-card-qty-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #469ADC;
+    font-weight: 700;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #469ADC;
+    color: #FFFFFF;
+    border: 1px solid #469ADC;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    margin-top: auto;
+    align-self: center;
+  }
+
+  .button:hover {
+    background-color: transparent;
+    color: #469ADC;
+    border-color: #469ADC;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .product {
+      padding: 15px 10px;
+    }
+
+    .woocommerce-loop-product__title {
+      font-size: 16px;
+    }
+
+    .button {
+      font-size: 11px;
+      padding: 8px 12px;
+    }
+
+    /* Mobile: Fixed 25% width per thumbnail (4 thumbnails = full width, 2 = 50%) */
+    .kd-thumb-swiper .swiper-wrapper {
+      display: flex;
+      gap: 6px;
+    }
+
+    .kd-thumb-swiper .swiper-slide {
+      /* 25% minus proportional gap: (100% - 18px total gap) / 4 */
+      flex: 0 0 calc((100% - 18px) / 4);
+      width: calc((100% - 18px) / 4) !important;
+    }
+
+    .kd-thumb-btn {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+    }
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { FreeMode } from 'swiper/modules';
+  import 'swiper/css';
+
+  /**
+   * Progressive Image Loading
+   * - Loads Worker cached image (361x361) first for fast initial paint
+   * - Upgrades to original WordPress image (1000x1000) when entering viewport
+   * - Matches single product page behavior
+   */
+
+  // Track upgraded images to avoid duplicates
+  const upgradedImages = new WeakSet<Element>();
+
+  function upgradeImage(img: HTMLImageElement) {
+    if (upgradedImages.has(img)) return;
+
+    const fullSrc = img.dataset.fullSrc;
+    if (!fullSrc || img.dataset.upgraded === 'true') return;
+
+    // Don't upgrade if fullSrc is the same as current (Worker URL)
+    if (img.src === fullSrc) {
+      img.dataset.upgraded = 'true';
+      return;
+    }
+
+    upgradedImages.add(img);
+
+    // Create a new image to preload the high-quality original WordPress image
+    const highQualityImg = new Image();
+    highQualityImg.onload = () => {
+      img.src = fullSrc;
+      img.dataset.upgraded = 'true';
+    };
+    highQualityImg.src = fullSrc;
+  }
+
+  function setupProgressiveImageLoading() {
+    const progressiveImages = document.querySelectorAll('.kd-progressive-img');
+    if (!progressiveImages.length) return;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              upgradeImage(entry.target as HTMLImageElement);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: '50px', // Start loading slightly before entering viewport
+          threshold: 0,
+        }
+      );
+
+      progressiveImages.forEach((img) => observer.observe(img));
+    } else {
+      // Fallback: Upgrade all images immediately
+      progressiveImages.forEach((img) => upgradeImage(img as HTMLImageElement));
+    }
+  }
+
+  /**
+   * Thumbnail Swiper Carousel with Lazy Initialization
+   * - Only initializes when product card enters viewport
+   * - Uses FreeMode for smooth touch scrolling
+   * - Maintains CSS flexbox fallback
+   */
+
+  // Track initialized swipers to avoid duplicates
+  const initializedSwipers = new WeakSet<Element>();
+
+  function initThumbnailSwiper(swiperEl: Element) {
+    if (initializedSwipers.has(swiperEl)) return;
+    initializedSwipers.add(swiperEl);
+
+    new Swiper(swiperEl as HTMLElement, {
+      modules: [FreeMode],
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      freeMode: {
+        enabled: true,
+        sticky: false,
+        momentumRatio: 0.5,
+        momentumBounce: false,
+      },
+      watchSlidesProgress: true,
+      grabCursor: true,
+      touchEventsTarget: 'container',
+    });
+  }
+
+  /**
+   * Thumbnail click handler - Event delegation for all product cards
+   * Uses progressive loading: Worker cached (361x361) first, then original WordPress (1000x1000)
+   */
+  function setupThumbnailClickHandlers() {
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as Element).closest('.kd-thumb-btn');
+      if (!btn) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const gallery = btn.closest('.kd-product-gallery');
+      const mainImg = gallery?.querySelector('.kd-main-img') as HTMLImageElement;
+      const mainSrc = (btn as HTMLElement).dataset.mainSrc;        // Worker cached 361x361
+      const originalSrc = (btn as HTMLElement).dataset.originalSrc; // Original WordPress 1000x1000
+      const swiperEl = btn.closest('.kd-thumb-swiper');
+
+      if (mainImg && mainSrc) {
+        // Show Worker cached image immediately (fast, 361x361)
+        mainImg.src = mainSrc;
+        mainImg.dataset.upgraded = 'false';
+        mainImg.dataset.fullSrc = originalSrc || mainSrc;
+
+        // Preload and upgrade to original WordPress image (1000x1000)
+        if (originalSrc && originalSrc !== mainSrc) {
+          const highQualityImg = new Image();
+          highQualityImg.onload = () => {
+            mainImg.src = originalSrc;
+            mainImg.dataset.upgraded = 'true';
+          };
+          highQualityImg.src = originalSrc;
+        } else {
+          mainImg.dataset.upgraded = 'true';
+        }
+
+        // Update active state
+        swiperEl?.querySelectorAll('.kd-thumb-btn').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    });
+  }
+
+  /**
+   * Lazy initialization using IntersectionObserver
+   * Only initializes Swiper when product card enters viewport
+   * MOBILE: Skip Swiper - uses pure CSS flexbox for 4 equal thumbnails
+   */
+  function setupLazySwiper() {
+    // Skip Swiper on mobile - CSS flexbox handles the layout
+    if (window.innerWidth <= 767) return;
+
+    const swiperElements = document.querySelectorAll('.kd-thumb-swiper');
+    if (!swiperElements.length) return;
+
+    // Use IntersectionObserver for lazy initialization
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              initThumbnailSwiper(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: '100px', // Initialize slightly before entering viewport
+          threshold: 0,
+        }
+      );
+
+      swiperElements.forEach((el) => observer.observe(el));
+    } else {
+      // Fallback: Initialize all immediately
+      swiperElements.forEach(initThumbnailSwiper);
+    }
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setupThumbnailClickHandlers();
+      // Setup progressive image loading immediately for fast upgrade
+      setupProgressiveImageLoading();
+      // Defer Swiper initialization to after main content renders
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => setupLazySwiper(), { timeout: 2000 });
+      } else {
+        setTimeout(setupLazySwiper, 100);
+      }
+    });
+  } else {
+    setupThumbnailClickHandlers();
+    // Setup progressive image loading immediately for fast upgrade
+    setupProgressiveImageLoading();
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => setupLazySwiper(), { timeout: 2000 });
+    } else {
+      setTimeout(setupLazySwiper, 100);
+    }
+  }
+</script>

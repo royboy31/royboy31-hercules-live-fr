@@ -1,0 +1,568 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryProductCard from '../../components/CategoryProductCard.astro';
+import TrustLogos from '../../components/TrustLogos.astro';
+import CustomerReviews from '../../components/CustomerReviews.astro';
+
+const WORKER_URL = 'https://hercules-product-sync.gilles-86d.workers.dev';
+
+// Get the category slug from the URL
+const { slug } = Astro.params;
+
+// Fetch category details
+let category = null;
+try {
+  const categoryRes = await fetch(`${WORKER_URL}/category/${slug}`);
+  if (categoryRes.ok) {
+    category = await categoryRes.json();
+  }
+} catch (error) {
+  console.error('Error fetching category:', error);
+}
+
+// If category not found, return 404
+if (!category) {
+  return Astro.redirect('/404');
+}
+
+// Fetch all products from index
+let products: any[] = [];
+try {
+  const productsRes = await fetch(`${WORKER_URL}/products`);
+  if (productsRes.ok) {
+    const allProducts = await productsRes.json();
+    // Filter products that belong to this category
+    products = allProducts.filter((p: any) =>
+      p.categories?.includes(slug)
+    );
+  }
+} catch (error) {
+  console.error('Error fetching products:', error);
+}
+
+// Fetch full product data for each product in category
+const fullProducts = await Promise.all(
+  products.map(async (p: any) => {
+    try {
+      const res = await fetch(`${WORKER_URL}/product/${p.id}`);
+      if (res.ok) {
+        return res.json();
+      }
+    } catch (error) {
+      console.error(`Error fetching product ${p.id}:`, error);
+    }
+    return null;
+  })
+);
+
+// Filter out any null results and products without images, then sort by category position
+// Uses per-category position (from _cat_pos_{term_id} meta), falls back to menu_order
+const validProducts = fullProducts
+  .filter((p: any) => p && p.images?.length > 0)
+  .sort((a: any, b: any) => {
+    const posA = a.category_positions?.[category.id] ?? a.menu_order ?? 999;
+    const posB = b.category_positions?.[category.id] ?? b.menu_order ?? 999;
+    return posA - posB;
+  });
+
+// Fetch related products (products NOT in this category) for "Andere Kunden mochten" section
+let relatedProducts: any[] = [];
+try {
+  const allProductsRes = await fetch(`${WORKER_URL}/products`);
+  if (allProductsRes.ok) {
+    const allProducts = await allProductsRes.json();
+    // Filter products that are NOT in current category
+    const otherProducts = allProducts.filter((p: any) =>
+      !p.categories?.includes(slug)
+    );
+    // Shuffle and take 5 random products
+    const shuffled = otherProducts.sort(() => Math.random() - 0.5);
+    relatedProducts = shuffled.slice(0, 5);
+  }
+} catch (error) {
+  console.error('Error fetching related products:', error);
+}
+
+// Generate static paths for all categories
+export async function getStaticPaths() {
+  const WORKER_URL = 'https://hercules-product-sync.gilles-86d.workers.dev';
+
+  try {
+    const res = await fetch(`${WORKER_URL}/categories`);
+    if (!res.ok) return [];
+
+    const categories = await res.json();
+    return categories.map((cat: any) => ({
+      params: { slug: cat.slug }
+    }));
+  } catch (error) {
+    console.error('Error generating static paths:', error);
+    return [];
+  }
+}
+---
+
+<BaseLayout
+  title={category.name}
+  description={category.description?.replace(/<[^>]*>/g, '') || `Entdecken Sie unsere ${category.name} Kollektion`}
+  pageType="collection"
+>
+  <section class="category-page">
+    <div class="category-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+            <span class="separator">»</span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">{category.name}</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Category Header -->
+      <header class="category-header">
+        <h1 class="category-title">{category.name}</h1>
+        {category.description && (
+          <div class="category-description" set:html={category.description} />
+        )}
+        {category.second_description && (
+          <a href="#read-more-desc" class="weiterlesen-link">Weiterlesen</a>
+        )}
+      </header>
+
+      <!-- Product Grid -->
+      {validProducts.length > 0 ? (
+        <ul class="products">
+          {validProducts.map((product: any) => (
+            <CategoryProductCard product={product} />
+          ))}
+        </ul>
+      ) : (
+        <div class="no-products">
+          <p>Keine Produkte in dieser Kategorie gefunden.</p>
+        </div>
+      )}
+
+      <!-- Read More Description (SEO Content) -->
+      {category.second_description && (
+        <section class="read-more-section" id="read-more-desc">
+          <div class="second-description" set:html={category.second_description} />
+        </section>
+      )}
+
+      <!-- Related Products Section - "Andere Kunden mochten diese Produkte ebenfalls" -->
+      {relatedProducts.length > 0 && (
+        <section class="related-products-section">
+          <h2 class="related-heading">
+            Andere Kunden mochten <span class="highlight">diese Produkte ebenfalls</span>
+          </h2>
+          <ul class="related-products">
+            {relatedProducts.map((product: any) => (
+              <li class="related-product-item">
+                <a href={`/produkte/${product.slug}`} class="related-product-link">
+                  <img
+                    src={`https://hercules-product-sync.gilles-86d.workers.dev/image/${product.slug}/0`}
+                    alt={product.name}
+                    loading="lazy"
+                    width="1000"
+                    height="1000"
+                  />
+                  <h2 class="related-product-title">{product.name}</h2>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
+  </section>
+
+  <!-- Trust Logos Section - "Sie vertrauen uns" -->
+  <TrustLogos />
+
+  <!-- Customer Reviews Section - "Was Kunden über uns sagen" -->
+  <CustomerReviews />
+</BaseLayout>
+
+<style>
+  .category-page {
+    width: 100%;
+    padding: 0 0 0 0;
+    background: #FAFAFA;
+    overflow-x: hidden;
+  }
+
+  .category-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    margin: 0;
+    padding-top: 20px;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #787878;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #253461;
+  }
+
+  .breadcrumb .separator {
+    margin: 0 10px;
+    color: #787878;
+  }
+
+  /* Current page (last item) in light blue */
+  .breadcrumb li:last-child span[itemprop="name"] {
+    color: #469ADC;
+  }
+
+  /* Category Header */
+  .category-header {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .category-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #253461;
+    margin: 20px 0 20px 0;
+    text-transform: uppercase;
+  }
+
+  .category-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7em;
+    color: #626262;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+
+  .category-description :global(strong) {
+    color: #253461;
+    font-weight: 600;
+  }
+
+  /* Weiterlesen Link */
+  .weiterlesen-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #469ADC;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .weiterlesen-link:hover {
+    color: #253461;
+    text-decoration: underline;
+  }
+
+  /* Product Grid - 3 columns */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px 0 40px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* No products message */
+  .no-products {
+    text-align: center;
+    padding: 60px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #666;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .category-container {
+      padding: 0 15px;
+    }
+
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-description {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .category-page {
+      padding: 0;
+    }
+
+    .category-container {
+      padding: 0 10px;
+    }
+
+    .products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .category-description {
+      max-width: 100%;
+    }
+
+    .category-title {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Read More Description Section (SEO Content) - Matches Elementor global kit */
+  .read-more-section {
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid #EAEAEA;
+    text-align: center;
+  }
+
+  .second-description {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #5F5F5F;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .second-description :global(h2),
+  .second-description :global(h3) {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    color: #253461;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .second-description :global(h2) {
+    font-size: 25px;
+  }
+
+  .second-description :global(h3) {
+    font-size: 22px;
+  }
+
+  .second-description :global(p) {
+    margin-bottom: 15px;
+  }
+
+  .second-description :global(strong) {
+    color: #253461;
+    font-weight: 600;
+  }
+
+  .second-description :global(ul),
+  .second-description :global(ol) {
+    margin: 15px auto;
+    padding-left: 25px;
+    text-align: left;
+    display: inline-block;
+  }
+
+  .second-description :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .second-description :global(a) {
+    color: #00AEEF;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .second-description :global(a:hover) {
+    color: #253461;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    .read-more-section {
+      margin-top: 40px;
+      padding: 30px 0;
+    }
+
+    .second-description :global(h2) {
+      font-size: 22px;
+    }
+
+    .second-description :global(h3) {
+      font-size: 18px;
+    }
+  }
+
+  /* Related Products Section - "Andere Kunden mochten diese Produkte ebenfalls" */
+  /* Matching Elementor container styles exactly */
+  .related-products-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 60px;
+    padding: 50px 50px;
+    background: #FAFAFA;
+    box-sizing: border-box;
+  }
+
+  .related-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #253461;
+    text-align: center;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+  }
+
+  .related-heading .highlight {
+    color: #469ADC;
+  }
+
+  /* Elementor grid: 5 columns, 20px column gap, 40px row gap */
+  .related-products {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: none;
+  }
+
+  .related-product-item {
+    background: #fff;
+    text-align: center;
+    border: 1px solid #DCDCDC;
+    border-radius: 20px;
+    padding: 40px 15px;
+    box-sizing: border-box;
+  }
+
+  .related-product-link {
+    text-decoration: none;
+    display: block;
+  }
+
+  .related-product-link img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .related-product-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #253461;
+    margin: 15px 0 0 0;
+    padding: 0;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .related-product-link:hover .related-product-title {
+    color: #469ADC;
+  }
+
+  /* Tablet: 4 columns */
+  @media (max-width: 1024px) {
+    .related-products-section {
+      padding: 40px 30px;
+    }
+
+    .related-products {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 15px;
+      grid-row-gap: 30px;
+    }
+
+    .related-heading {
+      font-size: 28px;
+    }
+  }
+
+  /* Mobile: 1 column (matching elementor-grid-mobile-1) */
+  @media (max-width: 767px) {
+    .related-products-section {
+      margin-top: 40px;
+      padding: 30px 15px;
+    }
+
+    .related-products {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+      grid-row-gap: 20px;
+    }
+
+    .related-heading {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    .related-product-item {
+      padding: 30px 10px;
+    }
+
+    .related-product-title {
+      font-size: 16px;
+    }
+  }
+</style>

@@ -1,0 +1,1288 @@
+{
+  "category": {
+    "id": 305,
+    "name": "Team-Bekleidung",
+    "slug": "team-bekleidung",
+    "description": "",
+    "count": 9,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 11768,
+      "name": "Personalisiertes Laufshirt",
+      "slug": "personalisiertes-laufshirt",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-laufshirt/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisiertes Laufshirt</h2>\n<p data-start=\"299\" data-end=\"609\">Wenn die Hitze brennt und jedes Gramm zählt, geht nichts über die Freiheit eines <strong data-start=\"373\" data-end=\"399\">personalisierten Laufshirts</strong>. Unsere Singlets sind auf maximale Atmungsaktivität und uneingeschränkte Bewegungsfreiheit ausgelegt und helfen dir, kühl, bequem und schnell zu bleiben – egal, ob du auf der Straße Rennen fährst, auf der Bahn unterwegs bist oder dich durch das Sommertraining kämpfst.</p>\n<p data-start=\"611\" data-end=\"1043\">Hergestellt mit <strong data-start=\"622\" data-end=\"659\">modernstem Sublimationsdruck</strong>, kann dein Singlet <strong data-start=\"686\" data-end=\"730\">unbegrenzte Farben, Muster und Grafiken</strong> aufweisen, ohne die Weichheit oder Leistung des Stoffes zu beeinträchtigen. Von auffälligen geometrischen Designs bis hin zu subtilen Farbverläufen oder sogar fotorealistischen Bildern sind den Gestaltungsmöglichkeiten keine Grenzen gesetzt. Das Design ist in den Stoff eingebettet, was bedeutet, dass die Farben lebendig bleiben und nicht reißen oder abblättern, selbst nach unzähligen Wäschen.</p>\n<h3 data-start=\"1050\" data-end=\"1072\">Produktmerkmale</h3>\n<ul data-start=\"1074\" data-end=\"1391\">\n<li data-start=\"1074\" data-end=\"1130\">\n<p data-start=\"1076\" data-end=\"1130\"><strong data-start=\"1076\" data-end=\"1089\">Material:</strong> 100 % leichtes, atmungsaktives Polyester</p>\n</li>\n<li data-start=\"1131\" data-end=\"1212\">\n<p data-start=\"1133\" data-end=\"1212\"><strong data-start=\"1133\" data-end=\"1161\">Unbegrenzte Designoptionen</strong> – vollfarbiger Druck auf dem gesamten Singlet</p>\n</li>\n<li data-start=\"1213\" data-end=\"1262\">\n<p data-start=\"1215\" data-end=\"1262\"><strong data-start=\"1215\" data-end=\"1260\">Verschiedene Designs für Vorder- und Rückseite möglich</strong></p>\n</li>\n<li data-start=\"1263\" data-end=\"1323\">\n<p data-start=\"1265\" data-end=\"1323\"><strong data-start=\"1265\" data-end=\"1283\">Hergestellt in Europa</strong> – Premium-Qualität, ethische Produktion</p>\n</li>\n<li data-start=\"1324\" data-end=\"1391\">\n<p data-start=\"1326\" data-end=\"1391\"><strong data-start=\"1326\" data-end=\"1339\">Lieferung:</strong> 4–6 Wochen (Expresslieferung auf Anfrage verfügbar)</p>\n</li>\n</ul>\n<p data-start=\"1393\" data-end=\"1543\"><strong data-start=\"1393\" data-end=\"1409\">Bitte beachten:</strong> Unsere Singlets fallen klein aus, daher kontaktiere uns vor der Bestellung für unsere Größentabelle. Da jedes Stück individuell angefertigt wird, können wir keinen Umtausch akzeptieren.</p>",
+      "short_description": "",
+      "sku": "custom-running-shirt",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 290,
+          "name": "Laufen",
+          "slug": "laufen"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 11769,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-1-300x300.png",
+          "alt": "Hercules Merchandise Running singlet"
+        },
+        {
+          "id": 11773,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-5-300x300.png",
+          "alt": "Hercules Merchandise Running singlet"
+        },
+        {
+          "id": 11772,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-4-300x300.png",
+          "alt": "Hercules Merchandise Running singlet"
+        },
+        {
+          "id": 11771,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-3-300x300.png",
+          "alt": "Hercules Merchandise Running singlet"
+        },
+        {
+          "id": 11770,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/08/Hercules-Merchandise-Running-singlet-2-300x300.png",
+          "alt": "Hercules Merchandise Running singlet"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 11774,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4547,
+      "name": "Personalisiertes Basketball-Trikot",
+      "slug": "personalisiertes-basketball-trikot",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-basketball-trikot/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2><span data-mce-fragent=\"1\">Personalisiertes Basketball-Trikot</span></h2>\n<p data-start=\"142\" data-end=\"289\">Es gibt <strong data-start=\"150\" data-end=\"167\">keine Grenzen</strong> – fügen Sie Ihr eigenes Motiv, Farben, Logos, Nummern und Namen hinzu. Die Trikots werden individuell für Sie bedruckt.</p>\n<p data-start=\"291\" data-end=\"432\">Wir verwenden ein <strong data-start=\"309\" data-end=\"350\">atmungsaktives, perforiertes Material</strong>, das speziell für Basketball entwickelt wurde und höchsten Tragekomfort bietet.</p>\n<p data-start=\"434\" data-end=\"448\"><strong data-start=\"434\" data-end=\"446\">Details:</strong></p>\n<ul data-start=\"449\" data-end=\"666\">\n<li data-start=\"449\" data-end=\"478\">\n<p data-start=\"451\" data-end=\"478\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"479\" data-end=\"512\">\n<p data-start=\"481\" data-end=\"512\">Unbegrenzte Farben und Muster</p>\n</li>\n<li data-start=\"513\" data-end=\"575\">\n<p data-start=\"515\" data-end=\"575\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"576\" data-end=\"600\">\n<p data-start=\"578\" data-end=\"600\">Produktion in Europa</p>\n</li>\n<li data-start=\"601\" data-end=\"666\">\n<p data-start=\"603\" data-end=\"666\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"668\" data-end=\"882\"><strong data-start=\"668\" data-end=\"691\">Individualisierung:</strong><br data-start=\"691\" data-end=\"694\" />Jedes Trikot kann mit einer eigenen <strong data-start=\"730\" data-end=\"756\">Nummer und einem Namen</strong> versehen werden. Die Nummer kann klassisch auf der Rückseite oder auf jeder anderen gewünschten Position angebracht werden.</p>\n<p data-start=\"884\" data-end=\"986\">Kontaktieren Sie uns für ein kostenloses Design oder senden Sie uns Ihr eigenes Layout zur Freigabe.</p>",
+      "short_description": "",
+      "sku": "custom-basketball-shirts",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8698,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_7-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_7-14-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8699,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_19-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8700,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_24.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_24-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8701,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit2-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8702,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_13-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8703,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_16-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8704,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_9-scaled.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_9-scaled-300x240.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8705,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_21-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8706,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_26-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8707,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_22-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8708,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_10-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8709,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_27.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_27-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8710,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit4-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8711,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit5-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8712,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_basketball_kit_11-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8713,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit1-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        },
+        {
+          "id": 8714,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebasketballkit3-300x300.png",
+          "alt": "Hercules Merchandise basket ball kit"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 17,
+          "name": "Shorts",
+          "options": [
+            "Mit Shorts",
+            "Ohne Shorts"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4549,
+          "attributes": [
+            {
+              "name": "Shorts",
+              "value": "ohne-shorts"
+            }
+          ]
+        },
+        {
+          "id": 4550,
+          "attributes": [
+            {
+              "name": "Shorts",
+              "value": "mit-shorts"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4421,
+      "name": "Personalisierte Regenjacke",
+      "slug": "personalisierte-regenjacke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-regenjacke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"96\" data-end=\"138\"><strong data-start=\"100\" data-end=\"136\">Individuell bedruckte Regenjacke</strong></h3>\n<p data-start=\"140\" data-end=\"423\">Brauchen Sie zuverlässigen Schutz bei Regen? Unsere <strong data-start=\"192\" data-end=\"236\">vollständig personalisierten Regenjacken</strong> sind nicht nur <strong data-start=\"252\" data-end=\"288\">funktional und 100 % wasserdicht</strong>, sondern sehen auch richtig gut aus. Die gesamte Oberfläche der Jacke kann mit einem <strong data-start=\"374\" data-end=\"404\">Design im Stil Ihrer Marke</strong> bedruckt werden.</p>\n<p data-start=\"425\" data-end=\"583\">Auch die <strong data-start=\"434\" data-end=\"458\">Innenseite der Jacke</strong> kann bedruckt werden – das verleiht ihr einen hochwertigen Look. Ihr Team wird mit diesen Jacken garantiert <strong data-start=\"567\" data-end=\"580\">auffallen</strong>!</p>\n<p data-start=\"585\" data-end=\"599\"><strong data-start=\"585\" data-end=\"597\">Details:</strong></p>\n<ul data-start=\"600\" data-end=\"817\">\n<li data-start=\"600\" data-end=\"629\">\n<p data-start=\"602\" data-end=\"629\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"630\" data-end=\"663\">\n<p data-start=\"632\" data-end=\"663\">Unbegrenzte Farben und Muster</p>\n</li>\n<li data-start=\"664\" data-end=\"726\">\n<p data-start=\"666\" data-end=\"726\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"727\" data-end=\"751\">\n<p data-start=\"729\" data-end=\"751\">Produktion in Europa</p>\n</li>\n<li data-start=\"752\" data-end=\"817\">\n<p data-start=\"754\" data-end=\"817\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"819\" data-end=\"1030\">Alle Jacken sind mit einer <strong data-start=\"846\" data-end=\"856\">Kapuze</strong> ausgestattet und verfügen über <strong data-start=\"888\" data-end=\"929\">zwei Seitentaschen mit Reißverschluss</strong>. Zudem können sie dank <strong data-start=\"953\" data-end=\"980\">verstellbarer Gummizüge</strong> individuell angepasst und enger gezogen werden.</p>",
+      "short_description": "",
+      "sku": "custom-printed-rain-jackets",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8556,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_6-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_6-16-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8557,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket1-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8558,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_9-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8559,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket3-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8560,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_rain_jacket_8-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8561,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket4-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        },
+        {
+          "id": 8562,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserainjacket2-300x300.png",
+          "alt": "Hercules Merchandise rain jacket"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4423,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4418,
+      "name": "Personalisierte Trainer-Jacke",
+      "slug": "personalisierte-trainer-jacke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-trainer-jacke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"100\" data-end=\"143\"><strong data-start=\"104\" data-end=\"141\">Individuell bedruckte Coach-Jacke</strong></h3>\n<p data-start=\"145\" data-end=\"391\">Kleiden Sie alle <strong data-start=\"162\" data-end=\"195\">Trainer und Auswechselspieler</strong> Ihres Teams in eine <strong data-start=\"216\" data-end=\"258\">vollflächig bedruckte, warme Windjacke</strong>. Mit diesen Trainings-Jacken sorgen Sie für ein <strong data-start=\"303\" data-end=\"332\">professionelles Auftreten</strong> und halten gleichzeitig <strong data-start=\"357\" data-end=\"388\">alle warm und windgeschützt</strong>.</p>\n<p data-start=\"393\" data-end=\"566\">Die Jacken bestehen aus <strong data-start=\"417\" data-end=\"436\">100 % Polyester</strong> und sind <strong data-start=\"446\" data-end=\"465\">wasserabweisend</strong> – perfekt für verregnete Spieltage. Dank des <strong data-start=\"511\" data-end=\"534\">dicken Innenfutters</strong> sind sie zudem angenehm warm.</p>\n<p data-start=\"568\" data-end=\"752\">Auch die <strong data-start=\"577\" data-end=\"591\">Innenseite</strong> kann individuell bedruckt werden, was der Jacke einen besonders <strong data-start=\"656\" data-end=\"682\">hochwertigen Charakter</strong> verleiht. Ihr Team wird mit diesen Jacken garantiert <strong data-start=\"736\" data-end=\"750\">auffallen!</strong></p>\n<p data-start=\"754\" data-end=\"768\"><strong data-start=\"754\" data-end=\"766\">Details:</strong></p>\n<ul data-start=\"769\" data-end=\"994\">\n<li data-start=\"769\" data-end=\"798\">\n<p data-start=\"771\" data-end=\"798\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"799\" data-end=\"840\">\n<p data-start=\"801\" data-end=\"840\">Unbegrenzte Farben und Muster möglich</p>\n</li>\n<li data-start=\"841\" data-end=\"903\">\n<p data-start=\"843\" data-end=\"903\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"904\" data-end=\"928\">\n<p data-start=\"906\" data-end=\"928\">Produktion in Europa</p>\n</li>\n<li data-start=\"929\" data-end=\"994\">\n<p data-start=\"931\" data-end=\"994\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"996\" data-end=\"1188\">Alle Jacken sind mit einer <strong data-start=\"1023\" data-end=\"1040\">warmen Kapuze</strong> ausgestattet und verfügen über <strong data-start=\"1072\" data-end=\"1113\">zwei Seitentaschen mit Reißverschluss</strong>.<br data-start=\"1114\" data-end=\"1117\" />Ein <strong data-start=\"1121\" data-end=\"1155\">unverzichtbares Kleidungsstück</strong> für jeden Verein mit Anspruch!</p>",
+      "short_description": "",
+      "sku": "custom-printed-coach-jackets",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 11667,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-15-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11663,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-11-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11653,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-01.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-01-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11658,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-06.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-06-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11662,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-10-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11665,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-13-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11654,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-02.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-02-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11660,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-08.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-08-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11666,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-14-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11664,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-12-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        },
+        {
+          "id": 11655,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-03.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-coach-jacket-03-300x300.png",
+          "alt": "Hercules Merchandise coach jacket"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4420,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4412,
+      "name": "Personalisierter Trainingsanzug",
+      "slug": "personalisierter-trainingsanzug",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-trainingsanzug/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"97\" data-end=\"144\"><strong data-start=\"101\" data-end=\"142\">Individuell bedruckter Trainingsanzug</strong></h3>\n<p data-start=\"146\" data-end=\"525\">Ein <strong data-start=\"150\" data-end=\"205\">personalisierter Trainingsanzug mit Jacke und Hose</strong> ist für jeden Sportverein unverzichtbar. Die Außenseite der Jacke wird <strong data-start=\"277\" data-end=\"313\">vollflächig individuell bedruckt</strong> – Sie können also <strong data-start=\"332\" data-end=\"359\">jedes gewünschte Design</strong> umsetzen, mit einer <strong data-start=\"380\" data-end=\"412\">unbegrenzten Anzahl an Logos</strong>.<br data-start=\"413\" data-end=\"416\" />Fügen Sie Sponsorenlogos hinzu und <strong data-start=\"451\" data-end=\"522\">finanzieren Sie die Trainingsbekleidung teilweise über Werbeflächen</strong>.</p>\n<p data-start=\"527\" data-end=\"718\">Die Trainingsjacken bestehen aus <strong data-start=\"560\" data-end=\"594\">weichem, elastischem Polyester</strong>. Dadurch sind sie <strong data-start=\"613\" data-end=\"635\">angenehm zu tragen</strong> und gleichzeitig <strong data-start=\"653\" data-end=\"672\">strapazierfähig</strong> – perfekt für intensive Trainingseinheiten.</p>\n<p data-start=\"720\" data-end=\"734\"><strong data-start=\"720\" data-end=\"732\">Details:</strong></p>\n<ul data-start=\"735\" data-end=\"960\">\n<li data-start=\"735\" data-end=\"764\">\n<p data-start=\"737\" data-end=\"764\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"765\" data-end=\"806\">\n<p data-start=\"767\" data-end=\"806\">Unbegrenzte Farben und Muster möglich</p>\n</li>\n<li data-start=\"807\" data-end=\"869\">\n<p data-start=\"809\" data-end=\"869\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"870\" data-end=\"894\">\n<p data-start=\"872\" data-end=\"894\">Produktion in Europa</p>\n</li>\n<li data-start=\"895\" data-end=\"960\">\n<p data-start=\"897\" data-end=\"960\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"962\" data-end=\"1313\">Die Innenseite der Jacke ist immer <strong data-start=\"997\" data-end=\"1005\">weiß</strong>, der <strong data-start=\"1011\" data-end=\"1021\">Kragen</strong> kann in der gewünschten Farbe gefertigt werden. Die <strong data-start=\"1074\" data-end=\"1083\">Größe</strong> ist am Kragen angegeben.<br data-start=\"1108\" data-end=\"1111\" />Sie können zwischen einem <strong data-start=\"1137\" data-end=\"1170\">kurzen Reißverschluss (¼-Zip)</strong> oder einem <strong data-start=\"1182\" data-end=\"1214\">durchgehenden Reißverschluss</strong> wählen. Die Variante mit durchgehendem Reißverschluss verfügt über <strong data-start=\"1282\" data-end=\"1310\">Seitentaschen mit Zipper</strong>.</p>\n<p data-start=\"1315\" data-end=\"1661\">Die <strong data-start=\"1319\" data-end=\"1337\">Trainingshosen</strong> bestehen aus einem etwas <strong data-start=\"1363\" data-end=\"1386\">schwereren Material</strong> als die Jacken und halten die Beine angenehm warm.<br data-start=\"1437\" data-end=\"1440\" />Sie sind <strong data-start=\"1449\" data-end=\"1467\">nur in Schwarz</strong> erhältlich und <strong data-start=\"1483\" data-end=\"1503\">nicht bedruckbar</strong>, können jedoch mit <strong data-start=\"1523\" data-end=\"1562\">Initialen oder Nummern im Flexdruck</strong> personalisiert werden.<br data-start=\"1585\" data-end=\"1588\" />Kontaktieren Sie uns gerne, um mehr über die Möglichkeiten zu erfahren.</p>",
+      "short_description": "",
+      "sku": "custom-printed-tracksuits",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8536,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_20-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_20-16-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8537,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit16-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8538,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit1-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8539,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit10-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8540,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit4-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8541,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_23-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8542,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit18-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8543,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit2-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8544,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit13-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8545,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_tracksuit_22-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8546,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit3-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8547,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit11-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8548,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit17-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        },
+        {
+          "id": 8549,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetracksuit6-300x300.png",
+          "alt": "Hercules Merchandise track suit"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "1/4-Reißverschluss",
+            "Durchgehender Reißverschluss"
+          ]
+        },
+        {
+          "id": 39,
+          "name": "Hose",
+          "options": [
+            "Mit Hose",
+            "Ohne Hose"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4414,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-4-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "ohne-hose"
+            }
+          ]
+        },
+        {
+          "id": 4415,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-4-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "mit-hose"
+            }
+          ]
+        },
+        {
+          "id": 4416,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "durchgehender-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "ohne-hose"
+            }
+          ]
+        },
+        {
+          "id": 4417,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "durchgehender-reissverschluss"
+            },
+            {
+              "name": "Hose",
+              "value": "mit-hose"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4207,
+      "name": "Personalisiertes Radsport-Trikot",
+      "slug": "personalisiertes-radsport-trikot",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-radsport-trikot/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"41\"><strong data-start=\"0\" data-end=\"41\">Individuell bedrucktes Radsport-Trikot</strong></h3>\n<p data-start=\"43\" data-end=\"289\">Gestalten Sie Ihr <strong data-start=\"61\" data-end=\"91\">komplettes Radsport-Outfit</strong> ganz nach Ihren Wünschen – <strong data-start=\"119\" data-end=\"143\">ohne Einschränkungen</strong>. Fügen Sie <strong data-start=\"155\" data-end=\"207\">eigene Motive, Farben, Logos, Nummern oder Namen</strong> hinzu. Jedes Trikot wird speziell für Sie angefertigt und professionell bedruckt.</p>\n<p data-start=\"291\" data-end=\"345\">Sie können zwischen <strong data-start=\"311\" data-end=\"335\">zwei Qualitätsstufen</strong> wählen:</p>\n<ul data-start=\"346\" data-end=\"481\">\n<li data-start=\"346\" data-end=\"398\">\n<p data-start=\"348\" data-end=\"398\"><strong data-start=\"351\" data-end=\"369\">Tourenqualität</strong> – ideal für Freizeitfahrer</p>\n</li>\n<li data-start=\"399\" data-end=\"481\">\n<p data-start=\"401\" data-end=\"481\"><strong data-start=\"404\" data-end=\"421\">Profiqualität</strong> – für ambitionierte Radsportler und regelmäßiges Training</p>\n</li>\n</ul>\n<p data-start=\"483\" data-end=\"504\"><strong data-start=\"483\" data-end=\"502\">Produktdetails:</strong></p>\n<ul data-start=\"505\" data-end=\"735\">\n<li data-start=\"505\" data-end=\"538\">\n<p data-start=\"507\" data-end=\"538\">Material: Polyester und Lycra</p>\n</li>\n<li data-start=\"539\" data-end=\"584\">\n<p data-start=\"541\" data-end=\"584\">Unbegrenzte Farb- und Designmöglichkeiten</p>\n</li>\n<li data-start=\"585\" data-end=\"647\">\n<p data-start=\"587\" data-end=\"647\">Unterschiedliche Designs auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"648\" data-end=\"673\">\n<p data-start=\"650\" data-end=\"673\">Hergestellt in Europa</p>\n</li>\n<li data-start=\"674\" data-end=\"735\">\n<p data-start=\"676\" data-end=\"735\">Lieferzeit: ca. 4–6 Wochen (<strong data-start=\"704\" data-end=\"732\">Expresslieferung möglich</strong>)</p>\n</li>\n</ul>\n<p data-start=\"737\" data-end=\"1011\">Das Trikot ist mit einem <strong data-start=\"762\" data-end=\"813\">durchgehenden, halbautomatischen Reißverschluss</strong> ausgestattet. Hinten befinden sich <strong data-start=\"849\" data-end=\"869\">3 offene Taschen</strong> sowie <strong data-start=\"876\" data-end=\"928\">eine zusätzliche Tasche mit 10 cm Reißverschluss</strong>. Das Material ist atmungsaktiv, flexibel und speziell für den Radsport entwickelt.</p>\n<p data-start=\"1013\" data-end=\"1219\">Für die <strong data-start=\"1021\" data-end=\"1033\">Radhosen</strong> verwenden wir ein hochwertiges <strong data-start=\"1065\" data-end=\"1094\">Sitzpolster (Chamois Pad)</strong> – bei der Profiqualität kommt unsere beste verfügbare Polsterung zum Einsatz, ideal für lange Fahrten und maximalen Komfort.</p>\n<p data-start=\"1221\" data-end=\"1363\">Alle Größen von <strong data-start=\"1237\" data-end=\"1266\">Kindergröße (ab 4 Jahren)</strong> bis <strong data-start=\"1271\" data-end=\"1278\">4XL</strong> sind verfügbar. Für Damen bieten wir zudem <strong data-start=\"1322\" data-end=\"1359\">taillierte, figurbetonte Schnitte</strong> an.</p>\n<p data-start=\"1365\" data-end=\"1531\" data-is-last-node=\"\" data-is-only-node=\"\">Suchen Sie weitere Radsportartikel wie <strong data-start=\"1404\" data-end=\"1470\">Langarm-Trikots, Windjacken, ¾-Hosen oder Triathlon-Bekleidung</strong>?<br data-start=\"1471\" data-end=\"1474\" />Kontaktieren Sie uns gerne – wir beraten Sie individuell.</p>",
+      "short_description": "",
+      "sku": "custom-cycling-jersey",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7378,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt2-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt2-21-300x300.png",
+          "alt": "Personalisiertes Radsport-Trikot"
+        },
+        {
+          "id": 7379,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt1-300x300.png",
+          "alt": "Personalisiertes Radsport-Trikot"
+        },
+        {
+          "id": 7380,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt5-300x300.png",
+          "alt": "Personalisiertes Radsport-Trikot"
+        },
+        {
+          "id": 7381,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseCustomcyclingshirt4-300x300.png",
+          "alt": "Personalisiertes Radsport-Trikot"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 16,
+          "name": "Version",
+          "options": [
+            "Amateur",
+            "Professionell"
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Shorts",
+          "options": [
+            "Mit Shorts",
+            "Ohne Shorts"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4209,
+          "attributes": [
+            {
+              "name": "Version",
+              "value": "amateur"
+            },
+            {
+              "name": "Shorts",
+              "value": "ohne-shorts"
+            }
+          ]
+        },
+        {
+          "id": 4210,
+          "attributes": [
+            {
+              "name": "Version",
+              "value": "amateur"
+            },
+            {
+              "name": "Shorts",
+              "value": "mit-shorts"
+            }
+          ]
+        },
+        {
+          "id": 4211,
+          "attributes": [
+            {
+              "name": "Version",
+              "value": "professionell"
+            },
+            {
+              "name": "Shorts",
+              "value": "ohne-shorts"
+            }
+          ]
+        },
+        {
+          "id": 4212,
+          "attributes": [
+            {
+              "name": "Version",
+              "value": "professionell"
+            },
+            {
+              "name": "Shorts",
+              "value": "mit-shorts"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4184,
+      "name": "Personalisiertes Laufshirt",
+      "slug": "personalisiertes-laufshirt-2",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-laufshirt-2/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisiertes Laufshirt</h2>\n<p data-start=\"31\" data-end=\"347\">Sind Sie es leid, generische Laufshirts zu tragen, die weder Stil noch Persönlichkeit haben? Dann ist unser <strong data-start=\"139\" data-end=\"177\">individuell sublimiertes Laufshirt</strong> genau das Richtige für Sie! Mit modernster <strong data-start=\"221\" data-end=\"248\">Sublimationstechnologie</strong> fertigen wir Ihr Shirt ganz nach Ihren Vorstellungen – <strong data-start=\"304\" data-end=\"344\">ohne Grenzen bei Farben oder Designs</strong>.</p>\n<p data-start=\"349\" data-end=\"716\"><strong data-start=\"349\" data-end=\"362\">Material:</strong> 100 % Polyester<br data-start=\"378\" data-end=\"381\" /><strong data-start=\"381\" data-end=\"401\">Farben &amp; Muster:</strong> Unbegrenzt möglich<br data-start=\"420\" data-end=\"423\" /><strong data-start=\"423\" data-end=\"434\" data-is-only-node=\"\">Design:</strong> Unterschiedliches Design auf Vorder- und Rückseite möglich<br data-start=\"493\" data-end=\"496\" /><strong data-start=\"496\" data-end=\"511\">Produktion:</strong> Hergestellt in Europa<br data-start=\"533\" data-end=\"536\" /><strong data-start=\"536\" data-end=\"551\">Lieferzeit:</strong> 4 bis 6 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"349\" data-end=\"716\"><strong>Die Shirts fallen klein aus – bitte kontaktieren Sie uns für eine Größentabelle. Rücksendungen sind ausgeschlossen.</strong></p>\n<p data-start=\"718\" data-end=\"1094\">Sublimation ist die <strong data-start=\"738\" data-end=\"783\">innovativste Drucktechnik im Sportbereich</strong>. Im Gegensatz zu klassischem Siebdruck oder Transferdruck sind <strong data-start=\"847\" data-end=\"886\">vollflächige, farbintensive Designs</strong> ohne Einschränkungen möglich – von kräftigen Mustern über weiche Farbverläufe bis hin zu fotorealistischen Motiven.<br data-start=\"1002\" data-end=\"1005\" />Die Farben <strong data-start=\"1016\" data-end=\"1038\" data-is-only-node=\"\">bleichen nicht aus</strong> und <strong data-start=\"1043\" data-end=\"1059\">reißen nicht</strong>, selbst nach vielen Waschgängen.</p>\n<p data-start=\"1096\" data-end=\"1418\" data-is-last-node=\"\" data-is-only-node=\"\">Unsere <strong data-start=\"1103\" data-end=\"1135\">personalisierten Laufshirts</strong> sind nicht nur für den Laufsport geeignet – sie sind vielseitig einsetzbar, z. B. für das <strong data-start=\"1226\" data-end=\"1274\">Fitnessstudio, Laufgruppen oder Benefizläufe</strong>.<br data-start=\"1275\" data-end=\"1278\" />Mit diesen Shirts sehen Sie nicht nur großartig aus, sondern erzielen auch Bestleistungen – <strong data-start=\"1370\" data-end=\"1417\" data-is-only-node=\"\">komfortabel, funktional und unverwechselbar</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-running-shirt",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 290,
+          "name": "Laufen",
+          "slug": "laufen"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7333,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt12-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt12-21-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7334,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt2-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7335,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt7-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7336,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt15-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7337,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt5-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7338,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt10-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7339,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt14-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7340,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt4-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7341,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt9-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7342,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt1-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7343,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt11-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        },
+        {
+          "id": 7344,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiserunningshirt6-300x300.png",
+          "alt": "Personalisiertes Laufshirt"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4186,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4156,
+      "name": "Personalisiertes Retro-Fußballtrikot",
+      "slug": "personalisiertes-retro-fussballtrikot",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-retro-fussballtrikot/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"49\"><strong data-start=\"0\" data-end=\"47\">Individuelles Retro-Fußballtrikot mit Druck</strong></h3>\n<p data-start=\"51\" data-end=\"446\"><strong data-start=\"51\" data-end=\"101\">Gestalten Sie Ihr eigenes Retro-Fußballtrikot!</strong><br data-start=\"101\" data-end=\"104\" />Lassen Sie den <strong data-start=\"119\" data-end=\"154\">Charme vergangener Fußball-Ären</strong> wieder aufleben – mit einem <strong data-start=\"183\" data-end=\"211\">personalisierten Trikot</strong> im klassischen Stil, das ganz nach Ihren Vorstellungen gefertigt wird.<br data-start=\"282\" data-end=\"285\" />Wählen Sie <strong data-start=\"296\" data-end=\"353\">eigene Farben, Muster, Logos, Rückennummern und Namen</strong> – ohne Einschränkungen. Jedes Trikot wird <strong data-start=\"396\" data-end=\"443\">individuell für Sie produziert und bedruckt</strong>.</p>\n<p data-start=\"448\" data-end=\"712\">Das Trikot besteht aus einem <strong data-start=\"477\" data-end=\"516\">starken, dicken, aber glatten Stoff</strong>, der ein <strong data-start=\"526\" data-end=\"554\">hochwertiges Tragegefühl</strong> vermittelt.<br data-start=\"566\" data-end=\"569\" />Durch die Stoffdichte eignet es sich weniger für den aktiven Sporteinsatz und ist eher als <strong data-start=\"660\" data-end=\"701\">modisches Fan- oder Lifestyle-Produkt</strong> gedacht.</p>\n<p data-start=\"714\" data-end=\"980\"><strong data-start=\"714\" data-end=\"727\">Material:</strong> 100 % Polyester<br data-start=\"743\" data-end=\"746\" /><strong data-start=\"746\" data-end=\"766\">Farben &amp; Muster:</strong> Unbegrenzt möglich<br data-start=\"785\" data-end=\"788\" /><strong data-start=\"788\" data-end=\"799\">Design:</strong> Unterschiedliche Motive auf Vorder- und Rückseite möglich<br data-start=\"857\" data-end=\"860\" data-is-only-node=\"\" /><strong data-start=\"860\" data-end=\"871\">Größen:</strong> XS bis 6XL<br data-start=\"882\" data-end=\"885\" /><strong data-start=\"885\" data-end=\"900\">Produktion:</strong> Hergestellt in Europa<br data-start=\"922\" data-end=\"925\" /><strong data-start=\"925\" data-end=\"940\">Lieferzeit:</strong> 4–6 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"982\" data-end=\"1153\">Jedes Trikot kann mit <strong data-start=\"1004\" data-end=\"1045\">individuellen Namen und Rückennummern</strong> versehen werden.<br data-start=\"1062\" data-end=\"1065\" />Die Nummer kann auf dem Rücken oder an einer <strong data-start=\"1110\" data-end=\"1133\">beliebigen Position</strong> platziert werden.</p>\n<p data-start=\"1155\" data-end=\"1366\" data-is-last-node=\"\" data-is-only-node=\"\">Sie haben bereits ein Design oder möchten eines erstellen lassen?<br data-start=\"1220\" data-end=\"1223\" /><strong data-start=\"1223\" data-end=\"1254\">Senden Sie uns Ihre Vorlage</strong> – wir prüfen sie gerne und erstellen ein <strong data-start=\"1296\" data-end=\"1324\">kostenloses Musterdesign</strong> für Ihr persönliches Retro-Fußballtrikot.</p>",
+      "short_description": "<h3 data-start=\"0\" data-end=\"49\"></h3>",
+      "sku": "custom-retro-football-shirt",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7254,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt2-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt2-21-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7255,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt7-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7256,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt12-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7257,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt4-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7258,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt9-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7259,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt14-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7260,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt16-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7261,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt5-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7262,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt10-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7263,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt15-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7264,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt6-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7265,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt1-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7266,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt11-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4158,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4138,
+      "name": "Personalisiertes Golf-Poloshirt",
+      "slug": "personalisiertes-golf-poloshirt",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-golf-poloshirt/",
+      "type": "variable",
+      "featured": false,
+      "description": "<article class=\"text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" data-turn-id=\"request-68d110ac-127c-8323-a2d2-a4fb13be6186-12\" data-testid=\"conversation-turn-858\" data-scroll-anchor=\"true\" data-turn=\"assistant\">\n<div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"bb676360-f7e4-4b3c-8b90-9593e00b179d\" data-message-model-slug=\"gpt-5\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\">\n<h3 data-start=\"0\" data-end=\"44\"><strong data-start=\"0\" data-end=\"42\">Individuell gedrucktes Golf-Poloshirt</strong></h3>\n<p data-start=\"46\" data-end=\"461\"><strong data-start=\"46\" data-end=\"91\">Gestalten Sie Ihr eigenes Golf-Poloshirt!</strong><br data-start=\"91\" data-end=\"94\" />Erleben Sie die perfekte Kombination aus <strong data-start=\"135\" data-end=\"162\">Stil und Funktionalität</strong> mit unseren <strong data-start=\"175\" data-end=\"207\">sublimierten Golf-Poloshirts</strong>, die Ihr Auftreten auf dem Green auf ein neues Level bringen.<br data-start=\"269\" data-end=\"272\" data-is-only-node=\"\" />Das Material ist etwas <strong data-start=\"295\" data-end=\"341\">dicker als bei unseren Standard-Poloshirts</strong>, was dem Shirt ein <strong data-start=\"361\" data-end=\"384\">hochwertiges Gefühl</strong> verleiht und es ideal für <strong data-start=\"411\" data-end=\"452\">kühle Tage oder frühe Abschlagszeiten</strong> macht.</p>\n<p data-start=\"463\" data-end=\"739\"><strong data-start=\"463\" data-end=\"476\">Material:</strong> 100 % Polyester, 250 g/m²<br data-start=\"502\" data-end=\"505\" /><strong data-start=\"505\" data-end=\"525\">Farben &amp; Muster:</strong> Unbegrenzt möglich<br data-start=\"544\" data-end=\"547\" /><strong data-start=\"547\" data-end=\"558\" data-is-only-node=\"\">Design:</strong> Unterschiedliches Motiv auf Vorder- und Rückseite möglich<br data-start=\"616\" data-end=\"619\" /><strong data-start=\"619\" data-end=\"630\">Größen:</strong> XS bis 6XL<br data-start=\"641\" data-end=\"644\" /><strong data-start=\"644\" data-end=\"659\">Produktion:</strong> Hergestellt in Europa<br data-start=\"681\" data-end=\"684\" /><strong data-start=\"684\" data-end=\"699\">Lieferzeit:</strong> 4–6 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"741\" data-end=\"878\">Dank modernster <strong data-start=\"757\" data-end=\"780\">Sublimationstechnik</strong> bleiben die <strong data-start=\"793\" data-end=\"843\">Farben dauerhaft brillant und gestochen scharf</strong>, selbst nach vielen Waschgängen.</p>\n<p data-start=\"880\" data-end=\"1162\" data-is-last-node=\"\" data-is-only-node=\"\">Egal ob für <strong data-start=\"892\" data-end=\"964\">Golfturniere, Vereinsausstattungen, Firmenevents oder Teambekleidung</strong> – diese Poloshirts vereinen <strong data-start=\"993\" data-end=\"1029\">Eleganz, Komfort und Performance</strong>.<br data-start=\"1030\" data-end=\"1033\" />Veredeln Sie Ihr Shirt mit <strong data-start=\"1060\" data-end=\"1100\" data-is-only-node=\"\">Ihrem Logo oder individuellem Design</strong> und <strong data-start=\"1105\" data-end=\"1161\">setzen Sie bei jedem Schlag ein stilvolles Statement</strong>.</p>\n</div>\n</div>\n</div>\n</div>\n<div class=\"z-0 flex min-h-[46px] justify-start\"></div>\n<div class=\"mt-3 w-full empty:hidden\">\n<div class=\"text-center\"></div>\n</div>\n</div>\n</div>\n</article>\n<div class=\"pointer-events-none h-px w-px\" aria-hidden=\"true\" data-edge=\"true\"></div>",
+      "short_description": "",
+      "sku": "custom-golf-poloshirt",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7206,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt2-49.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt2-49-300x300.png",
+          "alt": "Personalisiertes Golf-Poloshirt"
+        },
+        {
+          "id": 7207,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt1-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt1-1-300x300.png",
+          "alt": "Personalisiertes Golf-Poloshirt"
+        },
+        {
+          "id": 7209,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt4-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt4-1-300x300.png",
+          "alt": "Personalisiertes Golf-Poloshirt"
+        },
+        {
+          "id": 7210,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt5-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Sublimatedgolfpoloshirt5-1-300x300.png",
+          "alt": "Personalisiertes Golf-Poloshirt"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4140,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.640Z"
+}

@@ -1,0 +1,1610 @@
+{
+  "category": {
+    "id": 318,
+    "name": "Mode",
+    "slug": "mode",
+    "description": "Bei Hercules Merchandise haben wir unsere Liebe zum Sport mit unserem Engagement für Stil und Nachhaltigkeit verbunden, um die Mode-Kollektion zu kreieren – eine einzigartige Reihe von Bekleidung und Accessoires, die sowohl für Fußballfans als auch für Modemarken entwickelt wurde.",
+    "count": 8,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 10122,
+      "name": "Klassische Socken",
+      "slug": "klassische-socken",
+      "permalink": "https://staging.hercules-merchandise.de/products/klassische-socken/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Klassische Socken</h2>\n<p data-start=\"250\" data-end=\"538\">Werten Sie Ihr Vereins-, Marken- oder Firmengeschenk mit unseren <strong data-start=\"301\" data-end=\"324\">klassisch gewebten Socken</strong> auf, die vollständig mit Ihren Farben, Ihrem Logo und Ihrem Design personalisiert sind. Diese bequemen und stilvollen Socken sind ideal für die Stadt oder in Kombination mit einem Anzug – perfekt für den täglichen Gebrauch, geschäftliche Anlässe oder als unvergessliches Werbegeschenk.</p>\n<p data-start=\"540\" data-end=\"769\">Mit <strong data-start=\"545\" data-end=\"587\">europäischen oder chinesischen Produktionsoptionen</strong> können Sie wählen, was Ihrem Zeitplan und Budget entspricht. Wenn Sie sich für die <strong data-start=\"656\" data-end=\"679\">europäische Produktion</strong> entscheiden, können Sie außerdem <strong data-start=\"711\" data-end=\"768\">eine Verpackungslösung direkt im Preisrechner auswählen</strong>.</p>\n<h3 data-section-id=\"1sb5zx1\" data-start=\"771\" data-end=\"791\">Produktdetails:</h3>\n<ul data-start=\"792\" data-end=\"1120\">\n<li data-start=\"792\" data-end=\"847\">\n<p data-start=\"794\" data-end=\"847\"><strong data-start=\"794\" data-end=\"806\">Material</strong>: <span style=\"font-weight: 400\">80 % Baumwolle, 17 % Polyamid, 3 % Elastan</span></p>\n</li>\n<li data-start=\"848\" data-end=\"887\">\n<p data-start=\"850\" data-end=\"887\"><strong data-start=\"850\" data-end=\"859\">Größen</strong>: 35/37, 38/40, 41/43, 44/46</p>\n</li>\n<li data-start=\"888\" data-end=\"968\">\n<p data-start=\"890\" data-end=\"968\"><strong data-start=\"890\" data-end=\"909\">Bis zu 5 Farben</strong> pro Design (mehr sind je nach Motiv möglich)</p>\n</li>\n<li data-start=\"969\" data-end=\"1007\">\n<p data-start=\"971\" data-end=\"1007\"><strong data-start=\"971\" data-end=\"988\">Mindestbestellmenge</strong>: 50 Paar pro Größe</p>\n</li>\n<li data-start=\"1008\" data-end=\"1051\">\n<p data-start=\"1010\" data-end=\"1051\"><strong data-start=\"1010\" data-end=\"1034\">Produktionsstandorte</strong>: Europa oder China</p>\n</li>\n<li data-start=\"1052\" data-end=\"1120\">\n<p data-start=\"1054\" data-end=\"1120\"><strong data-start=\"1054\" data-end=\"1071\">Lieferzeit</strong>: 4 bis 5 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"1122\" data-end=\"1284\">Wir bieten eine große Auswahl an Lager-Garnfarben. Designs mit mehr als 5 Farben sind möglicherweise dennoch realisierbar – kontaktieren Sie uns einfach, um zu prüfen, was für Ihr Projekt möglich ist.</p>\n<p data-start=\"1286\" data-end=\"1440\"><strong data-start=\"1289\" data-end=\"1311\">Optionale Verpackung</strong> (nur Europa): Wählen Sie aus verschiedenen Präsentationsoptionen – direkt im <strong data-start=\"1384\" data-end=\"1404\">Preisrechner</strong>, wenn Sie die europäische Produktion auswählen.</p>\n<p data-start=\"1442\" data-end=\"1539\">Haben Sie Fragen zu Designbeschränkungen oder möchten Sie eine Großbestellung aufgeben? Wir helfen Ihnen gerne weiter.</p>",
+      "short_description": "",
+      "sku": "classic-socks",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 258,
+          "name": "Personalisierte Textilien",
+          "slug": "personalisierte-textilien"
+        },
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 308,
+          "name": "Schuhwerk",
+          "slug": "schuhwerk"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8626,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks8-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8622,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_21-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8623,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_16-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8625,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks1-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8627,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks2-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8628,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks3-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8632,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_22-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8633,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks10-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8634,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_socks_18-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        },
+        {
+          "id": 8637,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesocks5-300x300.png",
+          "alt": "Hercules Merchandise socks"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 10123,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4517,
+      "name": "Alaska Mütze",
+      "slug": "alaska-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/alaska-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierte <span data-sheets-root=\"1\">Alaska Mütze</span></h2>\n<p data-start=\"124\" data-end=\"304\">Diese Mütze kann in <strong data-start=\"144\" data-end=\"173\">bis zu 2 Farben gestrickt</strong> werden. Durch die Verwendung eines <strong data-start=\"209\" data-end=\"230\">sehr dicken Garns</strong> wirkt das Strickmuster besonders klar und erzeugt einen schönen Effekt.</p>\n<p data-start=\"306\" data-end=\"320\"><strong data-start=\"306\" data-end=\"318\">Details:</strong></p>\n<ul data-start=\"321\" data-end=\"517\">\n<li data-start=\"321\" data-end=\"346\">\n<p data-start=\"323\" data-end=\"346\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"347\" data-end=\"374\">\n<p data-start=\"349\" data-end=\"374\">Bis zu 2 Farben möglich</p>\n</li>\n<li data-start=\"375\" data-end=\"426\">\n<p data-start=\"377\" data-end=\"426\">Pompon in 1, 2 oder 3 Farben – oder ohne Pompon</p>\n</li>\n<li data-start=\"427\" data-end=\"451\">\n<p data-start=\"429\" data-end=\"451\">Produktion in Europa</p>\n</li>\n<li data-start=\"452\" data-end=\"517\">\n<p data-start=\"454\" data-end=\"517\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"519\" data-end=\"623\"><strong data-start=\"519\" data-end=\"534\">Veredelung:</strong><br data-start=\"534\" data-end=\"537\" />Zur Mütze kann ein <strong data-start=\"556\" data-end=\"566\">Pompon</strong> ergänzt werden sowie ein <strong data-start=\"592\" data-end=\"620\">Abzeichen mit Ihrem Logo</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-alaska-hat-with-embroidery",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8650,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat6-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat6-15-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8651,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_19-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8652,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat1-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8653,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat11-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8654,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat15-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8655,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat8-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8656,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Alaska_knitted_beanie_hat_21-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8657,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat4-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8658,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat13-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        },
+        {
+          "id": 8659,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseAlaskaknittedbeaniehat17-300x300.png",
+          "alt": "Hercules Merchandise Alaska knitted beanie hat"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit Stickerei",
+            "Ohne Stickerei"
+          ]
+        },
+        {
+          "id": 30,
+          "name": "Bommel",
+          "options": [
+            "Mit Bommel",
+            "Ohne Pompon"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4519,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "withou-pompon"
+            }
+          ]
+        },
+        {
+          "id": 4520,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "withou-pompon"
+            }
+          ]
+        },
+        {
+          "id": 4521,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        },
+        {
+          "id": 4522,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit-strickerei"
+            },
+            {
+              "name": "Bommel",
+              "value": "mit-bommel"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4406,
+      "name": "Personalisierter Premium Schal",
+      "slug": "personalisierter-premium-schal",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-premium-schal/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"114\" data-end=\"151\"><strong data-start=\"118\" data-end=\"149\">Personalisierter Premium-Schal</strong></h3>\n<p data-start=\"153\" data-end=\"393\">Dieser <strong data-start=\"160\" data-end=\"205\">hochwertige, individuell gefertigte Schal</strong> ist die perfekte Wahl für <strong data-start=\"232\" data-end=\"262\">Mode- und Lifestyle-Marken</strong>. Der Schal wird in <strong data-start=\"282\" data-end=\"312\">zwei Farben fein gestrickt</strong> und vermittelt dadurch ein <strong data-start=\"340\" data-end=\"390\">besonders stilvolles und elegantes Tragegefühl</strong>.</p>\n<p data-start=\"395\" data-end=\"409\"><strong data-start=\"395\" data-end=\"407\">Details:</strong></p>\n<ul data-start=\"410\" data-end=\"668\">\n<li data-start=\"410\" data-end=\"435\">\n<p data-start=\"412\" data-end=\"435\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"436\" data-end=\"480\">\n<p data-start=\"438\" data-end=\"480\">Standardmaße: 160 × 20 cm (ohne Fransen)</p>\n</li>\n<li data-start=\"481\" data-end=\"508\">\n<p data-start=\"483\" data-end=\"508\">Bis zu 2 Farben möglich</p>\n</li>\n<li data-start=\"509\" data-end=\"560\">\n<p data-start=\"511\" data-end=\"560\">Einseitiges Design (Rückseite im Negativmuster)</p>\n</li>\n<li data-start=\"561\" data-end=\"577\">\n<p data-start=\"563\" data-end=\"577\">Ohne Fransen</p>\n</li>\n<li data-start=\"578\" data-end=\"602\">\n<p data-start=\"580\" data-end=\"602\">Produktion in Europa</p>\n</li>\n<li data-start=\"603\" data-end=\"668\">\n<p data-start=\"605\" data-end=\"668\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"670\" data-end=\"854\">Auch <strong data-start=\"675\" data-end=\"689\">Modemarken</strong> sind bei uns bestens aufgehoben. Als erfahrener Hersteller verfügen wir über <strong data-start=\"767\" data-end=\"792\">langjährige Expertise</strong> in der <strong data-start=\"800\" data-end=\"851\">Produktion von Schals und modischen Accessoires</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-premium-fashion-scarves",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 254,
+          "name": "Fußballschals",
+          "slug": "fussballschals"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8503,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepremiumfashionscarf1-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepremiumfashionscarf1-16-300x300.png",
+          "alt": "Hercules Merchandise premium fashion scarf"
+        },
+        {
+          "id": 8504,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_5-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8505,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_9-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8506,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepremiumfashionscarf2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepremiumfashionscarf2-300x300.png",
+          "alt": "Hercules Merchandise premium fashion scarf"
+        },
+        {
+          "id": 8507,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_7-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8508,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_11-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8509,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepremiumfashionscarf3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepremiumfashionscarf3-300x300.png",
+          "alt": "Hercules Merchandise premium fashion scarf"
+        },
+        {
+          "id": 8510,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_10-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8511,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_6-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8512,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_12-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        },
+        {
+          "id": 8513,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_Echarpes_Premium_13-300x300.png",
+          "alt": "Hercules_Merchandising_Echarpes_Premium"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4408,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4391,
+      "name": "Individuell gewebter Aufnäher",
+      "slug": "individuell-gewebter-aufnaher",
+      "permalink": "https://staging.hercules-merchandise.de/products/individuell-gewebter-aufnaher/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"94\" data-end=\"133\"><strong data-start=\"98\" data-end=\"131\">Individuell gewebter Aufnäher</strong></h3>\n<p data-start=\"135\" data-end=\"307\">Suchen Sie <strong data-start=\"146\" data-end=\"215\">Aufnäher zur Personalisierung Ihrer Shirts oder anderer Textilien</strong>? Wir bieten <strong data-start=\"228\" data-end=\"283\">vollständig individuell gefertigte, gewebte Aufnäher</strong> in höchster Qualität.</p>\n<p data-start=\"309\" data-end=\"323\"><strong data-start=\"309\" data-end=\"321\">Details:</strong></p>\n<ul data-start=\"324\" data-end=\"509\">\n<li data-start=\"324\" data-end=\"349\">\n<p data-start=\"326\" data-end=\"349\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"350\" data-end=\"382\">\n<p data-start=\"352\" data-end=\"382\">Bis zu 6 verschiedene Farben</p>\n</li>\n<li data-start=\"383\" data-end=\"405\">\n<p data-start=\"385\" data-end=\"405\">Maße: 65 bis 90 mm</p>\n</li>\n<li data-start=\"406\" data-end=\"441\">\n<p data-start=\"408\" data-end=\"441\">Produktion in Europa oder China</p>\n</li>\n<li data-start=\"442\" data-end=\"509\">\n<p data-start=\"444\" data-end=\"509\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"511\" data-end=\"770\">Standardmäßig werden unsere Aufnäher so hergestellt, dass sie <strong data-start=\"573\" data-end=\"596\">auf Stoff aufgenäht</strong> werden können.<br data-start=\"611\" data-end=\"614\" />Gegen einen kleinen Aufpreis kann auf der Rückseite ein <strong data-start=\"670\" data-end=\"697\">spezieller Textilkleber</strong> aufgebracht werden – so lässt sich der Aufnäher <strong data-start=\"746\" data-end=\"767\">einfach aufbügeln</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-woven-badges-for-football-and-rugby",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8497,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges1-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges1-16-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8498,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges2-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8499,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges3-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8500,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges4-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "Aufklebe-Abzeichen",
+            "Aufnäher"
+          ]
+        },
+        {
+          "id": 38,
+          "name": "Anzahl der Farben",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4393,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "id": 4394,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "id": 4395,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 4396,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 4397,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "id": 4398,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "id": 4399,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "id": 4400,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 4401,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 4402,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "6"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4269,
+      "name": "Personalisierte Vintage Mütze",
+      "slug": "personalisierte-vintage-mutze",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-vintage-mutze/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"120\" data-end=\"154\"><strong data-start=\"124\" data-end=\"154\">Personalisierte Vintage-Mütze</strong></h3>\n<p data-start=\"156\" data-end=\"386\">Erweitern Sie Ihr Sortiment um diese <strong data-start=\"193\" data-end=\"222\">modische Rippstrick-Mütze</strong> im <strong data-start=\"226\" data-end=\"242\">Vintage-Stil</strong>.<br data-start=\"243\" data-end=\"246\" />Die Mütze ist in <strong data-start=\"263\" data-end=\"283\">mehrere Streifen</strong> unterteilt, wobei <strong data-start=\"302\" data-end=\"344\">abwechselnd dickere und dünnere Linien</strong> ein markantes <strong data-start=\"359\" data-end=\"375\">Rippenmuster</strong> ergeben.</p>\n<p data-start=\"388\" data-end=\"575\">Es ist möglich, in den <strong data-start=\"411\" data-end=\"456\">vertieften Linien unterschiedliche Farben</strong> einzuarbeiten – auf diese Weise können sogar <strong data-start=\"502\" data-end=\"533\">Buchstaben oder Schriftzüge</strong> direkt in das Design integriert werden.</p>\n<p data-start=\"577\" data-end=\"591\"><strong data-start=\"577\" data-end=\"589\">Details:</strong></p>\n<ul data-start=\"592\" data-end=\"813\">\n<li data-start=\"592\" data-end=\"621\">\n<p data-start=\"594\" data-end=\"621\">Material: <strong data-start=\"604\" data-end=\"619\">100 % Acryl</strong></p>\n</li>\n<li data-start=\"622\" data-end=\"653\">\n<p data-start=\"624\" data-end=\"653\">Bis zu <strong data-start=\"631\" data-end=\"643\">3 Farben</strong> möglich</p>\n</li>\n<li data-start=\"654\" data-end=\"710\">\n<p data-start=\"656\" data-end=\"710\"><strong data-start=\"656\" data-end=\"671\">Ohne Bommel</strong> (Bommel in bis zu 3 Farben optional)</p>\n</li>\n<li data-start=\"711\" data-end=\"739\">\n<p data-start=\"713\" data-end=\"739\"><strong data-start=\"713\" data-end=\"737\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"740\" data-end=\"813\">\n<p data-start=\"742\" data-end=\"813\"><strong data-start=\"742\" data-end=\"757\">Lieferzeit:</strong> ca. 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"815\" data-end=\"987\">Zusätzlich zur eingewebten Schrift können Sie auch ein <strong data-start=\"870\" data-end=\"879\">Badge</strong> oder eine <strong data-start=\"890\" data-end=\"918\">Stickerei mit Ihrem Logo</strong> anbringen lassen – für ein <strong data-start=\"946\" data-end=\"984\">hochwertiges, individuelles Finish</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-vintage-beanie-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 259,
+          "name": "Personalisierte Mützen",
+          "slug": "personalisierte-mutzen"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8056,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_6-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_6-20-300x300.png",
+          "alt": "Hercules_Merchandise_vintage_beanie_hat"
+        },
+        {
+          "id": 8057,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat1-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8058,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat3-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8059,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat2-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8060,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_vintage_beanie_hat_8-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        },
+        {
+          "id": 8061,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisevintagebeaniehat4-300x300.png",
+          "alt": "Hercules Merchandise knitted business beanie"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Stickerei",
+          "options": [
+            "Mit",
+            "Ohne"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4271,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4272,
+          "attributes": [
+            {
+              "name": "Stickerei",
+              "value": "mit"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4213,
+      "name": "Personalisierter Fischerhut",
+      "slug": "personalisierter-fischerhut",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-fischerhut/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"52\"><strong data-start=\"0\" data-end=\"50\">Personalisierter Fischerhut</strong></h3>\n<p data-start=\"54\" data-end=\"316\">Wir bedrucken Ihren <strong data-start=\"74\" data-end=\"101\">Fischerhut </strong>vollständig nach Ihren Wünschen – wahlweise <strong data-start=\"146\" data-end=\"165\">auf einer Seite</strong> oder sogar <strong data-start=\"177\" data-end=\"196\">innen und außen</strong>. So können Sie <strong data-start=\"212\" data-end=\"241\">zwei verschiedene Designs</strong> kombinieren und den Hut einfach umdrehen, um einen neuen Look zu zeigen.</p>\n<p data-start=\"318\" data-end=\"339\"><strong data-start=\"318\" data-end=\"337\">Produktdetails:</strong></p>\n<ul data-start=\"340\" data-end=\"555\">\n<li data-start=\"340\" data-end=\"369\">\n<p data-start=\"342\" data-end=\"369\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"370\" data-end=\"415\">\n<p data-start=\"372\" data-end=\"415\">Vollfarbiger Druck (ein- oder zweiseitig)</p>\n</li>\n<li data-start=\"416\" data-end=\"468\">\n<p data-start=\"418\" data-end=\"468\">Wasserdicht – idealer Schutz vor Sonne und Regen</p>\n</li>\n<li data-start=\"469\" data-end=\"493\">\n<p data-start=\"471\" data-end=\"493\">Produktion in Europa</p>\n</li>\n<li data-start=\"494\" data-end=\"555\">\n<p data-start=\"496\" data-end=\"555\">Lieferzeit: ca. 4–6 Wochen (<strong data-start=\"524\" data-end=\"552\">Expresslieferung möglich</strong>)</p>\n</li>\n</ul>\n<p data-start=\"557\" data-end=\"706\">Der Fischerhut besteht aus robustem Polyester und ist somit <strong data-start=\"617\" data-end=\"636\">wasserabweisend</strong>, <strong data-start=\"638\" data-end=\"654\">pflegeleicht</strong> und <strong data-start=\"659\" data-end=\"703\">ideal für Outdoor-Events oder Fanartikel</strong>.</p>\n<p data-start=\"708\" data-end=\"914\" data-is-last-node=\"\" data-is-only-node=\"\">Auf Wunsch bieten wir auch <b>Baumwoll-Fischerhüte</b> an, die zusätzlich mit <strong data-start=\"783\" data-end=\"809\">Stickereien oder Logos</strong> veredelt werden können.<br data-start=\"833\" data-end=\"836\" />Kontaktieren Sie uns für weitere Informationen oder ein individuelles Angebot.</p>",
+      "short_description": "",
+      "sku": "custom-made-bucket-hats",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 278,
+          "name": "Kopfbedeckung",
+          "slug": "kopfbedeckung"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 316,
+          "name": "Nachhaltigkeit",
+          "slug": "nachhaltigkeit"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 314,
+          "name": "Sommer",
+          "slug": "sommer"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 7383,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_64-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_64-21-300x300.png",
+          "alt": "Hercules Merchandise bucket hat"
+        },
+        {
+          "id": 7384,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_66.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_66-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7385,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_67.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_67-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7386,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_65.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_65-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7387,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat29-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7388,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat14-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7389,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_38.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_38-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7390,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat10-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7391,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_42.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_42-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7392,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_61.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_61-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7393,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_50.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_50-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7394,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_54.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_54-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7395,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat6-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7396,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat22-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7397,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat34.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat34-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7398,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat1-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7399,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat33.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat33-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7401,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat16-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7402,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_40.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_40-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7403,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_63-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7404,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat12-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7405,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_52.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_52-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7406,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_56.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_56-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7407,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_44.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_bucket_hat_44-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7408,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat8-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7409,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat24.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat24-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7410,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat36.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat36-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7411,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat4-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7412,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat18-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7413,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat9-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7414,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat5-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7415,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat13-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7416,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat21-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        },
+        {
+          "id": 7417,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebuckethat2-300x300.png",
+          "alt": "Personalisierter Fischerhut"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "1-seitig",
+            "Doppelseitig"
+          ]
+        },
+        {
+          "id": 27,
+          "name": "Produktion",
+          "options": [
+            "Dickere Qualität (China)",
+            "Dickere Qualität (Europa)",
+            "Werbequalität (Europa)"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4215,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-seitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "werbequalitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4216,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-seitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4217,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "1-seitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-china"
+            }
+          ]
+        },
+        {
+          "id": 4218,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "doppelseitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "werbequalitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4219,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "doppelseitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-europa"
+            }
+          ]
+        },
+        {
+          "id": 4220,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "doppelseitig"
+            },
+            {
+              "name": "Produktion",
+              "value": "dickere-qualitat-china"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4165,
+      "name": "Personalisierter Schal aus recycelter Baumwolle",
+      "slug": "personalisierter-schal-aus-recycelter-baumwolle",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-schal-aus-recycelter-baumwolle/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p data-start=\"0\" data-end=\"50\"><strong data-start=\"0\" data-end=\"48\">Personalisierter Schal aus recycelter Baumwolle</strong></p>\n<p data-start=\"52\" data-end=\"499\">Suchen Sie nach einem <strong data-start=\"74\" data-end=\"117\">hochwertigen, personalisierten Fanschal</strong> aus <strong data-start=\"122\" data-end=\"146\">recycelter Baumwolle</strong>? Dann sind Sie hier genau richtig! Diese nachhaltigen Schals sind die perfekte Wahl für <strong data-start=\"235\" data-end=\"261\">leidenschaftliche Fans</strong>, die <strong data-start=\"267\" data-end=\"302\">Teamgeist und Umweltbewusstsein</strong> verbinden möchten.<br data-start=\"321\" data-end=\"324\" />Gefertigt aus <strong data-start=\"338\" data-end=\"372\">robuster, recycelter Baumwolle</strong>, bieten sie <strong data-start=\"385\" data-end=\"427\" data-is-only-node=\"\">angenehme Wärme und hohen Tragekomfort</strong> – ideal für kühle Spieltage oder als stilvolles Accessoire im Alltag.</p>\n<p data-start=\"501\" data-end=\"707\">Gestalten Sie Ihren Schal ganz nach Ihren Wünschen: <strong data-start=\"553\" data-end=\"607\">Wählen Sie Vereinsfarben, fügen Sie Ihr Logo hinzu</strong> und ergänzen Sie individuelle Schriftzüge – für einen Schal, der zu 100 % Ihr Team repräsentiert.</p>\n<p data-start=\"709\" data-end=\"1013\">Da recycelte Baumwolle eine etwas <strong data-start=\"743\" data-end=\"762\">rauere Struktur</strong> hat als das Acrylgarn unserer Standardschals, wirkt jeder Schal <strong data-start=\"827\" data-end=\"856\">authentisch und natürlich</strong>. Durch das recycelte Material kann es zu <strong data-start=\"898\" data-end=\"928\">leichten Farbunterschieden</strong> kommen – ein Merkmal, das jedem Schal seinen <strong data-start=\"974\" data-end=\"1001\">einzigartigen Charakter</strong> verleiht.</p>\n<p data-start=\"1015\" data-end=\"1177\">Die <strong data-start=\"1019\" data-end=\"1030\">Fransen</strong> haben eine <strong data-start=\"1042\" data-end=\"1056\">Loop-Optik</strong> (geschlossene Schlaufen) statt klassischer Fransen, auf Wunsch können jedoch <strong data-start=\"1134\" data-end=\"1157\">Standard-Acrylgarne</strong> verwendet werden.</p>\n<p data-start=\"1179\" data-end=\"1446\">Da die Nachfrage nach recycelter Baumwolle in der Branche aktuell noch gering ist, können manche Farben nicht immer verfügbar sein. Kontaktieren Sie uns, um die <strong data-start=\"1340\" data-end=\"1368\">verfügbaren Farboptionen</strong> zu erfahren – mit wachsender Nachfrage wird auch die Auswahl stetig größer.</p>\n<p data-start=\"1448\" data-end=\"1800\"><strong data-start=\"1448\" data-end=\"1461\">Material:</strong> 80 % recycelte Baumwolle, 20 % recycelter Polyester<br data-start=\"1513\" data-end=\"1516\" /><strong data-start=\"1516\" data-end=\"1534\">Standardgröße:</strong> 140 × 18 cm (ohne Fransen)<br data-start=\"1561\" data-end=\"1564\" /><strong data-start=\"1564\" data-end=\"1575\">Farben:</strong> Bis zu 5 verschiedene<br data-start=\"1597\" data-end=\"1600\" /><strong data-start=\"1600\" data-end=\"1611\">Design:</strong> Unterschiedliche Motive auf Vorder- und Rückseite möglich<br data-start=\"1669\" data-end=\"1672\" data-is-only-node=\"\" /><strong data-start=\"1672\" data-end=\"1684\">Fransen:</strong> Bis zu 3 Farben<br data-start=\"1700\" data-end=\"1703\" /><strong data-start=\"1703\" data-end=\"1718\">Produktion:</strong> Hergestellt in Europa<br data-start=\"1740\" data-end=\"1743\" /><strong data-start=\"1743\" data-end=\"1758\">Lieferzeit:</strong> ca. 5 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"1802\" data-end=\"1990\" data-is-last-node=\"\" data-is-only-node=\"\">Ein umweltfreundlicher <strong data-start=\"1825\" data-end=\"1851\">Fanschal mit Charakter</strong> – <strong data-start=\"1854\" data-end=\"1906\">nachhaltig, hochwertig und individuell gefertigt</strong> für Sportvereine, Events und Marken, die Wert auf Qualität und Verantwortung legen.</p>",
+      "short_description": "",
+      "sku": "custom-recyled-cotton-scarves",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 254,
+          "name": "Fußballschals",
+          "slug": "fussballschals"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 316,
+          "name": "Nachhaltigkeit",
+          "slug": "nachhaltigkeit"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7285,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf1-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf1-21-300x300.png",
+          "alt": "Personalisierter Schal aus recycelter Baumwolle"
+        },
+        {
+          "id": 11724,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-01.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-01-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11726,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-10-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11728,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-18-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11727,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-14-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11729,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-23-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11730,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-27.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-27-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11725,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-06.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-06-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 7286,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf3-300x300.png",
+          "alt": "Personalisierter Schal aus recycelter Baumwolle"
+        },
+        {
+          "id": 11731,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-03.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-03-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11733,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-12-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11745,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-20-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11742,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-16-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11749,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-25.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-25-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11752,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-29-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11732,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-08.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-08-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 7288,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf2-300x300.png",
+          "alt": "Personalisierter Schal aus recycelter Baumwolle"
+        },
+        {
+          "id": 11734,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-02.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-02-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11739,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-11-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11744,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-19-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11741,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-15-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11748,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-24.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-24-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11751,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-28.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-28-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11737,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-07.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-07-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 7287,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseRecycledCottonScarf4-300x300.png",
+          "alt": "Personalisierter Schal aus recycelter Baumwolle"
+        },
+        {
+          "id": 11735,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-04.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-04-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11736,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-05.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-05-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11740,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-13-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11738,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-09.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-09-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11746,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-21-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11747,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-22.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-22-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11743,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-17-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11750,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-26-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11753,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-30.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-30-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        },
+        {
+          "id": 11754,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-31.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Recycled-cotton-scarf-31-300x300.png",
+          "alt": "Hercules Merchandise Recycled cotton scarf"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 22,
+          "name": "Größe",
+          "options": [
+            "140 x 18 cm",
+            "160 x 18 cm",
+            "180 x 18 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4167,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "140-x-18-cm"
+            }
+          ]
+        },
+        {
+          "id": 4168,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "160-x-18-cm"
+            }
+          ]
+        },
+        {
+          "id": 4169,
+          "attributes": [
+            {
+              "name": "Größe",
+              "value": "180-x-18-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4156,
+      "name": "Personalisiertes Retro-Fußballtrikot",
+      "slug": "personalisiertes-retro-fussballtrikot",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-retro-fussballtrikot/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"49\"><strong data-start=\"0\" data-end=\"47\">Individuelles Retro-Fußballtrikot mit Druck</strong></h3>\n<p data-start=\"51\" data-end=\"446\"><strong data-start=\"51\" data-end=\"101\">Gestalten Sie Ihr eigenes Retro-Fußballtrikot!</strong><br data-start=\"101\" data-end=\"104\" />Lassen Sie den <strong data-start=\"119\" data-end=\"154\">Charme vergangener Fußball-Ären</strong> wieder aufleben – mit einem <strong data-start=\"183\" data-end=\"211\">personalisierten Trikot</strong> im klassischen Stil, das ganz nach Ihren Vorstellungen gefertigt wird.<br data-start=\"282\" data-end=\"285\" />Wählen Sie <strong data-start=\"296\" data-end=\"353\">eigene Farben, Muster, Logos, Rückennummern und Namen</strong> – ohne Einschränkungen. Jedes Trikot wird <strong data-start=\"396\" data-end=\"443\">individuell für Sie produziert und bedruckt</strong>.</p>\n<p data-start=\"448\" data-end=\"712\">Das Trikot besteht aus einem <strong data-start=\"477\" data-end=\"516\">starken, dicken, aber glatten Stoff</strong>, der ein <strong data-start=\"526\" data-end=\"554\">hochwertiges Tragegefühl</strong> vermittelt.<br data-start=\"566\" data-end=\"569\" />Durch die Stoffdichte eignet es sich weniger für den aktiven Sporteinsatz und ist eher als <strong data-start=\"660\" data-end=\"701\">modisches Fan- oder Lifestyle-Produkt</strong> gedacht.</p>\n<p data-start=\"714\" data-end=\"980\"><strong data-start=\"714\" data-end=\"727\">Material:</strong> 100 % Polyester<br data-start=\"743\" data-end=\"746\" /><strong data-start=\"746\" data-end=\"766\">Farben &amp; Muster:</strong> Unbegrenzt möglich<br data-start=\"785\" data-end=\"788\" /><strong data-start=\"788\" data-end=\"799\">Design:</strong> Unterschiedliche Motive auf Vorder- und Rückseite möglich<br data-start=\"857\" data-end=\"860\" data-is-only-node=\"\" /><strong data-start=\"860\" data-end=\"871\">Größen:</strong> XS bis 6XL<br data-start=\"882\" data-end=\"885\" /><strong data-start=\"885\" data-end=\"900\">Produktion:</strong> Hergestellt in Europa<br data-start=\"922\" data-end=\"925\" /><strong data-start=\"925\" data-end=\"940\">Lieferzeit:</strong> 4–6 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"982\" data-end=\"1153\">Jedes Trikot kann mit <strong data-start=\"1004\" data-end=\"1045\">individuellen Namen und Rückennummern</strong> versehen werden.<br data-start=\"1062\" data-end=\"1065\" />Die Nummer kann auf dem Rücken oder an einer <strong data-start=\"1110\" data-end=\"1133\">beliebigen Position</strong> platziert werden.</p>\n<p data-start=\"1155\" data-end=\"1366\" data-is-last-node=\"\" data-is-only-node=\"\">Sie haben bereits ein Design oder möchten eines erstellen lassen?<br data-start=\"1220\" data-end=\"1223\" /><strong data-start=\"1223\" data-end=\"1254\">Senden Sie uns Ihre Vorlage</strong> – wir prüfen sie gerne und erstellen ein <strong data-start=\"1296\" data-end=\"1324\">kostenloses Musterdesign</strong> für Ihr persönliches Retro-Fußballtrikot.</p>",
+      "short_description": "<h3 data-start=\"0\" data-end=\"49\"></h3>",
+      "sku": "custom-retro-football-shirt",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 255,
+          "name": "Personalisierte Sportbekleidung",
+          "slug": "personalisierte-sportbekleidung"
+        },
+        {
+          "id": 305,
+          "name": "Team-Bekleidung",
+          "slug": "team-bekleidung"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7254,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt2-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt2-21-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7255,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt7-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7256,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt12-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7257,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt4-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7258,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt9-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7259,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt14-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7260,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt16-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7261,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt5-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7262,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt10-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7263,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt15-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7264,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt6-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7265,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt1-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        },
+        {
+          "id": 7266,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseretrofootballshirt11-300x300.png",
+          "alt": "Personalisiertes Retro-Fußballtrikot"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4158,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.619Z"
+}

@@ -1,0 +1,2811 @@
+{
+  "category": {
+    "id": 312,
+    "name": "Zubehör",
+    "slug": "zubehor",
+    "description": "Entdecken Sie eine komplette Reihe anpassbarer Accessoires, die entwickelt wurden, um die Vereinsidentität zu stärken, Fans zu begeistern und praktischen Nutzen zu bieten.",
+    "count": 16,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 4538,
+      "name": "Personalisierter Regenschirm",
+      "slug": "personalisierter-regenschirm",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-regenschirm/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierter Regenschirm</h2>\n<p data-start=\"125\" data-end=\"344\">Dieser personalisierte Regenschirm lässt sich ganz einfach in einer Sporttasche, einem Rucksack oder einer Handtasche verstauen. Jeder Schirm wird mit einer <strong data-start=\"282\" data-end=\"297\">Schutzhülle</strong> geliefert, die sich bequem überziehen lässt.</p>\n<p data-start=\"346\" data-end=\"476\">Ihr Logo kann in <strong data-start=\"363\" data-end=\"406\">1 Farbe, 2 Farben oder im Vollfarbdruck</strong> aufgebracht werden – wahlweise auf <strong data-start=\"442\" data-end=\"473\">1, 2 oder sogar 4 Segmenten</strong>.</p>\n<ul data-start=\"477\" data-end=\"557\">\n<li data-start=\"477\" data-end=\"520\">\n<p data-start=\"479\" data-end=\"520\"><strong data-start=\"479\" data-end=\"507\">1- oder 2-farbiger Druck</strong>: Siebdruck</p>\n</li>\n<li data-start=\"521\" data-end=\"557\">\n<p data-start=\"523\" data-end=\"557\"><strong data-start=\"523\" data-end=\"540\">Vollfarbdruck</strong>: Transferdruck</p>\n</li>\n</ul>\n<p data-start=\"559\" data-end=\"573\"><strong data-start=\"559\" data-end=\"571\">Details:</strong></p>\n<ul data-start=\"574\" data-end=\"783\">\n<li data-start=\"574\" data-end=\"615\">\n<p data-start=\"576\" data-end=\"615\">Material: Polyester mit Metallgestell</p>\n</li>\n<li data-start=\"616\" data-end=\"646\">\n<p data-start=\"618\" data-end=\"646\">Druck: 1, 2 oder Vollfarbe</p>\n</li>\n<li data-start=\"647\" data-end=\"669\">\n<p data-start=\"649\" data-end=\"669\">Durchmesser: 90 cm</p>\n</li>\n<li data-start=\"670\" data-end=\"715\">\n<p data-start=\"672\" data-end=\"715\">Produktion in China, Bedruckung in Europa</p>\n</li>\n<li data-start=\"716\" data-end=\"783\">\n<p data-start=\"718\" data-end=\"783\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"785\" data-end=\"922\"><strong data-start=\"785\" data-end=\"806\">Farben verfügbar:</strong> Weiß, Schwarz, Rot, Gelb, Navyblau, Königsblau, Hellblau, Grün und Orange.<br data-start=\"881\" data-end=\"884\" />Maximale Logogröße: <strong data-start=\"904\" data-end=\"920\">230 × 140 mm</strong></p>\n<p data-start=\"924\" data-end=\"1094\">Hinweis: Dieser Schirm ist relativ leicht und daher <strong data-start=\"979\" data-end=\"1011\">nicht für stürmisches Wetter</strong> geeignet. Wenn Sie einen robusteren Schirm wünschen, kontaktieren Sie uns bitte.</p>",
+      "short_description": "",
+      "sku": "custom-printed-umbrellas",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8694,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella2-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella2-14-300x300.png",
+          "alt": "Hercules Merchandise umbrella"
+        },
+        {
+          "id": 8695,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseumbrella1-300x300.png",
+          "alt": "Hercules Merchandise umbrella"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 21,
+          "name": "Drucken",
+          "options": [
+            "1-farbiges Logo",
+            "Vollfarbiges Logo"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4540,
+          "attributes": [
+            {
+              "name": "Drucken",
+              "value": "1-farbiges-logo"
+            }
+          ]
+        },
+        {
+          "id": 4541,
+          "attributes": [
+            {
+              "name": "Drucken",
+              "value": "vollfarbiges-logo"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4535,
+      "name": "Personalisierte Handschuhe",
+      "slug": "personalisierte-handschuhe",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-handschuhe/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierte Handschuhe</h2>\n<p data-start=\"162\" data-end=\"265\">Gestalten Sie Ihre Handschuhe ganz nach Wunsch: <strong data-start=\"210\" data-end=\"262\">Wählen Sie Ihre Farben und ergänzen Sie Ihr Logo</strong>.</p>\n<p data-start=\"267\" data-end=\"518\">Pro <strong data-start=\"271\" data-end=\"292\">horizontale Linie</strong> sind bis zu <strong data-start=\"305\" data-end=\"317\">3 Farben</strong> möglich (von links nach rechts). <strong data-start=\"351\" data-end=\"363\">Vertikal</strong> können mehr als 3 Farben eingesetzt werden. Bei mehr als 3 Farben prüfen wir die Machbarkeit in der Produktion; auch der Preis kann sich dadurch ändern.</p>\n<p data-start=\"520\" data-end=\"534\"><strong data-start=\"520\" data-end=\"532\">Details:</strong></p>\n<ul data-start=\"535\" data-end=\"740\">\n<li data-start=\"535\" data-end=\"560\">\n<p data-start=\"537\" data-end=\"560\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"561\" data-end=\"602\">\n<p data-start=\"563\" data-end=\"602\">Größen: Standardgrößen für Erwachsene</p>\n</li>\n<li data-start=\"603\" data-end=\"633\">\n<p data-start=\"605\" data-end=\"633\">Maximal 3 Farben pro Linie</p>\n</li>\n<li data-start=\"634\" data-end=\"674\">\n<p data-start=\"636\" data-end=\"674\">Produktion in Europa oder der Türkei</p>\n</li>\n<li data-start=\"675\" data-end=\"740\">\n<p data-start=\"677\" data-end=\"740\">Lieferzeit: 4–6 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"742\" data-end=\"788\"><strong data-start=\"742\" data-end=\"786\">Logoveredelung (auf beiden Handschuhen):</strong></p>\n<ol data-start=\"789\" data-end=\"839\">\n<li data-start=\"789\" data-end=\"803\">\n<p data-start=\"792\" data-end=\"803\">Stickerei</p>\n</li>\n<li data-start=\"804\" data-end=\"823\">\n<p data-start=\"807\" data-end=\"823\">Gewebtes Label</p>\n</li>\n<li data-start=\"824\" data-end=\"839\">\n<p data-start=\"827\" data-end=\"839\">Lederlabel</p>\n</li>\n</ol>\n<p data-start=\"841\" data-end=\"904\">Die Wahl hängt von der Optik und dem Detailgrad des Logos ab.</p>\n<p data-start=\"906\" data-end=\"919\"><strong data-start=\"906\" data-end=\"917\">Größen:</strong></p>\n<ul data-start=\"920\" data-end=\"1060\">\n<li data-start=\"920\" data-end=\"967\">\n<p data-start=\"922\" data-end=\"967\">Kindergrößen oder Erwachsenengrößen möglich</p>\n</li>\n<li data-start=\"968\" data-end=\"1022\">\n<p data-start=\"970\" data-end=\"1022\">Aufteilung kann nach Bestellung übermittelt werden</p>\n</li>\n<li data-start=\"1023\" data-end=\"1060\">\n<p data-start=\"1025\" data-end=\"1060\">Preis ist für beide Größen gleich</p>\n</li>\n</ul>\n<p data-start=\"1062\" data-end=\"1221\">Für Bestellungen ab <strong data-start=\"1082\" data-end=\"1094\">500 Paar</strong> ist auch eine Produktion in Asien möglich – zu <strong data-start=\"1142\" data-end=\"1170\">sehr attraktiven Preisen</strong>. Kontaktieren Sie uns für weitere Informationen.</p>",
+      "short_description": "",
+      "sku": "custom-knitted-gloves",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8688,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves6_39760b6a-9ece-4c40-a063-5fa8b4d2b00c-14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves6_39760b6a-9ece-4c40-a063-5fa8b4d2b00c-14-300x300.png",
+          "alt": "Hercules Merchandise custom knitted gloves"
+        },
+        {
+          "id": 8689,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves1-300x300.png",
+          "alt": "Hercules Merchandise custom knitted gloves"
+        },
+        {
+          "id": 8690,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves3-300x300.png",
+          "alt": "Hercules Merchandise custom knitted gloves"
+        },
+        {
+          "id": 8691,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves4-300x300.png",
+          "alt": "Hercules Merchandise custom knitted gloves"
+        },
+        {
+          "id": 8692,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves5-300x300.png",
+          "alt": "Hercules Merchandise custom knitted gloves"
+        },
+        {
+          "id": 8693,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomknittedgloves8-300x300.png",
+          "alt": "Hercules Merchandise custom knitted gloves"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4537,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4529,
+      "name": "Personalisierte Gesichtsmaske",
+      "slug": "personalisierte-gesichtsmasken",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-gesichtsmasken/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2><span data-sheets-root=\"1\">Personalisierte Gesichtsmaske</span></h2>\n<p data-start=\"127\" data-end=\"385\">Unsere Masken werden <strong data-start=\"148\" data-end=\"203\">vollflächig auf der Außenseite individuell bedruckt</strong>. Die Außenseite besteht aus <strong data-start=\"232\" data-end=\"263\">wasserabweisendem Polyester</strong>, das guten Schutz bietet. Die Innenseite ist aus <strong data-start=\"313\" data-end=\"339\">sehr weicher Baumwolle</strong> gefertigt und sorgt für hohen Tragekomfort.</p>\n<p data-start=\"387\" data-end=\"401\"><strong data-start=\"387\" data-end=\"399\">Details:</strong></p>\n<ul data-start=\"402\" data-end=\"633\">\n<li data-start=\"402\" data-end=\"437\">\n<p data-start=\"404\" data-end=\"437\">Material: Polyester &amp; Baumwolle</p>\n</li>\n<li data-start=\"438\" data-end=\"473\">\n<p data-start=\"440\" data-end=\"473\">Vollfarbiger Druck (Außenseite)</p>\n</li>\n<li data-start=\"474\" data-end=\"540\">\n<p data-start=\"476\" data-end=\"540\">Elastikbänder in Schwarz oder Weiß (andere Farben auf Anfrage)</p>\n</li>\n<li data-start=\"541\" data-end=\"565\">\n<p data-start=\"543\" data-end=\"565\">Produktion in Europa</p>\n</li>\n<li data-start=\"566\" data-end=\"633\">\n<p data-start=\"568\" data-end=\"633\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"635\" data-end=\"880\">Wir verwenden ausschließlich <strong data-start=\"664\" data-end=\"703\">in Europa zertifizierte Materialien</strong>. Von unseren Kunden erhalten wir regelmäßig das Feedback, dass dies die <strong data-start=\"776\" data-end=\"816\">komfortabelsten Masken auf dem Markt</strong> seien. Musterexemplare senden wir Ihnen gerne auf Anfrage zu.</p>\n<p data-start=\"882\" data-end=\"978\">Die Masken sind <strong data-start=\"898\" data-end=\"920\">bei 60 °C waschbar</strong> und halten <strong data-start=\"932\" data-end=\"960\">Dutzende von Waschgängen</strong> problemlos aus.</p>",
+      "short_description": "",
+      "sku": "custom-printed-face-masks",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8668,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask1-15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask1-15.png",
+          "alt": "Hercules Merchandise mask"
+        },
+        {
+          "id": 8669,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask2-300x300.png",
+          "alt": "Hercules Merchandise mask"
+        },
+        {
+          "id": 8670,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask3-300x300.png",
+          "alt": "Hercules Merchandise mask"
+        },
+        {
+          "id": 8671,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask5-300x300.png",
+          "alt": "Hercules Merchandise mask"
+        },
+        {
+          "id": 8672,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemask4-300x300.png",
+          "alt": "Hercules Merchandise mask"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4531,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4391,
+      "name": "Individuell gewebter Aufnäher",
+      "slug": "individuell-gewebter-aufnaher",
+      "permalink": "https://staging.hercules-merchandise.de/products/individuell-gewebter-aufnaher/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"94\" data-end=\"133\"><strong data-start=\"98\" data-end=\"131\">Individuell gewebter Aufnäher</strong></h3>\n<p data-start=\"135\" data-end=\"307\">Suchen Sie <strong data-start=\"146\" data-end=\"215\">Aufnäher zur Personalisierung Ihrer Shirts oder anderer Textilien</strong>? Wir bieten <strong data-start=\"228\" data-end=\"283\">vollständig individuell gefertigte, gewebte Aufnäher</strong> in höchster Qualität.</p>\n<p data-start=\"309\" data-end=\"323\"><strong data-start=\"309\" data-end=\"321\">Details:</strong></p>\n<ul data-start=\"324\" data-end=\"509\">\n<li data-start=\"324\" data-end=\"349\">\n<p data-start=\"326\" data-end=\"349\">Material: 100 % Acryl</p>\n</li>\n<li data-start=\"350\" data-end=\"382\">\n<p data-start=\"352\" data-end=\"382\">Bis zu 6 verschiedene Farben</p>\n</li>\n<li data-start=\"383\" data-end=\"405\">\n<p data-start=\"385\" data-end=\"405\">Maße: 65 bis 90 mm</p>\n</li>\n<li data-start=\"406\" data-end=\"441\">\n<p data-start=\"408\" data-end=\"441\">Produktion in Europa oder China</p>\n</li>\n<li data-start=\"442\" data-end=\"509\">\n<p data-start=\"444\" data-end=\"509\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"511\" data-end=\"770\">Standardmäßig werden unsere Aufnäher so hergestellt, dass sie <strong data-start=\"573\" data-end=\"596\">auf Stoff aufgenäht</strong> werden können.<br data-start=\"611\" data-end=\"614\" />Gegen einen kleinen Aufpreis kann auf der Rückseite ein <strong data-start=\"670\" data-end=\"697\">spezieller Textilkleber</strong> aufgebracht werden – so lässt sich der Aufnäher <strong data-start=\"746\" data-end=\"767\">einfach aufbügeln</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-woven-badges-for-football-and-rugby",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 318,
+          "name": "Mode",
+          "slug": "mode"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8497,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges1-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges1-16-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8498,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges2-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8499,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges3-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        },
+        {
+          "id": 8500,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebadges4-300x300.png",
+          "alt": "Hercules Merchandise badges"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "Aufklebe-Abzeichen",
+            "Aufnäher"
+          ]
+        },
+        {
+          "id": 38,
+          "name": "Anzahl der Farben",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4393,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "id": 4394,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "id": 4395,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 4396,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 4397,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufnaher"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "id": 4398,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "id": 4399,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "id": 4400,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "id": 4401,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "id": 4402,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "aufklebe-abzeichen"
+            },
+            {
+              "name": "Anzahl der Farben",
+              "value": "6"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4388,
+      "name": "Personalisiertes Stadionkissen",
+      "slug": "personalisiertes-stadiumkissen",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-stadiumkissen/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"139\" data-end=\"176\"><strong data-start=\"143\" data-end=\"174\">Personalisiertes Stadionkissen</strong></h3>\n<p data-start=\"178\" data-end=\"361\">Bieten Sie Ihren Fans <strong data-start=\"200\" data-end=\"216\">mehr Komfort</strong> mit diesen bequemen Stadionkissen. Die Oberseite kann <strong data-start=\"271\" data-end=\"304\">vollflächig in Farbe bedruckt</strong> werden – ideal auch als <strong data-start=\"329\" data-end=\"358\">Werbefläche für Sponsoren</strong>.</p>\n<p data-start=\"363\" data-end=\"377\"><strong data-start=\"363\" data-end=\"375\">Details:</strong></p>\n<ul data-start=\"378\" data-end=\"623\">\n<li data-start=\"378\" data-end=\"412\">\n<p data-start=\"380\" data-end=\"412\">Außenmaterial: 100 % Polyester</p>\n</li>\n<li data-start=\"413\" data-end=\"468\">\n<p data-start=\"415\" data-end=\"468\">Gefüllt mit zertifiziertem europäischem Schaumstoff</p>\n</li>\n<li data-start=\"469\" data-end=\"491\">\n<p data-start=\"471\" data-end=\"491\">Vollfarbiger Druck</p>\n</li>\n<li data-start=\"492\" data-end=\"530\">\n<p data-start=\"494\" data-end=\"530\">Standardformat: 36 × 26 cm (offen)</p>\n</li>\n<li data-start=\"531\" data-end=\"555\">\n<p data-start=\"533\" data-end=\"555\">Produktion in Europa</p>\n</li>\n<li data-start=\"556\" data-end=\"623\">\n<p data-start=\"558\" data-end=\"623\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"625\" data-end=\"742\">Die <strong data-start=\"629\" data-end=\"655\">Unterseite des Kissens</strong> besteht aus einem <strong data-start=\"674\" data-end=\"700\">wasserdichten Material</strong>, welches das Kissen auch bei Regen schützt.</p>\n<p data-start=\"744\" data-end=\"1069\">Das beliebteste Modell ist das <strong data-start=\"775\" data-end=\"794\">faltbare Kissen</strong> mit einer Größe von <strong data-start=\"815\" data-end=\"829\">36 × 26 cm</strong> (gefaltet 18 cm) und einer <strong data-start=\"857\" data-end=\"877\">Dicke von 2,5 cm</strong>.<br data-start=\"878\" data-end=\"881\" />Wir können jedoch <strong data-start=\"899\" data-end=\"947\">Kissen in jeder gewünschten Größe und Stärke</strong> herstellen.<br data-start=\"959\" data-end=\"962\" />Senden Sie uns einfach Ihre gewünschten Maße, und wir erstellen Ihnen ein <strong data-start=\"1036\" data-end=\"1066\">individuelles Preisangebot</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-printed-stadium-cushions",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8491,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion6-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion6-16-300x300.png",
+          "alt": "Hercules Merchandise stadium cushion"
+        },
+        {
+          "id": 8492,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion2-300x300.png",
+          "alt": "Hercules Merchandise stadium cushion"
+        },
+        {
+          "id": 8493,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion5-300x300.png",
+          "alt": "Hercules Merchandise stadium cushion"
+        },
+        {
+          "id": 8494,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion4-300x300.png",
+          "alt": "Hercules Merchandise stadium cushion"
+        },
+        {
+          "id": 8495,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion1-300x300.png",
+          "alt": "Hercules Merchandise stadium cushion"
+        },
+        {
+          "id": 8496,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisestadiumcushion3-300x300.png",
+          "alt": "Hercules Merchandise stadium cushion"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4390,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4381,
+      "name": "Personalisierte Badeschlappen",
+      "slug": "personalisierte-badeschlappen",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-badeschlappen/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"140\" data-end=\"176\"><strong data-start=\"144\" data-end=\"176\">Personalisierte Badeschlappen</strong></h3>\n<p data-start=\"178\" data-end=\"471\">Wenn es um <strong data-start=\"189\" data-end=\"220\">Teamgeist, Komfort und Stil</strong> geht, zählen die Details. Unsere <strong>personalisierten Badeschlappen</strong> sind die perfekte Möglichkeit, die Identität Ihres Teams auch <strong data-start=\"346\" data-end=\"389\">außerhalb des Spielfelds oder der Halle</strong> zu zeigen – beim Entspannen nach dem Training, auf Reisen oder in der Freizeit.</p>\n<p data-start=\"473\" data-end=\"731\">Gefertigt aus hochwertigem <strong data-start=\"500\" data-end=\"513\">100 % PVC</strong>, sind diese Schlappen <strong data-start=\"533\" data-end=\"557\">robust und langlebig</strong>. Ob im Vereinsheim, auf dem Weg zum Turnier oder einfach zum Relaxen – sie bieten <strong data-start=\"640\" data-end=\"663\">ganztägigen Komfort</strong> und präsentieren stolz die <strong data-start=\"691\" data-end=\"728\">Farben und das Logo Ihres Vereins</strong>.</p>\n<hr data-start=\"733\" data-end=\"736\" />\n<h3 data-start=\"738\" data-end=\"798\"><strong data-start=\"742\" data-end=\"798\">Vollständig personalisiert – passend zu Ihrem Verein</strong></h3>\n<p data-start=\"800\" data-end=\"923\">Jedes Paar wird <strong data-start=\"816\" data-end=\"849\">nach Ihren Vorgaben gefertigt</strong> und ist ein echtes Abbild Ihres Club-Stils. Sie können wählen zwischen:</p>\n<ul data-start=\"925\" data-end=\"1307\">\n<li data-start=\"925\" data-end=\"997\">\n<p data-start=\"927\" data-end=\"997\"><strong data-start=\"927\" data-end=\"946\">Logoanbringung:</strong> Hochwertiger Druck oder langlebige Reliefprägung</p>\n</li>\n<li data-start=\"998\" data-end=\"1170\">\n<p data-start=\"1000\" data-end=\"1170\"><strong data-start=\"1000\" data-end=\"1017\">Sohlenfarben:</strong> Große Auswahl – Weiß, Schwarz, Gelb, Grün, Royalblau, Navy, Rot, Grau, Orange, Lila, Braun oder Pink – ideal, um Ihre Vereinsfarben perfekt zu treffen</p>\n</li>\n<li data-start=\"1171\" data-end=\"1307\">\n<p data-start=\"1173\" data-end=\"1307\"><strong data-start=\"1173\" data-end=\"1184\">Größen:</strong> Von <strong data-start=\"1189\" data-end=\"1219\">Kindergröße UK 6.5 (EU 24)</strong> bis <strong data-start=\"1224\" data-end=\"1258\">Erwachsenengröße UK 14 (EU 48)</strong> – für jedes Teammitglied die perfekte Passform</p>\n</li>\n</ul>\n<p data-start=\"1309\" data-end=\"1479\">Wir achten darauf, dass Ihre Slides in <strong data-start=\"1348\" data-end=\"1394\">allen Größen einheitlich und professionell</strong> aussehen – ideal für komplette Team-Ausstattungen, Fanartikel oder Werbegeschenke.</p>\n<hr data-start=\"1481\" data-end=\"1484\" />\n<h3 data-start=\"1486\" data-end=\"1525\"><strong data-start=\"1490\" data-end=\"1525\">Komfort &amp; Langlebigkeit vereint</strong></h3>\n<p data-start=\"1527\" data-end=\"1885\">Unsere Badeschlappen sind auf <strong data-start=\"1555\" data-end=\"1591\">Komfort und Widerstandsfähigkeit</strong> ausgelegt. Das <strong data-start=\"1607\" data-end=\"1623\">PVC-Material</strong> ist <strong data-start=\"1628\" data-end=\"1656\">wasserfest, pflegeleicht</strong> und perfekt geeignet für Umkleiden, den Poolbereich oder nach dem Training.<br data-start=\"1732\" data-end=\"1735\" />Das <strong data-start=\"1739\" data-end=\"1771\">ergonomisch geformte Fußbett</strong> bietet Unterstützung und Komfort, während der <strong data-start=\"1818\" data-end=\"1835\">breite Riemen</strong> einen sicheren Sitz ohne Reibung gewährleistet.</p>\n<hr data-start=\"1887\" data-end=\"1890\" />\n<h3 data-start=\"1892\" data-end=\"1922\"><strong data-start=\"1896\" data-end=\"1922\">Produktion &amp; Lieferung</strong></h3>\n<ul data-start=\"1924\" data-end=\"2207\">\n<li data-start=\"1924\" data-end=\"1983\">\n<p data-start=\"1926\" data-end=\"1983\">Herstellung in <strong data-start=\"1941\" data-end=\"1950\">China</strong> unter hohen Qualitätsstandards</p>\n</li>\n<li data-start=\"1984\" data-end=\"2043\">\n<p data-start=\"1986\" data-end=\"2043\"><strong data-start=\"1986\" data-end=\"2010\">Standard-Lieferzeit:</strong> ca. 5 Wochen ab Designfreigabe</p>\n</li>\n<li data-start=\"2044\" data-end=\"2207\">\n<p data-start=\"2046\" data-end=\"2207\"><strong data-start=\"2046\" data-end=\"2067\">Großbestellungen:</strong> Für größere Mengen bieten wir <strong data-start=\"2098\" data-end=\"2134\">kosteneffiziente Versandoptionen</strong> mit längerer Laufzeit – so sparen Sie, ohne auf Qualität zu verzichten</p>\n</li>\n</ul>\n<hr data-start=\"2209\" data-end=\"2212\" />\n<h3 data-start=\"2214\" data-end=\"2249\"><strong data-start=\"2218\" data-end=\"2249\">Mehr als nur für Sportteams</strong></h3>\n<p data-start=\"2251\" data-end=\"2332\">Unsere Badeschlappen sind nicht nur bei Sportvereinen beliebt, sondern auch ideal für:</p>\n<ul data-start=\"2333\" data-end=\"2645\">\n<li data-start=\"2333\" data-end=\"2409\">\n<p data-start=\"2335\" data-end=\"2409\"><strong data-start=\"2335\" data-end=\"2363\">Schulen &amp; Universitäten:</strong> Für Teams, Hausfarben oder Alumni-Geschenke</p>\n</li>\n<li data-start=\"2410\" data-end=\"2482\">\n<p data-start=\"2412\" data-end=\"2482\"><strong data-start=\"2412\" data-end=\"2428\">Unternehmen:</strong> Als individuelle Giveaways oder Mitarbeiterpräsente</p>\n</li>\n<li data-start=\"2483\" data-end=\"2556\">\n<p data-start=\"2485\" data-end=\"2556\"><strong data-start=\"2485\" data-end=\"2513\">Promotion &amp; Merchandise:</strong> Für Wiederverkauf oder Marketingaktionen</p>\n</li>\n<li data-start=\"2557\" data-end=\"2645\">\n<p data-start=\"2559\" data-end=\"2645\"><strong data-start=\"2559\" data-end=\"2572\">Fanshops:</strong> Damit Fans die Vereinsfarben auch außerhalb des Stadions tragen können</p>\n</li>\n</ul>\n<hr data-start=\"2647\" data-end=\"2650\" />\n<h3 data-start=\"2652\" data-end=\"2677\"><strong data-start=\"2656\" data-end=\"2677\">So einfach geht’s</strong></h3>\n<ol data-start=\"2679\" data-end=\"2895\">\n<li data-start=\"2679\" data-end=\"2749\">\n<p data-start=\"2682\" data-end=\"2749\">Senden Sie uns Ihr <strong data-start=\"2701\" data-end=\"2721\">Design oder Logo</strong> und Ihre <strong data-start=\"2731\" data-end=\"2746\">Farbwünsche</strong>.</p>\n</li>\n<li data-start=\"2750\" data-end=\"2820\">\n<p data-start=\"2753\" data-end=\"2820\">Wählen Sie <strong data-start=\"2764\" data-end=\"2794\">Größenbereich, Sohlenfarbe</strong> und <strong data-start=\"2799\" data-end=\"2817\">Logoanbringung</strong>.</p>\n</li>\n<li data-start=\"2821\" data-end=\"2895\">\n<p data-start=\"2824\" data-end=\"2895\"><strong data-start=\"2824\" data-end=\"2862\">Bestätigen Sie das digitale Muster</strong>, bevor die Produktion startet.</p>\n</li>\n</ol>\n<p data-start=\"2897\" data-end=\"3097\">Von der Idee bis zur Lieferung begleitet Sie unser Team, um sicherzustellen, dass Ihre Badeschlappen <strong data-start=\"2991\" data-end=\"3017\">nicht nur gut aussehen</strong>, sondern auch den <strong data-start=\"3036\" data-end=\"3064\">Komfort und die Qualität</strong> bieten, die Ihr Club verdient.</p>\n<hr data-start=\"3099\" data-end=\"3102\" />\n<h3 data-start=\"3104\" data-end=\"3150\"><strong data-start=\"3108\" data-end=\"3148\">Jetzt anfragen und Team-Style zeigen</strong></h3>\n<p data-start=\"3152\" data-end=\"3299\">Bringen Sie den Stil Ihres Teams auf das nächste Level – <strong data-start=\"3209\" data-end=\"3244\">kontaktieren Sie uns noch heute</strong>, um Ihre <strong data-start=\"3254\" data-end=\"3283\">personalisierten Badeschlappen</strong> zu bestellen!</p>",
+      "short_description": "",
+      "sku": "custom-club-slides-and-slippers",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 295,
+          "name": "Fitness",
+          "slug": "fitness"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 308,
+          "name": "Schuhwerk",
+          "slug": "schuhwerk"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 314,
+          "name": "Sommer",
+          "slug": "sommer"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 11407,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-63-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11410,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-32.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-32-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11409,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-29-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11414,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-42.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-42-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 8465,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_17-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 11413,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-41.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-41-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 8466,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_20-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 11421,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-64.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-64-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11411,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-35-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 8464,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_11-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8467,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_23-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8468,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_7-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 11423,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-70.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-70-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11422,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-67.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-67-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11417,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-59.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-59-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11415,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-43.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-43-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11416,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-58.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-58-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11418,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-60.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-60-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11419,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-61.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-61-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11408,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-26-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 11420,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-62.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-62-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        },
+        {
+          "id": 8469,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_2-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8470,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_1-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8471,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_3-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8472,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseslides2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseslides2-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8473,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseslides3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseslides3-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8474,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_15-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8475,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_18-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8476,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_21-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8477,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_24-scaled.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_24-scaled-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 8478,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_slides_10-300x300.png",
+          "alt": "Hercules_Merchandise_slides"
+        },
+        {
+          "id": 11412,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-38.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-slides-38-300x300.png",
+          "alt": "Hercules Merchandise slides"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "Geprägtes Logo",
+            "Nur-Druck-Design"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4383,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "nur-druck-design"
+            }
+          ]
+        },
+        {
+          "id": 4384,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "gepragtes-logo"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4377,
+      "name": "Personalisiertes Kissen",
+      "slug": "personalisiertes-kissen",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-kissen/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"129\" data-end=\"184\"><strong data-start=\"133\" data-end=\"182\">Individuelles gewebtes oder bedrucktes Kissen</strong></h3>\n<p data-start=\"186\" data-end=\"376\">Ein <strong data-start=\"190\" data-end=\"232\">besticktes und personalisiertes Kissen</strong> für das Sofa oder Auto?<br data-start=\"256\" data-end=\"259\" />Wählen Sie zwischen einem <strong data-start=\"285\" data-end=\"317\">vollfarbig bedruckten Kissen</strong> oder einem <strong data-start=\"329\" data-end=\"373\">gewebten Kissen mit Ihrem eigenen Design</strong>.</p>\n<p data-start=\"378\" data-end=\"392\"><strong data-start=\"378\" data-end=\"390\">Details:</strong></p>\n<ul data-start=\"393\" data-end=\"670\">\n<li data-start=\"393\" data-end=\"439\">\n<p data-start=\"395\" data-end=\"439\">Material: 100 % Polyester oder 100 % Acryl</p>\n</li>\n<li data-start=\"440\" data-end=\"491\">\n<p data-start=\"442\" data-end=\"491\">Vollfarbiger Druck oder individuelles Webmuster</p>\n</li>\n<li data-start=\"492\" data-end=\"554\">\n<p data-start=\"494\" data-end=\"554\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"555\" data-end=\"575\">\n<p data-start=\"557\" data-end=\"575\">Maße: 33 × 33 cm</p>\n</li>\n<li data-start=\"576\" data-end=\"600\">\n<p data-start=\"578\" data-end=\"600\">Produktion in Europa</p>\n</li>\n<li data-start=\"601\" data-end=\"670\">\n<p data-start=\"603\" data-end=\"670\">Lieferzeit: ca. 4–8 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"672\" data-end=\"850\">Ein <strong data-start=\"676\" data-end=\"695\">gewebtes Kissen</strong> ist besonders <strong data-start=\"710\" data-end=\"720\">robust</strong> und wirkt <strong data-start=\"731\" data-end=\"742\">elegant</strong>, da es komplett individuell gewebt wird. Allerdings ist die Farbanzahl auf <strong data-start=\"818\" data-end=\"838\">maximal 8 Farben</strong> begrenzt.</p>\n<p data-start=\"852\" data-end=\"1071\">Für Designs mit <strong data-start=\"868\" data-end=\"889\">mehr als 8 Farben</strong>, <strong data-start=\"891\" data-end=\"908\">Farbverläufen</strong> oder <strong data-start=\"914\" data-end=\"932\">vielen Details</strong> empfiehlt sich ein <strong data-start=\"952\" data-end=\"973\">bedrucktes Kissen</strong> – hier können Sie <strong data-start=\"992\" data-end=\"1027\">jedes beliebige Foto oder Motiv</strong> vollfarbig auf das Kissen drucken lassen.</p>",
+      "short_description": "",
+      "sku": "custom-woven-or-printed-pillow",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8454,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow4-17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow4-17-300x300.png",
+          "alt": "Hercules Merchandise pillow"
+        },
+        {
+          "id": 8455,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow1-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow1-1-300x300.png",
+          "alt": "Hercules Merchandise pillow"
+        },
+        {
+          "id": 8457,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow2-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow2-1-300x300.png",
+          "alt": "Personalisiertes Kissen"
+        },
+        {
+          "id": 8458,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow7-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow7-1-300x300.png",
+          "alt": "Hercules Merchandise pillow"
+        },
+        {
+          "id": 8459,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow3-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow3-1-300x300.png",
+          "alt": "Hercules Merchandise pillow"
+        },
+        {
+          "id": 8460,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow5-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow5-1-300x300.png",
+          "alt": "Hercules Merchandise pillow"
+        },
+        {
+          "id": 8462,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow8-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepillow8-1-300x300.png",
+          "alt": "Hercules Merchandise pillow"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "Gedruckt",
+            "Gewebt"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4379,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "gedruckt"
+            }
+          ]
+        },
+        {
+          "id": 4380,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "gewebt"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4374,
+      "name": "Personalisierte Federmappe",
+      "slug": "personalisierte-federmappe",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-federmappe/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"122\" data-end=\"145\"><strong data-start=\"126\" data-end=\"143\">Individuelle Federmappe</strong></h3>\n<p data-start=\"147\" data-end=\"278\">Ein <strong data-start=\"151\" data-end=\"205\">tolles Geschenk für die jüngeren Vereinsmitglieder</strong>, mit dem sie ihren Verein <strong data-start=\"232\" data-end=\"268\">stolz in der Schule präsentieren</strong> können.</p>\n<p data-start=\"280\" data-end=\"294\"><strong data-start=\"280\" data-end=\"292\">Details:</strong></p>\n<ul data-start=\"295\" data-end=\"525\">\n<li data-start=\"295\" data-end=\"324\">\n<p data-start=\"297\" data-end=\"324\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"325\" data-end=\"347\">\n<p data-start=\"327\" data-end=\"347\">Vollfarbiger Druck</p>\n</li>\n<li data-start=\"348\" data-end=\"410\">\n<p data-start=\"350\" data-end=\"410\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"411\" data-end=\"432\">\n<p data-start=\"413\" data-end=\"432\">Maße: 220 × 75 mm</p>\n</li>\n<li data-start=\"433\" data-end=\"457\">\n<p data-start=\"435\" data-end=\"457\">Produktion in Europa</p>\n</li>\n<li data-start=\"458\" data-end=\"525\">\n<p data-start=\"460\" data-end=\"525\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"527\" data-end=\"713\">Die Mäppchen werden <strong data-start=\"547\" data-end=\"608\">vollständig individuell gefertigt und vollfarbig bedruckt</strong>.<br data-start=\"609\" data-end=\"612\" />Für den <strong data-start=\"620\" data-end=\"666\">Reißverschluss und die Einfassung</strong> können Sie aus den gängigsten Farben wählen.</p>\n<p data-start=\"715\" data-end=\"939\">Die <strong data-start=\"719\" data-end=\"739\">beliebteste Form</strong> ist das <strong data-start=\"748\" data-end=\"779\">runde Mäppchen (Röhrenform)</strong>.<br data-start=\"780\" data-end=\"783\" />Alternativ sind auch <strong data-start=\"804\" data-end=\"827\">eckige (Würfelform)</strong> oder <strong data-start=\"833\" data-end=\"852\">flache Mäppchen</strong> erhältlich.<br data-start=\"864\" data-end=\"867\" />Auf Wunsch können wir auch <strong>Federmappen mit mehreren Fächern</strong> anbieten.</p>\n<div id=\"GTX-Trans\" style=\"position: Absolute;left: 352px;top: 422.344px\">\n<div class=\"GTX-Trans-icon\"></div>\n</div>",
+      "short_description": "",
+      "sku": "custom-pencil-cases",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8437,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase15-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase15-16-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8438,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase5-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8439,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase2-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8440,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase3-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8441,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase17-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8442,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase1-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8443,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase4-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8444,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase6-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8445,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase14-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8446,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase7-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8447,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase8-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        },
+        {
+          "id": 8448,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepencilcase13-300x300.png",
+          "alt": "Hercules Merchandise pencil case"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4376,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4371,
+      "name": "Personalisierter Sport-Schlüsselanhänger",
+      "slug": "personalisierter-sport-schlusselanhanger",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-sport-schlusselanhanger/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"96\" data-end=\"138\"><strong data-start=\"100\" data-end=\"136\">Stabiler Metallschlüsselanhänger</strong></h3>\n<p data-start=\"140\" data-end=\"321\">Hochwertige <strong data-start=\"152\" data-end=\"202\">Metallschlüsselanhänger mit Plexiglasabdeckung</strong>.<br data-start=\"203\" data-end=\"206\" />Die Anhänger werden <strong data-start=\"226\" data-end=\"248\">in Europa montiert</strong> und enthalten ein <strong data-start=\"267\" data-end=\"299\">vollfarbig gedrucktes Design</strong> auf der Innenseite.</p>\n<p data-start=\"323\" data-end=\"337\"><strong data-start=\"323\" data-end=\"335\">Details:</strong></p>\n<ul data-start=\"338\" data-end=\"548\">\n<li data-start=\"338\" data-end=\"372\">\n<p data-start=\"340\" data-end=\"372\">Material: Metall und Plexiglas</p>\n</li>\n<li data-start=\"373\" data-end=\"395\">\n<p data-start=\"375\" data-end=\"395\">Vollfarbiger Druck</p>\n</li>\n<li data-start=\"396\" data-end=\"458\">\n<p data-start=\"398\" data-end=\"458\">Unterschiedliches Design auf Vorder- und Rückseite möglich</p>\n</li>\n<li data-start=\"459\" data-end=\"480\">\n<p data-start=\"461\" data-end=\"480\">Montage in Europa</p>\n</li>\n<li data-start=\"481\" data-end=\"548\">\n<p data-start=\"483\" data-end=\"548\">Lieferzeit: ca. 3 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"550\" data-end=\"710\">Auf der <strong data-start=\"558\" data-end=\"573\">Vorderseite</strong> befindet sich Ihr individuelles Motiv, während auf der <strong data-start=\"629\" data-end=\"642\">Rückseite</strong> ein <strong data-start=\"647\" data-end=\"687\">Ball oder Schläger als Reliefprägung</strong> im Metall erscheint.</p>\n<p data-start=\"712\" data-end=\"741\">Sie können wählen zwischen:</p>\n<ul data-start=\"742\" data-end=\"1003\">\n<li data-start=\"742\" data-end=\"876\">\n<p data-start=\"744\" data-end=\"876\">einem Schlüsselanhänger mit <strong data-start=\"772\" data-end=\"783\">Fußball</strong>, <strong data-start=\"785\" data-end=\"799\">Basketball</strong>, <strong data-start=\"801\" data-end=\"814\">Rugbyball</strong>, <strong data-start=\"816\" data-end=\"828\">Golfball</strong>, <strong data-start=\"830\" data-end=\"842\">Baseball</strong> oder <strong data-start=\"848\" data-end=\"873\">Tennis-/Padelschläger</strong>,</p>\n</li>\n<li data-start=\"877\" data-end=\"1003\">\n<p data-start=\"879\" data-end=\"1003\">oder einem <strong data-start=\"890\" data-end=\"925\">Schlüsselanhänger in Trikotform</strong>, bei dem <strong data-start=\"935\" data-end=\"986\">Vorder- und Rückseite unterschiedlich gestaltet</strong> werden können.</p>\n</li>\n</ul>",
+      "short_description": "",
+      "sku": "custom-sports-keyring",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 290,
+          "name": "Laufen",
+          "slug": "laufen"
+        },
+        {
+          "id": 294,
+          "name": "Radfahren",
+          "slug": "radfahren"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8405,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring2-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring2-16-300x300.png",
+          "alt": "Hercules Merchandises ports key ring"
+        },
+        {
+          "id": 8406,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring29-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8407,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport13_70b7a827-f57d-4960-b9a9-afc882650eb1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport13_70b7a827-f57d-4960-b9a9-afc882650eb1-300x300.png",
+          "alt": "Hercules Merchandising porte-clessport"
+        },
+        {
+          "id": 8408,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring26-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8409,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring27.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring27-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8410,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_46.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_46-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        },
+        {
+          "id": 8411,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_53.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_53-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        },
+        {
+          "id": 8412,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_48.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_48-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        },
+        {
+          "id": 8413,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport5_b6661295-34be-4aaf-a006-c074cd6b7bf1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport5_b6661295-34be-4aaf-a006-c074cd6b7bf1-300x300.png",
+          "alt": "Hercules Merchandising porte-clessport"
+        },
+        {
+          "id": 8414,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport16-300x300.png",
+          "alt": "Hercules Merchandising porte-clessport"
+        },
+        {
+          "id": 8415,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_65.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_65-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        },
+        {
+          "id": 8416,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport19.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport19-300x300.png",
+          "alt": "Hercules Merchandising porte-clessport"
+        },
+        {
+          "id": 8417,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingporte-clessport18-300x300.png",
+          "alt": "Hercules Merchandising porte-clessport"
+        },
+        {
+          "id": 8418,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring3-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8419,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring4-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8420,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring32.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring32-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8421,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring1-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8422,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring35-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8423,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring6-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8424,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring23.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring23-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8425,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring7-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8426,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring8-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8427,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring9-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8428,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring10-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8429,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring11-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8430,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring12-300x300.png",
+          "alt": "Hercules Merchandise sports keyring"
+        },
+        {
+          "id": 8431,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring20.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring20-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8432,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisesportskeyring21-300x300.png",
+          "alt": "Hercules Merchandise sports key ring"
+        },
+        {
+          "id": 8433,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_45-300x300.png",
+          "alt": "Personalisierter Sport-Schlüsselanhänger"
+        },
+        {
+          "id": 8434,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_52.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_52-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        },
+        {
+          "id": 8435,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_64.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_64-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        },
+        {
+          "id": 8436,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_50.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_sports_keyring_50-300x300.png",
+          "alt": "Hercules_Merchandise_sports_keyring"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4373,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4338,
+      "name": "Personalisierte Auswechselbank-Decke",
+      "slug": "personalisierte-auswechselbank-decke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-auswechselbank-decke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"107\" data-end=\"148\"><strong data-start=\"111\" data-end=\"146\">Individuelle Profi-Spielerdecke</strong></h3>\n<p data-start=\"150\" data-end=\"493\">Halten Sie Ihre <strong data-start=\"166\" data-end=\"212\">Auswechselspieler in der kalten Jahreszeit</strong> auf der Bank warm – mit diesen hochwertigen, <strong data-start=\"258\" data-end=\"281\">warmen Profi-Decken</strong>.<br data-start=\"282\" data-end=\"285\" />Die Außenseite besteht aus <strong data-start=\"312\" data-end=\"334\">Softshell-Material</strong>, das <strong data-start=\"340\" data-end=\"365\">wasser- und winddicht</strong> ist. Zudem ist es <strong data-start=\"384\" data-end=\"411\">weich, schmutzabweisend</strong> und kann <strong data-start=\"421\" data-end=\"453\">einfach mit Wasser gereinigt</strong> werden – ideal auch bei Schuhkontakt.</p>\n<p data-start=\"495\" data-end=\"727\">Die <strong data-start=\"499\" data-end=\"538\">Innenseite ist mit Fleece gefüttert</strong>, wodurch die Decke <strong data-start=\"558\" data-end=\"591\">angenehm warm und komfortabel</strong> ist.<br data-start=\"596\" data-end=\"599\" />Beim Sitzen lässt sie sich <strong data-start=\"626\" data-end=\"652\">perfekt zusammenfalten</strong>, und in der <strong data-start=\"665\" data-end=\"692\">praktischen Fronttasche</strong> bleiben auch die <strong data-start=\"710\" data-end=\"724\">Hände warm</strong>.</p>\n<p data-start=\"729\" data-end=\"743\"><strong data-start=\"729\" data-end=\"741\">Details:</strong></p>\n<ul data-start=\"744\" data-end=\"911\">\n<li data-start=\"744\" data-end=\"784\">\n<p data-start=\"746\" data-end=\"784\">Softshell mit doppeltem Fleecefutter</p>\n</li>\n<li data-start=\"785\" data-end=\"812\">\n<p data-start=\"787\" data-end=\"812\">Bedruckt mit Ihrem Logo</p>\n</li>\n<li data-start=\"813\" data-end=\"843\">\n<p data-start=\"815\" data-end=\"843\">Personalisierung in Europa</p>\n</li>\n<li data-start=\"844\" data-end=\"911\">\n<p data-start=\"846\" data-end=\"911\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"913\" data-end=\"977\">Die Decken können in verschiedenen Varianten geliefert werden:</p>\n<ul data-start=\"978\" data-end=\"1150\">\n<li data-start=\"978\" data-end=\"992\">\n<p data-start=\"980\" data-end=\"992\"><strong data-start=\"980\" data-end=\"989\">Offen</strong>,</p>\n</li>\n<li data-start=\"993\" data-end=\"1048\">\n<p data-start=\"995\" data-end=\"1048\">mit einer <strong data-start=\"1005\" data-end=\"1032\">verstärkten PVC-Schicht</strong> für die Füße,</p>\n</li>\n<li data-start=\"1049\" data-end=\"1150\">\n<p data-start=\"1051\" data-end=\"1150\">oder mit <strong data-start=\"1060\" data-end=\"1086\">gepolsterter Fußtasche</strong>.<br data-start=\"1087\" data-end=\"1090\" />Optional ist sogar eine <strong data-start=\"1114\" data-end=\"1139\">elektrische Beheizung</strong> möglich.</p>\n</li>\n</ul>\n<p data-start=\"1152\" data-end=\"1252\">Alle Decken können mit dem <strong data-start=\"1179\" data-end=\"1194\">Vereinslogo</strong> oder dem <strong data-start=\"1204\" data-end=\"1227\">Logo eines Sponsors</strong> personalisiert werden.</p>",
+      "short_description": "",
+      "sku": "custom-professional-dugout-blankets",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8350,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket2-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket2-16-300x300.png",
+          "alt": "Hercules Merchandise dug-out blanket"
+        },
+        {
+          "id": 8351,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket3-300x300.png",
+          "alt": "Hercules Merchandise dug-out blanket"
+        },
+        {
+          "id": 8352,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket1-300x300.png",
+          "alt": "Hercules Merchandise dug-out blanket"
+        },
+        {
+          "id": 8353,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisedug-outblanket4-300x300.png",
+          "alt": "Hercules Merchandise dug-out blanket"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 26,
+          "name": "Modell",
+          "options": [
+            "Mit gepolsterter Tasche",
+            "Mit Unterlage",
+            "Offen"
+          ]
+        },
+        {
+          "id": 21,
+          "name": "Drucken",
+          "options": [
+            "Ohne",
+            "Vereinswappen",
+            "Vereinswappen und Sponsorenlogo"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4340,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "offen"
+            },
+            {
+              "name": "Drucken",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4341,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "offen"
+            },
+            {
+              "name": "Drucken",
+              "value": "vereinswappen"
+            }
+          ]
+        },
+        {
+          "id": 4342,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "offen"
+            },
+            {
+              "name": "Drucken",
+              "value": "vereinswappen-mit-sponsorenlogo"
+            }
+          ]
+        },
+        {
+          "id": 4343,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "with-underlayer"
+            },
+            {
+              "name": "Drucken",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4344,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "with-underlayer"
+            },
+            {
+              "name": "Drucken",
+              "value": "vereinswappen"
+            }
+          ]
+        },
+        {
+          "id": 4345,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "with-underlayer"
+            },
+            {
+              "name": "Drucken",
+              "value": "vereinswappen-mit-sponsorenlogo"
+            }
+          ]
+        },
+        {
+          "id": 4346,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "mit-gepolsteter-tasche"
+            },
+            {
+              "name": "Drucken",
+              "value": "ohne"
+            }
+          ]
+        },
+        {
+          "id": 4347,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "mit-gepolsteter-tasche"
+            },
+            {
+              "name": "Drucken",
+              "value": "vereinswappen"
+            }
+          ]
+        },
+        {
+          "id": 4348,
+          "attributes": [
+            {
+              "name": "Modell",
+              "value": "mit-gepolsteter-tasche"
+            },
+            {
+              "name": "Drucken",
+              "value": "vereinswappen-mit-sponsorenlogo"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4332,
+      "name": "Individuell bedrucktes Handtuch",
+      "slug": "personalisierte-handtucher",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-handtucher/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"122\" data-end=\"174\"><strong data-start=\"126\" data-end=\"174\">Individuell bedruckte Sublimation-Handtücher</strong></h3>\n<p data-start=\"176\" data-end=\"587\">Suchen Sie ein <strong data-start=\"191\" data-end=\"234\">auffälliges Vereins- oder Werbehandtuch</strong>, das Komfort mit einem <strong data-start=\"258\" data-end=\"292\">brillanten, langlebigen Design</strong> vereint?<br data-start=\"301\" data-end=\"304\" />Unsere <strong data-start=\"311\" data-end=\"350\">individuell sublimierten Handtücher</strong> kombinieren <strong data-start=\"363\" data-end=\"383\">angenehme Haptik</strong> mit <strong data-start=\"388\" data-end=\"417\">vollfarbigen Druckmotiven</strong>, die auch nach häufigem Waschen <strong data-start=\"450\" data-end=\"470\">nicht verblassen</strong>.<br data-start=\"471\" data-end=\"474\" />Perfekt für <strong data-start=\"486\" data-end=\"538\">Sportvereine, Events, Hotels oder Firmenpräsente</strong> – praktisch und zugleich ein echter Blickfang.</p>\n<hr data-start=\"589\" data-end=\"592\" />\n<h3 data-start=\"594\" data-end=\"622\"><strong data-start=\"598\" data-end=\"622\">Produkteigenschaften</strong></h3>\n<ul data-start=\"624\" data-end=\"1152\">\n<li data-start=\"624\" data-end=\"733\">\n<p data-start=\"626\" data-end=\"733\"><strong data-start=\"626\" data-end=\"639\">Material:</strong> Weiße Baumwollunterlage mit glatter <strong data-start=\"676\" data-end=\"701\">Mikrofaser-Oberfläche</strong> für brillante Druckergebnisse</p>\n</li>\n<li data-start=\"734\" data-end=\"853\">\n<p data-start=\"736\" data-end=\"853\"><strong data-start=\"736\" data-end=\"754\">Druckqualität:</strong> Vollfarbiger Sublimationsdruck mit gestochen scharfen Details und langanhaltender Farbintensität</p>\n</li>\n<li data-start=\"854\" data-end=\"970\">\n<p data-start=\"856\" data-end=\"970\"><strong data-start=\"856\" data-end=\"875\">Haptik &amp; Dicke:</strong> Leichter und dünner als klassische Frotteehandtücher – <strong data-start=\"931\" data-end=\"968\">schnelltrocknend und platzsparend</strong></p>\n</li>\n<li data-start=\"971\" data-end=\"1059\">\n<p data-start=\"973\" data-end=\"1059\"><strong data-start=\"973\" data-end=\"996\">Nachhaltige Option:</strong> Auch in einer <strong data-start=\"1011\" data-end=\"1046\">Version aus recyceltem Material</strong> erhältlich</p>\n</li>\n<li data-start=\"1060\" data-end=\"1152\">\n<p data-start=\"1062\" data-end=\"1152\"><strong data-start=\"1062\" data-end=\"1077\">Produktion:</strong> <strong data-start=\"1078\" data-end=\"1096\">Made in Europe</strong> – für gleichbleibende Qualität und kurze Lieferzeiten</p>\n</li>\n</ul>\n<hr data-start=\"1154\" data-end=\"1157\" />\n<h3 data-start=\"1159\" data-end=\"1204\"><strong data-start=\"1163\" data-end=\"1204\">Warum Sublimations-Handtücher wählen?</strong></h3>\n<p data-start=\"1206\" data-end=\"1430\">Im Gegensatz zu bestickten oder siebgedruckten Handtüchern ermöglicht der <strong data-start=\"1280\" data-end=\"1301\">Sublimationsdruck</strong>, dass Ihr Design <strong data-start=\"1319\" data-end=\"1345\">die gesamte Oberfläche</strong> der Mikrofaser-Schicht abdeckt – <strong data-start=\"1379\" data-end=\"1414\">ohne Farb- oder Motivbegrenzung</strong>.<br data-start=\"1415\" data-end=\"1418\" />Ideal für:</p>\n<ul data-start=\"1431\" data-end=\"1741\">\n<li data-start=\"1431\" data-end=\"1498\">\n<p data-start=\"1433\" data-end=\"1498\"><strong data-start=\"1433\" data-end=\"1450\">Sportvereine:</strong> Teamlogos, Sponsoren-Branding oder Fanartikel</p>\n</li>\n<li data-start=\"1499\" data-end=\"1580\">\n<p data-start=\"1501\" data-end=\"1580\"><strong data-start=\"1501\" data-end=\"1528\">Events &amp; Werbeaktionen:</strong> Farbstarke Giveaways, die wirklich genutzt werden</p>\n</li>\n<li data-start=\"1581\" data-end=\"1653\">\n<p data-start=\"1583\" data-end=\"1653\"><strong data-start=\"1583\" data-end=\"1599\">Unternehmen:</strong> Hochwertige Werbeartikel mit starkem Markenauftritt</p>\n</li>\n<li data-start=\"1654\" data-end=\"1741\">\n<p data-start=\"1656\" data-end=\"1741\"><strong data-start=\"1656\" data-end=\"1673\">Einzelhandel:</strong> Stilvolle, individuell bedruckte Handtücher für Ihre Produktlinie</p>\n</li>\n</ul>\n<hr data-start=\"1743\" data-end=\"1746\" />\n<h3 data-start=\"1748\" data-end=\"1770\"><strong data-start=\"1752\" data-end=\"1770\">Lieferoptionen</strong></h3>\n<p data-start=\"1772\" data-end=\"1820\">Wir bieten zwei Produktionszeiten zur Auswahl:</p>\n<ul data-start=\"1821\" data-end=\"1939\">\n<li data-start=\"1821\" data-end=\"1879\">\n<p data-start=\"1823\" data-end=\"1879\"><strong data-start=\"1823\" data-end=\"1845\">Schnellproduktion:</strong> 3–4 Wochen (Standardlieferzeit)</p>\n</li>\n<li data-start=\"1880\" data-end=\"1939\">\n<p data-start=\"1882\" data-end=\"1939\"><strong data-start=\"1882\" data-end=\"1901\">Sparproduktion:</strong> 5–6 Wochen (günstigerer Stückpreis)</p>\n</li>\n</ul>\n<p data-start=\"1941\" data-end=\"2032\">Für <strong data-start=\"1945\" data-end=\"1963\">größere Mengen</strong> oder <strong data-start=\"1969\" data-end=\"1995\">spezielle Eventtermine</strong> beraten wir Sie gerne individuell.</p>\n<hr data-start=\"2034\" data-end=\"2037\" />\n<h3 data-start=\"2039\" data-end=\"2076\"><strong data-start=\"2043\" data-end=\"2076\">Bestellung &amp; Personalisierung</strong></h3>\n<p data-start=\"2078\" data-end=\"2402\">Sie können <strong data-start=\"2089\" data-end=\"2111\">Ihr eigenes Design</strong> liefern oder unser Team beauftragen, ein individuelles Motiv zu erstellen.<br data-start=\"2186\" data-end=\"2189\" />Mit dem <strong data-start=\"2197\" data-end=\"2260\">Sublimationsdruck sind der Gestaltung keine Grenzen gesetzt</strong> – von Fotos bis zu komplexen Mustern.<br data-start=\"2298\" data-end=\"2301\" />Das Motiv wird <strong data-start=\"2316\" data-end=\"2352\">direkt in die Fasern eingebrannt</strong> und <strong data-start=\"2357\" data-end=\"2391\">blättert, reißt oder verblasst</strong> niemals.</p>\n<hr data-start=\"2404\" data-end=\"2407\" />\n<h3 data-start=\"2409\" data-end=\"2440\"><strong data-start=\"2413\" data-end=\"2440\">Jetzt Angebot anfordern</strong></h3>\n<p data-start=\"2442\" data-end=\"2708\">Ob <strong data-start=\"2445\" data-end=\"2473\">kleine Vereinsbestellung</strong> oder <strong data-start=\"2479\" data-end=\"2508\">Großproduktion für Events</strong> – wir helfen Ihnen, <strong data-start=\"2529\" data-end=\"2556\">individuelle Handtücher</strong> zu gestalten, die ebenso <strong data-start=\"2582\" data-end=\"2608\">praktisch wie stilvoll</strong> sind.<br data-start=\"2614\" data-end=\"2617\" />Kontaktieren Sie uns für ein <strong data-start=\"2646\" data-end=\"2706\">kostenloses Design-Mock-up und ein persönliches Angebot.</strong></p>",
+      "short_description": "",
+      "sku": "custom-printed-sublimated-or-embroidered-towels",
+      "price": "100.00",
+      "regular_price": "100.00",
+      "sale_price": "100.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 295,
+          "name": "Fitness",
+          "slug": "fitness"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 306,
+          "name": "Handtücher",
+          "slug": "handtucher"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 316,
+          "name": "Nachhaltigkeit",
+          "slug": "nachhaltigkeit"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 314,
+          "name": "Sommer",
+          "slug": "sommer"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 8330,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels3-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels3-16-300x300.png",
+          "alt": "Hercules Merchandise towel"
+        },
+        {
+          "id": 8331,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_65.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_65-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8332,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_66.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_66-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8334,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels18.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels18-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8336,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels4-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8337,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels5-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8338,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_62.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_62-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8339,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels6-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8340,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels7-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8341,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels16-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8342,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_68.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_68-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8343,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_63.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_towels_63-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8344,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels8-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8346,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels9-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        },
+        {
+          "id": 8347,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisetowels10-300x300.png",
+          "alt": "Hercules Merchandise towels"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 58,
+          "name": "Fabrik",
+          "options": [
+            "Fabrik 1: 3-4 Wochen Lieferzeit",
+            "Fabrik 2: 5-6 Wochen Lieferzeit, die günstigste Option",
+            "Nachhaltige Option: 3-4 Wochen Lieferzeit"
+          ]
+        },
+        {
+          "id": 35,
+          "name": "Maße",
+          "options": [
+            "100 x 50 cm",
+            "140 x 70 cm",
+            "160 x 80 cm",
+            "180 x 100 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 11547,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "100-x-50"
+            }
+          ]
+        },
+        {
+          "id": 11548,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "140-x-70-cm"
+            }
+          ]
+        },
+        {
+          "id": 11549,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "160-x-80-cm"
+            }
+          ]
+        },
+        {
+          "id": 11550,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "factory-1-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "180-x-100-cm"
+            }
+          ]
+        },
+        {
+          "id": 11551,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "fabrik-2-5-6-wochen-lieferzeit-die-guenstigste-option"
+            },
+            {
+              "name": "Maße",
+              "value": "100-x-50"
+            }
+          ]
+        },
+        {
+          "id": 11552,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "fabrik-2-5-6-wochen-lieferzeit-die-guenstigste-option"
+            },
+            {
+              "name": "Maße",
+              "value": "140-x-70-cm"
+            }
+          ]
+        },
+        {
+          "id": 11553,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "fabrik-2-5-6-wochen-lieferzeit-die-guenstigste-option"
+            },
+            {
+              "name": "Maße",
+              "value": "160-x-80-cm"
+            }
+          ]
+        },
+        {
+          "id": 11555,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "100-x-50"
+            }
+          ]
+        },
+        {
+          "id": 11556,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "140-x-70-cm"
+            }
+          ]
+        },
+        {
+          "id": 11557,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "160-x-80-cm"
+            }
+          ]
+        },
+        {
+          "id": 11558,
+          "attributes": [
+            {
+              "name": "Fabrik",
+              "value": "nachhaltige-option-3-4-wochen-lieferzeit"
+            },
+            {
+              "name": "Maße",
+              "value": "180-x-100-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4190,
+      "name": "Personalisierte Weihnachtskugeln",
+      "slug": "personalisierte-weihnachtskugeln",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-weihnachtskugeln/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"35\"><strong data-start=\"0\" data-end=\"33\">Individuelle Weihnachtskugeln</strong></h3>\n<p data-start=\"37\" data-end=\"241\">Das perfekte <strong data-start=\"50\" data-end=\"72\">Weihnachtsgeschenk</strong>? Suchen Sie nicht weiter – wir fertigen für Sie <strong data-start=\"121\" data-end=\"173\">personalisierte Weihnachtskugeln aus echtem Glas</strong>! Wählen Sie aus <strong data-start=\"190\" data-end=\"222\">über 50 verschiedenen Farben</strong> für Ihre Kugeln.</p>\n<p data-start=\"243\" data-end=\"421\">Ihr <strong data-start=\"247\" data-end=\"255\">Logo</strong> wird per <strong data-start=\"265\" data-end=\"280\">Tampondruck</strong> hochwertig auf die Kugeln gedruckt. Jede Kugel wird in einer <strong data-start=\"342\" data-end=\"362\">Schutzverpackung</strong> geliefert, um Bruch während des Transports zu vermeiden.</p>\n<p data-start=\"423\" data-end=\"619\">Die Kugeln haben einen <strong data-start=\"446\" data-end=\"471\">Durchmesser von 60 mm</strong>. Bei <strong data-start=\"477\" data-end=\"498\">Sets mit 2 Kugeln</strong> beträgt der Durchmesser <strong data-start=\"523\" data-end=\"532\">80 mm</strong>. Die Preise für <strong data-start=\"549\" data-end=\"570\">2er- und 4er-Sets</strong> beinhalten bereits eine <strong data-start=\"595\" data-end=\"616\">weiße Geschenkbox</strong>.</p>\n<ul>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"621\" data-end=\"634\">Material:</strong> 100 % Glas</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"648\" data-end=\"658\">Druck:</strong> 1- bis 4-farbig</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"677\" data-end=\"692\">Verpackung:</strong> 3 Varianten verfügbar</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"717\" data-end=\"732\" data-is-only-node=\"\">Produktion:</strong> Hergestellt in Europa</li>\n<li data-start=\"621\" data-end=\"814\"><strong data-start=\"757\" data-end=\"772\">Lieferzeit:</strong> ca. 5 Wochen (Expresslieferung möglich)</li>\n</ul>\n<p data-start=\"816\" data-end=\"993\">Zusätzlich zum Druck Ihres Logos können Sie die Kugeln mit <strong data-start=\"875\" data-end=\"886\">Glitzer</strong> veredeln lassen oder eine <strong data-start=\"913\" data-end=\"931\">Vollbedruckung</strong> wählen. Für diese Extras kontaktieren Sie uns bitte direkt.</p>\n<p data-start=\"995\" data-end=\"1230\" data-is-last-node=\"\" data-is-only-node=\"\">Sie wünschen eine <strong data-start=\"1013\" data-end=\"1050\">individuell bedruckte Geschenkbox</strong>? Kein Problem – wir bieten Boxen für <strong data-start=\"1088\" data-end=\"1110\">1, 2 oder 4 Kugeln</strong>, die auf Wunsch <strong data-start=\"1127\" data-end=\"1151\">vollflächig bedruckt</strong> werden können. Sprechen Sie uns gerne an, um alle Möglichkeiten zu besprechen.</p>",
+      "short_description": "",
+      "sku": "custom-printed-christmas-baubles",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 254,
+          "name": "Fußballschals",
+          "slug": "fussballschals"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 11861,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-1-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11862,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-7-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11857,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-5-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11856,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-4-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11855,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-3-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11854,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-2-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        },
+        {
+          "id": 11853,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-custom-christmas-baubles-6-300x300.png",
+          "alt": "Hercules Merchandise custom Christmas baubles"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 25,
+          "name": "Anzahl der Druckfarben",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": 24,
+          "name": "Anzahl",
+          "options": [
+            "1 Stück",
+            "2 Stück",
+            "4 Stück"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4192,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "1"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4193,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "2"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4194,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "3"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4195,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "4"
+            },
+            {
+              "name": "Anzahl",
+              "value": "1-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4196,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "1"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4197,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "2"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4198,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "3"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4199,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "4"
+            },
+            {
+              "name": "Anzahl",
+              "value": "2-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4200,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "1"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4201,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "2"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4202,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "3"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        },
+        {
+          "id": 4203,
+          "attributes": [
+            {
+              "name": "Anzahl der Druckfarben",
+              "value": "4"
+            },
+            {
+              "name": "Anzahl",
+              "value": "4-stuck"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4187,
+      "name": "Personalisierte Decke",
+      "slug": "personalisierte-decke",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-decke/",
+      "type": "variable",
+      "featured": false,
+      "description": "<article class=\"text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" data-turn-id=\"request-68d110ac-127c-8323-a2d2-a4fb13be6186-45\" data-testid=\"conversation-turn-812\" data-scroll-anchor=\"true\" data-turn=\"assistant\">\n<div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"171a07a0-8ee5-4179-8668-dd536a62b8df\" data-message-model-slug=\"gpt-5\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\">\n<h3 data-start=\"0\" data-end=\"24\"><strong data-start=\"0\" data-end=\"22\">Personalisierte Decke</strong></h3>\n<p data-start=\"26\" data-end=\"377\">Sind Sie ein echter Fußballfan, der sich im Winter nicht vom kalten Wetter abhalten lässt? Dann ist unsere <strong data-start=\"133\" data-end=\"157\">Premium-Fußballdecke</strong> genau das Richtige für Sie! Diese hochwertige, extra warme Decke ist die perfekte Kombination aus <strong data-start=\"256\" data-end=\"287\">Komfort, Stil und Teamgeist</strong> – ideal, um sich gemütlich einzukuscheln und gleichzeitig Ihre Vereinsfarben zu zeigen.</p>\n<p data-start=\"379\" data-end=\"623\"><strong data-start=\"379\" data-end=\"392\">Material:</strong> 100 % Polyester<br data-start=\"408\" data-end=\"411\" /><strong data-start=\"411\" data-end=\"420\">Maße:</strong> 120 x 150 cm<br data-start=\"433\" data-end=\"436\" /><strong data-start=\"436\" data-end=\"446\">Druck:</strong> Vollfarbdruck auf einer Seite<br data-start=\"476\" data-end=\"479\" /><strong data-start=\"479\" data-end=\"494\">Unterseite:</strong> Dicke Lage aus Kunstlammfell<br data-start=\"523\" data-end=\"526\" data-is-only-node=\"\" /><strong data-start=\"526\" data-end=\"541\">Produktion:</strong> Hergestellt in Europa<br data-start=\"563\" data-end=\"566\" /><strong data-start=\"566\" data-end=\"581\">Lieferzeit:</strong> ca. 5 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"625\" data-end=\"905\">Gefertigt aus hochwertigem Polyester sorgt die Decke für <strong data-start=\"682\" data-end=\"710\">optimale Wärmeisolierung</strong> – selbst an den kältesten Winterabenden. Ihre <strong data-start=\"757\" data-end=\"786\">weiche, flauschige Textur</strong> vermittelt ein Gefühl purer Gemütlichkeit und macht sie zu einem unverzichtbaren Begleiter in der kalten Jahreszeit.</p>\n<p data-start=\"907\" data-end=\"1162\">Zeigen Sie Ihre <strong data-start=\"923\" data-end=\"949\">Vereinstreue mit Stil!</strong> Die Decke kann <strong data-start=\"965\" data-end=\"1003\">vollflächig in Ihren Vereinsfarben</strong> bedruckt werden – inklusive <strong data-start=\"1032\" data-end=\"1078\">Logo, Schriftzug oder individuellem Design</strong>. So wird sie zu einem echten Hingucker, ob auf dem Sofa, im Bett oder im Stadion.</p>\n<p data-start=\"1164\" data-end=\"1352\">Wir legen großen Wert auf <strong data-start=\"1190\" data-end=\"1221\">europäische Premiumqualität</strong>. Jede Decke wird unter strengen Qualitätsstandards gefertigt, um <strong data-start=\"1287\" data-end=\"1332\">Langlebigkeit und dauerhafte Kuschelwärme</strong> zu gewährleisten.</p>\n<p data-start=\"1354\" data-end=\"1473\">Ob beim spannenden Match, auf der Couch oder als extra Wärmeschicht im Bett – diese Decke passt zu jeder Gelegenheit.</p>\n<p data-start=\"1475\" data-end=\"1653\" data-is-last-node=\"\" data-is-only-node=\"\">Suchen Sie ein <strong data-start=\"1490\" data-end=\"1530\">originelles Geschenk für Fußballfans</strong> in Ihrem Umfeld? Diese personalisierte Decke ist das perfekte Präsent, das garantiert das ganze Jahr über Freude bereitet.</p>\n</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n</article>",
+      "short_description": "",
+      "sku": "custom-blanket",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 315,
+          "name": "Winter",
+          "slug": "winter"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7345,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket24-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket24-21-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7346,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket33.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket33-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7347,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket26.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket26-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7348,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket21-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7349,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket35.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket35-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7350,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket29.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket29-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7351,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket38.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket38-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7352,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket14-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7353,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket2-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7354,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket45-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7355,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket34.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket34-300x300.png",
+          "alt": "Personalisierte Decke"
+        },
+        {
+          "id": 7356,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket36.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseblanket36-300x300.png",
+          "alt": "Personalisierte Decke"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4189,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4181,
+      "name": "Personalisierte Anstecknadeln",
+      "slug": "personalisierte-anstecknadeln",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-anstecknadeln/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p data-start=\"64\" data-end=\"364\">Erweitern Sie das Merchandising-Angebot Ihres <strong data-start=\"110\" data-end=\"140\">Fußball- oder Rugbyvereins</strong> mit unserer hochwertigen Kollektion <strong data-start=\"177\" data-end=\"209\">maßgefertigter Anstecknadeln</strong>. Präzise gefertigt und mit Liebe zum Detail, sind diese Pins das ideale Accessoire für echte Fans – und eine stilvolle Ergänzung für jeden Vereins-Shop.</p>\n<p data-start=\"366\" data-end=\"521\"><strong data-start=\"366\" data-end=\"379\">Material:</strong> Robustes Metall<br data-start=\"395\" data-end=\"398\" /><strong data-start=\"398\" data-end=\"408\">Druck:</strong> Vollfarbdruck<br data-start=\"422\" data-end=\"425\" /><strong data-start=\"425\" data-end=\"440\">Produktion:</strong> Hergestellt in China<br data-start=\"461\" data-end=\"464\" data-is-only-node=\"\" /><strong data-start=\"464\" data-end=\"479\">Lieferzeit:</strong> ca. 4 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"523\" data-end=\"846\">Ganz gleich, welchen Pin-Stil Sie wählen – unsere <strong data-start=\"573\" data-end=\"614\">individuellen Anpassungsmöglichkeiten</strong> erlauben es Ihnen, die Anstecknadeln perfekt auf die <strong data-start=\"659\" data-end=\"686\">Identität Ihres Vereins</strong> abzustimmen. Fügen Sie den <strong data-start=\"714\" data-end=\"773\">Vereinsnamen, ein Motto oder eine persönliche Botschaft</strong> hinzu und machen Sie daraus ein echtes Sammlerstück für Ihre Anhänger.</p>\n<p data-start=\"848\" data-end=\"1127\">Mit personalisierten Anstecknadeln bieten Sie Ihren Fans eine <strong data-start=\"917\" data-end=\"973\">greifbare Möglichkeit, ihre Verbundenheit zum Verein</strong> zu zeigen. Gleichzeitig eignen sich die Pins hervorragend als <strong data-start=\"1036\" data-end=\"1091\">Fundraising-Artikel, Werbegeschenke oder Fanartikel</strong> zur Förderung der Vereinsbindung.</p>\n<p data-start=\"1129\" data-end=\"1376\" data-is-last-node=\"\" data-is-only-node=\"\">Entdecken Sie jetzt, wie unsere <strong data-start=\"1161\" data-end=\"1190\">hochwertigen Vereins-Pins</strong> Ihr Merchandising-Angebot aufwerten, die <strong data-start=\"1232\" data-end=\"1265\">Identität Ihres Clubs stärken</strong> und die <strong data-start=\"1274\" data-end=\"1301\">Beziehung zu Ihren Fans</strong> vertiefen.<br data-start=\"1312\" data-end=\"1315\" />Ein kleines Detail – mit <strong data-start=\"1340\" data-end=\"1376\" data-is-last-node=\"\" data-is-only-node=\"\">großer Wirkung für Ihren Verein!</strong></p>",
+      "short_description": "",
+      "sku": "custom-lapel-pins",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 319,
+          "name": "Schulanfang",
+          "slug": "schulanfang"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7316,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_pins_29-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_pins_29-21-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7317,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins4-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7318,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins5-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7319,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins11-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7320,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins2-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7321,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins3-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7322,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins8-300x279.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7323,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins9-300x279.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7324,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins7-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7325,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins10-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7326,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins12-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7327,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins14-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7328,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins15.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins15-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7329,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins16-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7330,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_pins_28.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandising_pins_28-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7331,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins17-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        },
+        {
+          "id": 7332,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins11_cd48eee4-09ce-43a9-9e54-832c75a1a13f.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlapelpins11_cd48eee4-09ce-43a9-9e54-832c75a1a13f-300x300.png",
+          "alt": "Personalisierte Anstecknadeln"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4183,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4178,
+      "name": "Personalisiertes Schlüsselband",
+      "slug": "personalisiertes-schlusselband",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-schlusselband/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"51\"><strong data-start=\"0\" data-end=\"49\">Personalisierte Schlüsselbänder für Sportvereine</strong></h3>\n<p data-start=\"53\" data-end=\"353\">Unsere <strong data-start=\"60\" data-end=\"72\">Lanyards</strong> sind die perfekte Wahl für <strong data-start=\"100\" data-end=\"116\">Sportvereine</strong>, die ihre <strong data-start=\"127\" data-end=\"141\">Fanbindung</strong> stärken und ihr <strong data-start=\"158\" data-end=\"183\">Merchandising-Angebot</strong> erweitern möchten. Speziell für Sportfans entwickelt, eignen sich die Schlüsselbänder ideal als <strong data-start=\"280\" data-end=\"293\">Giveaways</strong> oder <strong data-start=\"299\" data-end=\"313\">Fanartikel</strong>, die echte Anhänger mit Stolz tragen.</p>\n<p data-start=\"355\" data-end=\"529\"><strong data-start=\"355\" data-end=\"368\">Material:</strong> 100 % Polyester<br data-start=\"384\" data-end=\"387\" /><strong data-start=\"387\" data-end=\"397\">Druck:</strong> Vollfarbdruck auf beiden Seiten<br data-start=\"429\" data-end=\"432\" /><strong data-start=\"432\" data-end=\"447\">Produktion:</strong> Hergestellt in Europa<br data-start=\"469\" data-end=\"472\" /><strong data-start=\"472\" data-end=\"487\" data-is-only-node=\"\">Lieferzeit:</strong> ca. 3 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"531\" data-end=\"774\">Dank des <strong data-start=\"540\" data-end=\"571\">beidseitigen Vollfarbdrucks</strong> können Sie das <strong data-start=\"587\" data-end=\"621\">Vereinslogo, die Vereinsfarben</strong> und jedes gewünschte <strong data-start=\"643\" data-end=\"657\">Teamdesign</strong> perfekt in Szene setzen. So entstehen Lanyards, die Ihre Fans begeistern und das <strong data-start=\"739\" data-end=\"753\">Wir-Gefühl</strong> im Verein stärken.</p>\n<p data-start=\"776\" data-end=\"1164\">Die Lanyards sind <strong data-start=\"794\" data-end=\"817\">besonders langlebig</strong> – ideal für begeisterte Fans, die sie bei Spielen, Turnieren oder Events tragen. Durch den <strong data-start=\"909\" data-end=\"932\">stabilen Verschluss</strong> und den <strong data-start=\"941\" data-end=\"960\">Sicherheitsclip</strong> sind sie nicht nur stilvoll, sondern auch <strong data-start=\"1003\" data-end=\"1027\">praktisch und sicher</strong> im Einsatz. Fans können problemlos <strong data-start=\"1063\" data-end=\"1107\">Eintrittskarten, Ausweise oder Schlüssel</strong> befestigen und gleichzeitig ihre Unterstützung zeigen.</p>\n<p data-start=\"1166\" data-end=\"1362\">Ob als <strong data-start=\"1173\" data-end=\"1196\">Merchandise-Artikel</strong> oder <strong data-start=\"1202\" data-end=\"1226\">kostenloses Giveaway</strong>, diese Lanyards sind eine <strong data-start=\"1253\" data-end=\"1301\">kostengünstige und wirkungsvolle Möglichkeit</strong>, den Verein zu präsentieren und die Fanbindung zu stärken.</p>\n<p data-start=\"1364\" data-end=\"1511\" data-is-last-node=\"\" data-is-only-node=\"\">Lassen Sie Ihre Fans ihre <strong data-start=\"1390\" data-end=\"1423\">Vereinsliebe mit Stolz tragen</strong> – mit unseren <strong data-start=\"1438\" data-end=\"1489\">200 mm breiten, individuell bedruckten Lanyards</strong>, gefertigt in Europa.</p>",
+      "short_description": "",
+      "sku": "custom-lanyard",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 289,
+          "name": "Basketball",
+          "slug": "basketball"
+        },
+        {
+          "id": 323,
+          "name": "Business",
+          "slug": "business"
+        },
+        {
+          "id": 296,
+          "name": "Golf",
+          "slug": "golf"
+        },
+        {
+          "id": 293,
+          "name": "Handball",
+          "slug": "handball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 290,
+          "name": "Laufen",
+          "slug": "laufen"
+        },
+        {
+          "id": 292,
+          "name": "Volleyball",
+          "slug": "volleyball"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 7312,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard1-21.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard1-21-300x300.png",
+          "alt": "Personalisiertes Schlüsselband"
+        },
+        {
+          "id": 7313,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard2-300x300.png",
+          "alt": "Personalisiertes Schlüsselband"
+        },
+        {
+          "id": 7314,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard3-300x300.png",
+          "alt": "Personalisiertes Schlüsselband"
+        },
+        {
+          "id": 7315,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard4-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomlanyard4-1-300x300.png",
+          "alt": "Personalisiertes Schlüsselband"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4180,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4153,
+      "name": "Personalisiertes Kuscheltier",
+      "slug": "personalisiertes-kuscheltier",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-kuscheltier/",
+      "type": "variable",
+      "featured": false,
+      "description": "<article class=\"text-token-text-primary w-full focus:outline-none scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]\" dir=\"auto\" data-turn-id=\"request-68d110ac-127c-8323-a2d2-a4fb13be6186-8\" data-testid=\"conversation-turn-850\" data-scroll-anchor=\"true\" data-turn=\"assistant\">\n<div class=\"text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\">\n<div class=\"[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn\">\n<div class=\"flex max-w-full flex-col grow\">\n<div class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" dir=\"auto\" data-message-author-role=\"assistant\" data-message-id=\"e5fab68a-e6f4-491c-88b8-bf1e16d2edd0\" data-message-model-slug=\"gpt-5\">\n<div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[1px]\">\n<div class=\"markdown prose dark:prose-invert w-full break-words light markdown-new-styling\">\n<h3 data-start=\"0\" data-end=\"31\"><strong data-start=\"0\" data-end=\"29\">Personalisiertes Kuscheltier</strong></h3>\n<p data-start=\"33\" data-end=\"462\"><strong data-start=\"33\" data-end=\"74\">Gestalten Sie Ihr eigenes Plüschtier!</strong><br data-start=\"74\" data-end=\"77\" />Verwirklichen Sie Ihre Ideen mit einem <strong data-start=\"116\" data-end=\"161\">vollständig individuellen Kuscheltier</strong> – ganz nach Ihren Wünschen.<br data-start=\"189\" data-end=\"192\" />Wählen Sie <strong data-start=\"203\" data-end=\"252\">eigene Farben, Formen, Stoffe und Stickereien</strong>, um ein einzigartiges Plüschtier zu kreieren, das perfekt zu Ihrer <strong data-start=\"320\" data-end=\"372\">Marke, Ihrem Verein oder einem besonderen Anlass</strong> passt.<br data-start=\"379\" data-end=\"382\" />Jedes Stück wird mit <strong data-start=\"403\" data-end=\"423\">Liebe zum Detail</strong> und <strong data-start=\"428\" data-end=\"449\">höchster Qualität</strong> gefertigt.</p>\n<p data-start=\"464\" data-end=\"744\"><strong data-start=\"464\" data-end=\"477\">Material:</strong> Superweicher Plüschstoff<br data-start=\"502\" data-end=\"505\" /><strong data-start=\"505\" data-end=\"521\">Anpassungen:</strong> Individuelle Farben, Formen, Druck- und Stickoptionen<br data-start=\"575\" data-end=\"578\" /><strong data-start=\"578\" data-end=\"588\" data-is-only-node=\"\">Größe:</strong> Durchschnittlich 20 cm hoch<br data-start=\"616\" data-end=\"619\" /><strong data-start=\"619\" data-end=\"638\">Zertifizierung:</strong> EN71 geprüft (sicher für Kinder)<br data-start=\"671\" data-end=\"674\" /><strong data-start=\"674\" data-end=\"689\">Produktion:</strong> Hergestellt in China<br data-start=\"710\" data-end=\"713\" /><strong data-start=\"713\" data-end=\"728\">Lieferzeit:</strong> ca. 14 Wochen</p>\n<p data-start=\"746\" data-end=\"919\">Erhältlich in <strong data-start=\"760\" data-end=\"784\">verschiedenen Größen</strong>, passend zu Ihrem Bedarf.<br data-start=\"810\" data-end=\"813\" />Jedes Kuscheltier kann mit <strong data-start=\"840\" data-end=\"894\">gestickten Logos, Namen oder individuellen Details</strong> personalisiert werden.</p>\n<p data-start=\"921\" data-end=\"1152\" data-is-last-node=\"\" data-is-only-node=\"\">Sie haben bereits ein Design oder möchten eines erstellen lassen?<br data-start=\"986\" data-end=\"989\" /><strong data-start=\"989\" data-end=\"1020\">Senden Sie uns Ihre Vorlage</strong>, und wir erarbeiten gemeinsam mit Ihnen Ihr ganz persönliches Plüschtier – <strong data-start=\"1096\" data-end=\"1152\" data-is-last-node=\"\">einzigartig, hochwertig und garantiert zum Knuddeln!</strong></p>\n</div>\n</div>\n</div>\n</div>\n<div class=\"z-0 flex min-h-[46px] justify-start\"></div>\n<div class=\"mt-3 w-full empty:hidden\">\n<div class=\"text-center\"></div>\n</div>\n</div>\n</div>\n</article>\n<div class=\"pointer-events-none h-px w-px\" aria-hidden=\"true\" data-edge=\"true\"></div>",
+      "short_description": "",
+      "sku": "plush-toy",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 321,
+          "name": "Weihnachten",
+          "slug": "weihnachten"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        },
+        {
+          "id": 312,
+          "name": "Zubehör",
+          "slug": "zubehor"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 7248,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche1-45.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche1-45-300x300.png",
+          "alt": "Personalisiertes Kuscheltier"
+        },
+        {
+          "id": 7250,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche2-300x300.png",
+          "alt": "Personalisiertes Kuscheltier"
+        },
+        {
+          "id": 7251,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisingPeluche3-300x300.png",
+          "alt": "Personalisiertes Kuscheltier"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4155,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.652Z"
+}

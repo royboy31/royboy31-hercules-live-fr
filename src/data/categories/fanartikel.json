@@ -1,0 +1,1022 @@
+{
+  "category": {
+    "id": 256,
+    "name": "Fanartikel",
+    "slug": "fanartikel",
+    "description": "Schaffen Sie bei wichtigen Spielen mit vielen Fans auf den Tribünen eine riesige Pokalspielatmosphäre mit Fanrtikeln. Verteilen Sie Flaggen, Klatschpappen oder ein Horn an jeden Fan und schaffen Sie ein fantastisches Gefühl der Kameradschaft und, was am Wichtigsten ist, viel Lärm, um die Spieler anzufeuern!",
+    "count": 7,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 4604,
+      "name": "Gesichtsfarbe",
+      "slug": "gesichtsfarbe",
+      "permalink": "https://staging.hercules-merchandise.de/products/gesichtsfarbe/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p>Der ideale Fanartikel für das Pokalfinale oder Spiele bei großen Turnieren, wie einer Europameisterschaft, Weltmeisterschaft oder den Olympischen Spielen. Mit unseren Make-up-Stiften können Ihre Fans ihre Körper in den Farben ihrer Lieblingsmannschaft schmücken.</p>\n<p>Die Gesichtsfarben werden in Europa mit sicheren Inhaltsstoffen hergestellt. Die Inhaltsstoffe sind hypoallergen, was bedeutet, dass sie auf verschiedene Allergene getestet wurden. Sie können die Farbe einfach mit Wasser und Seife abwaschen.</p>\n<ul>\n<li>Logo mit vollfarbigem Aufkleber</li>\n<li>Hergestellt in Europa</li>\n<li>Lieferzeit: 4 bis 6 Wochen (<a href=\"#q-1\">Eilige Lieferung?</a>)</li>\n</ul>\n<p>Es ist möglich, die Stifte mit einem vollfarbigen Aufkleber zu versehen, der auf der Vorderseite des Stifts angebracht wird. Wir müssen einen Aufkleber mit den Inhaltsstoffen auf die Rückseite des Stifts kleben.</p>\n<p>27 Standardkombinationen sind verfügbar. Ab 1320 Stück ist es möglich, Ihre eigene Farbkombination zusammenzustellen. Kontaktieren Sie uns schnell, um eine Liste der verfügbaren Farben zu erhalten.</p>",
+      "short_description": "",
+      "sku": "custom-face-paints-for-fans",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 320,
+          "name": "Tifo",
+          "slug": "tifo"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8839,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisefacepaint4-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisefacepaint4-7-300x300.png",
+          "alt": "Hercules Merchandise face paint"
+        },
+        {
+          "id": 8840,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_face_paint_5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_face_paint_5-300x300.png",
+          "alt": "Hercules Merchandise face paint"
+        },
+        {
+          "id": 8841,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisefacepaint2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisefacepaint2-300x300.png",
+          "alt": "Hercules Merchandise face paint"
+        },
+        {
+          "id": 8842,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisefacepaint1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisefacepaint1-300x300.png",
+          "alt": "Hercules Merchandise face paint"
+        },
+        {
+          "id": 8843,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_face_paint_7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_face_paint_7-300x300.png",
+          "alt": "Hercules_Merchandise_face_paint"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4606,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4598,
+      "name": "Schaumstoff Finger",
+      "slug": "schaumstofffinger",
+      "permalink": "https://staging.hercules-merchandise.de/products/schaumstofffinger/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p>Diese Schaumstoff Finger, geboren im großen amerikanischen Sport, sind gemacht, um aufzufallen. Die Hände werden individuell aus massivem Schaumstoff gefertigt. Die Hand enthält eine Öffnung an der Unterseite, in die Sie Ihre Hand stecken können, um sie dann hin und her zu schwingen.</p>\n<p>Die Schaumstoff Finger werden in China hergestellt. Wir haben folgende Farben auf Lager: Weiß, Schwarz, Königsblau, Rot, Gelb, Grün, Lila und Orange.</p>\n<ul>\n<li>EVA-Schaumstoff</li>\n<li>Vollfarbdruck auf 2 Seiten</li>\n<li>460 x 230 x 4 mm</li>\n<li>Hergestellt in China</li>\n<li>Lieferzeit: ca. 4 Wochen (<a href=\"#q-1\">Eilige Lieferung?</a>)</li>\n</ul>\n<p>Wir können ab 2000 Stück alle Pantone-Farben anpassen.</p>",
+      "short_description": "",
+      "sku": "custom-printed-giant-hand-for-fans",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 320,
+          "name": "Tifo",
+          "slug": "tifo"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8834,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebighand1-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisebighand1-7-300x300.png",
+          "alt": "Hercules Merchandise big hand"
+        },
+        {
+          "id": 8835,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_5-300x300.png",
+          "alt": "Hercules_Merchandise_big_hand"
+        },
+        {
+          "id": 8836,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_4-300x300.png",
+          "alt": "Hercules_Merchandise_big_hand"
+        },
+        {
+          "id": 8837,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_3-300x300.png",
+          "alt": "Hercules_Merchandise_big_hand"
+        },
+        {
+          "id": 8838,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_big_hand_2-300x300.png",
+          "alt": "Hercules_Merchandise_big_hand"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 11983,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4595,
+      "name": "Klatschstangen",
+      "slug": "klatschstangen",
+      "permalink": "https://staging.hercules-merchandise.de/products/klatschstangen/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p>Sie haben sie wahrscheinlich schon bei Fußball-, Tennis- oder Basketballspielen gesehen. Klatschstangen sind 2 Plastikröhren, die man aufbläst und dann aneinanderklopfen kann, um das Geräusch einer Trommel zu imitieren.</p>\n<p>Klatschstangen sind äußerst beliebt für Alles-oder-Nichts-Spiele. Der Gegner wird sich sofort in einer höllischen Atmosphäre wiederfinden.</p>\n<ul>\n<li>Biopolymer (Stäbe) und Papier (Strohhalm)</li>\n<li>Vollfarbdruck</li>\n<li>600 x 100 mm</li>\n<li>Hergestellt in Asien</li>\n<li>Lieferzeit: 3 bis 6 Wochen (<a href=\"#q-1\">Eilige Lieferung?</a>)</li>\n</ul>\n<p>Die Stäbe werden aus einem weichen Polymer auf Basis von Kartoffelstärke hergestellt und sind vollständig biologisch abbaubar. Die Strohhalme sind aus Papier und können daher ebenfalls recycelt werden.</p>\n<p>Die Stäbe können beidseitig in 1 bis 3 Farben bedruckt werden. Die Grundfarbe ist weiß und die Ränder sind immer unbedruckt. Ab 3000 Stück können die Stäbe vollfarbig bedruckt werden.</p>\n<p>Für ein kleineres Budget haben wir auch farbige Basisstäbe auf Lager (grün, gelb, hellblau, königsblau, orange, rot oder schwarz), die mit einem einfarbigen Logo bedruckt werden können. Kontaktieren Sie uns schnell für weitere Informationen.</p>",
+      "short_description": "",
+      "sku": "custom-printed-thundersticks",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 320,
+          "name": "Tifo",
+          "slug": "tifo"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8833,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClapsticks1-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClapsticks1-7-300x300.png",
+          "alt": "Hercules Merchandise Clap sticks"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4597,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4592,
+      "name": "Fanklapper",
+      "slug": "fanklapper",
+      "permalink": "https://staging.hercules-merchandise.de/products/fanklapper/",
+      "type": "variable",
+      "featured": false,
+      "description": "<p>Fanklapper sind der perfekte Weg, um Stimmung im Stadion zu erzeugen. Jeder Fan braucht nur einen und kann ein schönes Klatschgeräusch erzeugen, indem er den Klapper in die Handfläche klatscht.</p>\n<p>Beide Seiten der Klapper sind vollfarbig bedruckt, sodass es keine Designbeschränkungen gibt. Die gefalteten Klapper sind auf schwerem Papier gedruckt und haben eine Schutzbeschichtung.</p>\n<ul>\n<li>300 g/m² Papier</li>\n<li>Vollfarbig bedruckt</li>\n<li>470 x 320 mm</li>\n<li>Hergestellt in Europa</li>\n<li>Lieferzeit: ca. 3 Wochen (<a href=\"#q-1\">Eilige Lieferung?</a>)</li>\n</ul>\n<p>Die Handklapper können auch als Werbemittel verwendet werden. Als Verein können Sie dem Design ein oder mehrere Sponsorenlogos hinzufügen. Eine andere Idee ist, den Saisonkalender zu drucken.</p>",
+      "short_description": "",
+      "sku": "custom-fan-hand-clappers",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 320,
+          "name": "Tifo",
+          "slug": "tifo"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8821,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_12-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_12-7-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8822,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_9-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8823,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers5-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8824,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers4-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8825,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_13.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_13-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8826,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_Clappers_11-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8827,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers6-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8828,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers7-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8829,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers1-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8830,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers2-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8831,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers8-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        },
+        {
+          "id": 8832,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseClappers3-300x300.png",
+          "alt": "Hercules Merchandise Clappers"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4594,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4570,
+      "name": "Papier-Handflaggen",
+      "slug": "papier-handflaggen",
+      "permalink": "https://staging.hercules-merchandise.de/products/papier-handflaggen/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierte Papier-Handflaggen</h2>\n<p>Suchen Sie nach einer kostengünstigen Möglichkeit, Farbe auf die Tribünen zu bringen? Dann sind diese bedruckten Fanflaggen die ideale Lösung.</p>\n<p>Die Fanflaggen sind vollfarbig auf starkem Papier gedruckt und werden mit einem PVC-Stab geliefert. Die bedruckten Flaggen sind in Packungen von ca. 50 Stück zusammengefasst und werden dann in einem Karton mit 1000 Stück verpackt.</p>\n<ul data-mce-frament=\"1\">\n<li>150 g/m² Papier</li>\n<li>Vollfarbdruck</li>\n<li>4 Größen verfügbar</li>\n<li>Hergestellt in Europa</li>\n<li>Lieferzeit: ca. 3 Wochen (<a href=\"#q-1\">Eilige Lieferung?</a>)</li>\n</ul>\n<p>Es sind vier verschiedene Größen erhältlich: 24 x 11 cm, 22 x 15 cm, 31 x 21 cm und 43 x 31 cm. Es gibt auch eine Version des letztgenannten Formats mit feuerfestem Material, ideal für Wettbewerbe, bei denen besondere Maßnahmen für den Brandschutz getroffen werden müssen.</p>\n<p>Sie können Flaggen vollfarbig bedrucken. Das bedeutet, dass die Anzahl der Farben in Ihrem Design nicht begrenzt ist. Es ist durchaus möglich, ein Foto drucken zu lassen und sogar 2 verschiedene Bilder auf der Vorder- und Rückseite drucken zu lassen.</p>\n<p>Benötigen Sie dringend Fanflaggen? Bitte kontaktieren Sie uns so schnell wie möglich, je nach Arbeitsaufkommen können wir zeitnah produzieren und liefern.</p>",
+      "short_description": "",
+      "sku": "paper-hand-flags",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 307,
+          "name": "Flaggen",
+          "slug": "flaggen"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 320,
+          "name": "Tifo",
+          "slug": "tifo"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8805,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags8-7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags8-7-300x300.png",
+          "alt": "Hercules Merchandise paper hand flag"
+        },
+        {
+          "id": 8806,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_11-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8807,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_14.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_14-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8808,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags1-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8809,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags6-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8810,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags5_adc019ba-6ea8-4db5-8559-4b842fe63301.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags5_adc019ba-6ea8-4db5-8559-4b842fe63301-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8811,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_12.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_12-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8812,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags4-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8813,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags7-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8814,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags9-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8815,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags10.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags10-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8816,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags3-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 8817,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags2_fa907ca8-6699-4458-b541-7a1dcc494495.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisepaperhandflags2_fa907ca8-6699-4458-b541-7a1dcc494495-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        },
+        {
+          "id": 9611,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_13-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_paper_hand_flags_13-1-300x300.png",
+          "alt": "Hercules_Merchandise_paper_hand_flags"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 36,
+          "name": "Farben",
+          "options": [
+            "1 Farbe",
+            "2 Farben",
+            "3 Farben",
+            "Vollfarbe"
+          ]
+        },
+        {
+          "id": 35,
+          "name": "Maße",
+          "options": [
+            "22 x 15 cm",
+            "24 x 11 cm",
+            "31 x 21 cm",
+            "43 x 31 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4572,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "1-farbe"
+            },
+            {
+              "name": "Maße",
+              "value": "24-x-11-cm"
+            }
+          ]
+        },
+        {
+          "id": 4573,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "2-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "24-x-11-cm"
+            }
+          ]
+        },
+        {
+          "id": 4574,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "3-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "24-x-11-cm"
+            }
+          ]
+        },
+        {
+          "id": 4575,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "vollfarbe"
+            },
+            {
+              "name": "Maße",
+              "value": "24-x-11-cm"
+            }
+          ]
+        },
+        {
+          "id": 4576,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "1-farbe"
+            },
+            {
+              "name": "Maße",
+              "value": "22-x-15-cm"
+            }
+          ]
+        },
+        {
+          "id": 4577,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "2-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "22-x-15-cm"
+            }
+          ]
+        },
+        {
+          "id": 4578,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "3-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "22-x-15-cm"
+            }
+          ]
+        },
+        {
+          "id": 4579,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "vollfarbe"
+            },
+            {
+              "name": "Maße",
+              "value": "22-x-15-cm"
+            }
+          ]
+        },
+        {
+          "id": 4580,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "1-farbe"
+            },
+            {
+              "name": "Maße",
+              "value": "31-x-21-cm"
+            }
+          ]
+        },
+        {
+          "id": 4581,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "2-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "31-x-21-cm"
+            }
+          ]
+        },
+        {
+          "id": 4582,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "3-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "31-x-21-cm"
+            }
+          ]
+        },
+        {
+          "id": 4583,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "vollfarbe"
+            },
+            {
+              "name": "Maße",
+              "value": "31-x-21-cm"
+            }
+          ]
+        },
+        {
+          "id": 4584,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "1-farbe"
+            },
+            {
+              "name": "Maße",
+              "value": "43-x-31-cm"
+            }
+          ]
+        },
+        {
+          "id": 4585,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "2-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "43-x-31-cm"
+            }
+          ]
+        },
+        {
+          "id": 4586,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "3-farben"
+            },
+            {
+              "name": "Maße",
+              "value": "43-x-31-cm"
+            }
+          ]
+        },
+        {
+          "id": 4587,
+          "attributes": [
+            {
+              "name": "Farben",
+              "value": "vollfarbe"
+            },
+            {
+              "name": "Maße",
+              "value": "43-x-31-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4566,
+      "name": "Handflaggen",
+      "slug": "handflaggen",
+      "permalink": "https://staging.hercules-merchandise.de/products/handflaggen/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h2>Personalisierte Handflaggen</h2>\n<p data-start=\"130\" data-end=\"302\">Schaffen Sie eine großartige Stimmung im Stadion, indem Sie jedem Fan eine Fahne aushändigen. So sorgen Sie nicht nur für Farbe auf den Rängen, sondern auch für Bewegung.</p>\n<p data-start=\"304\" data-end=\"540\">Unsere Fahnen werden im <strong data-start=\"328\" data-end=\"360\">Sublimationsdruck vollfarbig</strong> bedruckt. Die Anzahl der Farben im Design ist unbegrenzt, und die Farben sind sowohl regen- als auch sonnenbeständig. Das verwendete Material ist <strong data-start=\"507\" data-end=\"537\">flammenhemmendes Polyester</strong>.</p>\n<p data-start=\"542\" data-end=\"556\"><strong data-start=\"542\" data-end=\"554\">Details:</strong></p>\n<ul data-start=\"557\" data-end=\"759\">\n<li data-start=\"557\" data-end=\"576\">\n<p data-start=\"559\" data-end=\"576\">100 % Polyester</p>\n</li>\n<li data-start=\"577\" data-end=\"611\">\n<p data-start=\"579\" data-end=\"611\">Vollfarbiger Sublimationsdruck</p>\n</li>\n<li data-start=\"612\" data-end=\"650\">\n<p data-start=\"614\" data-end=\"650\">Größen: 20 × 30 cm oder 40 × 60 cm</p>\n</li>\n<li data-start=\"651\" data-end=\"691\">\n<p data-start=\"653\" data-end=\"691\">Produktion in Europa oder der Türkei</p>\n</li>\n<li data-start=\"692\" data-end=\"759\">\n<p data-start=\"694\" data-end=\"759\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"761\" data-end=\"951\"><strong data-start=\"761\" data-end=\"777\">Ausstattung:</strong><br data-start=\"777\" data-end=\"780\" />Die Fahnen werden standardmäßig mit einem <strong data-start=\"822\" data-end=\"837\">Plastikstab</strong> geliefert. Alternativ ist auch ein <strong data-start=\"873\" data-end=\"885\">Holzstab</strong> möglich – bitte kontaktieren Sie uns für weitere Informationen.</p>\n<p data-start=\"953\" data-end=\"1063\">Auch <strong data-start=\"958\" data-end=\"975\">andere Größen</strong> sind auf Anfrage lieferbar. Bitte kontaktieren Sie uns für ein individuelles Angebot.</p>",
+      "short_description": "",
+      "sku": "custom-printed-hand-flags-for-fans",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 304,
+          "name": "e-Sport",
+          "slug": "esport"
+        },
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 307,
+          "name": "Flaggen",
+          "slug": "flaggen"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 320,
+          "name": "Tifo",
+          "slug": "tifo"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8788,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags2-11.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags2-11-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flag"
+        },
+        {
+          "id": 8789,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags1-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags1-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8791,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags3-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags3-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8792,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags12-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags12-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8794,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags9-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags9-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8796,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags4-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags4-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8797,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags7-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags7-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8799,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags8-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags8-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8800,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags10-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags10-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8801,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags5-4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags5-4-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8802,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags6-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags6-3-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8803,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags11-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags11-3-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        },
+        {
+          "id": 8804,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags14-3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecustomprintedhandflags14-3-300x300.png",
+          "alt": "Hercules Merchandise custom printed hand flags"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 35,
+          "name": "Maße",
+          "options": [
+            "20 x 30 cm",
+            "40 x 60 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4568,
+          "attributes": [
+            {
+              "name": "Maße",
+              "value": "20-x-30-cm"
+            }
+          ]
+        },
+        {
+          "id": 4569,
+          "attributes": [
+            {
+              "name": "Maße",
+              "value": "40-x-60-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4328,
+      "name": "Personalisierte Flagge",
+      "slug": "personalisierte-flagge",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierte-flagge/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"119\" data-end=\"157\"><strong data-start=\"123\" data-end=\"155\">Individuell bedruckte Flagge</strong></h3>\n<p data-start=\"159\" data-end=\"354\">Hängen Sie Ihre <strong data-start=\"175\" data-end=\"202\">Fan- oder Vereinsflagge</strong> ins Stadion, ans Fenster oder ins Schlafzimmer.<br data-start=\"250\" data-end=\"253\" />Die Flaggen bestehen aus <strong data-start=\"278\" data-end=\"299\">robustem Material</strong> und werden <strong data-start=\"311\" data-end=\"342\">vollfarbig mit Ihrem Design</strong> bedruckt.</p>\n<p data-start=\"356\" data-end=\"370\"><strong data-start=\"356\" data-end=\"368\">Details:</strong></p>\n<ul data-start=\"371\" data-end=\"548\">\n<li data-start=\"371\" data-end=\"400\">\n<p data-start=\"373\" data-end=\"400\">Material: 100 % Polyester</p>\n</li>\n<li data-start=\"401\" data-end=\"439\">\n<p data-start=\"403\" data-end=\"439\">Vollfarbiger Druck auf einer Seite</p>\n</li>\n<li data-start=\"440\" data-end=\"480\">\n<p data-start=\"442\" data-end=\"480\">Produktion in Europa oder der Türkei</p>\n</li>\n<li data-start=\"481\" data-end=\"548\">\n<p data-start=\"483\" data-end=\"548\">Lieferzeit: ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"550\" data-end=\"808\">Die Flaggen sind wahlweise mit <strong data-start=\"581\" data-end=\"595\">Metallösen</strong> oder einem <strong data-start=\"607\" data-end=\"619\">Hohlsaum</strong> an der Seite ausgestattet.<br data-start=\"646\" data-end=\"649\" />Wenn Sie eine <strong data-start=\"663\" data-end=\"679\">andere Größe</strong> als die beiden Standardformate wünschen, <strong data-start=\"721\" data-end=\"751\">kontaktieren Sie uns bitte</strong> – wir erstellen Ihnen gerne ein individuelles Angebot.</p>",
+      "short_description": "",
+      "sku": "custom-printed-flags",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 256,
+          "name": "Fanartikel",
+          "slug": "fanartikel"
+        },
+        {
+          "id": 307,
+          "name": "Flaggen",
+          "slug": "flaggen"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8327,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseflag7-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseflag7-16-300x300.png",
+          "alt": "Hercules Merchandise flag"
+        },
+        {
+          "id": 8328,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseflag5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseflag5-300x300.png",
+          "alt": "Hercules Merchandise flag"
+        },
+        {
+          "id": 8329,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseflag6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseflag6-300x300.png",
+          "alt": "Hercules Merchandise flag"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 35,
+          "name": "Maße",
+          "options": [
+            "100 x 60 cm",
+            "150 x 95 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4330,
+          "attributes": [
+            {
+              "name": "Maße",
+              "value": "100-x-60-cm"
+            }
+          ]
+        },
+        {
+          "id": 4331,
+          "attributes": [
+            {
+              "name": "Maße",
+              "value": "150-x-95-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.583Z"
+}

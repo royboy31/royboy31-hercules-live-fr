@@ -1,0 +1,42 @@
+# Robots.txt for Hercules Merchandise UK
+# https://hercules-merchandise.co.uk
+
+User-Agent: *
+Allow: /
+
+# Disallow admin and private paths
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/uploads/wc-logs/
+Disallow: /wp-content/uploads/woocommerce_transient_files/
+Disallow: /wp-content/uploads/woocommerce_uploads/
+
+# Disallow cart and checkout (dynamic/private pages)
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /quote-generator/
+
+# Disallow search results
+Disallow: /search
+Disallow: /*?s=
+Disallow: /*?search=
+
+# Disallow API endpoints
+Disallow: /api/
+Disallow: /wp-json/
+Disallow: /wc-api/
+Disallow: /?wc-ajax=
+
+# Allow admin-ajax for functionality
+Allow: /wp-admin/admin-ajax.php
+
+# Allow important content
+Allow: /wp-content/uploads/
+
+# Sitemap
+Sitemap: https://hercules-merchandise.co.uk/sitemap-index.xml
+
+# Crawl-delay (optional, respected by some bots)
+Crawl-delay: 1

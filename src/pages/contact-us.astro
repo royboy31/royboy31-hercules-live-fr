@@ -1,0 +1,347 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Contact Us';
+const pageDescription = 'Get in touch with Hercules Merchandise UK. Contact us for enquiries about custom sports merchandise, bulk orders, or any questions.';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="page"
+>
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item">
+              <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1" />
+            <span class="separator"><img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" /></span>
+          </li>
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">Contact Us</span>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="page-section">
+    <div class="container">
+      <div class="content-wrapper">
+        <h1>Contact Us</h1>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <!-- Name + Email Row -->
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contact-name">Last and First Name <span class="required">*</span></label>
+              <input type="text" id="contact-name" name="name" placeholder="Last and First Name" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email <span class="required">*</span></label>
+              <input type="email" id="contact-email" name="email" placeholder="Email" required />
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-field">
+            <label for="contact-phone">Phone Number</label>
+            <input type="tel" id="contact-phone" name="phone" placeholder="Phone Number" />
+          </div>
+
+          <!-- Message -->
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Message" rows="5"></textarea>
+          </div>
+
+          <!-- File Upload -->
+          <div class="form-field">
+            <label for="contact-files">Upload a File</label>
+            <input type="file" id="contact-files" name="files" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx" />
+          </div>
+
+          <!-- Error / Success Messages -->
+          <div class="form-message" id="form-message"></div>
+
+          <!-- Submit Button -->
+          <div class="form-submit">
+            <button type="submit" id="contact-submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .breadcrumb-section {
+    background: #FAFAFA;
+    padding: 15px 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .breadcrumb a {
+    color: #787878;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #469ADC;
+  }
+
+  .breadcrumb li:last-child span {
+    color: #469ADC;
+  }
+
+  .breadcrumb .separator {
+    display: flex;
+    align-items: center;
+  }
+
+  .page-section {
+    background: #FAFAFA;
+    padding: 40px 0 80px;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #253461;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .form-row .form-field {
+    flex: 1;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-field label {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #253461;
+  }
+
+  .required {
+    color: #e74c3c;
+  }
+
+  .form-field input[type="text"],
+  .form-field input[type="email"],
+  .form-field input[type="tel"],
+  .form-field textarea {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    padding: 12px 15px;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    background: #fff;
+    color: #253461;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: #10C99E;
+    box-shadow: 0 0 0 3px rgba(16, 201, 158, 0.1);
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: #8D8D8D;
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-field input[type="file"] {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: #253461;
+  }
+
+  .form-message {
+    display: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+  }
+
+  .form-message.success {
+    display: block;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+  }
+
+  .form-message.error {
+    display: block;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+  }
+
+  .form-submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-submit button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    background: #10C99E;
+    border: 1px solid #10C99E;
+    border-radius: 50px;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+  }
+
+  .form-submit button:hover:not(:disabled) {
+    background: transparent;
+    color: #10C99E;
+  }
+
+  .form-submit button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .form-row {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement;
+    const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        messageDiv.className = 'form-message';
+        messageDiv.textContent = '';
+
+        try {
+          const formData = new FormData(form);
+          formData.append('date', new Date().toLocaleDateString('en-GB'));
+          formData.append('time', new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
+          formData.append('pageTitle', document.title);
+          formData.append('pageUrl', window.location.href);
+          formData.append('referrer', document.referrer || '(direct)');
+          formData.append('userAgent', navigator.userAgent);
+
+          // Handle file input
+          const fileInput = document.getElementById('contact-files') as HTMLInputElement;
+          if (fileInput && fileInput.files) {
+            for (let i = 0; i < fileInput.files.length; i++) {
+              formData.append(`file_${i}`, fileInput.files[i]);
+            }
+          }
+
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error('Submission failed');
+          }
+
+          messageDiv.className = 'form-message success';
+          messageDiv.textContent = 'Thank you for reaching out to us! Your submission was successful. One of our representatives will get back to you as soon as possible.';
+          form.reset();
+        } catch (error) {
+          messageDiv.className = 'form-message error';
+          messageDiv.textContent = 'An error occurred. Please try again.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send';
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,20 @@
+name = "hercules-edge-router-fr"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+ASTRO_ORIGIN = "https://hercules-fr-staging.pages.dev"
+WORDPRESS_ORIGIN = "https://staging.hercules-merchandising.fr"
+
+[[routes]]
+pattern = "staging.hercules-merchandising.fr/*"
+zone_name = "hercules-merchandising.fr"
+
+[env.production]
+[env.production.vars]
+ASTRO_ORIGIN = "https://hercules-fr.pages.dev"
+WORDPRESS_ORIGIN = "https://hercules-merchandising.fr"
+
+[[env.production.routes]]
+pattern = "hercules-merchandising.fr/*"
+zone_name = "hercules-merchandising.fr"

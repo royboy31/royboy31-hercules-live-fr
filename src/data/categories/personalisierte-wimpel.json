@@ -1,0 +1,773 @@
+{
+  "category": {
+    "id": 257,
+    "name": "Personalisierte Wimpel",
+    "slug": "personalisierte-wimpel",
+    "description": "Auf der Suche nach vollständig <strong>personalisierten</strong> <strong>Wimpeln</strong> für Ihren Verein oder Verband?",
+    "count": 4,
+    "image": null,
+    "parent": 0
+  },
+  "products": [
+    {
+      "id": 4311,
+      "name": "Personalisierter Autoschal",
+      "slug": "personalisierter-autoschal",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-autoschal/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"123\" data-end=\"155\"><strong data-start=\"127\" data-end=\"155\">Personalisierter Auto-Schal</strong></h3>\n<p data-start=\"157\" data-end=\"445\">Sie haben sie bestimmt schon gesehen – <strong data-start=\"196\" data-end=\"248\">kleine Schals in den Farben des Lieblingsvereins</strong>, die hinter der Autoscheibe hängen.<br data-start=\"284\" data-end=\"287\" />Diese <strong data-start=\"293\" data-end=\"322\">individuellen Auto-Schals</strong> werden <strong data-start=\"330\" data-end=\"382\">in Ihren Vereinsfarben und mit Ihrem Logo gewebt</strong> und mit <strong data-start=\"391\" data-end=\"410\">zwei Saugnäpfen</strong> an der Fensterscheibe befestigt.</p>\n<p data-start=\"447\" data-end=\"461\"><strong data-start=\"447\" data-end=\"459\">Details:</strong></p>\n<ul data-start=\"462\" data-end=\"731\">\n<li data-start=\"462\" data-end=\"499\">\n<p data-start=\"464\" data-end=\"499\">Material: <strong data-start=\"474\" data-end=\"497\">Acryl und Polyester</strong></p>\n</li>\n<li data-start=\"500\" data-end=\"525\">\n<p data-start=\"502\" data-end=\"525\">Maße: <strong data-start=\"508\" data-end=\"523\">42 × 8,5 cm</strong></p>\n</li>\n<li data-start=\"526\" data-end=\"557\">\n<p data-start=\"528\" data-end=\"557\">Bis zu <strong data-start=\"535\" data-end=\"547\">8 Farben</strong> möglich</p>\n</li>\n<li data-start=\"558\" data-end=\"592\">\n<p data-start=\"560\" data-end=\"592\">Design <strong data-start=\"567\" data-end=\"590\">nur auf einer Seite</strong></p>\n</li>\n<li data-start=\"593\" data-end=\"630\">\n<p data-start=\"595\" data-end=\"630\"><strong data-start=\"595\" data-end=\"606\">Fransen</strong> in 1, 2 oder 3 Farben</p>\n</li>\n<li data-start=\"631\" data-end=\"659\">\n<p data-start=\"633\" data-end=\"659\"><strong data-start=\"633\" data-end=\"657\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"660\" data-end=\"731\">\n<p data-start=\"662\" data-end=\"731\"><strong data-start=\"662\" data-end=\"677\">Lieferzeit:</strong> ca. 3 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"733\" data-end=\"923\">Die Schals werden mit bis zu <strong data-start=\"762\" data-end=\"792\">8 verschiedenen Garnfarben</strong> gewebt.<br />\nFür Designs mit <strong data-start=\"819\" data-end=\"858\">mehr Details oder mehr als 8 Farben</strong> empfehlen wir einen <strong data-start=\"879\" data-end=\"904\">bedruckten Auto-Schal</strong> als Alternative.</p>",
+      "short_description": "",
+      "sku": "custom-car-scarves",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 254,
+          "name": "Fußballschals",
+          "slug": "fussballschals"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 257,
+          "name": "Personalisierte Wimpel",
+          "slug": "personalisierte-wimpel"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8246,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_car_scarf_6-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_car_scarf_6-16-300x300.png",
+          "alt": "Hercules Merchandise cars carf"
+        },
+        {
+          "id": 8247,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf2-300x300.png",
+          "alt": "Hercules Merchandise cars carf"
+        },
+        {
+          "id": 8248,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf3-300x300.png",
+          "alt": "Hercules Merchandise cars carf"
+        },
+        {
+          "id": 8249,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf1-300x300.png",
+          "alt": "Hercules Merchandise cars carf"
+        },
+        {
+          "id": 8250,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_car_scarf_8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_car_scarf_8-300x300.png",
+          "alt": "Hercules Merchandise cars carf"
+        },
+        {
+          "id": 8251,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf4.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisecarscarf4-300x300.png",
+          "alt": "Hercules Merchandise cars carf"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Options",
+          "options": [
+            "Default"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4313,
+          "attributes": [
+            {
+              "name": "Options",
+              "value": "default"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4307,
+      "name": "Personalisiertes Mini-Trikot",
+      "slug": "personalisiertes-mini-trikot",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisiertes-mini-trikot/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"117\" data-end=\"150\"><strong data-start=\"121\" data-end=\"150\">Individuelles Mini-Trikot</strong></h3>\n<p data-start=\"152\" data-end=\"389\">Das <strong data-start=\"156\" data-end=\"187\">personalisierte Mini-Trikot</strong> ist ein echter Klassiker fürs Auto!<br data-start=\"223\" data-end=\"226\" />Reproduzieren Sie das Design Ihres <strong data-start=\"261\" data-end=\"289\">offiziellen Spieltrikots</strong> mit unserem <strong data-start=\"302\" data-end=\"333\">vollfarbigen Druckverfahren</strong> – perfekt für Fans, Sponsoren oder Vereinsmitglieder.</p>\n<p data-start=\"391\" data-end=\"405\"><strong data-start=\"391\" data-end=\"403\">Details:</strong></p>\n<ul data-start=\"406\" data-end=\"634\">\n<li data-start=\"406\" data-end=\"439\">\n<p data-start=\"408\" data-end=\"439\">Material: <strong data-start=\"418\" data-end=\"437\">100 % Polyester</strong></p>\n</li>\n<li data-start=\"440\" data-end=\"466\">\n<p data-start=\"442\" data-end=\"466\"><strong data-start=\"442\" data-end=\"464\">Vollfarbiger Druck</strong></p>\n</li>\n<li data-start=\"467\" data-end=\"533\">\n<p data-start=\"469\" data-end=\"533\">Unterschiedliches Design auf <strong data-start=\"498\" data-end=\"523\">Vorder- und Rückseite</strong> möglich</p>\n</li>\n<li data-start=\"534\" data-end=\"562\">\n<p data-start=\"536\" data-end=\"562\"><strong data-start=\"536\" data-end=\"560\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"563\" data-end=\"634\">\n<p data-start=\"565\" data-end=\"634\"><strong data-start=\"565\" data-end=\"580\">Lieferzeit:</strong> ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"636\" data-end=\"851\">Das Motiv wird auf <strong data-start=\"655\" data-end=\"682\">Polyesterstoff gedruckt</strong>, der um eine <strong data-start=\"696\" data-end=\"722\">stabile Kartonrückwand</strong> gespannt ist.<br data-start=\"736\" data-end=\"739\" />Am oberen Ende befindet sich ein <strong data-start=\"772\" data-end=\"784\">Saugnapf</strong>, mit dem das Mini-Trikot an einer Scheibe befestigt werden kann.</p>\n<p data-start=\"853\" data-end=\"905\">Das Mini-Trikot ist in <strong data-start=\"876\" data-end=\"891\">zwei Größen</strong> erhältlich:</p>\n<ul data-start=\"906\" data-end=\"956\">\n<li data-start=\"906\" data-end=\"931\">\n<p data-start=\"908\" data-end=\"931\"><strong data-start=\"908\" data-end=\"918\">Klein:</strong> 16 cm hoch</p>\n</li>\n<li data-start=\"932\" data-end=\"956\">\n<p data-start=\"934\" data-end=\"956\"><strong data-start=\"934\" data-end=\"943\">Groß:</strong> 22 cm hoch</p>\n</li>\n</ul>\n<p data-start=\"958\" data-end=\"1104\">Senden Sie uns einfach das <strong data-start=\"985\" data-end=\"1007\">Logo Ihres Vereins</strong> sowie die <strong data-start=\"1018\" data-end=\"1043\">Logos Ihrer Sponsoren</strong>, und wir erstellen Ihnen <strong data-start=\"1069\" data-end=\"1101\">ein kostenloses Designmodell</strong>.</p>",
+      "short_description": "",
+      "sku": "custom-printed-mini-kits",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 325,
+          "name": "Kinder",
+          "slug": "kinder"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 257,
+          "name": "Personalisierte Wimpel",
+          "slug": "personalisierte-wimpel"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [],
+      "images": [
+        {
+          "id": 8238,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit4-16.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit4-16-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8239,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_5-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8240,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit1-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8241,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit2-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8242,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandisemini-kit3-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8243,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_7-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8244,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_6-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        },
+        {
+          "id": 8245,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_mini-kit_8-300x300.png",
+          "alt": "Hercules_Merchandise_mini-kit"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 34,
+          "name": "Höhe",
+          "options": [
+            "16 cm",
+            "22 cm"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4309,
+          "attributes": [
+            {
+              "name": "Höhe",
+              "value": "16-cm"
+            }
+          ]
+        },
+        {
+          "id": 4310,
+          "attributes": [
+            {
+              "name": "Höhe",
+              "value": "22-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4294,
+      "name": "Individuell bedruckter Wimpel",
+      "slug": "individuell-gedruckter-wimpel",
+      "permalink": "https://staging.hercules-merchandise.de/products/individuell-gedruckter-wimpel/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"114\" data-end=\"151\"><strong data-start=\"118\" data-end=\"151\">Individuell bedruckter Wimpel</strong></h3>\n<p data-start=\"153\" data-end=\"361\">Diese <strong data-start=\"159\" data-end=\"196\">Wimpel werden vollfarbig bedruckt</strong>, ohne Einschränkungen bei <strong data-start=\"223\" data-end=\"253\">Farben oder Detailreichtum</strong> Ihres Designs.<br data-start=\"268\" data-end=\"271\" />Sie können mit einer <strong data-start=\"292\" data-end=\"302\">Kordel</strong> oder mit <strong data-start=\"312\" data-end=\"342\">Fransen in bis zu 3 Farben</strong> veredelt werden.</p>\n<p data-start=\"363\" data-end=\"519\">Bei den Fransen sind wir auf die verfügbaren <strong data-start=\"408\" data-end=\"429\">Farbkombinationen</strong> angewiesen – kontaktieren Sie uns, um zu prüfen, ob Ihre Wunschkombination möglich ist.</p>\n<p data-start=\"521\" data-end=\"535\"><strong data-start=\"521\" data-end=\"533\">Details:</strong></p>\n<ul data-start=\"536\" data-end=\"821\">\n<li data-start=\"536\" data-end=\"569\">\n<p data-start=\"538\" data-end=\"569\">Material: <strong data-start=\"548\" data-end=\"567\">100 % Polyester</strong></p>\n</li>\n<li data-start=\"570\" data-end=\"596\">\n<p data-start=\"572\" data-end=\"596\"><strong data-start=\"572\" data-end=\"594\">Vollfarbiger Druck</strong></p>\n</li>\n<li data-start=\"597\" data-end=\"663\">\n<p data-start=\"599\" data-end=\"663\">Unterschiedliches Design auf <strong data-start=\"628\" data-end=\"653\">Vorder- und Rückseite</strong> möglich</p>\n</li>\n<li data-start=\"664\" data-end=\"720\">\n<p data-start=\"666\" data-end=\"720\"><strong data-start=\"666\" data-end=\"680\">Abschluss:</strong> Kordel oder Fransen (bis zu 3 Farben)</p>\n</li>\n<li data-start=\"721\" data-end=\"749\">\n<p data-start=\"723\" data-end=\"749\"><strong data-start=\"723\" data-end=\"747\">Produktion in Europa</strong></p>\n</li>\n<li data-start=\"750\" data-end=\"821\">\n<p data-start=\"752\" data-end=\"821\"><strong data-start=\"752\" data-end=\"767\">Lieferzeit:</strong> ca. 4 Wochen (Expresslieferung auf Anfrage möglich)</p>\n</li>\n</ul>\n<p data-start=\"823\" data-end=\"924\">Die <strong data-start=\"827\" data-end=\"837\">Wimpel</strong> sind in verschiedenen <strong data-start=\"860\" data-end=\"870\">Formen</strong> erhältlich.<br data-start=\"882\" data-end=\"885\" />Die drei beliebtesten Varianten sind:</p>\n<ul data-start=\"925\" data-end=\"1036\">\n<li data-start=\"925\" data-end=\"952\">\n<p data-start=\"927\" data-end=\"952\"><strong data-start=\"927\" data-end=\"950\">Spitzform (Dreieck)</strong></p>\n</li>\n<li data-start=\"953\" data-end=\"997\">\n<p data-start=\"955\" data-end=\"997\"><strong data-start=\"955\" data-end=\"995\">Muschelform (abgerundete Unterkante)</strong></p>\n</li>\n<li data-start=\"998\" data-end=\"1036\">\n<p data-start=\"1000\" data-end=\"1036\"><strong data-start=\"1000\" data-end=\"1034\">Fünfeckform (mit Spitze unten)</strong></p>\n</li>\n</ul>\n<p data-start=\"1038\" data-end=\"1128\">Auf Wunsch können wir <strong data-start=\"1060\" data-end=\"1089\">jede beliebige Sonderform</strong> anfertigen – ganz nach Ihrem Design.</p>\n<p>&nbsp;</p>",
+      "short_description": "",
+      "sku": "custom-printed-pennants",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 291,
+          "name": "Feldhockey",
+          "slug": "feldhockey"
+        },
+        {
+          "id": 287,
+          "name": "Fußball",
+          "slug": "fussball"
+        },
+        {
+          "id": 317,
+          "name": "Hergestellt in Europa",
+          "slug": "hergestellt-in-europa"
+        },
+        {
+          "id": 322,
+          "name": "Kleine Preise",
+          "slug": "kleine-preise"
+        },
+        {
+          "id": 257,
+          "name": "Personalisierte Wimpel",
+          "slug": "personalisierte-wimpel"
+        },
+        {
+          "id": 288,
+          "name": "Rugby",
+          "slug": "rugby"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [
+        {
+          "id": 277,
+          "name": "homepage",
+          "slug": "homepage"
+        }
+      ],
+      "images": [
+        {
+          "id": 8202,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant7-17.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant7-17-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8203,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant40-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant40-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8204,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant20-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant20-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8205,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_60-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_60-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8206,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant37-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant37-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8207,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant22-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant22-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8208,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant5-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant5-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8209,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant39-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant39-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8210,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant21-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant21-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8211,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant41-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant41-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8212,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant34-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant34-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8213,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant25-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant25-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8214,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant38-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant38-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8215,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant1-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant1-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8216,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant2-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant2-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8217,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant23-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant23-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8218,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant6-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant6-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8219,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_62-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_62-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8220,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant24-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant24-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8221,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant8-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant8-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8222,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant35-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant35-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8223,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant32-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant32-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8224,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant31-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant31-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8225,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant36-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant36-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8226,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant9-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant9-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8227,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant10-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant10-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8228,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant11-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant11-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8229,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant12-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseprintedpennant12-1-300x300.png",
+          "alt": "Hercules Merchandise printed pennant"
+        },
+        {
+          "id": 8230,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_63-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_63-1-300x300.png",
+          "alt": "Hercules Merchandise woven pennant"
+        },
+        {
+          "id": 8231,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_61-1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules_Merchandise_printed_pennant_61-1-300x300.png",
+          "alt": "Hercules Merchandise woven pennant"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 1,
+          "name": "Format",
+          "options": [
+            "Groß (24 x 17 cm)",
+            "Klein (10 x 8 cm)",
+            "Medium (17 x 13 cm)"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4296,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "klein-10-x-8-cm"
+            }
+          ]
+        },
+        {
+          "id": 4297,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "medium-17-x-13-cm"
+            }
+          ]
+        },
+        {
+          "id": 4298,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "gross-24-x-17-cm"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    },
+    {
+      "id": 4141,
+      "name": "Personalisierte Großwimpel",
+      "slug": "personalisierter-grosswimpel",
+      "permalink": "https://staging.hercules-merchandise.de/products/personalisierter-grosswimpel/",
+      "type": "variable",
+      "featured": false,
+      "description": "<h3 data-start=\"0\" data-end=\"56\"><strong data-start=\"0\" data-end=\"54\">Gestalten Sie Ihren eigenen großen Fußball-Wimpel!</strong></h3>\n<p data-start=\"58\" data-end=\"283\">Unsere <strong data-start=\"65\" data-end=\"82\">großen Wimpel</strong> werden in <strong data-start=\"93\" data-end=\"109\">voller Farbe</strong> bedruckt – <strong data-start=\"121\" data-end=\"167\">ohne Einschränkung bei Farben oder Details</strong>. Sie können zwischen einer <strong data-start=\"195\" data-end=\"205\">Kordel</strong> oder <strong data-start=\"211\" data-end=\"244\">Fransen in bis zu drei Farben</strong> wählen, ganz nach Ihrem Vereinsstil.</p>\n<p data-start=\"285\" data-end=\"385\">Perfekt geeignet für <strong data-start=\"306\" data-end=\"330\">wichtige Pokalspiele</strong>, Turniere oder als <strong data-start=\"350\" data-end=\"382\">repräsentatives Sammlerstück</strong>!</p>\n<p data-start=\"387\" data-end=\"652\">Die Wimpel bestehen aus <strong data-start=\"411\" data-end=\"438\">robustem Polyesterstoff</strong> und sind auf einem <strong data-start=\"458\" data-end=\"498\">Holzstab mit dekorativen Kugel-Enden</strong> montiert, was ihnen ein <strong data-start=\"523\" data-end=\"567\">elegantes, hochwertiges Erscheinungsbild</strong> verleiht. Ideal für <strong data-start=\"588\" data-end=\"649\">Fußballvereine, Sportevents, Zeremonien oder Vereinsbüros</strong>.</p>\n<p data-start=\"654\" data-end=\"939\"><strong data-start=\"654\" data-end=\"667\">Material:</strong> 100 % Polyester<br data-start=\"683\" data-end=\"686\" /><strong data-start=\"686\" data-end=\"696\">Druck:</strong> Vollfarbig<br data-start=\"707\" data-end=\"710\" /><strong data-start=\"710\" data-end=\"721\">Design:</strong> Unterschiedliches Motiv auf Vorder- und Rückseite möglich<br data-start=\"779\" data-end=\"782\" /><strong data-start=\"782\" data-end=\"797\" data-is-only-node=\"\">Veredelung:</strong> Mit Kordel oder Fransen (bis zu 3 Farben)<br data-start=\"839\" data-end=\"842\" /><strong data-start=\"842\" data-end=\"857\">Produktion:</strong> Hergestellt in Europa<br data-start=\"879\" data-end=\"882\" /><strong data-start=\"882\" data-end=\"897\">Lieferzeit:</strong> ca. 4 Wochen (Expresslieferung möglich)</p>\n<p data-start=\"941\" data-end=\"1056\">Erhältlich in <strong data-start=\"955\" data-end=\"979\">verschiedenen Größen</strong> – ideal zum Aufhängen in <strong data-start=\"1005\" data-end=\"1053\">Kabinen, Büros oder bei offiziellen Anlässen</strong>.</p>\n<p data-start=\"1058\" data-end=\"1308\" data-is-last-node=\"\" data-is-only-node=\"\">Jeder Wimpel kann mit <strong data-start=\"1080\" data-end=\"1139\">Namen, Daten, Nummern oder zusätzlichen Grafikelementen</strong> personalisiert werden.<br data-start=\"1162\" data-end=\"1165\" />Sie benötigen Unterstützung beim Design oder haben bereits eine fertige Vorlage?<br data-start=\"1245\" data-end=\"1248\" /><strong data-start=\"1248\" data-end=\"1277\">Senden Sie uns Ihr Design</strong> – wir kümmern uns um den Rest!</p>",
+      "short_description": "",
+      "sku": "custom-large-pennant",
+      "price": "1.00",
+      "regular_price": "1.00",
+      "sale_price": "1.00",
+      "on_sale": false,
+      "currency": "EUR",
+      "stock_status": "instock",
+      "categories": [
+        {
+          "id": 257,
+          "name": "Personalisierte Wimpel",
+          "slug": "personalisierte-wimpel"
+        },
+        {
+          "id": 324,
+          "name": "Werbegeschenke",
+          "slug": "werbegeschenke"
+        }
+      ],
+      "tags": [
+        {
+          "id": 264,
+          "name": "featured",
+          "slug": "featured"
+        }
+      ],
+      "images": [
+        {
+          "id": 11967,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Large-pennants-8.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Large-pennants-8-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7227,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants4-48.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants4-48-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7228,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants1.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants1-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7229,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants6.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants6-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7230,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants3.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants3-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 11968,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Large-pennants-9.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/Hercules-Merchandise-Large-pennants-9-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7232,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants5.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants5-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7233,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants7.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants7-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        },
+        {
+          "id": 7235,
+          "src": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants2.png",
+          "thumbnail": "https://staging.hercules-merchandise.de/wp-content/uploads/2025/06/HerculesMerchandiseLargepennants2-300x300.png",
+          "alt": "Personalisierte Großwimpel"
+        }
+      ],
+      "attributes": [
+        {
+          "id": 1,
+          "name": "Format",
+          "options": [
+            "27 x 18 cm",
+            "30 x 20 cm",
+            "35 x 25 cm",
+            "40 x 28 cm",
+            "45 x 30 cm"
+          ]
+        },
+        {
+          "id": 21,
+          "name": "Drucken",
+          "options": [
+            "Nur vorne",
+            "Vorder- und Rückseite"
+          ]
+        }
+      ],
+      "variations": [
+        {
+          "id": 4143,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "27-x-18-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "nur-vorne"
+            }
+          ]
+        },
+        {
+          "id": 4144,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "27-x-18-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "vorderseite-und-ruckseite"
+            }
+          ]
+        },
+        {
+          "id": 4145,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "30-x-20-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "nur-vorne"
+            }
+          ]
+        },
+        {
+          "id": 4146,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "30-x-20-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "vorderseite-und-ruckseite"
+            }
+          ]
+        },
+        {
+          "id": 4147,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "35-x-25-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "nur-vorne"
+            }
+          ]
+        },
+        {
+          "id": 4148,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "35-x-25-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "vorderseite-und-ruckseite"
+            }
+          ]
+        },
+        {
+          "id": 4149,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "40-x-28-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "nur-vorne"
+            }
+          ]
+        },
+        {
+          "id": 4150,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "40-x-28-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "vorderseite-und-ruckseite"
+            }
+          ]
+        },
+        {
+          "id": 4151,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "45-x-30-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "nur-vorne"
+            }
+          ]
+        },
+        {
+          "id": 4152,
+          "attributes": [
+            {
+              "name": "Format",
+              "value": "45-x-30-cm"
+            },
+            {
+              "name": "Drucken",
+              "value": "vorderseite-und-ruckseite"
+            }
+          ]
+        }
+      ],
+      "average_rating": "0",
+      "review_count": 0
+    }
+  ],
+  "synced_at": "2025-12-21T13:04:46.628Z"
+}
