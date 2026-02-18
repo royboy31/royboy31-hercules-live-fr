@@ -6,7 +6,7 @@ compatibility_date = "2024-01-01"
 WC_STORE_URL = "https://staging.hercules-merchandising.fr"
 WEBHOOK_SECRET = "hercules-webhook-secret-fr-2024"
 GITHUB_OWNER = "royboy31"
-GITHUB_REPO = "hercules-live-fr"
+GITHUB_REPO = "royboy31-hercules-live-fr"
 GITHUB_WORKFLOW = "deploy.yml"
 GITHUB_REF = "production"
 
