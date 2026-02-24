@@ -78,6 +78,9 @@ function hercules_get_category_by_slug($request) {
 function hercules_format_category($category) {
     // Get second description from term meta
     $second_description = get_term_meta($category->term_id, 'seconddesc', true);
+    if ($second_description) {
+        $second_description = html_entity_decode($second_description, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
 
     // Get FAQ from ACF repeater field (if using ACF)
     // Field name: 'category_faq' - repeater with sub-fields 'question' and 'answer'

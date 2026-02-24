@@ -89,7 +89,7 @@ export default function QuantityRequestPopup({
 
     // Check file count
     if (formData.files.length + files.length > maxFiles) {
-      setError(`Maximum ${maxFiles} files allowed.`);
+      setError(`Maximum ${maxFiles} fichiers autorisés.`);
       return;
     }
 
@@ -97,12 +97,12 @@ export default function QuantityRequestPopup({
     let totalSize = formData.files.reduce((sum, f) => sum + f.size, 0);
     const validFiles = files.filter(file => {
       if (!allowedTypes.includes(file.type)) {
-        setError(`Invalid file type: ${file.name}. Only JPG, PNG and PDF allowed.`);
+        setError(`Type de fichier invalide : ${file.name}. Seuls JPG, PNG et PDF sont acceptés.`);
         return false;
       }
       totalSize += file.size;
       if (totalSize > maxTotalSize) {
-        setError('Maximum total size of 20 MB exceeded.');
+        setError('Taille totale maximale de 20 Mo dépassée.');
         return false;
       }
       return true;
@@ -126,7 +126,7 @@ export default function QuantityRequestPopup({
 
     // Validation
     if (!formData.firstName || !formData.lastName || !formData.email) {
-      setError('Please fill in all required fields marked with *');
+      setError('Veuillez remplir tous les champs obligatoires marqués d\'un *');
       return;
     }
 
@@ -155,8 +155,8 @@ export default function QuantityRequestPopup({
       submitData.append('email', formData.email);
       submitData.append('phone', formData.phone);
       submitData.append('message', formData.message);
-      submitData.append('date', new Date().toLocaleDateString('en-GB'));
-      submitData.append('time', new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
+      submitData.append('date', new Date().toLocaleDateString('fr-FR'));
+      submitData.append('time', new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }));
       submitData.append('pageUrl', window.location.href);
       submitData.append('productId', String(productId));
       submitData.append('productName', productName);
@@ -182,7 +182,7 @@ export default function QuantityRequestPopup({
 
       setIsSuccess(true);
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      setError('Une erreur est survenue. Veuillez réessayer.');
     } finally {
       setIsSubmitting(false);
     }
@@ -211,7 +211,7 @@ export default function QuantityRequestPopup({
             type="button"
             onClick={onClose}
             className="kd-quantity-popup-close"
-            aria-label="Close"
+            aria-label="Fermer"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -221,11 +221,11 @@ export default function QuantityRequestPopup({
 
           {!isSuccess ? (
             <>
-              <h4>CUSTOM QUANTITY REQUEST</h4>
+              <h4>DEMANDE DE QUANTITÉ PERSONNALISÉE</h4>
               <p>
-                You have selected a quantity above the standard maximum.
-                Please contact us to arrange a custom order
-                or receive an urgent quote.
+                Vous avez sélectionné une quantité supérieure au maximum standard.
+                Veuillez nous contacter pour organiser une commande personnalisée
+                ou recevoir un devis urgent.
               </p>
 
               <form onSubmit={handleSubmit}>
@@ -233,12 +233,12 @@ export default function QuantityRequestPopup({
                 <div className="kd-row">
                   <div className="kd-col-50">
                     <label>
-                      First Name <span style={{ color: 'red' }}>*</span>
+                      Prénom <span style={{ color: 'red' }}>*</span>
                     </label>
                     <input
                       type="text"
                       name="firstName"
-                      placeholder="First Name"
+                      placeholder="Prénom"
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
@@ -246,12 +246,12 @@ export default function QuantityRequestPopup({
                   </div>
                   <div className="kd-col-50">
                     <label>
-                      Last Name <span style={{ color: 'red' }}>*</span>
+                      Nom <span style={{ color: 'red' }}>*</span>
                     </label>
                     <input
                       type="text"
                       name="lastName"
-                      placeholder="Last Name"
+                      placeholder="Nom"
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
@@ -263,23 +263,23 @@ export default function QuantityRequestPopup({
                 <div className="kd-row">
                   <div className="kd-col-50">
                     <label>
-                      Email <span style={{ color: 'red' }}>*</span>
+                      E-mail <span style={{ color: 'red' }}>*</span>
                     </label>
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email"
+                      placeholder="E-mail"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
                     />
                   </div>
                   <div className="kd-col-50">
-                    <label>Phone Number</label>
+                    <label>Numéro de téléphone</label>
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="Phone Number"
+                      placeholder="Numéro de téléphone"
                       value={formData.phone}
                       onChange={handleInputChange}
                     />
@@ -292,7 +292,7 @@ export default function QuantityRequestPopup({
                     <label>Message</label>
                     <textarea
                       name="message"
-                      placeholder="Your Message"
+                      placeholder="Votre message"
                       value={formData.message}
                       onChange={handleInputChange}
                     />
@@ -302,7 +302,7 @@ export default function QuantityRequestPopup({
                 {/* File Upload */}
                 <div className="kd-col-100 kd-file-upload-section">
                   <label>
-                    Attach Files (JPG, PNG, PDF — max. 10 files, 20 MB total)
+                    Joindre des fichiers (JPG, PNG, PDF — max. 10 fichiers, 20 Mo au total)
                   </label>
                   <div className="kd-file-upload-wrapper">
                     <input
@@ -320,9 +320,9 @@ export default function QuantityRequestPopup({
                         <polyline points="17 8 12 3 7 8" />
                         <line x1="12" y1="3" x2="12" y2="15" />
                       </svg>
-                      <span>Select Files</span>
+                      <span>Sélectionner des fichiers</span>
                     </label>
-                    <span className="kd-file-hint">Max. 20 MB total</span>
+                    <span className="kd-file-hint">Max. 20 Mo au total</span>
                   </div>
                   {formData.files.length > 0 && (
                     <div className="kd-selected-files">
@@ -350,14 +350,14 @@ export default function QuantityRequestPopup({
                     onClick={onClose}
                     className="kd-quantity-cancel-btn"
                   >
-                    Cancel
+                    Annuler
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="kd-quantity-submit-btn"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Request'}
+                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer la demande'}
                   </button>
                 </div>
               </form>
@@ -371,16 +371,16 @@ export default function QuantityRequestPopup({
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
               </div>
-              <h4>Thank you for contacting us!</h4>
+              <h4>Merci de nous avoir contactés !</h4>
               <p>
-                Your enquiry has been successfully submitted. One of our team members will get back to you as soon as possible.
+                Votre demande a bien été envoyée. Un membre de notre équipe vous répondra dans les plus brefs délais.
               </p>
               <button
                 type="button"
                 onClick={onClose}
                 className="kd-quantity-submit-btn"
               >
-                Close
+                Fermer
               </button>
             </div>
           )}

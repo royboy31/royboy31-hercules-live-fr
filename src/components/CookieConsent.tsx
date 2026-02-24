@@ -59,10 +59,10 @@ export default function CookieConsent() {
               width="50"
               height="22"
               src="/images/hercules-logo-small.webp"
-              alt="Hercules Merchandise UK"
+              alt="Hercules Merchandising FR"
             />
           </div>
-          <div className="cmplz-title" id="cmplz-header">Cookie Settings</div>
+          <div className="cmplz-title" id="cmplz-header">Paramètres des cookies</div>
         </div>
 
         <div className="cmplz-divider"></div>
@@ -70,7 +70,7 @@ export default function CookieConsent() {
         {/* Body */}
         <div className="cmplz-body">
           <div className="cmplz-message" id="cmplz-message">
-            <p>We use cookies to provide you with the best shopping experience. This includes cookies for site operation, analytics and personalised content.</p>
+            <p>Nous utilisons des cookies pour vous offrir la meilleure expérience d'achat possible. Cela inclut des cookies pour le fonctionnement du site, l'analyse et le contenu personnalisé.</p>
           </div>
 
           {/* Categories - shown when "Einstellungen" is clicked */}
@@ -80,13 +80,13 @@ export default function CookieConsent() {
               <details className="cmplz-category cmplz-functional" open>
                 <summary>
                   <span className="cmplz-category-header">
-                    <span className="cmplz-category-title">Necessary</span>
+                    <span className="cmplz-category-title">Nécessaires</span>
                     <span className="cmplz-always-active">
                       <span className="cmplz-banner-checkbox">
                         <input type="checkbox" checked disabled className="cmplz-consent-checkbox cmplz-functional" />
                         <label className="cmplz-label"></label>
                       </span>
-                      Always active
+                      Toujours actif
                     </span>
                     <span className="cmplz-icon cmplz-open">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18">
@@ -96,7 +96,7 @@ export default function CookieConsent() {
                   </span>
                 </summary>
                 <div className="cmplz-description">
-                  These cookies are required for basic site functionality such as shopping cart and login.
+                  Ces cookies sont nécessaires au bon fonctionnement du site, notamment pour le panier et la connexion.
                 </div>
               </details>
 
@@ -104,7 +104,7 @@ export default function CookieConsent() {
               <details className="cmplz-category cmplz-statistics">
                 <summary>
                   <span className="cmplz-category-header">
-                    <span className="cmplz-category-title">Statistics</span>
+                    <span className="cmplz-category-title">Statistiques</span>
                     <span className="cmplz-banner-checkbox" onClick={(e) => e.stopPropagation()}>
                       <input
                         type="checkbox"
@@ -122,7 +122,7 @@ export default function CookieConsent() {
                   </span>
                 </summary>
                 <div className="cmplz-description">
-                  Help us understand how visitors interact with the website.
+                  Nous aident à comprendre comment les visiteurs interagissent avec le site.
                 </div>
               </details>
 
@@ -148,7 +148,7 @@ export default function CookieConsent() {
                   </span>
                 </summary>
                 <div className="cmplz-description">
-                  Used to display relevant advertising.
+                  Utilisés pour afficher des publicités pertinentes.
                 </div>
               </details>
             </div>
@@ -158,20 +158,20 @@ export default function CookieConsent() {
         {/* Buttons - GDPR compliant: Accept and Reject must be equally visible */}
         <div className="cmplz-buttons">
           <button className="cmplz-btn cmplz-accept" onClick={() => saveConsent(true)}>
-            Accept All
+            Tout accepter
           </button>
           <button className="cmplz-btn cmplz-deny" onClick={() => saveConsent(false, true)}>
-            Necessary Only
+            Nécessaires uniquement
           </button>
         </div>
         <div className="cmplz-settings-link">
           {!showCategories ? (
             <button className="cmplz-link-btn" onClick={() => setShowCategories(true)}>
-              Customise Settings
+              Personnaliser les paramètres
             </button>
           ) : (
             <button className="cmplz-link-btn" onClick={() => saveConsent(false)}>
-              Save Selection
+              Enregistrer la sélection
             </button>
           )}
         </div>

@@ -44,6 +44,11 @@ try {
   console.error('Error fetching related posts:', error);
 }
 
+// Strip leading ? from titles caused by MySQL utf8 dropping 4-byte emoji
+function cleanTitle(title: string): string {
+  return title.replace(/^\?\s*/, '').trim();
+}
+
 // Clean broken emoji ? characters from WordPress content
 // (MySQL utf8 encoding drops 4-byte emojis to ?)
 function cleanContent(html: string): string {
@@ -52,10 +57,10 @@ function cleanContent(html: string): string {
   return html.replace(/(<h[1-6][^>]*>)\s*\?\s*/gi, '$1');
 }
 
-// Format date for display (UK format: "26 July 2025")
+// Format date for display (FR format: "26 juillet 2025")
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
-  return date.toLocaleDateString('en-GB', {
+  return date.toLocaleDateString('fr-FR', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -80,12 +85,15 @@ export async function getStaticPaths() {
   }
 }
 
+// Clean title (MySQL utf8 drops 4-byte emoji to ?)
+const postTitle = cleanTitle(post.title);
+
 // SEO configuration
 const metaDescription = post.excerpt
   ? truncateDescription(stripHtml(post.excerpt))
-  : truncateDescription(post.title);
+  : truncateDescription(postTitle);
 
-const canonicalUrl = `${siteConfig.siteUrl}/blogs/uk/${slug}`;
+const canonicalUrl = `${siteConfig.siteUrl}/blogs/news/${slug}`;
 const postImage = post.featuredImage || post.localFeaturedImage || '';
 
 // Format dates for schema
@@ -97,7 +105,7 @@ const jsonLdSchemas = [];
 
 // Article/BlogPosting schema
 jsonLdSchemas.push(getArticleSchema({
-  title: post.title,
+  title: postTitle,
   description: metaDescription,
   image: postImage,
   url: canonicalUrl,
@@ -109,15 +117,15 @@ jsonLdSchemas.push(getArticleSchema({
 
 // Breadcrumb schema
 jsonLdSchemas.push(getBreadcrumbSchema([
-  { name: 'Home', url: siteConfig.siteUrl },
-  { name: 'Blog', url: `${siteConfig.siteUrl}/blogs/uk` },
-  { name: post.title, url: canonicalUrl }
+  { name: 'Accueil', url: siteConfig.siteUrl },
+  { name: 'Blog', url: `${siteConfig.siteUrl}/blogs/news` },
+  { name: postTitle, url: canonicalUrl }
 ]));
 
 ---
 
 <BaseLayout
-  title={post.title}
+  title={postTitle}
   description={metaDescription}
   pageType="blog"
   ogType="article"
@@ -132,24 +140,24 @@ jsonLdSchemas.push(getBreadcrumbSchema([
     <div class="container">
       <!-- Post Title (Full Width) - Comes FIRST -->
       <header class="post-header">
-        <h1>{post.title}</h1>
+        <h1>{postTitle}</h1>
       </header>
 
       <!-- Breadcrumb - Below Title -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
+        <a href="/">Accueil</a>
         <span class="separator">
           <svg width="21" height="21" viewBox="0 0 256 512" fill="#00AEEF">
             <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
           </svg>
         </span>
-        <a href="/blogs/uk">Blogs</a>
+        <a href="/blogs/news">Blog</a>
         <span class="separator">
           <svg width="21" height="21" viewBox="0 0 256 512" fill="#00AEEF">
             <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
           </svg>
         </span>
-        <span class="current">{post.title}</span>
+        <span class="current">{postTitle}</span>
       </nav>
 
       <!-- Two Column Layout -->
@@ -159,7 +167,7 @@ jsonLdSchemas.push(getBreadcrumbSchema([
           <!-- Featured Image -->
           {postImage && (
             <div class="featured-image">
-              <img src={postImage} alt={post.title} />
+              <img src={postImage} alt={postTitle} />
             </div>
           )}
 
@@ -173,19 +181,19 @@ jsonLdSchemas.push(getBreadcrumbSchema([
 
           <!-- Share Section -->
           <div class="share-section">
-            <span class="share-label">Share:</span>
+            <span class="share-label">Partager :</span>
             <div class="share-icons">
               <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
                 <svg width="16" height="16" viewBox="0 0 320 512" fill="currentColor">
                   <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
                 </svg>
               </a>
-              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(postTitle)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X">
                 <svg width="16" height="16" viewBox="0 0 512 512" fill="currentColor">
                   <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
                 </svg>
               </a>
-              <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(canonicalUrl)}&title=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+              <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(canonicalUrl)}&title=${encodeURIComponent(postTitle)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
                 <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor">
                   <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
                 </svg>
@@ -199,27 +207,27 @@ jsonLdSchemas.push(getBreadcrumbSchema([
           <!-- CTA Box -->
           <div class="cta-box">
             <div class="cta-content">
-              <h2 class="cta-heading-main">Number 1</h2>
-              <h3 class="cta-heading-sub">in custom sports merchandise</h3>
-              <p class="cta-description">We specialise in the production of custom-designed, personalised sports merchandise such as football scarves, jackets, hoodies, fanwear and teamwear.</p>
-              <a href="/collections/custom-printed-sportswear/" class="cta-button">Discover Products</a>
+              <h2 class="cta-heading-main">N° 1</h2>
+              <h3 class="cta-heading-sub">en merchandising sportif personnalisé</h3>
+              <p class="cta-description">Nous sommes spécialisés dans la production de merchandising sportif personnalisé : écharpes de football, vestes, sweats à capuche, fanwear et tenues d'équipe.</p>
+              <a href="/collections/custom-printed-sportswear/" class="cta-button">Découvrir les produits</a>
             </div>
           </div>
 
           <!-- Related Posts -->
           {relatedPosts.length > 0 && (
             <div class="sidebar-related">
-              <h4 class="sidebar-heading">Related Posts</h4>
+              <h4 class="sidebar-heading">Articles connexes</h4>
               <div class="related-list">
                 {relatedPosts.map((rp) => (
-                  <a href={`/blogs/uk/${rp.slug}`} class="related-item">
+                  <a href={`/blogs/news/${rp.slug}`} class="related-item">
                     {rp.slug && (
                       <div class="related-thumb">
-                        <img src={`${WORKER_URL}/post-image/${rp.slug}`} alt={rp.title} loading="lazy" />
+                        <img src={`${WORKER_URL}/post-image/${rp.slug}`} alt={cleanTitle(rp.title)} loading="lazy" />
                       </div>
                     )}
                     <div class="related-info">
-                      <h5>{rp.title}</h5>
+                      <h5>{cleanTitle(rp.title)}</h5>
                       {rp.excerpt && (
                         <p>{stripHtml(rp.excerpt).substring(0, 80)}...</p>
                       )}

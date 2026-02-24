@@ -98,7 +98,7 @@ export const noindexPages = [
   '/search',
   '/cart',
   '/checkout',
-  '/my-account',
+  '/mon-compte',
 ];
 
 // Generate Organization JSON-LD

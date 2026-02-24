@@ -8,6 +8,28 @@
  * 4. Product data storage in KV
  */
 
+/**
+ * Decode common HTML entities returned by WordPress rendered fields.
+ * Used for title and excerpt (plain text fields) to avoid showing raw entities.
+ */
+function decodeHtmlEntities(str: string): string {
+  if (!str || !str.includes('&')) return str;
+  return str
+    .replace(/&rsquo;/g, '\u2019')
+    .replace(/&lsquo;/g, '\u2018')
+    .replace(/&rdquo;/g, '\u201D')
+    .replace(/&ldquo;/g, '\u201C')
+    .replace(/&ndash;/g, '\u2013')
+    .replace(/&mdash;/g, '\u2014')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, '\u00A0')
+    .replace(/&hellip;/g, '\u2026')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
+    .replace(/&#x([0-9a-fA-F]+);/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+}
+
 export interface Env {
   PRODUCTS_KV: KVNamespace;
   PRODUCTS_BUCKET?: R2Bucket;  // Optional - enable R2 in Cloudflare dashboard
@@ -23,8 +45,8 @@ export interface Env {
 const GITHUB_REPO = 'royboy31/hercules-live-uk';
 const GITHUB_WORKFLOW = 'deploy.yml';
 
-// Worker base URL for image serving (UK)
-const WORKER_URL = 'https://hercules-product-sync-fr-production.gilles-86d.workers.dev';
+// Worker base URL for image serving (FR)
+const WORKER_URL = 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
 
 interface WCProduct {
   id: number;
@@ -1267,11 +1289,11 @@ function transformPost(post: WPPost): SyncedPost {
 
   return {
     id: post.id,
-    title: post.title.rendered,
+    title: decodeHtmlEntities(post.title.rendered),
     slug: post.slug,
     date: post.date,
     modified: post.modified,
-    excerpt: cleanExcerpt,
+    excerpt: decodeHtmlEntities(cleanExcerpt),
     content: post.content.rendered,
     author,
     featuredImage: featuredImageMedium,

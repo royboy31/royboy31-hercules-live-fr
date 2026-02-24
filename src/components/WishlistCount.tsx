@@ -62,7 +62,7 @@ export default function WishlistCount({ className = '' }: WishlistCountProps) {
 
   return (
     <a
-      href="/wishlist/"
+      href="/liste-de-souhaits/"
       className={`header-icon wishlist-icon ${className}`}
       aria-label="Wishlist"
       style={iconStyle}

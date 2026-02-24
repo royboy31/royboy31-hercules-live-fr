@@ -19,6 +19,11 @@ try {
   console.error('Error fetching posts:', error);
 }
 
+// Strip leading ? caused by MySQL utf8 dropping 4-byte emoji
+function cleanTitle(title: string): string {
+  return title.replace(/^\?\s*/, '').trim();
+}
+
 // Format date for display
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
@@ -31,8 +36,8 @@ function formatDate(dateStr: string) {
 
 // SEO configuration
 const pageTitle = 'Blog';
-const pageDescription = 'Discover the latest news, tips and insights about custom fan scarves, merchandise and more.';
-const canonicalUrl = `${siteConfig.siteUrl}/blogs/uk`;
+const pageDescription = 'Découvrez les dernières actualités, conseils et articles sur les écharpes de supporters personnalisées, le merchandising et bien plus encore.';
+const canonicalUrl = `${siteConfig.siteUrl}/blogs/news`;
 
 // Generate JSON-LD schemas
 const jsonLdSchemas = [];
@@ -64,7 +69,7 @@ jsonLdSchemas.push(getBreadcrumbSchema([
         <ol itemscope itemtype="https://schema.org/BreadcrumbList">
           <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
             <a href="/" itemprop="item">
-              <span itemprop="name">Home</span>
+              <span itemprop="name">Accueil</span>
             </a>
             <meta itemprop="position" content="1" />
             <span class="separator"><img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" /></span>
@@ -91,19 +96,19 @@ jsonLdSchemas.push(getBreadcrumbSchema([
       <div class="posts-grid">
         {posts.map((post) => (
           <article class="post-card">
-            <a href={`/blogs/uk/${post.slug}`} class="post-link">
+            <a href={`/blogs/news/${post.slug}`} class="post-link">
               {post.slug && (
                 <div class="post-image">
                   <img
                     src={`${WORKER_URL}/post-image/${post.slug}`}
-                    alt={post.title}
+                    alt={cleanTitle(post.title)}
                     loading="lazy"
                   />
                 </div>
               )}
               <div class="post-content">
                 <time class="post-date">{formatDate(post.date)}</time>
-                <h2 class="post-title">{post.title}</h2>
+                <h2 class="post-title">{cleanTitle(post.title)}</h2>
                 <p class="post-excerpt">{post.excerpt}</p>
                 <span class="read-more">Read More</span>
               </div>

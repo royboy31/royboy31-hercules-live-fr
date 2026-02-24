@@ -353,14 +353,14 @@ function getEmailHeader(): string {
 function getEmailFooter(): string {
   return `
     <div style="background:#f5f5f5; font-size:13px; color:#777; text-align:center; padding:20px 40px; line-height:1.6; margin-top:30px;">
-      <p>If you have any questions, simply reply to this email or <a href="${SITE_URL}/contact/" style="color:#253461; text-decoration:none;">contact us here</a>.</p>
+      <p>Si vous avez des questions, répondez simplement à cet e-mail ou <a href="${SITE_URL}/contactez-nous/" style="color:#253461; text-decoration:none;">contactez-nous ici</a>.</p>
       <div style="margin-top:0; font-size:12px; text-align:center; color:#999;">
         <p>
           <a href="${SITE_URL}" style="color:#253461; text-decoration:none;"><strong>Hercules Merchandising</strong></a>
           <strong style="color:#000;"> | </strong>
-          <a href="${SITE_URL}/terms-and-conditions/" style="color:#253461; text-decoration:none;"><strong>Terms</strong></a>
+          <a href="${SITE_URL}/conditions-generales/" style="color:#253461; text-decoration:none;"><strong>Conditions générales</strong></a>
           <strong style="color:#000;"> | </strong>
-          <a href="${SITE_URL}/my-account/" style="color:#253461; text-decoration:none;"><strong>Your Account</strong></a><br>
+          <a href="${SITE_URL}/mon-compte/" style="color:#253461; text-decoration:none;"><strong>Mon compte</strong></a><br>
           📧 <a href="mailto:info@hercules-merchandising.fr" style="color:#253461; text-decoration:none;">info@hercules-merchandising.fr</a><br>
           ☎ <a href="tel:+33973030295" style="color:#253461; text-decoration:none;">09 73 03 02 95</a><br>
           🌐 <a href="${SITE_URL}" style="color:#253461; text-decoration:none;">${SITE_URL}</a>
@@ -392,14 +392,14 @@ function getContactFormEmailHtml(data: {
     });
     filesHtml = `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Attached Files:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Fichiers joints :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${fileLinks.join('<br>')}</td>
       </tr>
     `;
   } else if (data.files) {
     filesHtml = `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Attached Files:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Fichiers joints :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.files)}</td>
       </tr>
     `;
@@ -410,7 +410,7 @@ function getContactFormEmailHtml(data: {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Contact Request - Hercules Merchandising</title>
+  <title>Demande de contact - Hercules Merchandising</title>
   <style>
     body { margin:0; padding:0; background:#ffffff; color:#000; font-family:Arial,sans-serif; font-size:13px; }
     .container { max-width:700px; margin:0 auto; padding:20px 16px; }
@@ -423,42 +423,42 @@ function getContactFormEmailHtml(data: {
   <div class="container">
     ${getEmailHeader()}
 
-    <p>Hello <strong>${escapeHtml(data.name)}</strong>,</p>
-    <p>Thank you for your contact request at <strong>Hercules Merchandising</strong>. We have received the following message:</p>
+    <p>Bonjour <strong>${escapeHtml(data.name)}</strong>,</p>
+    <p>Merci pour votre demande de contact chez <strong>Hercules Merchandising</strong>. Nous avons bien reçu le message suivant :</p>
 
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; margin:0 0 20px 0;">
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Name:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Nom :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.name)}</td>
       </tr>
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Email:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>E-mail :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.email)}</td>
       </tr>
       ${data.phone ? `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Phone:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Téléphone :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.phone)}</td>
       </tr>
       ` : ''}
       ${data.message ? `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc; vertical-align:top;"><strong>Message:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc; vertical-align:top;"><strong>Message :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.message).replace(/\n/g, '<br>')}</td>
       </tr>
       ` : ''}
       ${filesHtml}
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Page:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Page :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><a href="${escapeHtml(data.pageUrl)}">${escapeHtml(data.pageTitle)}</a></td>
       </tr>
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Date/Time:</strong></td>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.date)} at ${escapeHtml(data.time)}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Date/Heure :</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.date)} à ${escapeHtml(data.time)}</td>
       </tr>
     </table>
 
-    <p>We will get back to you as soon as possible.</p>
+    <p>Nous vous répondrons dans les plus brefs délais.</p>
 
     ${getEmailFooter()}
   </div>
@@ -488,7 +488,7 @@ function getQuantityRequestEmailHtml(data: {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Quote Request - Hercules Merchandising</title>
+  <title>Demande de devis - Hercules Merchandising</title>
   <style>
     body { margin:0; padding:0; background:#ffffff; color:#000; font-family:Arial,sans-serif; font-size:13px; }
     .container { max-width:700px; margin:0 auto; padding:20px 16px; }
@@ -503,22 +503,22 @@ function getQuantityRequestEmailHtml(data: {
   <div class="container">
     ${getEmailHeader()}
 
-    <p>Hello <strong>${escapeHtml(data.name)}</strong>,</p>
-    <p>Thank you for your quote request at <strong>Hercules Merchandising</strong>.</p>
+    <p>Bonjour <strong>${escapeHtml(data.name)}</strong>,</p>
+    <p>Merci pour votre demande de devis chez <strong>Hercules Merchandising</strong>.</p>
 
     <!-- Customer Details -->
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; margin:0 0 20px 0;">
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Name:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Nom :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.name)}</td>
       </tr>
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Email:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>E-mail :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.email)}</td>
       </tr>
       ${data.phone ? `
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Phone:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Téléphone :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.phone)}</td>
       </tr>
       ` : ''}
@@ -533,37 +533,37 @@ function getQuantityRequestEmailHtml(data: {
           <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;">
             ${data.attributes ? `
             <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Selected Options</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Options sélectionnées</td>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.attributes)}</td>
             </tr>
             ` : ''}
             ${data.addons ? `
             <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Add-ons</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Options supplémentaires</td>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.addons)}</td>
             </tr>
             ` : ''}
             <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Quantity</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Quantité</td>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.quantity)}</td>
             </tr>
             <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Price per piece</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Prix à l'unité</td>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.pricePerPiece)}</td>
             </tr>
             ${data.desiredDate ? `
             <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Desired delivery date</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Date de livraison souhaitée</td>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.desiredDate)}</td>
             </tr>
             ` : ''}
             <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Shipping</td>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right; color:#10C99E;">Free</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Livraison</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right; color:#10C99E;">Gratuite</td>
             </tr>
             <tr>
-              <td style="padding:4px 6px;">Setup fee</td>
-              <td style="padding:4px 6px; text-align:right; color:#10C99E;">Free</td>
+              <td style="padding:4px 6px;">Frais de mise en place</td>
+              <td style="padding:4px 6px; text-align:right; color:#10C99E;">Gratuits</td>
             </tr>
           </table>
         </td>
@@ -575,7 +575,7 @@ function getQuantityRequestEmailHtml(data: {
     ${data.message ? `
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; margin:15px 0;">
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc; vertical-align:top;"><strong>Additional message:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc; vertical-align:top;"><strong>Message supplémentaire :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.message).replace(/\n/g, '<br>')}</td>
       </tr>
     </table>
@@ -583,12 +583,12 @@ function getQuantityRequestEmailHtml(data: {
 
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; margin:15px 0;">
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Product link:</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Lien produit :</strong></td>
         <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><a href="${escapeHtml(data.pageUrl)}">${escapeHtml(data.pageUrl)}</a></td>
       </tr>
       <tr>
-        <td style="padding:6px 8px;"><strong>Date/Time:</strong></td>
-        <td style="padding:6px 8px;">${escapeHtml(data.date)} at ${escapeHtml(data.time)}</td>
+        <td style="padding:6px 8px;"><strong>Date/Heure :</strong></td>
+        <td style="padding:6px 8px;">${escapeHtml(data.date)} à ${escapeHtml(data.time)}</td>
       </tr>
     </table>
 
@@ -596,15 +596,15 @@ function getQuantityRequestEmailHtml(data: {
     <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:20px;">
       <tr>
         <td style="text-align:right;">
-          <a class="btn btn-green" href="${SITE_URL}/contact/" style="margin-left:10px;">Contact us</a>
+          <a class="btn btn-green" href="${SITE_URL}/contactez-nous/" style="margin-left:10px;">Nous contacter</a>
         </td>
       </tr>
     </table>
 
     <br>
     <p style="text-align:center; color:#253461; margin:0;">
-      We will get back to you with a quote as soon as possible.<br>
-      Hercules Merchandising terms and conditions apply.
+      Nous vous enverrons un devis dans les plus brefs délais.<br>
+      Les conditions générales de vente d'Hercules Merchandising s'appliquent.
     </p>
 
     ${getEmailFooter()}
@@ -625,7 +625,7 @@ function getNewsletterNotificationEmailHtml(data: {
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>New Newsletter Subscription - Hercules Merchandising</title>
+  <title>Nouvel abonnement à la newsletter - Hercules Merchandising</title>
   <style>
     body { margin:0; padding:0; background:#ffffff; color:#000; font-family:Arial,sans-serif; font-size:13px; }
     .container { max-width:700px; margin:0 auto; padding:20px 16px; }
@@ -636,8 +636,8 @@ function getNewsletterNotificationEmailHtml(data: {
   <div class="container">
     ${getEmailHeader()}
 
-    <h2 style="color:#10C99E; margin:20px 0 10px;">New Newsletter Subscription</h2>
-    <p>A new person has subscribed to the newsletter:</p>
+    <h2 style="color:#10C99E; margin:20px 0 10px;">Nouvel abonnement à la newsletter</h2>
+    <p>Une nouvelle personne s'est abonnée à la newsletter :</p>
 
     <div style="background:#E0F9F3; padding:20px; border-radius:10px; text-align:center; margin:20px 0;">
       <div style="font-size:18px; font-weight:bold; color:#253461;">${escapeHtml(data.email)}</div>
@@ -645,11 +645,11 @@ function getNewsletterNotificationEmailHtml(data: {
 
     <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; margin:20px 0;">
       <tr>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Date:</strong></td>
-        <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.date)} at ${escapeHtml(data.time)}</td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;"><strong>Date :</strong></td>
+        <td style="padding:6px 8px; border-bottom:1px solid #ccc;">${escapeHtml(data.date)} à ${escapeHtml(data.time)}</td>
       </tr>
       <tr>
-        <td style="padding:6px 8px;"><strong>Source:</strong></td>
+        <td style="padding:6px 8px;"><strong>Source :</strong></td>
         <td style="padding:6px 8px;">${escapeHtml(data.source)}</td>
       </tr>
     </table>
@@ -703,10 +703,10 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
     const lastName = (body as any).lastName || '';
     const name = firstName && lastName ? `${firstName} ${lastName}` : body.name || '';
 
-    // Get current date/time in German format
+    // Get current date/time in French format
     const now = new Date();
-    const date = body.date || now.toLocaleDateString('en-GB');
-    const time = body.time || now.toLocaleTimeString('en-GB');
+    const date = body.date || now.toLocaleDateString('fr-FR');
+    const time = body.time || now.toLocaleTimeString('fr-FR');
 
     // Process file uploads to R2 if present
     let uploadedFiles: UploadedFileResult[] = [];
@@ -820,7 +820,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
 
         if (formType === 'quantity' || formType === 'quantity_request' || contactData.productName) {
           // Quantity request / Product inquiry
-          subject = `Quote Request: ${contactData.productName || 'Product'} - ${contactData.quantity} pcs`;
+          subject = `Demande de devis : ${contactData.productName || 'Produit'} - ${contactData.quantity} pcs`;
           htmlContent = getQuantityRequestEmailHtml({
             name: contactData.name,
             email: contactData.email,
@@ -839,7 +839,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
           });
         } else {
           // General contact form (with file URLs)
-          subject = `Contact Request from ${contactData.name}`;
+          subject = `Demande de contact de ${contactData.name}`;
           htmlContent = getContactFormEmailHtml({
             name: contactData.name,
             email: contactData.email,
@@ -881,7 +881,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
           emailParams = {
             to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
             replyTo: { email: contactData.email, name: contactData.name },
-            subject: `Urgent Quote Request - ${contactData.productName || 'Express'}`,
+            subject: `Demande urgente de devis - ${contactData.productName || 'Express'}`,
             htmlContent,
             attachment: brevoAttachments.length > 0 ? brevoAttachments : undefined,
           };
@@ -958,10 +958,10 @@ async function handleNewsletter(request: Request, env: Env): Promise<Response> {
       );
     }
 
-    // Get current date/time in German format
+    // Get current date/time in French format
     const now = new Date();
-    const date = now.toLocaleDateString('en-GB');
-    const time = now.toLocaleTimeString('en-GB');
+    const date = now.toLocaleDateString('fr-FR');
+    const time = now.toLocaleTimeString('fr-FR');
     const source = body.source || 'Unknown';
 
     // Track results
@@ -986,7 +986,7 @@ async function handleNewsletter(request: Request, env: Env): Promise<Response> {
 
         const emailResult = await sendEmail(env, {
           to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
-          subject: `New Newsletter Subscription: ${email}`,
+          subject: `Nouvel abonnement newsletter : ${email}`,
           htmlContent,
         });
 

@@ -10,28 +10,35 @@ interface Env {
   WORDPRESS_ORIGIN: string;
 }
 
-// Paths that should NEVER be cached (dynamic/personalized) - UK English
+// Paths that should NEVER be cached (dynamic/personalized)
 const NO_CACHE_PATHS = [
   '/cart',
   '/checkout',
-  '/my-account',
-  '/quote-generator',
+  '/panier',
+  '/commande',
+  '/thank-you',
+  '/merci',
+  '/mon-compte',
+  '/generateur-de-devis',
   '/wp-admin',
   '/wp-login.php',
   '/wp-json',
   '/wc-api',
 ];
 
-// Paths that should go to WordPress - UK English
+// Paths that should go to WordPress
 const WORDPRESS_PATHS = [
-  // Shop & Cart & Checkout
-  '/shop',
+  // Shop & Cart & Checkout (French slugs - FR site)
+  '/boutique',   // French WooCommerce shop slug
   '/cart',
   '/checkout',
+  '/panier',
+  '/commande',
   '/thank-you',
+  '/merci',
 
-  // Account
-  '/my-account',
+  // Account (French slug only - /my-account redirects to /mon-compte)
+  '/mon-compte',
 
   // WordPress Core
   '/wp-admin',
@@ -49,25 +56,17 @@ const WORDPRESS_PATHS = [
   // Product purchase (WordPress for add-to-cart functionality)
   '/buy',  // Astro links here for actual purchase - routes to WordPress /products/
 
-  // Contact & Quote pages (contact-us is served by Astro)
-  '/quote-generator',
-
-  // About & Info pages
-  '/about-us',
-  '/delivery-and-returns',
-  '/payment-methods',
-
-  // Legal pages (legal-notice, terms-of-service, privacy-policy served by Astro)
-  '/terms-and-conditions',
+  // Quote page (served by WordPress)
+  '/generateur-de-devis',
 ];
 
-// Paths that should always go to Astro - UK English
+// Paths that should always go to Astro - French
 const ASTRO_PATHS = [
   '/',
   '/collections',
-  '/blogs/uk',
-  '/products',  // Product detail pages (Astro version)
-  '/wishlist',  // Wishlist page (localStorage-based, no WordPress)
+  '/blogs/news',
+  '/products',           // Product detail pages (Astro version)
+  '/liste-de-souhaits',  // Wishlist page (localStorage-based, no WordPress)
 ];
 
 function shouldBypassCache(pathname: string, search: string): boolean {
@@ -191,36 +190,21 @@ export default {
     }
 
     // ============================================
-    // 301 REDIRECTS - Old/alternate URLs to UK URL structure
+    // 301 REDIRECTS - Old/alternate URLs to FR URL structure
     // ============================================
 
-    // /blog -> /blogs/uk (UK blog)
-    if (pathname === '/blog' || pathname === '/blog/') {
-      return Response.redirect(new URL('/blogs/uk', url.origin).toString(), 301);
+    // /blog, /blogs -> /blogs/news/ (FR blog)
+    if (pathname === '/blog' || pathname === '/blog/' || pathname === '/blogs' || pathname === '/blogs/') {
+      return Response.redirect(new URL('/blogs/news/', url.origin).toString(), 301);
     }
 
-    // /blogs -> /blogs/uk (redirect to UK blog)
-    if (pathname === '/blogs' || pathname === '/blogs/') {
-      return Response.redirect(new URL('/blogs/uk', url.origin).toString(), 301);
+    // /blogs/fr -> /blogs/news/ (old blog path)
+    if (pathname === '/blogs/fr' || pathname === '/blogs/fr/') {
+      return Response.redirect(new URL('/blogs/news/', url.origin).toString(), 301);
     }
-
-    // German URLs -> English (for any old links or crawlers)
-    // /kollektionen/* -> /collections/*
-    if (pathname === '/kollektionen' || pathname === '/kollektionen/') {
-      return Response.redirect(new URL('/collections/', url.origin).toString(), 301);
-    }
-    if (pathname.startsWith('/kollektionen/')) {
-      const slug = pathname.replace('/kollektionen/', '');
-      return Response.redirect(new URL(`/collections/${slug}`, url.origin).toString(), 301);
-    }
-
-    // /produkte/* -> /products/*
-    if (pathname === '/produkte' || pathname === '/produkte/') {
-      return Response.redirect(new URL('/products/', url.origin).toString(), 301);
-    }
-    if (pathname.startsWith('/produkte/')) {
-      const slug = pathname.replace('/produkte/', '');
-      return Response.redirect(new URL(`/products/${slug}`, url.origin).toString(), 301);
+    if (pathname.startsWith('/blogs/fr/')) {
+      const slug = pathname.replace('/blogs/fr/', '');
+      return Response.redirect(new URL(`/blogs/news/${slug}`, url.origin).toString(), 301);
     }
 
     // /product-category/* -> /collections/* (WooCommerce default category URL)
@@ -238,9 +222,6 @@ export default {
       return Response.redirect(new URL(`/products/${slug}`, url.origin).toString(), 301);
     }
 
-    // /shop -> route to WordPress (WooCommerce shop page, same as live site)
-    // Previously redirected to /collections/ but shop page needs to exist for WooCommerce
-
     // /category/* -> /collections/*
     if (pathname === '/category' || pathname === '/category/') {
       return Response.redirect(new URL('/collections/', url.origin).toString(), 301);
@@ -250,20 +231,40 @@ export default {
       return Response.redirect(new URL(`/collections/${slug}`, url.origin).toString(), 301);
     }
 
-    // /contact -> /contact-us
-    if (pathname === '/contact' || pathname === '/contact/') {
-      return Response.redirect(new URL('/contact-us/', url.origin).toString(), 301);
+    // Old English quote URL -> French
+    if (pathname === '/quote-generator' || pathname === '/quote-generator/') {
+      return Response.redirect(new URL('/generateur-de-devis/', url.origin).toString(), 301);
     }
 
-    // German page redirects
-    if (pathname === '/warenkorb' || pathname === '/warenkorb/') {
-      return Response.redirect(new URL('/cart/', url.origin).toString(), 301);
+    // Old English page slugs -> French slugs
+    if (pathname === '/about' || pathname === '/about/' || pathname === '/about-us' || pathname === '/about-us/') {
+      return Response.redirect(new URL('/a-propos/', url.origin).toString(), 301);
     }
-    if (pathname === '/kasse' || pathname === '/kasse/') {
-      return Response.redirect(new URL('/checkout/', url.origin).toString(), 301);
+    if (pathname === '/contact' || pathname === '/contact/' || pathname === '/contact-us' || pathname === '/contact-us/') {
+      return Response.redirect(new URL('/contactez-nous/', url.origin).toString(), 301);
     }
-    if (pathname === '/mein-konto' || pathname.startsWith('/mein-konto/')) {
-      return Response.redirect(new URL('/my-account/', url.origin).toString(), 301);
+    if (pathname === '/wishlist' || pathname === '/wishlist/') {
+      return Response.redirect(new URL('/liste-de-souhaits/', url.origin).toString(), 301);
+    }
+    if (pathname === '/deliveries-and-returns' || pathname === '/deliveries-and-returns/' ||
+        pathname === '/delivery-and-returns' || pathname === '/delivery-and-returns/') {
+      return Response.redirect(new URL('/livraisons-et-retours/', url.origin).toString(), 301);
+    }
+    if (pathname === '/payment-methods' || pathname === '/payment-methods/') {
+      return Response.redirect(new URL('/moyens-de-paiement/', url.origin).toString(), 301);
+    }
+    if (pathname === '/legal-notice' || pathname === '/legal-notice/') {
+      return Response.redirect(new URL('/mentions-legales/', url.origin).toString(), 301);
+    }
+    if (pathname === '/terms-of-service' || pathname === '/terms-of-service/' ||
+        pathname === '/terms-and-conditions' || pathname === '/terms-and-conditions/') {
+      return Response.redirect(new URL('/conditions-generales-dutilisation/', url.origin).toString(), 301);
+    }
+    if (pathname === '/privacy-policy' || pathname === '/privacy-policy/') {
+      return Response.redirect(new URL('/politique-de-confidentialite/', url.origin).toString(), 301);
+    }
+    if (pathname === '/my-account' || pathname === '/my-account/') {
+      return Response.redirect(new URL('/mon-compte/', url.origin).toString(), 301);
     }
 
     // Handle CORS preflight for API requests
@@ -440,13 +441,20 @@ export default {
       // that contains absolute URLs to WordPress origin
       const contentType = response.headers.get('Content-Type') || '';
 
-      // Rewrite URLs in HTML, JSON, CSS, and JavaScript files
-      const shouldRewriteContent =
+      // Skip rewriting for hashed static assets — they use relative paths only,
+      // never contain domain URLs, and must stream to avoid blocking load event
+      const isStaticAsset =
+        pathname.startsWith('/_astro/') ||
+        pathname.startsWith('/images/') ||
+        pathname.startsWith('/fonts/');
+
+      // Rewrite URLs in HTML, JSON, CSS, and JavaScript files (but not static assets)
+      const shouldRewriteContent = !isStaticAsset && (
         contentType.includes('text/html') ||
         contentType.includes('application/json') ||
         contentType.includes('text/css') ||
         contentType.includes('application/javascript') ||
-        contentType.includes('text/javascript');
+        contentType.includes('text/javascript'));
 
       if (shouldRewriteContent) {
         let body = await response.text();

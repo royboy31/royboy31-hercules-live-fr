@@ -53,6 +53,7 @@ export default defineConfig({
           '/checkout',
           '/my-account',
           '/quote-generator',
+          '/generateur-de-devis',
           '/search',
           '/api/',
         ];

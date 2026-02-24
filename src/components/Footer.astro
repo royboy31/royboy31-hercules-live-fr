@@ -8,23 +8,23 @@ import ContactFormPopup from './ContactFormPopup.tsx';
   <div class="newsletter-section">
     <div class="newsletter-container">
       <div class="newsletter-content">
-        <h2 class="newsletter-heading">Interested?</h2>
+        <h2 class="newsletter-heading">Intéressé ?</h2>
         <form class="newsletter-form" id="newsletter-form" action="/api/newsletter" method="POST">
           <div class="form-row">
             <input
               type="email"
               name="email"
-              placeholder="Subscribe to newsletter"
+              placeholder="S'inscrire à la newsletter"
               required
               class="newsletter-input"
               id="newsletter-email"
             />
-            <button type="submit" class="newsletter-button" id="newsletter-submit">Send</button>
+            <button type="submit" class="newsletter-button" id="newsletter-submit">Soumettre</button>
           </div>
           <div class="newsletter-message" id="newsletter-message"></div>
         </form>
         <p class="newsletter-description">
-          Be the first to see our latest sports merchandise – Subscribe to our newsletter!
+          Soyez le premier à découvrir nos derniers articles de merchandising sportif – Inscrivez-vous à notre newsletter !
         </p>
       </div>
     </div>
@@ -39,7 +39,7 @@ import ContactFormPopup from './ContactFormPopup.tsx';
           <img
             src="/images/hercules-logo-original1.webp"
             srcset="/images/hercules-logo-original1.webp 1x, /images/hercules-logo-original1-2x.webp 2x"
-            alt="Hercules Merchandise"
+            alt="Hercules Merchandising"
             class="footer-logo"
             loading="lazy"
             width="176"
@@ -50,39 +50,39 @@ import ContactFormPopup from './ContactFormPopup.tsx';
 
       <!-- About Us Column -->
       <div class="footer-column">
-        <h3 class="footer-heading">About Us</h3>
+        <h3 class="footer-heading">À propos</h3>
         <ul class="footer-links">
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/blogs/uk">Blog</a></li>
-          <li><a href="/deliveries-and-returns/">Delivery & Returns</a></li>
-          <li><a href="/payment-methods/">Payment Methods</a></li>
-          <li><a href="/contact-us/">Contact</a></li>
-          <li><a href="/my-account/">My Account</a></li>
+          <li><a href="/a-propos/">À propos de nous</a></li>
+          <li><a href="/blogs/news/">Blog</a></li>
+          <li><a href="/livraisons-et-retours/">Livraisons et retours</a></li>
+          <li><a href="/moyens-de-paiement/">Moyens de paiement</a></li>
+          <li><a href="/contactez-nous/">Contact</a></li>
+          <li><a href="/mon-compte/">Mon compte</a></li>
         </ul>
       </div>
 
       <!-- Sports Column -->
       <div class="footer-column">
-        <h3 class="footer-heading">Sports</h3>
+        <h3 class="footer-heading">Types de sports</h3>
         <ul class="footer-links">
           <li><a href="/collections/football/">Football</a></li>
           <li><a href="/collections/rugby/">Rugby</a></li>
-          <li><a href="/collections/basketball/">Basketball</a></li>
+          <li><a href="/collections/basketball/">Basket-ball</a></li>
           <li><a href="/collections/running/">Running</a></li>
-          <li><a href="/collections/cycling/">Cycling</a></li>
+          <li><a href="/collections/cyclisme/">Cyclisme</a></li>
           <li><a href="/collections/volleyball/">Volleyball</a></li>
         </ul>
       </div>
 
       <!-- Products Column -->
       <div class="footer-column">
-        <h3 class="footer-heading">Products</h3>
+        <h3 class="footer-heading">Produits</h3>
         <ul class="footer-links">
-          <li><a href="/collections/custom-scarves/">Scarves</a></li>
-          <li><a href="/collections/custom-beanies/">Beanies</a></li>
-          <li><a href="/collections/custom-printed-sportswear/">Sportswear</a></li>
-          <li><a href="/collections/custom-pennants/">Pennants</a></li>
-          <li><a href="/collections/accessories/">Accessories</a></li>
+          <li><a href="/collections/echarpes-personnalisees/">Écharpes</a></li>
+          <li><a href="/collections/bonnets-personnalises-football/">Bonnets</a></li>
+          <li><a href="/collections/equipements-personnalises/">Vêtements de sport</a></li>
+          <li><a href="/collections/fanions-personnalises-football/">Fanions</a></li>
+          <li><a href="/collections/accessoires-de-football/">Accessoires</a></li>
           <li><a href="/collections/tifo/">Tifo</a></li>
         </ul>
       </div>
@@ -90,15 +90,15 @@ import ContactFormPopup from './ContactFormPopup.tsx';
       <!-- Reseller Column -->
       <div class="footer-column reseller-column">
         <div class="reseller-top">
-          <h3 class="footer-heading">Reseller or professional club?</h3>
-          <p class="footer-text">We offer bulk discounts.</p>
+          <h3 class="footer-heading">Revendeur ou club professionnel ?</h3>
+          <p class="footer-text">Nous offrons des remises sur les quantités.</p>
         </div>
         <div class="reseller-bottom">
-          <ContactFormPopup client:visible triggerType="button" triggerText="Contact" triggerClassName="footer-cta-popup" />
+          <ContactFormPopup client:visible triggerType="button" triggerText="Contactez-nous" triggerClassName="footer-cta-popup" />
           <div class="footer-phone">
-          <a href="tel:+442039664881">
+          <a href="tel:+33973030295">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
-            <span>(+44) 0203 9664881</span>
+            <span>09 73 03 02 95</span>
           </a>
           </div>
         </div>
@@ -112,38 +112,32 @@ import ContactFormPopup from './ContactFormPopup.tsx';
       <!-- Row 1: Legal links, Payment icons, Language switcher -->
       <div class="bottom-footer-row">
         <div class="legal-links">
-          <a href="/legal-notice/">Legal Notice</a>
-          <a href="/terms-of-service/">Terms of Service</a>
-          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/mentions-legales/">Mentions légales</a>
+          <a href="/conditions-generales-dutilisation/">Conditions générales</a>
+          <a href="/politique-de-confidentialite/">Politique de confidentialité</a>
         </div>
         <div class="payment-icons">
           <img src="/images/pay-her-2.png" alt="Payment Methods" loading="lazy" width="300" height="30" />
         </div>
         <div class="language-switcher">
           <button class="language-current" type="button">
-<img src="/images/flags/uk-flag.png" alt="UK Flag - Current Language" width="24" height="24" loading="lazy" />
-            <span>United Kingdom</span>
+<img src="/images/flags/fr-flag.png" alt="Drapeau français - Langue actuelle" width="24" height="24" loading="lazy" />
+            <span>France</span>
             <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
               <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <ul class="language-dropdown">
             <li>
+              <a href="https://hercules-merchandise.co.uk/" target="_blank">
+<img src="/images/flags/uk-flag.png" alt="Drapeau britannique - Site Royaume-Uni" width="24" height="24" loading="lazy" />
+                <span>Royaume-Uni</span>
+              </a>
+            </li>
+            <li>
               <a href="https://hercules-merchandise.de/" target="_blank">
-<img src="/images/german.png" alt="German Flag - Visit German Website" width="24" height="24" loading="lazy" />
-                <span>Germany</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://hercules-merchandising.fr/" target="_blank">
-<img src="/images/flags/fr-flag.png" alt="French Flag - Visit French Website" width="24" height="24" loading="lazy" />
-                <span>France</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.hercules-merchandise.nl/" target="_blank">
-<img src="/images/flags/nl-flag.png" alt="Dutch Flag - Visit Dutch Website" width="24" height="24" loading="lazy" />
-                <span>Netherlands</span>
+<img src="/images/german.png" alt="Drapeau allemand - Site Allemagne" width="24" height="24" loading="lazy" />
+                <span>Allemagne</span>
               </a>
             </li>
           </ul>
@@ -151,7 +145,7 @@ import ContactFormPopup from './ContactFormPopup.tsx';
       </div>
       <!-- Row 2: Copyright -->
       <div class="copyright">
-        © 2025. Hercules Merchandise UK. All rights reserved | Design & Development by <a href="/design-by-perelweb">Perel Web Studio</a>
+        © 2025. Hercules Merchandising FR. Tous droits réservés | Conception & Développement par <a href="/design-by-perelweb">Perel Web Studio</a>
       </div>
     </div>
   </div>
@@ -744,7 +738,7 @@ import ContactFormPopup from './ContactFormPopup.tsx';
 
         // Disable button and show loading state
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Envoi...';
         messageDiv.className = 'newsletter-message';
         messageDiv.textContent = '';
 
@@ -760,17 +754,17 @@ import ContactFormPopup from './ContactFormPopup.tsx';
           // Check if redirected (success) or got JSON response
           if (response.redirected || response.ok) {
             messageDiv.className = 'newsletter-message success';
-            messageDiv.textContent = 'Thank you! You have successfully subscribed.';
+            messageDiv.textContent = 'Merci ! Vous êtes maintenant inscrit(e) à notre newsletter.';
             emailInput.value = '';
           } else {
             throw new Error('Subscription failed');
           }
         } catch (error) {
           messageDiv.className = 'newsletter-message error';
-          messageDiv.textContent = 'An error occurred. Please try again.';
+          messageDiv.textContent = 'Une erreur est survenue. Veuillez réessayer.';
         } finally {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Send';
+          submitBtn.textContent = 'Soumettre';
         }
       });
     }

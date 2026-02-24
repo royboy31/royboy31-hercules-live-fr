@@ -93,12 +93,12 @@ class SessionManager {
   }
 
   async fetchSession(force = false): Promise<void> {
-    // If already fetching, return the existing promise (deduplication)
-    if (this.fetchPromise && !force) {
+    // Always deduplicate if a fetch is already in flight — even forced calls
+    if (this.fetchPromise) {
       return this.fetchPromise;
     }
 
-    // Check cache first
+    // Check cache first (skipped when force=true)
     if (!force && typeof window !== 'undefined') {
       try {
         const cached = localStorage.getItem(CACHE_KEY);

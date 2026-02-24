@@ -293,6 +293,6 @@ function hercules_build_product_config($product) {
         'tax_percent' => $tax_percent,
         'estimated_delivery_date' => $estimated_date,
         'minimum_quantity' => $minimum_quantity,
-        'quote_page_url' => '/quote-generator/',
+        'quote_page_url' => '/generateur-de-devis/',
     ], 200);
 }

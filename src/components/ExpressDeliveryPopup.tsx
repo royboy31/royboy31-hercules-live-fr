@@ -144,20 +144,20 @@ export default function ExpressDeliveryPopup({
 
     // Validation
     if (!formData.desiredDate || !formData.desiredDate.trim()) {
-      alert('Please select a delivery date.');
+      alert('Veuillez sélectionner une date de livraison.');
       return;
     }
     if (!formData.name || !formData.name.trim()) {
-      alert('Please enter your name.');
+      alert('Veuillez entrer votre nom.');
       return;
     }
     if (!formData.email || !formData.email.trim()) {
-      alert('Please enter your email address.');
+      alert('Veuillez entrer votre adresse e-mail.');
       return;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email.trim())) {
-      alert('Please enter a valid email address.');
+      alert('Veuillez entrer une adresse e-mail valide.');
       return;
     }
 
@@ -184,15 +184,15 @@ export default function ExpressDeliveryPopup({
       submitData.append('email', formData.email);
       submitData.append('phone', formData.phone);
       submitData.append('message', formData.message || '');
-      submitData.append('date', new Date().toLocaleDateString('en-GB'));
-      submitData.append('time', new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
+      submitData.append('date', new Date().toLocaleDateString('fr-FR'));
+      submitData.append('time', new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }));
       submitData.append('pageUrl', window.location.href);
       submitData.append('pageTitle', productName);
       submitData.append('formType', 'expressdelivery');
       submitData.append('productName', productName);
       submitData.append('productId', String(productId));
       submitData.append('quantity', String(quantity));
-      submitData.append('pricePerPiece', `${currencySymbol}${pricePerPiece.toFixed(2)}`);
+      submitData.append('pricePerPiece', `${pricePerPiece.toFixed(2).replace('.', ',')} ${currencySymbol}`);
       submitData.append('desiredDate', formData.desiredDate);
       submitData.append('attributes', attributesStr);
       submitData.append('addons', addonsStr);
@@ -214,7 +214,7 @@ export default function ExpressDeliveryPopup({
       setIsSuccess(true);
     } catch (err) {
       console.error('Urgent request failed:', err);
-      alert('An error occurred. Please try again later.');
+      alert('Une erreur est survenue. Veuillez réessayer.');
     } finally {
       setIsSubmitting(false);
     }
@@ -242,7 +242,7 @@ export default function ExpressDeliveryPopup({
             type="button"
             onClick={onClose}
             className="urgent-popup-close"
-            aria-label="Close"
+            aria-label="Fermer"
           >
             ×
           </button>
@@ -250,9 +250,9 @@ export default function ExpressDeliveryPopup({
           {isSuccess ? (
             /* Success Message */
             <div className="success-content" style={{ textAlign: 'center', padding: '20px 0' }}>
-              <h3 style={{ marginBottom: '20px' }}>THANK YOU FOR CONTACTING US!</h3>
+              <h3 style={{ marginBottom: '20px' }}>MERCI DE NOUS AVOIR CONTACTÉS !</h3>
               <p style={{ marginBottom: '30px' }}>
-                Your enquiry has been successfully submitted. One of our team members will get back to you as soon as possible.
+                Votre demande a bien été envoyée. Un membre de notre équipe vous répondra dans les plus brefs délais.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left', maxWidth: '300px', margin: '0 auto 30px' }}>
                 <li style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -260,21 +260,21 @@ export default function ExpressDeliveryPopup({
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                   </svg>
-                  <span>Name: {formData.name}</span>
+                  <span>Nom : {formData.name}</span>
                 </li>
                 <li style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#253461" strokeWidth="2">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
-                  <span>Email: {formData.email}</span>
+                  <span>E-mail : {formData.email}</span>
                 </li>
                 {formData.phone && (
                   <li style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#253461" strokeWidth="2">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    <span>Phone: {formData.phone}</span>
+                    <span>Téléphone : {formData.phone}</span>
                   </li>
                 )}
               </ul>
@@ -292,14 +292,14 @@ export default function ExpressDeliveryPopup({
                   fontWeight: 500
                 }}
               >
-                Close
+                Fermer
               </button>
             </div>
           ) : (
             /* Form Content */
             <>
-          <h3>URGENT DELIVERY REQUEST</h3>
-          <p>Please select your required delivery date and we'll get back to you.</p>
+          <h3>DEMANDE DE LIVRAISON URGENTE</h3>
+          <p>Veuillez sélectionner votre date de livraison souhaitée et nous vous recontacterons.</p>
 
           {/* Product Summary - Simple UL with bullets */}
           <ul style={{ marginTop: '15px' }}>
@@ -319,8 +319,8 @@ export default function ExpressDeliveryPopup({
                 </li>
               );
             })}
-            <li>Quantity: {quantity}</li>
-            <li>Price per piece: {currencySymbol}{pricePerPiece.toFixed(2)}</li>
+            <li>Quantité : {quantity}</li>
+            <li>Prix par pièce : {pricePerPiece.toFixed(2).replace('.', ',')} {currencySymbol}</li>
           </ul>
 
           <form onSubmit={handleSubmit}>
@@ -342,12 +342,12 @@ export default function ExpressDeliveryPopup({
               </div>
               <div className="kd-col-50">
                 <label>
-                  Name<span style={{ color: 'red' }}> *</span>
+                  Nom<span style={{ color: 'red' }}> *</span>
                 </label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your name"
+                  placeholder="Votre nom"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
@@ -359,11 +359,11 @@ export default function ExpressDeliveryPopup({
             {/* Row 2: Phone | Email */}
             <div className="kd-row">
               <div className="kd-col-50">
-                <label>Phone Number</label>
+                <label>Numéro de téléphone</label>
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone number"
+                  placeholder="Numéro de téléphone"
                   value={formData.phone}
                   onChange={handleInputChange}
                   style={{ marginTop: '10px', padding: '5px', width: '100%' }}
@@ -371,12 +371,12 @@ export default function ExpressDeliveryPopup({
               </div>
               <div className="kd-col-50">
                 <label>
-                  Email<span style={{ color: 'red' }}> *</span>
+                  E-mail<span style={{ color: 'red' }}> *</span>
                 </label>
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email address"
+                  placeholder="Adresse e-mail"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
@@ -391,7 +391,7 @@ export default function ExpressDeliveryPopup({
                 <label>Message</label>
                 <textarea
                   name="message"
-                  placeholder="Your message"
+                  placeholder="Votre message"
                   value={formData.message}
                   onChange={handleInputChange}
                   style={{
@@ -407,7 +407,7 @@ export default function ExpressDeliveryPopup({
 
             {/* Row 4: File Upload */}
             <div className="kd-col-100" style={{ marginTop: '15px' }}>
-              <label>Attach Files (max. 10, 20 MB total)</label>
+              <label>Joindre des fichiers (max. 10, 20 Mo au total)</label>
               <div style={{ marginTop: '10px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
                 <input
                   type="file"
@@ -424,9 +424,9 @@ export default function ExpressDeliveryPopup({
                     <polyline points="17 8 12 3 7 8" />
                     <line x1="12" y1="3" x2="12" y2="15" />
                   </svg>
-                  <span>Select Files</span>
+                  <span>Sélectionner des fichiers</span>
                 </label>
-                <span className="urgent-file-hint">JPG, PNG, PDF only</span>
+                <span className="urgent-file-hint">JPG, PNG, PDF uniquement</span>
               </div>
               {formData.files.length > 0 && (
                 <div className="urgent-file-list">
@@ -455,7 +455,7 @@ export default function ExpressDeliveryPopup({
                   cursor: 'pointer'
                 }}
               >
-                Cancel
+                Annuler
               </button>
               <button
                 type="submit"
@@ -469,7 +469,7 @@ export default function ExpressDeliveryPopup({
                   cursor: isSubmitting ? 'not-allowed' : 'pointer'
                 }}
               >
-                {isSubmitting ? 'Loading...' : 'Submit'}
+                {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
               </button>
             </div>
           </form>

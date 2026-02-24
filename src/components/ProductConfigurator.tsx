@@ -198,7 +198,7 @@ function getInterpolatedPriceWithAddons(
   return combinedTiers[0]?.price || 0;
 }
 
-export default function ProductConfigurator({ productSlug, workerUrl = 'https://hercules-product-sync-fr-production.gilles-86d.workers.dev' }: ProductConfiguratorProps) {
+export default function ProductConfigurator({ productSlug, workerUrl = 'https://hercules-product-sync-fr.gilles-86d.workers.dev' }: ProductConfiguratorProps) {
   const [config, setConfig] = useState<ProductConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -512,20 +512,20 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
         // Small delay to let user see the cart update, then redirect
         setTimeout(() => {
           if (redirectTo === 'quote') {
-            window.location.href = '/quote-generator/';
+            window.location.href = config.quote_page_url || '/generateur-de-devis/';
           } else {
-            window.location.href = '/cart/';
+            window.location.href = '/panier/';
           }
         }, 500);
       } else {
-        const errorMsg = result.message || 'An error occurred';
-        setAddToCartError(typeof errorMsg === 'string' ? errorMsg : 'An error occurred');
+        const errorMsg = result.message || 'Une erreur est survenue';
+        setAddToCartError(typeof errorMsg === 'string' ? errorMsg : 'Une erreur est survenue');
         setAddToCartLoading(false);
         setLoadingAction(null);
       }
     } catch (error) {
       console.error('[ProductConfigurator] Add to cart error:', error);
-      setAddToCartError('An error occurred. Please try again later.');
+      setAddToCartError('Une erreur est survenue. Veuillez réessayer.');
       setAddToCartLoading(false);
       setLoadingAction(null);
     }
@@ -536,7 +536,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     return (
       <div id="pearl-wc-steps-form">
         <div className="pearl-step-indicator">
-          <h2>Loading...</h2>
+          <h2>Chargement...</h2>
         </div>
       </div>
     );
@@ -547,7 +547,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     return (
       <div id="pearl-wc-steps-form">
         <div className="pearl-step-indicator">
-          <h2>Error loading configuration</h2>
+          <h2>Erreur de chargement de la configuration</h2>
           {error && <p style={{ color: '#dc3545', fontSize: '14px', marginTop: '10px' }}>{error}</p>}
           <p style={{ color: '#666', fontSize: '12px', marginTop: '5px' }}>Slug: {productSlug}</p>
         </div>
@@ -561,7 +561,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     textarea.innerHTML = str;
     return textarea.value;
   };
-  const currencySymbol = decodeHtmlEntity(config.currency_symbol) || '£';
+  const currencySymbol = decodeHtmlEntity(config.currency_symbol) || '€';
   // Use visibleAttributeKeys for step counting (excludes hidden default attributes)
   const totalSteps = visibleAttributeKeys.length + visibleAddons.length + 1; // +1 for quantity
   const quantityStepIndex = visibleAttributeKeys.length + visibleAddons.length;
@@ -588,8 +588,8 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     <div id="pearl-wc-steps-form" className="pearl-wc-steps-form">
       {/* Step indicator - matches WordPress exactly */}
       <div className="pearl-step-indicator">
-        <h2>CREATE YOUR PRODUCT — STEP {currentStepNum} OF {totalSteps}</h2>
-        <span>From <strong>{minQuantity} PCS</strong></span>
+        <h2>CRÉEZ VOTRE PRODUIT — ÉTAPE {currentStepNum} SUR {totalSteps}</h2>
+        <span>À partir de <strong>{minQuantity} PCS</strong></span>
       </div>
 
       {/* Attribute Steps - Only render visible attributes (excludes single default options) */}
@@ -614,7 +614,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   </div>
                   <span className="kd-selected-val">{attr.terms.find(t => t.slug === selectedValue)?.name || selectedValue}</span>
                   <button type="button" className="kd-selected-chng-btn" onClick={(e) => { e.stopPropagation(); setMaxVisibleStep(visibleIndex); }}>
-                    Change
+                    Modifier
                   </button>
                 </>
               ) : (
@@ -669,7 +669,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                     onChange={e => handleAttributeSelect(attrKey, e.target.value, visibleIndex)}
                     style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #ddd' }}
                   >
-                    <option value="">Select an option</option>
+                    <option value="">Sélectionner une option</option>
                     {attr.terms.map(term => (
                       <option key={term.slug} value={term.slug}>{term.name}</option>
                     ))}
@@ -725,7 +725,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   </div>
                   <span className="kd-selected-val">{Array.isArray(selectedValue) ? selectedValue.join(', ') : selectedValue}</span>
                   <button type="button" className="kd-selected-chng-btn" onClick={(e) => { e.stopPropagation(); setMaxVisibleStep(stepIndex); }}>
-                    Change
+                    Modifier
                   </button>
                 </>
               ) : (
@@ -778,7 +778,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                     onChange={e => handleAddonSelect(addon.id, e.target.value, stepIndex)}
                     style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #ddd' }}
                   >
-                    <option value="">Select an option</option>
+                    <option value="">Sélectionner une option</option>
                     {addon.options.map(option => (
                       <option key={option.name} value={option.name}>{option.name}</option>
                     ))}
@@ -884,16 +884,16 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
             {maxVisibleStep !== quantityStepIndex && quantitySelected > 0 ? (
               <>
                 <div className="kd-prod-attribute-title-wrapper">
-                  <span>{quantityStepIndex + 1}: Your Quantity</span>
+                  <span>{quantityStepIndex + 1}: Votre quantité</span>
                 </div>
                 <span className="kd-selected-val">{quantitySelected}</span>
                 <button type="button" className="kd-selected-chng-btn" onClick={(e) => { e.stopPropagation(); setMaxVisibleStep(quantityStepIndex); }}>
-                  Change
+                  Modifier
                 </button>
               </>
             ) : (
               <div className="kd-prod-attribute-title-wrapper">
-                <span>{quantityStepIndex + 1}: Choose your quantity</span>
+                <span>{quantityStepIndex + 1}: Choisissez votre quantité</span>
               </div>
             )}
           </h3>
@@ -940,9 +940,9 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                     </div>
                     <div className="kd-radio-meta">
                       {savings > 0 && (
-                        <span className="save">Save {savings}%</span>
+                        <span className="save">Économisez {savings}%</span>
                       )}
-                      <span>{currencySymbol}{totalPrice.toFixed(2)}</span>
+                      <span>{totalPrice.toFixed(2).replace('.', ',')} {currencySymbol}</span>
                     </div>
                   </label>
                 );
@@ -961,14 +961,14 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                 </div>
                 <div className="kd-radio-meta kd-contact-meta">
                   <button type="button" className="step-contact" onClick={() => setShowQuantityPopup(true)}>
-                    CONTACT US
+                    NOUS CONTACTER
                   </button>
                 </div>
               </label>
 
               {/* Custom quantity slider */}
               <div className="range-wrapper">
-                <h4 className="specific-qty-title">Or choose a specific quantity</h4>
+                <h4 className="specific-qty-title">Ou choisissez une quantité spécifique</h4>
 
                 <div className="kd-range-slider-container">
                   <div
@@ -1022,7 +1022,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   <button type="button" className="kd-round-btn" onClick={() => setTempQuantity(prev => Math.min(quantityRange.max, prev + 1))}>+</button>
                   <button type="button" className="kd-round-btn" onClick={() => setTempQuantity(prev => Math.max(quantityRange.min, prev - 1))}>-</button>
                   <button type="button" className="kd-verify-qty-btn" onClick={handleQuantityConfirm}>
-                    CONFIRM
+                    CONFIRMER
                   </button>
                 </div>
               </div>
@@ -1034,32 +1034,32 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       {/* Summary */}
       {priceInfo && quantitySelected > 0 && (
         <div className="variation-summary">
-          <h3 className="your-offer-title">{quantityStepIndex + 2}. Your offer</h3>
+          <h3 className="your-offer-title">{quantityStepIndex + 2}. Votre offre</h3>
           <table className="offer-table">
             <tbody>
               <tr>
-                <td>Shipping to the UK</td>
-                <td className="kd-free-value">Free</td>
+                <td>Livraison en France</td>
+                <td className="kd-free-value">Gratuit</td>
               </tr>
               <tr>
-                <td>Set-up costs</td>
-                <td className="kd-free-value">Free</td>
+                <td>Frais de mise en place</td>
+                <td className="kd-free-value">Gratuit</td>
               </tr>
               <tr>
-                <td>All-in price per piece</td>
-                <td className="kd-price-value">{currencySymbol}{priceInfo.pricePerPiece.toFixed(2)} (excl. VAT)</td>
+                <td>Prix tout compris par pièce</td>
+                <td className="kd-price-value">{priceInfo.pricePerPiece.toFixed(2).replace('.', ',')} {currencySymbol} (HT)</td>
               </tr>
               <tr>
-                <td>Total (excl. VAT)</td>
-                <td className="kd-total-value">{currencySymbol}{priceInfo.totalExclVat.toFixed(2)}</td>
+                <td>Total (HT)</td>
+                <td className="kd-total-value">{priceInfo.totalExclVat.toFixed(2).replace('.', ',')} {currencySymbol}</td>
               </tr>
               <tr>
-                <td>Total (incl. VAT)</td>
-                <td>{currencySymbol}{priceInfo.totalInclVat.toFixed(2)}</td>
+                <td>Total (TTC)</td>
+                <td>{priceInfo.totalInclVat.toFixed(2).replace('.', ',')} {currencySymbol}</td>
               </tr>
               <tr>
                 <td className="kd-lieferzeit-cell">
-                  Delivery Time
+                  Délai de livraison
                   <span
                     className="kd-tooltip-trigger"
                     onMouseEnter={() => setShowDeliveryTooltip(true)}
@@ -1068,7 +1068,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                     ?
                     {showDeliveryTooltip && (
                       <span className="kd-tooltip-content">
-                        Delivery time starts after design approval and payment receipt. For express delivery please contact us.
+                        Le délai de livraison commence après validation du design et réception du paiement. Pour une livraison express, veuillez nous contacter.
                       </span>
                     )}
                   </span>
@@ -1084,7 +1084,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                       onClick={(e) => { e.preventDefault(); setShowExpressPopup(true); }}
                       className="kd-express-link"
                     >
-                      I need an urgent delivery
+                      J'ai besoin d'une livraison urgente
                     </a>
                   </span>
                 </td>
@@ -1118,9 +1118,9 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
             onClick={() => handleAddToCart('quote')}
           >
             {addToCartLoading && <span className="kd-btn-spinner"></span>}
-            {addToCartLoading ? 'Processing...' : 'Create quote'}
+            {addToCartLoading ? 'En cours...' : 'Créer un devis'}
           </button>
-          <small>We will send you a PDF</small>
+          <small>Nous vous enverrons un PDF</small>
         </div>
         <div className="kd-single-action-btn">
           <button
@@ -1129,9 +1129,9 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
             onClick={() => handleAddToCart('cart')}
           >
             {addToCartLoading && <span className="kd-btn-spinner"></span>}
-            {addToCartLoading ? 'Processing...' : 'Add to cart'}
+            {addToCartLoading ? 'En cours...' : 'Ajouter au panier'}
           </button>
-          <small>When you are ready to order</small>
+          <small>Lorsque vous êtes prêt à commander</small>
         </div>
       </div>
 
@@ -1169,10 +1169,10 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
             <div className="kd-loading-spinner"></div>
             <p className="kd-loading-text">
               {loadingAction === 'quote'
-                ? 'Creating your quote...'
-                : 'Adding to cart...'}
+                ? 'Création de votre devis...'
+                : 'Ajout au panier...'}
             </p>
-            <p className="kd-loading-subtext">Please wait a moment</p>
+            <p className="kd-loading-subtext">Veuillez patienter</p>
           </div>
         </div>
       )}
@@ -1180,11 +1180,11 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
 
     {/* Question Section */}
     <div className="kd-question-box">
-      <h3>DO YOU HAVE A QUESTION?</h3>
+      <h3>VOUS AVEZ UNE QUESTION ?</h3>
       <div className="kd-question-buttons">
         <ContactFormPopup
           triggerType="button"
-          triggerText="CONTACT US"
+          triggerText="NOUS CONTACTER"
           triggerClassName="kd-btn-contact"
         />
         <a href="#faq" className="kd-btn-faq" onClick={(e) => {
@@ -1193,7 +1193,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
           if (faqSection) {
             faqSection.scrollIntoView({ behavior: 'smooth' });
           }
-        }}>SEE FAQ</a>
+        }}>VOIR LA FAQ</a>
       </div>
     </div>
 
@@ -1202,11 +1202,11 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       <div className="kd-vision-images">
         <picture>
           <source media="(max-width: 768px)" srcSet="/images/design/design-mockup-mobile.webp" width="220" height="284" />
-          <img src="/images/design/design-mockup.webp" alt="Custom merchandise design" width="494" height="637" loading="lazy" decoding="async" />
+          <img src="/images/design/design-mockup.webp" alt="Design de merchandising personnalisé" width="494" height="637" loading="lazy" decoding="async" />
         </picture>
       </div>
       <div className="kd-vision-content">
-        <h3>BRING YOUR VISION TO LIFE <span style={{ color: '#469ADC' }}>GET A CUSTOM DESIGN!</span></h3>
+        <h3>DONNEZ VIE À VOTRE VISION <span style={{ color: '#469ADC' }}>OBTENEZ UN DESIGN GRATUIT !</span></h3>
         <a
           href="#design-section"
           className="kd-btn-design"
@@ -1217,7 +1217,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
               designSection.scrollIntoView({ behavior: 'smooth' });
             }
           }}
-        >GO TO DESIGN SECTION</a>
+        >ACCÉDER À LA SECTION DESIGN</a>
       </div>
     </div>
     </>

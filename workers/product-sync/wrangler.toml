@@ -14,9 +14,6 @@ GITHUB_REF = "production"
 binding = "PRODUCTS_KV"
 id = "bcf4f95a944f4d3bb688432881ea4e55"
 
-[triggers]
-crons = ["0 3 * * *"]
-
 [env.production]
 [env.production.vars]
 WC_STORE_URL = "https://hercules-merchandising.fr"

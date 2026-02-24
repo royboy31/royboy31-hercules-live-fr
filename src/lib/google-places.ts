@@ -48,7 +48,7 @@ function loadScrapedData(): any {
 const FALLBACK_DATA: GooglePlaceData = {
   rating: 4.9,
   reviewCount: 179,
-  name: 'Hercules Merchandise UK',
+  name: 'Hercules Merchandising FR',
   url: MAPS_URL,
   reviews: staticReviewsData.reviews as GoogleReview[]
 };

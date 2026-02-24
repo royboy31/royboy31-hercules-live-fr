@@ -15,22 +15,22 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_FILE = resolve(__dirname, '../src/data/google-place-data.json');
 
-// Hercules Merchandise UK — Google Maps feature ID
-const FTID = '0xa13b775f11fdb24d:0x93a56bc6631bafa4';
-const MAPS_URL = 'https://www.google.com/maps/place//data=!4m7!3m6!1s0xa13b775f11fdb24d:0x93a56bc6631bafa4!8m2!3d47.73855!4d11.5749774!9m1!1b1';
+// Hercules Merchandising FR — Google Maps feature ID
+const FTID = '0x21d159209e369b9d:0xa126617f91835893';
+const MAPS_URL = 'https://www.google.com/maps/place//data=!4m7!3m6!1s0x21d159209e369b9d:0xa126617f91835893!8m2!3d30.886403!4d-49.4022062!9m1!1b1';
 
 // Fallback values if scraping fails
 const FALLBACK = {
-  rating: 4.9,
-  reviewCount: 179,
-  name: 'Hercules Merchandise UK',
+  rating: 5.0,
+  reviewCount: 33,
+  name: 'Hercules Merchandising FR',
   url: MAPS_URL,
   scrapedAt: null,
   source: 'fallback'
 };
 
 async function fetchGoogleReviews() {
-  const endpoint = `https://www.google.com/maps/preview/place?authuser=0&hl=en&gl=uk&pb=!1m17!1s${encodeURIComponent(FTID)}!3m12!1m3!1d1000!2d-49.4022062!3d30.886403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m2!3d30.886403!4d-49.4022062!8m5!1b1!2b1!3b1!4b1!5b1`;
+  const endpoint = `https://www.google.com/maps/preview/place?authuser=0&hl=en&gl=fr&pb=!1m17!1s${encodeURIComponent(FTID)}!3m12!1m3!1d1000!2d-49.4022062!3d30.886403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m2!3d30.886403!4d-49.4022062!8m5!1b1!2b1!3b1!4b1!5b1`;
 
   console.log('[GoogleReviews] Fetching from Google Maps preview endpoint...');
 

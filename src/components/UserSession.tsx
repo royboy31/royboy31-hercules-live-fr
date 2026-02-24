@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { cartStore, type CartData } from '../lib/cartStore';
+import { sessionManager } from '../lib/sessionManager';
 
 interface UserSessionProps {
   type: 'cart' | 'account' | 'cart-count';
@@ -45,65 +46,6 @@ export default function UserSession({ type }: UserSessionProps) {
   const [removingItem, setRemovingItem] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Fetch initial cart data if needed (first visit only)
-  const fetchInitialCart = async () => {
-    if (!cartStore.needsInitialSync()) return;
-
-    setCartLoading(true);
-    try {
-      const baseUrl = getBaseUrl();
-      const response = await fetch(`${baseUrl}/wp-json/hercules/v1/session`, {
-        method: 'GET',
-        credentials: 'include',
-        headers: { 'Accept': 'application/json' },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        if (data.cart) {
-          cartStore.set(data.cart);
-        }
-        // Also update user state if available
-        if (data.logged_in !== undefined) {
-          setIsLoggedIn(data.logged_in);
-          setUser(data.user);
-        }
-      }
-    } catch (err) {
-      console.error('[UserSession] Failed to fetch initial cart:', err);
-    } finally {
-      setCartLoading(false);
-      setUserLoading(false);
-    }
-  };
-
-  // Fetch user session (for account icon only)
-  const fetchUserSession = async () => {
-    try {
-      const baseUrl = getBaseUrl();
-      const response = await fetch(`${baseUrl}/wp-json/hercules/v1/session`, {
-        method: 'GET',
-        credentials: 'include',
-        headers: { 'Accept': 'application/json' },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setIsLoggedIn(data.logged_in || false);
-        setUser(data.user || null);
-
-        // Also sync cart data while we're at it
-        if (data.cart) {
-          cartStore.set(data.cart);
-        }
-      }
-    } catch (err) {
-      console.error('[UserSession] Failed to fetch user session:', err);
-    } finally {
-      setUserLoading(false);
-    }
-  };
-
   // Remove item from cart
   const removeFromCart = async (cartItemKey: string) => {
     setRemovingItem(cartItemKey);
@@ -137,60 +79,39 @@ export default function UserSession({ type }: UserSessionProps) {
 
   useEffect(() => {
     // Subscribe to cart changes from localStorage
-    const unsubscribe = cartStore.subscribe((newCart) => {
+    const unsubscribeCart = cartStore.subscribe((newCart) => {
       setCart(newCart);
     });
 
-    // Fetch initial cart if needed (first visit)
-    if (cartStore.needsInitialSync()) {
-      fetchInitialCart();
-    }
+    // Single deduplicated session fetch — all three UserSession instances share one HTTP call
+    const unsubscribeSession = sessionManager.subscribe((session, loading) => {
+      if (!loading && session) {
+        setIsLoggedIn(session.logged_in || false);
+        setUser(session.user || null);
+        setUserLoading(false);
 
-    // For account type, always fetch user session
-    if (type === 'account') {
-      fetchUserSession();
-    }
-
-    // Sync cart from server
-    const syncCartFromServer = async () => {
-      try {
-        const baseUrl = getBaseUrl();
-        const response = await fetch(`${baseUrl}/wp-json/hercules/v1/session`, {
-          method: 'GET',
-          credentials: 'include',
-          headers: { 'Accept': 'application/json' },
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          if (data.cart) {
-            const currentCart = cartStore.get();
-            // Only update if cart count changed (avoid unnecessary re-renders)
-            if (currentCart.count !== data.cart.count || currentCart.items.length !== data.cart.items.length) {
-              cartStore.set(data.cart);
-            }
+        if (session.cart) {
+          const currentCart = cartStore.get();
+          if (currentCart.count !== session.cart.count || currentCart.items.length !== session.cart.items.length) {
+            cartStore.set(session.cart);
           }
         }
-      } catch (err) {
-        console.error('[UserSession] Failed to sync cart from server:', err);
+        setCartLoading(false);
       }
-    };
+    });
 
-    // Refresh cart on tab visibility change AND from server
-    const handleVisibilityChange = async () => {
+    // Refresh cart on tab visibility change
+    const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
-        // Re-read from localStorage (might have changed in another tab)
         setCart(cartStore.get());
-        // Sync from server (might have changed on WordPress pages)
-        await syncCartFromServer();
+        sessionManager.fetchSession(true);
       }
     };
 
     // Sync cart on page show (handles back/forward navigation)
     const handlePageShow = (event: PageTransitionEvent) => {
       if (event.persisted) {
-        // Page was loaded from bfcache, sync cart
-        syncCartFromServer();
+        sessionManager.fetchSession(true);
       }
     };
 
@@ -205,8 +126,8 @@ export default function UserSession({ type }: UserSessionProps) {
     let syncInterval: NodeJS.Timeout | null = null;
     if (type === 'cart' || type === 'cart-count') {
       syncInterval = setInterval(() => {
-        syncCartFromServer();
-      }, 30000); // 30 seconds
+        sessionManager.fetchSession(true);
+      }, 30000);
     }
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -214,7 +135,8 @@ export default function UserSession({ type }: UserSessionProps) {
     document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      unsubscribe();
+      unsubscribeCart();
+      unsubscribeSession();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('pageshow', handlePageShow);
       document.removeEventListener('mousedown', handleClickOutside);
@@ -245,7 +167,7 @@ export default function UserSession({ type }: UserSessionProps) {
   if (type === 'cart') {
     const count = cart.count || 0;
     const items = cart.items || [];
-    const subtotal = cart.subtotal || '£0.00';
+    const subtotal = cart.subtotal || '0,00 €';
 
     // Container styles
     const containerStyle: React.CSSProperties = {
@@ -454,7 +376,7 @@ export default function UserSession({ type }: UserSessionProps) {
           <div style={dropdownStyle} className="cart-dropdown">
             {count === 0 ? (
               <div style={emptyCartStyle}>
-                <p style={{ margin: 0 }}>Your cart is empty.</p>
+                <p style={{ margin: 0 }}>Votre panier est vide.</p>
               </div>
             ) : (
               <>
@@ -492,8 +414,8 @@ export default function UserSession({ type }: UserSessionProps) {
                         onMouseLeave={(e) => {
                           e.currentTarget.style.color = '#999';
                         }}
-                        aria-label={`Remove ${item.name}`}
-                        title="Remove item"
+                        aria-label={`Supprimer ${item.name}`}
+                        title="Supprimer l'article"
                       >
                         {removingItem === item.key ? '...' : '×'}
                       </button>
@@ -503,14 +425,14 @@ export default function UserSession({ type }: UserSessionProps) {
 
                 {/* Subtotal */}
                 <div style={subtotalRowStyle}>
-                  <span>Subtotal:</span>
+                  <span>Sous-total :</span>
                   <strong>{subtotal}</strong>
                 </div>
 
                 {/* Buttons */}
                 <div style={buttonsContainerStyle}>
                   <a
-                    href="/quote-generator/"
+                    href="/generateur-de-devis/"
                     style={viewCartBtnStyle}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = '#469adc';
@@ -521,10 +443,10 @@ export default function UserSession({ type }: UserSessionProps) {
                       e.currentTarget.style.color = '#469adc';
                     }}
                   >
-                    Quote Generator
+                    Générateur de devis
                   </a>
                   <a
-                    href="/cart/"
+                    href="/panier/"
                     style={checkoutBtnStyle}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = 'transparent';
@@ -535,7 +457,7 @@ export default function UserSession({ type }: UserSessionProps) {
                       e.currentTarget.style.color = '#fff';
                     }}
                   >
-                    View Cart
+                    Voir le panier
                   </a>
                 </div>
               </>
@@ -548,7 +470,7 @@ export default function UserSession({ type }: UserSessionProps) {
 
   // Account link with user state
   if (type === 'account') {
-    const accountUrl = '/my-account/';
+    const accountUrl = '/mon-compte/';
 
     // Full icon styles to match WordPress exactly
     const iconStyle: React.CSSProperties = {
