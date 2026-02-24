@@ -789,7 +789,8 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
 
     // Get batch of products
     const products = allProducts.slice(offset, offset + BATCH_SIZE);
-    const hasMore = offset + BATCH_SIZE < allProducts.length;
+    // hasMore is false if the slice is empty (offset past end) or this is the last slice
+    const hasMore = products.length > 0 && (offset + BATCH_SIZE < allProducts.length);
     const nextOffset = offset + BATCH_SIZE;
 
     // Process each product in batch
@@ -2832,6 +2833,7 @@ export default {
     let offset = 0;
     let hasMore = true;
     let totalSynced = 0;
+    let consecutiveEmpty = 0;
 
     while (hasMore) {
       const result = await syncAllProducts(env, offset, false, lastSyncAt ?? undefined);
@@ -2841,6 +2843,17 @@ export default {
 
       if (result.errors.length > 0) {
         console.log(`Batch had ${result.errors.length} errors`);
+      }
+
+      // Stall protection: stop if 3 consecutive batches produce nothing
+      if (result.synced === 0) {
+        consecutiveEmpty++;
+        if (consecutiveEmpty >= 3) {
+          console.log('Stopping sync: 3 consecutive batches with 0 products synced');
+          hasMore = false;
+        }
+      } else {
+        consecutiveEmpty = 0;
       }
     }
 

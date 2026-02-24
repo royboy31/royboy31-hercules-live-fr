@@ -8,6 +8,10 @@ SENDER_NAME = "Hercules Merchandising"
 COMPANY_EMAIL = "info@hercules-merchandising.fr"
 R2_PUBLIC_URL = "https://pub-PLACEHOLDER.r2.dev"
 
+[[routes]]
+pattern = "staging.hercules-merchandising.fr/api/*"
+zone_name = "hercules-merchandising.fr"
+
 [[r2_buckets]]
 binding = "FORM_UPLOADS"
 bucket_name = "hercules-fr-form-uploads"

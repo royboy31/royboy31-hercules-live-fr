@@ -694,9 +694,46 @@ interface ContactFormData {
   language: string;
 }
 
+async function parseRequestBody(request: Request): Promise<Partial<ContactFormData> & { uploadFiles?: UploadedFile[]; _files?: File[] }> {
+  const contentType = request.headers.get('Content-Type') || '';
+
+  if (contentType.includes('multipart/form-data') || contentType.includes('application/x-www-form-urlencoded')) {
+    const formData = await request.formData();
+    const body: Record<string, any> = {};
+
+    // Extract all text fields
+    for (const [key, value] of formData.entries()) {
+      if (typeof value === 'string') {
+        body[key] = value;
+      }
+    }
+
+    // Extract files (file_0, file_1, ...) and convert to base64
+    const uploadFiles: UploadedFile[] = [];
+    for (const [key, value] of formData.entries()) {
+      if (key.startsWith('file_') && value instanceof File && value.size > 0) {
+        const arrayBuffer = await value.arrayBuffer();
+        const uint8 = new Uint8Array(arrayBuffer);
+        let binary = '';
+        for (let i = 0; i < uint8.length; i++) {
+          binary += String.fromCharCode(uint8[i]);
+        }
+        const base64 = btoa(binary);
+        uploadFiles.push({ name: value.name, type: value.type, size: value.size, data: base64 });
+      }
+    }
+    if (uploadFiles.length > 0) {
+      body.uploadFiles = uploadFiles;
+    }
+    return body;
+  }
+
+  return await request.json() as Partial<ContactFormData> & { uploadFiles?: UploadedFile[] };
+}
+
 async function handleContactForm(request: Request, env: Env): Promise<Response> {
   try {
-    const body = await request.json() as Partial<ContactFormData> & { uploadFiles?: UploadedFile[] };
+    const body = await parseRequestBody(request);
 
     // Build name from firstName + lastName if provided
     const firstName = (body as any).firstName || '';
@@ -1091,22 +1128,22 @@ export default {
       return new Response(null, { status: 204, headers: corsHeaders });
     }
 
-    // Route handling
-    if (path === '/contact' && request.method === 'POST') {
+    // Route handling (support both /contact and /api/contact)
+    if ((path === '/contact' || path === '/api/contact') && request.method === 'POST') {
       return handleContactForm(request, env);
     }
 
-    if (path === '/newsletter' && request.method === 'POST') {
+    if ((path === '/newsletter' || path === '/api/newsletter') && request.method === 'POST') {
       return handleNewsletter(request, env);
     }
 
-    if (path === '/status' && request.method === 'GET') {
+    if ((path === '/status' || path === '/api/status') && request.method === 'GET') {
       return handleStatus(env);
     }
 
     // Serve files from R2 - URL format: /files/YYYY/MM/DD/timestamp-randomid-filename
-    if (path.startsWith('/files/') && request.method === 'GET') {
-      const key = path.substring(7); // Remove '/files/' prefix
+    if ((path.startsWith('/files/') || path.startsWith('/api/files/')) && request.method === 'GET') {
+      const key = path.startsWith('/api/files/') ? path.substring(11) : path.substring(7);
       return handleFileServe(request, env, key);
     }
 

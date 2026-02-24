@@ -16,6 +16,8 @@ const NO_CACHE_PATHS = [
   '/checkout',
   '/panier',
   '/commande',
+  '/paiement',
+  '/validation-de-la-commande',
   '/thank-you',
   '/merci',
   '/mon-compte',
@@ -29,11 +31,14 @@ const NO_CACHE_PATHS = [
 // Paths that should go to WordPress
 const WORDPRESS_PATHS = [
   // Shop & Cart & Checkout (French slugs - FR site)
-  '/boutique',   // French WooCommerce shop slug
+  '/boutique',      // French WooCommerce shop slug
+  '/boutique-new',  // New shop page (WordPress)
   '/cart',
   '/checkout',
   '/panier',
   '/commande',
+  '/paiement',               // WooCommerce payment page (FR)
+  '/validation-de-la-commande', // WooCommerce order received (FR)
   '/thank-you',
   '/merci',
 

@@ -91,7 +91,7 @@ export async function getStaticPaths() {
 // Generate SEO meta description
 const categoryDescription = category?.description
   ? truncateDescription(stripHtml(category.description))
-  : `Discover our ${category?.name || 'Products'} collection at Hercules Merchandise. Personalised sportswear and fan merchandise made in Europe.`;
+  : `Découvrez notre collection ${category?.name || 'Produits'} chez Hercules Merchandise. Articles sportifs et merchandising personnalisés fabriqués en Europe.`;
 
 // Generate canonical URL
 const canonicalUrl = `${siteConfig.siteUrl}/collections/${slug}/`;
@@ -166,7 +166,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
           <div class="category-description" set:html={category.description} />
         )}
         {category.second_description && (
-          <a href="#read-more-desc" class="weiterlesen-link">Read more</a>
+          <a href="#read-more-desc" class="weiterlesen-link">Lire plus</a>
         )}
       </header>
 
@@ -202,7 +202,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
               <svg class="faq-title-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="44" viewBox="0 0 40 44" fill="none">
                 <path d="M39.7673 30.6429C39.9704 31.0031 40.0256 31.4308 39.9207 31.8325C39.8159 32.2342 39.5597 32.577 39.208 32.786L20.7572 43.786C20.5221 43.9262 20.2548 44 19.9826 44C19.7105 44 19.4432 43.9262 19.2081 43.786L0.757253 32.786C0.410712 32.5731 0.160134 32.2294 0.0597732 31.8291C-0.0405878 31.4288 0.0173444 31.0043 0.221027 30.6473C0.424709 30.2904 0.75775 30.0298 1.14804 29.922C1.53834 29.8142 1.95447 29.8678 2.30636 30.0713L19.9884 40.6098L37.6705 30.0713C38.0229 29.8638 38.4414 29.8074 38.8344 29.9145C39.2274 30.0216 39.5629 30.2836 39.7673 30.6429ZM37.6705 20.6427L19.9884 31.1811L2.30636 20.6427C1.95626 20.4645 1.5529 20.4294 1.17837 20.5445C0.803835 20.6596 0.486288 20.9162 0.290356 21.2621C0.0944252 21.608 0.0348365 22.0173 0.123719 22.4065C0.2126 22.7958 0.443273 23.1358 0.768785 23.3573L19.2196 34.3574C19.4547 34.4975 19.722 34.5714 19.9942 34.5714C20.2663 34.5714 20.5336 34.4975 20.7687 34.3574L39.2196 23.3573C39.3968 23.2549 39.5523 23.1174 39.6772 22.953C39.802 22.7886 39.8936 22.6005 39.9467 22.3996C39.9999 22.1987 40.0134 21.9891 39.9866 21.7828C39.9598 21.5765 39.8932 21.3777 39.7906 21.1979C39.688 21.0182 39.5516 20.861 39.3891 20.7356C39.2266 20.6102 39.0414 20.519 38.8441 20.4674C38.6469 20.4157 38.4416 20.4046 38.2401 20.4347C38.0386 20.4648 37.845 20.5355 37.6705 20.6427ZM0 12.5714C0.000613186 12.2961 0.0719491 12.0259 0.206868 11.7877C0.341788 11.5495 0.535558 11.3516 0.768785 11.214L19.2196 0.213952C19.4547 0.0738314 19.722 0 19.9942 0C20.2663 0 20.5336 0.0738314 20.7687 0.213952L39.2196 11.214C39.4517 11.3524 39.6442 11.5506 39.7781 11.7887C39.9119 12.0269 39.9823 12.2967 39.9823 12.5714C39.9823 12.846 39.9119 13.1158 39.7781 13.354C39.6442 13.5921 39.4517 13.7903 39.2196 13.9287L20.7687 24.9288C20.5336 25.0689 20.2663 25.1427 19.9942 25.1427C19.722 25.1427 19.4547 25.0689 19.2196 24.9288L0.768785 13.9287C0.535558 13.7911 0.341788 13.5933 0.206868 13.3551C0.0719491 13.1168 0.000613186 12.8466 0 12.5714ZM4.58965 12.5714L19.9884 21.7525L35.3872 12.5714L19.9884 3.39022L4.58965 12.5714Z" fill="#253461"/>
               </svg>
-              <h2 class="faq-title">Frequently Asked <span class="highlight">Questions</span></h2>
+              <h2 class="faq-title">Questions <span class="highlight">Fréquentes</span></h2>
             </div>
             <div class="faq-accordion">
               {category.faq.map((item: { question: string; answer: string }, index: number) => (
@@ -234,7 +234,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
       <section class="related-products-section">
         <div class="related-products-container">
           <h2 class="related-heading">
-            Other customers also liked <span class="highlight">these products</span>
+            D'autres clients ont aussi aimé <span class="highlight">ces produits</span>
           </h2>
           <ul class="related-products">
             {relatedProducts.map((product: any) => (
