@@ -31,8 +31,6 @@ const NO_CACHE_PATHS = [
 // Paths that should go to WordPress
 const WORDPRESS_PATHS = [
   // Shop & Cart & Checkout (French slugs - FR site)
-  '/boutique',      // French WooCommerce shop slug
-  '/boutique-new',  // New shop page (WordPress)
   '/cart',
   '/checkout',
   '/panier',
@@ -68,6 +66,7 @@ const WORDPRESS_PATHS = [
 // Paths that should always go to Astro - French
 const ASTRO_PATHS = [
   '/',
+  '/boutique',           // Shop index page (Astro)
   '/collections',
   '/blogs/news',
   '/products',           // Product detail pages (Astro version)
@@ -115,6 +114,11 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     const { pathname, search } = url;
+
+    // Redirect /boutique-new → /boutique (migrated to Astro)
+    if (pathname === '/boutique-new' || pathname === '/boutique-new/') {
+      return Response.redirect(new URL('/boutique/', url.origin).toString(), 301);
+    }
 
     // Debug endpoint to check what cookies Edge Router receives
     if (pathname === '/_edge-debug') {
