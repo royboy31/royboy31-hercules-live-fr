@@ -41,8 +41,8 @@ export interface Env {
   GITHUB_TOKEN?: string;  // GitHub Personal Access Token for triggering workflow_dispatch
 }
 
-// GitHub repo for triggering auto-rebuild (UK)
-const GITHUB_REPO = 'royboy31/hercules-live-uk';
+// GitHub repo for triggering auto-rebuild (FR)
+const GITHUB_REPO = 'royboy31/royboy31-hercules-live-fr';
 const GITHUB_WORKFLOW = 'deploy.yml';
 
 // Worker base URL for image serving (FR)
@@ -720,7 +720,7 @@ async function transformProduct(
     regular_price: product.regular_price,
     sale_price: product.sale_price,
     on_sale: product.on_sale,
-    currency: 'GBP',
+    currency: 'EUR',
     stock_status: product.stock_status,
     categories: product.categories,
     tags: product.tags,
@@ -1476,7 +1476,7 @@ async function deletePost(env: Env, postId: number): Promise<void> {
 }
 
 // Debounce interval for site rebuilds (5 minutes)
-const REBUILD_DEBOUNCE_MS = 5 * 60 * 1000;
+const REBUILD_DEBOUNCE_MS = 90 * 1000; // 90 seconds
 
 // Trigger GitHub Actions workflow to rebuild and deploy the site
 // Uses workflow_dispatch API to trigger the deploy.yml workflow
@@ -1518,7 +1518,7 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
         'User-Agent': 'Hercules-Product-Sync-Worker',
       },
       body: JSON.stringify({
-        ref: 'production',
+        ref: 'main',
         inputs: {
           reason: 'WooCommerce product sync webhook',
         },

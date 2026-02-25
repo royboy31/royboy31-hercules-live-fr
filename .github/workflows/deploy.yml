@@ -37,9 +37,18 @@ jobs:
         env:
           WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
-          WORKER_URL: https://hercules-product-sync-fr-production.gilles-86d.workers.dev
+          WORKER_URL: https://hercules-product-sync-fr.gilles-86d.workers.dev
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Staging (webhook / manual trigger)
+        if: github.event_name == 'workflow_dispatch'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist/ --project-name=hercules-fr-staging --branch=main
+
+      - name: Deploy to Production (production branch push)
+        if: github.event_name == 'push'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -47,4 +56,9 @@ jobs:
           command: pages deploy dist/ --project-name=hercules-fr
 
       - name: Output deployment URL
-        run: echo "Deployed to https://hercules-fr.pages.dev"
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Deployed to https://hercules-fr-staging.pages.dev (staging)"
+          else
+            echo "Deployed to https://hercules-fr.pages.dev (production)"
+          fi
