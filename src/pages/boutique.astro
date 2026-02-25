@@ -1,14 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryProductCard from '../components/CategoryProductCard.astro';
 import TrustLogos from '../components/TrustLogos.astro';
 import CustomerReviews from '../components/CustomerReviews.astro';
-import { siteConfig, getBreadcrumbSchema } from '../config/seo';
-import { getMenuData } from '../data/menu-data';
+import { siteConfig, getBreadcrumbSchema, truncateDescription } from '../config/seo';
 
-const menuData = await getMenuData();
+const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+
+// Fetch all products
+let products: any[] = [];
+try {
+  const res = await fetch(`${WORKER_URL}/products-full`);
+  if (res.ok) {
+    const data = await res.json();
+    products = (Array.isArray(data) ? data : data.products || [])
+      .filter((p: any) => p && p.images?.length > 0)
+      .sort((a: any, b: any) => (a.menu_order ?? 999) - (b.menu_order ?? 999));
+  }
+} catch (e) {
+  console.error('Error fetching products:', e);
+}
 
 const canonicalUrl = `${siteConfig.siteUrl}/boutique/`;
-
 const pageDescription = 'Découvrez notre boutique en ligne de merchandising sportif personnalisé. Écharpes, bonnets, fanions, vêtements de sport et bien plus encore, fabriqués en Europe.';
 
 const jsonLdSchemas = [
@@ -18,22 +31,20 @@ const jsonLdSchemas = [
   ]),
 ];
 
-const sections = [
-  { heading: 'Sports', items: menuData.sportarten },
-  { heading: 'Produits', items: menuData.produkte },
-  { heading: 'Thèmes',  items: menuData.themen },
-];
+const lcpImageUrl = products.length > 0 ? `${WORKER_URL}/image/${products[0].slug}` : null;
+const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 ---
 
 <BaseLayout
   title="Boutique"
   description={pageDescription}
-  pageType="page"
+  pageType="collection"
   canonicalUrl={canonicalUrl}
   jsonLd={jsonLdSchemas}
+  preloadImages={preloadImages}
 >
-  <section class="boutique-page">
-    <div class="boutique-container">
+  <section class="category-page">
+    <div class="category-container">
 
       <!-- Breadcrumb -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -50,36 +61,26 @@ const sections = [
         </ol>
       </nav>
 
-      <!-- Page Header -->
-      <header class="boutique-header">
-        <h1>Boutique</h1>
-        <p class="boutique-intro">Découvrez notre collection complète de merchandising sportif personnalisé, fabriqué en Europe.</p>
+      <!-- Header -->
+      <header class="category-header">
+        <h1 class="category-title">Boutique Hercules</h1>
+        <div class="category-description">
+          <p>Découvrez notre collection complète de produits sportifs personnalisés — des tenues d'équipe et équipements d'entraînement aux écharpes et accessoires. Tous nos produits sont fabriqués sur commande et entièrement personnalisables avec les couleurs, logos et designs de votre équipe.</p>
+        </div>
       </header>
 
-      <!-- Category Sections -->
-      {sections.map(section => (
-        <div class="boutique-section">
-          <h2 class="section-heading">{section.heading}</h2>
-          <ul class="categories-grid">
-            {section.items.map((item, index) => (
-              <li class="category-card">
-                <a href={item.href} class="category-card-link">
-                  <div class="category-icon-wrapper">
-                    <img
-                      src={item.icon_url}
-                      alt={item.label}
-                      loading={index < 8 ? 'eager' : 'lazy'}
-                      width="60"
-                      height="60"
-                    />
-                  </div>
-                  <span class="category-name">{item.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+      <!-- Product Grid -->
+      {products.length > 0 ? (
+        <ul class="products">
+          {products.map((product: any, index: number) => (
+            <CategoryProductCard product={product} index={index} />
+          ))}
+        </ul>
+      ) : (
+        <div class="no-products">
+          <p>Aucun produit disponible.</p>
         </div>
-      ))}
+      )}
 
     </div>
   </section>
@@ -89,17 +90,17 @@ const sections = [
 </BaseLayout>
 
 <style>
-  .boutique-page {
+  /* Reuse same styles as collection pages */
+  .category-page {
     padding: 20px 0 60px;
   }
 
-  .boutique-container {
+  .category-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
-  /* Breadcrumb */
   .breadcrumb ol {
     display: flex;
     align-items: center;
@@ -117,21 +118,15 @@ const sections = [
     text-decoration: none;
   }
 
-  .breadcrumb a:hover {
-    color: #469ADC;
+  .breadcrumb a:hover { color: #469ADC; }
+
+  .separator { display: flex; align-items: center; }
+
+  .category-header {
+    margin-bottom: 30px;
   }
 
-  .separator {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Header */
-  .boutique-header {
-    margin-bottom: 40px;
-  }
-
-  .boutique-header h1 {
+  .category-title {
     font-family: 'Jost', sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -140,128 +135,35 @@ const sections = [
     margin: 0 0 10px 0;
   }
 
-  .boutique-intro {
+  .category-description p {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #626262;
     margin: 0;
   }
 
-  /* Sections */
-  .boutique-section {
-    margin-bottom: 50px;
-  }
-
-  .section-heading {
-    font-family: 'Jost', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: #253461;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #469ADC;
-    display: inline-block;
-  }
-
-  /* Grid */
-  .categories-grid {
+  .products {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 
-  /* Card */
-  .category-card {
-    border: 1px solid #DCDCDC;
-    border-radius: 16px;
-    background: #FFFFFF;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .category-card:hover {
-    border-color: #469ADC;
-    box-shadow: 0 4px 16px rgba(70, 154, 220, 0.12);
-  }
-
-  .category-card-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px 12px;
-    text-decoration: none;
-    height: 100%;
-    box-sizing: border-box;
-  }
-
-  .category-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .category-icon-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .category-name {
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: #253461;
+  .no-products {
     text-align: center;
-    text-transform: uppercase;
-    line-height: 1.3;
+    padding: 60px 20px;
+    color: #787878;
+    font-family: 'Roboto', sans-serif;
   }
 
-  .category-card:hover .category-name {
-    color: #469ADC;
-  }
-
-  /* Responsive */
   @media (max-width: 1024px) {
-    .categories-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+    .products { grid-template-columns: repeat(3, 1fr); }
   }
 
-  @media (max-width: 768px) {
-    .boutique-header h1 {
-      font-size: 24px;
-    }
-
-    .categories-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .category-card-link {
-      padding: 16px 8px;
-    }
-
-    .category-icon-wrapper {
-      width: 48px;
-      height: 48px;
-    }
-
-    .category-name {
-      font-size: 12px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .categories-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media (max-width: 767px) {
+    .category-title { font-size: 24px; }
+    .products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   }
 </style>
