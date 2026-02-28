@@ -1,5 +1,5 @@
-# Robots.txt for Hercules Merchandise UK
-# https://hercules-merchandise.co.uk
+# Robots.txt for Hercules Merchandising FR
+# https://hercules-merchandising.fr
 
 User-Agent: *
 Allow: /
@@ -13,10 +13,11 @@ Disallow: /wp-content/uploads/woocommerce_transient_files/
 Disallow: /wp-content/uploads/woocommerce_uploads/
 
 # Disallow cart and checkout (dynamic/private pages)
-Disallow: /cart/
-Disallow: /checkout/
-Disallow: /my-account/
-Disallow: /quote-generator/
+Disallow: /panier/
+Disallow: /paiement/
+Disallow: /commande/
+Disallow: /mon-compte/
+Disallow: /generateur-de-devis/
 
 # Disallow search results
 Disallow: /search
@@ -36,7 +37,7 @@ Allow: /wp-admin/admin-ajax.php
 Allow: /wp-content/uploads/
 
 # Sitemap
-Sitemap: https://hercules-merchandise.co.uk/sitemap-index.xml
+Sitemap: https://hercules-merchandising.fr/sitemap-index.xml
 
 # Crawl-delay (optional, respected by some bots)
 Crawl-delay: 1

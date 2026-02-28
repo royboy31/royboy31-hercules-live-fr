@@ -84,6 +84,8 @@ if (shouldNoindex && nofollow) {
 } else if (nofollow) {
   robotsMeta = robotsConfig.nofollow;
 }
+// Staging: always noindex, nofollow (IS_STAGING=true in .env, not set in production GitHub Actions)
+if (import.meta.env.IS_STAGING === 'true') robotsMeta = robotsConfig.none;
 
 // Build hreflang URLs - use provided custom URLs or get from mapping
 let hreflangs: Record<Locale, string>;
@@ -99,8 +101,8 @@ if (customHreflangUrls?.de || customHreflangUrls?.en || customHreflangUrls?.fr) 
   hreflangs = getHreflangUrls(currentPath, pageType);
 }
 
-// Canonical URL (UK site)
-const canonicalUrl = `${DOMAINS.en}${currentPath}`;
+// Canonical URL (FR site — self-referencing canonical)
+const canonicalUrl = `${DOMAINS.fr}${currentPath}`;
 
 // Full title with site name
 const fullTitle = `${title} ${siteConfig.titleSeparator} ${siteConfig.siteName}`;
@@ -251,7 +253,7 @@ if (jsonLd) {
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TW5HR72"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7NM77N"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
@@ -310,7 +312,7 @@ if (jsonLd) {
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-TW5HR72');
+          })(window,document,'script','dataLayer','GTM-N7NM77N');
         });
 
         // 2. Google Ads Conversion Tracking — staggered 1.5s after GTM
@@ -318,11 +320,11 @@ if (jsonLd) {
           inIdle(function(){
             var gads=document.createElement('script');
             gads.async=true;
-            gads.src='https://www.googletagmanager.com/gtag/js?id=AW-11156667431';
+            gads.src='https://www.googletagmanager.com/gtag/js?id=AW-10841250326';
             document.head.appendChild(gads);
             gads.onload=function(){
               gtag('js', new Date());
-              gtag('config', 'AW-11156667431');
+              gtag('config', 'AW-10841250326');
             };
           });
         }, 1500);
@@ -350,7 +352,7 @@ if (jsonLd) {
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="/cached-scripts/clarity.js";
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window,document,"clarity","script","j9gd5ystsk");
+            })(window,document,"clarity","script","pc87sb9mdj");
           });
         }, 1500);
       }
