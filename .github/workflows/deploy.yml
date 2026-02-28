@@ -10,6 +10,14 @@ on:
         description: 'Reason for manual deploy'
         required: false
         default: 'Manual trigger'
+      target:
+        description: 'Deploy target'
+        required: false
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   deploy:
@@ -32,23 +40,47 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Astro site
+      # Determine deploy target
+      # push to production branch → production
+      # workflow_dispatch with target=production → production
+      # workflow_dispatch with target=staging (default) → staging
+      - name: Set deploy target
+        id: target
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "env=production" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.inputs.target }}" = "production" ]; then
+            echo "env=production" >> $GITHUB_OUTPUT
+          else
+            echo "env=staging" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build Astro site (staging)
+        if: steps.target.outputs.env == 'staging'
         run: npm run build
         env:
           WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
           WORKER_URL: https://hercules-product-sync-fr.gilles-86d.workers.dev
 
-      - name: Deploy to Staging (webhook / manual trigger)
-        if: github.event_name == 'workflow_dispatch'
+      - name: Build Astro site (production)
+        if: steps.target.outputs.env == 'production'
+        run: npm run build
+        env:
+          WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY_PROD }}
+          WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET_PROD }}
+          WORKER_URL: https://hercules-product-sync-fr-prod.gilles-86d.workers.dev
+
+      - name: Deploy to Staging
+        if: steps.target.outputs.env == 'staging'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist/ --project-name=hercules-fr-staging --branch=main
 
-      - name: Deploy to Production (production branch push)
-        if: github.event_name == 'push'
+      - name: Deploy to Production
+        if: steps.target.outputs.env == 'production'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -57,8 +89,8 @@ jobs:
 
       - name: Output deployment URL
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "Deployed to https://hercules-fr-staging.pages.dev (staging)"
-          else
+          if [ "${{ steps.target.outputs.env }}" = "production" ]; then
             echo "Deployed to https://hercules-fr.pages.dev (production)"
+          else
+            echo "Deployed to https://hercules-fr-staging.pages.dev (staging)"
           fi

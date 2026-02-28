@@ -39,14 +39,16 @@ export interface Env {
   WC_CONSUMER_SECRET: string;
   WEBHOOK_SECRET: string;
   GITHUB_TOKEN?: string;  // GitHub Personal Access Token for triggering workflow_dispatch
+  GITHUB_OWNER?: string;
+  GITHUB_REPO?: string;
+  GITHUB_WORKFLOW?: string;
+  GITHUB_REF?: string;
+  WORKER_BASE_URL: string; // This worker's public URL for image serving
 }
 
-// GitHub repo for triggering auto-rebuild (FR)
-const GITHUB_REPO = 'royboy31/royboy31-hercules-live-fr';
-const GITHUB_WORKFLOW = 'deploy.yml';
-
-// Worker base URL for image serving (FR)
-const WORKER_URL = 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+// Worker base URL for image serving — set via WORKER_BASE_URL env var
+// Falls back to staging URL if not set (backwards compat)
+let WORKER_URL = 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
 
 interface WCProduct {
   id: number;
@@ -1507,7 +1509,12 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
     await env.PRODUCTS_KV.put('last_rebuild', now.toString());
 
     // Trigger GitHub Actions workflow via workflow_dispatch
-    const workflowUrl = `https://api.github.com/repos/${GITHUB_REPO}/actions/workflows/${GITHUB_WORKFLOW}/dispatches`;
+    const ghRepo = env.GITHUB_OWNER && env.GITHUB_REPO
+      ? `${env.GITHUB_OWNER}/${env.GITHUB_REPO}`
+      : 'royboy31/royboy31-hercules-live-fr';
+    const ghWorkflow = env.GITHUB_WORKFLOW || 'deploy.yml';
+    const ghRef = env.GITHUB_REF || 'main';
+    const workflowUrl = `https://api.github.com/repos/${ghRepo}/actions/workflows/${ghWorkflow}/dispatches`;
 
     const response = await fetch(workflowUrl, {
       method: 'POST',
@@ -1518,9 +1525,10 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
         'User-Agent': 'Hercules-Product-Sync-Worker',
       },
       body: JSON.stringify({
-        ref: 'main',
+        ref: ghRef,
         inputs: {
           reason: 'WooCommerce product sync webhook',
+          target: ghRef === 'main' ? 'staging' : 'production',
         },
       }),
     });
@@ -1580,6 +1588,10 @@ async function verifyWebhookSignature(
 export default {
   // HTTP request handler
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    // Set worker URL from env if provided (production vs staging)
+    if (env.WORKER_BASE_URL) {
+      WORKER_URL = env.WORKER_BASE_URL;
+    }
     const url = new URL(request.url);
 
     // CORS headers
@@ -2776,12 +2788,12 @@ export default {
           let priceDisplay = '';
           if (minPrice !== null && maxPrice !== null) {
             if (minPrice === maxPrice) {
-              priceDisplay = `£${minPrice.toFixed(2)}`;
+              priceDisplay = `${minPrice.toFixed(2)} €`;
             } else {
-              priceDisplay = `£${minPrice.toFixed(2)} – £${maxPrice.toFixed(2)}`;
+              priceDisplay = `${minPrice.toFixed(2)} € – ${maxPrice.toFixed(2)} €`;
             }
           } else if (product.price) {
-            priceDisplay = `£${parseFloat(product.price).toFixed(2)}`;
+            priceDisplay = `${parseFloat(product.price).toFixed(2)} €`;
           }
 
           // Get thumbnail - use local cached image URL
@@ -2814,6 +2826,9 @@ export default {
 
   // Scheduled (cron) handler - delta sync: only products modified since last run
   async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
+    if (env.WORKER_BASE_URL) {
+      WORKER_URL = env.WORKER_BASE_URL;
+    }
     // Read last successful sync timestamp for delta filtering
     const lastSyncAt = await env.PRODUCTS_KV.get('last_delta_sync');
     const syncStartedAt = new Date().toISOString();

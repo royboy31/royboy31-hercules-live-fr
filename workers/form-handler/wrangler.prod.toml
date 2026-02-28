@@ -1,4 +1,4 @@
-name = "hercules-form-handler-fr"
+name = "hercules-form-handler-fr-prod"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
 
@@ -6,13 +6,13 @@ compatibility_date = "2024-01-01"
 SENDER_EMAIL = "info@hercules-merchandising.fr"
 SENDER_NAME = "Hercules Merchandising"
 COMPANY_EMAIL = "info@hercules-merchandising.fr"
-R2_PUBLIC_URL = "https://pub-f23f2c07cbea4e208b4cc248c14a1c82.r2.dev"
-PRODUCT_SYNC_URL = "https://hercules-product-sync-fr.gilles-86d.workers.dev"
+R2_PUBLIC_URL = "https://pub-PLACEHOLDER.r2.dev"
+PRODUCT_SYNC_URL = "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev"
 
 [[routes]]
-pattern = "staging.hercules-merchandising.fr/api/*"
+pattern = "hercules-merchandising.fr/api/*"
 zone_name = "hercules-merchandising.fr"
 
 [[r2_buckets]]
 binding = "FORM_UPLOADS"
-bucket_name = "hercules-fr-form-uploads"
+bucket_name = "hercules-fr-form-uploads-prod"

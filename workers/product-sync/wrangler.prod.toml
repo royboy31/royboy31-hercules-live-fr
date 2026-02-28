@@ -1,16 +1,16 @@
-name = "hercules-product-sync-fr"
+name = "hercules-product-sync-fr-prod"
 main = "src/index.ts"
 compatibility_date = "2024-01-01"
 
 [vars]
-WC_STORE_URL = "https://staging.hercules-merchandising.fr"
-WORKER_BASE_URL = "https://hercules-product-sync-fr.gilles-86d.workers.dev"
+WC_STORE_URL = "https://hercules-merchandising.fr"
+WORKER_BASE_URL = "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev"
 WEBHOOK_SECRET = "hercules-webhook-secret-fr-2024"
 GITHUB_OWNER = "royboy31"
 GITHUB_REPO = "royboy31-hercules-live-fr"
 GITHUB_WORKFLOW = "deploy.yml"
-GITHUB_REF = "main"
+GITHUB_REF = "production"
 
 [[kv_namespaces]]
 binding = "PRODUCTS_KV"
-id = "bcf4f95a944f4d3bb688432881ea4e55"
+id = "6fc0dd2a4d90497097f2d247c363fd1b"

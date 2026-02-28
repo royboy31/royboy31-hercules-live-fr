@@ -25,6 +25,7 @@ interface Env {
   SENDER_NAME: string;
   COMPANY_EMAIL: string;
   R2_PUBLIC_URL: string;
+  PRODUCT_SYNC_URL: string; // Product sync worker URL for fetching product configs
 }
 
 // File upload data structure
@@ -358,7 +359,7 @@ function getEmailFooter(): string {
         <p>
           <a href="${SITE_URL}" style="color:#253461; text-decoration:none;"><strong>Hercules Merchandising</strong></a>
           <strong style="color:#000;"> | </strong>
-          <a href="${SITE_URL}/conditions-generales/" style="color:#253461; text-decoration:none;"><strong>Conditions générales</strong></a>
+          <a href="${SITE_URL}/conditions-generales-dutilisation/" style="color:#253461; text-decoration:none;"><strong>Conditions générales</strong></a>
           <strong style="color:#000;"> | </strong>
           <a href="${SITE_URL}/mon-compte/" style="color:#253461; text-decoration:none;"><strong>Mon compte</strong></a><br>
           📧 <a href="mailto:info@hercules-merchandising.fr" style="color:#253461; text-decoration:none;">info@hercules-merchandising.fr</a><br>
@@ -482,6 +483,7 @@ function getQuantityRequestEmailHtml(data: {
   attributes: string;
   addons: string;
   pageUrl: string;
+  formType?: string;
 }): string {
   return `
 <!DOCTYPE html>
@@ -540,31 +542,21 @@ function getQuantityRequestEmailHtml(data: {
             ${data.addons ? `
             <tr>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Options supplémentaires</td>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.addons)}</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.addons).replace(/\n/g, '<br>')}</td>
             </tr>
             ` : ''}
+            ${data.formType === 'expressdelivery' || data.formType === 'express_delivery' ? `
             <tr>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Quantité</td>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.quantity)}</td>
             </tr>
-            <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Prix à l'unité</td>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.pricePerPiece)}</td>
-            </tr>
+            ` : ''}
             ${data.desiredDate ? `
             <tr>
               <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Date de livraison souhaitée</td>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${escapeHtml(data.desiredDate)}</td>
+              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right;">${(() => { const m = data.desiredDate.match(/^(\d{4})-(\d{2})-(\d{2})$/); return m ? `${m[3]}-${m[2]}-${m[1].slice(2)}` : escapeHtml(data.desiredDate); })()}</td>
             </tr>
             ` : ''}
-            <tr>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc;">Livraison</td>
-              <td style="padding:4px 6px; border-bottom:1px solid #ccc; text-align:right; color:#10C99E;">Gratuite</td>
-            </tr>
-            <tr>
-              <td style="padding:4px 6px;">Frais de mise en place</td>
-              <td style="padding:4px 6px; text-align:right; color:#10C99E;">Gratuits</td>
-            </tr>
           </table>
         </td>
       </tr>
@@ -731,6 +723,71 @@ async function parseRequestBody(request: Request): Promise<Partial<ContactFormDa
   return await request.json() as Partial<ContactFormData> & { uploadFiles?: UploadedFile[] };
 }
 
+function cleanAddons(raw: string): string {
+  if (!raw) return '';
+  return raw
+    .split(/,\s*|\n/)
+    .map(part => part.replace(/^Addon\s+#?\d+:\s*/i, '').trim())
+    .filter(v => v !== '')
+    .join('\n');
+}
+
+async function enrichAddons(rawAddons: string, pageUrl: string, productSyncUrl?: string): Promise<string> {
+  if (!rawAddons) return '';
+
+  const values = rawAddons.split('\n').filter(v => v.trim());
+
+  // Extract product slug from page URL (e.g. /products/casquette-de-baseball)
+  const slugMatch = pageUrl.match(/\/products\/([^/?#]+)/i);
+  if (!slugMatch) {
+    return values.join('\n');
+  }
+
+  const slug = slugMatch[1];
+  let addonsConfig: any[] = [];
+  try {
+    const syncUrl = productSyncUrl || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+    const resp = await fetch(`${syncUrl}/product-config/${slug}`);
+    if (resp.ok) {
+      const cfg = await resp.json() as any;
+      addonsConfig = cfg.addons || [];
+    }
+  } catch { /* return best-effort on error */ }
+
+  const result: string[] = [];
+  for (const val of values) {
+    const trimmed = val.trim();
+    if (!trimmed) continue;
+
+    // Already formatted as "addonName: value" by the frontend — keep as-is but translate None
+    const colonIdx = trimmed.indexOf(': ');
+    if (colonIdx > 0 && addonsConfig.some((a: any) => (a.name || a.title) === trimmed.substring(0, colonIdx))) {
+      const valPart = trimmed.substring(colonIdx + 2);
+      const displayVal = valPart.toLowerCase() === 'none' ? 'Aucun' : valPart;
+      result.push(`${trimmed.substring(0, colonIdx)}: ${displayVal}`);
+      continue;
+    }
+
+    // Translate "None" to French
+    const displayValue = trimmed.toLowerCase() === 'none' ? 'Aucun' : trimmed;
+
+    // Find the addon whose options include this value
+    let found = false;
+    for (const addon of addonsConfig) {
+      const addonName: string = addon.name || addon.title || '';
+      if (!addonName || !Array.isArray(addon.options)) continue;
+      if (addon.options.some((o: any) => o.name === trimmed)) {
+        result.push(`${addonName}: ${displayValue}`);
+        found = true;
+        break;
+      }
+    }
+    if (!found) result.push(displayValue);
+  }
+
+  return result.join('\n');
+}
+
 async function handleContactForm(request: Request, env: Env): Promise<Response> {
   try {
     const body = await parseRequestBody(request);
@@ -787,7 +844,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
       pricePerPiece: body.pricePerPiece || '',
       desiredDate: body.desiredDate || '',
       attributes: body.attributes || '',
-      addons: body.addons || '',
+      addons: await enrichAddons(cleanAddons(body.addons || ''), body.pageUrl || '', env.PRODUCT_SYNC_URL),
       // Tracking fields - parsed from request
       referrer: (body as any).referrer || '(direct)',
       browser: parseBrowser(userAgent),
@@ -857,7 +914,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
 
         if (formType === 'quantity' || formType === 'quantity_request' || contactData.productName) {
           // Quantity request / Product inquiry
-          subject = `Demande de devis : ${contactData.productName || 'Produit'} - ${contactData.quantity} pcs`;
+          subject = `Demande de devis : ${contactData.productName || 'Produit'}`;
           htmlContent = getQuantityRequestEmailHtml({
             name: contactData.name,
             email: contactData.email,
@@ -873,6 +930,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
             attributes: contactData.attributes,
             addons: contactData.addons,
             pageUrl: contactData.pageUrl,
+            formType: formType,
           });
         } else {
           // General contact form (with file URLs)
@@ -914,7 +972,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
         let emailParams: SendEmailParams;
 
         if (formType === 'expressdelivery' || formType === 'express_delivery') {
-          // Express delivery: TO admin only, Reply-To customer (no CC)
+          // Express delivery: TO admin, Reply-To customer
           emailParams = {
             to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
             replyTo: { email: contactData.email, name: contactData.name },
@@ -923,7 +981,7 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
             attachment: brevoAttachments.length > 0 ? brevoAttachments : undefined,
           };
         } else if (formType === 'quantity' || formType === 'quantity_request' || contactData.productName) {
-          // Quantity request: TO admin, Reply-To customer (no CC)
+          // Quantity request: TO admin, Reply-To customer
           emailParams = {
             to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
             replyTo: { email: contactData.email, name: contactData.name },
@@ -932,10 +990,11 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
             attachment: brevoAttachments.length > 0 ? brevoAttachments : undefined,
           };
         } else {
-          // General contact form: TO admin, CC customer
+          // General contact form: TO admin, CC customer, Reply-To customer
           emailParams = {
             to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
             cc: [{ email: contactData.email, name: contactData.name }],
+            replyTo: { email: contactData.email, name: contactData.name },
             subject,
             htmlContent,
             attachment: brevoAttachments.length > 0 ? brevoAttachments : undefined,
