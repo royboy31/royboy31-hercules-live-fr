@@ -6,7 +6,7 @@ compatibility_date = "2024-01-01"
 SENDER_EMAIL = "info@hercules-merchandising.fr"
 SENDER_NAME = "Hercules Merchandising"
 COMPANY_EMAIL = "info@hercules-merchandising.fr"
-R2_PUBLIC_URL = "https://pub-PLACEHOLDER.r2.dev"
+R2_PUBLIC_URL = "https://pub-5016d733f4d246a5b2aaa7391f080655.r2.dev"
 PRODUCT_SYNC_URL = "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev"
 
 [[routes]]

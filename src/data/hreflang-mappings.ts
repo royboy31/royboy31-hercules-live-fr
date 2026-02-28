@@ -287,10 +287,10 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
         result.en = `${DOMAINS.en}/collections/${directMapping.en}/`;
         result.fr = `${DOMAINS.fr}/collections/${directMapping.fr}/`;
       } else {
-        // Reverse lookup: find by EN slug
+        // Reverse lookup: find by EN or FR slug
         let found = false;
         for (const [, mapping] of Object.entries(CATEGORY_MAPPINGS)) {
-          if (mapping.en === slug) {
+          if (mapping.en === slug || mapping.fr === slug) {
             result.de = `${DOMAINS.de}/collections/${mapping.de}/`;
             result.en = `${DOMAINS.en}/collections/${mapping.en}/`;
             result.fr = `${DOMAINS.fr}/collections/${mapping.fr}/`;
@@ -305,48 +305,63 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
       }
     }
   } else if (pageType === 'product') {
-    // Try matching DE path (/produkte/) first, then EN path (/products/)
-    const deMatch = dePath.match(/^\/produkte\/([^/]+)\/?$/);
-    const enMatch = dePath.match(/^\/products\/([^/]+)\/?$/);
-
-    if (deMatch) {
-      const deSlug = deMatch[1];
-      const mapping = PRODUCT_MAPPINGS[deSlug];
-      if (mapping) {
-        result.de = `${DOMAINS.de}/products/${mapping.de}/`;
-        result.en = `${DOMAINS.en}/products/${mapping.en}/`;
-        result.fr = `${DOMAINS.fr}/products/${mapping.fr}/`;
+    const match = dePath.match(/^\/products\/([^/]+)\/?$/);
+    if (match) {
+      const slug = match[1];
+      // Try direct lookup (DE slug as key)
+      const directMapping = PRODUCT_MAPPINGS[slug];
+      if (directMapping) {
+        result.de = `${DOMAINS.de}/products/${directMapping.de}/`;
+        result.en = `${DOMAINS.en}/products/${directMapping.en}/`;
+        result.fr = `${DOMAINS.fr}/products/${directMapping.fr}/`;
       } else {
-        result.en = `${DOMAINS.en}/shop/`;
-        result.fr = `${DOMAINS.fr}/boutique/`;
+        // Reverse lookup: find by EN or FR slug
+        let found = false;
+        for (const [, mapping] of Object.entries(PRODUCT_MAPPINGS)) {
+          if (mapping.en === slug || mapping.fr === slug) {
+            result.de = `${DOMAINS.de}/products/${mapping.de}/`;
+            result.en = `${DOMAINS.en}/products/${mapping.en}/`;
+            result.fr = `${DOMAINS.fr}/products/${mapping.fr}/`;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          result.de = `${DOMAINS.de}/products/${slug}/`;
+          result.en = `${DOMAINS.en}/products/${slug}/`;
+        }
       }
-    } else if (enMatch) {
-      // Reverse lookup: find DE slug by EN slug
-      const enSlug = enMatch[1];
+    }
+  } else if (pageType === 'blog') {
+    // FR blog paths: /blogs/news/{slug}/
+    const frMatch = dePath.match(/^\/blogs\/news\/([^/]+)\/?$/);
+    // DE blog paths: /blogs/{slug}/
+    const deMatch = dePath.match(/^\/blogs\/([^/]+)\/?$/);
+
+    if (frMatch) {
+      // FR blog post — reverse lookup by FR slug
+      const frSlug = frMatch[1];
       let found = false;
-      for (const [deSlug, mapping] of Object.entries(PRODUCT_MAPPINGS)) {
-        if (mapping.en === enSlug) {
-          result.de = `${DOMAINS.de}/products/${mapping.de}/`;
-          result.en = `${DOMAINS.en}/products/${mapping.en}/`;
-          result.fr = `${DOMAINS.fr}/products/${mapping.fr}/`;
+      for (const [, mapping] of Object.entries(BLOG_MAPPINGS)) {
+        if (mapping.fr === frSlug) {
+          result.de = `${DOMAINS.de}/blogs/${mapping.de}/`;
+          result.en = mapping.en
+            ? `${DOMAINS.en}/blogs/uk/${mapping.en}/`
+            : `${DOMAINS.en}/blogs/`;
+          result.fr = `${DOMAINS.fr}/blogs/news/${mapping.fr}/`;
           found = true;
           break;
         }
       }
       if (!found) {
-        // Keep same slug for all if no mapping found
-        result.de = `${DOMAINS.de}/products/${enSlug}/`;
-        result.fr = `${DOMAINS.fr}/products/${enSlug}/`;
+        result.de = `${DOMAINS.de}/blogs/`;
+        result.en = `${DOMAINS.en}/blogs/`;
       }
-    }
-  } else if (pageType === 'blog') {
-    // Check if it's a blog post (not the index)
-    const match = dePath.match(/^\/blogs\/([^/]+)\/?$/);
-    if (match && match[1] !== '') {
-      const deSlug = match[1];
+    } else if (deMatch && deMatch[1] !== '' && deMatch[1] !== 'news') {
+      // DE blog post — direct lookup by DE slug
+      const deSlug = deMatch[1];
       const mapping = BLOG_MAPPINGS[deSlug];
       if (mapping) {
-        // Use mapped URLs with locale-specific paths
         result.de = `${DOMAINS.de}/blogs/${mapping.de}/`;
         result.en = mapping.en
           ? `${DOMAINS.en}/blogs/uk/${mapping.en}/`
@@ -355,15 +370,14 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
           ? `${DOMAINS.fr}/blogs/news/${mapping.fr}/`
           : `${DOMAINS.fr}/blogs/`;
       } else {
-        // Unmapped blog post - fallback to blog index
         result.en = `${DOMAINS.en}/blogs/`;
         result.fr = `${DOMAINS.fr}/blogs/`;
       }
     } else {
-      // Blog index page
+      // Blog index page (/blogs/ or /blogs/news/)
       result.de = `${DOMAINS.de}/blogs/`;
       result.en = `${DOMAINS.en}/blogs/uk/`;
-      result.fr = `${DOMAINS.fr}/blogs/`;
+      result.fr = `${DOMAINS.fr}/blogs/news/`;
     }
   }
 
