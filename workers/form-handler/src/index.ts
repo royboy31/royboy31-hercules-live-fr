@@ -1082,6 +1082,7 @@ async function handleNewsletter(request: Request, env: Env): Promise<Response> {
 
         const emailResult = await sendEmail(env, {
           to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
+          replyTo: { email },
           subject: `Nouvel abonnement newsletter : ${email}`,
           htmlContent,
         });

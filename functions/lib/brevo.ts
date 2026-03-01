@@ -1,8 +1,8 @@
 // Brevo (Sendinblue) Email Utility for Cloudflare Pages Functions
 
 const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
-const SENDER_EMAIL = 'info@hercules-merchandise.co.uk';
-const SENDER_NAME = 'Hercules Merchandise UK';
+const SENDER_EMAIL = 'info@hercules-merchandising.fr';
+const SENDER_NAME = 'Hercules Merchandising';
 
 interface EmailRecipient {
   email: string;

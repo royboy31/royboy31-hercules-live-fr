@@ -4,7 +4,7 @@ interface Env {
   FORM_HANDLER_URL?: string;
 }
 
-const FORM_HANDLER_URL = 'https://hercules-form-handler-uk-production.gilles-86d.workers.dev';
+const FORM_HANDLER_URL = 'https://hercules-form-handler-fr.gilles-86d.workers.dev';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
