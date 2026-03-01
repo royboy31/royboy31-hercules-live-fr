@@ -49,7 +49,7 @@ export default function ExpressDeliveryPopup({
   pricePerPiece,
   currentLeadTime,
   config,
-  currencySymbol = '£'
+  currencySymbol = '€'
 }: ExpressDeliveryPopupProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -139,6 +139,14 @@ export default function ExpressDeliveryPopup({
     return addon?.name || addon?.title || `Addon #${addonId}`;
   };
 
+  // Resolve attribute slug to human-readable label
+  const getAttributeLabel = (attrKey: string, slug: string): string => {
+    const attr = config?.attributes?.[attrKey];
+    if (!attr) return slug;
+    const term = attr.terms.find(t => t.slug === slug);
+    return term?.name || slug;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -170,14 +178,20 @@ export default function ExpressDeliveryPopup({
         .map(([key, value]) => `${key.replace(/^pa_/, '')}: ${value}`)
         .join(', ');
 
+      const SKIP_ADDON_VALUES = ['aucun', 'none', 'n/a', '-', ''];
       // Build addons string
-      const addonsStr = Object.entries(selectedAddons)
-        .filter(([_, value]) => value)
-        .map(([id, value]) => {
-          const valueStr = Array.isArray(value) ? value.join(', ') : value;
-          return `${getAddonName(Number(id))}: ${valueStr}`;
-        })
-        .join(', ');
+      const addonsStr = [...new Set(
+        Object.entries(selectedAddons)
+          .filter(([_, value]) => value)
+          .map(([id, value]) => {
+            const valueStr = Array.isArray(value) ? value.join(', ') : value as string;
+            if (SKIP_ADDON_VALUES.includes(valueStr.toLowerCase().trim())) return null;
+            const name = getAddonName(Number(id));
+            const isGeneric = /^Addon\s+\d+$/i.test(name);
+            return (!isGeneric && name !== valueStr) ? `${name}: ${valueStr}` : valueStr;
+          })
+          .filter(Boolean)
+      )].join('\n');
 
       const submitData = new FormData();
       submitData.append('name', formData.name);
@@ -193,7 +207,8 @@ export default function ExpressDeliveryPopup({
       submitData.append('productId', String(productId));
       submitData.append('quantity', String(quantity));
       submitData.append('pricePerPiece', `${pricePerPiece.toFixed(2).replace('.', ',')} ${currencySymbol}`);
-      submitData.append('desiredDate', formData.desiredDate);
+      const [dy, dm, dd] = formData.desiredDate.split('-');
+      submitData.append('desiredDate', `${dd}-${dm}-${dy}`);
       submitData.append('attributes', attributesStr);
       submitData.append('addons', addonsStr);
 
@@ -305,17 +320,25 @@ export default function ExpressDeliveryPopup({
           <ul style={{ marginTop: '15px' }}>
             {Object.entries(selectedAttributes)
               .filter(([_, value]) => value.toLowerCase() !== 'default')
-              .map(([key, value]) => (
-                <li key={key} style={{ textTransform: 'capitalize' }}>
-                  {key.replace(/^pa_/, '')}: {value}
-                </li>
-              ))}
+              .map(([key, value]) => {
+                const attr = config?.attributes?.[key];
+                const title = attr?.display_title || key.replace(/^pa_/, '');
+                const label = getAttributeLabel(key, value);
+                return (
+                  <li key={key} style={{ textTransform: 'capitalize' }}>
+                    {title}: {label}
+                  </li>
+                );
+              })}
             {Object.entries(selectedAddons).map(([id, value]) => {
               if (!value) return null;
               const valueStr = Array.isArray(value) ? value.join(', ') : value;
+              if (['aucun', 'none', 'n/a', '-'].includes(valueStr.toLowerCase().trim())) return null;
+              const name = getAddonName(Number(id));
+              const isGeneric = /^Addon\s+\d+$/i.test(name);
               return (
                 <li key={id}>
-                  {getAddonName(Number(id))}: {valueStr}
+                  {(!isGeneric && name !== valueStr) ? `${name}: ${valueStr}` : valueStr}
                 </li>
               );
             })}
