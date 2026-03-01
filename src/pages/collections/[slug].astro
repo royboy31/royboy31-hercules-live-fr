@@ -124,6 +124,19 @@ if (faqSchema) {
   jsonLdSchemas.push(faqSchema);
 }
 
+// Convert plain-text newlines to <p> tags when the content has no block-level HTML
+// (WooCommerce category descriptions stored in KV lack <p> tags — WordPress adds them on render)
+function wrapParagraphs(html: string): string {
+  if (!html) return '';
+  if (/<p[\s>]/i.test(html)) return html; // already has <p> tags
+  return html
+    .split(/\r?\n\r?\n/)
+    .map(p => p.replace(/\r?\n/g, ' ').trim())
+    .filter(p => p.length > 0)
+    .map(p => `<p>${p}</p>`)
+    .join('\n');
+}
+
 // Get LCP image URL for preloading (must match the actual src used in CategoryProductCard)
 // Note: No resize params as Cloudflare Image Resizing requires Pro plan
 const lcpImageUrl = validProducts.length > 0
@@ -186,7 +199,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
       <!-- Read More Description (SEO Content) -->
       {category.second_description && (
         <section class="read-more-section" id="read-more-desc">
-          <div class="second-description" set:html={category.second_description} />
+          <div class="second-description" set:html={wrapParagraphs(category.second_description)} />
         </section>
       )}
 
