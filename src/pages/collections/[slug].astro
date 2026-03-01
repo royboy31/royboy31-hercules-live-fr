@@ -88,10 +88,25 @@ export async function getStaticPaths() {
   }
 }
 
+// Decode HTML entities that WooCommerce pre-encodes (e.g. &amp; → &)
+function decodeHtml(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;/g, "'")
+    .replace(/&#38;/g, '&');
+}
+
+// Decode category name once for use throughout the template
+const categoryName = decodeHtml(category?.name || '');
+
 // Generate SEO meta description
 const categoryDescription = category?.description
   ? truncateDescription(stripHtml(category.description))
-  : `Découvrez notre collection ${category?.name || 'Produits'} chez Hercules Merchandise. Articles sportifs et merchandising personnalisés fabriqués en Europe.`;
+  : `Découvrez notre collection ${categoryName || 'Produits'} chez Hercules Merchandise. Articles sportifs et merchandising personnalisés fabriqués en Europe.`;
 
 // Generate canonical URL
 const canonicalUrl = `${siteConfig.siteUrl}/collections/${slug}/`;
@@ -106,7 +121,7 @@ const jsonLdSchemas = [];
 
 // CollectionPage schema
 jsonLdSchemas.push(getCollectionPageSchema({
-  name: category?.name || 'Collection',
+  name: categoryName || 'Collection',
   description: categoryDescription,
   url: canonicalUrl,
   image: categoryImage
@@ -115,7 +130,7 @@ jsonLdSchemas.push(getCollectionPageSchema({
 // Breadcrumb schema
 jsonLdSchemas.push(getBreadcrumbSchema([
   { name: 'Home', url: siteConfig.siteUrl },
-  { name: category?.name || 'Collection', url: canonicalUrl }
+  { name: categoryName || 'Collection', url: canonicalUrl }
 ]));
 
 // FAQ schema (if category has FAQ data)
@@ -146,7 +161,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 ---
 
 <BaseLayout
-  title={category.name}
+  title={categoryName}
   description={categoryDescription}
   pageType="collection"
   ogImage={categoryImage}
@@ -166,7 +181,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
             <span class="separator"><img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" /></span>
           </li>
           <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">{category.name}</span>
+            <span itemprop="name">{categoryName}</span>
             <meta itemprop="position" content="2" />
           </li>
         </ol>
@@ -174,7 +189,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 
       <!-- Category Header -->
       <header class="category-header">
-        <h1 class="category-title">{category.name}</h1>
+        <h1 class="category-title">{categoryName}</h1>
         {category.description && (
           <div class="category-description" set:html={category.description} />
         )}
