@@ -2065,20 +2065,7 @@ if (product) {
       linkObserver.observe(trustIndexContainer, { childList: true, subtree: true });
     };
 
-    // Wait for full page load (incl. React hydration) before observing
-    window.addEventListener('load', function() {
-      const reviewsSection = trustIndexContainer.closest('.reviews-section');
-      if (reviewsSection && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) {
-            loadTrustWidget();
-            observer.disconnect();
-          }
-        }, { rootMargin: '200px 0px', threshold: 0 });
-        observer.observe(reviewsSection);
-      } else {
-        loadTrustWidget();
-      }
-    });
+    // Load immediately so Google can see TrustIndex review schema
+    loadTrustWidget();
   }
 </script>
