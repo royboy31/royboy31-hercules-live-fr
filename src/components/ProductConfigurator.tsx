@@ -823,7 +823,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                           onChange={(e) => handleCheckboxChange('None', e.target.checked)}
                           style={{ marginRight: '8px' }}
                         />
-                        None
+                        Aucun
                       </label>
                       {/* Dynamic options from database */}
                       {addon.options.map((option, index) => {
@@ -1118,7 +1118,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
             onClick={() => handleAddToCart('quote')}
           >
             {addToCartLoading && <span className="kd-btn-spinner"></span>}
-            {addToCartLoading ? 'En cours...' : 'Créer un devis'}
+            {addToCartLoading ? 'En cours...' : cartStore.get().count > 0 ? 'Ajoutez au devis' : 'Créer un devis'}
           </button>
           <small>Nous vous enverrons un PDF</small>
         </div>
@@ -1144,6 +1144,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
         selectedAttributes={selectedAttributes}
         selectedAddons={selectedAddons}
         maxQuantity={quantitySelected || tempQuantity}
+        config={config}
       />
 
       {/* Express Delivery Popup */}

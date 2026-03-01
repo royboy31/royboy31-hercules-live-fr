@@ -57,15 +57,15 @@ export default function ProductCarousel({ products }) {
                     {product.on_sale ? (
                       <>
                         <span className="text-xl font-semibold text-accent">
-                          {`£${parseFloat(product.price).toFixed(2)}`}
+                          {`${parseFloat(product.price).toFixed(2).replace('.', ',')} €`}
                         </span>
                         <span className="text-sm text-text-secondary line-through">
-                          {`£${parseFloat(product.regular_price).toFixed(2)}`}
+                          {`${parseFloat(product.regular_price).toFixed(2).replace('.', ',')} €`}
                         </span>
                       </>
                     ) : (
                       <span className="text-xl font-semibold text-primary">
-                        {`£${parseFloat(product.price).toFixed(2)}`}
+                        {`${parseFloat(product.price).toFixed(2).replace('.', ',')} €`}
                       </span>
                     )}
                   </div>

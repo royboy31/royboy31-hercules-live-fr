@@ -232,21 +232,39 @@ function hercules_build_product_config($product) {
     // =====================
     // 3. Build Variations
     // =====================
-    $variations = $product->get_available_variations();
+    // Use get_children() instead of get_available_variations() so variations without
+    // a base WooCommerce price are included (pricing is handled via _conditional_prices meta)
+    $variation_ids = $product->get_children();
     $variations_data = [];
 
-    foreach ($variations as $v) {
-        $vid = isset($v['variation_id']) ? (int) $v['variation_id'] : 0;
+    foreach ($variation_ids as $vid) {
+        $vid = (int) $vid;
+        $variation = wc_get_product($vid);
+        if (!$variation || !$variation->exists()) continue;
+
+        $attributes = [];
+        foreach ($variation->get_attributes() as $attr_key => $attr_value) {
+            $attributes['attribute_' . $attr_key] = $attr_value;
+        }
+
+        $image_id = $variation->get_image_id();
+        $image_data = null;
+        if ($image_id) {
+            $image_data = [
+                'url' => wp_get_attachment_image_url($image_id, 'full') ?: '',
+                'alt' => get_post_meta($image_id, '_wp_attachment_image_alt', true) ?: '',
+            ];
+        }
 
         $variations_data[] = [
             'variation_id' => $vid,
-            'attributes' => $v['attributes'] ?? [],
-            'display_price' => $v['display_price'] ?? 0,
-            'display_regular_price' => $v['display_regular_price'] ?? 0,
-            'image' => $v['image'] ?? null,
-            'is_in_stock' => $v['is_in_stock'] ?? true,
-            'conditional_prices' => $vid ? (get_post_meta($vid, '_conditional_prices', true) ?: []) : [],
-            'lead_time' => $vid ? (get_post_meta($vid, '_lead_time', true) ?: '5 Wochen') : '5 Wochen',
+            'attributes' => $attributes,
+            'display_price' => (float) ($variation->get_price() ?: 0),
+            'display_regular_price' => (float) ($variation->get_regular_price() ?: 0),
+            'image' => $image_data,
+            'is_in_stock' => $variation->is_in_stock(),
+            'conditional_prices' => get_post_meta($vid, '_conditional_prices', true) ?: [],
+            'lead_time' => get_post_meta($vid, '_lead_time', true) ?: '5 Semaines',
         ];
     }
 
@@ -257,9 +275,9 @@ function hercules_build_product_config($product) {
     $currency_sym = get_woocommerce_currency_symbol();
     $currency_pos = get_option('woocommerce_currency_pos');
 
-    // Get DE tax rate
+    // Get FR tax rate
     $rates = WC_Tax::find_rates([
-        'country' => 'DE',
+        'country' => 'FR',
         'state' => '',
         'postcode' => '',
         'city' => '',

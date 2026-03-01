@@ -163,7 +163,7 @@ class SessionManager {
         this.session = {
           logged_in: false,
           user: null,
-          cart: { count: 0, total: '£0.00', subtotal: '£0.00', items: [] },
+          cart: { count: 0, total: '0,00 €', subtotal: '0,00 €', items: [] },
         };
       } finally {
         this.loading = false;

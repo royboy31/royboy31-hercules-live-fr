@@ -12,7 +12,7 @@ interface FileData {
   data: string; // base64 encoded
 }
 
-const FORM_HANDLER_URL = 'https://hercules-form-handler-uk-production.gilles-86d.workers.dev';
+const FORM_HANDLER_URL = 'https://hercules-form-handler-fr.gilles-86d.workers.dev';
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB max per file
 const MAX_TOTAL_SIZE = 25 * 1024 * 1024; // 25MB max total
 

@@ -3,6 +3,17 @@
 
 const CART_KEY = 'hercules_cart';
 
+// Strip thousand separators (spaces, dots, &nbsp;) from price strings.
+// Keeps only comma before decimals + currency symbol.
+function cleanPrice(s: string): string {
+  // e.g. "1 234,56 €" or "1.234,56&nbsp;€" → "1234,56 €"
+  return s
+    .replace(/&nbsp;/g, ' ')       // decode HTML entity
+    .replace(/[\s.]+(?=\d{3})/g, '') // remove thousand separators before groups of 3 digits
+    .replace(/\s+€/, ' €')         // normalise space before €
+    .trim();
+}
+
 export interface CartItem {
   key: string;
   product_id: number;
@@ -24,8 +35,8 @@ export interface CartData {
 const DEFAULT_CART: CartData = {
   count: 0,
   items: [],
-  subtotal: '£0.00',
-  total: '£0.00'
+  subtotal: '0,00 €',
+  total: '0,00 €'
 };
 
 export const cartStore = {
@@ -48,6 +59,15 @@ export const cartStore = {
   set(cart: CartData) {
     if (typeof window === 'undefined') return;
     try {
+      // Normalise price strings — comma for decimals, no other punctuation
+      if (cart.subtotal) cart.subtotal = cleanPrice(cart.subtotal);
+      if (cart.total) cart.total = cleanPrice(cart.total);
+      if (cart.items) {
+        for (const item of cart.items) {
+          if (item.price) item.price = cleanPrice(item.price);
+          if (item.line_total) item.line_total = cleanPrice(item.line_total);
+        }
+      }
       localStorage.setItem(CART_KEY, JSON.stringify(cart));
       window.dispatchEvent(new CustomEvent('hercules:cart-changed'));
       // Also dispatch storage event for other tabs

@@ -1,5 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 
+interface ProductConfig {
+  addons?: Array<{ id: number; name?: string; title?: string }>;
+}
+
 interface QuantityRequestPopupProps {
   isOpen: boolean;
   onClose: () => void;
@@ -8,6 +12,7 @@ interface QuantityRequestPopupProps {
   selectedAttributes: Record<string, string>;
   selectedAddons: Record<number, string | string[]>;
   maxQuantity: number;
+  config?: ProductConfig;
 }
 
 interface FormData {
@@ -26,8 +31,13 @@ export default function QuantityRequestPopup({
   productName,
   selectedAttributes,
   selectedAddons,
-  maxQuantity
+  maxQuantity,
+  config,
 }: QuantityRequestPopupProps) {
+  const getAddonName = (addonId: number): string => {
+    const addon = config?.addons?.find(a => a.id === addonId);
+    return addon?.name || addon?.title || `Addon #${addonId}`;
+  };
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -140,14 +150,20 @@ export default function QuantityRequestPopup({
         .map(([key, value]) => `${key.replace(/^pa_/, '')}: ${value}`)
         .join(', ');
 
-      // Format addons as readable string
-      const addonsStr = Object.entries(selectedAddons)
-        .filter(([_, value]) => value)
-        .map(([id, value]) => {
-          const valueStr = Array.isArray(value) ? value.join(', ') : value;
-          return `Addon ${id}: ${valueStr}`;
-        })
-        .join(', ');
+      // Format addons as readable string (same logic as ExpressDeliveryPopup)
+      const SKIP_ADDON_VALUES = ['aucun', 'none', 'n/a', '-', ''];
+      const addonsStr = [...new Set(
+        Object.entries(selectedAddons)
+          .filter(([_, value]) => value)
+          .map(([id, value]) => {
+            const valueStr = Array.isArray(value) ? value.join(', ') : value as string;
+            if (SKIP_ADDON_VALUES.includes(valueStr.toLowerCase().trim())) return null;
+            const name = getAddonName(Number(id));
+            const isGeneric = /^Addon\s+\d+$/i.test(name);
+            return (!isGeneric && name !== valueStr) ? `${name}: ${valueStr}` : valueStr;
+          })
+          .filter(Boolean)
+      )].join('\n');
 
       const submitData = new FormData();
       submitData.append('firstName', formData.firstName);
