@@ -972,18 +972,20 @@ async function handleContactForm(request: Request, env: Env): Promise<Response> 
         let emailParams: SendEmailParams;
 
         if (formType === 'expressdelivery' || formType === 'express_delivery') {
-          // Express delivery: TO admin, Reply-To customer
+          // Express delivery: TO admin, CC info, Reply-To customer
           emailParams = {
             to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
+            cc: [{ email: 'info@hercules-merchandise.com', name: 'Hercules Merchandise' }],
             replyTo: { email: contactData.email, name: contactData.name },
             subject: `Demande urgente de devis - ${contactData.productName || 'Express'}`,
             htmlContent,
             attachment: brevoAttachments.length > 0 ? brevoAttachments : undefined,
           };
         } else if (formType === 'quantity' || formType === 'quantity_request' || contactData.productName) {
-          // Quantity request: TO admin, Reply-To customer
+          // Quantity request: TO admin, CC info, Reply-To customer
           emailParams = {
             to: [{ email: env.COMPANY_EMAIL, name: 'Hercules Merchandising' }],
+            cc: [{ email: 'info@hercules-merchandise.com', name: 'Hercules Merchandise' }],
             replyTo: { email: contactData.email, name: contactData.name },
             subject,
             htmlContent,
