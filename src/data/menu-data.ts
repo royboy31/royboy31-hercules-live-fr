@@ -22,7 +22,7 @@ const frMenuData: MenuData = {
   sportarten: [
     { label: 'Football', href: '/collections/football/', icon_url: iconBaseUrl + 'Football.svg' },
     { label: 'Rugby', href: '/collections/rugby/', icon_url: iconBaseUrl + 'Rugby-1.svg' },
-    { label: 'Basket-ball', href: '/collections/basketball/', icon_url: iconBaseUrl + 'Basketball-1.svg' },
+    { label: 'Basket-ball', href: '/collections/basket-ball/', icon_url: iconBaseUrl + 'Basketball-1.svg' },
     { label: 'Running', href: '/collections/running/', icon_url: iconBaseUrl + 'running-1.svg' },
     { label: 'Hockey sur gazon', href: '/collections/hockey-sur-gazon/', icon_url: iconBaseUrl + 'field-hockey-1.svg' },
     { label: 'Volleyball', href: '/collections/volleyball/', icon_url: iconBaseUrl + 'volleyball-1.svg' },

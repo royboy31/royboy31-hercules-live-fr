@@ -38,14 +38,14 @@ export const PAGE_MAPPINGS: Record<string, Record<Locale, string>> = {
 export const CATEGORY_MAPPINGS: Record<string, Record<Locale, string>> = {
   // Product Categories
   'personalisierte-fanschals': { de: 'personalisierte-fanschals', en: 'custom-scarves', fr: 'echarpes-personnalisees' },
-  'fussballschals': { de: 'fussballschals', en: 'football-scarves', fr: 'football-scarves' },
+  'fussballschals': { de: 'fussballschals', en: 'football-scarves', fr: 'echarpes-de-football' },
   'personalisierte-sportbekleidung': { de: 'personalisierte-sportbekleidung', en: 'custom-printed-sportswear', fr: 'equipements-personnalises' },
-  'fanartikel': { de: 'fanartikel', en: 'fan-items', fr: 'fan-items' },
+  'fanartikel': { de: 'fanartikel', en: 'fan-items', fr: 'articles-de-supporters' },
   'personalisierte-wimpel': { de: 'personalisierte-wimpel', en: 'custom-pennants', fr: 'fanions-personnalises-football' },
   'personalisierte-textilien': { de: 'personalisierte-textilien', en: 'custom-textile', fr: 'textile-sport-personnalise' },
   'personalisierte-mutzen': { de: 'personalisierte-mutzen', en: 'custom-beanies', fr: 'bonnets-personnalises-football' },
   'kopfbedeckung': { de: 'kopfbedeckung', en: 'headwear', fr: 'couvre-chefs' },
-  'team-bekleidung': { de: 'team-bekleidung', en: 'teamwear', fr: 'teamwear' },
+  'team-bekleidung': { de: 'team-bekleidung', en: 'teamwear', fr: 'tenues-de-sport' },
   'handtucher': { de: 'handtucher', en: 'towels', fr: 'serviettes-personnalisees' },
   'flaggen': { de: 'flaggen', en: 'flags', fr: 'drapeaux-personnalises' },
   'schuhwerk': { de: 'schuhwerk', en: 'footwear', fr: 'chaussettes-et-claquettes' },
@@ -57,7 +57,7 @@ export const CATEGORY_MAPPINGS: Record<string, Record<Locale, string>> = {
   // Sports Categories
   'fussball': { de: 'fussball', en: 'football', fr: 'football' },
   'rugby': { de: 'rugby', en: 'rugby', fr: 'rugby' },
-  'basketball': { de: 'basketball', en: 'basketball', fr: 'basketball' },
+  'basketball': { de: 'basketball', en: 'basketball', fr: 'basket-ball' },
   'laufen': { de: 'laufen', en: 'running', fr: 'running' },
   'feldhockey': { de: 'feldhockey', en: 'field-hockey', fr: 'hockey-sur-gazon' },
   'volleyball': { de: 'volleyball', en: 'volleyball', fr: 'volleyball' },
