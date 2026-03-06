@@ -115,6 +115,15 @@ export default {
     const url = new URL(request.url);
     const { pathname, search } = url;
 
+    // Staging: block all search engine indexing
+    if (url.hostname.startsWith('staging.')) {
+      if (pathname === '/robots.txt') {
+        return new Response('User-Agent: *\nDisallow: /\n', {
+          headers: { 'Content-Type': 'text/plain' },
+        });
+      }
+    }
+
     // Redirect /boutique-new → /boutique (migrated to Astro)
     if (pathname === '/boutique-new' || pathname === '/boutique-new/') {
       return Response.redirect(new URL('/boutique/', url.origin).toString(), 301);
@@ -561,6 +570,11 @@ export default {
       newHeaders.set('X-Content-Type-Options', 'nosniff');
       newHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
       newHeaders.set('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+
+      // Staging: block search engine indexing via HTTP header
+      if (url.hostname.startsWith('staging.')) {
+        newHeaders.set('X-Robots-Tag', 'noindex, nofollow');
+      }
 
       // Debug headers to confirm Edge Router is processing requests
       newHeaders.set('X-Edge-Router', 'hercules');
