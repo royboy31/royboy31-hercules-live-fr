@@ -276,6 +276,20 @@ export default {
       return Response.redirect(new URL('/mon-compte/', url.origin).toString(), 301);
     }
 
+    // Old English collection slugs -> French slugs
+    if (pathname === '/collections/football-scarves' || pathname === '/collections/football-scarves/') {
+      return Response.redirect(new URL('/collections/echarpes-de-football/', url.origin).toString(), 301);
+    }
+    if (pathname === '/collections/fan-items' || pathname === '/collections/fan-items/') {
+      return Response.redirect(new URL('/collections/articles-de-supporters/', url.origin).toString(), 301);
+    }
+    if (pathname === '/collections/basketball' || pathname === '/collections/basketball/') {
+      return Response.redirect(new URL('/collections/basket-ball/', url.origin).toString(), 301);
+    }
+    if (pathname === '/collections/teamwear' || pathname === '/collections/teamwear/') {
+      return Response.redirect(new URL('/collections/tenues-de-sport/', url.origin).toString(), 301);
+    }
+
     // Handle CORS preflight for API requests
     if (request.method === 'OPTIONS' && pathname.startsWith('/wp-json/')) {
       return new Response(null, {
@@ -321,10 +335,14 @@ export default {
     }
 
     // Create the proxied request
+    // Note: GET/HEAD requests cannot have a body in the Workers runtime.
+    // Some clients (e.g. Exact Online) send GET with Content-Length: 0, which
+    // causes a TypeError if we pass request.body through.
+    const hasBody = request.method !== 'GET' && request.method !== 'HEAD';
     const proxyRequest = new Request(targetUrl.toString(), {
       method: request.method,
       headers,
-      body: request.body,
+      body: hasBody ? request.body : undefined,
       redirect: 'manual', // Handle redirects ourselves
     });
 
