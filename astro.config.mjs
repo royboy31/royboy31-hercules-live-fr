@@ -3,13 +3,18 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
-import critters from 'astro-critters';
+// critters removed — Astro's auto inlineStylesheets handles critical CSS sizing
+// import critters from 'astro-critters';
 import sitemap from '@astrojs/sitemap';
 
 // Hercules FR Configuration
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hercules-merchandising.fr',
+  build: {
+    // 'auto' inlines small CSS, links larger bundles externally
+    inlineStylesheets: 'auto',
+  },
 
   vite: {
     plugins: [tailwindcss()],
@@ -43,7 +48,6 @@ export default defineConfig({
 
   integrations: [
     react(),
-    critters(),
     sitemap({
       // Filter out pages that shouldn't be in sitemap
       filter: (page) => {

@@ -137,6 +137,11 @@ if (jsonLd) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Preconnect to external resources FIRST (before preload hints) -->
+  <link rel="preconnect" href="https://hercules-product-sync-fr.gilles-86d.workers.dev" crossorigin>
+  <link rel="dns-prefetch" href="https://hercules-product-sync-fr.gilles-86d.workers.dev">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
   <!-- Preload LCP images FIRST for fastest rendering (highest priority) -->
   {preloadImages.map((src) => (
     <link rel="preload" as="image" href={src} fetchpriority="high" />
@@ -225,11 +230,6 @@ if (jsonLd) {
       <link rel="preload" as="image" href="/images/slider/slide-1-teamwear.webp" type="image/webp" fetchpriority="high" media="(min-width: 1025px)">
     </>
   )}
-
-  <!-- Preconnect to external resources for faster loading -->
-  <link rel="preconnect" href="https://hercules-product-sync-fr.gilles-86d.workers.dev" crossorigin>
-  <link rel="dns-prefetch" href="https://hercules-product-sync-fr.gilles-86d.workers.dev">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
   <!-- Google Consent Mode V2 - Must load BEFORE GTM and GA4 -->
   <script is:inline>
