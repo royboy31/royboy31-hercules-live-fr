@@ -420,6 +420,12 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
     list-style: none;
   }
 
+  /* Skip rendering off-screen product cards for faster initial paint */
+  .products :global(li:nth-child(n+4)) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
+  }
+
   /* No products message */
   .no-products {
     text-align: center;

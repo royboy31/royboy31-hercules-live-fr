@@ -42,10 +42,10 @@ interface Props {
 
 const { product, index = 0 } = Astro.props;
 
-// First 3 products are above the fold on mobile (1 col) and tablet (2 col)
+// First 2 products are above the fold on mobile (2 col) and tablet (2 col)
 // These get eager loading to improve LCP
 // Only the very first product gets fetchpriority="high" (actual LCP candidate)
-const isAboveFold = index < 3;
+const isAboveFold = index < 2;
 const isLCPCandidate = index === 0;
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
@@ -105,7 +105,7 @@ const cardFeatures = product.card_features || [];
       productPrice={priceDisplay}
       productThumbnail={workerImageUrl}
       size={18}
-      client:visible
+      client:idle
     />
   </div>
 
@@ -158,7 +158,7 @@ const cardFeatures = product.card_features || [];
       <!-- Show thumbnails even with 1 image so users see the gallery section -->
       {galleryImages.length >= 1 && (
         <div class="kd-thumbnails-wrapper">
-          <div class="swiper kd-thumb-swiper" data-gallery={JSON.stringify(galleryImages)}>
+          <div class="swiper kd-thumb-swiper">
             <div class="swiper-wrapper">
               {galleryImages.slice(0, 4).map((img, idx) => (
                 <div class="swiper-slide">
@@ -171,9 +171,8 @@ const cardFeatures = product.card_features || [];
                     aria-label={`Thumbnail ${idx + 1}`}
                   >
                     <img
-                      src={img.thumb}
+                      data-src={img.thumb}
                       alt=""
-                      loading="lazy"
                       class="kd-thumb"
                       width="83"
                       height="83"
@@ -449,137 +448,84 @@ const cardFeatures = product.card_features || [];
 </style>
 
 <script>
-  import Swiper from 'swiper';
-  import { FreeMode } from 'swiper/modules';
-  import 'swiper/css';
-
   /**
    * Progressive Image Loading
    * - Loads Worker cached image (361x361) first for fast initial paint
    * - Upgrades to original WordPress image (1000x1000) when entering viewport
-   * - Matches single product page behavior
    */
-
-  // Track upgraded images to avoid duplicates
   const upgradedImages = new WeakSet<Element>();
 
   function upgradeImage(img: HTMLImageElement) {
     if (upgradedImages.has(img)) return;
-
     const fullSrc = img.dataset.fullSrc;
     if (!fullSrc || img.dataset.upgraded === 'true') return;
-
-    // Don't upgrade if fullSrc is the same as current (Worker URL)
-    if (img.src === fullSrc) {
-      img.dataset.upgraded = 'true';
-      return;
-    }
-
+    if (img.src === fullSrc) { img.dataset.upgraded = 'true'; return; }
     upgradedImages.add(img);
-
-    // Create a new image to preload the high-quality original WordPress image
-    const highQualityImg = new Image();
-    highQualityImg.onload = () => {
-      img.src = fullSrc;
-      img.dataset.upgraded = 'true';
-    };
-    highQualityImg.src = fullSrc;
+    const hq = new Image();
+    hq.onload = () => { img.src = fullSrc; img.dataset.upgraded = 'true'; };
+    hq.src = fullSrc;
   }
 
   function setupProgressiveImageLoading() {
-    const progressiveImages = document.querySelectorAll('.kd-progressive-img');
-    if (!progressiveImages.length) return;
-
+    const imgs = document.querySelectorAll('.kd-progressive-img');
+    if (!imgs.length) return;
     if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              upgradeImage(entry.target as HTMLImageElement);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          rootMargin: '50px', // Start loading slightly before entering viewport
-          threshold: 0,
-        }
-      );
-
-      progressiveImages.forEach((img) => observer.observe(img));
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { upgradeImage(e.target as HTMLImageElement); obs.unobserve(e.target); } });
+      }, { rootMargin: '50px', threshold: 0 });
+      imgs.forEach((img) => obs.observe(img));
     } else {
-      // Fallback: Upgrade all images immediately
-      progressiveImages.forEach((img) => upgradeImage(img as HTMLImageElement));
+      imgs.forEach((img) => upgradeImage(img as HTMLImageElement));
     }
   }
 
   /**
-   * Thumbnail Swiper Carousel with Lazy Initialization
-   * - Only initializes when product card enters viewport
-   * - Uses FreeMode for smooth touch scrolling
-   * - Maintains CSS flexbox fallback
+   * Lazy load thumbnail images — use data-src to avoid preload scanner
    */
-
-  // Track initialized swipers to avoid duplicates
-  const initializedSwipers = new WeakSet<Element>();
-
-  function initThumbnailSwiper(swiperEl: Element) {
-    if (initializedSwipers.has(swiperEl)) return;
-    initializedSwipers.add(swiperEl);
-
-    new Swiper(swiperEl as HTMLElement, {
-      modules: [FreeMode],
-      slidesPerView: 'auto',
-      spaceBetween: 8,
-      freeMode: {
-        enabled: true,
-        sticky: false,
-        momentumRatio: 0.5,
-        momentumBounce: false,
-      },
-      watchSlidesProgress: true,
-      grabCursor: true,
-      touchEventsTarget: 'container',
-    });
+  function setupLazyThumbnails() {
+    const thumbs = document.querySelectorAll('.kd-thumb[data-src]');
+    if (!thumbs.length) return;
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const img = e.target as HTMLImageElement;
+            if (img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; }
+            obs.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '200px', threshold: 0 });
+      thumbs.forEach((img) => obs.observe(img));
+    } else {
+      thumbs.forEach((img) => { if ((img as HTMLImageElement).dataset.src) (img as HTMLImageElement).src = (img as HTMLImageElement).dataset.src!; });
+    }
   }
 
   /**
    * Thumbnail click handler - Event delegation for all product cards
-   * Uses progressive loading: Worker cached (361x361) first, then original WordPress (1000x1000)
    */
   function setupThumbnailClickHandlers() {
     document.addEventListener('click', (e) => {
       const btn = (e.target as Element).closest('.kd-thumb-btn');
       if (!btn) return;
-
       e.preventDefault();
       e.stopPropagation();
-
       const gallery = btn.closest('.kd-product-gallery');
       const mainImg = gallery?.querySelector('.kd-main-img') as HTMLImageElement;
-      const mainSrc = (btn as HTMLElement).dataset.mainSrc;        // Worker cached 361x361
-      const originalSrc = (btn as HTMLElement).dataset.originalSrc; // Original WordPress 1000x1000
+      const mainSrc = (btn as HTMLElement).dataset.mainSrc;
+      const originalSrc = (btn as HTMLElement).dataset.originalSrc;
       const swiperEl = btn.closest('.kd-thumb-swiper');
-
       if (mainImg && mainSrc) {
-        // Show Worker cached image immediately (fast, 361x361)
         mainImg.src = mainSrc;
         mainImg.dataset.upgraded = 'false';
         mainImg.dataset.fullSrc = originalSrc || mainSrc;
-
-        // Preload and upgrade to original WordPress image (1000x1000)
         if (originalSrc && originalSrc !== mainSrc) {
-          const highQualityImg = new Image();
-          highQualityImg.onload = () => {
-            mainImg.src = originalSrc;
-            mainImg.dataset.upgraded = 'true';
-          };
-          highQualityImg.src = originalSrc;
+          const hq = new Image();
+          hq.onload = () => { mainImg.src = originalSrc; mainImg.dataset.upgraded = 'true'; };
+          hq.src = originalSrc;
         } else {
           mainImg.dataset.upgraded = 'true';
         }
-
-        // Update active state
         swiperEl?.querySelectorAll('.kd-thumb-btn').forEach(t => t.classList.remove('active'));
         btn.classList.add('active');
       }
@@ -587,62 +533,59 @@ const cardFeatures = product.card_features || [];
   }
 
   /**
-   * Lazy initialization using IntersectionObserver
-   * Only initializes Swiper when product card enters viewport
-   * MOBILE: Skip Swiper - uses pure CSS flexbox for 4 equal thumbnails
+   * Lazy Swiper initialization — dynamic import, desktop only
+   * Avoids bundling Swiper for mobile where CSS flexbox is used
    */
   function setupLazySwiper() {
-    // Skip Swiper on mobile - CSS flexbox handles the layout
     if (window.innerWidth <= 767) return;
-
     const swiperElements = document.querySelectorAll('.kd-thumb-swiper');
     if (!swiperElements.length) return;
 
-    // Use IntersectionObserver for lazy initialization
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              initThumbnailSwiper(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          rootMargin: '100px', // Initialize slightly before entering viewport
-          threshold: 0,
-        }
-      );
+    const initializedSwipers = new WeakSet<Element>();
 
-      swiperElements.forEach((el) => observer.observe(el));
+    async function initSwiper(el: Element) {
+      if (initializedSwipers.has(el)) return;
+      initializedSwipers.add(el);
+      const [{ default: Swiper }, { FreeMode }] = await Promise.all([
+        import('swiper'),
+        import('swiper/modules'),
+      ]);
+      new Swiper(el as HTMLElement, {
+        modules: [FreeMode],
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        freeMode: { enabled: true, sticky: false, momentumRatio: 0.5, momentumBounce: false },
+        watchSlidesProgress: true,
+        grabCursor: true,
+        touchEventsTarget: 'container',
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { initSwiper(e.target); obs.unobserve(e.target); } });
+      }, { rootMargin: '100px', threshold: 0 });
+      swiperElements.forEach((el) => obs.observe(el));
     } else {
-      // Fallback: Initialize all immediately
-      swiperElements.forEach(initThumbnailSwiper);
+      swiperElements.forEach(initSwiper);
     }
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setupThumbnailClickHandlers();
-      // Setup progressive image loading immediately for fast upgrade
-      setupProgressiveImageLoading();
-      // Defer Swiper initialization to after main content renders
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => setupLazySwiper(), { timeout: 2000 });
-      } else {
-        setTimeout(setupLazySwiper, 100);
-      }
-    });
-  } else {
+  // Initialize
+  function init() {
     setupThumbnailClickHandlers();
-    // Setup progressive image loading immediately for fast upgrade
     setupProgressiveImageLoading();
+    setupLazyThumbnails();
     if ('requestIdleCallback' in window) {
       requestIdleCallback(() => setupLazySwiper(), { timeout: 2000 });
     } else {
       setTimeout(setupLazySwiper, 100);
     }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 </script>
