@@ -50,6 +50,10 @@ const isLCPCandidate = index === 0;
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
 
+// Same-origin image proxy path — eliminates cross-origin overhead (DNS + TCP + TLS)
+// Edge router proxies /product-image/* → Worker /image/* with edge caching
+const IMAGE_PREFIX = '/product-image';
+
 // Get gallery images from Worker KV cache
 // Use cached_image_count from product data to know exactly how many images are available
 // Fall back to images array length with a max of 10 if cached_image_count is 0, null, or undefined
@@ -60,10 +64,10 @@ const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-
 // - Thumbnails: 100x100 WebP (~2-5KB) - displayed at 83px (slight buffer for retina)
 const imageCount = product.cached_image_count || Math.min(product.images?.length || 0, 10);
 const galleryImages = (product.images || []).slice(0, imageCount).map((img, index) => {
-  // Worker URL format: /image/{slug} for index 0, /image/{slug}/{index} for gallery
+  // Same-origin proxy: /product-image/{slug} for index 0, /product-image/{slug}/{index} for gallery
   const baseUrl = index === 0
-    ? `${WORKER_URL}/image/${product.slug}`
-    : `${WORKER_URL}/image/${product.slug}/${index}`;
+    ? `${IMAGE_PREFIX}/${product.slug}`
+    : `${IMAGE_PREFIX}/${product.slug}/${index}`;
   return {
     thumb: `${baseUrl}?size=thumb`,  // 100x100 cached thumbnail (~2-5KB)
     main: baseUrl,                    // 361x361 cached main image (~10-15KB WebP)
@@ -72,8 +76,8 @@ const galleryImages = (product.images || []).slice(0, imageCount).map((img, inde
   };
 });
 
-// Worker main image URL - 361x361 cached WebP image
-const workerImageUrl = `${WORKER_URL}/image/${product.slug}`;
+// Same-origin main image URL - 361x361 cached WebP image via edge proxy
+const workerImageUrl = `${IMAGE_PREFIX}/${product.slug}`;
 // Original WordPress URL - full resolution for progressive upgrade
 const originalImageUrl = product.images?.[0]?.src || workerImageUrl;
 

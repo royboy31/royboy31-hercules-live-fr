@@ -152,10 +152,10 @@ function wrapParagraphs(html: string): string {
     .join('\n');
 }
 
-// Get LCP image URL for preloading (must match the actual src used in CategoryProductCard)
-// Note: No resize params as Cloudflare Image Resizing requires Pro plan
+// Get LCP image URL for preloading — use same-origin proxy to avoid cross-origin overhead
+// (DNS + TCP + TLS saves ~400-600ms on mobile 4G)
 const lcpImageUrl = validProducts.length > 0
-  ? `${WORKER_URL}/image/${validProducts[0].slug}`
+  ? `/product-image/${validProducts[0].slug}`
   : null;
 const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 ---
@@ -269,7 +269,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
               <li class="related-product-item">
                 <a href={`/products/${product.slug}`} class="related-product-link">
                   <img
-                    src={`${WORKER_URL}/image/${product.slug}/0`}
+                    src={`/product-image/${product.slug}/0`}
                     alt={product.name}
                     loading="lazy"
                     width="361"
