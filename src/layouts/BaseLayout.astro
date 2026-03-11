@@ -144,7 +144,7 @@ if (jsonLd) {
 
   <!-- Preload LCP images FIRST for fastest rendering (highest priority) -->
   {preloadImages.map((src) => (
-    <link rel="preload" as="image" href={src} fetchpriority="high" />
+    <link rel="preload" as="image" href={src} fetchpriority="high" crossorigin />
   ))}
 
   <!-- LCP image preload (for product pages) -->
