@@ -8,6 +8,7 @@
 interface Env {
   ASTRO_ORIGIN: string;
   WORDPRESS_ORIGIN: string;
+  PRODUCT_SYNC_WORKER_URL: string;
 }
 
 // Paths that should NEVER be cached (dynamic/personalized)
@@ -152,7 +153,7 @@ export default {
       // /product-image/{slug}/{index} → Worker /image/{slug}/{index}
       // /product-image/{slug}?size=thumb → Worker /image/{slug}?size=thumb
       const imagePath = pathname.replace('/product-image/', '/image/');
-      const workerUrl = `https://hercules-product-sync-fr.gilles-86d.workers.dev${imagePath}${search}`;
+      const workerUrl = `${env.PRODUCT_SYNC_WORKER_URL}${imagePath}${search}`;
 
       const cache = caches.default;
       const cacheKey = new Request(url.toString(), request);

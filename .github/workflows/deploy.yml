@@ -89,6 +89,14 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist/ --project-name=hercules-fr-staging --branch=main
 
+      - name: Deploy Edge Router (production)
+        if: steps.target.outputs.env == 'production'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config workers/edge-router/wrangler.prod.toml
+
       - name: Deploy to Production
         if: steps.target.outputs.env == 'production'
         uses: cloudflare/wrangler-action@v3
