@@ -62,6 +62,7 @@ jobs:
           WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
           WORKER_URL: https://hercules-product-sync-fr.gilles-86d.workers.dev
+          IS_STAGING: 'true'
 
       - name: Build Astro site (production)
         if: steps.target.outputs.env == 'production'
@@ -71,6 +72,14 @@ jobs:
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET_PROD }}
           WORKER_URL: https://hercules-product-sync-fr-prod.gilles-86d.workers.dev
           IS_STAGING: 'false'
+
+      - name: Deploy Edge Router (staging)
+        if: steps.target.outputs.env == 'staging'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config workers/edge-router/wrangler.toml
 
       - name: Deploy to Staging
         if: steps.target.outputs.env == 'staging'
