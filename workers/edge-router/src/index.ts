@@ -8,6 +8,7 @@
 interface Env {
   ASTRO_ORIGIN: string;
   WORDPRESS_ORIGIN: string;
+  PRODUCT_SYNC_WORKER_URL: string;
 }
 
 // Paths that should NEVER be cached (dynamic/personalized)
@@ -141,6 +142,47 @@ export default {
           'Cache-Control': 'no-store',
         },
       });
+    }
+
+    // ============================================
+    // PRODUCT IMAGE PROXY — serve Worker images from same origin to eliminate
+    // cross-origin overhead (DNS + TCP + TLS) for LCP on collection/product pages
+    // ============================================
+    if (pathname.startsWith('/product-image/')) {
+      // /product-image/{slug} → Worker /image/{slug}
+      // /product-image/{slug}/{index} → Worker /image/{slug}/{index}
+      // /product-image/{slug}?size=thumb → Worker /image/{slug}?size=thumb
+      const imagePath = pathname.replace('/product-image/', '/image/');
+      const workerUrl = `${env.PRODUCT_SYNC_WORKER_URL}${imagePath}${search}`;
+
+      const cache = caches.default;
+      const cacheKey = new Request(url.toString(), request);
+      const cachedResponse = await cache.match(cacheKey);
+
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      const imageResponse = await fetch(workerUrl, {
+        headers: { 'Accept': request.headers.get('Accept') || 'image/webp,image/*,*/*' },
+      });
+
+      if (!imageResponse.ok) {
+        return new Response('Image not found', { status: 404 });
+      }
+
+      const response = new Response(imageResponse.body, {
+        headers: {
+          'Content-Type': imageResponse.headers.get('Content-Type') || 'image/webp',
+          'Cache-Control': 'public, max-age=31536000, immutable',
+          'Access-Control-Allow-Origin': '*',
+          'X-Edge-Router': 'hercules',
+          'X-Image-Proxy': 'true',
+        },
+      });
+
+      ctx.waitUntil(cache.put(cacheKey, response.clone()));
+      return response;
     }
 
     // ============================================
@@ -521,6 +563,14 @@ export default {
         body = body.replaceAll(`https://${astroHost}`, ourOrigin);
         body = body.replaceAll(`http://${astroHost}`, ourOrigin);
         body = body.replaceAll(`//${astroHost}`, `//${ourHost}`);
+
+        // Staging: inject noindex meta tag into HTML to prevent indexing
+        if (url.hostname.startsWith('staging.') && contentType.includes('text/html')) {
+          body = body.replace(
+            /<meta\s+name="robots"\s+content="[^"]*">/i,
+            '<meta name="robots" content="noindex, nofollow">'
+          );
+        }
 
         newHeaders.delete('Content-Length'); // Length may have changed
 

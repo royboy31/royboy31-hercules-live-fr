@@ -62,8 +62,8 @@ const imageCount = product.cached_image_count || Math.min(product.images?.length
 const galleryImages = (product.images || []).slice(0, imageCount).map((img, index) => {
   // Worker URL format: /image/{slug} for index 0, /image/{slug}/{index} for gallery
   const baseUrl = index === 0
-    ? `${WORKER_URL}/image/${product.slug}`
-    : `${WORKER_URL}/image/${product.slug}/${index}`;
+    ? `/product-image/${product.slug}`
+    : `/product-image/${product.slug}/${index}`;
   return {
     thumb: `${baseUrl}?size=thumb`,  // 100x100 cached thumbnail (~2-5KB)
     main: baseUrl,                    // 361x361 cached main image (~10-15KB WebP)
@@ -73,7 +73,7 @@ const galleryImages = (product.images || []).slice(0, imageCount).map((img, inde
 });
 
 // Worker main image URL - 361x361 cached WebP image
-const workerImageUrl = `${WORKER_URL}/image/${product.slug}`;
+const workerImageUrl = `/product-image/${product.slug}`;
 // Original WordPress URL - full resolution for progressive upgrade
 const originalImageUrl = product.images?.[0]?.src || workerImageUrl;
 

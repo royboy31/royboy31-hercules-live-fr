@@ -5,6 +5,7 @@ compatibility_date = "2024-01-01"
 [vars]
 ASTRO_ORIGIN = "https://hercules-fr.pages.dev"
 WORDPRESS_ORIGIN = "https://hercules-merchandising.fr"
+PRODUCT_SYNC_WORKER_URL = "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev"
 
 [[routes]]
 pattern = "hercules-merchandising.fr/*"
