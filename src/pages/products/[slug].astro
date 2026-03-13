@@ -2065,7 +2065,18 @@ if (product) {
       linkObserver.observe(trustIndexContainer, { childList: true, subtree: true });
     };
 
-    // Load immediately so Google can see TrustIndex review schema
-    loadTrustWidget();
+    // Defer loading until section is near viewport (below the fold)
+    if ('IntersectionObserver' in window) {
+      const section = trustIndexContainer.closest('.reviews-section') || trustIndexContainer;
+      const obs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          obs.disconnect();
+          loadTrustWidget();
+        }
+      }, { rootMargin: '200px' });
+      obs.observe(section);
+    } else {
+      setTimeout(loadTrustWidget, 12000);
+    }
   }
 </script>

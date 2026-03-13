@@ -137,9 +137,7 @@ if (jsonLd) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Preconnect to external resources FIRST (before preload hints) -->
-  <link rel="preconnect" href="https://hercules-product-sync-fr.gilles-86d.workers.dev" crossorigin>
-  <link rel="dns-prefetch" href="https://hercules-product-sync-fr.gilles-86d.workers.dev">
+  <!-- DNS prefetch for deferred third-party scripts (no preconnect — they load late) -->
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
   <!-- Preload LCP images FIRST for fastest rendering (highest priority) -->
@@ -357,14 +355,14 @@ if (jsonLd) {
         }, 1500);
       }
 
-      // Phase 1: Fire after 5s or on first meaningful user interaction
-      var t1=setTimeout(loadPhase1, 5000);
+      // Phase 1: Fire after 10s or on first meaningful user interaction
+      var t1=setTimeout(loadPhase1, 10000);
       ['click','keydown'].forEach(function(e){
         window.addEventListener(e, function(){clearTimeout(t1);loadPhase1();}, {once:true,passive:true});
       });
 
-      // Phase 2: Fallback timer at 8s (in case Phase 1 was triggered by interaction)
-      setTimeout(loadPhase2, 8000);
+      // Phase 2: Fallback timer at 15s (in case Phase 1 was triggered by interaction)
+      setTimeout(loadPhase2, 15000);
     })();
   </script>
 
