@@ -291,6 +291,43 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     });
   }, [config, attributeKeys]);
 
+  // Get available terms for an attribute, filtered by what variations actually exist
+  // given the already-selected attributes from prior steps
+  const getAvailableTerms = (attrKey: string, visibleIndex: number): TermInfo[] => {
+    if (!config) return [];
+    const attr = config.attributes[attrKey];
+    if (!attr) return attr?.terms || [];
+
+    // Collect selected attributes from prior steps only
+    const priorSelections: Record<string, string> = {};
+    for (let i = 0; i < visibleIndex; i++) {
+      const priorKey = visibleAttributeKeys[i];
+      if (selectedAttributes[priorKey]) {
+        priorSelections[priorKey] = selectedAttributes[priorKey];
+      }
+    }
+
+    // If no prior selections, show all terms
+    if (Object.keys(priorSelections).length === 0) return attr.terms;
+
+    // Filter terms to only those that have at least one matching variation
+    return attr.terms.filter(term => {
+      return config.variations.some(v => {
+        // Check this term matches
+        const normalizedAttrKey = attrKey.replace('attribute_', '');
+        const variationValue = v.attributes[attrKey] || v.attributes[`attribute_${normalizedAttrKey}`] || v.attributes[normalizedAttrKey];
+        if (variationValue !== term.slug) return false;
+
+        // Check all prior selections match
+        return Object.entries(priorSelections).every(([priorKey, priorValue]) => {
+          const normalizedPriorKey = priorKey.replace('attribute_', '');
+          const vVal = v.attributes[priorKey] || v.attributes[`attribute_${normalizedPriorKey}`] || v.attributes[normalizedPriorKey];
+          return vVal === priorValue;
+        });
+      });
+    });
+  };
+
   // Check if an attribute should be visible based on enabled_if conditions
   const isAttributeVisible = (attrKey: string, index: number): boolean => {
     if (!config) return false;
@@ -357,7 +394,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
 
   // Calculate quantity range — adjusts min based on selected addon price_table minimums
   const quantityRange = useMemo(() => {
-    const prices = matchedVariation?.conditional_prices || config?.variations?.[0]?.conditional_prices;
+    const prices = matchedVariation?.conditional_prices;
     if (!prices?.length) {
       return { min: 50, max: 500 };
     }
@@ -428,7 +465,16 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
 
   // Handle attribute selection
   const handleAttributeSelect = (attrKey: string, value: string, stepIndex: number) => {
-    setSelectedAttributes(prev => ({ ...prev, [attrKey]: value }));
+    setSelectedAttributes(prev => {
+      const next = { ...prev, [attrKey]: value };
+      // Clear downstream attribute selections when a prior attribute changes
+      for (let i = stepIndex + 1; i < visibleAttributeKeys.length; i++) {
+        delete next[visibleAttributeKeys[i]];
+      }
+      return next;
+    });
+    // Reset quantity when attributes change
+    setQuantitySelected(0);
     setMaxVisibleStep(stepIndex + 1);
   };
 
@@ -597,6 +643,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
         if (!isAttributeVisible(attrKey, visibleIndex)) return null;
 
         const attr = config.attributes[attrKey];
+        const availableTerms = getAvailableTerms(attrKey, visibleIndex);
         const isExpanded = maxVisibleStep === visibleIndex;
         const selectedValue = selectedAttributes[attrKey];
         const isCompleted = !!selectedValue;
@@ -612,7 +659,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   <div className="kd-prod-attribute-title-wrapper">
                     <span>{stepNumber}: {attr.display_title || attrKey.replace('pa_', '')}</span>
                   </div>
-                  <span className="kd-selected-val">{attr.terms.find(t => t.slug === selectedValue)?.name || selectedValue}</span>
+                  <span className="kd-selected-val">{availableTerms.find(t => t.slug === selectedValue)?.name || selectedValue}</span>
                   <button type="button" className="kd-selected-chng-btn" onClick={(e) => { e.stopPropagation(); setMaxVisibleStep(visibleIndex); }}>
                     Modifier
                   </button>
@@ -631,7 +678,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                 {/* Image Selector */}
                 {attr.display_type === 'image_selector' && (
                   <div className="kd-image-selector" style={{ display: 'flex', flexFlow: 'row wrap', gap: '20px' }}>
-                    {attr.terms.map(term => (
+                    {availableTerms.map(term => (
                       <div
                         key={term.slug}
                         className="kd-image-selector-col"
@@ -670,7 +717,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                     style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #ddd' }}
                   >
                     <option value="">Sélectionner une option</option>
-                    {attr.terms.map(term => (
+                    {availableTerms.map(term => (
                       <option key={term.slug} value={term.slug}>{term.name}</option>
                     ))}
                   </select>
@@ -679,7 +726,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                 {/* Select Boxes */}
                 {attr.display_type === 'select_boxes' && (
                   <div className="box-selector" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                    {attr.terms.map(term => (
+                    {availableTerms.map(term => (
                       <div
                         key={term.slug}
                         className="box-selector-item"
@@ -901,7 +948,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
           {maxVisibleStep === quantityStepIndex && (
             <div className="kd-step-collapse">
               {/* Quantity tier options — filtered by addon minimum qty */}
-              {(matchedVariation?.conditional_prices || config.variations?.[0]?.conditional_prices || [])
+              {(matchedVariation?.conditional_prices || [])
                 .filter(tier => parseFloatSafe(tier.qty) >= quantityRange.min)
                 .map((tier, idx, filteredTiers) => {
                 const tierQty = parseFloatSafe(tier.qty);
