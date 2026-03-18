@@ -770,7 +770,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   <div className="kd-prod-attribute-title-wrapper">
                     <span>{displayStepNum}: {addon.name}</span>
                   </div>
-                  <span className="kd-selected-val">{Array.isArray(selectedValue) ? selectedValue.join(', ') : selectedValue}</span>
+                  <span className="kd-selected-val">{Array.isArray(selectedValue) ? selectedValue.map(v => v === 'None' ? 'Aucun' : v).join(', ') : (selectedValue === 'None' ? 'Aucun' : selectedValue)}</span>
                   <button type="button" className="kd-selected-chng-btn" onClick={(e) => { e.stopPropagation(); setMaxVisibleStep(stepIndex); }}>
                     Modifier
                   </button>
