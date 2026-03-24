@@ -522,13 +522,23 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       );
       const addonPricePerPiece = getAddonPricePerPiece(quantitySelected);
 
+      // Translate 'None' to 'Aucun' in addon values before sending to WordPress
+      const translatedAddons: Record<number, string | string[]> = {};
+      for (const [id, value] of Object.entries(selectedAddons)) {
+        if (Array.isArray(value)) {
+          translatedAddons[Number(id)] = value.map(v => v === 'None' ? 'Aucun' : v);
+        } else {
+          translatedAddons[Number(id)] = value === 'None' ? 'Aucun' : value;
+        }
+      }
+
       // Prepare data for Hercules Cart API (REST endpoint, no nonce required)
       const cartData = {
         product_id: config.product_id,
         variation_id: matchedVariation.variation_id,
         quantity: quantitySelected,
         price_num: finalPricePerPiece,
-        addons: selectedAddons,
+        addons: translatedAddons,
         addonsPricePerpiece: addonPricePerPiece,
         minQty: quantityRange.min,
       };
