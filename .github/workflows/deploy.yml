@@ -80,12 +80,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --config workers/product-sync/wrangler.toml
-          secrets: |
-            WC_CONSUMER_KEY
-            WC_CONSUMER_SECRET
-        env:
-          WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
-          WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
 
       - name: Deploy Edge Router (staging)
         if: steps.target.outputs.env == 'staging'
@@ -110,12 +104,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --config workers/product-sync/wrangler.prod.toml
-          secrets: |
-            WC_CONSUMER_KEY
-            WC_CONSUMER_SECRET
-        env:
-          WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY_PROD }}
-          WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET_PROD }}
 
       - name: Deploy Edge Router (production)
         if: steps.target.outputs.env == 'production'
