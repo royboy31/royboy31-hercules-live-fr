@@ -242,6 +242,42 @@ if (jsonLd) {
       'ad_personalization': 'denied',
       'wait_for_update': 500
     });
+
+    // Complianz → Google Consent Mode bridge
+    // Reads cookie preferences and updates Google consent accordingly
+    (function() {
+      function getCookie(name) {
+        var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? match[2] : null;
+      }
+
+      function updateConsentFromCookies() {
+        var statistics = getCookie('cmplz_statistics') === 'allow';
+        var marketing = getCookie('cmplz_marketing') === 'allow';
+        if (statistics || marketing) {
+          gtag('consent', 'update', {
+            'analytics_storage': statistics ? 'granted' : 'denied',
+            'ad_storage': marketing ? 'granted' : 'denied',
+            'ad_user_data': marketing ? 'granted' : 'denied',
+            'ad_personalization': marketing ? 'granted' : 'denied'
+          });
+        }
+      }
+
+      // On page load: check if user already consented in a previous visit
+      updateConsentFromCookies();
+
+      // On banner interaction: listen for Complianz consent updates
+      window.addEventListener('cmplz_consent_updated', function(e) {
+        var d = e.detail || {};
+        gtag('consent', 'update', {
+          'analytics_storage': d.statistics ? 'granted' : 'denied',
+          'ad_storage': d.marketing ? 'granted' : 'denied',
+          'ad_user_data': d.marketing ? 'granted' : 'denied',
+          'ad_personalization': d.marketing ? 'granted' : 'denied'
+        });
+      });
+    })();
   </script>
 
   <!-- Favicon -->
