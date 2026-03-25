@@ -95,6 +95,8 @@ interface WCProduct {
   pdf_2_url?: string | null;
   // FAQ fields (exposed by our REST API filter)
   faq?: Array<{ question: string; answer: string }>;
+  // Missive-only flag (exposed by hercules-missive-only plugin)
+  missive_only?: boolean;
 }
 
 interface WCVariation {
@@ -798,6 +800,15 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
     // Process each product in batch
     for (const product of products) {
       try {
+        // Skip missive-only products (not shown on website)
+        const isMissiveOnly = product.missive_only ||
+          product.meta_data?.find(m => m.key === '_missive_only')?.value === 'yes';
+        if (isMissiveOnly) {
+          console.log(`Skipping missive-only product ${product.id}: ${product.name}`);
+          await deleteProduct(env, product.id); // Remove if previously synced
+          continue;
+        }
+
         console.log(`Syncing product ${product.id}: ${product.name}`);
 
         // Fetch variations for variable products
@@ -875,7 +886,11 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
 
     // Update product index with full list on first batch
     if (offset === 0) {
-      const productIndex = allProducts.map(p => {
+      const productIndex = allProducts.filter(p => {
+        // Exclude missive-only products from the index
+        const missive = p.missive_only || p.meta_data?.find(m => m.key === '_missive_only')?.value === 'yes';
+        return !missive;
+      }).map(p => {
         // Extract badge data from WooCommerce meta_data
         const getMeta = (key: string) => p.meta_data?.find(m => m.key === key)?.value;
         const madeInEurope = getMeta('made_in_europe');
@@ -951,6 +966,15 @@ async function syncSingleProduct(env: Env, productId: number): Promise<SyncedPro
   // If product is not published (draft, pending, private, trash), remove from KV
   if (product.status !== 'publish') {
     console.log(`Product ${productId} is not published (status: ${product.status}), removing from KV`);
+    await deleteProduct(env, productId);
+    return null;
+  }
+
+  // If product is marked as missive-only, remove from KV (not shown on website)
+  const isMissiveOnly = product.missive_only ||
+    product.meta_data?.find(m => m.key === '_missive_only')?.value === 'yes';
+  if (isMissiveOnly) {
+    console.log(`Product ${productId} is missive-only, removing from KV`);
     await deleteProduct(env, productId);
     return null;
   }
