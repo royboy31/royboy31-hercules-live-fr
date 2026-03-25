@@ -51,7 +51,7 @@ export default function ProductSearch({
     setIsLoading(true);
     try {
       const response = await fetch(
-        `${apiUrl}/search?q=${encodeURIComponent(searchTerm)}&limit=10`
+        `${apiUrl}/search?q=${encodeURIComponent(searchTerm)}&limit=10&exclude_missive=true`
       );
       const data = await response.json();
 
