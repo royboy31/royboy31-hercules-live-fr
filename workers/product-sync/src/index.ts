@@ -750,6 +750,8 @@ async function transformProduct(
     pdf_2_url: product.pdf_2_url || null,
     // FAQ items from ACF fields
     faq: product.faq || [],
+    // Missive-only flag (hidden from website, visible in Missive CRM)
+    missive_only: product.missive_only || getMeta('_missive_only') === 'yes',
     // Will be updated after image caching
     cached_image_count: 0,
     synced_at: new Date().toISOString(),
@@ -800,15 +802,6 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
     // Process each product in batch
     for (const product of products) {
       try {
-        // Skip missive-only products (not shown on website)
-        const isMissiveOnly = product.missive_only ||
-          product.meta_data?.find(m => m.key === '_missive_only')?.value === 'yes';
-        if (isMissiveOnly) {
-          console.log(`Skipping missive-only product ${product.id}: ${product.name}`);
-          await deleteProduct(env, product.id); // Remove if previously synced
-          continue;
-        }
-
         console.log(`Syncing product ${product.id}: ${product.name}`);
 
         // Fetch variations for variable products
@@ -886,11 +879,7 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
 
     // Update product index with full list on first batch
     if (offset === 0) {
-      const productIndex = allProducts.filter(p => {
-        // Exclude missive-only products from the index
-        const missive = p.missive_only || p.meta_data?.find(m => m.key === '_missive_only')?.value === 'yes';
-        return !missive;
-      }).map(p => {
+      const productIndex = allProducts.map(p => {
         // Extract badge data from WooCommerce meta_data
         const getMeta = (key: string) => p.meta_data?.find(m => m.key === key)?.value;
         const madeInEurope = getMeta('made_in_europe');
@@ -907,6 +896,7 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
           made_in_europe: madeInEurope === '1' || madeInEurope === 1 || madeInEurope === true,
           green_product: greenProduct === '1' || greenProduct === 1 || greenProduct === true,
           made_in_uk: madeInUk === '1' || madeInUk === 1 || madeInUk === true,
+          missive_only: p.missive_only || getMeta('_missive_only') === 'yes',
         };
       });
       await env.PRODUCTS_KV.put('product:index', JSON.stringify(productIndex));
@@ -970,14 +960,8 @@ async function syncSingleProduct(env: Env, productId: number): Promise<SyncedPro
     return null;
   }
 
-  // If product is marked as missive-only, remove from KV (not shown on website)
-  const isMissiveOnly = product.missive_only ||
-    product.meta_data?.find(m => m.key === '_missive_only')?.value === 'yes';
-  if (isMissiveOnly) {
-    console.log(`Product ${productId} is missive-only, removing from KV`);
-    await deleteProduct(env, productId);
-    return null;
-  }
+  // Note: missive-only products are kept in KV (for Missive CRM access)
+  // but filtered out from Astro-facing endpoints (/products, /products-by-category, etc.)
 
   let variations: WCVariation[] = [];
   if (product.type === 'variable') {
@@ -2244,8 +2228,11 @@ export default {
 
     // Get all products (index only - lightweight)
     if (url.pathname === '/products') {
-      const index = await env.PRODUCTS_KV.get('product:index');
-      return new Response(index || '[]', {
+      const indexStr = await env.PRODUCTS_KV.get('product:index');
+      const index = indexStr ? JSON.parse(indexStr) : [];
+      // Exclude missive-only products from website listings
+      const filtered = index.filter((p: any) => !p.missive_only);
+      return new Response(JSON.stringify(filtered), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
@@ -2260,8 +2247,10 @@ export default {
       }
 
       const index = JSON.parse(indexStr);
+      // Exclude missive-only products from website builds
+      const filtered = index.filter((p: any) => !p.missive_only);
       const products = await Promise.all(
-        index.map(async (p: any) => {
+        filtered.map(async (p: any) => {
           const productStr = await env.PRODUCTS_KV.get(`product:${p.id}`);
           return productStr ? JSON.parse(productStr) : null;
         })
@@ -2284,9 +2273,9 @@ export default {
       }
 
       const index = JSON.parse(indexStr);
-      // Filter products by category from index
+      // Filter products by category from index (exclude missive-only)
       const categoryProducts = index.filter((p: any) =>
-        p.categories?.includes(categorySlug)
+        p.categories?.includes(categorySlug) && !p.missive_only
       );
 
       // Fetch full product data for matching products
