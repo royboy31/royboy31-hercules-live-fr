@@ -2217,6 +2217,12 @@ export default {
 
       // Parse and add local image URLs
       const product = JSON.parse(productStr);
+
+      // Block missive-only products unless explicitly requested
+      const includeMissive = url.searchParams.get('include_missive') === 'true';
+      if (product.missive_only && !includeMissive) {
+        return new Response('Product not found', { status: 404 });
+      }
       if (product.slug) {
         product.localThumbnail = `${WORKER_URL}/image/${product.slug}`;
       }
@@ -2735,6 +2741,10 @@ export default {
 
       const index = JSON.parse(indexStr);
 
+      // include_missive=true shows all products (for Missive CRM)
+      // Default: exclude missive-only products (for website search)
+      const includeMissive = url.searchParams.get('include_missive') === 'true';
+
       // Score-based search: prioritize name matches over category matches
       // Also filter out test products and products without slugs
       const scoredProducts = index
@@ -2742,6 +2752,8 @@ export default {
           // Filter out test products and products without slugs
           if (!p.slug || p.slug === '') return false;
           if (p.name.toLowerCase().includes('(copy)') || p.name.toLowerCase() === 'test') return false;
+          // Exclude missive-only unless explicitly requested
+          if (!includeMissive && p.missive_only) return false;
           return true;
         })
         .map((p: any) => {
