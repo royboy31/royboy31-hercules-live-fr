@@ -721,15 +721,34 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                             textAlign: isVertical ? 'center' : undefined,
                           }}
                         >
-                          <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{term.name}</div>
-                          {term.desc_above && (
-                            <div className="kd-image-selector-desc kd-image-selector-desc-above" dangerouslySetInnerHTML={{ __html: term.desc_above }} />
-                          )}
-                          {term.thumbnail_url && (
-                            <img src={term.thumbnail_url} alt={term.name} style={{ height: '48px', objectFit: 'contain', margin: '6px 0' }} />
-                          )}
-                          {term.desc_below && (
-                            <div className="kd-image-selector-desc kd-image-selector-desc-below" dangerouslySetInnerHTML={{ __html: term.desc_below }} />
+                          {textPos === 'next_to' ? (
+                            <>
+                              <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                                <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{term.name}</div>
+                                {term.thumbnail_url && (
+                                  <img src={term.thumbnail_url} alt={term.name} style={{ height: '48px', objectFit: 'contain', marginLeft: '5px' }} />
+                                )}
+                              </div>
+                              {term.desc_above && (
+                                <div className="kd-image-selector-desc kd-image-selector-desc-above" dangerouslySetInnerHTML={{ __html: term.desc_above }} />
+                              )}
+                              {term.desc_below && (
+                                <div className="kd-image-selector-desc kd-image-selector-desc-below" dangerouslySetInnerHTML={{ __html: term.desc_below }} />
+                              )}
+                            </>
+                          ) : (
+                            <>
+                              <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{term.name}</div>
+                              {term.desc_above && (
+                                <div className="kd-image-selector-desc kd-image-selector-desc-above" dangerouslySetInnerHTML={{ __html: term.desc_above }} />
+                              )}
+                              {term.thumbnail_url && (
+                                <img src={term.thumbnail_url} alt={term.name} style={{ height: '48px', objectFit: 'contain', margin: '6px 0' }} />
+                              )}
+                              {term.desc_below && (
+                                <div className="kd-image-selector-desc kd-image-selector-desc-below" dangerouslySetInnerHTML={{ __html: term.desc_below }} />
+                              )}
+                            </>
                           )}
                         </div>
                       ))}
