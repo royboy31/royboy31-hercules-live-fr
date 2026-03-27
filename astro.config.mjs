@@ -60,6 +60,7 @@ export default defineConfig({
           '/generateur-de-devis',
           '/search',
           '/api/',
+          '/liste-de-souhaits',
         ];
         return !excludePatterns.some(pattern => page.includes(pattern));
       },
@@ -97,5 +98,7 @@ export default defineConfig({
   ],
 
   redirects: {
+    // SEO: redirect standard sitemap path to actual sitemap
+    '/sitemap.xml': '/sitemap-index.xml',
   }
 });

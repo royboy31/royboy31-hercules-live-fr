@@ -166,14 +166,18 @@ if (jsonLd) {
   <meta name="robots" content={robotsMeta}>
   <meta name="author" content={author || siteConfig.siteName}>
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href={canonicalUrl} />
+  <!-- Canonical URL (omit on noindex pages like 404) -->
+  {!shouldNoindex && <link rel="canonical" href={canonicalUrl} />}
 
-  <!-- Hreflang Tags for International SEO -->
-  <link rel="alternate" hreflang="de" href={hreflangs.de} />
-  <link rel="alternate" hreflang="en" href={hreflangs.en} />
-  <link rel="alternate" hreflang="fr" href={hreflangs.fr} />
-  <link rel="alternate" hreflang="x-default" href={hreflangs.en} />
+  <!-- Hreflang Tags for International SEO (omit on noindex pages) -->
+  {!shouldNoindex && (
+    <>
+      <link rel="alternate" hreflang="de" href={hreflangs.de} />
+      <link rel="alternate" hreflang="en" href={hreflangs.en} />
+      <link rel="alternate" hreflang="fr" href={hreflangs.fr} />
+      <link rel="alternate" hreflang="x-default" href={hreflangs.en} />
+    </>
+  )}
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content={ogType}>
