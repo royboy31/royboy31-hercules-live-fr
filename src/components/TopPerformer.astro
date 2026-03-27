@@ -31,7 +31,7 @@ const { products } = Astro.props;
           {products.map((product) => (
             <div class="swiper-slide">
               <div class="product-card">
-                <a href={`/products/${product.slug}`} class="product-link">
+                <a href={`/products/${product.slug}/`} class="product-link">
                   <div class="product-image">
                     <img
                       src={product.image}

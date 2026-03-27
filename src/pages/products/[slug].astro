@@ -225,7 +225,7 @@ if (product) {
   ogType="product"
   ogImage={productImage}
   productPrice={priceRange?.min?.toString()}
-  productCurrency="GBP"
+  productCurrency="EUR"
   productAvailability="InStock"
   jsonLd={jsonLdSchemas}
   preloadLcpImage={galleryImages[0] ? {
@@ -487,7 +487,7 @@ if (product) {
               <ul class="related-products">
                 {relatedProducts.map((relProduct: any) => (
                   <li class="related-product-item">
-                    <a href={`/products/${relProduct.slug}`} class="related-product-link">
+                    <a href={`/products/${relProduct.slug}/`} class="related-product-link">
                       <img
                         src={`${WORKER_URL}/image/${relProduct.slug}/0`}
                         alt={relProduct.name}
@@ -1740,11 +1740,11 @@ if (product) {
     highQualityImg.src = fullSrc;
   }
 
-  // Upgrade after page is fully loaded (after LCP is measured)
+  // Upgrade after page is fully loaded — delay 4s to avoid resetting LCP/Speed Index
   if (document.readyState === 'complete') {
-    setTimeout(upgradeMainImage, 100);
+    setTimeout(upgradeMainImage, 4000);
   } else {
-    window.addEventListener('load', () => setTimeout(upgradeMainImage, 100));
+    window.addEventListener('load', () => setTimeout(upgradeMainImage, 4000));
   }
 
   // Thumbnail Gallery Pagination (WordPress style)

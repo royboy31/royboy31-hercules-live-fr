@@ -32,27 +32,59 @@
 }
 
 .kd-image-selector-col {
-    width: 30.5% !important;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
-    display: inline-flex;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
-    flex-flow: row;
-    width: 130px;
+    transition: border-color 0.15s, background 0.15s;
+    box-sizing: border-box;
+}
+
+.kd-image-selector-col.kd-img-sel-next_to {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.kd-image-selector-col.kd-img-sel-above {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.kd-image-selector-col.kd-img-sel-under {
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 
 .kd-image-selector-title {
     color: #253461;
     font-family: Jost;
-    font-weight: 500;
     font-size: 13px;
-    line-height: 100%;
-    letter-spacing: 0%;
+    line-height: 120%;
     text-transform: uppercase;
     word-break: break-word;
+}
+
+.kd-image-selector-desc {
+    color: #555;
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.kd-image-selector-desc-above {
+    margin-bottom: 6px;
+}
+
+.kd-image-selector-desc-below {
+    margin-top: 6px;
+}
+
+.kd-image-selector-footer {
+    margin-top: 12px;
 }
 
 .pearl-step.default-select {

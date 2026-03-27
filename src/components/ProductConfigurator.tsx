@@ -9,6 +9,8 @@ interface TermInfo {
   slug: string;
   name: string;
   description: string;
+  desc_above: string;
+  desc_below: string;
   thumbnail_id: number;
   thumbnail_url: string;
 }
@@ -21,6 +23,10 @@ interface AttributeData {
   enabled_if: string;
   enabled_if_value: string;
   minimum_qty: string;
+  image_text_position: 'above' | 'next_to' | 'under';
+  image_items_per_line: number;
+  image_text_weight: 'normal' | 'medium' | 'bold';
+  image_footer_text: string;
 }
 
 interface AddonOption {
@@ -686,37 +692,53 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                 {attr.display_description && <p style={{ marginBottom: '10px', color: '#666' }}>{attr.display_description}</p>}
 
                 {/* Image Selector */}
-                {attr.display_type === 'image_selector' && (
-                  <div className="kd-image-selector" style={{ display: 'flex', flexFlow: 'row wrap', gap: '20px' }}>
-                    {availableTerms.map(term => (
-                      <div
-                        key={term.slug}
-                        className="kd-image-selector-col"
-                        onClick={() => handleAttributeSelect(attrKey, term.slug, visibleIndex)}
-                        style={{
-                          border: selectedValue === term.slug ? '2px solid #469ADC' : '1px solid #ccc',
-                          background: selectedValue === term.slug ? '#e6f0fa' : '#fff',
-                          padding: '10px',
-                          borderRadius: '10px',
-                          cursor: 'pointer',
-                          display: 'inline-flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          flexFlow: 'row',
-                          width: '30.5%',
-                        }}
-                      >
-                        <div className="kd-image-selector-title">{term.name}</div>
-                        {term.thumbnail_url && (
-                          <img
-                            src={term.thumbnail_url}
-                            alt={term.name}
-                            style={{ height: '48px', objectFit: 'contain', marginLeft: '5px' }}
-                          />
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                {attr.display_type === 'image_selector' && (() => {
+                  const textPos = attr.image_text_position || 'next_to';
+                  const perLine = attr.image_items_per_line || 3;
+                  const textWeight = attr.image_text_weight || 'medium';
+                  const weightMap: Record<string, number> = { normal: 400, medium: 500, bold: 700 };
+                  const gapPx = 20;
+                  const colWidth = `calc((100% - ${(perLine - 1) * gapPx}px) / ${perLine})`;
+                  const isVertical = textPos === 'above' || textPos === 'under';
+
+                  return (
+                    <div className="kd-image-selector" style={{ display: 'flex', flexFlow: 'row wrap', gap: `${gapPx}px` }}>
+                      {availableTerms.map(term => (
+                        <div
+                          key={term.slug}
+                          className={`kd-image-selector-col kd-img-sel-${textPos}`}
+                          onClick={() => handleAttributeSelect(attrKey, term.slug, visibleIndex)}
+                          style={{
+                            border: selectedValue === term.slug ? '2px solid #469ADC' : '1px solid #ccc',
+                            background: selectedValue === term.slug ? '#e6f0fa' : '#fff',
+                            padding: '10px',
+                            borderRadius: '10px',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: isVertical ? 'center' : 'stretch',
+                            width: colWidth,
+                            textAlign: isVertical ? 'center' : undefined,
+                          }}
+                        >
+                          <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{term.name}</div>
+                          {term.desc_above && (
+                            <div className="kd-image-selector-desc kd-image-selector-desc-above" dangerouslySetInnerHTML={{ __html: term.desc_above }} />
+                          )}
+                          {term.thumbnail_url && (
+                            <img src={term.thumbnail_url} alt={term.name} style={{ height: '48px', objectFit: 'contain', margin: '6px 0' }} />
+                          )}
+                          {term.desc_below && (
+                            <div className="kd-image-selector-desc kd-image-selector-desc-below" dangerouslySetInnerHTML={{ __html: term.desc_below }} />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })()}
+
+                {attr.display_type === 'image_selector' && attr.image_footer_text && (
+                  <div className="kd-image-selector-desc kd-image-selector-footer" dangerouslySetInnerHTML={{ __html: attr.image_footer_text }} />
                 )}
 
                 {/* Dropdown */}

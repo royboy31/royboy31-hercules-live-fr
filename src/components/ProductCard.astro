@@ -16,7 +16,7 @@ const { id, name, slug, price, regular_price, on_sale, image } = Astro.props;
 ---
 
 <div class="product-card card group">
-  <a href={`/products/${slug}`} class="block">
+  <a href={`/products/${slug}/`} class="block">
     <div class="aspect-square overflow-hidden bg-gray-100">
       <img
         src={image.src}

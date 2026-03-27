@@ -109,7 +109,7 @@ const cardFeatures = product.card_features || [];
     />
   </div>
 
-  <a href={`/products/${product.slug}`} class="woocommerce-LoopProduct-link">
+  <a href={`/products/${product.slug}/`} class="woocommerce-LoopProduct-link">
     <!-- Badges - positioned top-left like WordPress -->
     {(isMadeInEurope || isSustainable || isMadeInUk) && (
       <div class="kd-archive-badges-wrapper">
@@ -197,7 +197,7 @@ const cardFeatures = product.card_features || [];
       </ul>
     )}
   </a>
-  <a href={`/products/${product.slug}`} class="button product_type_variable">
+  <a href={`/products/${product.slug}/`} class="button product_type_variable">
     En savoir plus
   </a>
 </li>
@@ -473,7 +473,14 @@ const cardFeatures = product.card_features || [];
       const obs = new IntersectionObserver((entries) => {
         entries.forEach((e) => { if (e.isIntersecting) { upgradeImage(e.target as HTMLImageElement); obs.unobserve(e.target); } });
       }, { rootMargin: '50px', threshold: 0 });
-      imgs.forEach((img) => obs.observe(img));
+      // Delay above-fold images (first 2 products) to avoid interfering with LCP/Speed Index
+      imgs.forEach((img, i) => {
+        if (i < 2) {
+          setTimeout(() => upgradeImage(img as HTMLImageElement), 4000);
+        } else {
+          obs.observe(img);
+        }
+      });
     } else {
       imgs.forEach((img) => upgradeImage(img as HTMLImageElement));
     }

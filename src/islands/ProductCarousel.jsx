@@ -38,7 +38,7 @@ export default function ProductCarousel({ products }) {
         {products.map((product) => (
           <SwiperSlide key={product.id}>
             <div className="product-card card group h-full">
-              <a href={`/products/${product.slug}`} className="block h-full">
+              <a href={`/products/${product.slug}/`} className="block h-full">
                 <div className="aspect-square overflow-hidden bg-gray-100">
                   <img
                     src={product.images[0]?.src || '/placeholder-product.jpg'}

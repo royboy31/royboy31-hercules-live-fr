@@ -73,8 +73,38 @@ function hercules_get_product_config($request) {
  * Build the complete product configuration data
  */
 function hercules_build_product_config($product) {
-    if (!$product || !$product->is_type('variable')) {
-        return new WP_Error('invalid_product', 'Product must be a variable product', ['status' => 400]);
+    if (!$product) {
+        return new WP_Error('invalid_product', 'Product not found', ['status' => 404]);
+    }
+
+    // Simple products: return minimal config (no attributes/variations)
+    if (!$product->is_type('variable')) {
+        $product_id = $product->get_id();
+        $currency = get_woocommerce_currency();
+        $currency_sym = get_woocommerce_currency_symbol();
+        $currency_pos = get_option('woocommerce_currency_pos');
+        $rates = WC_Tax::find_rates(['country' => 'FR', 'state' => '', 'postcode' => '', 'city' => '', 'tax_class' => '', 'shipping' => false]);
+        $tax_percent = 0.0;
+        if (!empty($rates)) { $first = reset($rates); $tax_percent = (float) $first['rate']; }
+
+        return new WP_REST_Response([
+            'product_id' => $product_id,
+            'product_name' => $product->get_name(),
+            'product_slug' => $product->get_slug(),
+            'product_type' => $product->get_type(),
+            'attributes' => [],
+            'addons' => [],
+            'variations' => [],
+            'currency_code' => $currency,
+            'currency_symbol' => $currency_sym,
+            'currency_position' => $currency_pos,
+            'tax_percent' => $tax_percent,
+            'price' => (float) ($product->get_price() ?: 0),
+            'regular_price' => (float) ($product->get_regular_price() ?: 0),
+            'estimated_delivery_date' => get_post_meta($product_id, '_estimated_delivery_date', true) ?: '',
+            'minimum_quantity' => function_exists('get_field') ? get_field('minimum_quantity', $product_id) : '',
+            'quote_page_url' => '/generateur-de-devis/',
+        ], 200);
     }
 
     $product_id = $product->get_id();

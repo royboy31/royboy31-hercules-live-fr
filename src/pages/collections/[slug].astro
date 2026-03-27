@@ -266,7 +266,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
           <ul class="related-products">
             {relatedProducts.map((product: any) => (
               <li class="related-product-item">
-                <a href={`/products/${product.slug}`} class="related-product-link">
+                <a href={`/products/${product.slug}/`} class="related-product-link">
                   <img
                     src={`/product-image/${product.slug}/0`}
                     alt={product.name}
