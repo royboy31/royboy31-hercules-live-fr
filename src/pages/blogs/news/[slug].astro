@@ -49,12 +49,19 @@ function cleanTitle(title: string): string {
   return title.replace(/^\?\s*/, '').trim();
 }
 
-// Clean broken emoji ? characters from WordPress content
-// (MySQL utf8 encoding drops 4-byte emojis to ?)
+// Clean WordPress content quirks
 function cleanContent(html: string): string {
-  // Remove lone ? at the start of headings (broken emojis)
-  // e.g. "? 1. Keep Colours Simple" -> "1. Keep Colours Simple"
-  return html.replace(/(<h[1-6][^>]*>)\s*\?\s*/gi, '$1');
+  let cleaned = html;
+  // Remove lone ? at the start of headings (broken emojis from MySQL utf8)
+  cleaned = cleaned.replace(/(<h[1-6][^>]*>)\s*\?\s*/gi, '$1');
+  // Remove markdown #### markers inside headings (e.g. <h2>#### Title</h2>)
+  cleaned = cleaned.replace(/(<h[1-6][^>]*>)\s*#{1,6}\s*/gi, '$1');
+  // Remove empty &nbsp; paragraphs that WordPress adds for spacing
+  cleaned = cleaned.replace(/<p>\s*&nbsp;\s*<\/p>/gi, '');
+  // Fix missing spaces around inline tags (e.g. "from<strong>recycled" → "from <strong>recycled")
+  cleaned = cleaned.replace(/([a-zA-ZàâéèêëïîôùûüçÀÂÉÈÊËÏÎÔÙÛÜÇäöüÄÖÜß,;.])<(strong|em|a[\s>])/gi, '$1 <$2');
+  cleaned = cleaned.replace(/<\/(strong|em|a)>([a-zA-ZàâéèêëïîôùûüçÀÂÉÈÊËÏÎÔÙÛÜÇäöüÄÖÜß])/gi, '</$1> $2');
+  return cleaned;
 }
 
 // Format date for display (FR format: "26 juillet 2025")
@@ -435,6 +442,57 @@ jsonLdSchemas.push(getBreadcrumbSchema([
     margin: 30px 0;
     font-style: italic;
     color: #5F5F5F;
+  }
+
+  /* WordPress section/article wrappers */
+  .post-body :global(section),
+  .post-body :global(article) {
+    margin: 0 0 20px;
+  }
+
+  .post-body :global(figure) {
+    margin: 20px 0;
+  }
+
+  .post-body :global(figure img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-body :global(figcaption) {
+    font-size: 14px;
+    color: #787878;
+    margin-top: 8px;
+  }
+
+  .post-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  .post-body :global(th),
+  .post-body :global(td) {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .post-body :global(th) {
+    background: #f5f5f5;
+    font-weight: 600;
+  }
+
+  .post-body :global(h4) {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #253461;
+    margin: 25px 0 12px;
+  }
+
+  .post-body :global(strong) {
+    font-weight: 600;
   }
 
   /* Share Section */
