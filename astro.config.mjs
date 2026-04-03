@@ -61,6 +61,7 @@ export default defineConfig({
           '/search',
           '/api/',
           '/liste-de-souhaits',
+          '/collections/non-categorise',
         ];
         return !excludePatterns.some(pattern => page.includes(pattern));
       },
