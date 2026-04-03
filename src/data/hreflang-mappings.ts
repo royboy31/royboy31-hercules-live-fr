@@ -270,11 +270,22 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
   };
 
   if (pageType === 'page') {
-    const mapping = PAGE_MAPPINGS[dePath];
-    if (mapping) {
-      result.de = DOMAINS.de + mapping.de;
-      result.en = DOMAINS.en + mapping.en;
-      result.fr = DOMAINS.fr + mapping.fr;
+    // Try direct lookup (DE path as key)
+    const directMapping = PAGE_MAPPINGS[dePath];
+    if (directMapping) {
+      result.de = DOMAINS.de + directMapping.de;
+      result.en = DOMAINS.en + directMapping.en;
+      result.fr = DOMAINS.fr + directMapping.fr;
+    } else {
+      // Reverse lookup: find by EN or FR path
+      for (const [, mapping] of Object.entries(PAGE_MAPPINGS)) {
+        if (mapping.en === dePath || mapping.fr === dePath) {
+          result.de = DOMAINS.de + mapping.de;
+          result.en = DOMAINS.en + mapping.en;
+          result.fr = DOMAINS.fr + mapping.fr;
+          break;
+        }
+      }
     }
   } else if (pageType === 'collection') {
     const match = dePath.match(/^\/collections\/([^/]+)\/?$/);
@@ -347,15 +358,16 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
           result.de = `${DOMAINS.de}/blogs/${mapping.de}/`;
           result.en = mapping.en
             ? `${DOMAINS.en}/blogs/uk/${mapping.en}/`
-            : `${DOMAINS.en}/blogs/`;
+            : `${DOMAINS.en}/blogs/uk/`;
           result.fr = `${DOMAINS.fr}/blogs/news/${mapping.fr}/`;
           found = true;
           break;
         }
       }
       if (!found) {
+        // No translation found — point to locale-specific blog indexes
         result.de = `${DOMAINS.de}/blogs/`;
-        result.en = `${DOMAINS.en}/blogs/`;
+        result.en = `${DOMAINS.en}/blogs/uk/`;
       }
     } else if (deMatch && deMatch[1] !== '' && deMatch[1] !== 'news') {
       // DE blog post — direct lookup by DE slug
@@ -365,13 +377,14 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
         result.de = `${DOMAINS.de}/blogs/${mapping.de}/`;
         result.en = mapping.en
           ? `${DOMAINS.en}/blogs/uk/${mapping.en}/`
-          : `${DOMAINS.en}/blogs/`;
+          : `${DOMAINS.en}/blogs/uk/`;
         result.fr = mapping.fr
           ? `${DOMAINS.fr}/blogs/news/${mapping.fr}/`
-          : `${DOMAINS.fr}/blogs/`;
+          : `${DOMAINS.fr}/blogs/news/`;
       } else {
-        result.en = `${DOMAINS.en}/blogs/`;
-        result.fr = `${DOMAINS.fr}/blogs/`;
+        // Unmapped DE blog post — point to locale-specific blog indexes
+        result.en = `${DOMAINS.en}/blogs/uk/`;
+        result.fr = `${DOMAINS.fr}/blogs/news/`;
       }
     } else {
       // Blog index page (/blogs/ or /blogs/news/)
