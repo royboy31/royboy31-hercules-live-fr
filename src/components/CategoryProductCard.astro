@@ -48,7 +48,7 @@ const { product, index = 0 } = Astro.props;
 const isAboveFold = index < 2;
 const isLCPCandidate = index === 0;
 
-const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
 // Get gallery images from Worker KV cache
 // Use cached_image_count from product data to know exactly how many images are available

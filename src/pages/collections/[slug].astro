@@ -12,7 +12,7 @@ import {
   stripHtml
 } from '../../config/seo';
 
-const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
 // Get the category slug from the URL
 const { slug } = Astro.params;
@@ -72,7 +72,7 @@ try {
 
 // Generate static paths for all categories
 export async function getStaticPaths() {
-  const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+  const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
   try {
     const res = await fetch(`${WORKER_URL}/categories`);

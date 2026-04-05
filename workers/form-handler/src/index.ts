@@ -746,7 +746,7 @@ async function enrichAddons(rawAddons: string, pageUrl: string, productSyncUrl?:
   const slug = slugMatch[1];
   let addonsConfig: any[] = [];
   try {
-    const syncUrl = productSyncUrl || 'https://hercules-product-sync-fr.gilles-86d.workers.dev';
+    const syncUrl = productSyncUrl || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
     const resp = await fetch(`${syncUrl}/product-config/${slug}`);
     if (resp.ok) {
       const cfg = await resp.json() as any;

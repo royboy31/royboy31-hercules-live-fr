@@ -4,56 +4,56 @@
       "id": 0,
       "name": "Maillot de Football Personnalisé",
       "slug": "maillot-de-football-personnalise",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/maillot-de-football-personnalise",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/maillot-de-football-personnalise",
       "alt": "Maillot de football personnalisé"
     },
     {
       "id": 0,
       "name": "Écharpe personnalisée HD Deluxe",
       "slug": "echarpe-hd-deluxe-personnalisee",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/echarpe-hd-deluxe-personnalisee",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/echarpe-hd-deluxe-personnalisee",
       "alt": "Écharpe personnalisée HD Deluxe"
     },
     {
       "id": 0,
       "name": "Claquettes Personnalisées Club",
       "slug": "claquettes-personnalisees-club",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/claquettes-personnalisees-club",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/claquettes-personnalisees-club",
       "alt": "Claquettes personnalisées club"
     },
     {
       "id": 0,
       "name": "Bonnet Standard",
       "slug": "bonnets-personnalises",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/bonnets-personnalises",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/bonnets-personnalises",
       "alt": "Bonnet standard personnalisé"
     },
     {
       "id": 0,
       "name": "Casquette de baseball",
       "slug": "casquette-de-baseball",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/casquette-de-baseball",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/casquette-de-baseball",
       "alt": "Casquette de baseball personnalisée"
     },
     {
       "id": 0,
       "name": "Fanion personnalisé imprimé",
       "slug": "fanion-personnalise-imprime",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/fanion-personnalise-imprime",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/fanion-personnalise-imprime",
       "alt": "Fanion personnalisé imprimé"
     },
     {
       "id": 0,
       "name": "Serviette Personnalisée",
       "slug": "serviette-personnalisee",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/serviette-personnalisee",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/serviette-personnalisee",
       "alt": "Serviette personnalisée"
     },
     {
       "id": 0,
       "name": "Bob personnalisé",
       "slug": "bob-personnalise",
-      "image": "https://hercules-product-sync-fr.gilles-86d.workers.dev/image/bob-personnalise",
+      "image": "https://hercules-product-sync-fr-prod.gilles-86d.workers.dev/image/bob-personnalise",
       "alt": "Bob personnalisé"
     }
   ]
