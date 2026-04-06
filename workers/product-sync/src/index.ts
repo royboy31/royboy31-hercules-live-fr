@@ -1485,8 +1485,8 @@ async function deletePost(env: Env, postId: number): Promise<void> {
   console.log(`Deleted post ${postId} from KV`);
 }
 
-// Debounce interval for site rebuilds (5 minutes)
-const REBUILD_DEBOUNCE_MS = 90 * 1000; // 90 seconds
+// Debounce interval for site rebuilds (90 seconds)
+const REBUILD_DEBOUNCE_MS = 90 * 1000;
 
 // Trigger GitHub Actions workflow to rebuild and deploy the site
 // Uses workflow_dispatch API to trigger the deploy.yml workflow
@@ -1498,11 +1498,12 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
   }
 
   try {
-    // Check last rebuild timestamp for debouncing
+    // Check for pending rebuild from a previous failed attempt — skip debounce if so
+    const pendingRebuild = await env.PRODUCTS_KV.get('rebuild_pending');
     const lastRebuildStr = await env.PRODUCTS_KV.get('last_rebuild');
     const now = Date.now();
 
-    if (lastRebuildStr) {
+    if (!pendingRebuild && lastRebuildStr) {
       const lastRebuild = parseInt(lastRebuildStr, 10);
       const elapsed = now - lastRebuild;
 
@@ -1512,9 +1513,6 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
         return { triggered: false, reason: `Debounced (${remainingSeconds}s remaining)` };
       }
     }
-
-    // Update last rebuild timestamp BEFORE triggering to prevent race conditions
-    await env.PRODUCTS_KV.put('last_rebuild', now.toString());
 
     // Trigger GitHub Actions workflow via workflow_dispatch
     const ghRepo = env.GITHUB_OWNER && env.GITHUB_REPO
@@ -1536,7 +1534,8 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
         ref: ghRef,
         inputs: {
           reason: 'WooCommerce product sync webhook',
-          target: ghRef === 'main' ? 'staging' : 'production',
+          // Production worker (URL contains "-prod") deploys to production, otherwise staging
+          target: env.WORKER_BASE_URL?.includes('-prod') ? 'production' : 'staging',
         },
       }),
     });
@@ -1544,13 +1543,27 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`GitHub workflow trigger failed: ${response.status} ${errorText}`);
+      await env.PRODUCTS_KV.put('rebuild_pending', JSON.stringify({
+        failed_at: now,
+        attempts: pendingRebuild ? JSON.parse(pendingRebuild).attempts + 1 : 1,
+        last_error: `${response.status}: ${errorText.substring(0, 200)}`,
+      }));
       return { triggered: false, reason: `GitHub API failed: ${response.status}` };
     }
+
+    // Success — clear pending flag and set timestamp
+    await env.PRODUCTS_KV.delete('rebuild_pending');
+    await env.PRODUCTS_KV.put('last_rebuild', now.toString());
 
     console.log('GitHub Actions workflow triggered successfully');
     return { triggered: true, reason: 'GitHub workflow triggered' };
   } catch (error) {
     console.error('Error triggering site rebuild:', error);
+    await env.PRODUCTS_KV.put('rebuild_pending', JSON.stringify({
+      failed_at: Date.now(),
+      attempts: 1,
+      last_error: String(error).substring(0, 200),
+    }));
     return { triggered: false, reason: `Error: ${error}` };
   }
 }
@@ -1635,17 +1648,65 @@ export default {
 
         console.log(`Webhook received: syncing product ${productId}`);
 
-        // Sync the product in background
-        ctx.waitUntil(syncSingleProduct(env, productId));
-
-        // Trigger site rebuild (debounced)
-        ctx.waitUntil(triggerSiteRebuild(env));
+        // Run sync FIRST, then trigger rebuild after sync completes
+        // This ensures the build always fetches the latest data
+        ctx.waitUntil(
+          syncSingleProduct(env, productId)
+            .then(result => {
+              console.log(`Product ${productId} sync complete`);
+              return triggerSiteRebuild(env);
+            })
+            .then(result => console.log(`Rebuild result: ${result.reason}`))
+            .catch(error => console.error(`Sync/rebuild error for product ${productId}:`, error))
+        );
 
         return new Response(JSON.stringify({ success: true, productId, action: 'sync' }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       } catch (error) {
         console.error('Webhook error:', error);
+        return new Response(JSON.stringify({ error: String(error) }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // Batch product sync — syncs multiple products then triggers a single rebuild
+    if (url.pathname === '/webhook/batch-product-sync' && request.method === 'POST') {
+      try {
+        const signature = request.headers.get('X-WC-Webhook-Signature') || '';
+        const payload = await request.text();
+
+        const isValid = await verifyWebhookSignature(payload, signature, env.WEBHOOK_SECRET);
+        if (!isValid) {
+          return new Response('Invalid signature', { status: 401 });
+        }
+
+        const data = JSON.parse(payload);
+        const productIds: number[] = data.product_ids || [];
+
+        console.log(`Batch sync: ${productIds.length} products (source: ${data.source})`);
+
+        // Run ALL syncs FIRST, then trigger rebuild after all complete
+        // This ensures the build always fetches the latest data
+        ctx.waitUntil(
+          Promise.all(
+            productIds.map(id => syncSingleProduct(env, id).catch(e => {
+              console.error(`Failed to sync product ${id}:`, e);
+              return null;
+            }))
+          )
+            .then(() => triggerSiteRebuild(env))
+            .then(result => console.log(`Batch rebuild result: ${result.reason}`))
+            .catch(error => console.error(`Batch rebuild error:`, error))
+        );
+
+        return new Response(JSON.stringify({ success: true, count: productIds.length }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (error) {
+        console.error('Batch sync error:', error);
         return new Response(JSON.stringify({ error: String(error) }), {
           status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -1715,11 +1776,17 @@ export default {
 
         console.log(`Webhook received: syncing category ${categoryId}`);
 
-        // Sync the category in background
-        ctx.waitUntil(syncSingleCategory(env, categoryId));
-
-        // Trigger site rebuild (debounced)
-        ctx.waitUntil(triggerSiteRebuild(env));
+        // Run sync and rebuild in PARALLEL to avoid ctx.waitUntil() 30s timeout
+        ctx.waitUntil(
+          Promise.all([
+            syncSingleCategory(env, categoryId)
+              .then(result => console.log(`Category ${categoryId} sync complete`))
+              .catch(error => console.error(`Sync error for category ${categoryId}:`, error)),
+            triggerSiteRebuild(env)
+              .then(result => console.log(`Rebuild result: ${result.reason}`))
+              .catch(error => console.error(`Rebuild error:`, error)),
+          ])
+        );
 
         return new Response(JSON.stringify({ success: true, categoryId, action: 'sync' }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -1799,11 +1866,17 @@ export default {
 
         console.log(`Webhook received: syncing post ${postId}`);
 
-        // Sync the post in background
-        ctx.waitUntil(syncSinglePost(env, postId));
-
-        // Trigger site rebuild (debounced)
-        ctx.waitUntil(triggerSiteRebuild(env));
+        // Run sync and rebuild in PARALLEL to avoid ctx.waitUntil() 30s timeout
+        ctx.waitUntil(
+          Promise.all([
+            syncSinglePost(env, postId)
+              .then(result => console.log(`Post ${postId} sync complete`))
+              .catch(error => console.error(`Sync error for post ${postId}:`, error)),
+            triggerSiteRebuild(env)
+              .then(result => console.log(`Rebuild result: ${result.reason}`))
+              .catch(error => console.error(`Rebuild error:`, error)),
+          ])
+        );
 
         return new Response(JSON.stringify({ success: true, postId, action: 'sync' }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -2297,26 +2370,48 @@ export default {
       });
     }
 
+    // Purge all product-config cache entries
+    if (url.pathname === '/purge-product-configs' && request.method === 'POST') {
+      const authHeader = request.headers.get('X-Webhook-Secret') || '';
+      if (authHeader !== env.WEBHOOK_SECRET) {
+        return new Response('Unauthorized', { status: 401, headers: corsHeaders });
+      }
+
+      try {
+        const list = await env.PRODUCTS_KV.list({ prefix: 'product-config:' });
+        let deleted = 0;
+        for (const key of list.keys) {
+          await env.PRODUCTS_KV.delete(key.name);
+          deleted++;
+        }
+        return new Response(JSON.stringify({ success: true, deleted }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      } catch (err) {
+        return new Response(JSON.stringify({ success: false, error: String(err) }), {
+          status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      }
+    }
+
     // Get product configuration for steps form (Pearl WC Steps data)
     // This endpoint fetches from WordPress and caches in KV
     if (url.pathname.startsWith('/product-config/')) {
       const identifier = url.pathname.replace('/product-config/', '');
 
-      // Try to get from cache first
-      let configStr = await env.PRODUCTS_KV.get(`product-config:${identifier}`);
+      // Always fetch fresh from WordPress (no KV cache — settings must reflect immediately)
+      const wpUrl = identifier.match(/^\d+$/)
+        ? `${env.WC_STORE_URL}/wp-json/hercules/v1/product-config/${identifier}`
+        : `${env.WC_STORE_URL}/wp-json/hercules/v1/product-config-by-slug/${identifier}`;
+      let configStr: string | null = null;
 
-      if (!configStr) {
-        // Fetch from WordPress API
-        const wpUrl = identifier.match(/^\d+$/)
-          ? `${env.WC_STORE_URL}/wp-json/hercules/v1/product-config/${identifier}`
-          : `${env.WC_STORE_URL}/wp-json/hercules/v1/product-config-by-slug/${identifier}`;
-
-        try {
+      try {
           const response = await fetch(wpUrl, {
             headers: {
               'Content-Type': 'application/json',
               'User-Agent': 'Hercules-Product-Sync-Worker/1.0',
             },
+            cf: { cacheTtl: 0 },
           });
 
           if (!response.ok) {
@@ -2356,27 +2451,7 @@ export default {
 
           configStr = JSON.stringify(config);
 
-          // Try to cache in KV (non-blocking - continue even if cache fails)
-          try {
-            await env.PRODUCTS_KV.put(`product-config:${identifier}`, configStr, {
-              expirationTtl: 3600, // 1 hour
-            });
-
-            // Also cache by ID and slug for easy lookup
-            if (config.product_id) {
-              await env.PRODUCTS_KV.put(`product-config:${config.product_id}`, configStr, {
-                expirationTtl: 3600,
-              });
-            }
-            if (config.product_slug) {
-              await env.PRODUCTS_KV.put(`product-config:${config.product_slug}`, configStr, {
-                expirationTtl: 3600,
-              });
-            }
-          } catch (kvError) {
-            // KV write failed (likely daily limit exceeded) - log but continue
-            console.warn('KV cache write failed:', kvError instanceof Error ? kvError.message : 'Unknown error');
-          }
+          // No KV caching for product-config — always serve fresh from WP
         } catch (error) {
           const errorMessage = error instanceof Error ? error.message : 'Unknown error';
           console.error('Error fetching product config:', errorMessage);
@@ -2389,7 +2464,6 @@ export default {
             headers: { ...corsHeaders, 'Content-Type': 'application/json' }
           });
         }
-      }
 
       return new Response(configStr, {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -2492,9 +2566,41 @@ export default {
       return new Response(bytes, {
         headers: {
           'Content-Type': metadata?.contentType || 'image/jpeg',
-          'Cache-Control': 'public, max-age=31536000, immutable', // Cache for 1 year
+          'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
           'Access-Control-Allow-Origin': '*',
         },
+      });
+    }
+
+    // Health check endpoint (machine-parseable, returns 503 if degraded)
+    if (url.pathname === '/health') {
+      const lastSync = await env.PRODUCTS_KV.get('last_sync');
+      const lastRebuild = await env.PRODUCTS_KV.get('last_rebuild');
+      const pendingRebuild = await env.PRODUCTS_KV.get('rebuild_pending');
+      const productIndex = await env.PRODUCTS_KV.get('product:index');
+      const now = Date.now();
+
+      const lastSyncAge = lastSync ? now - new Date(lastSync).getTime() : Infinity;
+      const syncStale = lastSyncAge > 26 * 60 * 60 * 1000;
+      const hasPendingRebuild = !!pendingRebuild;
+      const productCount = productIndex ? JSON.parse(productIndex).length : 0;
+
+      const healthy = !syncStale && !hasPendingRebuild && productCount > 0;
+
+      return new Response(JSON.stringify({
+        status: healthy ? 'healthy' : 'degraded',
+        checks: {
+          last_sync_age_hours: Math.round(lastSyncAge / 3600000 * 10) / 10,
+          sync_stale: syncStale,
+          pending_rebuild: hasPendingRebuild,
+          pending_rebuild_details: pendingRebuild ? JSON.parse(pendingRebuild) : null,
+          product_count: productCount,
+          github_token_configured: !!env.GITHUB_TOKEN,
+        },
+        timestamp: new Date().toISOString(),
+      }), {
+        status: healthy ? 200 : 503,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
 
@@ -2604,7 +2710,7 @@ export default {
                 const resizedResponse = await fetch(cdnCgiUrl);
                 if (resizedResponse.ok) {
                   const headers = new Headers(resizedResponse.headers);
-                  headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+                  headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
                   headers.set('Access-Control-Allow-Origin', '*');
                   return new Response(resizedResponse.body, {
                     status: 200,
@@ -2653,7 +2759,7 @@ export default {
             const resizedResponse = await fetch(cdnCgiUrl);
             if (resizedResponse.ok) {
               const headers = new Headers(resizedResponse.headers);
-              headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+              headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
               headers.set('Access-Control-Allow-Origin', '*');
               return new Response(resizedResponse.body, {
                 status: 200,
@@ -2678,7 +2784,7 @@ export default {
       return new Response(bytes, {
         headers: {
           'Content-Type': metadata?.contentType || 'image/png',
-          'Cache-Control': 'public, max-age=31536000, immutable', // Cache for 1 year
+          'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
           'Access-Control-Allow-Origin': '*',
         },
       });
@@ -2715,7 +2821,7 @@ export default {
       return new Response(bytes, {
         headers: {
           'Content-Type': metadata?.contentType || 'image/png',
-          'Cache-Control': 'public, max-age=31536000, immutable', // Cache for 1 year
+          'Cache-Control': 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400',
           'Access-Control-Allow-Origin': '*',
         },
       });
