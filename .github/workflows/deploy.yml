@@ -134,6 +134,6 @@ jobs:
         run: |
           curl -s -X POST \
             -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: Bearer ${{ secrets.HEALTH_CHECK_TOKEN }}" \
             https://api.github.com/repos/royboy31/hercules-health-check/dispatches \
             -d '{"event_type":"deploy-fr"}' || true
