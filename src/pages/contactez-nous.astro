@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustLogos from '../components/TrustLogos.astro';
+import CustomerReviews from '../components/CustomerReviews.astro';
 
-const pageTitle = 'Contactez-nous';
-const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous pour toute demande concernant le merchandising sportif personnalisé, les commandes en gros ou toute autre question.';
+const pageTitle = "Parlons de votre projet | Hercules Merchandising France";
+const pageDescription = "Contactez Hercules Merchandising pour votre merchandising sportif personnalisé. Service de design gratuit, réponse rapide, accompagnement de l'idée à la livraison.";
 ---
 
 <BaseLayout
@@ -10,62 +12,90 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
   description={pageDescription}
   pageType="page"
 >
-  <!-- Breadcrumb -->
-  <section class="breadcrumb-section">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/" itemprop="item">
-              <span itemprop="name">Accueil</span>
-            </a>
-            <meta itemprop="position" content="1" />
-            <span class="separator"><img src="/images/breadcrumb-separator.svg" alt="" width="6" height="12" /></span>
-          </li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">Contactez-nous</span>
-            <meta itemprop="position" content="2" />
-          </li>
-        </ol>
-      </nav>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Parlons de votre projet</h1>
+        <p class="hero-intro">Vous avez une question ou souhaitez démarrer un projet ?</p>
+        <p class="hero-intro">Envoyez-nous un message et nous vous répondrons rapidement, généralement dans la journée.</p>
+        <p class="hero-intro">Que vous ayez déjà une idée précise ou que vous souhaitiez simplement explorer vos options, nous vous guiderons tout au long du processus.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="page-section">
+  <!-- Pourquoi nous contacter -->
+  <section class="why-section">
     <div class="container">
-      <div class="content-wrapper">
-        <h1>Contactez-nous</h1>
+      <h2 class="section-title">Pourquoi nous contacter</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10C99E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+            </svg>
+          </div>
+          <p>Service de design gratuit et sans engagement</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10C99E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <p>Réponse rapide et communication claire</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10C99E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <p>Accompagnement de l'idée à la livraison</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact Form Section -->
+  <section class="form-section">
+    <div class="container">
+      <h2 class="section-title">Votre message</h2>
+      <div class="form-wrapper">
         <form class="contact-form" id="contact-form" novalidate>
           <!-- Name + Email Row -->
           <div class="form-row">
             <div class="form-field">
-              <label for="contact-name">Nom et Prénom <span class="required">*</span></label>
-              <input type="text" id="contact-name" name="name" placeholder="Nom et Prénom" required />
+              <label for="contact-name">Nom <span class="required">*</span></label>
+              <input type="text" id="contact-name" name="name" placeholder="Votre nom" required />
             </div>
             <div class="form-field">
               <label for="contact-email">E-mail <span class="required">*</span></label>
-              <input type="email" id="contact-email" name="email" placeholder="E-mail" required />
+              <input type="email" id="contact-email" name="email" placeholder="Votre e-mail" required />
             </div>
           </div>
 
-          <!-- Phone Number -->
+          <!-- Organisation -->
           <div class="form-field">
-            <label for="contact-phone">Numéro de téléphone</label>
-            <input type="tel" id="contact-phone" name="phone" placeholder="Numéro de téléphone" />
+            <label for="contact-organisation">Organisation <span class="optional">(facultatif)</span></label>
+            <input type="text" id="contact-organisation" name="organisation" placeholder="Club, équipe, entreprise ou organisation" />
           </div>
 
           <!-- Message -->
           <div class="form-field">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" placeholder="Votre message" rows="5"></textarea>
+            <label for="contact-message">Message <span class="required">*</span></label>
+            <textarea id="contact-message" name="message" placeholder="Parlez-nous de votre projet..." rows="6" required></textarea>
           </div>
 
           <!-- File Upload -->
           <div class="form-field">
-            <label for="contact-files">Joindre un fichier</label>
+            <label for="contact-files">Joindre un fichier <span class="optional">(facultatif)</span></label>
             <input type="file" id="contact-files" name="files" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx" />
+            <span class="file-hint">Logos, designs ou images de référence</span>
           </div>
 
           <!-- Error / Success Messages -->
@@ -73,86 +103,200 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
 
           <!-- Submit Button -->
           <div class="form-submit">
-            <button type="submit" id="contact-submit">Envoyer</button>
+            <button type="submit" id="contact-submit">Envoyer le message</button>
           </div>
         </form>
       </div>
     </div>
   </section>
+
+  <!-- Ce qui se passe ensuite -->
+  <section class="next-section">
+    <div class="container">
+      <h2 class="section-title">Ce qui se passe ensuite</h2>
+      <p class="section-intro">Une fois que vous nous avez contactés :</p>
+      <div class="steps-grid">
+        <div class="step">
+          <span class="step-number">1</span>
+          <p>Nous examinons votre demande</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>Nous vous répondons rapidement</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>Nous discutons de votre projet</p>
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <p>Nous créons votre premier design gratuitement</p>
+        </div>
+      </div>
+      <p class="no-pressure">Vous décidez si vous souhaitez continuer — sans pression.</p>
+    </div>
+  </section>
+
+  <!-- Trusted Section -->
+  <section class="trust-section">
+    <div class="container">
+      <h2 class="section-title">La confiance d'organisations à travers l'Europe</h2>
+      <p class="section-intro">Nous accompagnons plus de 1 000 clients chaque année.</p>
+      <p class="section-intro">Pour un avis honnête sur notre façon de travailler, nous vous invitons à consulter nos <a href="https://www.google.com/maps/place//data=!4m7!3m6!1s0xa13b775f11fdb24d:0x93a56bc6631bafa4!8m2!3d47.73855!4d11.5749774!9m1!1b1" target="_blank" rel="noopener noreferrer">avis Google</a>.</p>
+    </div>
+  </section>
+
+  <!-- Trust Logos -->
+  <TrustLogos />
+
+  <!-- Avis clients -->
+  <CustomerReviews />
 </BaseLayout>
 
 <style>
-  .breadcrumb-section {
-    background: #FAFAFA;
-    padding: 15px 0;
+  /* Hero Section */
+  .hero-section {
+    background-color: #444444;
+    background-image: url('/images/about-hero-banner.jpg');
+    background-size: cover;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
   }
 
-  .container {
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(286deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+    opacity: 0.6;
+  }
+
+  .hero-container {
+    position: relative;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 60px 40px;
+    width: 100%;
   }
 
-  .breadcrumb {
-    font-family: 'Jost', sans-serif;
-    font-size: 14px;
-  }
-
-  .breadcrumb ol {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .breadcrumb li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .breadcrumb a {
-    color: #787878;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .breadcrumb a:hover {
-    color: #469ADC;
-  }
-
-  .breadcrumb li:last-child span {
-    color: #469ADC;
-  }
-
-  .breadcrumb .separator {
-    display: flex;
-    align-items: center;
-  }
-
-  .page-section {
-    background: #FAFAFA;
-    padding: 40px 0 80px;
-  }
-
-  .content-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
+  .hero-text {
+    max-width: 650px;
   }
 
   h1 {
     font-family: 'Jost', sans-serif;
-    font-size: 42px;
+    font-size: 52px;
     font-weight: 600;
-    color: #253461;
-    text-align: center;
-    margin-bottom: 40px;
+    color: #FFFFFF;
     text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0 0 20px;
   }
 
-  /* Form */
+  .hero-intro {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 10px;
+  }
+
+  /* Shared */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #253461;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 15px;
+  }
+
+  .section-intro {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #5F5F5F;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 10px;
+  }
+
+  .section-intro a {
+    color: #469ADC;
+    text-decoration: underline;
+  }
+
+  .section-intro a:hover {
+    color: #253461;
+  }
+
+  /* Why Contact Us */
+  .why-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #FAFAFA;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .why-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .why-icon {
+    margin-bottom: 15px;
+  }
+
+  .why-card p {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #253461;
+    margin: 0;
+  }
+
+  /* Form Section */
+  .form-section {
+    padding: 70px 0;
+    background: #FAFAFA;
+  }
+
+  .form-wrapper {
+    max-width: 750px;
+    margin: 30px auto 0;
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -185,6 +329,12 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
     color: #e74c3c;
   }
 
+  .optional {
+    font-weight: 400;
+    color: #999;
+    font-size: 13px;
+  }
+
   .form-field input[type="text"],
   .form-field input[type="email"],
   .form-field input[type="tel"],
@@ -193,7 +343,7 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
     font-size: 14px;
     padding: 12px 15px;
     border: 1px solid #DCDCDC;
-    border-radius: 5px;
+    border-radius: 8px;
     background: #fff;
     color: #253461;
     width: 100%;
@@ -215,7 +365,7 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
 
   .form-field textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .form-field input[type="file"] {
@@ -224,10 +374,16 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
     color: #253461;
   }
 
+  .file-hint {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #999;
+  }
+
   .form-message {
     display: none;
     padding: 12px 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: 'Jost', sans-serif;
     font-size: 14px;
   }
@@ -249,13 +405,14 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
   .form-submit {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
   }
 
   .form-submit button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 40px;
+    padding: 15px 50px;
     background: #10C99E;
     border: 1px solid #10C99E;
     border-radius: 50px;
@@ -266,7 +423,7 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 140px;
+    min-width: 180px;
   }
 
   .form-submit button:hover:not(:disabled) {
@@ -279,13 +436,120 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
     cursor: not-allowed;
   }
 
+  /* What Happens Next */
+  .next-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .step {
+    text-align: center;
+    padding: 25px 15px;
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #10C99E;
+    color: #FFFFFF;
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .step p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #5F5F5F;
+    margin: 0;
+  }
+
+  .no-pressure {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #253461;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  /* Trust Section */
+  .trust-section {
+    padding: 70px 0 30px;
+    background: #FAFAFA;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 1024px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
+    .hero-section {
+      min-height: auto;
+    }
+
+    .hero-container {
+      padding: 40px 20px;
+    }
+
     h1 {
-      font-size: 28px;
+      font-size: 32px;
+    }
+
+    .hero-intro {
+      font-size: 15px;
+    }
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+
+    .why-section,
+    .form-section,
+    .next-section,
+    .trust-section {
+      padding: 45px 0;
+    }
+
+    .form-wrapper {
+      padding: 25px 20px;
     }
 
     .form-row {
       flex-direction: column;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .step {
+      padding: 15px 10px;
     }
   }
 </style>
@@ -332,14 +596,14 @@ const pageDescription = 'Contactez Hercules Merchandising France. Écrivez-nous 
           }
 
           messageDiv.className = 'form-message success';
-          messageDiv.textContent = 'Merci de nous avoir contactés ! Votre message a bien été envoyé. Un de nos représentants vous répondra dans les plus brefs délais.';
+          messageDiv.textContent = 'Merci pour votre message ! Nous vous répondrons rapidement, généralement dans la journée.';
           form.reset();
         } catch (error) {
           messageDiv.className = 'form-message error';
           messageDiv.textContent = 'Une erreur est survenue. Veuillez réessayer.';
         } finally {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Envoyer';
+          submitBtn.textContent = 'Envoyer le message';
         }
       });
     }
