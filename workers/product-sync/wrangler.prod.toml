@@ -10,6 +10,11 @@ GITHUB_OWNER = "royboy31"
 GITHUB_REPO = "royboy31-hercules-live-fr"
 GITHUB_WORKFLOW = "deploy.yml"
 GITHUB_REF = "production"
+ASTRO_SITE_URL = "https://hercules-merchandising.fr"
+CLOUDFLARE_ZONE_ID = "7e8a5e85fb6c7519ff5564868d0b61ba"
+
+[triggers]
+crons = ["0 4 * * *"]
 
 [[kv_namespaces]]
 binding = "PRODUCTS_KV"

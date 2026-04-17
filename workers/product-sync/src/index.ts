@@ -44,6 +44,8 @@ export interface Env {
   GITHUB_WORKFLOW?: string;
   GITHUB_REF?: string;
   WORKER_BASE_URL: string; // This worker's public URL for image serving
+  CLOUDFLARE_ZONE_ID?: string;  // For cache purging on product delete
+  CLOUDFLARE_API_TOKEN?: string;  // For cache purging on product delete
 }
 
 // Worker base URL for image serving — set via WORKER_BASE_URL env var
@@ -877,10 +879,9 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
       }
     }
 
-    // Update product index with full list on first batch
+    // Update product index on first batch
     if (offset === 0) {
-      const productIndex = allProducts.map(p => {
-        // Extract badge data from WooCommerce meta_data
+      const toIndexEntry = (p: WCProduct) => {
         const getMeta = (key: string) => p.meta_data?.find(m => m.key === key)?.value;
         const madeInEurope = getMeta('made_in_europe');
         const greenProduct = getMeta('green_product');
@@ -898,8 +899,22 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
           made_in_uk: madeInUk === '1' || madeInUk === 1 || madeInUk === true,
           missive_only: p.missive_only || getMeta('_missive_only') === 'yes',
         };
-      });
-      await env.PRODUCTS_KV.put('product:index', JSON.stringify(productIndex));
+      };
+
+      if (modifiedAfter) {
+        // Delta sync: merge modified products into existing index
+        const existingRaw = await env.PRODUCTS_KV.get('product:index');
+        const existingIndex: any[] = existingRaw ? JSON.parse(existingRaw) : [];
+        const modifiedIds = new Set(allProducts.map(p => p.id));
+        // Remove old entries for modified products, then append updated entries
+        const filtered = existingIndex.filter((e: any) => !modifiedIds.has(e.id));
+        const updatedEntries = allProducts.map(toIndexEntry);
+        await env.PRODUCTS_KV.put('product:index', JSON.stringify([...filtered, ...updatedEntries]));
+      } else {
+        // Full sync: replace entire index
+        const productIndex = allProducts.map(toIndexEntry);
+        await env.PRODUCTS_KV.put('product:index', JSON.stringify(productIndex));
+      }
     }
 
     // Store sync timestamp only when complete
@@ -917,12 +932,53 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
   }
 }
 
-// Delete a product from KV storage
-async function deleteProduct(env: Env, productId: number): Promise<void> {
+// Purge Cloudflare cache for specific URLs
+async function purgeCloudflareCache(env: Env, urls: string[]): Promise<boolean> {
+  if (!env.CLOUDFLARE_ZONE_ID || !env.CLOUDFLARE_API_TOKEN) {
+    console.log('Cloudflare credentials not configured, skipping cache purge');
+    return false;
+  }
+
+  if (urls.length === 0) {
+    return true;
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.cloudflare.com/client/v4/zones/${env.CLOUDFLARE_ZONE_ID}/purge_cache`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${env.CLOUDFLARE_API_TOKEN}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ files: urls }),
+      }
+    );
+
+    const result = await response.json() as { success: boolean; errors?: any[] };
+    if (result.success) {
+      console.log(`Purged Cloudflare cache for ${urls.length} URLs:`, urls);
+      return true;
+    } else {
+      console.error('Cloudflare cache purge failed:', result.errors);
+      return false;
+    }
+  } catch (error) {
+    console.error('Cloudflare cache purge error:', error);
+    return false;
+  }
+}
+
+// Delete a product from KV storage (returns slug for cache purging)
+async function deleteProduct(env: Env, productId: number): Promise<string | null> {
+  let slug: string | null = null;
+
   // Get product to find slug for image deletion
   const productStr = await env.PRODUCTS_KV.get(`product:${productId}`);
   if (productStr) {
     const product = JSON.parse(productStr);
+    slug = product.slug;
     // Delete by slug
     await env.PRODUCTS_KV.delete(`product:slug:${product.slug}`);
     // Delete cached image
@@ -941,6 +997,7 @@ async function deleteProduct(env: Env, productId: number): Promise<void> {
   }
 
   console.log(`Deleted product ${productId} from KV`);
+  return slug;
 }
 
 // Sync a single product (for webhook updates)
@@ -1737,12 +1794,21 @@ export default {
         console.log(`Webhook received: deleting product ${productId}`);
 
         // Delete product from KV (including slug and cached image)
-        await deleteProduct(env, productId);
+        const deletedSlug = await deleteProduct(env, productId);
+
+        // Purge Cloudflare cache for the deleted product page
+        if (deletedSlug && env.ASTRO_SITE_URL) {
+          const urlsToPurge = [
+            `${env.ASTRO_SITE_URL}/products/${deletedSlug}/`,
+            `${env.ASTRO_SITE_URL}/products/${deletedSlug}`,
+          ];
+          ctx.waitUntil(purgeCloudflareCache(env, urlsToPurge));
+        }
 
         // Trigger site rebuild (debounced)
         ctx.waitUntil(triggerSiteRebuild(env));
 
-        return new Response(JSON.stringify({ success: true, productId, action: 'delete' }), {
+        return new Response(JSON.stringify({ success: true, productId, slug: deletedSlug, action: 'delete', cachePurged: !!deletedSlug }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       } catch (error) {
