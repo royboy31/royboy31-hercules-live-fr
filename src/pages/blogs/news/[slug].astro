@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CustomerReviews from '../../../components/CustomerReviews.astro';
+import TrustLogos from '../../../components/TrustLogos.astro';
 import {
   siteConfig,
   getArticleSchema,
@@ -250,6 +251,7 @@ jsonLdSchemas.push(getBreadcrumbSchema([
     </div>
   </div>
 
+  <TrustLogos />
   <CustomerReviews />
 </BaseLayout>
 
