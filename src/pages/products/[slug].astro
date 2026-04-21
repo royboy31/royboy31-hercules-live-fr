@@ -15,6 +15,7 @@ import {
   truncateDescription,
   stripHtml
 } from '../../config/seo';
+import { getGooglePlaceData } from '../../lib/google-places';
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
@@ -188,6 +189,9 @@ if (product) {
   });
 }
 
+// Fetch Google review data (scraped at build time by fetch-google-reviews.mjs)
+const placeData = await getGooglePlaceData();
+
 // Build JSON-LD schemas
 const jsonLdSchemas: object[] = [];
 
@@ -204,7 +208,11 @@ if (product) {
     priceMax: priceRange?.max,
     currency: 'EUR',
     availability: 'InStock',
-    condition: 'NewCondition'
+    condition: 'NewCondition',
+    aggregateRating: {
+      ratingValue: placeData.rating,
+      reviewCount: placeData.reviewCount,
+    },
   }));
 
   // Breadcrumb schema
