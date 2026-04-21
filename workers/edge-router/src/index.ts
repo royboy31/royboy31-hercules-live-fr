@@ -191,7 +191,7 @@ export default {
     if (pathname.startsWith('/cached-scripts/')) {
       const SCRIPT_MAP: Record<string, { url: string; maxAge: number; contentType: string }> = {
         '/cached-scripts/clarity.js': {
-          url: 'https://www.clarity.ms/tag/j9gd5ystsk',
+          url: 'https://www.clarity.ms/tag/pc87sb9mdj',
           maxAge: 604800, // 7 days
           contentType: 'application/javascript',
         },
@@ -263,8 +263,8 @@ export default {
       return Response.redirect(new URL('/blogs/news/', url.origin).toString(), 301);
     }
     if (pathname.startsWith('/blogs/fr/')) {
-      const slug = pathname.replace('/blogs/fr/', '');
-      return Response.redirect(new URL(`/blogs/news/${slug}`, url.origin).toString(), 301);
+      const slug = pathname.replace('/blogs/fr/', '').replace(/\/+$/, '');
+      return Response.redirect(new URL(`/blogs/news/${slug}/`, url.origin).toString(), 301);
     }
 
     // /product-category/* -> /collections/* (WooCommerce default category URL)
@@ -272,14 +272,14 @@ export default {
       return Response.redirect(new URL('/collections/', url.origin).toString(), 301);
     }
     if (pathname.startsWith('/product-category/')) {
-      const slug = pathname.replace('/product-category/', '');
-      return Response.redirect(new URL(`/collections/${slug}`, url.origin).toString(), 301);
+      const slug = pathname.replace('/product-category/', '').replace(/\/+$/, '');
+      return Response.redirect(new URL(`/collections/${slug}/`, url.origin).toString(), 301);
     }
 
     // /product/* -> /products/* (WooCommerce default product URL - singular)
     if (pathname.startsWith('/product/') && !pathname.startsWith('/product-category/')) {
-      const slug = pathname.replace('/product/', '');
-      return Response.redirect(new URL(`/products/${slug}`, url.origin).toString(), 301);
+      const slug = pathname.replace('/product/', '').replace(/\/+$/, '');
+      return Response.redirect(new URL(`/products/${slug}/`, url.origin).toString(), 301);
     }
 
     // /category/* -> /collections/*
@@ -287,8 +287,8 @@ export default {
       return Response.redirect(new URL('/collections/', url.origin).toString(), 301);
     }
     if (pathname.startsWith('/category/')) {
-      const slug = pathname.replace('/category/', '');
-      return Response.redirect(new URL(`/collections/${slug}`, url.origin).toString(), 301);
+      const slug = pathname.replace('/category/', '').replace(/\/+$/, '');
+      return Response.redirect(new URL(`/collections/${slug}/`, url.origin).toString(), 301);
     }
 
     // Old English quote URL -> French
@@ -341,6 +341,18 @@ export default {
       return Response.redirect(new URL('/collections/tenues-de-sport/', url.origin).toString(), 301);
     }
 
+    // Old slug redirects
+    if (pathname === '/pages/livraisons-et-retours' || pathname === '/pages/livraisons-et-retours/' ||
+        pathname.startsWith('/pages/livraisons-et-retours#')) {
+      return Response.redirect(new URL('/livraisons-et-retours/', url.origin).toString(), 301);
+    }
+    if (pathname === '/boutique-2' || pathname === '/boutique-2/') {
+      return Response.redirect(new URL('/boutique/', url.origin).toString(), 301);
+    }
+    if (pathname === '/blogs/news/category/blogs' || pathname === '/blogs/news/category/blogs/') {
+      return Response.redirect(new URL('/blogs/news/', url.origin).toString(), 301);
+    }
+
     // Handle CORS preflight for API requests
     if (request.method === 'OPTIONS' && pathname.startsWith('/wp-json/')) {
       return new Response(null, {
@@ -359,6 +371,27 @@ export default {
     const isWordPress = shouldRouteToWordPress(pathname, search);
     const bypassCache = shouldBypassCache(pathname, search);
     const origin = isWordPress ? env.WORDPRESS_ORIGIN : env.ASTRO_ORIGIN;
+
+    // Check if this is a product page and if the product is missive-only (hidden from website)
+    const productMatch = pathname.match(/^\/products\/([^/]+)\/?$/);
+    if (productMatch && !isWordPress) {
+      const productSlug = productMatch[1];
+      try {
+        // Use exclude_missive=true - returns 404 for missive-only products
+        const checkUrl = `${env.PRODUCT_SYNC_WORKER_URL}/product/${productSlug}?exclude_missive=true`;
+        const checkResp = await fetch(checkUrl);
+        if (!checkResp.ok) {
+          // Product is missive-only or not found - return 404
+          return new Response('<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=/404/"><title>Page non trouvée</title></head><body><p>Produit non trouvé</p></body></html>', {
+            status: 404,
+            headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' },
+          });
+        }
+      } catch (e) {
+        // On error, allow request to proceed (fail open)
+        console.error('Missive-only check failed:', e);
+      }
+    }
 
     // Rewrite /buy/ to /products/ for WordPress (product purchase flow)
     let targetPath = pathname;

@@ -898,22 +898,32 @@ async function syncAllProducts(env: Env, offset: number = 0, forceImageRefresh: 
           green_product: greenProduct === '1' || greenProduct === 1 || greenProduct === true,
           made_in_uk: madeInUk === '1' || madeInUk === 1 || madeInUk === true,
           missive_only: p.missive_only || getMeta('_missive_only') === 'yes',
+          date_modified: p.date_modified || new Date().toISOString(),
         };
       };
 
       if (modifiedAfter) {
         // Delta sync: merge modified products into existing index
-        const existingRaw = await env.PRODUCTS_KV.get('product:index');
-        const existingIndex: any[] = existingRaw ? JSON.parse(existingRaw) : [];
-        const modifiedIds = new Set(allProducts.map(p => p.id));
-        // Remove old entries for modified products, then append updated entries
-        const filtered = existingIndex.filter((e: any) => !modifiedIds.has(e.id));
-        const updatedEntries = allProducts.map(toIndexEntry);
-        await env.PRODUCTS_KV.put('product:index', JSON.stringify([...filtered, ...updatedEntries]));
+        if (allProducts.length === 0) {
+          console.log('Delta sync: 0 modified products — index unchanged');
+        } else {
+          const existingRaw = await env.PRODUCTS_KV.get('product:index');
+          const existingIndex: any[] = existingRaw ? JSON.parse(existingRaw) : [];
+          const modifiedIds = new Set(allProducts.map(p => p.id));
+          // Remove old entries for modified products, then append updated entries
+          const filtered = existingIndex.filter((e: any) => !modifiedIds.has(e.id));
+          const updatedEntries = allProducts.map(toIndexEntry);
+          await env.PRODUCTS_KV.put('product:index', JSON.stringify([...filtered, ...updatedEntries]));
+          console.log(`Delta index merge: ${updatedEntries.length} updated/added, ${filtered.length + updatedEntries.length} total`);
+        }
       } else {
         // Full sync: replace entire index
-        const productIndex = allProducts.map(toIndexEntry);
-        await env.PRODUCTS_KV.put('product:index', JSON.stringify(productIndex));
+        if (allProducts.length === 0) {
+          console.error('Full sync: WooCommerce returned 0 products — skipping index write');
+        } else {
+          const productIndex = allProducts.map(toIndexEntry);
+          await env.PRODUCTS_KV.put('product:index', JSON.stringify(productIndex));
+        }
       }
     }
 
@@ -1139,6 +1149,7 @@ async function syncSingleProduct(env: Env, productId: number): Promise<SyncedPro
       made_in_europe: syncedProduct.made_in_europe || false,
       green_product: syncedProduct.green_product || false,
       made_in_uk: syncedProduct.made_in_uk || false,
+      date_modified: product.date_modified || new Date().toISOString(),
     };
 
     if (existingIndex >= 0) {
@@ -1420,6 +1431,7 @@ async function syncAllPosts(env: Env): Promise<{ synced: number; errors: string[
           title: syncedPost.title,
           slug: post.slug,
           date: syncedPost.date,
+          modified: syncedPost.modified || syncedPost.date,
           excerpt: syncedPost.excerpt.substring(0, 200) + (syncedPost.excerpt.length > 200 ? '...' : ''),
           featuredImage: syncedPost.localFeaturedImage,
         });
@@ -1494,6 +1506,7 @@ async function syncSinglePost(env: Env, postId: number): Promise<SyncedPost | nu
         title: syncedPost.title,
         slug: post.slug,
         date: syncedPost.date,
+        modified: syncedPost.modified || syncedPost.date,
         excerpt: syncedPost.excerpt.substring(0, 200) + (syncedPost.excerpt.length > 200 ? '...' : ''),
         featuredImage: syncedPost.localFeaturedImage,
       };

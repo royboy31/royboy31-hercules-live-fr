@@ -7,10 +7,56 @@ import react from '@astrojs/react';
 // import critters from 'astro-critters';
 import sitemap from '@astrojs/sitemap';
 
+// Fetch product and post dates at build time for sitemap lastmod
+const WORKER_URL = 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
+const buildDate = new Date().toISOString();
+
+/** @type {Map<string, string>} slug → ISO date */
+const lastmodMap = new Map();
+
+try {
+  const [productsRes, postsRes] = await Promise.all([
+    fetch(`${WORKER_URL}/products`).catch(() => null),
+    fetch(`${WORKER_URL}/posts`).catch(() => null),
+  ]);
+
+  if (productsRes?.ok) {
+    const products = await productsRes.json();
+    /** @type {Map<string, string>} */
+    const categoryLastmod = new Map();
+
+    for (const p of products) {
+      const mod = p.date_modified || buildDate;
+      lastmodMap.set(`/products/${p.slug}/`, mod);
+      if (p.categories) {
+        for (const catSlug of p.categories) {
+          const existing = categoryLastmod.get(catSlug);
+          if (!existing || mod > existing) {
+            categoryLastmod.set(catSlug, mod);
+          }
+        }
+      }
+    }
+    for (const [catSlug, mod] of categoryLastmod) {
+      lastmodMap.set(`/collections/${catSlug}/`, mod);
+    }
+  }
+
+  if (postsRes?.ok) {
+    const posts = await postsRes.json();
+    for (const p of posts) {
+      lastmodMap.set(`/blogs/news/${p.slug}/`, p.modified || p.date || buildDate);
+    }
+  }
+} catch (e) {
+  console.warn('Sitemap lastmod: failed to fetch dates, using build date as fallback', e);
+}
+
 // Hercules FR Configuration
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hercules-merchandising.fr',
+  trailingSlash: 'always',
   build: {
     // 'auto' inlines small CSS, links larger bundles externally
     inlineStylesheets: 'auto',
@@ -70,23 +116,26 @@ export default defineConfig({
       priority: 0.7,
       // Custom serialization for sitemap entries
       serialize: (item) => {
+        const path = new URL(item.url).pathname;
+        const lastmod = lastmodMap.get(path) || buildDate;
+
         // Higher priority for homepage
         if (item.url === 'https://hercules-merchandising.fr/') {
-          return { ...item, changefreq: 'daily', priority: 1.0 };
+          return { ...item, lastmod, changefreq: 'daily', priority: 1.0 };
         }
         // Higher priority for product pages
         if (item.url.includes('/products/')) {
-          return { ...item, changefreq: 'weekly', priority: 0.9 };
+          return { ...item, lastmod, changefreq: 'weekly', priority: 0.9 };
         }
         // Higher priority for category pages
         if (item.url.includes('/collections/')) {
-          return { ...item, changefreq: 'weekly', priority: 0.8 };
+          return { ...item, lastmod, changefreq: 'weekly', priority: 0.8 };
         }
         // Higher priority for blog posts
         if (item.url.includes('/blogs/') && item.url !== 'https://hercules-merchandising.fr/blogs/') {
-          return { ...item, changefreq: 'monthly', priority: 0.6 };
+          return { ...item, lastmod, changefreq: 'monthly', priority: 0.6 };
         }
-        return item;
+        return { ...item, lastmod };
       },
       // i18n support - French
       i18n: {

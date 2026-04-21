@@ -101,8 +101,9 @@ if (customHreflangUrls?.de || customHreflangUrls?.en || customHreflangUrls?.fr) 
   hreflangs = getHreflangUrls(currentPath, pageType);
 }
 
-// Canonical URL (FR site — self-referencing canonical)
-const canonicalUrl = `${DOMAINS.fr}${currentPath}`;
+// Canonical URL (FR site — self-referencing canonical, ensure trailing slash)
+const canonicalPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+const canonicalUrl = `${DOMAINS.fr}${canonicalPath}`;
 
 // Full title with site name
 const fullTitle = `${title} ${siteConfig.titleSeparator} ${siteConfig.siteName}`;
