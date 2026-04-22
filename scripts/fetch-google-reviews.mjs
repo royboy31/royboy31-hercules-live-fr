@@ -19,10 +19,13 @@ const OUTPUT_FILE = resolve(__dirname, '../src/data/google-place-data.json');
 const FTID = '0x21d159209e369b9d:0xa126617f91835893';
 const MAPS_URL = 'https://www.google.com/maps/place//data=!4m7!3m6!1s0x21d159209e369b9d:0xa126617f91835893!8m2!3d30.886403!4d-49.4022062!9m1!1b1';
 
+// TrustIndex review count (source of truth — matches the TrustIndex widget on the site)
+const TRUSTINDEX_REVIEW_COUNT = 28;
+
 // Fallback values if scraping fails
 const FALLBACK = {
   rating: 5.0,
-  reviewCount: 33,
+  reviewCount: TRUSTINDEX_REVIEW_COUNT,
   name: 'Hercules Merchandising FR',
   url: MAPS_URL,
   scrapedAt: null,
@@ -76,7 +79,7 @@ async function fetchGoogleReviews() {
 
   const result = {
     rating,
-    reviewCount: typeof reviewCount === 'number' ? reviewCount : FALLBACK.reviewCount,
+    reviewCount: TRUSTINDEX_REVIEW_COUNT,
     name: name || FALLBACK.name,
     url: mapsUrl,
     scrapedAt: new Date().toISOString(),
