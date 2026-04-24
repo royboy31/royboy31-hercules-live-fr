@@ -502,14 +502,20 @@ if (product && clusterFaq) {
         <!-- Maillot Cluster FAQ - Plain HTML for SEO internal linking -->
         {clusterFaq && clusterFaq.length > 0 && (
           <section class="cluster-faq-section">
-            <div class="cluster-faq-container">
-              <h2>Questions fr\u00e9quentes</h2>
-              {clusterFaq.map((item) => (
-                <div class="cluster-faq-item">
-                  <h3>{item.question}</h3>
-                  <Fragment set:html={item.answer} />
+            <div class="cluster-faq-wrap">
+              <div class="cluster-faq-card">
+                <div class="cluster-faq-header">
+                  <h2 class="cluster-faq-title">En savoir <span class="highlight">plus</span></h2>
                 </div>
-              ))}
+                {clusterFaq.map((item) => (
+                  <div class="cluster-faq-item">
+                    <h3>{item.question}</h3>
+                    <div class="cluster-faq-answer">
+                      <Fragment set:html={item.answer} />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}
@@ -1578,88 +1584,124 @@ if (product && clusterFaq) {
     }
   }
 
-  /* Maillot Cluster FAQ - Plain HTML SEO block */
+  /* Maillot Cluster FAQ - Matches .faq-card style above */
   .cluster-faq-section {
     padding: 40px 0;
     background: #ffffff;
   }
 
-  .cluster-faq-container {
-    max-width: 900px;
+  .cluster-faq-wrap {
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
   }
 
-  .cluster-faq-container h2 {
+  .cluster-faq-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  .cluster-faq-header {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .cluster-faq-title {
     font-family: 'Jost', sans-serif;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 600;
-    color: #253461;
-    margin: 0 0 30px 0;
-    text-align: center;
     text-transform: uppercase;
+    color: #253461;
+    margin: 0;
+    text-align: center;
+  }
+
+  .cluster-faq-title .highlight {
+    color: #469ADC;
   }
 
   .cluster-faq-item {
-    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 18px 0;
+  }
+
+  .cluster-faq-item:last-child {
+    border-bottom: none;
   }
 
   .cluster-faq-item h3 {
     font-family: 'Jost', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 25px;
+    font-weight: 400;
     color: #253461;
     margin: 0 0 10px 0;
   }
 
-  .cluster-faq-item :global(p) {
+  .cluster-faq-answer {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
     color: #5f5f5f;
-    margin: 0 0 10px 0;
   }
 
-  .cluster-faq-item :global(ul) {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #5f5f5f;
+  .cluster-faq-answer :global(p) {
+    margin: 0 0 15px 0;
+  }
+
+  .cluster-faq-answer :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .cluster-faq-answer :global(ul) {
     margin: 10px 0;
     padding-left: 25px;
   }
 
-  .cluster-faq-item :global(li) {
+  .cluster-faq-answer :global(li) {
     margin-bottom: 5px;
   }
 
-  .cluster-faq-item :global(a) {
+  .cluster-faq-answer :global(a) {
     color: #00AEEF;
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .cluster-faq-item :global(a:hover) {
+  .cluster-faq-answer :global(a:hover) {
     color: #253461;
     text-decoration: underline;
   }
 
-  .cluster-faq-item :global(strong a) {
+  .cluster-faq-answer :global(strong a) {
     font-weight: 700;
   }
 
-  @media (max-width: 767px) {
-    .cluster-faq-container h2 {
-      font-size: 22px;
+  @media (max-width: 768px) {
+    .cluster-faq-section {
+      padding: 30px 0;
+    }
+
+    .cluster-faq-wrap {
+      padding: 0 15px;
+    }
+
+    .cluster-faq-card {
+      padding: 20px;
+    }
+
+    .cluster-faq-title {
+      font-size: 24px;
     }
 
     .cluster-faq-item h3 {
-      font-size: 18px;
+      font-size: 15px;
     }
 
-    .cluster-faq-item :global(p),
-    .cluster-faq-item :global(ul) {
-      font-size: 15px;
+    .cluster-faq-answer {
+      font-size: 14px;
     }
   }
 
