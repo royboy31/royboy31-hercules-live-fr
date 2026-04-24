@@ -1139,6 +1139,7 @@ async function syncSingleProduct(env: Env, productId: number): Promise<SyncedPro
   if (indexStr) {
     const index = JSON.parse(indexStr);
     const existingIndex = index.findIndex((p: any) => p.id === productId);
+    const getMeta = (key: string) => product.meta_data?.find(m => m.key === key)?.value;
     const newEntry = {
       id: product.id,
       name: product.name,
@@ -1149,6 +1150,7 @@ async function syncSingleProduct(env: Env, productId: number): Promise<SyncedPro
       made_in_europe: syncedProduct.made_in_europe || false,
       green_product: syncedProduct.green_product || false,
       made_in_uk: syncedProduct.made_in_uk || false,
+      missive_only: product.missive_only || getMeta('_missive_only') === 'yes',
       date_modified: product.date_modified || new Date().toISOString(),
     };
 
@@ -1557,6 +1559,55 @@ async function deletePost(env: Env, postId: number): Promise<void> {
 
 // Debounce interval for site rebuilds (90 seconds)
 const REBUILD_DEBOUNCE_MS = 90 * 1000;
+
+// Verify KV product count matches WooCommerce before allowing a rebuild.
+async function verifyProductCounts(env: Env): Promise<{
+  ok: boolean;
+  kvCount: number;
+  wpCount: number;
+  reason: string;
+}> {
+  try {
+    const indexStr = await env.PRODUCTS_KV.get('product:index');
+    const kvCount = indexStr ? JSON.parse(indexStr).length : 0;
+
+    const wpRes = await fetch(
+      `${env.WC_STORE_URL}/wp-json/wc/v3/products?per_page=1&status=publish`,
+      {
+        headers: {
+          'Authorization': `Basic ${btoa(`${env.WC_CONSUMER_KEY}:${env.WC_CONSUMER_SECRET}`)}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    if (!wpRes.ok) {
+      return { ok: false, kvCount, wpCount: -1, reason: `WP API error: ${wpRes.status}` };
+    }
+
+    const wpCount = parseInt(wpRes.headers.get('X-WP-Total') || '0', 10);
+
+    if (kvCount === 0) {
+      return { ok: false, kvCount, wpCount, reason: 'KV index is empty — refusing to rebuild' };
+    }
+
+    const tolerance = Math.max(3, Math.ceil(wpCount * 0.05));
+    const diff = Math.abs(kvCount - wpCount);
+
+    if (diff > tolerance) {
+      return {
+        ok: false,
+        kvCount,
+        wpCount,
+        reason: `Count mismatch: KV=${kvCount}, WP=${wpCount} (diff=${diff}, tolerance=${tolerance})`,
+      };
+    }
+
+    return { ok: true, kvCount, wpCount, reason: `Counts verified: KV=${kvCount}, WP=${wpCount}` };
+  } catch (error) {
+    return { ok: false, kvCount: -1, wpCount: -1, reason: `Verification error: ${error}` };
+  }
+}
 
 // Trigger GitHub Actions workflow to rebuild and deploy the site
 // Uses workflow_dispatch API to trigger the deploy.yml workflow
@@ -2370,9 +2421,9 @@ export default {
       // Parse and add local image URLs
       const product = JSON.parse(productStr);
 
-      // Block missive-only products when requested by Astro
-      const excludeMissive = url.searchParams.get('exclude_missive') === 'true';
-      if (product.missive_only && excludeMissive) {
+      // Block missive-only products from website (CRM passes include_missive=true)
+      const includeMissive = url.searchParams.get('include_missive') === 'true';
+      if (product.missive_only && !includeMissive) {
         return new Response('Product not found', { status: 404 });
       }
       if (product.slug) {
@@ -2388,8 +2439,9 @@ export default {
     if (url.pathname === '/products') {
       const indexStr = await env.PRODUCTS_KV.get('product:index');
       const index = indexStr ? JSON.parse(indexStr) : [];
-      // Exclude missive-only products from website listings
-      const filtered = index.filter((p: any) => !p.missive_only);
+      // Exclude missive-only products from website listings (CRM passes include_missive=true)
+      const includeMissive = url.searchParams.get('include_missive') === 'true';
+      const filtered = includeMissive ? index : index.filter((p: any) => !p.missive_only);
       return new Response(JSON.stringify(filtered), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
@@ -2405,8 +2457,9 @@ export default {
       }
 
       const index = JSON.parse(indexStr);
-      // Exclude missive-only products from website builds
-      const filtered = index.filter((p: any) => !p.missive_only);
+      // Exclude missive-only products from website builds (CRM passes include_missive=true)
+      const includeMissive = url.searchParams.get('include_missive') === 'true';
+      const filtered = includeMissive ? index : index.filter((p: any) => !p.missive_only);
       const products = await Promise.all(
         filtered.map(async (p: any) => {
           const productStr = await env.PRODUCTS_KV.get(`product:${p.id}`);
@@ -2709,6 +2762,22 @@ export default {
         return new Response('Unauthorized', { status: 401 });
       }
 
+      // Verify product counts before rebuilding (skip with ?skip_verify=true)
+      const skipVerify = url.searchParams.get('skip_verify') === 'true';
+      if (!skipVerify) {
+        const verification = await verifyProductCounts(env);
+        if (!verification.ok) {
+          return new Response(JSON.stringify({
+            triggered: false,
+            reason: `REBUILD BLOCKED: ${verification.reason}`,
+            verification,
+          }), {
+            status: 409,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+      }
+
       // Clear debounce first
       await env.PRODUCTS_KV.delete('last_rebuild');
 
@@ -2926,9 +2995,8 @@ export default {
 
       const index = JSON.parse(indexStr);
 
-      // exclude_missive=true hides missive-only products (for Astro website search)
-      // Default: include all products (for Missive CRM)
-      const excludeMissive = url.searchParams.get('exclude_missive') === 'true';
+      // Exclude missive-only from website search (CRM passes include_missive=true)
+      const includeMissive = url.searchParams.get('include_missive') === 'true';
 
       // Score-based search: prioritize name matches over category matches
       // Also filter out test products and products without slugs
@@ -2937,8 +3005,8 @@ export default {
           // Filter out test products and products without slugs
           if (!p.slug || p.slug === '') return false;
           if (p.name.toLowerCase().includes('(copy)') || p.name.toLowerCase() === 'test') return false;
-          // Exclude missive-only when requested by Astro
-          if (excludeMissive && p.missive_only) return false;
+          // Exclude missive-only from website search (CRM passes include_missive=true)
+          if (!includeMissive && p.missive_only) return false;
           return true;
         })
         .map((p: any) => {
@@ -3090,9 +3158,16 @@ export default {
 
     // Trigger site rebuild only if anything actually changed
     if (totalSynced > 0 || categoryResult.synced > 0 || postResult.synced > 0) {
-      await env.PRODUCTS_KV.delete('last_rebuild');
-      const rebuildResult = await triggerSiteRebuild(env);
-      console.log(`Site rebuild: ${rebuildResult.reason}`);
+      // Verify product counts before rebuilding
+      const verification = await verifyProductCounts(env);
+      if (!verification.ok) {
+        console.log(`REBUILD BLOCKED: ${verification.reason}`);
+      } else {
+        console.log(`Pre-rebuild verification passed: ${verification.reason}`);
+        await env.PRODUCTS_KV.delete('last_rebuild');
+        const rebuildResult = await triggerSiteRebuild(env);
+        console.log(`Site rebuild: ${rebuildResult.reason}`);
+      }
     } else {
       console.log('Nothing changed, skipping site rebuild.');
     }
