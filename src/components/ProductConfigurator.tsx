@@ -131,8 +131,8 @@ function getAddonPriceAtTierQty(addon: AddonData, selectedValue: string | string
   let total = 0;
 
   for (const name of selectedNames) {
-    // Skip "None" selection - it has no price
-    if (name === 'None') continue;
+    // Skip "Aucun" selection - it has no price
+    if (name === 'Aucun') continue;
 
     const option = addon.options.find(o => o.name === name);
     if (!option || !option.price_table || option.price_table.length === 0) continue;
@@ -421,7 +421,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       if (!selected) continue;
       const selectedNames = Array.isArray(selected) ? selected : [selected];
       for (const name of selectedNames) {
-        if (name === 'None') continue;
+        if (name === 'Aucun') continue;
         const option = addon.options.find(o => o.name === name);
         if (option && Array.isArray(option.price_table) && option.price_table.length > 0) {
           const firstQty = parseFloatSafe(option.price_table[0].qty);
@@ -533,14 +533,10 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       );
       const addonPricePerPiece = getAddonPricePerPiece(quantitySelected);
 
-      // Translate 'None' to 'Aucun' in addon values before sending to WordPress
+      // Addon values are already in French ("Aucun" etc.), no translation needed
       const translatedAddons: Record<number, string | string[]> = {};
       for (const [id, value] of Object.entries(selectedAddons)) {
-        if (Array.isArray(value)) {
-          translatedAddons[Number(id)] = value.map(v => v === 'None' ? 'Aucun' : v);
-        } else {
-          translatedAddons[Number(id)] = value === 'None' ? 'Aucun' : value;
-        }
+        translatedAddons[Number(id)] = value;
       }
 
       // Prepare data for Hercules Cart API (REST endpoint, no nonce required)
@@ -636,7 +632,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
 
   // Check if all selections are complete for add to cart
   const allAttributesSelected = attributeKeys.every(key => selectedAttributes[key]);
-  // For multiple_choise addons, user must select at least one option (including "Keine")
+  // For multiple_choise addons, user must select at least one option (including "Aucun")
   const allAddonsSelected = visibleAddons.every(addon => {
     const value = selectedAddons[addon.id];
     if (addon.display_type === 'multiple_choise') {
@@ -826,7 +822,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   <div className="kd-prod-attribute-title-wrapper">
                     <span>{displayStepNum}: {addon.name}</span>
                   </div>
-                  <span className="kd-selected-val">{Array.isArray(selectedValue) ? selectedValue.map(v => v === 'None' ? 'Aucun' : v).join(', ') : (selectedValue === 'None' ? 'Aucun' : selectedValue)}</span>
+                  <span className="kd-selected-val">{Array.isArray(selectedValue) ? selectedValue.join(', ') : selectedValue}</span>
                   <button type="button" className="kd-selected-chng-btn" onClick={(e) => { e.stopPropagation(); setMaxVisibleStep(stepIndex); }}>
                     Modifier
                   </button>
@@ -924,16 +920,16 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                 {/* Multiple Choice (checkboxes) for addons like Zubehör - auto-advances on selection */}
                 {addon.display_type === 'multiple_choise' && Array.isArray(addon.options) && (() => {
                   const currentSelected = Array.isArray(selectedValue) ? selectedValue : (selectedValue ? [selectedValue] : []);
-                  const isNoneChecked = currentSelected.includes('None');
+                  const isNoneChecked = currentSelected.includes('Aucun');
 
                   const handleCheckboxChange = (value: string, checked: boolean) => {
                     let newSelected: string[];
-                    if (value === 'None') {
-                      // "None" clears all other selections and advances immediately
-                      newSelected = checked ? ['None'] : [];
+                    if (value === 'Aucun') {
+                      // "Aucun" clears all other selections and advances immediately
+                      newSelected = checked ? ['Aucun'] : [];
                     } else {
-                      // Remove 'None' if selecting an actual option
-                      const withoutNone = currentSelected.filter(v => v !== 'None');
+                      // Remove 'Aucun' if selecting an actual option
+                      const withoutNone = currentSelected.filter(v => v !== 'Aucun');
                       if (checked) {
                         newSelected = [...withoutNone, value];
                       } else {
@@ -949,14 +945,14 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
 
                   return (
                     <div className="kd-step-choises">
-                      {/* "None" (None) checkbox - always first */}
+                      {/* "Aucun" (None) checkbox - always first */}
                       <label style={{ display: 'block', marginBottom: '8px' }}>
                         <input
                           type="checkbox"
                           name={String(addon.id)}
-                          value="None"
+                          value="Aucun"
                           checked={isNoneChecked}
-                          onChange={(e) => handleCheckboxChange('None', e.target.checked)}
+                          onChange={(e) => handleCheckboxChange('Aucun', e.target.checked)}
                           style={{ marginRight: '8px' }}
                         />
                         Aucun
