@@ -227,6 +227,9 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
   const [addToCartError, setAddToCartError] = useState<string | null>(null);
   const [loadingAction, setLoadingAction] = useState<'quote' | 'cart' | null>(null);
 
+  // Track natural image sizes per attribute for proportional scaling
+  const [imageSizes, setImageSizes] = useState<Record<string, Record<string, number>>>({}); // { attrKey: { termSlug: naturalWidth } }
+
   // Fetch product config on mount
   useEffect(() => {
     async function fetchConfig() {
@@ -285,6 +288,47 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     }
     fetchConfig();
   }, [productSlug, workerUrl]);
+
+  // Pre-load images to detect natural sizes for proportional scaling
+  useEffect(() => {
+    if (!config) return;
+    let cancelled = false;
+
+    Object.entries(config.attributes).forEach(([attrKey, attr]) => {
+      if (attr.display_type !== 'image_selector') return;
+      const termsWithImages = attr.terms.filter(t => t.thumbnail_url);
+      if (termsWithImages.length < 2) return;
+
+      termsWithImages.forEach(term => {
+        const img = new Image();
+        img.onload = () => {
+          if (cancelled) return;
+          setImageSizes(prev => ({
+            ...prev,
+            [attrKey]: { ...(prev[attrKey] || {}), [term.slug]: img.naturalWidth }
+          }));
+        };
+        img.src = term.thumbnail_url;
+      });
+    });
+
+    return () => { cancelled = true; };
+  }, [config]);
+
+  // Compute proportional image height for a term within an attribute group
+  const getProportionalHeight = (attrKey: string, termSlug: string, baseHeight: number = 48): number => {
+    const attrSizes = imageSizes[attrKey];
+    if (!attrSizes) return baseHeight;
+    const widths = Object.values(attrSizes);
+    if (widths.length < 2) return baseHeight;
+    const minW = Math.min(...widths);
+    const maxW = Math.max(...widths);
+    if (maxW === minW) return baseHeight;
+    const termW = attrSizes[termSlug];
+    if (termW === undefined) return baseHeight;
+    const minHeight = baseHeight * 0.55; // smallest image shows at 55% of base
+    return minHeight + ((termW - minW) / (maxW - minW)) * (baseHeight - minHeight);
+  };
 
   // Get attribute keys (filtered for visibility)
   const attributeKeys = useMemo(() => {
@@ -727,7 +771,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                                 <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{term.name}</div>
                                 {term.thumbnail_url && (
-                                  <img src={term.thumbnail_url} alt={term.name} style={{ height: '48px', objectFit: 'contain', marginLeft: '5px' }} />
+                                  <img src={term.thumbnail_url} alt={term.name} style={{ height: `${getProportionalHeight(attrKey, term.slug, 48)}px`, objectFit: 'contain', marginLeft: '5px' }} />
                                 )}
                               </div>
                               {term.desc_above && (
@@ -744,7 +788,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                                 <div className="kd-image-selector-desc kd-image-selector-desc-above" dangerouslySetInnerHTML={{ __html: term.desc_above }} />
                               )}
                               {term.thumbnail_url && (
-                                <img src={term.thumbnail_url} alt={term.name} style={{ height: '48px', objectFit: 'contain', margin: '6px 0' }} />
+                                <img src={term.thumbnail_url} alt={term.name} style={{ height: `${getProportionalHeight(attrKey, term.slug, 48)}px`, objectFit: 'contain', margin: '6px 0' }} />
                               )}
                               {term.desc_below && (
                                 <div className="kd-image-selector-desc kd-image-selector-desc-below" dangerouslySetInnerHTML={{ __html: term.desc_below }} />
