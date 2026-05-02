@@ -3,7 +3,11 @@
 // Pure CSS animation - no JavaScript required for continuous scroll
 // This eliminates the critical request chain from Swiper.js
 
-const logosRow1 = [
+// Worker URL for fetching synced logo data
+const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
+
+// Fallback logos (used if worker fetch fails)
+const fallbackRow1 = [
   { src: '/images/logos/Karate_Courbevoie.png', alt: 'Karaté Courbevoie' },
   { src: '/images/logos/Allez-nantes.png', alt: 'Allez Nantes' },
   { src: '/images/logos/amiens.png', alt: 'Amiens SC' },
@@ -21,7 +25,7 @@ const logosRow1 = [
   { src: '/images/logos/Intermarche.png', alt: 'Intermarché' },
 ];
 
-const logosRow2 = [
+const fallbackRow2 = [
   { src: '/images/logos/uber.png', alt: 'Uber' },
   { src: '/images/logos/total.png', alt: 'TotalEnergies' },
   { src: '/images/logos/Stade_nantais_Rugby.png', alt: 'Stade Nantais Rugby' },
@@ -39,6 +43,37 @@ const logosRow2 = [
   { src: '/images/logos/vafc.png', alt: 'VAFC' },
   { src: '/images/logos/usld.png', alt: 'USLD' },
 ];
+
+// Try to fetch logos from worker (synced from WordPress)
+let logosRow1 = fallbackRow1;
+let logosRow2 = fallbackRow2;
+
+try {
+  const res = await fetch(`${WORKER_URL}/client-logos`);
+  if (res.ok) {
+    const logos = await res.json() as Array<{ name: string; slug: string; row: number; order: number; r2_key: string }>;
+    if (logos.length > 0) {
+      const row1 = logos.filter(l => l.row === 1).sort((a, b) => a.order - b.order);
+      const row2 = logos.filter(l => l.row === 2).sort((a, b) => a.order - b.order);
+
+      if (row1.length > 0) {
+        logosRow1 = row1.map(l => ({
+          src: `${WORKER_URL}/client-logo-image/${l.slug}`,
+          alt: l.name,
+        }));
+      }
+      if (row2.length > 0) {
+        logosRow2 = row2.map(l => ({
+          src: `${WORKER_URL}/client-logo-image/${l.slug}`,
+          alt: l.name,
+        }));
+      }
+    }
+  }
+} catch (e) {
+  // Fallback to hardcoded logos if worker is unreachable
+  console.error('Failed to fetch client logos from worker, using fallback:', e);
+}
 ---
 
 <section class="trust-section">

@@ -33,6 +33,7 @@ function decodeHtmlEntities(str: string): string {
 export interface Env {
   PRODUCTS_KV: KVNamespace;
   PRODUCTS_BUCKET?: R2Bucket;  // Optional - enable R2 in Cloudflare dashboard
+  CLIENT_LOGOS_BUCKET?: R2Bucket;  // R2 bucket for client trust logos
   WC_STORE_URL: string;
   ASTRO_SITE_URL: string;
   WC_CONSUMER_KEY: string;
@@ -1689,6 +1690,115 @@ async function triggerSiteRebuild(env: Env): Promise<{ triggered: boolean; reaso
   }
 }
 
+// ============================================
+// CLIENT LOGOS SYNC — Fetch from WordPress, store images in R2, metadata in KV
+// ============================================
+
+interface ClientLogo {
+  name: string;
+  slug: string;
+  image_url: string;
+  row: number;
+  order: number;
+}
+
+async function syncClientLogos(env: Env): Promise<{ success: boolean; count: number }> {
+  // Fetch logos from WordPress REST API
+  const wpUrl = `${env.WC_STORE_URL}/wp-json/hercules/v1/client-logos`;
+  console.log(`Fetching client logos from ${wpUrl}`);
+
+  const response = await fetch(wpUrl);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch logos from WordPress: ${response.status} ${response.statusText}`);
+  }
+
+  const logos: ClientLogo[] = await response.json();
+  console.log(`Received ${logos.length} logos from WordPress`);
+
+  if (!env.CLIENT_LOGOS_BUCKET) {
+    throw new Error('CLIENT_LOGOS_BUCKET R2 binding not configured');
+  }
+
+  // Sync each logo image to R2
+  const syncedLogos: Array<{ name: string; slug: string; row: number; order: number; r2_key: string }> = [];
+
+  for (const logo of logos) {
+    try {
+      // Determine expected R2 key
+      const ext = logo.image_url.includes('.webp') ? 'webp' : logo.image_url.includes('.png') ? 'png' : 'webp';
+      const r2Key = `logos/${logo.slug}.${ext}`;
+
+      // Check if image already exists in R2 with same source URL (skip re-download)
+      const existing = await env.CLIENT_LOGOS_BUCKET.head(r2Key);
+      if (existing && existing.customMetadata?.originalUrl === logo.image_url) {
+        syncedLogos.push({
+          name: logo.name,
+          slug: logo.slug,
+          row: logo.row,
+          order: logo.order,
+          r2_key: r2Key,
+        });
+        continue;
+      }
+
+      // Download image from WordPress
+      const imgResponse = await fetch(logo.image_url);
+      if (!imgResponse.ok) {
+        console.error(`Failed to download logo image for ${logo.name}: ${imgResponse.status}`);
+        if (existing) {
+          syncedLogos.push({ name: logo.name, slug: logo.slug, row: logo.row, order: logo.order, r2_key: r2Key });
+        }
+        continue;
+      }
+
+      const contentType = imgResponse.headers.get('Content-Type') || 'image/png';
+      const imageBuffer = await imgResponse.arrayBuffer();
+
+      // Upload to R2
+      await env.CLIENT_LOGOS_BUCKET.put(r2Key, imageBuffer, {
+        httpMetadata: {
+          contentType: contentType,
+          cacheControl: 'public, max-age=604800',
+        },
+        customMetadata: {
+          name: logo.name,
+          originalUrl: logo.image_url,
+          syncedAt: new Date().toISOString(),
+        },
+      });
+
+      syncedLogos.push({
+        name: logo.name,
+        slug: logo.slug,
+        row: logo.row,
+        order: logo.order,
+        r2_key: r2Key,
+      });
+
+      console.log(`Synced logo: ${logo.name} → R2:${r2Key}`);
+    } catch (error) {
+      console.error(`Error syncing logo ${logo.name}:`, error);
+    }
+  }
+
+  // Store metadata in KV
+  await env.PRODUCTS_KV.put('CLIENT_LOGOS', JSON.stringify(syncedLogos));
+  console.log(`Stored ${syncedLogos.length} logo metadata entries in KV`);
+
+  // Clean up R2: remove logos that are no longer in the list
+  const currentSlugs = new Set(syncedLogos.map(l => l.slug));
+  const listed = await env.CLIENT_LOGOS_BUCKET.list({ prefix: 'logos/' });
+  for (const obj of listed.objects) {
+    const keySlug = obj.key.replace('logos/', '').replace(/\.(webp|png|jpg|jpeg)$/, '');
+    if (!currentSlugs.has(keySlug)) {
+      await env.CLIENT_LOGOS_BUCKET.delete(obj.key);
+      console.log(`Deleted orphaned logo from R2: ${obj.key}`);
+    }
+  }
+
+  return { success: true, count: syncedLogos.length };
+}
+
 // Verify webhook signature using HMAC-SHA256
 async function verifyWebhookSignature(
   payload: string,
@@ -2785,6 +2895,137 @@ export default {
       return new Response(JSON.stringify(result), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
+    }
+
+    // ============================================
+    // CLIENT LOGOS — Webhook, metadata, and image serving
+    // ============================================
+
+    // Webhook: WordPress notifies us when logos are updated
+    if (url.pathname === '/webhook/logos-update' && request.method === 'POST') {
+      try {
+        const signature = request.headers.get('X-WC-Webhook-Signature') || '';
+        const payload = await request.text();
+
+        const isValid = await verifyWebhookSignature(payload, signature, env.WEBHOOK_SECRET);
+        if (!isValid) {
+          console.log('Invalid logos webhook signature');
+          return new Response('Invalid signature', { status: 401 });
+        }
+
+        console.log('Logos webhook received — syncing from WordPress');
+
+        // Sync logos first, THEN trigger rebuild so KV has fresh data before build fetches it
+        ctx.waitUntil(
+          syncClientLogos(env)
+            .then(result => {
+              console.log(`Client logos sync complete: ${result.count} logos`);
+              return triggerSiteRebuild(env);
+            })
+            .then(result => console.log(`Logos rebuild result: ${result.reason}`))
+            .catch(error => console.error('Client logos sync/rebuild error:', error))
+        );
+
+        return new Response(JSON.stringify({ success: true, action: 'logos_sync' }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (error) {
+        console.error('Logos webhook error:', error);
+        return new Response(JSON.stringify({ error: String(error) }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    }
+
+    // GET /client-logos — return logo metadata from KV
+    if (url.pathname === '/client-logos' && request.method === 'GET') {
+      const data = await env.PRODUCTS_KV.get('CLIENT_LOGOS');
+      if (!data) {
+        return new Response(JSON.stringify([]), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      return new Response(data, {
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600',
+        },
+      });
+    }
+
+    // GET /client-logo-image/{slug} — serve logo image from R2
+    if (url.pathname.startsWith('/client-logo-image/') && request.method === 'GET') {
+      const slug = url.pathname.replace('/client-logo-image/', '').replace(/\/$/, '');
+      if (!slug) {
+        return new Response('Missing slug', { status: 400 });
+      }
+
+      if (!env.CLIENT_LOGOS_BUCKET) {
+        return new Response('R2 bucket not configured', { status: 503 });
+      }
+
+      // Check edge cache first
+      const cache = caches.default;
+      const cacheKey = new Request(url.toString(), { method: 'GET' });
+      const cachedResponse = await cache.match(cacheKey);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      const r2Key = `logos/${slug}.webp`;
+      const object = await env.CLIENT_LOGOS_BUCKET.get(r2Key);
+
+      if (!object) {
+        // Try original format
+        const r2KeyPng = `logos/${slug}.png`;
+        const objectPng = await env.CLIENT_LOGOS_BUCKET.get(r2KeyPng);
+        if (!objectPng) {
+          return new Response('Logo not found', { status: 404 });
+        }
+
+        const response = new Response(objectPng.body, {
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'image/png',
+            'Cache-Control': 'public, max-age=604800',
+          },
+        });
+        ctx.waitUntil(cache.put(cacheKey, response.clone()));
+        return response;
+      }
+
+      const response = new Response(object.body, {
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'image/webp',
+          'Cache-Control': 'public, max-age=604800',
+        },
+      });
+      ctx.waitUntil(cache.put(cacheKey, response.clone()));
+      return response;
+    }
+
+    // Manual trigger: POST /sync-logos (same auth as /sync)
+    if (url.pathname === '/sync-logos' && request.method === 'POST') {
+      const authHeader = request.headers.get('Authorization') || '';
+      const token = authHeader.replace('Bearer ', '');
+      if (!token || token !== env.WEBHOOK_SECRET) {
+        return new Response('Unauthorized', { status: 401 });
+      }
+
+      try {
+        const result = await syncClientLogos(env);
+        return new Response(JSON.stringify(result), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (error) {
+        return new Response(JSON.stringify({ error: String(error) }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
     }
 
     // Serve cached product images

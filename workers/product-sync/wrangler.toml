@@ -11,6 +11,10 @@ GITHUB_REPO = "royboy31-hercules-live-fr"
 GITHUB_WORKFLOW = "deploy.yml"
 GITHUB_REF = "main"
 
+[[r2_buckets]]
+binding = "CLIENT_LOGOS_BUCKET"
+bucket_name = "hercules-fr-client-logos"
+
 [triggers]
 crons = ["0 4 * * *"]
 
