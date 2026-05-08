@@ -38,6 +38,10 @@ const slides = [
 
 <section class="hero-section">
   <div class="hero-container">
+    <!-- Floating heading (rendered first in DOM for correct heading hierarchy; visually positioned via CSS) -->
+    <h1 class="hero-tagline">Écharpes, Maillots et Merchandising Sportif Personnalisés pour Clubs et Équipes</h1>
+    <p class="hero-subheading">Y compris écharpes de football personnalisées, tenues sportives et produits supporters</p>
+
     <div class="swiper hero-swiper">
       <div class="swiper-wrapper">
         {slides.map((slide) => (
@@ -60,7 +64,7 @@ const slides = [
             <div class="slide-bg" aria-hidden="true"></div>
             <a href={slide.buttonLink} class="slide-inner">
               <div class="slide-contents">
-                <h2 class="slide-heading" set:html={slide.heading}></h2>
+                <h3 class="slide-heading" set:html={slide.heading}></h3>
                 <p class="slide-description" set:html={slide.description}></p>
                 <span class="slide-button">{slide.buttonText}</span>
               </div>
@@ -80,10 +84,6 @@ const slides = [
       <!-- Pagination -->
       <div class="swiper-pagination"></div>
     </div>
-
-    <!-- Floating heading -->
-    <h1 class="hero-tagline">Équipements et Merchandising Sportif Personnalisés pour Clubs et Équipes</h1>
-    <p class="hero-subheading">Y compris écharpes de football personnalisées, tenues sportives et produits supporters</p>
   </div>
 </section>
 
@@ -393,12 +393,20 @@ const slides = [
       height: 12px !important;
     }
 
-    .hero-tagline {
-      display: none;
-    }
-
+    /* Visually hide H1/subheading on mobile while keeping them in the DOM
+       and accessibility tree for mobile-first indexing. No layout impact. */
+    .hero-tagline,
     .hero-subheading {
-      display: none;
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
     }
   }
 </style>
