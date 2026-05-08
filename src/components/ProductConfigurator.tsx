@@ -230,7 +230,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
   // Track natural image sizes per attribute for proportional scaling
   const [imageSizes, setImageSizes] = useState<Record<string, Record<string, number>>>({}); // { attrKey: { termSlug: naturalWidth } }
 
-  // Fetch product config on mount
+  // Fetch product config on mount (with retry for transient server errors)
   useEffect(() => {
     async function fetchConfig() {
       try {
@@ -238,13 +238,22 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
         const url = `${workerUrl}/product-config/${productSlug}`;
         console.log('[ProductConfigurator] URL:', url);
 
-        const response = await fetch(url);
-        console.log('[ProductConfigurator] Response status:', response.status);
+        let response: Response | null = null;
+        const maxRetries = 3;
+        for (let attempt = 1; attempt <= maxRetries; attempt++) {
+          response = await fetch(url);
+          console.log(`[ProductConfigurator] Attempt ${attempt}/${maxRetries} — status:`, response.status);
+          if (response.ok) break;
+          if (attempt < maxRetries) {
+            console.warn(`[ProductConfigurator] Retrying in ${attempt * 1000}ms...`);
+            await new Promise(r => setTimeout(r, attempt * 1000));
+          }
+        }
 
-        if (!response.ok) {
-          const text = await response.text();
+        if (!response || !response.ok) {
+          const text = response ? await response.text() : 'No response';
           console.error('[ProductConfigurator] Error response:', text);
-          throw new Error(`Failed to fetch product config: ${response.status}`);
+          throw new Error(`Failed to fetch product config: ${response?.status || 'unknown'}`);
         }
 
         const data = await response.json();
