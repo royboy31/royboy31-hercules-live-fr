@@ -40,7 +40,6 @@ const slides = [
   <div class="hero-container">
     <!-- Floating heading (rendered first in DOM for correct heading hierarchy; visually positioned via CSS) -->
     <h1 class="hero-tagline">Écharpes, Maillots et Merchandising Sportif Personnalisés pour Clubs et Équipes</h1>
-    <p class="hero-subheading">Y compris écharpes de football personnalisées, tenues sportives et produits supporters</p>
 
     <div class="swiper hero-swiper">
       <div class="swiper-wrapper">
@@ -64,7 +63,7 @@ const slides = [
             <div class="slide-bg" aria-hidden="true"></div>
             <a href={slide.buttonLink} class="slide-inner">
               <div class="slide-contents">
-                <h3 class="slide-heading" set:html={slide.heading}></h3>
+                <p class="slide-heading" set:html={slide.heading}></p>
                 <p class="slide-description" set:html={slide.description}></p>
                 <span class="slide-button">{slide.buttonText}</span>
               </div>
@@ -287,20 +286,6 @@ const slides = [
     line-height: 1.3;
   }
 
-  .hero-subheading {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    margin: 0 0 0 100px;
-    opacity: 0.9;
-  }
-
   /* Responsive */
   @media (max-width: 1024px) {
     .hero-swiper {
@@ -322,12 +307,6 @@ const slides = [
     .hero-tagline {
       font-size: 16px;
       margin: 15px 0 0 40px;
-    }
-
-    .hero-subheading {
-      font-size: 12px;
-      top: 40px;
-      margin: 0 0 0 40px;
     }
   }
 
@@ -393,10 +372,9 @@ const slides = [
       height: 12px !important;
     }
 
-    /* Visually hide H1/subheading on mobile while keeping them in the DOM
+    /* Visually hide H1 on mobile while keeping it in the DOM
        and accessibility tree for mobile-first indexing. No layout impact. */
-    .hero-tagline,
-    .hero-subheading {
+    .hero-tagline {
       position: absolute !important;
       width: 1px;
       height: 1px;
