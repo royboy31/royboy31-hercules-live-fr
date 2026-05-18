@@ -1,6 +1,8 @@
 ---
 // Global Footer Component - Matches WordPress Elementor footer exactly
 import ContactFormPopup from './ContactFormPopup.tsx';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -116,9 +118,9 @@ import ContactFormPopup from './ContactFormPopup.tsx';
       <!-- Row 1: Legal links, Payment icons, Language switcher -->
       <div class="bottom-footer-row">
         <div class="legal-links">
+          <a href="/conditions-generales-de-vente/">Conditions Générales de Vente</a>
+          <a href="/politique-de-confidentialite-et-de-cookies/">Politique de confidentialité et de cookies</a>
           <a href="/mentions-legales/">Mentions légales</a>
-          <a href="/conditions-generales-dutilisation/">Conditions générales</a>
-          <a href="/politique-de-confidentialite/">Politique de confidentialité</a>
         </div>
         <div class="payment-icons">
           <img src="/images/pay-her-2.png" alt="Payment Methods" loading="lazy" width="300" height="30" />
@@ -155,7 +157,7 @@ import ContactFormPopup from './ContactFormPopup.tsx';
       </div>
       <!-- Row 2: Copyright -->
       <div class="copyright">
-        © 2025. Hercules Merchandising FR. Tous droits réservés | Conception & Développement par <a href="/design-by-perelweb">Perel Web Studio</a>
+        &copy; {currentYear} Be Ventures SRL, exploitant le site sous le nom commercial Hercules Merchandising. Tous droits réservés.
       </div>
     </div>
   </div>

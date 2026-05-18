@@ -317,11 +317,13 @@ export default {
       return Response.redirect(new URL('/mentions-legales/', url.origin).toString(), 301);
     }
     if (pathname === '/terms-of-service' || pathname === '/terms-of-service/' ||
-        pathname === '/terms-and-conditions' || pathname === '/terms-and-conditions/') {
-      return Response.redirect(new URL('/conditions-generales-dutilisation/', url.origin).toString(), 301);
+        pathname === '/terms-and-conditions' || pathname === '/terms-and-conditions/' ||
+        pathname === '/conditions-generales-dutilisation' || pathname === '/conditions-generales-dutilisation/') {
+      return Response.redirect(new URL('/conditions-generales-de-vente/', url.origin).toString(), 301);
     }
-    if (pathname === '/privacy-policy' || pathname === '/privacy-policy/') {
-      return Response.redirect(new URL('/politique-de-confidentialite/', url.origin).toString(), 301);
+    if (pathname === '/privacy-policy' || pathname === '/privacy-policy/' ||
+        pathname === '/politique-de-confidentialite' || pathname === '/politique-de-confidentialite/') {
+      return Response.redirect(new URL('/politique-de-confidentialite-et-de-cookies/', url.origin).toString(), 301);
     }
     if (pathname === '/my-account' || pathname === '/my-account/') {
       return Response.redirect(new URL('/mon-compte/', url.origin).toString(), 301);
