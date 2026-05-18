@@ -23,9 +23,9 @@ export const PAGE_MAPPINGS: Record<string, Record<Locale, string>> = {
   '/kontaktieren-sie-uns/': { de: '/kontaktieren-sie-uns/', en: '/contact-us/', fr: '/contactez-nous/' },
   '/uber-uns/': { de: '/uber-uns/', en: '/about/', fr: '/a-propos/' },
   '/blogs/': { de: '/blogs/', en: '/blogs/uk/', fr: '/blogs/' },
-  '/datenschutzerklarung/': { de: '/datenschutzerklarung/', en: '/privacy-and-cookie-policy/', fr: '/politique-de-confidentialite-et-de-cookies/' },
-  '/nutzungsbedingungen/': { de: '/nutzungsbedingungen/', en: '/terms-and-conditions/', fr: '/conditions-generales-de-vente/' },
-  '/rechtlicher-hinweis/': { de: '/rechtlicher-hinweis/', en: '/terms-and-conditions/', fr: '/mentions-legales/' },
+  '/datenschutzerklaerung-und-cookie-richtlinie/': { de: '/datenschutzerklaerung-und-cookie-richtlinie/', en: '/privacy-and-cookie-policy/', fr: '/politique-de-confidentialite-et-de-cookies/' },
+  '/agb/': { de: '/agb/', en: '/terms-and-conditions/', fr: '/conditions-generales-de-vente/' },
+  '/impressum/': { de: '/impressum/', en: '/terms-and-conditions/', fr: '/mentions-legales/' },
   '/zahlungsmethoden/': { de: '/zahlungsmethoden/', en: '/payment-methods/', fr: '/moyens-de-paiement/' },
   '/lieferungen-und-rucksendungen/': { de: '/lieferungen-und-rucksendungen/', en: '/deliveries-and-returns/', fr: '/livraisons-et-retours/' },
   '/shop/': { de: '/shop/', en: '/shop/', fr: '/boutique/' }
