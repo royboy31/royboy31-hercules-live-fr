@@ -194,7 +194,7 @@ export const PRODUCT_MAPPINGS: Record<string, Record<Locale, string>> = {
   'knoechelsocken': { de: 'knoechelsocken', en: 'ankle-socks', fr: 'soquettes' },
 
   // Scarves - Main Types
-  'personalisierter-fussballschal': { de: 'personalisierter-fussballschal', en: 'custom-football-scarf', fr: 'echarpe-hd-deluxe-personnalisee' },
+  'personalisierter-fussballschal': { de: 'personalisierter-fussballschal', en: 'custom-football-scarf', fr: 'echarpe-de-foot-personnalisee' },
   'individuell-gewebter-schal': { de: 'individuell-gewebter-schal', en: 'custom-woven-scarf', fr: 'echarpe-personnalisee-tissee' },
   'personalisierter-fleece-schal': { de: 'personalisierter-fleece-schal', en: 'custom-fleece-scarf', fr: 'echarpe-personnalisee-polaire' },
   'individuell-bedruckter-fanschal': { de: 'individuell-bedruckter-fanschal', en: 'custom-printed-scarves', fr: 'echarpe-personnalisee-sublimee' },
