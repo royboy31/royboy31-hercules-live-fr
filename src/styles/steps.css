@@ -345,6 +345,25 @@ input[type="range"]::-ms-thumb {
     margin-left: auto;
 }
 
+.kd-qty-warning {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.kd-qty-warning-btn {
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
+}
+
+.kd-qty-warning-btn:hover,
+.kd-qty-warning-btn:focus {
+    background-color: transparent !important;
+    color: #e74c3c !important;
+    border-color: #e74c3c !important;
+}
+
 /* Collapsed step */
 .pearl-step.collapsed .kd-step-collapse {
     display: none;
