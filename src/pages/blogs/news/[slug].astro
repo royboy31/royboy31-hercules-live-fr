@@ -223,6 +223,18 @@ jsonLdSchemas.push(getBreadcrumbSchema([
             </div>
           </div>
 
+          <!-- Popular Collections -->
+          <div class="sidebar-collections">
+            <h4 class="sidebar-heading">Collections populaires</h4>
+            <ul class="collection-links">
+              <li><a href="/collections/equipements-personnalises/">Maillots personnalisés</a></li>
+              <li><a href="/collections/echarpes-personnalisees/">Écharpes personnalisées</a></li>
+              <li><a href="/collections/couvre-chefs/">Couvre-chefs personnalisés</a></li>
+              <li><a href="/collections/bonnets-personnalises-football/">Bonnets personnalisés</a></li>
+              <li><a href="/collections/fanions-personnalises-football/">Fanions personnalisés</a></li>
+            </ul>
+          </div>
+
           <!-- Related Posts -->
           {relatedPosts.length > 0 && (
             <div class="sidebar-related">
@@ -621,6 +633,28 @@ jsonLdSchemas.push(getBreadcrumbSchema([
   .cta-button:hover {
     background: transparent;
     color: #10C99E;
+  }
+
+  /* Sidebar Popular Collections */
+  .collection-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .collection-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: #16163f;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .collection-links a:hover {
+    color: #00AEEF;
   }
 
   /* Sidebar Related Posts */
