@@ -33,7 +33,7 @@ const frMenuData: MenuData = {
     { label: 'eSports', href: '/collections/esports/', icon_url: iconBaseUrl + 'esport-1.svg' },
   ],
   produkte: [
-    { label: 'Vêtements de sport', href: '/collections/equipements-personnalises/', icon_url: iconBaseUrl + 'teamwear-1.svg' },
+    { label: 'Maillots personnalisés', href: '/collections/equipements-personnalises/', icon_url: iconBaseUrl + 'teamwear-1.svg' },
     { label: 'Écharpes', href: '/collections/echarpes-personnalisees/', icon_url: iconBaseUrl + 'scarves-1.svg' },
     { label: 'Bonnets', href: '/collections/bonnets-personnalises-football/', icon_url: iconBaseUrl + 'beanies-3.svg' },
     { label: 'Couvre-chefs', href: '/collections/couvre-chefs/', icon_url: iconBaseUrl + 'cap-1.svg' },
@@ -62,7 +62,7 @@ const frMenuData: MenuData = {
     { label: 'Enfants', href: '/collections/enfants/', icon_url: iconBaseUrl + 'kids.svg' },
   ],
   directLinks: [
-    { label: 'Vêtements de sport', href: '/collections/equipements-personnalises/' },
+    { label: 'Maillots personnalisés', href: '/collections/equipements-personnalises/' },
     { label: 'Écharpes', href: '/collections/echarpes-personnalisees/' },
     { label: 'Couvre-chefs', href: '/collections/couvre-chefs/' },
     { label: 'Bonnets', href: '/collections/bonnets-personnalises-football/' },
