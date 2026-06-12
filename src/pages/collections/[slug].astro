@@ -103,6 +103,8 @@ function decodeHtml(text: string): string {
 
 // Decode category name once for use throughout the template
 const categoryName = decodeHtml(category?.name || '');
+const categorySeoH1 = category?.seo_h1 ? decodeHtml(category.seo_h1) : categoryName;
+const categorySeoTitle = category?.seo_title ? decodeHtml(category.seo_title) : categoryName;
 
 // Generate SEO meta description
 const categoryDescription = category?.description
@@ -171,7 +173,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 ---
 
 <BaseLayout
-  title={categoryName}
+  title={categorySeoTitle}
   description={categoryDescription}
   pageType="collection"
   ogImage={categoryImage}
@@ -199,7 +201,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 
       <!-- Category Header -->
       <header class="category-header">
-        <h1 class="category-title">{categoryName}</h1>
+        <h1 class="category-title">{categorySeoH1}</h1>
         {category.description && (
           <div class="category-description" set:html={category.description} />
         )}

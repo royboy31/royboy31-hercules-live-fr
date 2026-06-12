@@ -207,6 +207,9 @@ interface WCCategory {
   second_description?: string;
   // FAQ items from category custom fields
   faq?: Array<{ question: string; answer: string }>;
+  // SEO override fields
+  seo_h1?: string;
+  seo_title?: string;
 }
 
 // WordPress Post from REST API
@@ -266,6 +269,9 @@ interface SyncedCategory {
   second_description: string | null;
   // FAQ items from category custom fields
   faq: Array<{ question: string; answer: string }>;
+  // SEO override fields
+  seo_h1: string | null;
+  seo_title: string | null;
   image: string | null;
   localImage: string | null;
   productCount: number;
@@ -393,6 +399,9 @@ class WooCommerceClient {
       second_description: cat.second_description,
       // FAQ items from category custom fields
       faq: cat.faq || [],
+      // SEO override fields
+      seo_h1: cat.seo_h1,
+      seo_title: cat.seo_title,
     }));
   }
 
@@ -410,7 +419,23 @@ class WooCommerceClient {
       throw new Error(`Failed to fetch category ${categoryId}: ${response.status}`);
     }
 
-    return response.json();
+    const wcCategory: WCCategory = await response.json();
+
+    // Enrich with custom fields from Hercules API (seo_h1, seo_title, second_description, faq)
+    try {
+      const herculesRes = await fetch(`${this.baseUrl}/wp-json/hercules/v1/category/${wcCategory.slug}`);
+      if (herculesRes.ok) {
+        const herculesData: any = await herculesRes.json();
+        wcCategory.seo_h1 = herculesData.seo_h1 || undefined;
+        wcCategory.seo_title = herculesData.seo_title || undefined;
+        wcCategory.second_description = herculesData.second_description || undefined;
+        wcCategory.faq = herculesData.faq || [];
+      }
+    } catch (e) {
+      console.error(`Failed to enrich category ${categoryId} from Hercules API: ${e}`);
+    }
+
+    return wcCategory;
   }
 
   // WordPress Posts API (standard WP REST API, no auth required for public posts)
@@ -1178,6 +1203,9 @@ function transformCategory(category: WCCategory): SyncedCategory {
     second_description: category.second_description || null,
     // FAQ items from category custom fields
     faq: category.faq || [],
+    // SEO override fields
+    seo_h1: category.seo_h1 || null,
+    seo_title: category.seo_title || null,
     image: category.image?.src || null,
     localImage: category.slug ? `${WORKER_URL}/category-image/${category.slug}` : null,
     productCount: category.count,
