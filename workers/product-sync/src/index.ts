@@ -1947,33 +1947,21 @@ export default {
 
         console.log(`Batch sync: ${productIds.length} products (source: ${data.source})`);
 
-        // Return 200 immediately — WP gets instant response, no timeout risk
-        // All sync + rebuild work happens in ctx.waitUntil background
-        ctx.waitUntil((async () => {
-          // Phase 1: Sync products SEQUENTIALLY (one at a time)
-          // Parallel syncs overload the worker and slow down subsequent build fetches
-          let synced = 0;
-          for (const id of productIds) {
-            try {
-              await syncSingleProduct(env, id);
-              synced++;
-            } catch (e) {
-              console.error(`Failed to sync product ${id}:`, e);
-            }
-          }
-          console.log(`Batch sync complete: ${synced}/${productIds.length} products synced`);
-
-          // Phase 2: Trigger rebuild AFTER all syncs complete
-          // Separate try/catch — sync failures must never prevent rebuild
+        // Sync products sequentially (one at a time to avoid overloading worker)
+        // Rebuild is NOT triggered here — the WP plugin calls /trigger-rebuild
+        // separately because ctx.waitUntil is unreliable on this worker
+        let synced = 0;
+        for (const id of productIds) {
           try {
-            const result = await triggerSiteRebuild(env);
-            console.log(`Batch rebuild: ${result.reason}`);
+            await syncSingleProduct(env, id);
+            synced++;
           } catch (e) {
-            console.error(`Batch rebuild failed:`, e);
+            console.error(`Failed to sync product ${id}:`, e);
           }
-        })());
+        }
+        console.log(`Batch sync complete: ${synced}/${productIds.length} products synced`);
 
-        return new Response(JSON.stringify({ success: true, count: productIds.length }), {
+        return new Response(JSON.stringify({ success: true, count: productIds.length, synced }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       } catch (error) {
