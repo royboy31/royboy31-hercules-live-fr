@@ -1947,38 +1947,33 @@ export default {
 
         console.log(`Batch sync: ${productIds.length} products (source: ${data.source})`);
 
-        // Sync all products FIRST (awaited) — KV must be updated before build starts
-        let syncedCount = 0;
-        try {
-          const results = await Promise.all(
-            productIds.map(id => syncSingleProduct(env, id).catch(e => {
+        // Return 200 immediately — WP gets instant response, no timeout risk
+        // All sync + rebuild work happens in ctx.waitUntil background
+        ctx.waitUntil((async () => {
+          // Phase 1: Sync products SEQUENTIALLY (one at a time)
+          // Parallel syncs overload the worker and slow down subsequent build fetches
+          let synced = 0;
+          for (const id of productIds) {
+            try {
+              await syncSingleProduct(env, id);
+              synced++;
+            } catch (e) {
               console.error(`Failed to sync product ${id}:`, e);
-              return null;
-            }))
-          );
-          syncedCount = results.filter(r => r !== null).length;
-          console.log(`Batch sync complete: ${syncedCount}/${productIds.length} products synced`);
-        } catch (error) {
-          console.error(`Batch sync error:`, error);
-        }
+            }
+          }
+          console.log(`Batch sync complete: ${synced}/${productIds.length} products synced`);
 
-        // Trigger rebuild AFTER syncs complete — ensures build reads fresh KV data
-        // and worker isn't overloaded serving both sync fetches and build fetches
-        let rebuildResult = { triggered: false, reason: 'not attempted' };
-        try {
-          rebuildResult = await triggerSiteRebuild(env);
-          console.log(`Batch rebuild result: ${rebuildResult.reason}`);
-        } catch (error) {
-          console.error(`Batch rebuild error:`, error);
-          rebuildResult = { triggered: false, reason: String(error) };
-        }
+          // Phase 2: Trigger rebuild AFTER all syncs complete
+          // Separate try/catch — sync failures must never prevent rebuild
+          try {
+            const result = await triggerSiteRebuild(env);
+            console.log(`Batch rebuild: ${result.reason}`);
+          } catch (e) {
+            console.error(`Batch rebuild failed:`, e);
+          }
+        })());
 
-        return new Response(JSON.stringify({
-          success: true,
-          count: productIds.length,
-          synced: syncedCount,
-          rebuild: rebuildResult,
-        }), {
+        return new Response(JSON.stringify({ success: true, count: productIds.length }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       } catch (error) {
