@@ -1947,23 +1947,23 @@ export default {
 
         console.log(`Batch sync: ${productIds.length} products (source: ${data.source})`);
 
-        // Sync products in background — KV updates happen while GH Actions build runs (~2min)
-        ctx.waitUntil(
-          Promise.all(
+        // Sync all products FIRST (awaited) — KV must be updated before build starts
+        let syncedCount = 0;
+        try {
+          const results = await Promise.all(
             productIds.map(id => syncSingleProduct(env, id).catch(e => {
               console.error(`Failed to sync product ${id}:`, e);
               return null;
             }))
-          )
-            .then(results => {
-              const synced = results.filter(r => r !== null).length;
-              console.log(`Batch sync complete: ${synced}/${productIds.length} products synced`);
-            })
-            .catch(error => console.error(`Batch sync error:`, error))
-        );
+          );
+          syncedCount = results.filter(r => r !== null).length;
+          console.log(`Batch sync complete: ${syncedCount}/${productIds.length} products synced`);
+        } catch (error) {
+          console.error(`Batch sync error:`, error);
+        }
 
-        // Trigger rebuild INLINE (awaited) — ensures it runs before response is sent
-        // This is the reliable path; ctx.waitUntil was silently failing on this worker
+        // Trigger rebuild AFTER syncs complete — ensures build reads fresh KV data
+        // and worker isn't overloaded serving both sync fetches and build fetches
         let rebuildResult = { triggered: false, reason: 'not attempted' };
         try {
           rebuildResult = await triggerSiteRebuild(env);
@@ -1976,6 +1976,7 @@ export default {
         return new Response(JSON.stringify({
           success: true,
           count: productIds.length,
+          synced: syncedCount,
           rebuild: rebuildResult,
         }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
