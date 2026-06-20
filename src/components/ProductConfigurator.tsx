@@ -226,9 +226,20 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
   const [addToCartLoading, setAddToCartLoading] = useState(false);
   const [addToCartError, setAddToCartError] = useState<string | null>(null);
   const [loadingAction, setLoadingAction] = useState<'quote' | 'cart' | null>(null);
+  const [productInCart, setProductInCart] = useState(false);
 
   // Track natural image sizes per attribute for proportional scaling
   const [imageSizes, setImageSizes] = useState<Record<string, Record<string, number>>>({}); // { attrKey: { termSlug: naturalWidth } }
+
+  // Check if any product is already in cart
+  useEffect(() => {
+    const checkCart = () => {
+      const cart = cartStore.get();
+      setProductInCart(cart.count > 0);
+    };
+    checkCart();
+    return cartStore.subscribe(checkCart);
+  }, []);
 
   // Fetch product config on mount (with retry for transient server errors)
   useEffect(() => {
@@ -704,8 +715,9 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     <div id="pearl-wc-steps-form" className="pearl-wc-steps-form">
       {/* Step indicator - matches WordPress exactly */}
       <div className="pearl-step-indicator">
-        <h2>CRÉEZ VOTRE PRODUIT — ÉTAPE {currentStepNum} SUR {totalSteps}</h2>
-        <span>À partir de <strong>{minQuantity} PCS</strong></span>
+        <h2>OBTENEZ UN DEVIS</h2>
+        <span className="pearl-step-counter">ÉTAPE {currentStepNum} SUR {totalSteps}</span>
+        <span className="pearl-min-qty-badge">À PARTIR DE {minQuantity} PCS</span>
       </div>
 
       {/* Attribute Steps - Only render visible attributes (excludes single default options) */}
@@ -1304,7 +1316,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
             onClick={() => handleAddToCart('quote')}
           >
             {addToCartLoading && <span className="kd-btn-spinner"></span>}
-            {addToCartLoading ? 'En cours...' : cartStore.get().count > 0 ? 'Ajoutez au devis' : 'Créer un devis'}
+            {addToCartLoading ? 'En cours...' : productInCart ? 'Ajoutez au devis' : 'Créer un devis'}
           </button>
           <small>Nous vous enverrons un PDF</small>
         </div>

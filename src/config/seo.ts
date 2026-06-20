@@ -160,6 +160,8 @@ export function getProductSchema(product: {
   currency?: string;
   availability?: 'InStock' | 'OutOfStock' | 'PreOrder';
   condition?: 'NewCondition' | 'UsedCondition' | 'RefurbishedCondition';
+  offerCount?: number;
+  priceSpecification?: Array<{ price: number; quantity: number }>;
   aggregateRating?: {
     ratingValue: number;
     reviewCount: number;
@@ -183,14 +185,30 @@ export function getProductSchema(product: {
   }
 
   if (product.priceMin !== undefined) {
-    schema.offers = {
+    const offers: any = {
       '@type': 'AggregateOffer',
       priceCurrency: product.currency || 'EUR',
       lowPrice: product.priceMin,
       highPrice: product.priceMax || product.priceMin,
+      offerCount: product.offerCount ?? 1,
       availability: `https://schema.org/${product.availability || 'InStock'}`,
       itemCondition: `https://schema.org/${product.condition || 'NewCondition'}`,
     };
+
+    if (product.priceSpecification?.length) {
+      offers.priceSpecification = product.priceSpecification.map(ps => ({
+        '@type': 'UnitPriceSpecification',
+        price: ps.price,
+        priceCurrency: product.currency || 'EUR',
+        referenceQuantity: {
+          '@type': 'QuantitativeValue',
+          value: ps.quantity,
+          unitCode: 'C62',
+        },
+      }));
+    }
+
+    schema.offers = offers;
   }
 
   if (product.aggregateRating) {

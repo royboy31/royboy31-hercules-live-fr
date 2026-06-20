@@ -41,17 +41,20 @@
     box-sizing: border-box;
 }
 
+/* Text next to image (default) */
 .kd-image-selector-col.kd-img-sel-next_to {
     flex-direction: row;
     justify-content: space-between;
 }
 
+/* Text above image */
 .kd-image-selector-col.kd-img-sel-above {
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
+/* Text under image */
 .kd-image-selector-col.kd-img-sel-under {
     flex-direction: column;
     justify-content: center;
@@ -397,7 +400,7 @@ input[type="range"]::-ms-thumb {
 
 /* Step indicator/header */
 .pearl-step-indicator {
-    padding: 20px 21px 15px 21px;  /* Match product-title-wrapper height (20px top, 15px bottom) */
+    padding: 20px 21px 15px 21px;
     margin: 0;
     font-family: Jost;
     font-weight: 500;
@@ -407,14 +410,10 @@ input[type="range"]::-ms-thumb {
     text-transform: uppercase;
     color: #253461;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.pearl-step-indicator span {
-    text-align: right;
-    white-space: nowrap;
-    flex-shrink: 0;
+    gap: 10px;
+    min-height: 62px;
+    box-sizing: border-box;
 }
 
 .pearl-step-indicator h2 {
@@ -426,6 +425,30 @@ input[type="range"]::-ms-thumb {
     text-transform: uppercase;
     color: #253461;
     margin: 0 !important;
+    flex: 1;
+}
+
+.pearl-step-counter {
+    font-family: Jost;
+    font-weight: 500;
+    font-size: 13px;
+    color: #253461;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pearl-min-qty-badge {
+    font-family: Jost;
+    font-weight: 600;
+    font-size: 12px;
+    color: #10C99E;
+    background-color: white;
+    border: 1.5px solid #10C99E;
+    border-radius: 50px;
+    padding: 5px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-transform: uppercase;
 }
 
 /* Individual step */
@@ -669,11 +692,11 @@ input[type="range"]::-ms-thumb {
     line-height: 100%;
     letter-spacing: 0%;
     text-transform: uppercase;
+    background-color: transparent;
     color: #469ADC;
     padding: 15px;
     border: 1px solid #469ADC;
     border-radius: 83px;
-    background: transparent;
     cursor: pointer;
 }
 
@@ -710,6 +733,11 @@ input[type="range"]::-ms-thumb {
     border: none;
 }
 
+.kd-action-btns-wrapper .kd-single-action-btn:first-child button:hover {
+    background-color: #469ADC;
+    color: white;
+}
+
 .kd-action-btns-wrapper .kd-single-action-btn:last-child button {
     font-family: Jost;
     font-weight: 500;
@@ -717,7 +745,7 @@ input[type="range"]::-ms-thumb {
     line-height: 100%;
     letter-spacing: 0%;
     text-transform: uppercase;
-    background-color: #10C99E;
+    background: #10C99E;
     color: white;
     padding: 15px;
     border: 1px solid #10C99E;
@@ -998,20 +1026,31 @@ input[type="range"]::-webkit-slider-runnable-track {
         overflow-x: hidden;
     }
 
-    /* Step indicator - align "FROM X PCS" with CHANGE buttons */
+    /* Step indicator - wrap on mobile */
     .pearl-step-indicator {
-        display: grid !important;
-        grid-template-columns: 75% 25%;
+        display: flex !important;
+        flex-wrap: wrap;
         padding: 15px 21px;
+        gap: 6px;
+        position: relative;
     }
 
     .pearl-step-indicator h2 {
         font-size: 13px;
+        flex: 1 1 100%;
+        padding-right: 130px;
     }
 
-    .pearl-step-indicator span {
-        text-align: right;
-        font-size: 13px;
+    .pearl-step-counter {
+        font-size: 11px;
+    }
+
+    .pearl-min-qty-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+        position: absolute;
+        top: 15px;
+        right: 21px;
     }
 
     /* ==========================================
@@ -1397,10 +1436,10 @@ input[type="range"]::-webkit-slider-runnable-track {
     vertical-align: middle;
 }
 
-/* Spinner for outline button (quote button) */
-.kd-action-btns-wrapper .kd-single-action-btn:first-child button .kd-btn-spinner {
-    border-color: rgba(16, 201, 158, 0.3);
-    border-top-color: #10C99E;
+/* Spinner for outline button (cart button) */
+.kd-action-btns-wrapper .kd-single-action-btn:last-child button .kd-btn-spinner {
+    border-color: rgba(37, 52, 97, 0.3);
+    border-top-color: #253461;
 }
 
 /* Spinner animation */

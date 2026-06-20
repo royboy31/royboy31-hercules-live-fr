@@ -75,6 +75,220 @@ const getPriceRange = () => {
 const conditionalPrices = getConditionalPrices();
 const priceRange = getPriceRange();
 
+// Get lead time from first variation
+const leadTime = product?.variations?.[0]?.lead_time || '';
+
+// Parse price string that may use comma as decimal separator (e.g. "24,95" → 24.95)
+const parsePrice = (val: number | string): number => {
+  if (typeof val === 'number') return val;
+  return parseFloat(val.replace(',', '.'));
+};
+
+// Fetch product config from WP API at build time (includes addons with price_tables)
+let productConfig: any = null;
+if (product) {
+  try {
+    const configRes = await fetch(`${WORKER_URL}/product-config/${slug}`);
+    if (configRes.ok) {
+      productConfig = await configRes.json();
+    }
+  } catch (e) {
+    console.error('Failed to fetch product config:', e);
+  }
+}
+
+// Build pricing table mirroring the steps form logic.
+const buildPricingCombinations = () => {
+  if (!productConfig) return { tiers: [], combos: [] };
+
+  const variations = productConfig.variations || [];
+  const pricedVariations = variations.filter((v: any) => v.conditional_prices?.length > 0);
+  if (!pricedVariations.length) return { tiers: [], combos: [] };
+
+  const tiers = pricedVariations[0].conditional_prices.map((cp: any) =>
+    typeof cp.qty === 'string' ? parseInt(cp.qty) : cp.qty
+  );
+
+  const allAttrKeys = Object.keys(productConfig.attributes || {});
+  const visibleAttrKeys = allAttrKeys.filter((key: string) => {
+    const attr = productConfig.attributes[key];
+    return !(attr.terms?.length === 1 && attr.terms[0].slug === 'default');
+  });
+
+  const addons = (productConfig.addons || []) as any[];
+  const pricedParentAddons = addons.filter((a: any) =>
+    a.parent_id === 0 && a.options?.some((o: any) => o.price_table?.length > 0)
+  );
+
+  type StepOption = { label: string; attrSlug?: string; attrKey?: string; addonId?: number; addonName?: string; priceTable?: any[] };
+  type Step = { name: string; options: StepOption[] };
+  const steps: Step[] = [];
+
+  for (const attrKey of visibleAttrKeys) {
+    const attr = productConfig.attributes[attrKey];
+    steps.push({
+      name: attr.display_title || attrKey,
+      options: attr.terms.map((t: any) => ({
+        label: t.name,
+        attrSlug: t.slug,
+        attrKey,
+      })),
+    });
+  }
+
+  for (const addon of pricedParentAddons) {
+    const opts = addon.options || [];
+    const freeOpts = opts.filter((o: any) => !o.price_table?.length);
+    const pricedOpts = opts.filter((o: any) => o.price_table?.length > 0);
+
+    if (opts.length <= 4) {
+      steps.push({
+        name: addon.name,
+        options: opts.map((o: any) => ({
+          label: o.name,
+          addonId: addon.id,
+          addonName: o.name,
+          priceTable: o.price_table || [],
+        })),
+      });
+    } else {
+      const stepOptions: StepOption[] = [];
+
+      if (freeOpts.length > 0) {
+        stepOptions.push({
+          label: freeOpts[0].name,
+          addonId: addon.id,
+          addonName: freeOpts[0].name,
+          priceTable: [],
+        });
+      }
+
+      const priceGroups = new Map<string, any>();
+      for (const opt of pricedOpts) {
+        const key = opt.price_table.map((p: any) => `${p.qty}:${p.price}`).join('|');
+        if (!priceGroups.has(key)) {
+          priceGroups.set(key, opt);
+        }
+      }
+
+      const addonBaseName = addon.name
+        .replace(/-Sélection/i, '').replace(/Sélection/i, '').replace(/-Couleur/i, '').replace(/-Choix/i, '').trim();
+      if (priceGroups.size === 1) {
+        const representative = priceGroups.values().next().value;
+        stepOptions.push({
+          label: `Avec ${addonBaseName}`,
+          addonId: addon.id,
+          addonName: representative.name,
+          priceTable: representative.price_table,
+        });
+      } else {
+        for (const [, opt] of priceGroups) {
+          stepOptions.push({
+            label: opt.name,
+            addonId: addon.id,
+            addonName: opt.name,
+            priceTable: opt.price_table,
+          });
+        }
+      }
+
+      steps.push({ name: addon.name, options: stepOptions });
+    }
+  }
+
+  if (steps.length === 0) return { tiers: [], combos: [] };
+
+  type ComboRow = { labels: string[]; attrSelections: Record<string, string>; priceTables: any[][] };
+  let rows: ComboRow[] = [{ labels: [], attrSelections: {}, priceTables: [] }];
+
+  for (const step of steps) {
+    if (rows.length * step.options.length > 100) continue;
+    const newRows: ComboRow[] = [];
+    for (const row of rows) {
+      for (const opt of step.options) {
+        const newAttrSelections = { ...row.attrSelections };
+        if (opt.attrKey) {
+          newAttrSelections[opt.attrKey] = opt.attrSlug!;
+        }
+        newRows.push({
+          labels: [...row.labels, opt.label],
+          attrSelections: newAttrSelections,
+          priceTables: [...row.priceTables, ...(opt.priceTable?.length ? [opt.priceTable] : [])],
+        });
+      }
+    }
+    rows = newRows;
+  }
+
+  const getAddonPrice = (priceTable: any[], qty: number): number => {
+    if (!priceTable?.length) return 0;
+    const sorted = [...priceTable]
+      .map((p: any) => ({ qty: typeof p.qty === 'string' ? parseInt(p.qty) : p.qty, price: parsePrice(p.price) }))
+      .sort((a: any, b: any) => a.qty - b.qty);
+    let price = 0;
+    for (const tier of sorted) {
+      if (tier.qty <= qty) price = tier.price;
+    }
+    return price;
+  };
+
+  const combos = rows.map((row: ComboRow) => {
+    const matchedVar = pricedVariations.find((v: any) => {
+      return Object.entries(v.attributes).every(([key, value]: [string, any]) => {
+        const normalizedKey = key.replace('attribute_', '');
+        const selected = row.attrSelections[key] || row.attrSelections[normalizedKey];
+        return selected === value || value === 'default';
+      });
+    });
+
+    const coversAllTiers = matchedVar ? tiers.every((qty: number) => {
+      return matchedVar.conditional_prices.some((c: any) => {
+        const cpQty = typeof c.qty === 'string' ? parseInt(c.qty) : c.qty;
+        return cpQty === qty;
+      });
+    }) : false;
+
+    const prices = tiers.map((qty: number) => {
+      let basePrice = 0;
+      if (matchedVar) {
+        const cp = matchedVar.conditional_prices.find((c: any) => {
+          const cpQty = typeof c.qty === 'string' ? parseInt(c.qty) : c.qty;
+          return cpQty === qty;
+        });
+        basePrice = cp ? (parsePrice(cp.price)) : 0;
+      }
+
+      let addonTotal = 0;
+      for (const pt of row.priceTables) {
+        addonTotal += getAddonPrice(pt, qty);
+      }
+
+      return basePrice + addonTotal;
+    });
+
+    return { label: row.labels.join(' + '), prices, hasMatch: !!matchedVar, coversAllTiers };
+  });
+
+  const validCombos = combos.filter((c: any) => c.hasMatch && c.coversAllTiers);
+
+  validCombos.sort((a: any, b: any) => a.prices[0] - b.prices[0]);
+
+  return { tiers, combos: validCombos };
+};
+
+const pricingTable = buildPricingCombinations();
+
+const startingPrice = pricingTable.combos.length > 0
+  ? Math.min(...pricingTable.combos.flatMap((c: any) => c.prices))
+  : null;
+
+const tierPrices = pricingTable.combos.length > 0
+  ? pricingTable.tiers.map((qty: number, i: number) => ({
+      qty,
+      price: pricingTable.combos[0].prices[i],
+    }))
+  : [];
+
 // Generate WordPress thumbnail URL at specific size
 const wpThumb = (url: string, size: number) => {
   if (!url) return url;
@@ -206,11 +420,16 @@ if (product) {
     url: productUrl,
     sku: product.sku || `HERC-${product.id}`,
     brand: siteConfig.siteName,
-    priceMin: priceRange?.min,
-    priceMax: priceRange?.max,
+    priceMin: startingPrice ?? priceRange?.min,
+    priceMax: tierPrices.length > 0 ? Math.max(...tierPrices.map((t: { price: number }) => t.price)) : priceRange?.max,
     currency: 'EUR',
     availability: 'InStock',
     condition: 'NewCondition',
+    offerCount: tierPrices.length || 1,
+    priceSpecification: tierPrices.map((tp: any) => ({
+      price: tp.price,
+      quantity: tp.qty,
+    })),
     aggregateRating: {
       ratingValue: placeData.rating,
       reviewCount: placeData.reviewCount,
@@ -288,6 +507,9 @@ if (product && clusterFaq) {
                 <!-- Product Title wrapper - edge-to-edge border like WordPress -->
                 <div class="product-title-wrapper">
                   <h1 class="product-title">{product.name}</h1>
+                  {startingPrice && (
+                    <span class="product-starting-price">À PARTIR DE {formatPrice(startingPrice)} HT</span>
+                  )}
                 </div>
 
                 <!-- Main Image Container (badges positioned inside) -->
@@ -382,84 +604,199 @@ if (product && clusterFaq) {
               </div>
             </div>
 
-            <!-- Product Description Card -->
-            <div class="product-description">
-              <div class="description-content" set:html={product.description} />
-            </div>
-
-          </div>
-        </section>
-
-        <!-- How to Get a Design Section - Full Width with Background (WordPress Elementor post-511 style) -->
-        <section id="design-section" class="design-section-wrapper">
-          <div class="design-section-container">
-            <div class="design-header">
-              <div class="design-icon">
-                <!-- Paint palette icon - white, 50x50 -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 39 38" fill="none">
-                  <path d="M32.8601 5.89388C29.3052 2.37362 24.503 0.401131 19.5 0.40626H19.3036C14.2737 0.458012 9.46744 2.49249 5.92905 6.06767C2.39065 9.64285 0.405984 14.4699 0.40625 19.5C0.40625 27.3945 5.28617 34.0149 13.1403 36.789C14.0262 37.1014 14.974 37.1967 15.9043 37.0671C16.8346 36.9375 17.7203 36.5868 18.4871 36.0442C19.2539 35.5017 19.8794 34.7832 20.3112 33.949C20.743 33.1149 20.9685 32.1893 20.9687 31.25C20.9687 30.4709 21.2782 29.7238 21.8291 29.1729C22.38 28.622 23.1272 28.3125 23.9062 28.3125H32.3901C33.7228 28.319 35.0176 27.8694 36.0595 27.0385C37.1015 26.2076 37.8279 25.0454 38.1182 23.7447C38.4465 22.2993 38.6061 20.8206 38.5937 19.3384C38.575 16.8296 38.0586 14.3494 37.0744 12.0415C36.0902 9.73367 34.6578 7.64409 32.8601 5.89388ZM35.2468 23.0984C35.101 23.7464 34.7383 24.3252 34.2189 24.7392C33.6995 25.1531 33.0543 25.3774 32.3901 25.375H23.9062C22.3481 25.375 20.8538 25.994 19.752 27.0958C18.6502 28.1975 18.0312 29.6919 18.0312 31.25C18.0306 31.7192 17.9175 32.1814 17.7015 32.598C17.4855 33.0145 17.1729 33.3732 16.7898 33.6441C16.4067 33.915 15.9643 34.0903 15.4996 34.1551C15.0349 34.2199 14.5615 34.1725 14.1189 34.0168C7.47277 31.6723 3.34375 26.1094 3.34375 19.5C3.34352 15.2439 5.02274 11.1596 8.01659 8.13448C11.0104 5.10935 15.077 3.38777 19.3329 3.34376H19.4982C23.7542 3.36029 27.8332 5.04894 30.8556 8.04553C33.878 11.0421 35.6015 15.1066 35.6544 19.3623C35.6653 20.619 35.531 21.8726 35.2542 23.0984H35.2468ZM21.7031 9.95314C21.7031 10.3889 21.5739 10.8148 21.3318 11.1771C21.0897 11.5394 20.7457 11.8218 20.3431 11.9886C19.9405 12.1553 19.4976 12.1989 19.0702 12.1139C18.6428 12.0289 18.2503 11.8191 17.9422 11.511C17.634 11.2029 17.4242 10.8103 17.3392 10.3829C17.2542 9.95558 17.2978 9.5126 17.4646 9.11004C17.6313 8.70747 17.9137 8.36339 18.276 8.1213C18.6383 7.87922 19.0643 7.75001 19.5 7.75001C20.0843 7.75001 20.6447 7.98212 21.0578 8.39529C21.471 8.80846 21.7031 9.36883 21.7031 9.95314ZM13.625 14.3594C13.625 14.7951 13.4958 15.2211 13.2537 15.5834C13.0116 15.9457 12.6675 16.2281 12.265 16.3948C11.8624 16.5616 11.4194 16.6052 10.9921 16.5202C10.5647 16.4352 10.1721 16.2253 9.86403 15.9172C9.55592 15.6091 9.34609 15.2166 9.26108 14.7892C9.17607 14.3618 9.2197 13.9189 9.38645 13.5163C9.5532 13.1137 9.83558 12.7696 10.1979 12.5276C10.5602 12.2855 10.9861 12.1563 11.4219 12.1563C12.0062 12.1563 12.5666 12.3884 12.9797 12.8015C13.3929 13.2147 13.625 13.7751 13.625 14.3594ZM13.625 24.6406C13.625 25.0764 13.4958 25.5023 13.2537 25.8646C13.0116 26.2269 12.6675 26.5093 12.265 26.6761C11.8624 26.8428 11.4194 26.8864 10.9921 26.8014C10.5647 26.7164 10.1721 26.5066 9.86403 26.1985C9.55592 25.8904 9.34609 25.4978 9.26108 25.0704C9.17607 24.6431 9.2197 24.2001 9.38645 23.7975C9.5532 23.395 9.83558 23.0509 10.1979 22.8088C10.5602 22.5667 10.9861 22.4375 11.4219 22.4375C12.0062 22.4375 12.5666 22.6696 12.9797 23.0828C13.3929 23.496 13.625 24.0563 13.625 24.6406ZM29.7812 14.3594C29.7812 14.7951 29.652 15.2211 29.41 15.5834C29.1679 15.9457 28.8238 16.2281 28.4212 16.3948C28.0187 16.5616 27.5757 16.6052 27.1483 16.5202C26.721 16.4352 26.3284 16.2253 26.0203 15.9172C25.7122 15.6091 25.5023 15.2166 25.4173 14.7892C25.3323 14.3618 25.376 13.9189 25.5427 13.5163C25.7095 13.1137 25.9918 12.7696 26.3541 12.5276C26.7164 12.2855 27.1424 12.1563 27.5781 12.1563C28.1624 12.1563 28.7228 12.3884 29.136 12.8015C29.5491 13.2147 29.7812 13.7751 29.7812 14.3594Z" fill="white"></path>
-                </svg>
+            <!-- Tabbed Section: Description / Prix / Design -->
+            <div class="product-tabs-section" id="product-tabs">
+              <div class="product-tabs-bar">
+                <button class="product-tab active" data-tab="description">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  Description du produit
+                </button>
+                <button class="product-tab" data-tab="prices">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                  Prix
+                </button>
+                <button class="product-tab" data-tab="design">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                  Design
+                </button>
               </div>
-              <h2 class="design-title">
-                Comment obtenir <span class="highlight">un Design ?</span>
-              </h2>
-              <div class="design-cta-wrapper">
-                <ContactFormPopup
-                  triggerType="button"
-                  triggerText="Demandez votre design gratuit"
-                  client:visible
-                />
-              </div>
-              <p class="design-description">
-                Nous avons notre propre équipe de graphistes, chacun avec sa spécialité et son style unique. Nous pouvons ainsi créer rapidement un design qui correspond parfaitement à vos besoins et à votre vision. Vous préférez créer vous-même ? C'est aussi possible.
-              </p>
-            </div>
 
-            <div class="design-options">
-              <!-- Box 1 - Examples PDF (only shows if pdf_url exists) -->
-              {product.pdf_url && (
-                <div class="design-option-card">
-                  <div class="option-icon">
-                    <!-- Wand/magic stick with stars icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="52" viewBox="0 0 59 52" fill="none"><path d="M4.37229 8.66667C4.37229 8.09203 4.6025 7.54093 5.01229 7.1346C5.42208 6.72827 5.97787 6.5 6.5574 6.5H10.9276V2.16667C10.9276 1.59203 11.1578 1.04093 11.5676 0.634602C11.9774 0.228274 12.5332 0 13.1127 0C13.6922 0 14.248 0.228274 14.6578 0.634602C15.0676 1.04093 15.2978 1.59203 15.2978 2.16667V6.5H19.668C20.2476 6.5 20.8034 6.72827 21.2132 7.1346C21.6229 7.54093 21.8532 8.09203 21.8532 8.66667C21.8532 9.2413 21.6229 9.7924 21.2132 10.1987C20.8034 10.6051 20.2476 10.8333 19.668 10.8333H15.2978V15.1667C15.2978 15.7413 15.0676 16.2924 14.6578 16.6987C14.248 17.1051 13.6922 17.3333 13.1127 17.3333C12.5332 17.3333 11.9774 17.1051 11.5676 16.6987C11.1578 16.2924 10.9276 15.7413 10.9276 15.1667V10.8333H6.5574C5.97787 10.8333 5.42208 10.6051 5.01229 10.1987C4.6025 9.7924 4.37229 9.2413 4.37229 8.66667ZM41.5191 43.3333H39.334V41.1667C39.334 40.592 39.1038 40.0409 38.694 39.6346C38.2842 39.2283 37.7284 39 37.1489 39C36.5694 39 36.0136 39.2283 35.6038 39.6346C35.194 40.0409 34.9638 40.592 34.9638 41.1667V43.3333H32.7787C32.1992 43.3333 31.6434 43.5616 31.2336 43.9679C30.8238 44.3743 30.5936 44.9254 30.5936 45.5C30.5936 46.0746 30.8238 46.6257 31.2336 47.0321C31.6434 47.4384 32.1992 47.6667 32.7787 47.6667H34.9638V49.8333C34.9638 50.408 35.194 50.9591 35.6038 51.3654C36.0136 51.7717 36.5694 52 37.1489 52C37.7284 52 38.2842 51.7717 38.694 51.3654C39.1038 50.9591 39.334 50.408 39.334 49.8333V47.6667H41.5191C42.0987 47.6667 42.6544 47.4384 43.0642 47.0321C43.474 46.6257 43.7042 46.0746 43.7042 45.5C43.7042 44.9254 43.474 44.3743 43.0642 43.9679C42.6544 43.5616 42.0987 43.3333 41.5191 43.3333ZM56.8149 30.3333H52.4447V26C52.4447 25.4254 52.2145 24.8743 51.8047 24.4679C51.3949 24.0616 50.8391 23.8333 50.2596 23.8333C49.68 23.8333 49.1242 24.0616 48.7145 24.4679C48.3047 24.8743 48.0745 25.4254 48.0745 26V30.3333H43.7042C43.1247 30.3333 42.5689 30.5616 42.1591 30.9679C41.7493 31.3743 41.5191 31.9254 41.5191 32.5C41.5191 33.0746 41.7493 33.6257 42.1591 34.0321C42.5689 34.4384 43.1247 34.6667 43.7042 34.6667H48.0745V39C48.0745 39.5746 48.3047 40.1257 48.7145 40.5321C49.1242 40.9384 49.68 41.1667 50.2596 41.1667C50.8391 41.1667 51.3949 40.9384 51.8047 40.5321C52.2145 40.1257 52.4447 39.5746 52.4447 39V34.6667H56.8149C57.3944 34.6667 57.9502 34.4384 58.36 34.0321C58.7698 33.6257 59 33.0746 59 32.5C59 31.9254 58.7698 31.3743 58.36 30.9679C57.9502 30.5616 57.3944 30.3333 56.8149 30.3333ZM51.1637 13L13.1127 50.7298C12.2932 51.5418 11.1821 51.998 10.0235 51.998C8.86497 51.998 7.75382 51.5418 6.93433 50.7298L1.28036 45.129C0.874442 44.7266 0.552445 44.2488 0.332758 43.723C0.113072 43.1972 0 42.6336 0 42.0645C0 41.4953 0.113072 40.9318 0.332758 40.406C0.552445 39.8801 0.874442 39.4024 1.28036 39L39.334 1.27021C39.7398 0.867716 40.2217 0.548437 40.7519 0.330605C41.2822 0.112773 41.8506 0.000655015 42.4246 0.000655015C42.9986 0.000655015 43.5669 0.112773 44.0972 0.330605C44.6275 0.548437 45.1093 0.867716 45.5151 1.27021L51.1637 6.87104C51.5696 7.27344 51.8916 7.75119 52.1113 8.277C52.3309 8.80281 52.444 9.36638 52.444 9.93552C52.444 10.5047 52.3309 11.0682 52.1113 11.594C51.8916 12.1199 51.5696 12.5976 51.1637 13ZM36.2421 21.6667L30.5936 16.0631L4.37229 42.0631L10.0208 47.6667L36.2421 21.6667ZM48.0745 9.93688L42.4232 4.33333L33.6828 13L39.334 18.6035L48.0745 9.93688Z" fill="white"></path></svg>
+              <!-- Tab 1: Description du produit -->
+              <div class="product-tab-content active" id="tab-description">
+                <div class="description-content" set:html={product.description} />
+              </div>
+
+              <!-- Tab 2: Prix -->
+              <div class="product-tab-content" id="tab-prices">
+                <div class="prices-tab-layout">
+                  <div class="prices-tab-sidebar">
+                    <div class="prices-sidebar-card">
+                      <div class="prices-info-row">
+                        <div class="prices-info-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10C99E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="prices-info-text">
+                          <h4>TOUS LES PRIX INCLUENT</h4>
+                          <p>conception, production, emballage, contrôle qualité et envoi.</p>
+                        </div>
+                      </div>
+
+                      <div class="prices-info-row">
+                        <div class="prices-info-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10C99E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="prices-info-text">
+                          <h4>DÉLAI DE PRODUCTION</h4>
+                          <p>{leadTime ? `Env. ${leadTime}` : 'Contactez-nous pour le délai'}</p>
+                        </div>
+                      </div>
+
+                      <div class="prices-info-row">
+                        <div class="prices-info-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10C99E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div class="prices-info-text">
+                          <h4>BESOIN D'AIDE ?</h4>
+                          <p>Contactez notre équipe pour un devis personnalisé.</p>
+                        </div>
+                      </div>
+
+                      <div class="prices-info-buttons">
+                        <div class="prices-info-btn-wrapper">
+                          <ContactFormPopup
+                            triggerType="button"
+                            triggerText="CONTACTEZ-NOUS"
+                            client:visible
+                          />
+                        </div>
+                        <a href="#faq" class="prices-info-btn prices-info-btn-outline">VOIR LA FAQ</a>
+                      </div>
+                    </div>
                   </div>
-                  <p class="option-text">Choisissez jusqu'à 4 options parmi les exemples ci-dessous. Envoyez-nous votre logo, votre texte et vos couleurs, et nous créerons les designs pour vous.</p>
-                  <a href={product.pdf_url} download class="download-btn">
-                    Télécharger les exemples
-                  </a>
-                </div>
-              )}
 
-              <!-- Box 2 - Template PDF (only shows if pdf_2_url exists) -->
-              {product.pdf_2_url && (
-                <div class="design-option-card">
-                  <div class="option-icon">
-                    <!-- Paint palette icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="52" viewBox="0 0 54 52" fill="none"><path d="M45.8914 7.77177C40.8646 2.78626 34.074 -0.00724933 26.9995 1.41289e-05H26.7217C19.6093 0.0733075 12.813 2.95461 7.80952 8.01791C2.80605 13.0812 -0.000376428 19.9174 3.78708e-08 27.0413C3.78708e-08 38.2218 6.90046 47.5978 18.0066 51.5266C19.2593 51.9689 20.5995 52.104 21.9151 51.9204C23.2306 51.7369 24.483 51.2401 25.5672 50.4718C26.6515 49.7034 27.536 48.6859 28.1466 47.5045C28.7572 46.3231 29.076 45.0123 29.0764 43.682C29.0764 42.5787 29.514 41.5205 30.293 40.7403C31.072 39.9602 32.1285 39.5218 33.2302 39.5218H45.2268C47.1113 39.531 48.9422 38.8943 50.4156 37.7176C51.8889 36.5409 52.9161 34.8948 53.3267 33.0527C53.7909 31.0057 54.0165 28.9116 53.9991 26.8125C53.9726 23.2593 53.2424 19.7467 51.8506 16.4783C50.4589 13.2098 48.4334 10.2505 45.8914 7.77177ZM49.2664 32.1375C49.0601 33.0552 48.5473 33.8749 47.8128 34.4612C47.0783 35.0474 46.166 35.3651 45.2268 35.3617H33.2302C31.0269 35.3617 28.9138 36.2383 27.3559 37.7986C25.7979 39.359 24.9226 41.4753 24.9226 43.682C24.9217 44.3465 24.7618 45.0011 24.4564 45.591C24.151 46.181 23.7089 46.689 23.1672 47.0727C22.6255 47.4564 21.9999 47.7045 21.3428 47.7963C20.6857 47.8881 20.0162 47.8209 19.3903 47.6004C9.99242 44.2801 4.15377 36.4017 4.15377 27.0413C4.15345 21.0136 6.52795 15.2293 10.7614 10.945C14.9948 6.6607 20.7452 4.22254 26.7633 4.16021H26.9969C33.0152 4.18362 38.7832 6.57514 43.0569 10.819C47.3307 15.0629 49.7678 20.8191 49.8427 26.8463C49.8581 28.6259 49.6682 30.4015 49.2767 32.1375H49.2664ZM30.1149 13.5206C30.1149 14.1377 29.9321 14.741 29.5898 15.2541C29.2475 15.7672 28.761 16.1671 28.1917 16.4033C27.6225 16.6394 26.9961 16.7012 26.3918 16.5808C25.7874 16.4604 25.2323 16.1633 24.7967 15.7269C24.361 15.2906 24.0643 14.7346 23.9441 14.1294C23.8239 13.5241 23.8855 12.8967 24.1213 12.3266C24.3571 11.7565 24.7564 11.2692 25.2687 10.9263C25.7811 10.5835 26.3834 10.4005 26.9995 10.4005C27.8258 10.4005 28.6182 10.7292 29.2024 11.3144C29.7866 11.8995 30.1149 12.6931 30.1149 13.5206ZM18.692 19.7609C18.692 20.378 18.5093 20.9813 18.167 21.4944C17.8246 22.0075 17.3381 22.4074 16.7688 22.6436C16.1996 22.8797 15.5732 22.9415 14.9689 22.8211C14.3646 22.7007 13.8095 22.4036 13.3738 21.9672C12.9381 21.5308 12.6414 20.9749 12.5212 20.3696C12.401 19.7644 12.4627 19.137 12.6985 18.5669C12.9343 17.9968 13.3336 17.5095 13.8459 17.1666C14.3582 16.8238 14.9605 16.6408 15.5767 16.6408C16.4029 16.6408 17.1953 16.9695 17.7795 17.5547C18.3638 18.1398 18.692 18.9334 18.692 19.7609ZM18.692 34.3216C18.692 34.9387 18.5093 35.542 18.167 36.0551C17.8246 36.5682 17.3381 36.9681 16.7688 37.2042C16.1996 37.4404 15.5732 37.5022 14.9689 37.3818C14.3646 37.2614 13.8095 36.9642 13.3738 36.5279C12.9381 36.0915 12.6414 35.5356 12.5212 34.9303C12.401 34.3251 12.4627 33.6977 12.6985 33.1276C12.9343 32.5574 13.3336 32.0701 13.8459 31.7273C14.3582 31.3845 14.9605 31.2015 15.5767 31.2015C16.4029 31.2015 17.1953 31.5302 17.7795 32.1153C18.3638 32.7005 18.692 33.4941 18.692 34.3216ZM41.5377 19.7609C41.5377 20.378 41.355 20.9813 41.0127 21.4944C40.6704 22.0075 40.1838 22.4074 39.6146 22.6436C39.0453 22.8797 38.419 22.9415 37.8146 22.8211C37.2103 22.7007 36.6552 22.4036 36.2195 21.9672C35.7839 21.5308 35.4871 20.9749 35.3669 20.3696C35.2467 19.7644 35.3084 19.137 35.5442 18.5669C35.78 17.9968 36.1793 17.5095 36.6916 17.1666C37.2039 16.8238 37.8063 16.6408 38.4224 16.6408C39.2486 16.6408 40.041 16.9695 40.6253 17.5547C41.2095 18.1398 41.5377 18.9334 41.5377 19.7609Z" fill="white"></path></svg>
+                  <div class="prices-tab-table">
+                    {pricingTable.combos.length > 0 ? (
+                      <>
+                        <h3 class="tier-pricing-title">Prix dégressifs <span class="price-tax-note">(tous les prix sont HT)</span></h3>
+
+                        <!-- 1. "CONFIGURATION" heading (mobile only) -->
+                        <h4 class="pricing-config-heading">Configuration</h4>
+
+                        <!-- 2. Scroll indicator with clickable arrows (mobile only) -->
+                        <div class="pricing-scroll-indicator">
+                          <button class="pricing-scroll-btn pricing-scroll-btn-left" aria-label="Défiler à gauche">&#8592;</button>
+                          <span class="pricing-scroll-text">Faites défiler pour voir plus de prix</span>
+                          <button class="pricing-scroll-btn pricing-scroll-btn-right" aria-label="Défiler à droite">&#8594;</button>
+                        </div>
+
+                        <!-- 3. Table -->
+                        <div class="tier-pricing-table-wrapper">
+                          <table class="tier-pricing-table">
+                            <thead>
+                              <tr>
+                                <th><span class="th-desktop">Configuration</span><span class="th-mobile">OPTIONS</span></th>
+                                {pricingTable.tiers.map((qty: number) => (
+                                  <th>{qty}+</th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {pricingTable.combos.map((combo: any, idx: number) => (
+                                <tr>
+                                  <td class="combo-label">{combo.label}</td>
+                                  {combo.prices.map((price: number) => (
+                                    <td class="combo-price">{formatPrice(price)}</td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <!-- 4. Bottom scroll hint (mobile only) -->
+                        <div class="pricing-scroll-bottom-hint">
+                          <svg class="pricing-hint-hand" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#253461"><path d="M6.9 20.6a4.97 4.97 0 0 1-1.4-3.5c0-.28.04-.55.1-.82L4.36 12.8a1.5 1.5 0 0 1 2.68-1.36L8 13.16V4.5a1.5 1.5 0 0 1 3 0v5h.25V3.5a1.5 1.5 0 0 1 3 0v6h.25V4.5a1.5 1.5 0 0 1 3 0V10h.25V7a1.5 1.5 0 0 1 3 0v10a7 7 0 0 1-7 7h-1A6.97 6.97 0 0 1 6.9 20.6z"/></svg>
+                          <span>Faites défiler horizontalement<br/>pour voir toutes les options</span>
+                        </div>
+
+                        <!-- 5. Footnote (mobile only) -->
+                        <p class="pricing-mobile-footnote">* Tous les prix sont HT</p>
+                      </>
+                    ) : (
+                      <p class="no-pricing-message">Les informations de prix ne sont pas disponibles pour ce produit. Veuillez nous contacter pour un devis.</p>
+                    )}
                   </div>
-                  <p class="option-text">Vous préférez créer votre propre design ? Téléchargez le gabarit ci-dessous et soumettez votre design. Nous validerons le fichier avant la production.</p>
-                  <a href={product.pdf_2_url} download class="download-btn">
-                    Télécharger les gabarits PDF
-                  </a>
                 </div>
-              )}
+              </div>
 
-              <!-- Box 3 - Contact/Send Design (always shows) -->
-              <div class="design-option-card">
-                <div class="option-icon">
-                  <!-- Pencil/edit icon -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M50.7813 12.8357L39.1623 1.21879C38.776 0.832389 38.3174 0.525877 37.8127 0.316756C37.3079 0.107634 36.7669 0 36.2205 0C35.6742 0 35.1332 0.107634 34.6284 0.316756C34.1237 0.525877 33.665 0.832389 33.2787 1.21879L1.21937 33.2798C0.831416 33.6647 0.523832 34.1228 0.314503 34.6277C0.105173 35.1325 -0.00172488 35.6739 2.10461e-05 36.2204V47.8399C2.10461e-05 48.9432 0.438289 50.0014 1.21841 50.7815C1.99853 51.5617 3.0566 52 4.15986 52H15.7788C16.3253 52.0017 16.8667 51.8948 17.3715 51.6855C17.8763 51.4761 18.3344 51.1685 18.7193 50.7806L40.4727 29.0287L41.3774 32.6428L31.8098 42.2083C31.4195 42.5982 31.2001 43.1272 31.1999 43.679C31.1996 44.2307 31.4186 44.7599 31.8085 45.1502C32.1984 45.5405 32.7274 45.7599 33.2791 45.7601C33.8308 45.7604 34.36 45.5415 34.7503 45.1515L45.1499 34.7514C45.4042 34.4975 45.5885 34.182 45.6846 33.8357C45.7808 33.4894 45.7855 33.1241 45.6985 32.7754L43.9045 25.5967L50.7813 18.7196C51.1677 18.3333 51.4741 17.8746 51.6833 17.3699C51.8924 16.8651 52 16.324 52 15.7777C52 15.2313 51.8924 14.6902 51.6833 14.1855C51.4741 13.6807 51.1677 13.222 50.7813 12.8357ZM4.15986 40.3804L11.619 47.8399H4.15986V40.3804ZM16.6394 46.9793L5.02043 35.3598L27.039 13.3401L38.6579 24.9597L16.6394 46.9793ZM41.5984 22.019L29.9821 10.3995L36.2218 4.15942L47.8382 15.779L41.5984 22.019Z" fill="white"></path></svg>
+              <!-- Tab 3: Design -->
+              <div class="product-tab-content" id="tab-design">
+                <div class="design-tab-header">
+                  <h3 class="design-tab-title">
+                    Comment obtenir <span class="highlight">un Design ?</span>
+                  </h3>
+                  <p class="design-tab-description">
+                    Nous avons notre propre équipe de graphistes, chacun avec sa spécialité et son style unique. Nous pouvons ainsi créer rapidement un design qui correspond parfaitement à vos besoins et à votre vision.
+                  </p>
+                  <div class="design-tab-cta">
+                    <ContactFormPopup
+                      triggerType="button"
+                      triggerText="Demandez votre design gratuit"
+                      client:visible
+                    />
+                  </div>
                 </div>
-                <p class="option-text">Envoyez-nous votre design ou votre demande de design</p>
-                <div class="contact-btn-wrapper">
-                  <ContactFormPopup
-                    triggerType="button"
-                    triggerText="Formulaire de contact"
-                    client:visible
-                  />
+
+                <div class="design-tab-options">
+                  {product.pdf_url && (
+                    <div class="design-tab-card">
+                      <div class="design-tab-card-icon">
+                        <!-- Wand + stars icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 59 52" fill="none"><path d="M4.37229 8.66667C4.37229 8.09203 4.6025 7.54093 5.01229 7.1346C5.42208 6.72827 5.97787 6.5 6.5574 6.5H10.9276V2.16667C10.9276 1.59203 11.1578 1.04093 11.5676 0.634602C11.9774 0.228274 12.5332 0 13.1127 0C13.6922 0 14.248 0.228274 14.6578 0.634602C15.0676 1.04093 15.2978 1.59203 15.2978 2.16667V6.5H19.668C20.2476 6.5 20.8034 6.72827 21.2132 7.1346C21.6229 7.54093 21.8532 8.09203 21.8532 8.66667C21.8532 9.2413 21.6229 9.7924 21.2132 10.1987C20.8034 10.6051 20.2476 10.8333 19.668 10.8333H15.2978V15.1667C15.2978 15.7413 15.0676 16.2924 14.6578 16.6987C14.248 17.1051 13.6922 17.3333 13.1127 17.3333C12.5332 17.3333 11.9774 17.1051 11.5676 16.6987C11.1578 16.2924 10.9276 15.7413 10.9276 15.1667V10.8333H6.5574C5.97787 10.8333 5.42208 10.6051 5.01229 10.1987C4.6025 9.7924 4.37229 9.2413 4.37229 8.66667ZM41.5191 43.3333H39.334V41.1667C39.334 40.592 39.1038 40.0409 38.694 39.6346C38.2842 39.2283 37.7284 39 37.1489 39C36.5694 39 36.0136 39.2283 35.6038 39.6346C35.194 40.0409 34.9638 40.592 34.9638 41.1667V43.3333H32.7787C32.1992 43.3333 31.6434 43.5616 31.2336 43.9679C30.8238 44.3743 30.5936 44.9254 30.5936 45.5C30.5936 46.0746 30.8238 46.6257 31.2336 47.0321C31.6434 47.4384 32.1992 47.6667 32.7787 47.6667H34.9638V49.8333C34.9638 50.408 35.194 50.9591 35.6038 51.3654C36.0136 51.7717 36.5694 52 37.1489 52C37.7284 52 38.2842 51.7717 38.694 51.3654C39.1038 50.9591 39.334 50.408 39.334 49.8333V47.6667H41.5191C42.0987 47.6667 42.6544 47.4384 43.0642 47.0321C43.474 46.6257 43.7042 46.0746 43.7042 45.5C43.7042 44.9254 43.474 44.3743 43.0642 43.9679C42.6544 43.5616 42.0987 43.3333 41.5191 43.3333ZM56.8149 30.3333H52.4447V26C52.4447 25.4254 52.2145 24.8743 51.8047 24.4679C51.3949 24.0616 50.8391 23.8333 50.2596 23.8333C49.68 23.8333 49.1242 24.0616 48.7145 24.4679C48.3047 24.8743 48.0745 25.4254 48.0745 26V30.3333H43.7042C43.1247 30.3333 42.5689 30.5616 42.1591 30.9679C41.7493 31.3743 41.5191 31.9254 41.5191 32.5C41.5191 33.0746 41.7493 33.6257 42.1591 34.0321C42.5689 34.4384 43.1247 34.6667 43.7042 34.6667H48.0745V39C48.0745 39.5746 48.3047 40.1257 48.7145 40.5321C49.1242 40.9384 49.68 41.1667 50.2596 41.1667C50.8391 41.1667 51.3949 40.9384 51.8047 40.5321C52.2145 40.1257 52.4447 39.5746 52.4447 39V34.6667H56.8149C57.3944 34.6667 57.9502 34.4384 58.36 34.0321C58.7698 33.6257 59 33.0746 59 32.5C59 31.9254 58.7698 31.3743 58.36 30.9679C57.9502 30.5616 57.3944 30.3333 56.8149 30.3333ZM51.1637 13L13.1127 50.7298C12.2932 51.5418 11.1821 51.998 10.0235 51.998C8.86497 51.998 7.75382 51.5418 6.93433 50.7298L1.28036 45.129C0.874442 44.7266 0.552445 44.2488 0.332758 43.723C0.113072 43.1972 0 42.6336 0 42.0645C0 41.4953 0.113072 40.9318 0.332758 40.406C0.552445 39.8801 0.874442 39.4024 1.28036 39L39.334 1.27021C39.7398 0.867716 40.2217 0.548437 40.7519 0.330605C41.2822 0.112773 41.8506 0.000655015 42.4246 0.000655015C42.9986 0.000655015 43.5669 0.112773 44.0972 0.330605C44.6275 0.548437 45.1093 0.867716 45.5151 1.27021L51.1637 6.87104C51.5696 7.27344 51.8916 7.75119 52.1113 8.277C52.3309 8.80281 52.444 9.36638 52.444 9.93552C52.444 10.5047 52.3309 11.0682 52.1113 11.594C51.8916 12.1199 51.5696 12.5976 51.1637 13ZM36.2421 21.6667L30.5936 16.0631L4.37229 42.0631L10.0208 47.6667L36.2421 21.6667ZM48.0745 9.93688L42.4232 4.33333L33.6828 13L39.334 18.6035L48.0745 9.93688Z" fill="white"></path></svg>
+                      </div>
+                      <div class="design-tab-card-text">
+                        <h4>Télécharger les exemples</h4>
+                        <p>Choisissez jusqu'à 4 options parmi les exemples. Envoyez-nous votre logo, texte et couleurs.</p>
+                      </div>
+                      <a href={product.pdf_url} target="_blank" rel="noopener noreferrer" class="design-tab-card-btn">Télécharger les exemples</a>
+                    </div>
+                  )}
+
+                  {product.pdf_2_url && (
+                    <div class="design-tab-card">
+                      <div class="design-tab-card-icon">
+                        <!-- Paint palette icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 54 52" fill="none"><path d="M45.8914 7.77177C40.8646 2.78626 34.074 -0.00724933 26.9995 1.41289e-05H26.7217C19.6093 0.0733075 12.813 2.95461 7.80952 8.01791C2.80605 13.0812 -0.000376428 19.9174 3.78708e-08 27.0413C3.78708e-08 38.2218 6.90046 47.5978 18.0066 51.5266C19.2593 51.9689 20.5995 52.104 21.9151 51.9204C23.2306 51.7369 24.483 51.2401 25.5672 50.4718C26.6515 49.7034 27.536 48.6859 28.1466 47.5045C28.7572 46.3231 29.076 45.0123 29.0764 43.682C29.0764 42.5787 29.514 41.5205 30.293 40.7403C31.072 39.9602 32.1285 39.5218 33.2302 39.5218H45.2268C47.1113 39.531 48.9422 38.8943 50.4156 37.7176C51.8889 36.5409 52.9161 34.8948 53.3267 33.0527C53.7909 31.0057 54.0165 28.9116 53.9991 26.8125C53.9726 23.2593 53.2424 19.7467 51.8506 16.4783C50.4589 13.2098 48.4334 10.2505 45.8914 7.77177ZM49.2664 32.1375C49.0601 33.0552 48.5473 33.8749 47.8128 34.4612C47.0783 35.0474 46.166 35.3651 45.2268 35.3617H33.2302C31.0269 35.3617 28.9138 36.2383 27.3559 37.7986C25.7979 39.359 24.9226 41.4753 24.9226 43.682C24.9217 44.3465 24.7618 45.0011 24.4564 45.591C24.151 46.181 23.7089 46.689 23.1672 47.0727C22.6255 47.4564 21.9999 47.7045 21.3428 47.7963C20.6857 47.8881 20.0162 47.8209 19.3903 47.6004C9.99242 44.2801 4.15377 36.4017 4.15377 27.0413C4.15345 21.0136 6.52795 15.2293 10.7614 10.945C14.9948 6.6607 20.7452 4.22254 26.7633 4.16021H26.9969C33.0152 4.18362 38.7832 6.57514 43.0569 10.819C47.3307 15.0629 49.7678 20.8191 49.8427 26.8463C49.8581 28.6259 49.6682 30.4015 49.2767 32.1375H49.2664ZM30.1149 13.5206C30.1149 14.1377 29.9321 14.741 29.5898 15.2541C29.2475 15.7672 28.761 16.1671 28.1917 16.4033C27.6225 16.6394 26.9961 16.7012 26.3918 16.5808C25.7874 16.4604 25.2323 16.1633 24.7967 15.7269C24.361 15.2906 24.0643 14.7346 23.9441 14.1294C23.8239 13.5241 23.8855 12.8967 24.1213 12.3266C24.3571 11.7565 24.7564 11.2692 25.2687 10.9263C25.7811 10.5835 26.3834 10.4005 26.9995 10.4005C27.8258 10.4005 28.6182 10.7292 29.2024 11.3144C29.7866 11.8995 30.1149 12.6931 30.1149 13.5206ZM18.692 19.7609C18.692 20.378 18.5093 20.9813 18.167 21.4944C17.8246 22.0075 17.3381 22.4074 16.7688 22.6436C16.1996 22.8797 15.5732 22.9415 14.9689 22.8211C14.3646 22.7007 13.8095 22.4036 13.3738 21.9672C12.9381 21.5308 12.6414 20.9749 12.5212 20.3696C12.401 19.7644 12.4627 19.137 12.6985 18.5669C12.9343 17.9968 13.3336 17.5095 13.8459 17.1666C14.3582 16.8238 14.9605 16.6408 15.5767 16.6408C16.4029 16.6408 17.1953 16.9695 17.7795 17.5547C18.3638 18.1398 18.692 18.9334 18.692 19.7609ZM18.692 34.3216C18.692 34.9387 18.5093 35.542 18.167 36.0551C17.8246 36.5682 17.3381 36.9681 16.7688 37.2042C16.1996 37.4404 15.5732 37.5022 14.9689 37.3818C14.3646 37.2614 13.8095 36.9642 13.3738 36.5279C12.9381 36.0915 12.6414 35.5356 12.5212 34.9303C12.401 34.3251 12.4627 33.6977 12.6985 33.1276C12.9343 32.5574 13.3336 32.0701 13.8459 31.7273C14.3582 31.3845 14.9605 31.2015 15.5767 31.2015C16.4029 31.2015 17.1953 31.5302 17.7795 32.1153C18.3638 32.7005 18.692 33.4941 18.692 34.3216ZM41.5377 19.7609C41.5377 20.378 41.355 20.9813 41.0127 21.4944C40.6704 22.0075 40.1838 22.4074 39.6146 22.6436C39.0453 22.8797 38.419 22.9415 37.8146 22.8211C37.2103 22.7007 36.6552 22.4036 36.2195 21.9672C35.7839 21.5308 35.4871 20.9749 35.3669 20.3696C35.2467 19.7644 35.3084 19.137 35.5442 18.5669C35.78 17.9968 36.1793 17.5095 36.6916 17.1666C37.2039 16.8238 37.8063 16.6408 38.4224 16.6408C39.2486 16.6408 40.041 16.9695 40.6253 17.5547C41.2095 18.1398 41.5377 18.9334 41.5377 19.7609Z" fill="white"></path></svg>
+                      </div>
+                      <div class="design-tab-card-text">
+                        <h4>Télécharger le gabarit</h4>
+                        <p>Créez votre propre design. Téléchargez le gabarit et soumettez votre création.</p>
+                      </div>
+                      <a href={product.pdf_2_url} target="_blank" rel="noopener noreferrer" class="design-tab-card-btn">Télécharger les gabarits PDF</a>
+                    </div>
+                  )}
+
+                  <div class="design-tab-card">
+                    <div class="design-tab-card-icon">
+                      <!-- Pencil/edit icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 52 52" fill="none"><path d="M50.7813 12.8357L39.1623 1.21879C38.776 0.832389 38.3174 0.525877 37.8127 0.316756C37.3079 0.107634 36.7669 0 36.2205 0C35.6742 0 35.1332 0.107634 34.6284 0.316756C34.1237 0.525877 33.665 0.832389 33.2787 1.21879L1.21937 33.2798C0.831416 33.6647 0.523832 34.1228 0.314503 34.6277C0.105173 35.1325 -0.00172488 35.6739 2.10461e-05 36.2204V47.8399C2.10461e-05 48.9432 0.438289 50.0014 1.21841 50.7815C1.99853 51.5617 3.0566 52 4.15986 52H15.7788C16.3253 52.0017 16.8667 51.8948 17.3715 51.6855C17.8763 51.4761 18.3344 51.1685 18.7193 50.7806L40.4727 29.0287L41.3774 32.6428L31.8098 42.2083C31.4195 42.5982 31.2001 43.1272 31.1999 43.679C31.1996 44.2307 31.4186 44.7599 31.8085 45.1502C32.1984 45.5405 32.7274 45.7599 33.2791 45.7601C33.8308 45.7604 34.36 45.5415 34.7503 45.1515L45.1499 34.7514C45.4042 34.4975 45.5885 34.182 45.6846 33.8357C45.7808 33.4894 45.7855 33.1241 45.6985 32.7754L43.9045 25.5967L50.7813 18.7196C51.1677 18.3333 51.4741 17.8746 51.6833 17.3699C51.8924 16.8651 52 16.324 52 15.7777C52 15.2313 51.8924 14.6902 51.6833 14.1855C51.4741 13.6807 51.1677 13.222 50.7813 12.8357ZM4.15986 40.3804L11.619 47.8399H4.15986V40.3804ZM16.6394 46.9793L5.02043 35.3598L27.039 13.3401L38.6579 24.9597L16.6394 46.9793ZM41.5984 22.019L29.9821 10.3995L36.2218 4.15942L47.8382 15.779L41.5984 22.019Z" fill="white"></path></svg>
+                    </div>
+                    <div class="design-tab-card-text">
+                      <h4>Envoyer votre design</h4>
+                      <p>Envoyez-nous votre design ou votre demande de design.</p>
+                    </div>
+                    <div class="design-tab-card-btn-wrapper">
+                      <ContactFormPopup
+                        triggerType="button"
+                        triggerText="Formulaire de contact"
+                        client:visible
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 
@@ -914,8 +1251,14 @@ if (product && clusterFaq) {
   /* Product Title Wrapper - Edge-to-edge border like WordPress */
   .product-title-wrapper {
     margin: -20px -20px 20px -20px; /* Extend to gallery edges */
-    padding: 20px 24px 15px 25px; /* WordPress exact padding */
+    padding: 20px 21px 15px 21px; /* Match configurator header padding */
     border-bottom: 1px solid #DCDCDC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 62px;
+    box-sizing: border-box;
   }
 
   /* Product Title - Inside gallery box */
@@ -929,6 +1272,469 @@ if (product && clusterFaq) {
     text-transform: uppercase;
   }
 
+  .product-starting-price {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 100%;
+    color: #10C99E;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background-color: white;
+    border: 1.5px solid #10C99E;
+    border-radius: 50px;
+    padding: 5px 14px;
+    text-transform: uppercase;
+  }
+
+  .price-tax-note {
+    font-size: 12px;
+    font-weight: 400;
+    color: #888;
+  }
+
+  /* Product Tabs Section */
+  .product-tabs-section {
+    margin-top: 40px;
+  }
+
+  .product-tabs-bar {
+    display: flex;
+    gap: 0;
+    background: #EDF1F7;
+    border: 1px solid #DCDCDC;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+  }
+
+  .product-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #253461;
+    background: transparent;
+    border: none;
+    border-right: 1px solid #DCDCDC;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .product-tab:last-child {
+    border-right: none;
+  }
+
+  .product-tab:hover {
+    color: #253461;
+    background: #dfe5ef;
+  }
+
+  .product-tab.active {
+    color: #ffffff;
+    background: #253461;
+  }
+
+  .product-tab.active svg {
+    stroke: #ffffff;
+  }
+
+  .product-tab svg {
+    flex-shrink: 0;
+  }
+
+  .product-tab-content {
+    display: none;
+    background: #ffffff;
+    border: 1px solid #DCDCDC;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    margin-top: 0;
+    padding: 35px 30px;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #5F5F5F;
+  }
+
+  .product-tab-content.active {
+    display: block;
+  }
+
+  .no-pricing-message {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: #5F5F5F;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  /* Prices Tab - stacked layout (sidebar above table) */
+  .prices-tab-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .prices-tab-table {
+    min-width: 0;
+  }
+
+  .prices-tab-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prices-sidebar-card {
+    border: 1px solid #DCDCDC;
+    border-radius: 15px;
+    padding: 20px 25px;
+    background: #fafafa;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .prices-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .prices-info-row:first-child {
+    padding-top: 0;
+  }
+
+  .prices-info-row:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .prices-info-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .prices-info-text h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #253461;
+    margin: 0 0 4px 0;
+  }
+
+  .prices-info-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #5F5F5F;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .prices-info-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .prices-info-btn {
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 9px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+    background: #10C99E;
+    color: white;
+    border: 1.5px solid #10C99E;
+    white-space: nowrap;
+  }
+
+  .prices-info-btn:hover {
+    background: #0eb88f;
+    border-color: #0eb88f;
+    color: white;
+  }
+
+  .prices-info-btn-wrapper :global(button) {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Jost', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    padding: 9px 14px !important;
+    border-radius: 50px !important;
+    background: #10C99E !important;
+    color: white !important;
+    border: 1.5px solid #10C99E !important;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .prices-info-btn-wrapper :global(button:hover) {
+    background: #0eb88f !important;
+    border-color: #0eb88f !important;
+  }
+
+  .prices-info-btn-outline {
+    background: transparent;
+    color: #253461;
+    border-color: #253461;
+  }
+
+  .prices-info-btn-outline:hover {
+    background: #253461;
+    color: white;
+  }
+
+  /* Design Tab Styles */
+  .design-tab-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .design-tab-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #253461;
+    margin: 0 0 15px 0;
+  }
+
+  .design-tab-title .highlight {
+    color: #469ADC;
+  }
+
+  .design-tab-description {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    color: #5F5F5F;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+  }
+
+  .design-tab-cta :global(button) {
+    background-color: #10C99E !important;
+    color: white !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    padding: 12px 25px !important;
+    border-radius: 100px !important;
+    border: 1px solid #10C99E !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .design-tab-cta :global(button:hover) {
+    background-color: transparent !important;
+    color: #10C99E !important;
+  }
+
+  .design-tab-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 15px;
+  }
+
+  .design-tab-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 25px;
+    border: 1px solid #DCDCDC;
+    border-radius: 15px;
+    background: #fafafa;
+    transition: border-color 0.2s;
+  }
+
+  .design-tab-card:hover {
+    border-color: #469ADC;
+  }
+
+  .design-tab-card-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #253461;
+    border-radius: 12px;
+  }
+
+  .design-tab-card-text {
+    flex: 1;
+  }
+
+  .design-tab-card-text h4 {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #253461;
+    margin: 0 0 4px 0;
+  }
+
+  .design-tab-card-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #5F5F5F;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .design-tab-card-btn {
+    flex-shrink: 0;
+    display: inline-block;
+    background: #10C99E;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid #10C99E;
+    transition: background 0.2s;
+  }
+
+  .design-tab-card-btn:hover {
+    background: transparent;
+    color: #10C99E;
+  }
+
+  .design-tab-card-btn-wrapper :global(button) {
+    background-color: #10C99E !important;
+    color: white !important;
+    font-family: 'Jost', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    border: 1px solid #10C99E !important;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .design-tab-card-btn-wrapper :global(button:hover) {
+    background-color: transparent !important;
+    color: #10C99E !important;
+  }
+
+  /* Tier pricing — fixed height with scroll */
+  .tier-pricing-table-wrapper {
+    max-height: 380px;
+    overflow-y: auto;
+  }
+
+
+  .tier-pricing-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #253461;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+  }
+
+  .tier-pricing-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tier-pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    min-width: 600px;
+  }
+
+  .tier-pricing-table th {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #253461;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border-bottom: 2px solid #253461;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .tier-pricing-table th:first-child {
+    text-align: left;
+  }
+
+  .tier-pricing-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+  }
+
+  .tier-pricing-table .combo-label {
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+    white-space: normal;
+    min-width: 150px;
+  }
+
+  .tier-pricing-table .combo-price {
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #253461;
+  }
+
+  .tier-pricing-table tr:hover {
+    background: #f5f7ff;
+  }
+
+  .tier-pricing-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Mobile-only pricing elements — hidden on desktop */
+  .pricing-config-heading,
+  .pricing-scroll-indicator,
+  .pricing-scroll-bottom-hint,
+  .pricing-mobile-footnote,
+  .th-mobile {
+    display: none;
+  }
+  .th-desktop {
+    display: inline;
+  }
+
   @media (max-width: 768px) {
     .product-title-wrapper {
       margin: -20px -20px 15px -20px; /* Match gallery padding on mobile too */
@@ -938,18 +1744,146 @@ if (product && clusterFaq) {
       font-size: 14px;
       line-height: 14px;
     }
+    .product-starting-price {
+      font-size: 12px;
+      padding: 5px 12px;
+    }
+    .product-tab {
+      padding: 12px 10px;
+      font-size: 12px;
+      gap: 5px;
+    }
+    .product-tab svg {
+      width: 14px;
+      height: 14px;
+    }
+    .product-tab-content {
+      padding: 25px 20px;
+      font-size: 15px;
+    }
+    .design-tab-title {
+      font-size: 24px;
+    }
+    .design-tab-card {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+    .tier-pricing-table {
+      font-size: 13px;
+      min-width: 500px;
+    }
+    .tier-pricing-table th,
+    .tier-pricing-table td {
+      padding: 10px 10px;
+    }
+    .tier-pricing-table .combo-label {
+      min-width: 120px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* === MOBILE PRICING TABLE === */
+
+    /* Swap th text */
+    .th-desktop { display: none; }
+    .th-mobile { display: inline; }
+
+    /* "CONFIGURATION" heading */
+    .pricing-config-heading {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #253461;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+    }
+
+    /* ← Faites défiler pour voir plus de prix → */
+    .pricing-scroll-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 5px 10px;
+      margin: 0 auto 8px auto;
+      width: fit-content;
+      max-width: 80%;
+      border: 1.5px solid #253461;
+      border-radius: 8px;
+    }
+    .pricing-scroll-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #253461;
+      cursor: pointer;
+      padding: 2px 4px;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pricing-scroll-btn:active {
+      opacity: 0.6;
+    }
+    .pricing-scroll-text {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      color: #253461;
+      text-align: center;
+    }
+
+    /* Blue scrollbar on pricing table */
+    .tier-pricing-table-wrapper::-webkit-scrollbar {
+      height: 6px;
+    }
+    .tier-pricing-table-wrapper::-webkit-scrollbar-track {
+      background: #EDF1F7;
+      border-radius: 3px;
+    }
+    .tier-pricing-table-wrapper::-webkit-scrollbar-thumb {
+      background: #253461;
+      border-radius: 3px;
+    }
+
+    /* Bottom scroll hint — navy hand icon + navy text in bordered box */
+    .pricing-scroll-bottom-hint {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      margin: 10px auto 0 auto;
+      width: fit-content;
+      border: 1px solid #DCDCDC;
+      border-radius: 12px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      color: #253461;
+      line-height: 1.4;
+      transition: opacity 0.3s ease;
+    }
+    .pricing-hint-hand {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Footnote */
+    .pricing-mobile-footnote {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      color: #999;
+      margin: 6px 0 0 0;
+    }
   }
 
   /* ProductConfigurator component handles variations and add-to-cart via steps.css */
-
-  /* Product Description Card - Matching WordPress Elementor */
-  .product-description {
-    margin-top: 50px;
-    border: 1px solid #DCDCDC;
-    border-radius: 20px;
-    background-color: white;
-    padding: 40px 30px;
-  }
 
   .description-content {
     font-family: 'Jost', sans-serif;
@@ -1047,10 +1981,6 @@ if (product && clusterFaq) {
   }
 
   @media (max-width: 768px) {
-    .product-description {
-      padding: 30px 20px;
-    }
-
     .description-content {
       font-size: 15px;
     }
@@ -1075,211 +2005,20 @@ if (product && clusterFaq) {
     }
   }
 
-  /* Design Section - "How do I get a Design?" - WordPress Elementor post-511 style */
-  .design-section-wrapper {
-    margin-top: 35px;
-    background: url('/images/footer-bg-1.jpg') center center / cover no-repeat;
-    position: relative;
-    padding: 40px 20px 35px 20px;
-  }
-
-  .design-section-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .design-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .design-icon {
-    margin: 0 5px 0 6%;
-    display: flex;
-    align-items: center;
-  }
-
-  .design-title {
-    font-family: 'Jost', sans-serif;
-    font-size: 45px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin: 0;
-    line-height: 1.2;
-  }
-
-  .design-title .highlight {
-    color: #469ADC;
-  }
-
-  .design-cta-wrapper {
-    align-self: flex-end;
-    margin: 0;
-  }
-
-  .design-cta-wrapper :global(button) {
-    display: inline-block;
-    background-color: #10C99E !important;
-    color: white !important;
-    font-family: 'Jost', sans-serif !important;
-    font-size: 15px !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
-    padding: 14px 25px !important;
-    border-radius: 100px !important;
-    border: 1px solid #10C99E !important;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .design-cta-wrapper :global(button:hover) {
-    background-color: transparent !important;
-    color: #10C99E !important;
-    border-color: #10C99E !important;
-  }
-
-  .design-description {
-    width: 100%;
-    max-width: 765px;
-    text-align: center;
-    font-family: 'Jost', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #ffffff;
-    margin: 20px auto 0 auto;
-  }
-
-  .design-options {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .design-option-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid #469ADC;
-    padding: 46px;
-    text-align: center;
-  }
-
-  .option-icon {
-    margin-bottom: 15px;
-    text-align: center;
-  }
-
-  /* Text inside the boxes - WordPress Elementor style (Roboto 17px white) */
-  .option-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #ffffff;
-    margin: 0 0 20px 0;
-    flex-grow: 1;
-    text-align: center;
-  }
-
-  .download-btn {
-    display: inline-block;
-    background-color: #10C99E;
-    color: white;
-    font-family: 'Jost', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 13px 25px;
-    border-radius: 100px;
-    border: 1px solid #10C99E;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin-top: auto;
-  }
-
-  .download-btn:hover {
-    background-color: transparent;
-    color: #10C99E;
-    border-color: #10C99E;
-  }
-
-  /* Contact button wrapper in Box 3 */
-  .contact-btn-wrapper {
-    margin-top: auto;
-  }
-
-  .contact-btn-wrapper :global(button) {
-    display: inline-block;
-    background-color: #10C99E !important;
-    color: white !important;
-    font-family: 'Jost', sans-serif !important;
-    font-size: 15px !important;
-    font-weight: 500 !important;
-    text-transform: uppercase !important;
-    padding: 13px 25px !important;
-    border-radius: 100px !important;
-    border: 1px solid #10C99E !important;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .contact-btn-wrapper :global(button:hover) {
-    background-color: transparent !important;
-    color: #10C99E !important;
-    border-color: #10C99E !important;
-  }
-
   @media (max-width: 992px) {
-    .design-options {
-      flex-direction: column;
-      gap: 20px;
+    .prices-sidebar-card {
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
-
-    .design-header {
-      flex-direction: column;
-      text-align: center;
+    .prices-info-row {
+      padding: 10px 0;
+      border-bottom: 1px solid #ECECEC;
     }
-
-    .design-icon {
-      margin: 0 0 15px 0;
+    .prices-info-row:last-of-type {
+      border-bottom: none;
     }
-
-    .design-cta-wrapper {
-      align-self: center;
-      margin-top: 20px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .design-section-wrapper {
-      padding: 30px 15px;
-    }
-
-    .design-title {
-      font-size: 28px;
-    }
-
-    .design-option-card {
-      padding: 30px 20px;
-    }
-
-    .design-option-card {
-      padding: 25px 20px;
+    .prices-info-buttons {
+      flex-direction: row;
     }
   }
 
@@ -1833,7 +2572,6 @@ if (product && clusterFaq) {
   }
 
   /* Below-fold sections - defer rendering until near viewport */
-  .design-section-wrapper,
   .faq-section,
   .related-products-section,
   .reviews-section {
@@ -2182,6 +2920,65 @@ if (product && clusterFaq) {
   });
 
   // Product configurator handles all quantity and add-to-cart functionality via React component
+
+  // Product Tabs switching
+  const tabButtons = document.querySelectorAll('.product-tab');
+  const tabContents = document.querySelectorAll('.product-tab-content');
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetTab = (btn as HTMLElement).dataset.tab;
+
+      tabButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      tabContents.forEach((content) => {
+        content.classList.remove('active');
+        if ((content as HTMLElement).id === `tab-${targetTab}`) {
+          content.classList.add('active');
+        }
+      });
+    });
+  });
+
+  // Top scrollbar sync for pricing table
+  const scrollTop = document.querySelector('.tier-pricing-scroll-top') as HTMLElement | null;
+  const scrollInner = document.querySelector('.tier-pricing-scroll-inner') as HTMLElement | null;
+  const tableWrapper = document.querySelector('.tier-pricing-table-wrapper') as HTMLElement | null;
+  if (scrollTop && scrollInner && tableWrapper) {
+    const syncWidth = () => {
+      scrollInner.style.width = tableWrapper.scrollWidth + 'px';
+    };
+    syncWidth();
+    window.addEventListener('resize', syncWidth);
+    let syncing = false;
+    scrollTop.addEventListener('scroll', () => {
+      if (!syncing) { syncing = true; tableWrapper.scrollLeft = scrollTop.scrollLeft; syncing = false; }
+    });
+    tableWrapper.addEventListener('scroll', () => {
+      if (!syncing) { syncing = true; scrollTop.scrollLeft = tableWrapper.scrollLeft; syncing = false; }
+    });
+  }
+
+  // Pricing table scroll indicator arrows (mobile)
+  {
+    const tw = document.querySelector('.tier-pricing-table-wrapper') as HTMLElement | null;
+    const btnLeft = document.querySelector('.pricing-scroll-btn-left') as HTMLButtonElement | null;
+    const btnRight = document.querySelector('.pricing-scroll-btn-right') as HTMLButtonElement | null;
+
+    if (tw) {
+      const scrollAmount = 150;
+
+      if (btnLeft) btnLeft.addEventListener('click', () => {
+        tw.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      if (btnRight) btnRight.addEventListener('click', () => {
+        tw.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      // Bottom hint stays visible — no auto-hide
+    }
+  }
 
   // FAQ Accordion toggle
   const faqItems = document.querySelectorAll('.faq-item');
