@@ -1586,8 +1586,8 @@ async function deletePost(env: Env, postId: number): Promise<void> {
   console.log(`Deleted post ${postId} from KV`);
 }
 
-// Debounce interval for site rebuilds (90 seconds)
-const REBUILD_DEBOUNCE_MS = 90 * 1000;
+// Debounce interval for site rebuilds (60 seconds)
+const REBUILD_DEBOUNCE_MS = 60 * 1000;
 
 // Verify KV product count matches WooCommerce before allowing a rebuild.
 async function verifyProductCounts(env: Env): Promise<{
@@ -1947,8 +1947,7 @@ export default {
 
         console.log(`Batch sync: ${productIds.length} products (source: ${data.source})`);
 
-        // Run ALL syncs FIRST, then trigger rebuild after all complete
-        // This ensures the build always fetches the latest data
+        // Sync products in background — KV updates happen while GH Actions build runs (~2min)
         ctx.waitUntil(
           Promise.all(
             productIds.map(id => syncSingleProduct(env, id).catch(e => {
@@ -1956,12 +1955,29 @@ export default {
               return null;
             }))
           )
-            .then(() => triggerSiteRebuild(env))
-            .then(result => console.log(`Batch rebuild result: ${result.reason}`))
-            .catch(error => console.error(`Batch rebuild error:`, error))
+            .then(results => {
+              const synced = results.filter(r => r !== null).length;
+              console.log(`Batch sync complete: ${synced}/${productIds.length} products synced`);
+            })
+            .catch(error => console.error(`Batch sync error:`, error))
         );
 
-        return new Response(JSON.stringify({ success: true, count: productIds.length }), {
+        // Trigger rebuild INLINE (awaited) — ensures it runs before response is sent
+        // This is the reliable path; ctx.waitUntil was silently failing on this worker
+        let rebuildResult = { triggered: false, reason: 'not attempted' };
+        try {
+          rebuildResult = await triggerSiteRebuild(env);
+          console.log(`Batch rebuild result: ${rebuildResult.reason}`);
+        } catch (error) {
+          console.error(`Batch rebuild error:`, error);
+          rebuildResult = { triggered: false, reason: String(error) };
+        }
+
+        return new Response(JSON.stringify({
+          success: true,
+          count: productIds.length,
+          rebuild: rebuildResult,
+        }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       } catch (error) {
