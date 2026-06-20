@@ -1945,23 +1945,40 @@ export default {
         const data = JSON.parse(payload);
         const productIds: number[] = data.product_ids || [];
 
-        console.log(`Batch sync: ${productIds.length} products (source: ${data.source})`);
+        const termId = data.term_id ? String(data.term_id) : null;
+        console.log(`Batch sync: ${productIds.length} products, term_id=${termId} (source: ${data.source})`);
 
-        // Sync products sequentially (one at a time to avoid overloading worker)
-        // Rebuild is NOT triggered here — the WP plugin calls /trigger-rebuild
-        // separately because ctx.waitUntil is unreliable on this worker
-        let synced = 0;
-        for (const id of productIds) {
+        // Lightweight category position update — only patch category_positions in KV
+        // Full syncSingleProduct takes ~49s/product (WP API + images), way too slow.
+        // Instead: read existing KV entry, update category_positions field, write back.
+        // The product_ids array is already in the saved order (index = position).
+        let updated = 0;
+        for (let i = 0; i < productIds.length; i++) {
           try {
-            await syncSingleProduct(env, id);
-            synced++;
+            const productStr = await env.PRODUCTS_KV.get(`product:${productIds[i]}`);
+            if (!productStr) {
+              console.log(`Product ${productIds[i]} not in KV, skipping`);
+              continue;
+            }
+            const product = JSON.parse(productStr);
+            if (!product.category_positions) product.category_positions = {};
+            if (termId) {
+              product.category_positions[termId] = i;
+            }
+            const updatedStr = JSON.stringify(product);
+            // Update both ID and slug keys
+            await env.PRODUCTS_KV.put(`product:${productIds[i]}`, updatedStr);
+            if (product.slug) {
+              await env.PRODUCTS_KV.put(`product:slug:${product.slug}`, updatedStr);
+            }
+            updated++;
           } catch (e) {
-            console.error(`Failed to sync product ${id}:`, e);
+            console.error(`Failed to update position for product ${productIds[i]}:`, e);
           }
         }
-        console.log(`Batch sync complete: ${synced}/${productIds.length} products synced`);
+        console.log(`Batch position update: ${updated}/${productIds.length} products updated`);
 
-        return new Response(JSON.stringify({ success: true, count: productIds.length, synced }), {
+        return new Response(JSON.stringify({ success: true, count: productIds.length, updated }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       } catch (error) {
@@ -2728,10 +2745,11 @@ export default {
 
           configStr = JSON.stringify(config);
 
-          // Cache in KV for 10 minutes — avoids 3s WP round-trip during Astro builds
+          // Cache in KV for 1 hour — avoids 3s WP round-trip during Astro builds
           // (100 products × 3s = 5 min build without cache vs ~15s with cache)
-          // Config changes are picked up on next build (within 10 min) or via /purge-product-configs
-          await env.PRODUCTS_KV.put(`product-config:${identifier}`, configStr, { expirationTtl: 600 });
+          // Cache is refreshed: on product sync (syncSingleProduct), via /purge-product-configs,
+          // or automatically after 1 hour expiry
+          await env.PRODUCTS_KV.put(`product-config:${identifier}`, configStr, { expirationTtl: 3600 });
         } catch (error) {
           const errorMessage = error instanceof Error ? error.message : 'Unknown error';
           console.error('Error fetching product config:', errorMessage);
