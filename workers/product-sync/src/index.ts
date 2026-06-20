@@ -2669,11 +2669,18 @@ export default {
     if (url.pathname.startsWith('/product-config/')) {
       const identifier = url.pathname.replace('/product-config/', '');
 
-      // Always fetch fresh from WordPress (no KV cache — settings must reflect immediately)
       const wpUrl = identifier.match(/^\d+$/)
         ? `${env.WC_STORE_URL}/wp-json/hercules/v1/product-config/${identifier}`
         : `${env.WC_STORE_URL}/wp-json/hercules/v1/product-config-by-slug/${identifier}`;
       let configStr: string | null = null;
+
+      // Check KV cache first (10 min TTL) — avoids 3s WP round-trip per product
+      const cached = await env.PRODUCTS_KV.get(`product-config:${identifier}`);
+      if (cached) {
+        return new Response(cached, {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json', 'X-Cache': 'HIT' },
+        });
+      }
 
       try {
           const response = await fetch(wpUrl, {
@@ -2721,7 +2728,10 @@ export default {
 
           configStr = JSON.stringify(config);
 
-          // No KV caching for product-config — always serve fresh from WP
+          // Cache in KV for 10 minutes — avoids 3s WP round-trip during Astro builds
+          // (100 products × 3s = 5 min build without cache vs ~15s with cache)
+          // Config changes are picked up on next build (within 10 min) or via /purge-product-configs
+          await env.PRODUCTS_KV.put(`product-config:${identifier}`, configStr, { expirationTtl: 600 });
         } catch (error) {
           const errorMessage = error instanceof Error ? error.message : 'Unknown error';
           console.error('Error fetching product config:', errorMessage);
