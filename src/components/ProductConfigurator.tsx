@@ -258,7 +258,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     async function fetchConfig() {
       try {
         console.log('[ProductConfigurator] Fetching config for:', productSlug);
-        const url = `${workerUrl}/product-config/${productSlug}`;
+        const url = `https://hercules-merchandising.fr/wp-json/hercules/v1/product-config-by-slug/${productSlug}`;
         console.log('[ProductConfigurator] URL:', url);
 
         let response: Response | null = null;
