@@ -196,7 +196,19 @@ const buildPricingCombinations = () => {
     }
   }
 
-  if (steps.length === 0) return { tiers: [], combos: [] };
+  // No visible steps but variations have prices — show simple price row
+  if (steps.length === 0) {
+    if (pricedVariations.length > 0) {
+      const simplePrices = tiers.map((qty: number) => {
+        const cp = pricedVariations[0].conditional_prices.find((p: any) =>
+          (typeof p.qty === 'string' ? parseInt(p.qty) : p.qty) === qty
+        );
+        return cp ? parsePrice(cp.price) : 0;
+      });
+      return { tiers, combos: [{ label: 'Standard', prices: simplePrices }] };
+    }
+    return { tiers: [], combos: [] };
+  }
 
   type ComboRow = { labels: string[]; attrSelections: Record<string, string>; priceTables: any[][] };
   let rows: ComboRow[] = [{ labels: [], attrSelections: {}, priceTables: [] }];
