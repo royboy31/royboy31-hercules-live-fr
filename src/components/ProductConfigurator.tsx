@@ -1455,13 +1455,14 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       <div className="kd-vision-content">
         <h3>DONNEZ VIE À VOTRE VISION <span style={{ color: '#469ADC' }}>OBTENEZ UN DESIGN GRATUIT !</span></h3>
         <a
-          href="#design-section"
+          href="#tab-design"
           className="kd-btn-design"
           onClick={(e) => {
             e.preventDefault();
-            const designSection = document.getElementById('design-section');
-            if (designSection) {
-              designSection.scrollIntoView({ behavior: 'smooth' });
+            const designTabBtn = document.querySelector('.product-tab[data-tab="design"]') as HTMLElement;
+            if (designTabBtn) {
+              designTabBtn.click();
+              designTabBtn.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
           }}
         >ACCÉDER À LA SECTION DESIGN</a>
