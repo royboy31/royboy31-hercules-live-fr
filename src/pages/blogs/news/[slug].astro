@@ -105,9 +105,10 @@ const metaDescription = post.excerpt
 const canonicalUrl = `${siteConfig.siteUrl}/blogs/news/${slug}`;
 const postImage = post.featuredImage || post.localFeaturedImage || '';
 
-// Format dates for schema
+// Format dates for schema (ensure modified >= published)
 const publishedDate = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
-const modifiedDate = post.modified ? new Date(post.modified).toISOString() : publishedDate;
+const rawModified = post.modified ? new Date(post.modified).toISOString() : publishedDate;
+const modifiedDate = rawModified >= publishedDate ? rawModified : publishedDate;
 
 // Generate JSON-LD schemas
 const jsonLdSchemas = [];

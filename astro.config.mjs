@@ -109,6 +109,8 @@ export default defineConfig({
           '/liste-de-souhaits',
           '/collections/non-categorise',
           '/collections/uncategorized',
+          '/collections/equipe-nationale',
+          '/design-by-perelweb',
         ];
         return !excludePatterns.some(pattern => page.includes(pattern));
       },

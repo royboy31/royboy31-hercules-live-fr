@@ -355,19 +355,17 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
       let found = false;
       for (const [, mapping] of Object.entries(BLOG_MAPPINGS)) {
         if (mapping.fr === frSlug) {
-          result.de = `${DOMAINS.de}/blogs/${mapping.de}/`;
-          result.en = mapping.en
-            ? `${DOMAINS.en}/blogs/uk/${mapping.en}/`
-            : `${DOMAINS.en}/blogs/uk/`;
+          result.de = mapping.de ? `${DOMAINS.de}/blogs/${mapping.de}/` : '';
+          result.en = mapping.en ? `${DOMAINS.en}/blogs/uk/${mapping.en}/` : '';
           result.fr = `${DOMAINS.fr}/blogs/news/${mapping.fr}/`;
           found = true;
           break;
         }
       }
       if (!found) {
-        // No translation found — point to locale-specific blog indexes
-        result.de = `${DOMAINS.de}/blogs/`;
-        result.en = `${DOMAINS.en}/blogs/uk/`;
+        // No translation found — no cross-language hreflang (standalone post)
+        result.de = '';
+        result.en = '';
       }
     } else if (deMatch && deMatch[1] !== '' && deMatch[1] !== 'news') {
       // DE blog post — direct lookup by DE slug
@@ -375,19 +373,15 @@ export function getHreflangUrls(dePath: string, pageType: 'page' | 'collection' 
       const mapping = BLOG_MAPPINGS[deSlug];
       if (mapping) {
         result.de = `${DOMAINS.de}/blogs/${mapping.de}/`;
-        result.en = mapping.en
-          ? `${DOMAINS.en}/blogs/uk/${mapping.en}/`
-          : `${DOMAINS.en}/blogs/uk/`;
-        result.fr = mapping.fr
-          ? `${DOMAINS.fr}/blogs/news/${mapping.fr}/`
-          : `${DOMAINS.fr}/blogs/news/`;
+        result.en = mapping.en ? `${DOMAINS.en}/blogs/uk/${mapping.en}/` : '';
+        result.fr = mapping.fr ? `${DOMAINS.fr}/blogs/news/${mapping.fr}/` : '';
       } else {
-        // Unmapped DE blog post — point to locale-specific blog indexes
-        result.en = `${DOMAINS.en}/blogs/uk/`;
-        result.fr = `${DOMAINS.fr}/blogs/news/`;
+        // Unmapped DE blog post — no cross-language hreflang
+        result.en = '';
+        result.fr = '';
       }
     } else {
-      // Blog index page (/blogs/ or /blogs/news/)
+      // Blog index page (/blogs/ or /blogs/news/) — equivalent indexes may cross-link
       result.de = `${DOMAINS.de}/blogs/`;
       result.en = `${DOMAINS.en}/blogs/uk/`;
       result.fr = `${DOMAINS.fr}/blogs/news/`;

@@ -13,13 +13,13 @@ export const siteConfig = {
   // Organization/Business Info
   organization: {
     name: 'Hercules Merchandising FR',
-    legalName: 'Be Ventures SPRL',
+    legalName: 'Be Ventures SRL',
     type: 'Organization',
     email: 'info@hercules-merchandising.fr',
     phone: '+33 9 73 03 02 95',
-    // Legal entity: Be Ventures SPRL (Belgian company operating FR site)
+    // Legal entity: Be Ventures SRL (Belgian company operating FR site)
     address: {
-      streetAddress: 'Avenue Paul de Merten 32',
+      streetAddress: 'Avenue Paul de Merten 32/12',
       postalCode: '1090',
       addressLocality: 'Jette',
       addressCountry: 'BE'
@@ -34,7 +34,7 @@ export const siteConfig = {
       { day: 'Sunday', time: '09:00-17:00' }
     ],
     sameAs: [
-      // Add social media URLs here
+      // TODO: Add verified social profile URLs (confirm with owner before adding)
     ]
   },
 
@@ -136,14 +136,6 @@ export function getWebsiteSchema() {
     '@type': 'WebSite',
     name: siteConfig.siteName,
     url: siteConfig.siteUrl,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${siteConfig.siteUrl}/search?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
