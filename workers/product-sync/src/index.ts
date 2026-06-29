@@ -3453,8 +3453,56 @@ export default {
     // that were modified while the sync was running)
     await env.PRODUCTS_KV.put('last_delta_sync', syncStartedAt);
 
+    // Stale image sweep: re-sync products with cached_image_count = 0 or missing synced_at
+    // This catches products where the webhook fired but image caching failed silently
+    console.log('Checking for products with missing cached images...');
+    let staleFixed = 0;
+    try {
+      const indexStr = await env.PRODUCTS_KV.get('product:index');
+      if (indexStr) {
+        const index = JSON.parse(indexStr);
+        const staleProducts: number[] = [];
+
+        for (const entry of index) {
+          if (entry.missive_only) continue;
+          const productStr = await env.PRODUCTS_KV.get(`product:${entry.id}`);
+          if (!productStr) {
+            staleProducts.push(entry.id);
+            continue;
+          }
+          const product = JSON.parse(productStr);
+          if ((product.cached_image_count ?? 0) === 0 || !product.synced_at) {
+            staleProducts.push(entry.id);
+          }
+        }
+
+        if (staleProducts.length > 0) {
+          console.log(`Found ${staleProducts.length} products with missing images: ${staleProducts.join(', ')}`);
+          // Re-sync up to 10 stale products per cron run to stay within subrequest limits
+          for (const pid of staleProducts.slice(0, 10)) {
+            try {
+              const result = await syncSingleProduct(env, pid);
+              if (result && (result.cached_image_count ?? 0) > 0) {
+                staleFixed++;
+                console.log(`Fixed stale product ${pid}: ${result.cached_image_count} images cached`);
+              } else {
+                console.warn(`Re-synced product ${pid} but still has 0 cached images`);
+              }
+            } catch (e) {
+              console.error(`Failed to re-sync stale product ${pid}:`, e);
+            }
+          }
+          console.log(`Stale image sweep: fixed ${staleFixed}/${staleProducts.length} products`);
+        } else {
+          console.log('No products with missing cached images');
+        }
+      }
+    } catch (e) {
+      console.error('Stale image sweep error:', e);
+    }
+
     // Trigger site rebuild only if anything actually changed
-    if (totalSynced > 0 || categoryResult.synced > 0 || postResult.synced > 0) {
+    if (totalSynced > 0 || categoryResult.synced > 0 || postResult.synced > 0 || staleFixed > 0) {
       // Verify product counts before rebuilding
       const verification = await verifyProductCounts(env);
       if (!verification.ok) {
