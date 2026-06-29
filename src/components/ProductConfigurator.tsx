@@ -1459,10 +1459,10 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
           className="kd-btn-design"
           onClick={(e) => {
             e.preventDefault();
-            const designTabBtn = document.querySelector('.product-tab[data-tab="design"]') as HTMLElement;
-            if (designTabBtn) {
-              designTabBtn.click();
-              designTabBtn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const designRadio = document.getElementById('radio-design') as HTMLInputElement;
+            if (designRadio) {
+              designRadio.checked = true;
+              designRadio.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
           }}
         >ACCÉDER À LA SECTION DESIGN</a>
