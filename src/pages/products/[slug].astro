@@ -105,9 +105,14 @@ const buildPricingCombinations = () => {
   const pricedVariations = variations.filter((v: any) => v.conditional_prices?.length > 0);
   if (!pricedVariations.length) return { tiers: [], combos: [] };
 
-  const tiers = pricedVariations[0].conditional_prices.map((cp: any) =>
-    typeof cp.qty === 'string' ? parseInt(cp.qty) : cp.qty
-  );
+  // Get quantity tiers as union from ALL variations
+  const tierSet = new Set<number>();
+  for (const v of pricedVariations) {
+    for (const cp of v.conditional_prices) {
+      tierSet.add(typeof cp.qty === 'string' ? parseInt(cp.qty) : cp.qty);
+    }
+  }
+  const tiers = [...tierSet].sort((a: number, b: number) => a - b);
 
   const allAttrKeys = Object.keys(productConfig.attributes || {});
   const visibleAttrKeys = allAttrKeys.filter((key: string) => {
@@ -253,21 +258,16 @@ const buildPricingCombinations = () => {
       });
     });
 
-    const coversAllTiers = matchedVar ? tiers.every((qty: number) => {
-      return matchedVar.conditional_prices.some((c: any) => {
-        const cpQty = typeof c.qty === 'string' ? parseInt(c.qty) : c.qty;
-        return cpQty === qty;
-      });
-    }) : false;
-
     const prices = tiers.map((qty: number) => {
       let basePrice = 0;
       if (matchedVar) {
-        const cp = matchedVar.conditional_prices.find((c: any) => {
-          const cpQty = typeof c.qty === 'string' ? parseInt(c.qty) : c.qty;
-          return cpQty === qty;
-        });
-        basePrice = cp ? (parsePrice(cp.price)) : 0;
+        // Use closest tier <= qty (same logic as addon price lookup)
+        const sorted = [...matchedVar.conditional_prices]
+          .map((c: any) => ({ qty: typeof c.qty === 'string' ? parseInt(c.qty) : c.qty, price: parsePrice(c.price) }))
+          .sort((a: any, b: any) => a.qty - b.qty);
+        for (const tier of sorted) {
+          if (tier.qty <= qty) basePrice = tier.price;
+        }
       }
 
       let addonTotal = 0;
@@ -278,10 +278,11 @@ const buildPricingCombinations = () => {
       return basePrice + addonTotal;
     });
 
-    return { label: row.labels.join(' + '), prices, hasMatch: !!matchedVar, coversAllTiers };
+    return { label: row.labels.join(' + '), prices, hasMatch: !!matchedVar };
   });
 
-  const validCombos = combos.filter((c: any) => c.hasMatch && c.coversAllTiers);
+  // Filter out combos where variation doesn't exist
+  const validCombos = combos.filter((c: any) => c.hasMatch);
 
   validCombos.sort((a: any, b: any) => a.prices[0] - b.prices[0]);
 
@@ -290,8 +291,9 @@ const buildPricingCombinations = () => {
 
 const pricingTable = buildPricingCombinations();
 
+// Exclude 0 = no price at that tier
 const startingPrice = pricingTable.combos.length > 0
-  ? Math.min(...pricingTable.combos.flatMap((c: any) => c.prices))
+  ? Math.min(...pricingTable.combos.flatMap((c: any) => c.prices).filter((p: number) => p > 0))
   : null;
 
 const tierPrices = pricingTable.combos.length > 0
@@ -730,7 +732,7 @@ if (product && clusterFaq) {
                                 <tr>
                                   <td class="combo-label">{combo.label}</td>
                                   {combo.prices.map((price: number) => (
-                                    <td class="combo-price">{formatPrice(price)}</td>
+                                    <td class="combo-price">{price > 0 ? formatPrice(price) : '—'}</td>
                                   ))}
                                 </tr>
                               ))}
