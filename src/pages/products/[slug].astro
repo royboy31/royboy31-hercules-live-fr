@@ -407,14 +407,14 @@ const productDescription = product?.short_description
 
 const productImage = galleryImages[0]?.src || `${siteConfig.siteUrl}${siteConfig.defaultImage}`;
 
-// Build breadcrumb schema
+// Build breadcrumb schema — prefer primary_category for consistent breadcrumbs
+const breadcrumbCat = product?.primary_category || product?.categories?.[0];
 const breadcrumbItems = [
   { name: 'Home', url: siteConfig.siteUrl },
 ];
-if (product?.categories?.[0]) {
-  const cat = product.categories[0];
-  const catName = typeof cat === 'string' ? cat : cat.name;
-  const catSlug = typeof cat === 'string' ? cat : cat.slug;
+if (breadcrumbCat) {
+  const catName = typeof breadcrumbCat === 'string' ? breadcrumbCat : breadcrumbCat.name;
+  const catSlug = typeof breadcrumbCat === 'string' ? breadcrumbCat : breadcrumbCat.slug;
   breadcrumbItems.push({
     name: catName,
     url: `${siteConfig.siteUrl}/collections/${catSlug}/`
@@ -510,9 +510,9 @@ if (product && clusterFaq) {
           <div class="container">
             <a href="/">Accueil</a>
             <span class="separator"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none"><path d="M6 6L0.75 11.1962L0.75 0.803848L6 6Z" fill="#469ADC"></path></svg></span>
-            {product.categories?.[0] && (
+            {breadcrumbCat && (
               <>
-                <a href={`/collections/${product.categories[0].slug}/`}>{product.categories[0].name}</a>
+                <a href={`/collections/${typeof breadcrumbCat === 'string' ? breadcrumbCat : breadcrumbCat.slug}/`}>{typeof breadcrumbCat === 'string' ? breadcrumbCat : breadcrumbCat.name}</a>
                 <span class="separator"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none"><path d="M6 6L0.75 11.1962L0.75 0.803848L6 6Z" fill="#469ADC"></path></svg></span>
               </>
             )}
