@@ -105,6 +105,15 @@ const metaDescription = post.excerpt
 const canonicalUrl = `${siteConfig.siteUrl}/blogs/news/${slug}`;
 const postImage = post.featuredImage || post.localFeaturedImage || '';
 
+// Parse intrinsic dimensions from WordPress resized-image filename (…-WIDTHxHEIGHT.ext)
+// so the browser can reserve space and avoid layout shift (CLS). Falls back to null
+// when the URL carries no size suffix (e.g. full-size images), leaving markup unchanged.
+function parseImageDims(url: string): { width: number; height: number } | null {
+  const m = url?.match(/-(\d{2,5})x(\d{2,5})\.(?:webp|jpe?g|png|avif)(?:$|\?)/i);
+  return m ? { width: Number(m[1]), height: Number(m[2]) } : null;
+}
+const postImageDims = parseImageDims(postImage);
+
 // Format dates for schema (ensure modified >= published)
 const publishedDate = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
 const rawModified = post.modified ? new Date(post.modified).toISOString() : publishedDate;
@@ -177,7 +186,13 @@ jsonLdSchemas.push(getBreadcrumbSchema([
           <!-- Featured Image -->
           {postImage && (
             <div class="featured-image">
-              <img src={postImage} alt={postTitle} />
+              <img
+                src={postImage}
+                alt={postTitle}
+                {...(postImageDims ? { width: postImageDims.width, height: postImageDims.height } : {})}
+                fetchpriority="high"
+                decoding="async"
+              />
             </div>
           )}
 
