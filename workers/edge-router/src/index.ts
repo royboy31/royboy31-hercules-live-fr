@@ -74,18 +74,18 @@ const ASTRO_PATHS = [
   '/liste-de-souhaits',  // Wishlist page (localStorage-based, no WordPress)
 ];
 
-// Obsolete Shopify-era / tracking / attribute params that only spawn duplicate crawl URLs.
-// Allowlist by design: a param not named here is passed through untouched, so search (?s=),
-// pagination, sorting, nonces and payment-gateway returns keep working.
+// Obsolete Shopify-era / product-recommendation / attribute params that only spawn duplicate
+// crawl URLs. Allowlist by design: a param not named here is passed through untouched, so
+// search (?s=), pagination, sorting, nonces and payment-gateway returns keep working.
+//
+// utm_* is deliberately NOT stripped. Analytics reads campaign tags off the landing URL, so
+// redirecting them away loses attribution for that visit. Cloudflare already normalises utm_*
+// (and gclid/fbclid/mc_eid) out of the cache key upstream of this Worker, so those URLs are
+// deduplicated before we ever see them and the page's canonical tag handles the rest.
 const STRIP_PARAMS = new Set([
   'variant',
   'country',
   'currency',
-  'utm_source',
-  'utm_medium',
-  'utm_campaign',
-  'utm_content',
-  'utm_term',
   'pr_prod_strat',
   'pr_rec_id',
   'pr_rec_pid',
