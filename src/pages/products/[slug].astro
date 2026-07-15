@@ -18,6 +18,7 @@ import {
 } from '../../config/seo';
 import { maillotClusterFaq } from '../../data/maillot-cluster-faq';
 import { getGooglePlaceData } from '../../lib/google-places';
+import { normalizeInternalLinks } from '../../lib/cleanHtml';
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
@@ -650,7 +651,7 @@ if (product && clusterFaq) {
 
               <!-- Tab 1: Description du produit -->
               <div class="product-tab-content" id="tab-description">
-                <div class="description-content" set:html={product.description} />
+                <div class="description-content" set:html={normalizeInternalLinks(product.description)} />
               </div>
 
               <!-- Tab 2: Prix -->
@@ -854,7 +855,7 @@ if (product && clusterFaq) {
                         </svg>
                       </summary>
                       <div class="faq-answer">
-                        <div class="faq-answer-content" set:html={item.answer}></div>
+                        <div class="faq-answer-content" set:html={normalizeInternalLinks(item.answer)}></div>
                       </div>
                     </details>
                   ))}
