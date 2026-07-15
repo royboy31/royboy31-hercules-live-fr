@@ -253,6 +253,16 @@ export default {
     // 301 REDIRECTS - Old/alternate URLs to FR URL structure
     // ============================================
 
+    // Sitemap: send legacy/alternate sitemap paths straight to the canonical index.
+    // Astro's `redirects` config can't do this on its own — trailingSlash:'always'
+    // turns /sitemap.xml into 308 -> /sitemap.xml/ -> an HTML meta-refresh page,
+    // and crawlers shouldn't have to follow a meta-refresh to find a sitemap.
+    // Exact matches only, so /sitemap-index.xml and /sitemap-0.xml pass through.
+    if (pathname === '/sitemap.xml' || pathname === '/sitemap.xml/' ||
+        pathname === '/sitemap_index.xml' || pathname === '/sitemap_index.xml/') {
+      return Response.redirect(new URL('/sitemap-index.xml', url.origin).toString(), 301);
+    }
+
     // /blog, /blogs -> /blogs/news/ (FR blog)
     if (pathname === '/blog' || pathname === '/blog/' || pathname === '/blogs' || pathname === '/blogs/') {
       return Response.redirect(new URL('/blogs/news/', url.origin).toString(), 301);
