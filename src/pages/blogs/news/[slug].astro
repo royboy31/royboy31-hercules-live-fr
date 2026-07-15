@@ -9,6 +9,7 @@ import {
   truncateDescription,
   stripHtml
 } from '../../../config/seo';
+import { normalizeInternalLinks } from '../../../lib/cleanHtml';
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
@@ -63,6 +64,8 @@ function cleanContent(html: string): string {
   // Fix missing spaces around inline tags (e.g. "from<strong>recycled" → "from <strong>recycled")
   cleaned = cleaned.replace(/([a-zA-ZàâéèêëïîôùûüçÀÂÉÈÊËÏÎÔÙÛÜÇäöüÄÖÜß,;.])<(strong|em|a[\s>])/gi, '$1 <$2');
   cleaned = cleaned.replace(/<\/(strong|em|a)>([a-zA-ZàâéèêëïîôùûüçÀÂÉÈÊËÏÎÔÙÛÜÇäöüÄÖÜß])/gi, '</$1> $2');
+  // Canonicalize internal links (strip legacy "#/" fragments, add trailing slashes)
+  cleaned = normalizeInternalLinks(cleaned);
   return cleaned;
 }
 

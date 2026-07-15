@@ -12,6 +12,7 @@ import {
   stripHtml
 } from '../../config/seo';
 import { maillotClusterFaq } from '../../data/maillot-cluster-faq';
+import { normalizeInternalLinks } from '../../lib/cleanHtml';
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
@@ -203,7 +204,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
       <header class="category-header">
         <h1 class="category-title">{categorySeoH1}</h1>
         {category.description && (
-          <div class="category-description" set:html={category.description} />
+          <div class="category-description" set:html={normalizeInternalLinks(category.description)} />
         )}
         {category.second_description && (
           <a href="#read-more-desc" class="weiterlesen-link">Voir plus</a>
@@ -226,7 +227,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
       <!-- Read More Description (SEO Content) -->
       {category.second_description && (
         <section class="read-more-section" id="read-more-desc">
-          <div class="second-description" set:html={wrapParagraphs(category.second_description)} />
+          <div class="second-description" set:html={normalizeInternalLinks(wrapParagraphs(category.second_description))} />
         </section>
       )}
 
@@ -259,7 +260,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
                     </svg>
                   </button>
                   <div class="faq-answer">
-                    <div class="faq-answer-content" set:html={item.answer}></div>
+                    <div class="faq-answer-content" set:html={normalizeInternalLinks(item.answer)}></div>
                   </div>
                 </div>
               ))}
