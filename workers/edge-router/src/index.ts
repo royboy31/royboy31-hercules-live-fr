@@ -74,6 +74,36 @@ const ASTRO_PATHS = [
   '/liste-de-souhaits',  // Wishlist page (localStorage-based, no WordPress)
 ];
 
+// Obsolete Shopify-era / tracking / attribute params that only spawn duplicate crawl URLs.
+// Allowlist by design: a param not named here is passed through untouched, so search (?s=),
+// pagination, sorting, nonces and payment-gateway returns keep working.
+const STRIP_PARAMS = new Set([
+  'variant',
+  'country',
+  'currency',
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_content',
+  'utm_term',
+  'pr_prod_strat',
+  'pr_rec_id',
+  'pr_rec_pid',
+  'pr_ref_pid',
+  'pr_seq',
+]);
+
+function shouldStripParam(key: string): boolean {
+  return STRIP_PARAMS.has(key) || key.startsWith('attribute_pa_');
+}
+
+// A last segment with a file extension means an asset, whose query is load-bearing
+// (cache-busters like /images/badge.svg?v=20260224 must survive verbatim).
+function hasFileExtension(pathname: string): boolean {
+  const lastSegment = pathname.split('/').pop() || '';
+  return /\.[a-z0-9]+$/i.test(lastSegment);
+}
+
 function shouldBypassCache(pathname: string, search: string): boolean {
   // WC AJAX should never be cached
   if (search.includes('wc-ajax')) {
@@ -377,6 +407,41 @@ export default {
           'Access-Control-Max-Age': '86400',
         },
       });
+    }
+
+    // ============================================
+    // CANONICALIZE - drop obsolete params so crawlers see one URL per page
+    // ============================================
+    // Sits after the 301s above on purpose: /product/x?variant=1 is already rewritten to
+    // /products/x/ by those, so stripping first would only add a second hop.
+    // Guarded three ways, because this runs in front of WooCommerce:
+    //   - GET/HEAD only        — never rewrite a form POST out from under Woo
+    //   - not WordPress-routed — cart/checkout/account/wc-ajax/wp-*/buy keep their query
+    //   - not an asset         — ?v= cache-busters on .svg/.js/... must survive
+    // Only allowlisted params are removed; anything unrecognised is left alone.
+    if (
+      (request.method === 'GET' || request.method === 'HEAD') &&
+      !shouldRouteToWordPress(pathname, search) &&
+      !hasFileExtension(pathname)
+    ) {
+      const cleanParams = new URLSearchParams(url.search);
+      let didStrip = false;
+
+      for (const key of [...cleanParams.keys()]) {
+        if (shouldStripParam(key)) {
+          cleanParams.delete(key);
+          didStrip = true;
+        }
+      }
+
+      if (didStrip) {
+        // Land on the canonical trailing-slash form in the same hop, so a stripped URL
+        // doesn't then bounce through Astro's trailingSlash:'always' 308.
+        const canonicalPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+        const target = new URL(canonicalPath, url.origin);
+        target.search = cleanParams.toString();
+        return Response.redirect(target.toString(), 301);
+      }
     }
 
     // Determine which origin to use
