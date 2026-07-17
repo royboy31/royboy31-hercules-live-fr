@@ -531,7 +531,7 @@ if (product && clusterFaq) {
                 <div class="product-title-wrapper">
                   <h1 class="product-title">{product.name}</h1>
                   {startingPrice && (
-                    <span class="product-starting-price">À PARTIR DE {formatPrice(startingPrice)} HT</span>
+                    <span class="product-starting-price" id="starting-price-badge" data-original-price={startingPrice}>À PARTIR DE {formatPrice(startingPrice)} HT</span>
                   )}
                 </div>
 
@@ -733,7 +733,7 @@ if (product && clusterFaq) {
                                 <tr>
                                   <td class="combo-label">{combo.label}</td>
                                   {combo.prices.map((price: number) => (
-                                    <td class="combo-price">{price > 0 ? formatPrice(price) : '—'}</td>
+                                    <td class="combo-price distributor-price-cell" data-original-price={price}>{price > 0 ? formatPrice(price) : '—'}</td>
                                   ))}
                                 </tr>
                               ))}
@@ -3055,4 +3055,48 @@ if (product && clusterFaq) {
       setTimeout(loadTrustWidget, 12000);
     }
   }
+</script>
+
+<script>
+  // Distributor discount: apply to static prices (FROM badge + pricing table)
+  function applyDistributorPrices() {
+    try {
+      const distRaw = localStorage.getItem('hercules_distributor');
+      if (!distRaw) return;
+      const distData = JSON.parse(distRaw);
+      if (!distData.isDistributor || distData.discount <= 0) return;
+
+      const pct = distData.discount / 100;
+      const fmtEUR = (n: number) => `${n.toFixed(2).replace('.', ',')} €`;
+
+      // À PARTIR DE badge
+      const badge = document.getElementById('starting-price-badge');
+      if (badge && !badge.dataset.discounted) {
+        const orig = parseFloat(badge.dataset.originalPrice || '0');
+        if (orig > 0) {
+          const discounted = Math.round(orig * (1 - pct) * 100) / 100;
+          badge.textContent = `À PARTIR DE ${fmtEUR(discounted)} HT`;
+          badge.dataset.discounted = 'true';
+        }
+      }
+
+      // Pricing table cells
+      document.querySelectorAll('.distributor-price-cell').forEach((cell) => {
+        const el = cell as HTMLElement;
+        if (el.dataset.discounted) return;
+        const orig = parseFloat(el.dataset.originalPrice || '0');
+        if (orig > 0) {
+          const discounted = Math.round(orig * (1 - pct) * 100) / 100;
+          el.textContent = fmtEUR(discounted);
+          el.dataset.discounted = 'true';
+        }
+      });
+    } catch (e) { /* graceful degradation: show original prices */ }
+  }
+
+  // Run immediately (works if localStorage already has distributor data from previous visit)
+  applyDistributorPrices();
+
+  // Also listen for distributor store changes (handles first login when the store populates)
+  window.addEventListener('hercules:distributor-changed', applyDistributorPrices);
 </script>

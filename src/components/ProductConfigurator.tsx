@@ -3,6 +3,7 @@ import QuantityRequestPopup from './QuantityRequestPopup';
 import ExpressDeliveryPopup from './ExpressDeliveryPopup';
 import ContactFormPopup from './ContactFormPopup';
 import { cartStore } from '../lib/cartStore';
+import { distributorStore } from '../lib/distributorStore';
 
 // Types matching the API response
 interface TermInfo {
@@ -243,6 +244,9 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
   // Track natural image sizes per attribute for proportional scaling
   const [imageSizes, setImageSizes] = useState<Record<string, Record<string, number>>>({}); // { attrKey: { termSlug: naturalWidth } }
 
+  // Distributor discount
+  const [distributorDiscount, setDistributorDiscount] = useState(0);
+
   // Check if any product is already in cart
   useEffect(() => {
     const checkCart = () => {
@@ -251,6 +255,12 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     };
     checkCart();
     return cartStore.subscribe(checkCart);
+  }, []);
+
+  // Read distributor discount from store and subscribe to changes
+  useEffect(() => {
+    setDistributorDiscount(distributorStore.get().discount);
+    return distributorStore.onChange((data) => setDistributorDiscount(data.discount));
   }, []);
 
   // Fetch product config on mount (with retry for transient server errors)
@@ -567,24 +577,36 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
 
     // Use combined-tier interpolation (WordPress style)
     // Round to 2 decimal places to match displayed price
-    const pricePerPiece = Math.round(getInterpolatedPriceWithAddons(
+    const originalPricePerPiece = Math.round(getInterpolatedPriceWithAddons(
       matchedVariation.conditional_prices,
       quantitySelected,
       visibleAddons,
       selectedAddons
     ) * 100) / 100;
 
+    // Apply distributor discount if applicable
+    const pricePerPiece = distributorDiscount > 0
+      ? Math.round(originalPricePerPiece * (1 - distributorDiscount / 100) * 100) / 100
+      : originalPricePerPiece;
+
     const totalExclVat = Math.round(pricePerPiece * quantitySelected * 100) / 100;
     const taxMultiplier = config && config.tax_percent > 0 ? 1 + (config.tax_percent / 100) : 1.20;
     const totalInclVat = Math.round(totalExclVat * taxMultiplier * 100) / 100;
 
+    // Original totals (before discount) for strikethrough display
+    const originalTotalExclVat = Math.round(originalPricePerPiece * quantitySelected * 100) / 100;
+    const originalTotalInclVat = Math.round(originalTotalExclVat * taxMultiplier * 100) / 100;
+
     return {
+      originalPricePerPiece,
       pricePerPiece,
       totalExclVat,
       totalInclVat,
+      originalTotalExclVat,
+      originalTotalInclVat,
       leadTime: matchedVariation.lead_time || '5 Weeks',
     };
-  }, [matchedVariation, quantitySelected, visibleAddons, selectedAddons, config]);
+  }, [matchedVariation, quantitySelected, visibleAddons, selectedAddons, config, distributorDiscount]);
 
   // Handle attribute selection
   const handleAttributeSelect = (attrKey: string, value: string, stepIndex: number) => {
@@ -660,6 +682,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
         addons: translatedAddons,
         addonsPricePerpiece: addonPricePerPiece,
         minQty: quantityRange.min,
+        ...(distributorDiscount > 0 && { distributor_discount: distributorDiscount }),
       };
 
       // Call Hercules Cart REST API endpoint
@@ -1150,6 +1173,10 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                   }
                 }
                 const totalPrice = tierPrice + addonPrice;
+                // Distributor discount applied to this qty-tier option row
+                const discountedTotalPrice = distributorDiscount > 0
+                  ? Math.round(totalPrice * (1 - distributorDiscount / 100) * 100) / 100
+                  : totalPrice;
 
                 // Calculate savings percentage vs first visible tier
                 const firstTier = filteredTiers[0];
@@ -1177,7 +1204,14 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                       {savings > 0 && (
                         <span className="save">Économisez {savings}%</span>
                       )}
-                      <span>{totalPrice.toFixed(2).replace('.', ',')} {currencySymbol}</span>
+                      {distributorDiscount > 0 ? (
+                        <span>
+                          <s style={{ color: '#999', marginRight: '4px' }}>{totalPrice.toFixed(2).replace('.', ',')} {currencySymbol}</s>
+                          <span style={{ color: '#10C99E', fontWeight: 700 }}>{discountedTotalPrice.toFixed(2).replace('.', ',')} {currencySymbol}</span>
+                        </span>
+                      ) : (
+                        <span>{totalPrice.toFixed(2).replace('.', ',')} {currencySymbol}</span>
+                      )}
                     </div>
                   </label>
                 );
@@ -1293,15 +1327,42 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
               </tr>
               <tr>
                 <td>Prix tout compris par pièce</td>
-                <td className="kd-price-value">{priceInfo.pricePerPiece.toFixed(2).replace('.', ',')} {currencySymbol} (HT)</td>
+                <td className="kd-price-value">
+                  {distributorDiscount > 0 ? (
+                    <>
+                      <s style={{ color: '#999', marginRight: '6px' }}>{priceInfo.originalPricePerPiece.toFixed(2).replace('.', ',')} {currencySymbol}</s>
+                      {priceInfo.pricePerPiece.toFixed(2).replace('.', ',')} {currencySymbol} (HT)
+                    </>
+                  ) : (
+                    <>{priceInfo.pricePerPiece.toFixed(2).replace('.', ',')} {currencySymbol} (HT)</>
+                  )}
+                </td>
               </tr>
+              {distributorDiscount > 0 && (
+                <tr style={{ color: '#10C99E', fontWeight: 600 }}>
+                  <td style={{ color: '#10C99E' }}>Remise revendeur ({distributorDiscount}%)</td>
+                  <td className="kd-discount-value" style={{ color: '#10C99E', fontWeight: 600 }}>
+                    -{(priceInfo.originalTotalExclVat - priceInfo.totalExclVat).toFixed(2).replace('.', ',')} {currencySymbol}
+                  </td>
+                </tr>
+              )}
               <tr>
                 <td>Total (HT)</td>
-                <td className="kd-total-value">{priceInfo.totalExclVat.toFixed(2).replace('.', ',')} {currencySymbol}</td>
+                <td className="kd-total-value">
+                  {distributorDiscount > 0 && (
+                    <s style={{ color: '#999', marginRight: '6px' }}>{priceInfo.originalTotalExclVat.toFixed(2).replace('.', ',')} {currencySymbol}</s>
+                  )}
+                  {priceInfo.totalExclVat.toFixed(2).replace('.', ',')} {currencySymbol}
+                </td>
               </tr>
               <tr>
                 <td>Total (TTC)</td>
-                <td>{priceInfo.totalInclVat.toFixed(2).replace('.', ',')} {currencySymbol}</td>
+                <td>
+                  {distributorDiscount > 0 && (
+                    <s style={{ color: '#999', marginRight: '6px' }}>{priceInfo.originalTotalInclVat.toFixed(2).replace('.', ',')} {currencySymbol}</s>
+                  )}
+                  {priceInfo.totalInclVat.toFixed(2).replace('.', ',')} {currencySymbol}
+                </td>
               </tr>
               <tr>
                 <td className="kd-lieferzeit-cell">
