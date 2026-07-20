@@ -1,6 +1,39 @@
 import { useState, useEffect, useRef } from 'react';
 import { cartStore, type CartData } from '../lib/cartStore';
 import { sessionManager } from '../lib/sessionManager';
+import { distributorStore } from '../lib/distributorStore';
+
+// Apply the distributor discount to an already-formatted currency string while
+// preserving its exact formatting (symbol position, thousands + decimal
+// separators). Mirrors the WordPress mini-cart, which parses the formatted
+// price, multiplies by (1 - discount/100), and re-renders it.
+function applyDistributorFactor(formatted: string, factor: number): string {
+  if (!formatted) return formatted;
+  const m = formatted.match(/^([^\d]*?)(\d[\d.,\s]*\d|\d)([^\d]*)$/);
+  if (!m) return formatted;
+  const [, prefix, core, suffix] = m;
+  const lastComma = core.lastIndexOf(',');
+  const lastDot = core.lastIndexOf('.');
+  const decSep = lastComma > lastDot ? ',' : lastDot > lastComma ? '.' : '';
+  let thouSep = '';
+  if (/[\s  ]/.test(core)) thouSep = ' ';
+  else if (decSep === ',' && core.includes('.')) thouSep = '.';
+  else if (decSep === '.' && core.includes(',')) thouSep = ',';
+  let normalized = core.replace(/[\s  ]/g, '');
+  if (decSep === ',') normalized = normalized.replace(/\./g, '').replace(',', '.');
+  else normalized = normalized.replace(/,/g, '');
+  const value = parseFloat(normalized);
+  if (!isFinite(value)) return formatted;
+  const fixed = (value * factor).toFixed(2);
+  let [intPart, decPart] = fixed.split('.');
+  const effThou = thouSep || (intPart.length > 3 ? (decSep === '.' ? ',' : '.') : '');
+  if (effThou) intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, effThou);
+  const num = `${intPart}${decSep || ','}${decPart}`;
+  return `${prefix}${num}${suffix}`;
+}
+
+const distStrikeStyle = { color: '#999', textDecoration: 'line-through' } as const;
+const distGreenStyle = { color: '#10C99E', fontWeight: 700 } as const;
 
 interface UserSessionProps {
   type: 'cart' | 'account' | 'cart-count';
@@ -35,6 +68,11 @@ export default function UserSession({ type }: UserSessionProps) {
   // Cart state from localStorage
   const [cart, setCart] = useState<CartData>(cartStore.get());
   const [cartLoading, setCartLoading] = useState(false);
+
+  // Distributor discount (from the shared localStorage bridge, same as the
+  // product page) — used to show struck-through original + discounted prices
+  // in the mini-cart, mirroring the WordPress mini-cart.
+  const [distDiscount, setDistDiscount] = useState(0);
 
   // User session state (only fetched for account type)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -100,6 +138,12 @@ export default function UserSession({ type }: UserSessionProps) {
       }
     });
 
+    // Track distributor discount (populated by the WP banner bridge on login)
+    setDistDiscount(distributorStore.get().discount || 0);
+    const unsubscribeDist = distributorStore.onChange((data) => {
+      setDistDiscount(data.isDistributor ? (data.discount || 0) : 0);
+    });
+
     // Refresh cart on tab visibility change
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
@@ -137,6 +181,7 @@ export default function UserSession({ type }: UserSessionProps) {
     return () => {
       unsubscribeCart();
       unsubscribeSession();
+      unsubscribeDist();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('pageshow', handlePageShow);
       document.removeEventListener('mousedown', handleClickOutside);
@@ -395,7 +440,14 @@ export default function UserSession({ type }: UserSessionProps) {
                         <div style={itemInfoStyle}>
                           <p style={itemNameStyle}>{item.name.split(' - ')[0]}</p>
                           <p style={itemPriceStyle}>
-                            {item.quantity} x {item.price}
+                            {distDiscount > 0 ? (
+                              <>
+                                {item.quantity} x <s style={distStrikeStyle}>{item.price}</s>{' '}
+                                <span style={distGreenStyle}>{applyDistributorFactor(item.price, 1 - distDiscount / 100)}</span>
+                              </>
+                            ) : (
+                              <>{item.quantity} x {item.price}</>
+                            )}
                           </p>
                         </div>
                       </a>
@@ -426,7 +478,14 @@ export default function UserSession({ type }: UserSessionProps) {
                 {/* Subtotal */}
                 <div style={subtotalRowStyle}>
                   <span>Sous-total :</span>
-                  <strong>{subtotal}</strong>
+                  {distDiscount > 0 ? (
+                    <strong>
+                      <s style={distStrikeStyle}>{subtotal}</s>{' '}
+                      <span style={distGreenStyle}>{applyDistributorFactor(subtotal, 1 - distDiscount / 100)}</span>
+                    </strong>
+                  ) : (
+                    <strong>{subtotal}</strong>
+                  )}
                 </div>
 
                 {/* Buttons */}
