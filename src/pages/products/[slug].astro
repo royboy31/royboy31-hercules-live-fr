@@ -17,6 +17,7 @@ import {
   stripHtml
 } from '../../config/seo';
 import { maillotClusterFaq } from '../../data/maillot-cluster-faq';
+import { getProductSeoOverride } from '../../config/seo-overrides';
 import { getGooglePlaceData } from '../../lib/google-places';
 import { normalizeInternalLinks } from '../../lib/cleanHtml';
 
@@ -400,11 +401,15 @@ export async function getStaticPaths() {
 
 // SEO Data
 const productUrl = `${siteConfig.siteUrl}/products/${slug}/`;
-const productDescription = product?.short_description
-  ? truncateDescription(stripHtml(product.short_description))
-  : product?.description
-    ? truncateDescription(stripHtml(product.description))
-    : siteConfig.defaultDescription;
+// Per-slug SEO override (title/H1/meta + content blocks), guarded against WC renames
+const seoOverride = getProductSeoOverride(slug, product?.name);
+const productDescription = seoOverride?.metaDescription
+  ? seoOverride.metaDescription
+  : product?.short_description
+    ? truncateDescription(stripHtml(product.short_description))
+    : product?.description
+      ? truncateDescription(stripHtml(product.description))
+      : siteConfig.defaultDescription;
 
 const productImage = galleryImages[0]?.src || `${siteConfig.siteUrl}${siteConfig.defaultImage}`;
 
@@ -484,7 +489,7 @@ if (product && clusterFaq) {
 ---
 
 <BaseLayout
-  title={product?.name || 'Product'}
+  title={seoOverride?.title || product?.name || 'Product'}
   description={productDescription}
   pageType="product"
   ogType="product"
@@ -529,11 +534,15 @@ if (product && clusterFaq) {
               <div class="product-gallery">
                 <!-- Product Title wrapper - edge-to-edge border like WordPress -->
                 <div class="product-title-wrapper">
-                  <h1 class="product-title">{product.name}</h1>
+                  <h1 class="product-title">{seoOverride?.h1 || product.name}</h1>
                   {startingPrice && (
                     <span class="product-starting-price" id="starting-price-badge" data-original-price={startingPrice}>À PARTIR DE {formatPrice(startingPrice)} HT</span>
                   )}
                 </div>
+
+                {seoOverride?.introHtml && (
+                  <div class="product-seo-intro" set:html={seoOverride.introHtml} />
+                )}
 
                 <!-- Main Image Container (badges positioned inside) -->
                 <div class="main-image-container">
@@ -882,6 +891,14 @@ if (product && clusterFaq) {
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+        )}
+
+        {seoOverride?.seoBlockHtml && (
+          <section class="product-seo-block">
+            <div class="container">
+              <div class="product-seo-block-inner" set:html={seoOverride.seoBlockHtml} />
             </div>
           </section>
         )}
@@ -2672,6 +2689,39 @@ if (product && clusterFaq) {
     .reviews-heading {
       font-size: 28px;
     }
+  }
+  /* SEO override content blocks (see src/config/seo-overrides.ts) */
+  .product-seo-intro {
+    margin: 16px 0 8px;
+  }
+  .product-seo-intro :global(p) {
+    color: #5f5f5f;
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0 0 10px;
+  }
+  .product-seo-block {
+    padding: 30px 0 10px;
+  }
+  .product-seo-block-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .product-seo-block-inner :global(h2) {
+    color: #253461;
+    font-size: 24px;
+    margin: 28px 0 12px;
+  }
+  .product-seo-block-inner :global(p) {
+    color: #5f5f5f;
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0 0 12px;
+  }
+  .product-seo-block-inner :global(a) {
+    color: #253461;
+    text-decoration: underline;
   }
 </style>
 

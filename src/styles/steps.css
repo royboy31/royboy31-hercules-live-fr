@@ -416,7 +416,8 @@ input[type="range"]::-ms-thumb {
     box-sizing: border-box;
 }
 
-.pearl-step-indicator h2 {
+.pearl-step-indicator h2,
+.pearl-step-indicator .pearl-loading-text {
     font-family: Jost;
     font-weight: 500;
     font-size: 15px;
@@ -1035,7 +1036,8 @@ input[type="range"]::-webkit-slider-runnable-track {
         position: relative;
     }
 
-    .pearl-step-indicator h2 {
+    .pearl-step-indicator h2,
+    .pearl-step-indicator .pearl-loading-text {
         font-size: 13px;
         flex: 1 1 100%;
         padding-right: 130px;
