@@ -734,7 +734,8 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
     return (
       <div id="pearl-wc-steps-form">
         <div className="pearl-step-indicator">
-          <h2>Chargement...</h2>
+          {/* Not a heading: loading text must stay out of the document outline */}
+          <p className="pearl-loading-text">Chargement...</p>
         </div>
       </div>
     );
