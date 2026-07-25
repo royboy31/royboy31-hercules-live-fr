@@ -38,8 +38,13 @@ const productSeoOverrides: Record<string, ProductSeoOverride> = {
 <h2>Une gamme de tailles adaptée à toute l'équipe</h2>
 <p>Les pointures disponibles vont du 24 au 48, ce qui permet d'équiper les équipes de jeunes, les adultes, les entraîneurs et les membres du staff. Plusieurs couleurs de semelle sont proposées afin d'approcher au mieux la charte graphique du club.</p>
 <p>La quantité minimale est de 20 paires et les tarifs deviennent progressivement plus avantageux lorsque la quantité augmente. Le tableau de prix vous permet d'évaluer rapidement votre budget avant de demander un devis.</p>
+<h2>Douze couleurs de semelle aux couleurs de votre club</h2>
+<p>La semelle de vos claquettes personnalisées est disponible en douze couleurs : blanc, noir, jaune, vert, bleu royal, bleu marine, rouge, gris, orange, violet, marron et rose. Cette palette permet d'assortir chaque paire à la charte graphique du club, du maillot au vestiaire.</p>
+<h2>Une matière PVC pensée pour durer</h2>
+<p>Chaque paire est fabriquée à partir de matériaux 100 % PVC de première qualité, garantissant durabilité et longévité, à l'entraînement, au bord de la piscine ou en déplacement.</p>
+<p>Pour les grandes commandes, des extras sont possibles dès 500 pièces : étiquettes volantes, étiquettes tissées ou cartes d'en-tête, utiles pour la revente en boutique de club.</p>
 <h2>Un accompagnement du design à la livraison</h2>
-<p>Après réception de votre logo, Hercules prépare une proposition graphique et vérifie la faisabilité du marquage. Une fois le design validé, la production est lancée.</p>
+<p>Après réception de votre logo, Hercules prépare une proposition graphique et vérifie la faisabilité du marquage. Une fois le design validé, la production est lancée. Le délai standard est de 4 à 6 semaines.</p>
 <p>Pour une date de tournoi, un événement ou une ouverture de boutique, indiquez votre échéance dès la demande : notre équipe confirme la solution réalisable et le calendrier avant validation de la commande.</p>`,
   },
 
