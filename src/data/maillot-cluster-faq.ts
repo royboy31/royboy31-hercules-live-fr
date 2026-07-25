@@ -6,6 +6,35 @@
 
 export const maillotClusterFaq: Record<string, { question: string; answer: string }[]> = {
 
+  /* ── 0. Claquettes (facts sourced from the product page itself) ──── */
+
+  'claquettes-personnalisees-club': [
+    {
+      question: 'Quelles pointures sont disponibles pour les claquettes personnalisées ?',
+      answer: '<p>Les claquettes personnalisées sont disponibles du 24 au 48, de quoi équiper les équipes de jeunes comme les adultes, les entraîneurs et les membres du staff avec un ajustement confortable pour tous.</p>',
+    },
+    {
+      question: 'Quelles couleurs de semelle peut-on choisir ?',
+      answer: '<p>Douze couleurs de semelle sont disponibles : blanc, noir, jaune, vert, bleu royal, bleu marine, rouge, gris, orange, violet, marron et rose. De quoi assortir vos claquettes personnalisées aux couleurs exactes de votre club.</p>',
+    },
+    {
+      question: 'Logo imprimé ou logo en relief : quelles sont les options ?',
+      answer: '<p>Deux modèles sont proposés : la conception imprimée en quadri, adaptée aux logos détaillés et multicolores, et le logo en relief pour un rendu plus tactile. Notre équipe vérifie votre fichier et prépare le design avant production.</p>',
+    },
+    {
+      question: 'Quel est le minimum de commande et comment évoluent les prix ?',
+      answer: '<p>Les claquettes personnalisées sont commandables dès 20 paires, avec des tarifs dégressifs qui deviennent plus avantageux à mesure que la quantité augmente. Le tableau de prix de la page indique le prix par paire selon le volume.</p>',
+    },
+    {
+      question: 'En quelle matière sont fabriquées les claquettes ?',
+      answer: '<p>Elles sont fabriquées à partir de matériaux 100 % PVC de première qualité, choisis pour leur durabilité et leur longévité.</p>',
+    },
+    {
+      question: 'Quel est le délai de livraison des claquettes personnalisées ?',
+      answer: '<p>Le délai de livraison standard est de 4 à 6 semaines après validation du design. Ce produit ne dispose pas de service express ; pour une date précise, indiquez votre échéance dès la demande de devis afin que notre équipe confirme le calendrier réalisable.</p>',
+    },
+  ],
+
   /* ── 1. Collection ──────────────────────────────────────────────── */
 
   'accessoires-de-football': [

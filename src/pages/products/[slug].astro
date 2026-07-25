@@ -467,8 +467,10 @@ if (product) {
   // Breadcrumb schema
   jsonLdSchemas.push(getBreadcrumbSchema(breadcrumbItems));
 
-  // FAQ schema (if product has FAQ data)
-  const faqSchema = getFAQSchema(product.faq);
+  // FAQ schema — merge WP product FAQ with cluster FAQ so the schema
+  // mirrors every question visible on the page
+  const clusterFaqForSchema = (slug && maillotClusterFaq[slug]) || [];
+  const faqSchema = getFAQSchema([...(product.faq || []), ...clusterFaqForSchema]);
   if (faqSchema) {
     jsonLdSchemas.push(faqSchema);
   }
@@ -476,16 +478,8 @@ if (product) {
 }
 
 // Maillot cluster FAQ (plain HTML Q&A for SEO internal linking)
+// Schema for these questions is merged into the main FAQPage block above.
 const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
-if (product && clusterFaq) {
-  const faqSchema = getFAQSchema(product.faq);
-  if (!faqSchema) {
-    const clusterFaqSchema = getFAQSchema(clusterFaq);
-    if (clusterFaqSchema) {
-      jsonLdSchemas.push(clusterFaqSchema);
-    }
-  }
-}
 ---
 
 <BaseLayout
