@@ -43,6 +43,26 @@ const productSeoOverrides: Record<string, ProductSeoOverride> = {
 <p>Pour une date de tournoi, un événement ou une ouverture de boutique, indiquez votre échéance dès la demande : notre équipe confirme la solution réalisable et le calendrier avant validation de la commande.</p>`,
   },
 
+  'casquette-personnalisee': {
+    expectedName: 'Casquette Personnalisée sur mesure',
+    title: 'Casquette personnalisée avec logo | Fabrication sur mesure',
+    h1: 'Casquette personnalisée avec logo pour clubs et entreprises',
+    metaDescription:
+      'Créez votre casquette personnalisée sur mesure : broderie 3D, sublimation intégrale, couleurs et visière au choix. Dès 200 pièces, design gratuit et devis rapide.',
+    introHtml: `
+<p>Créez une casquette personnalisée entièrement sur mesure pour votre club, votre entreprise ou votre événement. Chaque élément est configurable : combinaisons de couleurs, type de fermeture, style de visière et couleur des œillets.</p>
+<p>Votre logo peut être reproduit en broderie 3D, en impression par sublimation intégrale ou en patch silicone. Fabrication sur mesure dès 200 pièces, avec design réalisé par notre équipe avant production.</p>`,
+    seoBlockHtml: `
+<h2>Une casquette personnalisée à l'image de votre organisation</h2>
+<p>La casquette personnalisée est un support d'identité durable pour un club sportif, une entreprise ou un événement. Portée aux entraînements, en boutique, sur un salon ou offerte aux supporters et partenaires, elle prolonge vos couleurs bien au-delà du terrain.</p>
+<p>Contrairement à une casquette standard marquée, une fabrication sur mesure permet de choisir chaque détail : panneaux, visière, fermeture, œillets et finitions reprennent exactement votre charte graphique.</p>
+<h2>Broderie 3D, sublimation ou patch : à chaque logo sa technique</h2>
+<p>La broderie 3D donne du relief et un rendu premium aux logos et monogrammes. L'impression par sublimation intégrale reproduit les visuels complexes, les dégradés et les motifs couvrants. Les patchs en silicone ou tissés apportent une finition moderne très résistante.</p>
+<p>Notre équipe vérifie votre fichier, recommande la technique adaptée à votre design et prépare une proposition graphique avant le lancement de la production.</p>
+<h2>Quantités, délais et alternatives</h2>
+<p>La fabrication sur mesure est disponible dès 200 pièces, avec des tarifs dégressifs selon la quantité. Pour de plus petites séries, découvrez nos modèles personnalisables dès 10 pièces : la <a href="/products/casquette-de-baseball/">casquette de baseball personnalisée</a>, la <a href="/products/casquette-trucker-personnalisee/">casquette trucker personnalisée</a> ou la <a href="/products/casquette-de-cyclisme-personnalisee/">casquette de cyclisme personnalisée</a>.</p>`,
+  },
+
   'fanion-personnalise-imprime': {
     expectedName: 'Fanion personnalisé imprimé',
     title: 'Fanion personnalisé imprimé | Fabrication européenne',
