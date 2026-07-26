@@ -1,0 +1,35 @@
+name: SEO Canary
+
+# Daily check that the SEO overrides are still live on production.
+# Runs after the 04:01 UTC nightly rebuilds. If a stale deploy ever
+# overwrites production again (see incident of 2026-07-26), this fails
+# loudly instead of the regression going unnoticed for days.
+
+on:
+  schedule:
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check SEO overrides are live
+        run: |
+          fail=0
+          check() {
+            url="$1"; marker="$2"
+            html=$(curl -s -m 30 -H "User-Agent: Mozilla/5.0 (seo-canary)" "$url?v=canary-$(date +%s)")
+            if echo "$html" | grep -qF "$marker"; then
+              echo "OK: $url"
+            else
+              echo "::error::MISSING '$marker' on $url — production may have been overwritten by a stale deploy"
+              fail=1
+            fi
+          }
+          check "https://hercules-merchandising.fr/products/claquettes-personnalisees-club/" "Claquettes personnalisées avec logo"
+          check "https://hercules-merchandising.fr/products/fanion-personnalise-imprime/" "Fabrication européenne"
+          check "https://hercules-merchandising.fr/products/casquette-personnalisee/" "Casquette personnalisée avec logo"
+          check "https://hercules-merchandising.fr/collections/fanions-personnalises-football/" "Fanions personnalisés pour clubs"
+          check "https://hercules-merchandising.fr/collections/couvre-chefs/" "Couvre-chefs personnalisés :"
+          exit $fail
