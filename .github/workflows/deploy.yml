@@ -50,7 +50,14 @@ jobs:
           if [ "${{ github.event_name }}" = "push" ]; then
             echo "env=production" >> $GITHUB_OUTPUT
           elif [ "${{ github.event.inputs.target }}" = "production" ]; then
-            echo "env=production" >> $GITHUB_OUTPUT
+            # Guard: only the production branch may deploy to production.
+            # Prevents stale-branch dispatches from overwriting the live site.
+            if [ "${{ github.ref_name }}" = "production" ]; then
+              echo "env=production" >> $GITHUB_OUTPUT
+            else
+              echo "Refusing production deploy from ref '${{ github.ref_name }}' — falling back to staging"
+              echo "env=staging" >> $GITHUB_OUTPUT
+            fi
           else
             echo "env=staging" >> $GITHUB_OUTPUT
           fi
