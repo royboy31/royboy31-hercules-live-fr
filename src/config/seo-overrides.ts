@@ -68,6 +68,58 @@ const productSeoOverrides: Record<string, ProductSeoOverride> = {
 <p>La fabrication sur mesure est disponible dès 200 pièces, avec des tarifs dégressifs selon la quantité. Pour de plus petites séries, découvrez nos modèles personnalisables dès 10 pièces : la <a href="/products/casquette-de-baseball/">casquette de baseball personnalisée</a>, la <a href="/products/casquette-trucker-personnalisee/">casquette trucker personnalisée</a> ou la <a href="/products/casquette-de-cyclisme-personnalisee/">casquette de cyclisme personnalisée</a>.</p>`,
   },
 
+  'bob-personnalise': {
+    expectedName: 'Bob personnalisé',
+    title: 'Bob personnalisé sur mesure | Impression toute surface',
+    h1: 'Bob personnalisé sur mesure pour clubs, marques et événements',
+    metaDescription:
+      'Créez un bob personnalisé unique : impression quadri sur toute la surface, motifs complexes et dégradés sans limite, modèle simple ou recto-verso. Fabrication sur mesure.',
+    introHtml: `
+<p>Créez un bob personnalisé entièrement sur mesure pour votre club, votre marque ou votre événement. Contrairement aux modèles standards sur lesquels un logo est simplement ajouté, chaque bob est créé à partir de zéro, avec un design unique.</p>
+<p>L'impression quadri couvre toute la surface du tissu : designs complets, motifs complexes, dégradés et visuels détaillés, sans limite de couleurs.</p>`,
+    seoBlockHtml: `
+<h2>Un bob créé à partir de zéro, pas un modèle standard</h2>
+<p>Nos bobs personnalisés ne partent pas d'un produit existant : le tissu est imprimé avant confection, ce qui permet un design continu sur l'ensemble du bob. C'est la différence entre un accessoire promotionnel classique et une pièce à l'image exacte de votre club ou de votre marque.</p>
+<h2>Modèles et qualités disponibles</h2>
+<p>Deux modèles sont proposés : le bob simple et le bob recto-verso. Côté fabrication, plusieurs qualités sont disponibles : qualité plus épaisse (production en Chine ou en Europe) et qualité promotionnelle (production en Europe), selon votre usage et votre budget.</p>
+<h2>Pour compléter votre gamme</h2>
+<p>Le bob s'inscrit dans la famille des couvre-chefs personnalisés : découvrez aussi la <a href="/products/casquette-personnalisee/">casquette personnalisée sur mesure</a> et l'ensemble de la <a href="/collections/couvre-chefs/">collection couvre-chefs</a>.</p>`,
+  },
+
+  'cache-cou-personnalise-foot': {
+    expectedName: 'Cache-Cou Personnalisé Foot',
+    title: 'Cache-cou personnalisé | Fabrication européenne dès 50 pièces',
+    h1: 'Cache-cou personnalisé pour clubs et supporters',
+    metaDescription:
+      'Cache-cou personnalisé imprimé en quadri : 100 % polyester, 50 x 25 cm, fabrication européenne en 3 semaines, dès 50 pièces. Version hiver avec polaire disponible.',
+    introHtml: `
+<p>Le cache-cou personnalisé est l'accessoire multifonction apprécié des coureurs, des cyclistes et des supporters, à l'entraînement comme en tribune. La version estivale, en 100 % polyester, est entièrement imprimée avec votre motif.</p>
+<p>Pour l'hiver, une version avec polaire est disponible : plus chaude, en une couleur, avec votre logo brodé. Fabrication européenne, dès 50 pièces.</p>`,
+    seoBlockHtml: `
+<h2>Un cache-cou pour l'été, un autre pour l'hiver</h2>
+<p>La version été est composée de 100 % polyester et imprimée en quadri sur toute la surface (50 x 25 cm) : couleurs, dégradés et visuels détaillés sont reproduits fidèlement. La version hiver ajoute une doublure polaire pour les entraînements par temps froid, avec un logo brodé sur une couleur unie.</p>
+<h2>Fabrication européenne et délais</h2>
+<p>Le cache-cou personnalisé est fabriqué en Europe, avec un délai de livraison standard de 3 semaines. Pour une échéance particulière, indiquez votre date dès la demande de devis afin que notre équipe confirme le calendrier réalisable.</p>`,
+  },
+
+  'serviette-personnalisee': {
+    expectedName: 'Serviette Personnalisée',
+    title: 'Serviette personnalisée : sport, club et plage | Dès 25 pièces',
+    h1: 'Serviette de sport et de plage personnalisée',
+    metaDescription:
+      'Serviette personnalisée par sublimation : face microfibre douce, revers coton absorbant, 4 formats de 100 x 50 à 180 x 100 cm. Dès 25 pièces pour clubs et entreprises.',
+    introHtml: `
+<p>Offrez une touche unique à vos serviettes avec une personnalisation complète : couleurs, motifs, logos, textes et visuels, sans limite. L'impression par sublimation donne un rendu éclatant, résistant et parfaitement intégré au tissu, sans effet de relief ni altération au lavage.</p>
+<p>Quatre formats sont disponibles, de la serviette de sport (100 x 50 cm) à la serviette de plage (180 x 100 cm), dès 25 pièces.</p>`,
+    seoBlockHtml: `
+<h2>Une face microfibre, un revers coton</h2>
+<p>Chaque serviette personnalisée combine une face en microfibre ultra-douce, idéale pour une impression vive et détaillée, et un revers en coton absorbant pour un usage sportif ou balnéaire confortable.</p>
+<h2>Quatre formats pour tous les usages</h2>
+<p>Du format sport compact (100 x 50 cm) aux formats 140 x 70, 160 x 80 et 180 x 100 cm pour la plage, la gamme couvre les besoins des clubs, des salles de sport et des entreprises. Une option de production « verte » est également proposée parmi nos usines partenaires.</p>
+<h2>Découvrez aussi</h2>
+<p>Pour un rendu tissé haut de gamme, la <a href="/products/serviette-tissee-jacquard/">serviette tissée jacquard</a> complète la gamme, à retrouver dans la <a href="/collections/serviettes-personnalisees/">collection serviettes personnalisées</a>.</p>`,
+  },
+
   'fanion-personnalise-imprime': {
     expectedName: 'Fanion personnalisé imprimé',
     title: 'Fanion personnalisé imprimé | Fabrication européenne',

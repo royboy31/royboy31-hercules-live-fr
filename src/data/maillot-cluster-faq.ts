@@ -6,6 +6,73 @@
 
 export const maillotClusterFaq: Record<string, { question: string; answer: string }[]> = {
 
+  /* ── 0a. Bob personnalisé (facts from the product page) ──────────── */
+
+  'bob-personnalise': [
+    {
+      question: 'Quelle est la différence avec un bob standard personnalisé ?',
+      answer: '<p>Nos bobs ne partent pas d’un modèle existant sur lequel un logo est ajouté : chaque bob est créé à partir de zéro, avec un tissu imprimé avant confection. Le design couvre ainsi toute la surface, sans zone d’impression limitée.</p>',
+    },
+    {
+      question: 'Quels modèles de bob personnalisé proposez-vous ?',
+      answer: '<p>Deux modèles sont disponibles : le bob simple et le bob recto-verso. Plusieurs qualités de fabrication sont proposées : qualité plus épaisse (production en Chine ou en Europe) et qualité promotionnelle (production en Europe).</p>',
+    },
+    {
+      question: 'Peut-on imprimer des dégradés et des motifs complexes sur un bob ?',
+      answer: '<p>Oui. L’impression quadri sur toute la surface du tissu permet des designs complets, des motifs complexes, des dégradés et des visuels détaillés, sans limite de couleurs.</p>',
+    },
+    {
+      question: 'Existe-t-il d’autres couvre-chefs personnalisables ?',
+      answer: '<p>Oui : la <strong><a href="/products/casquette-personnalisee/">casquette personnalisée sur mesure</a></strong> suit la même logique de fabrication, et la <strong><a href="/collections/couvre-chefs/">collection couvre-chefs</a></strong> regroupe casquettes, bonnets et bobs.</p>',
+    },
+  ],
+
+  /* ── 0b. Cache-cou personnalisé (facts from the product page) ────── */
+
+  'cache-cou-personnalise-foot': [
+    {
+      question: 'Quel est le minimum de commande pour un cache-cou personnalisé ?',
+      answer: '<p>Le cache-cou personnalisé est disponible dès 50 pièces, avec des tarifs dégressifs selon la quantité commandée, affichés dans le tableau de prix de la page.</p>',
+    },
+    {
+      question: 'Quelles sont les dimensions et la matière du cache-cou ?',
+      answer: '<p>Le cache-cou mesure 50 x 25 cm et la version estivale est composée de 100 % polyester, entièrement imprimée en quadri avec votre motif.</p>',
+    },
+    {
+      question: 'Existe-t-il une version hiver du cache-cou personnalisé ?',
+      answer: '<p>Oui. La version hiver intègre une doublure polaire, plus chaude, en une couleur unie avec votre logo brodé. Elle est appréciée pour les entraînements par temps froid.</p>',
+    },
+    {
+      question: 'Où sont fabriqués les cache-cous et en combien de temps ?',
+      answer: '<p>La fabrication est européenne, avec un délai de livraison standard de 3 semaines. Pour une date précise, indiquez votre échéance dès la demande de devis.</p>',
+    },
+  ],
+
+  /* ── 0c. Serviette personnalisée (facts from the product page) ───── */
+
+  'serviette-personnalisee': [
+    {
+      question: 'Quels formats de serviette personnalisée sont disponibles ?',
+      answer: '<p>Quatre formats sont proposés : 100 x 50 cm (sport), 140 x 70 cm, 160 x 80 cm et 180 x 100 cm (plage). Le minimum de commande est de 25 pièces.</p>',
+    },
+    {
+      question: 'En quelle matière sont fabriquées les serviettes personnalisées ?',
+      answer: '<p>Chaque serviette combine une face en microfibre ultra-douce, pour une impression vive et détaillée, et un revers en coton absorbant pour le confort à l’usage.</p>',
+    },
+    {
+      question: 'L’impression résiste-t-elle au lavage ?',
+      answer: '<p>Oui. L’impression par sublimation intègre le visuel au tissu : le rendu est éclatant, sans effet de relief, et ne s’altère pas au lavage.</p>',
+    },
+    {
+      question: 'Proposez-vous une option de production plus écologique ?',
+      answer: '<p>Oui, une option de production « verte » est proposée parmi nos usines partenaires. Précisez votre préférence lors de la demande de devis.</p>',
+    },
+    {
+      question: 'Existe-t-il une version tissée haut de gamme ?',
+      answer: '<p>Oui, la <strong><a href="/products/serviette-tissee-jacquard/">serviette tissée jacquard</a></strong> offre un rendu textile tissé. Tous les modèles sont regroupés dans la <strong><a href="/collections/serviettes-personnalisees/">collection serviettes personnalisées</a></strong>.</p>',
+    },
+  ],
+
   /* ── 0. Claquettes (facts sourced from the product page itself) ──── */
 
   'claquettes-personnalisees-club': [
@@ -245,6 +312,14 @@ export const maillotClusterFaq: Record<string, { question: string; answer: strin
     {
       question: 'Comment int\u00e9grer des sponsors sur les maillots ?',
       answer: '<p>Vous pouvez inclure les logos de vos sponsors \u00e0 plusieurs emplacements strat\u00e9giques : poitrine, manches ou dos. Cela permet de maximiser leur visibilit\u00e9 tout en respectant l\'identit\u00e9 visuelle de l\'\u00e9quipe. Notre graphiste int\u00e9grateur peut vous conseiller sur le placement optimal.</p>',
+    },
+    {
+      question: 'Quel est le prix d\u2019un maillot de football personnalis\u00e9 ?',
+      answer: '<p>Le prix par maillot d\u00e9pend de la quantit\u00e9 command\u00e9e et des options choisies : les tarifs sont d\u00e9gressifs et affich\u00e9s dans le tableau de prix de la page, d\u00e8s 5 pi\u00e8ces. Demandez un devis gratuit pour une offre pr\u00e9cise adapt\u00e9e \u00e0 votre \u00e9quipe.</p>',
+    },
+    {
+      question: 'Livrez-vous les maillots personnalis\u00e9s partout en Europe ?',
+      answer: '<p>Oui. Depuis plus de 10 ans, nous accompagnons des centaines de clubs et d\u2019\u00e9quipes \u00e0 travers l\u2019Europe, de la conception du design \u00e0 la livraison des maillots.</p>',
     },
   ],
 };
