@@ -32,4 +32,7 @@ jobs:
           check "https://hercules-merchandising.fr/products/casquette-personnalisee/" "Casquette personnalisée avec logo"
           check "https://hercules-merchandising.fr/collections/fanions-personnalises-football/" "Fanions personnalisés pour clubs"
           check "https://hercules-merchandising.fr/collections/couvre-chefs/" "Couvre-chefs personnalisés :"
+          check "https://hercules-merchandising.fr/products/bob-personnalise/" "Bob personnalisé sur mesure"
+          check "https://hercules-merchandising.fr/products/cache-cou-personnalise-foot/" "Fabrication européenne dès 50 pièces"
+          check "https://hercules-merchandising.fr/products/serviette-personnalisee/" "sport, club et plage"
           exit $fail
