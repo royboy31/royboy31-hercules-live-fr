@@ -1888,6 +1888,37 @@ const WP_SQUARE_VARIANTS = [100, 150, 300, 361, 768];
 const THUMB_MIN_PX = 300;
 
 /**
+ * Fetch an on-the-fly Cloudflare transform at `width`, in the best format the CLIENT accepts.
+ * Returns null when the client has no modern-format support (callers then serve the PNG
+ * variant) or when Image Transformations is unavailable, so this can only ever improve things.
+ *
+ * ⚠️ The Accept header MUST be forwarded: Cloudflare picks the output format from the
+ * request's Accept even when the URL says format=avif. A bare fetch() yields PNG every time.
+ */
+async function fetchTransformed(
+  originalUrl: string,
+  width: number,
+  accept: string,
+  requestedFormat: string | null
+): Promise<Response | null> {
+  const negotiated = requestedFormat === 'webp' ? 'webp'
+    : accept.includes('image/avif') ? 'avif'
+    : accept.includes('image/webp') ? 'webp'
+    : null;
+  if (!negotiated) return null;
+
+  try {
+    const u = new URL(originalUrl);
+    const cdnCgiUrl = `${u.origin}/cdn-cgi/image/fit=contain,quality=85,width=${width},format=${negotiated}${u.pathname}`;
+    const response = await fetch(cdnCgiUrl, { headers: { Accept: accept } });
+    if (response.ok) return response;
+  } catch (e) {
+    // Transformations unavailable - caller falls back to the sized PNG variant
+  }
+  return null;
+}
+
+/**
  * Fetch the smallest WordPress variant that is at least `minPx` wide and actually exists.
  * Returns null if none can be confirmed, so callers keep their existing behaviour.
  * Responses are cached at the edge, so the probe cost is paid once per image.
@@ -3202,6 +3233,18 @@ export default {
             // Serve WordPress's own sized variant instead; if none can be confirmed we fall
             // through to the original exactly as before.
             if (requestedSize === 'thumb') {
+              // Prefer a transformed AVIF/WebP (~5-8KB) over WordPress's 300x300 PNG (~23KB).
+              // Same 300px dimensions either way, so nothing gets softer. Clients without
+              // modern-format support fall through to the PNG variant below, unchanged.
+              const transformed = await fetchTransformed(originalUrl, THUMB_MIN_PX, acceptHeader, requestedFormat);
+              if (transformed) {
+                const headers = new Headers(transformed.headers);
+                headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+                headers.set('Access-Control-Allow-Origin', '*');
+                headers.set('Vary', 'Accept');
+                return new Response(transformed.body, { status: 200, headers });
+              }
+
               const variant = await fetchSizedVariant(originalUrl, THUMB_MIN_PX);
               if (variant) {
                 const headers = new Headers(variant.headers);
