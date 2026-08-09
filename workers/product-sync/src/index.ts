@@ -3232,7 +3232,14 @@ export default {
               try {
                 const originalUrlObj = new URL(originalUrl);
                 const cdnCgiUrl = `${originalUrlObj.origin}/cdn-cgi/image/${options.join(',')}${originalUrlObj.pathname}`;
-                const resizedResponse = await fetch(cdnCgiUrl);
+                // ⚠️ MUST forward the client's Accept. Cloudflare gates the output format on
+                // the REQUEST's Accept even when the URL explicitly says format=avif, and a
+                // bare fetch() sends none - so every client got PNG. Verified against the
+                // live zone: format=avif + Accept:*/* returns image/png 186KB, while the very
+                // same URL with Accept: image/avif returns image/avif 47.8KB.
+                const resizedResponse = await fetch(cdnCgiUrl, {
+                  headers: { Accept: acceptHeader || 'image/*,*/*' },
+                });
                 if (resizedResponse.ok) {
                   const headers = new Headers(resizedResponse.headers);
                   headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
@@ -3303,7 +3310,11 @@ export default {
             const originalUrlObj = new URL(originalUrl);
             const cdnCgiUrl = `${originalUrlObj.origin}/cdn-cgi/image/${options.join(',')}${originalUrlObj.pathname}`;
 
-            const resizedResponse = await fetch(cdnCgiUrl);
+            // See the note in the uncached branch - Cloudflare picks the format from the
+            // REQUEST's Accept, so it has to be forwarded or the client always gets PNG.
+            const resizedResponse = await fetch(cdnCgiUrl, {
+              headers: { Accept: acceptHeader || 'image/*,*/*' },
+            });
             if (resizedResponse.ok) {
               const headers = new Headers(resizedResponse.headers);
               headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
