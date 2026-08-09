@@ -3150,6 +3150,9 @@ export default {
       const requestedWidth = url.searchParams.get('w');
       const requestedFormat = url.searchParams.get('format');
       const requestedSize = url.searchParams.get('size'); // 'thumb' for 300x300 thumbnails
+      // What the CLIENT can actually decode. Drives explicit AVIF/WebP negotiation below -
+      // it cannot be delegated to cdn-cgi's format=auto, which only sees the subrequest.
+      const acceptHeader = request.headers.get('Accept') || '';
 
       if (!slug) {
         return new Response('Missing product slug', { status: 400 });
@@ -3214,11 +3217,18 @@ export default {
               if (requestedWidth) {
                 options.push(`width=${requestedWidth}`);
               }
-              // format=auto lets Cloudflare negotiate AVIF/WebP from the Accept header.
-              // This is where the mobile win is: the same 768px image is a 161KB PNG but
-              // roughly 30-50KB as AVIF. Inert until Image Transformations is enabled on
-              // the zone (cdn-cgi 404s today), in which case we fall through as before.
-              options.push(requestedFormat === 'webp' ? 'format=webp' : 'format=auto');
+              // ⚠️ Negotiate the format from the CLIENT's Accept and ask for it EXPLICITLY.
+              // format=auto does NOT work here: it negotiates against the SUBREQUEST's Accept,
+              // and a bare fetch() sends none - which is why this returned PNG to every client
+              // even with Image Transformations enabled. Explicit formats also give each one
+              // its own cdn-cgi URL, so they cache separately instead of relying on Vary.
+              const negotiated = requestedFormat === 'webp' ? 'webp'
+                : acceptHeader.includes('image/avif') ? 'avif'
+                : acceptHeader.includes('image/webp') ? 'webp'
+                : null;
+              if (negotiated) {
+                options.push(`format=${negotiated}`);
+              }
               try {
                 const originalUrlObj = new URL(originalUrl);
                 const cdnCgiUrl = `${originalUrlObj.origin}/cdn-cgi/image/${options.join(',')}${originalUrlObj.pathname}`;
@@ -3277,9 +3287,15 @@ export default {
           if (requestedWidth) {
             options.push(`width=${requestedWidth}`);
           }
-          // See the note in the uncached branch: format=auto is what turns the 161KB PNG
-          // into a ~30-50KB AVIF once Image Transformations is enabled on the zone.
-          options.push(requestedFormat === 'webp' ? 'format=webp' : 'format=auto');
+          // See the note in the uncached branch: negotiate explicitly from the client's
+          // Accept, because format=auto would negotiate against a subrequest that has none.
+          const negotiated = requestedFormat === 'webp' ? 'webp'
+            : acceptHeader.includes('image/avif') ? 'avif'
+            : acceptHeader.includes('image/webp') ? 'webp'
+            : null;
+          if (negotiated) {
+            options.push(`format=${negotiated}`);
+          }
 
           // Extract path from original URL (e.g., /wp-content/uploads/...)
           // URL format: https://staging.hercules-merchandising.fr/cdn-cgi/image/options/path
