@@ -3214,9 +3214,11 @@ export default {
               if (requestedWidth) {
                 options.push(`width=${requestedWidth}`);
               }
-              if (requestedFormat === 'webp') {
-                options.push('format=webp');
-              }
+              // format=auto lets Cloudflare negotiate AVIF/WebP from the Accept header.
+              // This is where the mobile win is: the same 768px image is a 161KB PNG but
+              // roughly 30-50KB as AVIF. Inert until Image Transformations is enabled on
+              // the zone (cdn-cgi 404s today), in which case we fall through as before.
+              options.push(requestedFormat === 'webp' ? 'format=webp' : 'format=auto');
               try {
                 const originalUrlObj = new URL(originalUrl);
                 const cdnCgiUrl = `${originalUrlObj.origin}/cdn-cgi/image/${options.join(',')}${originalUrlObj.pathname}`;
@@ -3225,6 +3227,9 @@ export default {
                   const headers = new Headers(resizedResponse.headers);
                   headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
                   headers.set('Access-Control-Allow-Origin', '*');
+                  // format=auto picks the format from Accept, so the cache key must include
+                  // it - otherwise an AVIF gets served to a client that cannot decode it.
+                  headers.set('Vary', 'Accept');
                   return new Response(resizedResponse.body, {
                     status: 200,
                     headers
@@ -3272,9 +3277,9 @@ export default {
           if (requestedWidth) {
             options.push(`width=${requestedWidth}`);
           }
-          if (requestedFormat === 'webp') {
-            options.push('format=webp');
-          }
+          // See the note in the uncached branch: format=auto is what turns the 161KB PNG
+          // into a ~30-50KB AVIF once Image Transformations is enabled on the zone.
+          options.push(requestedFormat === 'webp' ? 'format=webp' : 'format=auto');
 
           // Extract path from original URL (e.g., /wp-content/uploads/...)
           // URL format: https://staging.hercules-merchandising.fr/cdn-cgi/image/options/path
@@ -3287,6 +3292,8 @@ export default {
               const headers = new Headers(resizedResponse.headers);
               headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
               headers.set('Access-Control-Allow-Origin', '*');
+              // See the note in the uncached branch - format=auto varies by Accept.
+              headers.set('Vary', 'Accept');
               return new Response(resizedResponse.body, {
                 status: 200,
                 headers
