@@ -1877,6 +1877,37 @@ async function verifyWebhookSignature(
   }
 }
 
+// WordPress-generated square variants we may serve instead of the full-size original,
+// ascending. Presence varies per upload, so a candidate is only ever used after the
+// fetch below confirms it exists — we never construct a URL and hope.
+const WP_SQUARE_VARIANTS = [100, 150, 300, 361, 768];
+
+// Thumbnails render in a 94px box (and are CSS-blurred unless active), so 300px stays
+// crisp past 3x DPR. This is an UPGRADE on the 100x100 the sync caches, not a downgrade:
+// the only thing it replaces is the full-size original, which no thumbnail can display.
+const THUMB_MIN_PX = 300;
+
+/**
+ * Fetch the smallest WordPress variant that is at least `minPx` wide and actually exists.
+ * Returns null if none can be confirmed, so callers keep their existing behaviour.
+ * Responses are cached at the edge, so the probe cost is paid once per image.
+ */
+async function fetchSizedVariant(originalUrl: string, minPx: number): Promise<Response | null> {
+  for (const px of WP_SQUARE_VARIANTS) {
+    if (px < minPx) continue;
+    const candidate = originalUrl.replace(/(\.[^.]+)$/, `-${px}x${px}$1`);
+    try {
+      const response = await fetch(candidate, {
+        cf: { cacheEverything: true, cacheTtl: 604800 },
+      });
+      if (response.ok) return response;
+    } catch (e) {
+      // Network/WP failure - fall through and let the caller redirect to the original
+    }
+  }
+  return null;
+}
+
 // Request handler
 export default {
   // HTTP request handler
@@ -3153,6 +3184,20 @@ export default {
           // Redirect to WordPress image URL (with optional resizing via cdn-cgi)
           const originalUrl = product.images[imageIndex].src;
           if (originalUrl) {
+            // A thumbnail must never fall back to the full-size original: it renders in a
+            // 94px box, so redirecting here was shipping ~600KB to paint ~5KB worth of pixels.
+            // Serve WordPress's own sized variant instead; if none can be confirmed we fall
+            // through to the original exactly as before.
+            if (requestedSize === 'thumb') {
+              const variant = await fetchSizedVariant(originalUrl, THUMB_MIN_PX);
+              if (variant) {
+                const headers = new Headers(variant.headers);
+                headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+                headers.set('Access-Control-Allow-Origin', '*');
+                return new Response(variant.body, { status: 200, headers });
+              }
+            }
+
             // If resizing requested, use Cloudflare cdn-cgi Image Resizing
             if (requestedWidth || requestedFormat) {
               const options: string[] = ['fit=contain', 'quality=85'];
