@@ -383,19 +383,15 @@ if (jsonLd) {
         setTimeout(loadPhase2, 3000);
       }
 
-      // Phase 2: ClickCease + Clarity (secondary tracking) — 8s or after Phase 1
+      // Phase 2: Clarity (secondary tracking) — 8s or after Phase 1
       function loadPhase2(){
         if(phase2) return;
         phase2=true;
 
-        // 3. ClickCease (proxied)
-        inIdle(function(){
-          var cc=document.createElement('script');
-          cc.async=true;cc.src='/cached-scripts/clickcease-stat.js';
-          document.head.appendChild(cc);
-        });
+        // 3. ClickCease removed — GTM already injects it (see commit for the trace).
+        //    If it ever leaves the GTM container, re-add a loader here.
 
-        // 4. Microsoft Clarity (proxied) — staggered 1.5s after ClickCease
+        // 4. Microsoft Clarity (proxied) — staggered 1.5s into Phase 2
         setTimeout(function(){
           inIdle(function(){
             (function(c,l,a,r,i,t,y){
