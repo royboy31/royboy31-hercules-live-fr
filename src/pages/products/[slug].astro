@@ -315,6 +315,16 @@ const wpThumb = (url: string, size: number) => {
 const workerImage = (index: number) => `${WORKER_URL}/image/${slug}/${index}`;
 const workerThumb = (index: number) => `${WORKER_URL}/image/${slug}/${index}?size=thumb`;
 
+// Display-sized image for the main gallery slot. The Worker guarantees a valid response
+// here (it serves WordPress's own sized variant, or the original when none exists), so
+// this URL is safe in src/srcset without a build-time existence check - which matters
+// because ~4% of uploads are "-scaled" and have no predictably-named variant.
+const workerSized = (index: number, width: number) => `${WORKER_URL}/image/${slug}/${index}?w=${width}`;
+
+// The main image renders in a 588px box. 768 covers it at 1x; the full-resolution
+// original is offered at 2x so retina displays lose no detail.
+const MAIN_IMAGE_WIDTH = 768;
+
 // Convert image URL to WebP format (WordPress fallback)
 const toWebP = (url: string) => {
   if (!url || url.endsWith('.webp')) return url;
@@ -333,9 +343,10 @@ const getGalleryImages = () => {
     const fullSrc = img.src || img.local_src;
 
     return {
-      src: workerSrc,           // Worker cached image for fast LCP (361x361)
-      srcFull: fullSrc,         // Full WordPress URL for high-quality upgrade
-      srcset: '',               // No srcset - we'll upgrade via JS after load
+      src: workerSrc,           // Worker cached image (361x361) - still used by the lightbox fallback
+      srcDisplay: workerSized(index, MAIN_IMAGE_WIDTH), // Correctly-sized main image, in the HTML
+      srcFull: fullSrc,         // Full WordPress original - the 2x/lightbox source
+      srcset: '',               // Unused - the main image builds its srcset inline
       alt: img.alt || product.name,
       thumbnail: workerThumbSrc, // Thumbnail from Worker (fast)
     };
@@ -493,7 +504,12 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
   productAvailability="InStock"
   jsonLd={jsonLdSchemas}
   preloadLcpImage={galleryImages[0] ? {
-    src: galleryImages[0].src
+    src: galleryImages[0].srcDisplay,
+    // Must mirror the <img> srcset exactly, or a 2x browser preloads the 1x candidate
+    // and then downloads the 2x one as well.
+    srcset: galleryImages[0].srcFull
+      ? `${galleryImages[0].srcDisplay} 1x, ${galleryImages[0].srcFull} 2x`
+      : undefined
   } : undefined}
 >
   <div class="product-page">
@@ -569,18 +585,20 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
                     </>
                   )}
 
-                  <!-- Main Image - Fast Worker cached image, upgrades to full quality after load -->
+                  <!-- Main Image - correctly sized in the HTML so the preload scanner can find it.
+                       1x gets the 768px variant, 2x gets the full-resolution original. -->
                   <div class="main-image">
                   <img
                     id="main-product-image"
-                    src={galleryImages[0]?.src || '/images/placeholder.png'}
+                    src={galleryImages[0]?.srcDisplay || '/images/placeholder.png'}
+                    srcset={galleryImages[0]?.srcDisplay && galleryImages[0]?.srcFull
+                      ? `${galleryImages[0].srcDisplay} 1x, ${galleryImages[0].srcFull} 2x`
+                      : undefined}
                     alt={product.name}
                     loading="eager"
                     fetchpriority="high"
                     width="600"
                     height="600"
-                    data-full-src={galleryImages[0]?.srcFull}
-                    data-upgraded="false"
                   />
                   </div>
                 </div>
@@ -601,6 +619,7 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
                             height="100"
                             data-full-src={img.src}
                             data-full-srcset={img.srcset}
+                            data-display-src={img.srcDisplay}
                             data-original-src={img.srcFull}
                             data-index={index}
                           />
@@ -2720,31 +2739,10 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
 </style>
 
 <script>
-  // Progressive Image Upgrade - Load high-quality image after page load
-  // This ensures fast LCP with cached 361px image, then upgrades to full quality
-  function upgradeMainImage() {
-    const mainImg = document.getElementById('main-product-image') as HTMLImageElement;
-    if (!mainImg || mainImg.dataset.upgraded === 'true') return;
-
-    const fullSrc = mainImg.dataset.fullSrc;
-    if (!fullSrc || fullSrc === mainImg.src) return;
-
-    // Preload the high-quality image
-    const highQualityImg = new Image();
-    highQualityImg.onload = () => {
-      // Swap to high-quality image once loaded
-      mainImg.src = fullSrc;
-      mainImg.dataset.upgraded = 'true';
-    };
-    highQualityImg.src = fullSrc;
-  }
-
-  // Upgrade after page is fully loaded — delay 4s to avoid resetting LCP/Speed Index
-  if (document.readyState === 'complete') {
-    setTimeout(upgradeMainImage, 4000);
-  } else {
-    window.addEventListener('load', () => setTimeout(upgradeMainImage, 4000));
-  }
+  // The main image is now correctly sized in the HTML (768px at 1x, full original at 2x),
+  // so there is no progressive upgrade to run. The old 4s swap did not dodge LCP - it
+  // DEFINED it: Lighthouse never interacts, so painting a larger image at load+4s made
+  // that the final LCP candidate, and its URL was invisible to the preload scanner.
 
   // Thumbnail Gallery Pagination (WordPress style)
   const PAGE_SIZE = 20;
@@ -2814,7 +2812,9 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
   const galleryImages: { src: string; alt: string }[] = [];
   document.querySelectorAll('.thumbnail-item img').forEach(img => {
     const imgEl = img as HTMLImageElement;
-    const fullSrc = imgEl.dataset.fullSrc;
+    // Prefer the full-resolution original: the lightbox is where users go FOR detail,
+    // and it was showing the Worker's 361px copy. Loads on interaction, so it costs no LCP.
+    const fullSrc = imgEl.dataset.originalSrc || imgEl.dataset.fullSrc;
     if (fullSrc) {
       galleryImages.push({
         src: fullSrc,
@@ -2906,24 +2906,14 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
     item.addEventListener('click', () => {
       const mainImg = document.getElementById('main-product-image') as HTMLImageElement;
       const img = item.querySelector('img') as HTMLImageElement;
-      const workerSrc = img?.dataset.fullSrc;      // Worker cached 361px (fast)
-      const originalSrc = img?.dataset.originalSrc; // WordPress full quality
+      const displaySrc = img?.dataset.displaySrc || img?.dataset.fullSrc; // correctly-sized main image
+      const originalSrc = img?.dataset.originalSrc;                       // WordPress full quality
 
-      if (mainImg && workerSrc) {
-        // Step 1: Immediately show Worker cached image (fast swap)
-        mainImg.src = workerSrc;
-        mainImg.dataset.fullSrc = originalSrc || workerSrc;
-        mainImg.dataset.upgraded = 'false';
-
-        // Step 2: Upgrade to high-quality WordPress image in background
-        if (originalSrc && originalSrc !== workerSrc) {
-          const highQualityImg = new Image();
-          highQualityImg.onload = () => {
-            mainImg.src = originalSrc;
-            mainImg.dataset.upgraded = 'true';
-          };
-          highQualityImg.src = originalSrc;
-        }
+      if (mainImg && displaySrc) {
+        // Swap straight to the correctly-sized image, same 1x/2x pair the page ships with.
+        // srcset first, then src, so the browser only ever picks one candidate.
+        mainImg.srcset = originalSrc ? `${displaySrc} 1x, ${originalSrc} 2x` : '';
+        mainImg.src = displaySrc;
 
         // Update active state on li elements
         document.querySelectorAll('.thumbnail-item').forEach(t => t.classList.remove('active'));

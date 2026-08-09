@@ -1893,16 +1893,26 @@ const THUMB_MIN_PX = 300;
  * Responses are cached at the edge, so the probe cost is paid once per image.
  */
 async function fetchSizedVariant(originalUrl: string, minPx: number): Promise<Response | null> {
+  // WordPress names variants after the PRE-SCALE basename: an upload stored as
+  // "shirt-scaled.png" has variants called "shirt-768x768.png", NOT
+  // "shirt-scaled-768x768.png". Try both spellings or -scaled uploads find nothing
+  // and fall back to a multi-MB original.
+  const bases = [originalUrl];
+  const unscaled = originalUrl.replace(/-scaled(\.[^.]+)$/, '$1');
+  if (unscaled !== originalUrl) bases.push(unscaled);
+
   for (const px of WP_SQUARE_VARIANTS) {
     if (px < minPx) continue;
-    const candidate = originalUrl.replace(/(\.[^.]+)$/, `-${px}x${px}$1`);
-    try {
-      const response = await fetch(candidate, {
-        cf: { cacheEverything: true, cacheTtl: 604800 },
-      });
-      if (response.ok) return response;
-    } catch (e) {
-      // Network/WP failure - fall through and let the caller redirect to the original
+    for (const base of bases) {
+      const candidate = base.replace(/(\.[^.]+)$/, `-${px}x${px}$1`);
+      try {
+        const response = await fetch(candidate, {
+          cf: { cacheEverything: true, cacheTtl: 604800 },
+        });
+        if (response.ok) return response;
+      } catch (e) {
+        // Network/WP failure - fall through and let the caller redirect to the original
+      }
     }
   }
   return null;
@@ -3223,6 +3233,19 @@ export default {
               } catch (e) {
                 // Fall through to redirect if resizing fails
               }
+
+              // Same cdn-cgi caveat as the cached branch below: prefer a real sized
+              // variant over shipping the full-size original.
+              const widthPx = parseInt(requestedWidth || '0', 10);
+              if (widthPx > 0) {
+                const variant = await fetchSizedVariant(originalUrl, widthPx);
+                if (variant) {
+                  const headers = new Headers(variant.headers);
+                  headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+                  headers.set('Access-Control-Allow-Origin', '*');
+                  return new Response(variant.body, { status: 200, headers });
+                }
+              }
             }
             return Response.redirect(originalUrl, 302);
           }
@@ -3272,6 +3295,21 @@ export default {
           } catch (e) {
             // Fall through to serve original if resizing fails
             console.error('Cloudflare cdn-cgi Image Resizing failed:', e);
+          }
+
+          // Cloudflare Image Resizing is NOT enabled on every zone (FR returns 404 for
+          // /cdn-cgi/image/...), so without this we would fall through and serve the small
+          // cached copy at a size the caller explicitly asked to be LARGER - a silent
+          // quality downgrade. Serve WordPress's own variant at or above the requested width.
+          const widthPx = parseInt(requestedWidth || '0', 10);
+          if (widthPx > 0) {
+            const variant = await fetchSizedVariant(originalUrl, widthPx);
+            if (variant) {
+              const headers = new Headers(variant.headers);
+              headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+              headers.set('Access-Control-Allow-Origin', '*');
+              return new Response(variant.body, { status: 200, headers });
+            }
           }
         }
       }
