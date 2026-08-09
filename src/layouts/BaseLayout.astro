@@ -42,11 +42,19 @@ interface Props {
   // Performance: preload LCP images (simple URLs or responsive with srcset)
   preloadImages?: string[];
   // Responsive LCP image with srcset (for product pages etc.)
+  // Accepts one entry, or several when the LCP candidate differs by viewport
+  // (a <picture> with media-scoped sources needs a matching preload per branch).
   preloadLcpImage?: {
     src: string;
     srcset?: string;
     sizes?: string;
-  };
+    media?: string;
+  } | Array<{
+    src: string;
+    srcset?: string;
+    sizes?: string;
+    media?: string;
+  }>;
 }
 
 const {
@@ -147,16 +155,17 @@ if (jsonLd) {
   ))}
 
   <!-- LCP image preload (for product pages) -->
-  {preloadLcpImage && (
+  {preloadLcpImage && (Array.isArray(preloadLcpImage) ? preloadLcpImage : [preloadLcpImage]).map((lcp) => (
     <link
       rel="preload"
       as="image"
-      href={preloadLcpImage.src}
-      imagesrcset={preloadLcpImage.srcset}
-      imagesizes={preloadLcpImage.sizes}
+      href={lcp.src}
+      imagesrcset={lcp.srcset}
+      imagesizes={lcp.sizes}
+      media={lcp.media}
       fetchpriority="high"
     />
-  )}
+  ))}
 
   <!-- Critical resource preloads - fonts after LCP images -->
   <link rel="preload" as="font" href="/fonts/jost-latin.woff2" type="font/woff2" crossorigin>

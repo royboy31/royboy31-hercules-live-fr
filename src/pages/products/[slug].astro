@@ -503,14 +503,22 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
   productCurrency="EUR"
   productAvailability="InStock"
   jsonLd={jsonLdSchemas}
-  preloadLcpImage={galleryImages[0] ? {
-    src: galleryImages[0].srcDisplay,
-    // Must mirror the <img> srcset exactly, or a 2x browser preloads the 1x candidate
-    // and then downloads the 2x one as well.
-    srcset: galleryImages[0].srcFull
-      ? `${galleryImages[0].srcDisplay} 1x, ${galleryImages[0].srcFull} 2x`
-      : undefined
-  } : undefined}
+  preloadLcpImage={galleryImages[0] ? [
+    // One preload per <picture> branch, each mirroring that branch exactly - otherwise
+    // the browser preloads one candidate and the renderer picks a different one, and
+    // the image is downloaded twice.
+    {
+      src: galleryImages[0].srcDisplay,
+      media: '(max-width: 768px)'
+    },
+    {
+      src: galleryImages[0].srcDisplay,
+      srcset: galleryImages[0].srcFull
+        ? `${galleryImages[0].srcDisplay} 1x, ${galleryImages[0].srcFull} 2x`
+        : undefined,
+      media: '(min-width: 769px)'
+    }
+  ] : undefined}
 >
   <div class="product-page">
     {error ? (
@@ -585,21 +593,34 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
                     </>
                   )}
 
-                  <!-- Main Image - correctly sized in the HTML so the preload scanner can find it.
-                       1x gets the 768px variant, 2x gets the full-resolution original. -->
+                  {/* Main Image - correctly sized in the HTML so the preload scanner can
+                      find it. 1x gets the 768px variant, 2x gets the full original.
+                      These {} comments are stripped at build; HTML comments would ship. */}
                   <div class="main-image">
-                  <img
-                    id="main-product-image"
-                    src={galleryImages[0]?.srcDisplay || '/images/placeholder.png'}
-                    srcset={galleryImages[0]?.srcDisplay && galleryImages[0]?.srcFull
-                      ? `${galleryImages[0].srcDisplay} 1x, ${galleryImages[0].srcFull} 2x`
-                      : undefined}
-                    alt={product.name}
-                    loading="eager"
-                    fetchpriority="high"
-                    width="600"
-                    height="600"
-                  />
+                  <picture>
+                    {/* Phones render this image ~380 CSS px wide. Cap them at the 768px
+                        variant: x-descriptors ignore layout size, so a 2.625 DPR phone
+                        would otherwise pull the multi-MB original for a phone-sized slot.
+                        768 is still ~2x there, and sharper than the 361px this page used
+                        to ship - so mobile gains quality while losing the weight. */}
+                    <source
+                      id="main-image-mobile-source"
+                      media="(max-width: 768px)"
+                      srcset={galleryImages[0]?.srcDisplay}
+                    />
+                    <img
+                      id="main-product-image"
+                      src={galleryImages[0]?.srcDisplay || '/images/placeholder.png'}
+                      srcset={galleryImages[0]?.srcDisplay && galleryImages[0]?.srcFull
+                        ? `${galleryImages[0].srcDisplay} 1x, ${galleryImages[0].srcFull} 2x`
+                        : undefined}
+                      alt={product.name}
+                      loading="eager"
+                      fetchpriority="high"
+                      width="600"
+                      height="600"
+                    />
+                  </picture>
                   </div>
                 </div>
 
@@ -2910,6 +2931,12 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
       const originalSrc = img?.dataset.originalSrc;                       // WordPress full quality
 
       if (mainImg && displaySrc) {
+        // The <source> wins over the img on phones, so it has to move too - otherwise
+        // mobile stays stuck on image 0 while desktop swaps. Arrow navigation routes
+        // through this same handler via targetThumbnail.click().
+        const mobileSource = document.getElementById('main-image-mobile-source') as HTMLSourceElement | null;
+        if (mobileSource) mobileSource.srcset = displaySrc;
+
         // Swap straight to the correctly-sized image, same 1x/2x pair the page ships with.
         // srcset first, then src, so the browser only ever picks one candidate.
         mainImg.srcset = originalSrc ? `${displaySrc} 1x, ${originalSrc} 2x` : '';
