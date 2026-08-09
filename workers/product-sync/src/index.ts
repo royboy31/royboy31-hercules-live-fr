@@ -3301,9 +3301,16 @@ export default {
           // /cdn-cgi/image/...), so without this we would fall through and serve the small
           // cached copy at a size the caller explicitly asked to be LARGER - a silent
           // quality downgrade. Serve WordPress's own variant at or above the requested width.
+          //
+          // ⚠️ Derive the variant from the CANONICAL product image, not from
+          // metadata.originalUrl: the latter is the URL the sync fetched to populate KV,
+          // which for the main image is already "-361x361", so appending a size to it
+          // produces "...-361x361-768x768.png" and always 404s.
           const widthPx = parseInt(requestedWidth || '0', 10);
           if (widthPx > 0) {
-            const variant = await fetchSizedVariant(originalUrl, widthPx);
+            const canonicalProduct = await env.PRODUCTS_KV.get<SyncedProduct>(`product:slug:${slug}`, 'json');
+            const canonicalUrl = canonicalProduct?.images?.[imageIndex]?.src || originalUrl;
+            const variant = await fetchSizedVariant(canonicalUrl, widthPx);
             if (variant) {
               const headers = new Headers(variant.headers);
               headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
