@@ -1877,6 +1877,78 @@ async function verifyWebhookSignature(
   }
 }
 
+// WordPress-generated square variants we may serve instead of the full-size original,
+// ascending. Presence varies per upload, so a candidate is only ever used after the
+// fetch below confirms it exists — we never construct a URL and hope.
+const WP_SQUARE_VARIANTS = [100, 150, 300, 361, 768];
+
+// Thumbnails render in a 94px box (and are CSS-blurred unless active), so 300px stays
+// crisp past 3x DPR. This is an UPGRADE on the 100x100 the sync caches, not a downgrade:
+// the only thing it replaces is the full-size original, which no thumbnail can display.
+const THUMB_MIN_PX = 300;
+
+/**
+ * Fetch an on-the-fly Cloudflare transform at `width`, in the best format the CLIENT accepts.
+ * Returns null when the client has no modern-format support (callers then serve the PNG
+ * variant) or when Image Transformations is unavailable, so this can only ever improve things.
+ *
+ * ⚠️ The Accept header MUST be forwarded: Cloudflare picks the output format from the
+ * request's Accept even when the URL says format=avif. A bare fetch() yields PNG every time.
+ */
+async function fetchTransformed(
+  originalUrl: string,
+  width: number,
+  accept: string,
+  requestedFormat: string | null
+): Promise<Response | null> {
+  const negotiated = requestedFormat === 'webp' ? 'webp'
+    : accept.includes('image/avif') ? 'avif'
+    : accept.includes('image/webp') ? 'webp'
+    : null;
+  if (!negotiated) return null;
+
+  try {
+    const u = new URL(originalUrl);
+    const cdnCgiUrl = `${u.origin}/cdn-cgi/image/fit=contain,quality=85,width=${width},format=${negotiated}${u.pathname}`;
+    const response = await fetch(cdnCgiUrl, { headers: { Accept: accept } });
+    if (response.ok) return response;
+  } catch (e) {
+    // Transformations unavailable - caller falls back to the sized PNG variant
+  }
+  return null;
+}
+
+/**
+ * Fetch the smallest WordPress variant that is at least `minPx` wide and actually exists.
+ * Returns null if none can be confirmed, so callers keep their existing behaviour.
+ * Responses are cached at the edge, so the probe cost is paid once per image.
+ */
+async function fetchSizedVariant(originalUrl: string, minPx: number): Promise<Response | null> {
+  // WordPress names variants after the PRE-SCALE basename: an upload stored as
+  // "shirt-scaled.png" has variants called "shirt-768x768.png", NOT
+  // "shirt-scaled-768x768.png". Try both spellings or -scaled uploads find nothing
+  // and fall back to a multi-MB original.
+  const bases = [originalUrl];
+  const unscaled = originalUrl.replace(/-scaled(\.[^.]+)$/, '$1');
+  if (unscaled !== originalUrl) bases.push(unscaled);
+
+  for (const px of WP_SQUARE_VARIANTS) {
+    if (px < minPx) continue;
+    for (const base of bases) {
+      const candidate = base.replace(/(\.[^.]+)$/, `-${px}x${px}$1`);
+      try {
+        const response = await fetch(candidate, {
+          cf: { cacheEverything: true, cacheTtl: 604800 },
+        });
+        if (response.ok) return response;
+      } catch (e) {
+        // Network/WP failure - fall through and let the caller redirect to the original
+      }
+    }
+  }
+  return null;
+}
+
 // Request handler
 export default {
   // HTTP request handler
@@ -3109,6 +3181,9 @@ export default {
       const requestedWidth = url.searchParams.get('w');
       const requestedFormat = url.searchParams.get('format');
       const requestedSize = url.searchParams.get('size'); // 'thumb' for 300x300 thumbnails
+      // What the CLIENT can actually decode. Drives explicit AVIF/WebP negotiation below -
+      // it cannot be delegated to cdn-cgi's format=auto, which only sees the subrequest.
+      const acceptHeader = request.headers.get('Accept') || '';
 
       if (!slug) {
         return new Response('Missing product slug', { status: 400 });
@@ -3153,23 +3228,68 @@ export default {
           // Redirect to WordPress image URL (with optional resizing via cdn-cgi)
           const originalUrl = product.images[imageIndex].src;
           if (originalUrl) {
+            // A thumbnail must never fall back to the full-size original: it renders in a
+            // 94px box, so redirecting here was shipping ~600KB to paint ~5KB worth of pixels.
+            // Serve WordPress's own sized variant instead; if none can be confirmed we fall
+            // through to the original exactly as before.
+            if (requestedSize === 'thumb') {
+              // Prefer a transformed AVIF/WebP (~5-8KB) over WordPress's 300x300 PNG (~23KB).
+              // Same 300px dimensions either way, so nothing gets softer. Clients without
+              // modern-format support fall through to the PNG variant below, unchanged.
+              const transformed = await fetchTransformed(originalUrl, THUMB_MIN_PX, acceptHeader, requestedFormat);
+              if (transformed) {
+                const headers = new Headers(transformed.headers);
+                headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+                headers.set('Access-Control-Allow-Origin', '*');
+                headers.set('Vary', 'Accept');
+                return new Response(transformed.body, { status: 200, headers });
+              }
+
+              const variant = await fetchSizedVariant(originalUrl, THUMB_MIN_PX);
+              if (variant) {
+                const headers = new Headers(variant.headers);
+                headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+                headers.set('Access-Control-Allow-Origin', '*');
+                return new Response(variant.body, { status: 200, headers });
+              }
+            }
+
             // If resizing requested, use Cloudflare cdn-cgi Image Resizing
             if (requestedWidth || requestedFormat) {
               const options: string[] = ['fit=contain', 'quality=85'];
               if (requestedWidth) {
                 options.push(`width=${requestedWidth}`);
               }
-              if (requestedFormat === 'webp') {
-                options.push('format=webp');
+              // ⚠️ Negotiate the format from the CLIENT's Accept and ask for it EXPLICITLY.
+              // format=auto does NOT work here: it negotiates against the SUBREQUEST's Accept,
+              // and a bare fetch() sends none - which is why this returned PNG to every client
+              // even with Image Transformations enabled. Explicit formats also give each one
+              // its own cdn-cgi URL, so they cache separately instead of relying on Vary.
+              const negotiated = requestedFormat === 'webp' ? 'webp'
+                : acceptHeader.includes('image/avif') ? 'avif'
+                : acceptHeader.includes('image/webp') ? 'webp'
+                : null;
+              if (negotiated) {
+                options.push(`format=${negotiated}`);
               }
               try {
                 const originalUrlObj = new URL(originalUrl);
                 const cdnCgiUrl = `${originalUrlObj.origin}/cdn-cgi/image/${options.join(',')}${originalUrlObj.pathname}`;
-                const resizedResponse = await fetch(cdnCgiUrl);
+                // ⚠️ MUST forward the client's Accept. Cloudflare gates the output format on
+                // the REQUEST's Accept even when the URL explicitly says format=avif, and a
+                // bare fetch() sends none - so every client got PNG. Verified against the
+                // live zone: format=avif + Accept:*/* returns image/png 186KB, while the very
+                // same URL with Accept: image/avif returns image/avif 47.8KB.
+                const resizedResponse = await fetch(cdnCgiUrl, {
+                  headers: { Accept: acceptHeader || 'image/*,*/*' },
+                });
                 if (resizedResponse.ok) {
                   const headers = new Headers(resizedResponse.headers);
                   headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
                   headers.set('Access-Control-Allow-Origin', '*');
+                  // format=auto picks the format from Accept, so the cache key must include
+                  // it - otherwise an AVIF gets served to a client that cannot decode it.
+                  headers.set('Vary', 'Accept');
                   return new Response(resizedResponse.body, {
                     status: 200,
                     headers
@@ -3177,6 +3297,19 @@ export default {
                 }
               } catch (e) {
                 // Fall through to redirect if resizing fails
+              }
+
+              // Same cdn-cgi caveat as the cached branch below: prefer a real sized
+              // variant over shipping the full-size original.
+              const widthPx = parseInt(requestedWidth || '0', 10);
+              if (widthPx > 0) {
+                const variant = await fetchSizedVariant(originalUrl, widthPx);
+                if (variant) {
+                  const headers = new Headers(variant.headers);
+                  headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+                  headers.set('Access-Control-Allow-Origin', '*');
+                  return new Response(variant.body, { status: 200, headers });
+                }
               }
             }
             return Response.redirect(originalUrl, 302);
@@ -3204,8 +3337,14 @@ export default {
           if (requestedWidth) {
             options.push(`width=${requestedWidth}`);
           }
-          if (requestedFormat === 'webp') {
-            options.push('format=webp');
+          // See the note in the uncached branch: negotiate explicitly from the client's
+          // Accept, because format=auto would negotiate against a subrequest that has none.
+          const negotiated = requestedFormat === 'webp' ? 'webp'
+            : acceptHeader.includes('image/avif') ? 'avif'
+            : acceptHeader.includes('image/webp') ? 'webp'
+            : null;
+          if (negotiated) {
+            options.push(`format=${negotiated}`);
           }
 
           // Extract path from original URL (e.g., /wp-content/uploads/...)
@@ -3214,11 +3353,17 @@ export default {
             const originalUrlObj = new URL(originalUrl);
             const cdnCgiUrl = `${originalUrlObj.origin}/cdn-cgi/image/${options.join(',')}${originalUrlObj.pathname}`;
 
-            const resizedResponse = await fetch(cdnCgiUrl);
+            // See the note in the uncached branch - Cloudflare picks the format from the
+            // REQUEST's Accept, so it has to be forwarded or the client always gets PNG.
+            const resizedResponse = await fetch(cdnCgiUrl, {
+              headers: { Accept: acceptHeader || 'image/*,*/*' },
+            });
             if (resizedResponse.ok) {
               const headers = new Headers(resizedResponse.headers);
               headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
               headers.set('Access-Control-Allow-Origin', '*');
+              // See the note in the uncached branch - format=auto varies by Accept.
+              headers.set('Vary', 'Accept');
               return new Response(resizedResponse.body, {
                 status: 200,
                 headers
@@ -3227,6 +3372,28 @@ export default {
           } catch (e) {
             // Fall through to serve original if resizing fails
             console.error('Cloudflare cdn-cgi Image Resizing failed:', e);
+          }
+
+          // Cloudflare Image Resizing is NOT enabled on every zone (FR returns 404 for
+          // /cdn-cgi/image/...), so without this we would fall through and serve the small
+          // cached copy at a size the caller explicitly asked to be LARGER - a silent
+          // quality downgrade. Serve WordPress's own variant at or above the requested width.
+          //
+          // ⚠️ Derive the variant from the CANONICAL product image, not from
+          // metadata.originalUrl: the latter is the URL the sync fetched to populate KV,
+          // which for the main image is already "-361x361", so appending a size to it
+          // produces "...-361x361-768x768.png" and always 404s.
+          const widthPx = parseInt(requestedWidth || '0', 10);
+          if (widthPx > 0) {
+            const canonicalProduct = await env.PRODUCTS_KV.get<SyncedProduct>(`product:slug:${slug}`, 'json');
+            const canonicalUrl = canonicalProduct?.images?.[imageIndex]?.src || originalUrl;
+            const variant = await fetchSizedVariant(canonicalUrl, widthPx);
+            if (variant) {
+              const headers = new Headers(variant.headers);
+              headers.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400');
+              headers.set('Access-Control-Allow-Origin', '*');
+              return new Response(variant.body, { status: 200, headers });
+            }
           }
         }
       }

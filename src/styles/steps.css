@@ -33,6 +33,7 @@
 
 .kd-image-selector-col {
     padding: 10px;
+    overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
     display: flex;

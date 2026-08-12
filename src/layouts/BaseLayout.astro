@@ -42,11 +42,19 @@ interface Props {
   // Performance: preload LCP images (simple URLs or responsive with srcset)
   preloadImages?: string[];
   // Responsive LCP image with srcset (for product pages etc.)
+  // Accepts one entry, or several when the LCP candidate differs by viewport
+  // (a <picture> with media-scoped sources needs a matching preload per branch).
   preloadLcpImage?: {
     src: string;
     srcset?: string;
     sizes?: string;
-  };
+    media?: string;
+  } | Array<{
+    src: string;
+    srcset?: string;
+    sizes?: string;
+    media?: string;
+  }>;
 }
 
 const {
@@ -147,14 +155,17 @@ if (jsonLd) {
   ))}
 
   <!-- LCP image preload (for product pages) -->
-  {preloadLcpImage && (
+  {preloadLcpImage && (Array.isArray(preloadLcpImage) ? preloadLcpImage : [preloadLcpImage]).map((lcp) => (
     <link
       rel="preload"
       as="image"
-      href={preloadLcpImage.src}
+      href={lcp.src}
+      imagesrcset={lcp.srcset}
+      imagesizes={lcp.sizes}
+      media={lcp.media}
       fetchpriority="high"
     />
-  )}
+  ))}
 
   <!-- Critical resource preloads - fonts after LCP images -->
   <link rel="preload" as="font" href="/fonts/jost-latin.woff2" type="font/woff2" crossorigin>
@@ -372,19 +383,15 @@ if (jsonLd) {
         setTimeout(loadPhase2, 3000);
       }
 
-      // Phase 2: ClickCease + Clarity (secondary tracking) — 8s or after Phase 1
+      // Phase 2: Clarity (secondary tracking) — 8s or after Phase 1
       function loadPhase2(){
         if(phase2) return;
         phase2=true;
 
-        // 3. ClickCease (proxied)
-        inIdle(function(){
-          var cc=document.createElement('script');
-          cc.async=true;cc.src='/cached-scripts/clickcease-stat.js';
-          document.head.appendChild(cc);
-        });
+        // 3. ClickCease removed — GTM already injects it (see commit for the trace).
+        //    If it ever leaves the GTM container, re-add a loader here.
 
-        // 4. Microsoft Clarity (proxied) — staggered 1.5s after ClickCease
+        // 4. Microsoft Clarity (proxied) — staggered 1.5s into Phase 2
         setTimeout(function(){
           inIdle(function(){
             (function(c,l,a,r,i,t,y){

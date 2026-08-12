@@ -17,6 +17,7 @@ interface TermInfo {
   icon_size?: string | null;
   icon_width?: number | null;
   icon_height?: number | null;
+  icon_percent?: number | null;
 }
 
 interface AttributeData {
@@ -31,9 +32,10 @@ interface AttributeData {
   image_items_per_line: number;
   image_text_weight: 'normal' | 'medium' | 'bold';
   image_footer_text: string;
-  image_icon_size?: 'small' | 'medium' | 'large' | 'custom';
+  image_icon_size?: 'small' | 'medium' | 'large' | 'custom' | 'full';
   image_icon_width?: number | null;
   image_icon_height?: number | null;
+  image_icon_percent?: number | null;
 }
 
 interface AddonOption {
@@ -43,6 +45,7 @@ interface AddonOption {
   icon_size?: string | null;
   icon_width?: number | null;
   icon_height?: number | null;
+  icon_percent?: number | null;
 }
 
 interface AddonData {
@@ -57,9 +60,10 @@ interface AddonData {
   image_items_per_line?: number;
   image_text_weight?: 'normal' | 'medium' | 'bold';
   image_footer_text?: string;
-  image_icon_size?: 'small' | 'medium' | 'large' | 'custom';
+  image_icon_size?: 'small' | 'medium' | 'large' | 'custom' | 'full';
   image_icon_width?: number | null;
   image_icon_height?: number | null;
+  image_icon_percent?: number | null;
 }
 
 interface VariationData {
@@ -406,6 +410,69 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
   const getTermIconWidthStyle = (term: TermInfo, attr: AttributeData): Record<string, string> => {
     const { size, width } = resolveTermIconSize(term, attr);
     return getIconWidthStyle(size, width);
+  };
+
+  // Fill mode: the image is sized as a percentage of its option box instead of a
+  // fixed pixel height, so it scales with the card. `bleed` cancels the card's 10px
+  // padding at 100% so the image meets the borders (see .kd-image-selector-col).
+  const CARD_PADDING = 10;
+
+  const getFillStyle = (
+    percent: number,
+    bleed?: { sides?: boolean; top?: boolean; bottom?: boolean }
+  ): Record<string, string> => {
+    const pct = Math.min(Math.max(percent, 1), 100);
+    const style: Record<string, string> = {
+      width: `${pct}%`,
+      height: 'auto',
+      maxWidth: '100%',
+      flexShrink: '0',
+    };
+    if (pct < 100 || !bleed?.sides) return style;
+    const full = `calc(100% + ${CARD_PADDING * 2}px)`;
+    style.width = full;
+    style.maxWidth = full;
+    style.marginLeft = `-${CARD_PADDING}px`;
+    style.marginRight = `-${CARD_PADDING}px`;
+    if (bleed.top) style.marginTop = `-${CARD_PADDING}px`;
+    if (bleed.bottom) style.marginBottom = `-${CARD_PADDING}px`;
+    return style;
+  };
+
+  // Specificity for both helpers below: term/option percent > term/option fixed size
+  // > group percent > group fixed size.
+  const getTermIconStyle = (
+    attrKey: string,
+    term: TermInfo,
+    attr: AttributeData,
+    bleed?: { sides?: boolean; top?: boolean; bottom?: boolean }
+  ): Record<string, string> => {
+    if (term.icon_percent && term.icon_percent > 0) return getFillStyle(term.icon_percent, bleed);
+    if (!term.icon_size && attr.image_icon_percent && attr.image_icon_percent > 0) {
+      return getFillStyle(attr.image_icon_percent, bleed);
+    }
+    return {
+      height: `${getTermIconHeight(attrKey, term, attr)}px`,
+      ...getTermIconWidthStyle(term, attr),
+    };
+  };
+
+  const getAddonIconStyle = (
+    option: AddonOption,
+    addon: AddonData,
+    bleed?: { sides?: boolean; top?: boolean; bottom?: boolean }
+  ): Record<string, string> => {
+    if (option.icon_percent && option.icon_percent > 0) return getFillStyle(option.icon_percent, bleed);
+    if (!option.icon_size && addon.image_icon_percent && addon.image_icon_percent > 0) {
+      return getFillStyle(addon.image_icon_percent, bleed);
+    }
+    const size = option.icon_size || addon.image_icon_size;
+    const width = option.icon_size ? option.icon_width : addon.image_icon_width;
+    const height = option.icon_size ? option.icon_height : addon.image_icon_height;
+    return {
+      height: `${getIconBaseHeight(size, height)}px`,
+      ...getIconWidthStyle(size, width),
+    };
   };
 
   // Get attribute keys (filtered for visibility)
@@ -864,7 +931,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                                 <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{term.name}</div>
                                 {term.thumbnail_url && (
-                                  <img src={term.thumbnail_url} alt={term.name} style={{ height: `${getTermIconHeight(attrKey, term, attr)}px`, objectFit: 'contain', marginLeft: '5px', ...getTermIconWidthStyle(term, attr) }} />
+                                  <img src={term.thumbnail_url} alt={term.name} style={{ objectFit: 'contain', marginLeft: '5px', ...getTermIconStyle(attrKey, term, attr) }} />
                                 )}
                               </div>
                               {term.desc_above && (
@@ -881,7 +948,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                                 <div className="kd-image-selector-desc kd-image-selector-desc-above" dangerouslySetInnerHTML={{ __html: term.desc_above }} />
                               )}
                               {term.thumbnail_url && (
-                                <img src={term.thumbnail_url} alt={term.name} style={{ height: `${getTermIconHeight(attrKey, term, attr)}px`, objectFit: 'contain', margin: '6px 0', ...getTermIconWidthStyle(term, attr) }} />
+                                <img src={term.thumbnail_url} alt={term.name} style={{ objectFit: 'contain', margin: '6px 0', ...getTermIconStyle(attrKey, term, attr, { sides: isVertical, bottom: isVertical && !term.desc_below }) }} />
                               )}
                               {term.desc_below && (
                                 <div className="kd-image-selector-desc kd-image-selector-desc-below" dangerouslySetInnerHTML={{ __html: term.desc_below }} />
@@ -1010,7 +1077,7 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                             <>
                               <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{option.name}</div>
                               {option.image && (
-                                <img src={option.image} alt={option.name} style={{ height: `${getIconBaseHeight(option.icon_size || addon.image_icon_size, option.icon_size ? option.icon_height : addon.image_icon_height)}px`, objectFit: 'contain', marginTop: '6px', ...getIconWidthStyle(option.icon_size || addon.image_icon_size, option.icon_size ? option.icon_width : addon.image_icon_width) }} />
+                                <img src={option.image} alt={option.name} style={{ objectFit: 'contain', marginTop: '6px', ...getAddonIconStyle(option, addon, { sides: true, bottom: true }) }} />
                               )}
                             </>
                           )}
@@ -1018,14 +1085,14 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
                             <>
                               <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{option.name}</div>
                               {option.image && (
-                                <img src={option.image} alt={option.name} style={{ height: `${getIconBaseHeight(option.icon_size || addon.image_icon_size, option.icon_size ? option.icon_height : addon.image_icon_height)}px`, objectFit: 'contain', marginLeft: '5px', ...getIconWidthStyle(option.icon_size || addon.image_icon_size, option.icon_size ? option.icon_width : addon.image_icon_width) }} />
+                                <img src={option.image} alt={option.name} style={{ objectFit: 'contain', marginLeft: '5px', ...getAddonIconStyle(option, addon) }} />
                               )}
                             </>
                           )}
                           {textPos === 'under' && (
                             <>
                               {option.image && (
-                                <img src={option.image} alt={option.name} style={{ height: `${getIconBaseHeight(option.icon_size || addon.image_icon_size, option.icon_size ? option.icon_height : addon.image_icon_height)}px`, objectFit: 'contain', marginBottom: '6px', ...getIconWidthStyle(option.icon_size || addon.image_icon_size, option.icon_size ? option.icon_width : addon.image_icon_width) }} />
+                                <img src={option.image} alt={option.name} style={{ objectFit: 'contain', marginBottom: '6px', ...getAddonIconStyle(option, addon, { sides: true, top: true }) }} />
                               )}
                               <div className="kd-image-selector-title" style={{ fontWeight: weightMap[textWeight] || 500 }}>{option.name}</div>
                             </>
