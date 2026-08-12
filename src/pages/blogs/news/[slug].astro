@@ -69,6 +69,16 @@ function cleanContent(html: string): string {
   return cleaned;
 }
 
+// Per-slug title overrides: re-target posts whose WP title competes with a
+// product page on a commercial query. Guarded by the expected WP title so a
+// rename in WordPress disables the override instead of contradicting it.
+const POST_TITLE_OVERRIDES: Record<string, { expected: string; title: string }> = {
+  'creer-maillot-football-personnalise': {
+    expected: 'Créer un maillot de football personnalisé',
+    title: 'Comment créer un maillot de football personnalisé pour votre club',
+  },
+};
+
 // Format date for display (FR format: "26 juillet 2025")
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
@@ -98,7 +108,11 @@ export async function getStaticPaths() {
 }
 
 // Clean title (MySQL utf8 drops 4-byte emoji to ?)
-const postTitle = cleanTitle(post.title);
+const wpTitle = cleanTitle(post.title);
+const titleOverride = slug ? POST_TITLE_OVERRIDES[slug] : undefined;
+const postTitle = titleOverride && wpTitle === titleOverride.expected
+  ? titleOverride.title
+  : wpTitle;
 
 // SEO configuration
 const metaDescription = post.excerpt

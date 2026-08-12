@@ -22,6 +22,12 @@ export interface ProductSeoOverride {
 }
 
 const productSeoOverrides: Record<string, ProductSeoOverride> = {
+  'maillot-de-football-personnalise': {
+    expectedName: 'Maillot de Football Personnalisé',
+    title: 'Maillot de Foot Personnalisé pour Club et Équipe',
+    metaDescription:
+      'Créez votre maillot de foot personnalisé pour club, équipe ou association. Sublimation durable, fabriqué en Europe, prix dégressifs et design gratuit.',
+  },
   'claquettes-personnalisees-club': {
     expectedName: 'Claquettes Personnalisées Club',
     title: 'Claquettes personnalisées avec logo | Dès 20 paires',

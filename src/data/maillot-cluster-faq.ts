@@ -104,6 +104,21 @@ export const maillotClusterFaq: Record<string, { question: string; answer: strin
 
   /* ── 1. Collection ──────────────────────────────────────────────── */
 
+  'football': [
+    {
+      question: 'Proposez-vous des maillots de foot personnalisés pour les clubs ?',
+      answer: '<p>Oui, notre <strong><a href="/products/maillot-de-football-personnalise/">maillot de foot personnalisé</a></strong> est conçu pour les clubs, les équipes et les associations : sublimation durable, design gratuit réalisé par nos graphistes et prix dégressifs selon la quantité.</p>',
+    },
+    {
+      question: 'Comment créer un maillot de foot à l\'image de notre équipe ?',
+      answer: '<p>Envoyez-nous votre logo, vos couleurs et vos idées : notre équipe prépare gratuitement un design de <strong><a href="/products/maillot-de-football-personnalise/">maillot de football personnalisé</a></strong> avant toute mise en production. Vous validez le rendu, puis nous lançons la fabrication en Europe.</p>',
+    },
+    {
+      question: 'Peut-on commander une tenue de football complète ?',
+      answer: '<p>Absolument. En plus des maillots, nous personnalisons les shorts, les chaussettes et les <a href="/collections/equipements-personnalises/">équipements de sport</a> assortis, pour une tenue de match cohérente aux couleurs de votre club.</p>',
+    },
+  ],
+
   'accessoires-de-football': [
     {
       question: 'Quels accessoires de football proposez-vous ?',
