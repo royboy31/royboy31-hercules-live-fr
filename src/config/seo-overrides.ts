@@ -128,13 +128,16 @@ const productSeoOverrides: Record<string, ProductSeoOverride> = {
 
   'fanion-personnalise-imprime': {
     expectedName: 'Fanion personnalisé imprimé',
-    title: 'Fanion personnalisé imprimé | Fabrication européenne',
-    h1: 'Fanion personnalisé imprimé en haute définition',
+    // Variant-intent title: the generic "fanion personnalisé" query belongs to
+    // /collections/fanions-personnalises-football/ — this page targets the
+    // printed variant only, to stop the collection/product cannibalization.
+    title: 'Fanion imprimé en haute définition | Dès 50 pièces',
+    h1: 'Fanion imprimé en haute définition',
     metaDescription:
-      'Créez un fanion personnalisé imprimé en quadri : formes sur mesure, recto-verso différent, cordon ou franges. Dès 50 pièces, fabrication européenne.',
+      'Imprimez vos fanions de club en quadri : formes sur mesure, recto et verso différents, cordon ou franges. Dès 50 pièces, fabrication européenne.',
     introHtml: `
-<p>Créez un fanion personnalisé imprimé en haute définition pour votre club, votre association ou votre événement. L'impression quadri permet de reproduire des logos complexes, des dégradés et des photos sans limiter le nombre de couleurs.</p>
-<p>Choisissez la forme, la finition et un visuel identique ou différent au recto et au verso. Fabrication européenne dès 50 pièces, avec design et contrôle du fichier avant production.</p>`,
+<p>Créez un fanion imprimé en haute définition pour votre club, votre association ou votre événement. L'impression quadri permet de reproduire des logos complexes, des dégradés et des photos sans limiter le nombre de couleurs.</p>
+<p>Choisissez la forme, la finition et un visuel identique ou différent au recto et au verso. Fabrication européenne dès 50 pièces, avec design et contrôle du fichier avant production. Retrouvez tous nos modèles dans la collection <a href="/collections/fanions-personnalises-football/">fanion personnalisé</a>.</p>`,
     seoBlockHtml: `
 <h2>Un fanion personnalisé imprimé pour chaque occasion</h2>
 <p>Le fanion personnalisé imprimé convient aux échanges d'avant-match, aux tournois, aux événements, aux cadeaux de sponsors et à la décoration des locaux du club. Grâce à l'impression quadri, les détails du logo, les textes, les dégradés et les photos peuvent être reproduits avec précision.</p>

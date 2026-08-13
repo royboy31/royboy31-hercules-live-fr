@@ -28,9 +28,9 @@ jobs:
             fi
           }
           check "https://hercules-merchandising.fr/products/claquettes-personnalisees-club/" "Claquettes personnalisées avec logo"
-          check "https://hercules-merchandising.fr/products/fanion-personnalise-imprime/" "Fabrication européenne"
+          check "https://hercules-merchandising.fr/products/fanion-personnalise-imprime/" "Fanion imprimé en haute définition"
           check "https://hercules-merchandising.fr/products/casquette-personnalisee/" "Casquette personnalisée avec logo"
-          check "https://hercules-merchandising.fr/collections/fanions-personnalises-football/" "Fanions personnalisés pour clubs"
+          check "https://hercules-merchandising.fr/collections/fanions-personnalises-football/" "Fanions personnalisés"
           check "https://hercules-merchandising.fr/collections/couvre-chefs/" "Couvre-chefs personnalisés :"
           check "https://hercules-merchandising.fr/products/bob-personnalise/" "Bob personnalisé sur mesure"
           check "https://hercules-merchandising.fr/products/cache-cou-personnalise-foot/" "Fabrication européenne dès 50 pièces"
