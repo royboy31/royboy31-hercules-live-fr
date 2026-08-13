@@ -35,6 +35,20 @@ if (!category) {
   return Astro.redirect('/404');
 }
 
+// Data correction: the fanions category_faq term-meta in WordPress says
+// "25 pièces" but the real minimum is 50 (source: the product price tiers;
+// confirmed by Roy 2026-08-13). The WP field group for category_faq is not
+// editable in the admin UI right now, so we correct at render time. This
+// becomes a no-op once the WordPress source value is fixed.
+if (slug === 'fanions-personnalises-football' && category?.faq) {
+  category.faq = category.faq.map((f: any) => ({
+    ...f,
+    answer: typeof f.answer === 'string'
+      ? f.answer.replace('minimum de commande est de 25 pièces', 'minimum de commande est de 50 pièces')
+      : f.answer,
+  }));
+}
+
 // Fetch products for this category using optimized endpoint (single API call)
 let validProducts: any[] = [];
 try {
