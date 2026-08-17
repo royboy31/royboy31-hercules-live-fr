@@ -320,8 +320,24 @@ if (jsonLd) {
   <!-- Cookie Consent Banner - client:idle defers loading until main thread is idle -->
   <CookieConsent client:idle />
 
-  <!-- Chat Widget Placeholder - Reserves space to prevent CLS -->
-  <div id="chat-widget-placeholder" style="position: fixed; bottom: 16px; right: 16px; width: 48px; height: 48px; z-index: 2147483646; pointer-events: none;"></div>
+  <!-- Chat launcher. Painted immediately in its final 48x48 box, and the only thing
+       that loads the ChatHive SDK. The SDK used to load on a 15s timer and then expand
+       its iframe by itself, which measured 0.0664 CLS on every page: two thirds of the
+       0.10 budget. See RESEARCH/HERCULES_FR_MOBILE_CLS_FIELD_DIAGNOSIS_2026_08_17.md. -->
+  <button
+    id="chat-widget-launcher"
+    type="button"
+    aria-label="Ouvrir le chat"
+    style="position: fixed; bottom: 16px; right: 16px; width: 48px; height: 48px; z-index: 2147483646; display: flex; align-items: center; justify-content: center; padding: 0; border: none; border-radius: 50%; background: #10C99E; color: #fff; cursor: pointer; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);"
+  >
+    <svg width="22" height="22" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
+      <path d="M256 448c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9c-5.5 9.2-11.1 16.6-15.2 21.6c-2.1 2.5-3.7 4.4-4.9 5.7c-.6 .6-1 1.1-1.3 1.4l-.3 .3c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c28.7 0 57.6-8.9 81.6-19.3c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9z"/>
+    </svg>
+  </button>
+  <style is:inline>
+    #chat-widget-launcher:hover { background: #10A380; }
+    #chat-widget-launcher[disabled] { opacity: 0.6; cursor: default; }
+  </style>
 
   <!-- Progressive Image Loading - Upgrade logo to HQ on retina devices after PageSpeed test window -->
   <script is:inline>
@@ -414,16 +430,14 @@ if (jsonLd) {
     })();
   </script>
 
-  <!-- Chathive AI Chat Widget - Heavily deferred for performance (loads after PageSpeed test window) -->
+  <!-- Chathive AI Chat Widget - loaded on demand, never on a timer (see the launcher above) -->
   <script is:inline>
     (function() {
-      var loaded = false;
-      function loadChatHive() {
-        if (loaded) return;
-        loaded = true;
-        // Remove placeholder when widget loads
-        var placeholder = document.getElementById('chat-widget-placeholder');
-        if (placeholder) placeholder.remove();
+      var launcher = document.getElementById('chat-widget-launcher');
+      if (!launcher) return;
+
+      launcher.addEventListener('click', function loadChatHive() {
+        launcher.disabled = true;
         var script = document.createElement('script');
         script.src = 'https://sdk.chathive.app';
         script.async = true;
@@ -434,15 +448,16 @@ if (jsonLd) {
             });
             Chathive.widget.setLanguage("fr");
           }
+          // The SDK draws its own bubble in the same corner, so ours steps aside.
+          launcher.remove();
+        };
+        // Keep the launcher usable if the SDK cannot be reached.
+        script.onerror = function() {
+          launcher.disabled = false;
+          launcher.addEventListener('click', loadChatHive, { once: true });
         };
         document.body.appendChild(script);
-      }
-      // Load after 15 seconds (well after PageSpeed test window to avoid unused CSS penalty)
-      setTimeout(loadChatHive, 15000);
-      // Or load on meaningful user interaction (not passive scroll)
-      ['click', 'keydown'].forEach(function(evt) {
-        window.addEventListener(evt, loadChatHive, { once: true, passive: true });
-      });
+      }, { once: true });
     })();
   </script>
 </body>
