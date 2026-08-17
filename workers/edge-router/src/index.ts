@@ -513,7 +513,19 @@ export default {
     try {
       // For WordPress requests, bypass Cloudflare's edge to preserve cookies
       // APO strips WooCommerce session cookies - direct to origin bypasses this
-      const fetchOptions: RequestInit = isWordPress ? {
+      //
+      // Cookie-sensitive WordPress pages (NO_CACHE_PATHS: wp-login, cart, checkout,
+      // account...) must NOT include resolveOverride: it is an Enterprise-only cf
+      // option, and bundling it invalidates the whole cf object on this plan — the
+      // subrequest then re-enters Cloudflare's cache layer, which treats GET HTML as
+      // cacheable and STRIPS Set-Cookie (broke the Google sign-in state cookie:
+      // "Session mismatch ... problem setting cookies" on every fresh browser).
+      const fetchOptions: RequestInit = isWordPress && bypassCache ? {
+        cf: {
+          cacheTtl: 0,
+          cacheEverything: false,
+        } as any,
+      } : isWordPress ? {
         cf: {
           // Resolve directly to origin server IP to bypass Cloudflare's APO cookie stripping
           resolveOverride: 'origin.hercules-merchandising.fr',
