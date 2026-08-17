@@ -10,6 +10,7 @@ import {
   stripHtml
 } from '../../../config/seo';
 import { normalizeInternalLinks } from '../../../lib/cleanHtml';
+import { getImageDims } from '../../../lib/imageDims';
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
@@ -122,14 +123,18 @@ const metaDescription = post.excerpt
 const canonicalUrl = `${siteConfig.siteUrl}/blogs/news/${slug}`;
 const postImage = post.featuredImage || post.localFeaturedImage || '';
 
-// Parse intrinsic dimensions from WordPress resized-image filename (…-WIDTHxHEIGHT.ext)
-// so the browser can reserve space and avoid layout shift (CLS). Falls back to null
-// when the URL carries no size suffix (e.g. full-size images), leaving markup unchanged.
-function parseImageDims(url: string): { width: number; height: number } | null {
-  const m = url?.match(/-(\d{2,5})x(\d{2,5})\.(?:webp|jpe?g|png|avif)(?:$|\?)/i);
-  return m ? { width: Number(m[1]), height: Number(m[2]) } : null;
-}
-const postImageDims = parseImageDims(postImage);
+// Intrinsic dimensions so the browser can reserve space and avoid layout shift (CLS).
+// Read from the WordPress resized-image filename (…-WIDTHxHEIGHT.ext) when it carries
+// one, otherwise from the image header itself. Null leaves the markup unchanged.
+const postImageDims = await getImageDims(postImage);
+
+// Same reservation for the sidebar thumbnails: they are lazy-loaded, so without it
+// they shift the sidebar while the visitor scrolls.
+const relatedThumbProps = (
+  await Promise.all(
+    relatedPosts.map((rp: any) => getImageDims(`${WORKER_URL}/post-image/${rp.slug}`))
+  )
+).map((dims) => (dims ? { width: dims.width, height: dims.height } : {}));
 
 // Format dates for schema (ensure modified >= published)
 const publishedDate = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
@@ -294,11 +299,16 @@ jsonLdSchemas.push(getBreadcrumbSchema([
             <div class="sidebar-related">
               <h4 class="sidebar-heading">Articles connexes</h4>
               <div class="related-list">
-                {relatedPosts.map((rp) => (
+                {relatedPosts.map((rp, i) => (
                   <a href={`/blogs/news/${rp.slug}/`} class="related-item">
                     {rp.slug && (
                       <div class="related-thumb">
-                        <img src={`${WORKER_URL}/post-image/${rp.slug}`} alt={cleanTitle(rp.title)} loading="lazy" />
+                        <img
+                          src={`${WORKER_URL}/post-image/${rp.slug}`}
+                          alt={cleanTitle(rp.title)}
+                          {...relatedThumbProps[i]}
+                          loading="lazy"
+                        />
                       </div>
                     )}
                     <div class="related-info">
