@@ -35,4 +35,5 @@ jobs:
           check "https://hercules-merchandising.fr/products/bob-personnalise/" "Bob personnalisé sur mesure"
           check "https://hercules-merchandising.fr/products/cache-cou-personnalise-foot/" "Fabrication européenne dès 50 pièces"
           check "https://hercules-merchandising.fr/products/serviette-personnalisee/" "sport, club et plage"
+          check "https://hercules-merchandising.fr/products/maillot-de-rugby-personnalise/" "Maillot de rugby personnalisé pour clubs et équipes"
           exit $fail

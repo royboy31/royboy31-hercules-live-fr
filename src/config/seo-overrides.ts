@@ -149,6 +149,34 @@ const productSeoOverrides: Record<string, ProductSeoOverride> = {
 <p>La fabrication est réalisée en Europe à partir de 50 pièces, avec des tarifs dégressifs selon la quantité commandée. Le tableau de prix indique le prix par pièce selon le volume.</p>
 <p>Vous cherchez un autre type de fanion, un grand format ou une comparaison entre les modèles ? <a href="/collections/fanions-personnalises-football/">Découvrir tous nos fanions personnalisés</a>.</p>`,
   },
+  'maillot-de-rugby-personnalise': {
+    expectedName: 'Maillot de rugby personnalisé',
+    title: 'Maillot de rugby personnalisé | Dès 5 pièces',
+    h1: 'Maillot de rugby personnalisé pour clubs et équipes',
+    metaDescription:
+      'Maillot de rugby personnalisé en tissu interlock : couleurs et motifs illimités, nom et numéro, col rond ou col V. Dès 5 pièces, fabrication européenne.',
+    introHtml: `
+<p>Créez le maillot de rugby personnalisé de votre club, de votre équipe ou de votre tournoi. Motif, couleurs, logos, noms et numéros : il n'y a aucune restriction, chaque maillot est imprimé spécialement pour vous.</p>
+<p>Les maillots sont réalisés en tissu interlock 100 % polyester, plus épais et plus résistant que le tissu utilisé pour les maillots de football. Fabrication européenne dès 5 pièces, avec un design préparé par notre équipe avant production.</p>`,
+    seoBlockHtml: `
+<h2>Un tissu interlock pensé pour le rugby</h2>
+<p>Le rugby impose au textile des contraintes que les autres sports collectifs ne connaissent pas. C'est pourquoi nos maillots de rugby personnalisés ne reprennent pas le tissu d'un maillot de football : ils sont réalisés en interlock 100 % polyester, un tricot plus épais et plus résistant, spécialement conçu pour les maillots de rugby.</p>
+<p>Ce choix de matière se ressent sur la durée d'une saison, à l'entraînement comme en match, et permet de conserver un rendu d'impression net sur l'ensemble du maillot.</p>
+<h2>Une personnalisation sans limite de couleurs</h2>
+<p>Il n'y a aucune restriction de design : couleurs, motifs, logos, sponsors, textes et numéros sont libres, sans surcoût lié au nombre de couleurs. Le maillot peut recevoir un visuel différent à l'avant et à l'arrière, ce qui permet par exemple de réserver le dos à un partenaire du club.</p>
+<p>Chaque maillot peut porter son propre nom et son propre numéro. Le numéro est appliqué au dos ou à une autre position selon votre maquette. Envoyez-nous votre fichier pour approbation ou demandez notre service de conception gratuit : notre équipe prépare la proposition graphique avant le lancement de la production.</p>
+<h2>Col rond ou col V, du 2 ans au 6XL</h2>
+<p>Deux modèles sont disponibles : le maillot de rugby à col rond et le maillot à col V. Les tailles vont du 2 ans au 6XL, ce qui permet d'équiper les catégories de jeunes, l'équipe première, les entraîneurs et le staff avec le même design.</p>
+<p>Pour compléter la tenue, nos <a href="/products/shorts-de-sport-personnalises/">shorts de sport personnalisés</a> peuvent être produits dans les mêmes couleurs que le maillot.</p>
+<h2>Dès 5 pièces, avec des tarifs dégressifs</h2>
+<p>La commande minimale est de 5 maillots, ce qui rend la personnalisation accessible à une petite équipe, à un tournoi ou à un essai avant une commande de club. Le tableau de prix de la page indique le prix par pièce selon la quantité, avec des tarifs qui deviennent plus avantageux à mesure que le volume augmente.</p>
+<p>Vous pouvez recommander des pièces supplémentaires jusqu'à deux fois pendant la saison aux mêmes prix, ce qui est utile pour une nouvelle recrue ou un maillot abîmé en cours d'année.</p>
+<h2>Fabrication européenne et délais</h2>
+<p>Les maillots de rugby personnalisés sont fabriqués en Europe, avec un délai standard de 4 à 6 semaines après validation du design. Si votre échéance est plus courte, indiquez-la dès la demande de devis : une procédure d'urgence est possible dans la plupart des cas, moyennant un surcoût moyen de 30 %, et un envoi express en 24 ou 48 heures peut être ajouté.</p>
+<p>Avant de lancer une production complète, il est également possible de recevoir un échantillon issu d'une production précédente afin de juger la qualité du tissu et de l'impression.</p>
+<h2>Équiper tout le club, pas seulement l'équipe première</h2>
+<p>Le maillot est souvent le point de départ d'une gamme complète : shorts, vestes, sacs, accessoires de supporters et articles de boutique peuvent reprendre la même identité graphique. <a href="/collections/rugby/">Découvrir toute la collection rugby personnalisée</a>.</p>`,
+  },
 };
 
 export function getProductSeoOverride(
