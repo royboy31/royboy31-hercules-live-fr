@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 /**
- * Fetches live Google Maps rating and review count via Google's internal
- * preview endpoint (no headless browser or API key needed).
+ * Fetches the live Google rating and review count from the TrustIndex feed
+ * that backs the review widget displayed on the site, so the Product schema
+ * and the header badge always match what visitors see in the widget.
+ *
+ * Feed id comes from data-rich-snippet="..." in the TrustIndex widget markup
+ * (widget 4fe205b569ba69155006b1f0ba2).
  *
  * Outputs to src/data/google-place-data.json for build-time consumption.
  *
@@ -15,89 +19,86 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_FILE = resolve(__dirname, '../src/data/google-place-data.json');
 
-// Hercules Merchandising FR — Google Maps feature ID
-const FTID = '0x21d159209e369b9d:0xa126617f91835893';
+// TrustIndex company id for hercules-merchandising.fr
+const TRUSTINDEX_COMPANY_ID = 'ebd868362929ge5f';
+const TRUSTINDEX_FEED = `https://cdn.trustindex.io/companies/${TRUSTINDEX_COMPANY_ID.slice(0, 2)}/${TRUSTINDEX_COMPANY_ID}/richsnippet.json`;
+
+const PLACE_NAME = 'Hercules Merchandising FR';
 const MAPS_URL = 'https://www.google.com/maps/place//data=!4m7!3m6!1s0x21d159209e369b9d:0xa126617f91835893!8m2!3d30.886403!4d-49.4022062!9m1!1b1';
 
-// TrustIndex review count (source of truth — matches the TrustIndex widget on the site)
-const TRUSTINDEX_REVIEW_COUNT = 28;
+// Last known good values, only used if the feed is unreachable and the
+// previous google-place-data.json cannot be read.
+const FALLBACK = { rating: 4.9, reviewCount: 276 };
 
-// Fallback values if scraping fails
-const FALLBACK = {
-  rating: 5.0,
-  reviewCount: TRUSTINDEX_REVIEW_COUNT,
-  name: 'Hercules Merchandising FR',
-  url: MAPS_URL,
-  scrapedAt: null,
-  source: 'fallback'
-};
+function readPrevious() {
+  try {
+    return JSON.parse(readFileSync(OUTPUT_FILE, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
 
-async function fetchGoogleReviews() {
-  const endpoint = `https://www.google.com/maps/preview/place?authuser=0&hl=en&gl=fr&pb=!1m17!1s${encodeURIComponent(FTID)}!3m12!1m3!1d1000!2d-49.4022062!3d30.886403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m2!3d30.886403!4d-49.4022062!8m5!1b1!2b1!3b1!4b1!5b1`;
+async function fetchTrustIndexRating() {
+  console.log(`[GoogleReviews] Fetching TrustIndex feed ${TRUSTINDEX_FEED}`);
 
-  console.log('[GoogleReviews] Fetching from Google Maps preview endpoint...');
-
-  const response = await fetch(endpoint, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Accept-Language': 'en-GB,en;q=0.9'
-    }
+  const response = await fetch(TRUSTINDEX_FEED, {
+    headers: { 'User-Agent': 'hercules-merchandising.fr build script' }
   });
 
   if (!response.ok) {
     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
   }
 
-  let text = await response.text();
+  const body = await response.text();
 
-  // Strip the ")]}'" XSSI prefix
-  const newlineIdx = text.indexOf('\n');
-  if (newlineIdx !== -1 && text.slice(0, newlineIdx).includes(')]}')){
-    text = text.slice(newlineIdx + 1);
+  // TrustIndex answers 200 with a plain-text notice when the feed is switched
+  // off or the plan no longer covers it.
+  if (body.includes('The page is not found') || body.includes('do not have paid package')) {
+    throw new Error(`Feed unavailable: ${body.slice(0, 120)}`);
   }
 
-  const data = JSON.parse(text);
+  const data = JSON.parse(body);
+  const aggregate = data?.reviews?.aggregateRating;
 
-  // Extract from known positions in the response:
-  //   [6][4][7]  = rating (float, e.g. 4.9)
-  //   [6][37][1] = review count (int, e.g. 179)
-  //   [6][11]    = business name
-  //   [6][42]    = canonical Maps URL
-  const placeData = data?.[6];
-  if (!placeData) {
-    throw new Error('Unexpected response structure: missing [6]');
-  }
-
-  const rating = placeData?.[4]?.[7];
-  const reviewCount = placeData?.[37]?.[1];
-  const name = placeData?.[11];
-  const mapsUrl = placeData?.[42] || MAPS_URL;
+  const rating = aggregate?.ratingValue;
+  const reviewCount = aggregate?.ratingCount;
 
   if (typeof rating !== 'number' || rating < 1 || rating > 5) {
-    throw new Error(`Invalid rating extracted: ${rating}`);
+    throw new Error(`Invalid rating in feed: ${rating}`);
+  }
+  if (!Number.isInteger(reviewCount) || reviewCount < 1) {
+    throw new Error(`Invalid review count in feed: ${reviewCount}`);
   }
 
-  const result = {
+  return {
     rating,
-    reviewCount: TRUSTINDEX_REVIEW_COUNT,
-    name: name || FALLBACK.name,
-    url: mapsUrl,
+    reviewCount,
+    name: PLACE_NAME,
+    url: MAPS_URL,
     scrapedAt: new Date().toISOString(),
-    source: 'google-maps-preview'
+    source: 'trustindex-richsnippet'
   };
-
-  console.log(`[GoogleReviews] Success: ${result.rating} stars from ${result.reviewCount} reviews`);
-  return result;
 }
 
 // Main
 let result;
 try {
-  result = await fetchGoogleReviews();
+  result = await fetchTrustIndexRating();
+  console.log(`[GoogleReviews] Success: ${result.rating} stars from ${result.reviewCount} reviews`);
 } catch (error) {
   console.error(`[GoogleReviews] Failed: ${error.message}`);
-  console.warn('[GoogleReviews] Using fallback values');
-  result = FALLBACK;
+  const previous = readPrevious();
+  const rating = typeof previous?.rating === 'number' ? previous.rating : FALLBACK.rating;
+  const reviewCount = Number.isInteger(previous?.reviewCount) ? previous.reviewCount : FALLBACK.reviewCount;
+  console.warn(`[GoogleReviews] Keeping previous values: ${rating} stars from ${reviewCount} reviews`);
+  result = {
+    rating,
+    reviewCount,
+    name: PLACE_NAME,
+    url: MAPS_URL,
+    scrapedAt: previous?.scrapedAt ?? null,
+    source: 'previous-build'
+  };
 }
 
 // Preserve static reviews text from google-reviews.json
