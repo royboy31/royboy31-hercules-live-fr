@@ -1,33 +1,95 @@
 ---
-// Global Footer Component - Matches WordPress Elementor footer exactly
+// Global Footer Component - redesigned 2026-08 (reseller banner + link columns + help/contact)
 import ContactFormPopup from './ContactFormPopup.tsx';
 
 const currentYear = new Date().getFullYear();
+
+const footerColumns = [
+  {
+    heading: 'Entreprise',
+    links: [
+      { label: 'À propos de nous', href: '/a-propos/' },
+      { label: 'Notre équipe', href: '/notre-equipe/' },
+      { label: 'Blog', href: '/blogs/news/' },
+      { label: 'Livraisons et retours', href: '/livraisons-et-retours/' },
+      { label: 'Moyens de paiement', href: '/moyens-de-paiement/' },
+      { label: 'Contact', href: '/contactez-nous/' },
+      { label: 'Mon compte', href: '/mon-compte/' },
+    ],
+  },
+  {
+    heading: 'Produits',
+    links: [
+      { label: 'Écharpes', href: '/collections/echarpes-personnalisees/' },
+      { label: 'Bonnets', href: '/collections/bonnets-personnalises-football/' },
+      { label: 'Couvre-chefs', href: '/collections/couvre-chefs/' },
+      { label: 'Vêtements de sport', href: '/collections/equipements-personnalises/' },
+      { label: 'Fanions', href: '/collections/fanions-personnalises-football/' },
+      { label: 'Accessoires', href: '/collections/accessoires-de-football/' },
+      { label: 'Tifo', href: '/collections/tifo/' },
+    ],
+  },
+  {
+    heading: 'Sports',
+    links: [
+      { label: 'Football', href: '/collections/football/' },
+      { label: 'Rugby', href: '/collections/rugby/' },
+      { label: 'Basket-ball', href: '/collections/basket-ball/' },
+      { label: 'Running', href: '/collections/running/' },
+      { label: 'Cyclisme', href: '/collections/cyclisme/' },
+      { label: 'Volleyball', href: '/collections/volleyball/' },
+      { label: 'Fitness', href: '/collections/fitness/' },
+    ],
+  },
+];
+
+const socialLinks = [
+  { platform: 'linkedin', label: 'LinkedIn', href: '' },
+  { platform: 'instagram', label: 'Instagram', href: '' },
+  { platform: 'facebook', label: 'Facebook', href: '' },
+  { platform: 'youtube', label: 'YouTube', href: '' },
+];
+
+const phones = [
+  { tel: '+33973030295', display: '+33 9 73 03 02 95' },
+  { tel: '+3228087090', display: '+32 2 808 70 90' },
+];
 ---
 
 <footer class="site-footer">
-  <!-- Newsletter Section -->
-  <div class="newsletter-section">
-    <div class="newsletter-container">
-      <div class="newsletter-content">
-        <h2 class="newsletter-heading">Intéressé ?</h2>
-        <form class="newsletter-form" id="newsletter-form" action="/api/newsletter" method="POST">
-          <div class="form-row">
-            <input
-              type="email"
-              name="email"
-              placeholder="S'inscrire à la newsletter"
-              required
-              class="newsletter-input"
-              id="newsletter-email"
-            />
-            <button type="submit" class="newsletter-button" id="newsletter-submit">Soumettre</button>
-          </div>
-          <div class="newsletter-message" id="newsletter-message"></div>
-        </form>
-        <p class="newsletter-description">
-          Soyez le premier à découvrir nos derniers articles de merchandising sportif – Inscrivez-vous à notre newsletter !
-        </p>
+  <!-- Reseller Banner -->
+  <div class="banner-wrap">
+    <div class="reseller-banner">
+      <div class="banner-intro">
+        <div class="banner-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L166,117.36V152a8,8,0,0,0,16,0V108.61l34-18.61v85.82Z"></path></svg>
+          <span class="banner-icon-badge">%</span>
+        </div>
+        <div class="banner-text">
+          <h2 class="banner-heading">Revendeur ou club professionnel ?</h2>
+          <p class="banner-description">Devenez partenaire et bénéficiez de tarifs exclusifs, d'un accompagnement dédié et de livraisons fiables pour vos commandes en gros.</p>
+        </div>
+      </div>
+      <div class="banner-features">
+        <div class="banner-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M243.31,136,144,36.69A15.86,15.86,0,0,0,132.69,32H40a8,8,0,0,0-8,8v92.69A15.86,15.86,0,0,0,36.69,144L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68a16,16,0,0,0,0-22.63Zm-96,96L48,132.69V48h84.69L232,147.31ZM96,84A12,12,0,1,1,84,72,12,12,0,0,1,96,84Z"></path></svg>
+          <span>Tarifs de gros exclusifs</span>
+        </div>
+        <div class="banner-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M201.89,54.66A103.43,103.43,0,0,0,128.79,24H128A104,104,0,0,0,24,128v56a24,24,0,0,0,24,24H64a24,24,0,0,0,24-24V144a24,24,0,0,0-24-24H40.36A88.12,88.12,0,0,1,190.54,65.93,87.39,87.39,0,0,1,215.65,120H192a24,24,0,0,0-24,24v40a24,24,0,0,0,24,24h24a24,24,0,0,1-24,24H136a8,8,0,0,0,0,16h56a40,40,0,0,0,40-40V128A103.41,103.41,0,0,0,201.89,54.66ZM64,136a8,8,0,0,1,8,8v40a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V136Zm128,56a8,8,0,0,1-8-8V144a8,8,0,0,1,8-8h24v56Z"></path></svg>
+          <span>Accompagnement dédié</span>
+        </div>
+      </div>
+      <div class="banner-cta">
+        <ContactFormPopup client:visible triggerType="button" triggerText="Contactez notre équipe" triggerClassName="banner-cta-popup" />
+        <div class="banner-phone">
+          {phones.map((phone) => (
+            <a href={`tel:${phone.tel}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
+              <span>{phone.display}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </div>
@@ -48,67 +110,51 @@ const currentYear = new Date().getFullYear();
             height="78"
           />
         </a>
+        <p class="footer-tagline">Du merchandising et des vêtements de qualité pour les clubs, les supporters et les équipes en France et au-delà.</p>
       </div>
 
-      <!-- About Us Column -->
-      <div class="footer-column">
-        <h3 class="footer-heading">À propos</h3>
-        <ul class="footer-links">
-          <li><a href="/a-propos/">À propos de nous</a></li>
-          <li><a href="/notre-equipe/">Notre équipe</a></li>
-          <li><a href="/blogs/news/">Blog</a></li>
-          <li><a href="/livraisons-et-retours/">Livraisons et retours</a></li>
-          <li><a href="/moyens-de-paiement/">Moyens de paiement</a></li>
-          <li><a href="/contactez-nous/">Contact</a></li>
-          <li><a href="/mon-compte/">Mon compte</a></li>
-        </ul>
-      </div>
-
-      <!-- Sports Column -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Types de sports</h3>
-        <ul class="footer-links">
-          <li><a href="/collections/football/">Football</a></li>
-          <li><a href="/collections/rugby/">Rugby</a></li>
-          <li><a href="/collections/basket-ball/">Basket-ball</a></li>
-          <li><a href="/collections/running/">Running</a></li>
-          <li><a href="/collections/cyclisme/">Cyclisme</a></li>
-          <li><a href="/collections/volleyball/">Volleyball</a></li>
-        </ul>
-      </div>
-
-      <!-- Products Column -->
-      <div class="footer-column">
-        <h3 class="footer-heading">Produits</h3>
-        <ul class="footer-links">
-          <li><a href="/collections/echarpes-personnalisees/">Écharpes</a></li>
-          <li><a href="/collections/bonnets-personnalises-football/">Bonnets</a></li>
-          <li><a href="/collections/equipements-personnalises/">Vêtements de sport</a></li>
-          <li><a href="/collections/fanions-personnalises-football/">Fanions</a></li>
-          <li><a href="/collections/accessoires-de-football/">Accessoires</a></li>
-          <li><a href="/collections/tifo/">Tifo</a></li>
-        </ul>
-      </div>
-
-      <!-- Reseller Column -->
-      <div class="footer-column reseller-column">
-        <div class="reseller-top">
-          <h3 class="footer-heading">Revendeur ou club professionnel ?</h3>
-          <p class="footer-text">Nous offrons des remises sur les quantités.</p>
+      {footerColumns.map((col) => (
+        <div class="footer-column">
+          <h3 class="footer-heading">{col.heading}</h3>
+          <ul class="footer-links">
+            {col.links.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
         </div>
-        <div class="reseller-bottom">
-          <ContactFormPopup client:visible triggerType="button" triggerText="Contactez-nous" triggerClassName="footer-cta-popup" />
-          <div class="footer-phone">
-          <a href="tel:+33973030295">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
-            <span>+33 9 73 03 02 95</span>
-          </a>
-          <a href="tel:+3228087090">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
-            <span>+32 2 808 70 90</span>
-          </a>
-          </div>
+      ))}
+
+      <!-- Help / Contact Column -->
+      <div class="footer-column help-column">
+        <h3 class="footer-heading">Aide / Contact</h3>
+        <div class="footer-phone">
+          {phones.map((phone) => (
+            <a href={`tel:${phone.tel}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg>
+              <span>{phone.display}</span>
+            </a>
+          ))}
         </div>
+        <h3 class="footer-heading follow-heading">Suivez-nous</h3>
+        <div class="social-icons">
+          {socialLinks.map((social) => (
+            <a href={social.href || '#'} class="social-icon" aria-label={social.label} target="_blank" rel="noopener">
+              {social.platform === 'linkedin' && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+              )}
+              {social.platform === 'instagram' && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.25" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" r="1.25" fill="currentColor" stroke="none"></circle></svg>
+              )}
+              {social.platform === 'facebook' && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.4 21v-8.2h2.75l.41-3.2H13.4V7.56c0-.92.26-1.55 1.58-1.55h1.69V3.14A22.5 22.5 0 0 0 14.21 3c-2.44 0-4.1 1.49-4.1 4.22v2.38H7.35v3.2h2.76V21z"></path></svg>
+              )}
+              {social.platform === 'youtube' && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42A2.51 2.51 0 0 0 2.42 7.19 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .42 4.81 2.51 2.51 0 0 0 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42a2.51 2.51 0 0 0 1.77-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.42-4.81zM10 15.13V8.87L15.19 12z"></path></svg>
+              )}
+            </a>
+          ))}
+        </div>
+        <ContactFormPopup client:visible triggerType="button" triggerText="Contactez-nous" triggerClassName="footer-cta-popup" />
       </div>
     </div>
   </div>
@@ -120,13 +166,11 @@ const currentYear = new Date().getFullYear();
       <div class="bottom-footer-row">
         <div class="legal-links">
           <a href="/conditions-generales-de-vente/">Conditions Générales de Vente</a>
-          <span class="legal-separator">|</span>
           <a href="/politique-de-confidentialite-et-de-cookies/">Politique de confidentialité et de cookies</a>
-          <span class="legal-separator">|</span>
           <a href="/mentions-legales/">Mentions légales</a>
         </div>
         <div class="payment-icons">
-          <img src="/images/pay-her-2.png" alt="Payment Methods" loading="lazy" width="220" height="22" />
+          <img src="/images/pay-her-2.png" alt="Moyens de paiement" loading="lazy" width="300" height="30" />
         </div>
         <div class="language-switcher">
           <button class="language-current" type="button">
@@ -169,78 +213,133 @@ const currentYear = new Date().getFullYear();
 <style>
   .site-footer {
     width: 100%;
+    background-color: #E8F5FF;
   }
 
-  /* Newsletter Section */
-  .newsletter-section {
-    background-image: url('/images/footer-newsletter-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 30px;
-    margin: 0 auto;
+  /* Reseller Banner */
+  .banner-wrap {
     max-width: 1280px;
-    position: relative;
-    z-index: 2;
-    height: auto;
-    min-height: unset;
+    margin: 0 auto;
+    padding: 40px 20px 0 20px;
   }
 
-  .newsletter-section::before {
-    content: '';
+  .reseller-banner {
+    background-color: #F4F9FE;
+    border-radius: 24px;
+    padding: 40px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .banner-intro {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex: 1 1 380px;
+  }
+
+  .banner-icon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #DFEBF6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .banner-icon > svg {
+    width: 46px;
+    height: 46px;
+    fill: #253461;
+  }
+
+  .banner-icon-badge {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
-  }
-
-  .newsletter-container {
-    position: relative;
-    padding: 100px 50px;
-    height: auto;
-  }
-
-  .newsletter-content {
-    max-width: 500px;
-  }
-
-  .newsletter-heading {
+    top: 6px;
+    right: 2px;
+    width: 28px;
+    height: 28px;
+    background-color: #10C99E;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Jost', sans-serif;
-    font-size: 50px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .banner-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #FFFFFF;
-    margin: 0 0 20px 0;
+    color: #253461;
+    margin: 0 0 10px 0;
+    max-width: 280px;
   }
 
-  .newsletter-form {
-    margin-bottom: 15px;
-  }
-
-  .form-row {
-    display: flex;
-    gap: 10px;
-  }
-
-  .newsletter-input {
-    flex: 1;
-    padding: 12px 16px;
+  .banner-description {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    border: none;
-    border-radius: 20px;
-    background-color: #FFFFFF;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #253461;
+    margin: 0;
+    max-width: 300px;
   }
 
-  .newsletter-input::placeholder {
-    color: #5F5F5F;
+  .banner-features {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 0 1 auto;
   }
 
-  .newsletter-button {
-    padding: 12px 24px;
+  .banner-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 28px;
+  }
+
+  .banner-feature + .banner-feature {
+    border-left: 1px solid rgba(37, 52, 97, 0.15);
+  }
+
+  .banner-feature svg {
+    width: 38px;
+    height: 38px;
+    fill: #10C99E;
+    flex-shrink: 0;
+  }
+
+  .banner-feature span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.35;
+    color: #253461;
+    max-width: 110px;
+  }
+
+  .banner-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-left: 40px;
+    border-left: 1px solid rgba(37, 52, 97, 0.15);
+  }
+
+  .banner-cta :global(.contact-trigger-button) {
+    display: inline-block;
+    padding: 13px 35px;
     font-family: 'Jost', sans-serif;
     font-size: 15px;
     font-weight: 500;
@@ -248,54 +347,60 @@ const currentYear = new Date().getFullYear();
     color: #FFFFFF;
     background-color: #10C99E;
     border: 1px solid #10C99E;
-    border-radius: 20px;
+    border-radius: 100px;
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
   }
 
-  .newsletter-button:hover {
+  .banner-cta :global(.contact-trigger-button:hover) {
     background-color: transparent;
-    color: #FFFFFF;
-  }
-
-  .newsletter-button:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-  }
-
-  .newsletter-message {
-    margin-top: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    display: none;
-  }
-
-  .newsletter-message.success {
-    display: block;
     color: #10C99E;
   }
 
-  .newsletter-message.error {
-    display: block;
-    color: #ff6b6b;
+  .banner-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
-  .newsletter-description {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    color: #FFFFFF;
-    margin: 0;
+  .banner-phone a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #253461;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .banner-phone svg {
+    width: 22px;
+    height: 22px;
+    fill: #253461;
+    flex-shrink: 0;
+  }
+
+  .banner-phone a:hover {
+    color: #469ADC;
+  }
+
+  .banner-phone a:hover svg {
+    fill: #469ADC;
   }
 
   /* Main Footer */
   .main-footer {
-    background-color: #E8F5FF;
-    margin-top: -170px;
-    padding: 250px 0 30px 0;
-    position: relative;
-    z-index: 1;
+    padding: 40px 0 35px 0;
+  }
+
+  .main-footer .footer-container {
+    border-top: 1px solid rgba(37, 52, 97, 0.12);
+    padding-top: 45px;
   }
 
   .footer-container {
@@ -313,14 +418,22 @@ const currentYear = new Date().getFullYear();
   }
 
   .logo-column {
-    min-width: 200px;
-    display: flex;
-    align-items: center;
+    min-width: 240px;
+    flex: 1.3;
   }
 
   .footer-logo {
-    max-width: 170px;
+    max-width: 190px;
     height: auto;
+  }
+
+  .footer-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #253461;
+    margin: 20px 0 0 0;
+    max-width: 240px;
   }
 
   .footer-heading {
@@ -329,7 +442,20 @@ const currentYear = new Date().getFullYear();
     font-weight: 500;
     text-transform: uppercase;
     color: #253461;
-    margin: 0 0 15px 0;
+    margin: 0 0 22px 0;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #10C99E;
   }
 
   .footer-links {
@@ -339,7 +465,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-links li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .footer-links a {
@@ -357,57 +483,84 @@ const currentYear = new Date().getFullYear();
     transform: translateX(3px);
   }
 
-  .reseller-column {
-    min-width: 200px;
+  /* Help / Contact Column */
+  .help-column {
+    min-width: 210px;
+  }
+
+  .footer-phone {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 8px;
   }
 
-  .reseller-top {
-    /* Top content stays at top */
-  }
-
-  .reseller-bottom {
-    /* Bottom content pushed down via justify-content: space-between */
-  }
-
-  .footer-text {
+  .footer-phone a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #253461;
-    margin: 0 0 15px 0;
-  }
-
-  .footer-cta-button {
-    display: inline-block;
-    padding: 12px 30px;
-    font-family: 'Jost', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #10C99E;
-    border: 1px solid #10C99E;
-    border-radius: 100px;
     text-decoration: none;
     transition: all 0.3s ease;
-    margin-bottom: 15px;
   }
 
-  .footer-cta-button:hover {
-    background-color: transparent;
+  .footer-phone a:hover {
+    color: #469ADC;
+  }
+
+  .footer-phone svg {
+    width: 20px;
+    height: 20px;
+    fill: #253461;
+    flex-shrink: 0;
+    transition: fill 0.3s ease;
+  }
+
+  .footer-phone a:hover svg {
+    fill: #469ADC;
+  }
+
+  .follow-heading {
+    margin-top: 30px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid rgba(37, 52, 97, 0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #253461;
+    transition: all 0.3s ease;
+  }
+
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .social-icon:hover {
+    border-color: #10C99E;
     color: #10C99E;
   }
 
   /* Footer Contact Popup Trigger */
-  .footer-cta-popup {
-    margin-bottom: 15px;
-  }
-
   .footer-cta-popup :global(.contact-trigger-button) {
-    display: inline-block;
-    padding: 12px 30px;
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    text-align: center;
+    padding: 13px 30px;
     font-family: 'Jost', sans-serif;
     font-size: 15px;
     font-weight: 500;
@@ -426,42 +579,10 @@ const currentYear = new Date().getFullYear();
     color: #10C99E;
   }
 
-  .footer-phone {
-    margin-top: 10px;
-  }
-
-  .footer-phone a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #253461;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .footer-phone a:hover {
-    color: #469ADC;
-    transform: translateX(3px);
-  }
-
-  .footer-phone svg {
-    width: 20px;
-    height: 20px;
-    fill: #253461;
-    flex-shrink: 0;
-    transition: fill 0.3s ease;
-  }
-
-  .footer-phone a:hover svg {
-    fill: #469ADC;
-  }
-
   /* Bottom Footer */
   .bottom-footer {
     background-color: #E8F5FF;
-    padding: 20px 0;
+    padding: 20px 0 25px 0;
   }
 
   .bottom-container {
@@ -469,7 +590,7 @@ const currentYear = new Date().getFullYear();
     align-items: center;
     gap: 15px;
     border-top: 1px solid rgba(37, 52, 97, 0.12);
-    padding-top: 20px;
+    padding-top: 25px;
   }
 
   .bottom-footer-row {
@@ -483,9 +604,8 @@ const currentYear = new Date().getFullYear();
 
   .legal-links {
     display: flex;
-    gap: 8px;
+    gap: 20px;
     flex-wrap: wrap;
-    align-items: center;
   }
 
   .legal-links a {
@@ -494,17 +614,11 @@ const currentYear = new Date().getFullYear();
     color: #253461;
     text-decoration: none;
     transition: all 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .legal-separator {
-    color: #253461;
-    font-size: 14px;
-    opacity: 0.4;
   }
 
   .legal-links a:hover {
     color: #469ADC;
+    transform: translateX(3px);
   }
 
   .payment-icons {
@@ -513,13 +627,12 @@ const currentYear = new Date().getFullYear();
   }
 
   .payment-icons img {
-    max-width: 220px;
+    max-width: 300px;
     height: auto;
   }
 
   .language-switcher {
     position: relative;
-    display: inline-block;
   }
 
   .language-current {
@@ -535,7 +648,7 @@ const currentYear = new Date().getFullYear();
     color: #0056B3;
     padding: 13px 34px;
     transition: all 0.3s ease;
-    white-space: nowrap;
+    width: 100%;
     text-align: left;
   }
 
@@ -559,12 +672,12 @@ const currentYear = new Date().getFullYear();
     position: absolute;
     bottom: 100%;
     left: 0;
+    right: 0;
     background: white;
     list-style: none;
     margin: 0;
     padding: 0;
     min-width: 100%;
-    width: max-content;
     box-shadow: none;
     border-radius: 20px 20px 0 0;
     opacity: 0;
@@ -588,7 +701,6 @@ const currentYear = new Date().getFullYear();
     color: #0056B3;
     text-decoration: none;
     transition: background 0.3s ease;
-    white-space: nowrap;
   }
 
   .language-dropdown li a:hover {
@@ -606,10 +718,13 @@ const currentYear = new Date().getFullYear();
   .copyright {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    line-height: 1.6;
     color: #253461;
     text-align: center;
     width: 100%;
-    padding-top: 15px;
+    max-width: 950px;
+    margin: 0 auto;
+    padding-top: 10px;
   }
 
   .copyright a {
@@ -622,60 +737,70 @@ const currentYear = new Date().getFullYear();
   }
 
   /* Tablet */
+  @media (max-width: 1180px) {
+    .banner-cta {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
   @media (max-width: 1024px) {
-    .newsletter-heading {
-      font-size: 40px;
+    .reseller-banner {
+      justify-content: center;
     }
 
     .footer-column {
       min-width: 45%;
     }
-
-    .main-footer {
-      margin-top: -100px;
-      padding-top: 130px;
-    }
   }
 
   /* Mobile */
   @media (max-width: 767px) {
-    .newsletter-section {
-      border-radius: 0;
-      margin: 0;
+    .banner-wrap {
+      padding: 30px 15px 0 15px;
     }
 
-    .newsletter-section::before {
-      border-radius: 0;
-    }
-
-    .newsletter-container {
-      padding: 30px 20px;
-    }
-
-    .newsletter-heading {
-      font-size: 32px;
-      text-align: center;
-    }
-
-    .newsletter-content {
-      text-align: center;
-    }
-
-    .newsletter-description {
-      text-align: center;
-    }
-
-    .form-row {
+    .reseller-banner {
       flex-direction: column;
+      padding: 30px 25px;
+      text-align: center;
     }
 
-    .newsletter-button {
-      width: 100%;
+    .banner-intro {
+      flex-direction: column;
+      text-align: center;
+      flex: 1 1 auto;
     }
 
-    .main-footer {
-      margin-top: 0;
-      padding-top: 40px;
+    .banner-heading,
+    .banner-description {
+      max-width: none;
+    }
+
+    .banner-features {
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .banner-feature {
+      padding: 0;
+    }
+
+    .banner-feature + .banner-feature {
+      border-left: none;
+    }
+
+    .banner-feature span {
+      max-width: none;
+    }
+
+    .banner-phone {
+      align-items: center;
+    }
+
+    .main-footer .footer-container {
+      margin-top: 30px;
+      padding-top: 35px;
     }
 
     .footer-container {
@@ -688,28 +813,45 @@ const currentYear = new Date().getFullYear();
     }
 
     .logo-column {
-      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-tagline {
+      max-width: 300px;
+    }
+
+    .footer-heading {
+      padding-bottom: 10px;
+    }
+
+    .footer-heading::after {
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .footer-links a:hover {
       transform: none;
     }
 
-    .reseller-column {
+    .help-column {
+      display: flex;
+      flex-direction: column;
       align-items: center;
     }
 
-    .footer-cta-button {
-      display: block;
-      text-align: center;
+    .footer-phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .footer-cta-popup {
-      display: flex;
+    .social-icons {
       justify-content: center;
     }
 
-    .footer-phone {
+    .footer-cta-popup {
       display: flex;
       justify-content: center;
     }
@@ -738,59 +880,5 @@ const currentYear = new Date().getFullYear();
       display: flex;
       justify-content: center;
     }
-
-    .country-selector {
-      flex-direction: column;
-      align-items: center;
-    }
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('newsletter-form') as HTMLFormElement;
-    const emailInput = document.getElementById('newsletter-email') as HTMLInputElement;
-    const submitBtn = document.getElementById('newsletter-submit') as HTMLButtonElement;
-    const messageDiv = document.getElementById('newsletter-message') as HTMLDivElement;
-
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const email = emailInput.value.trim();
-        if (!email) return;
-
-        // Disable button and show loading state
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi...';
-        messageDiv.className = 'newsletter-message';
-        messageDiv.textContent = '';
-
-        try {
-          const formData = new FormData();
-          formData.append('email', email);
-
-          const response = await fetch('/api/newsletter', {
-            method: 'POST',
-            body: formData,
-          });
-
-          // Check if redirected (success) or got JSON response
-          if (response.redirected || response.ok) {
-            messageDiv.className = 'newsletter-message success';
-            messageDiv.textContent = 'Merci ! Vous êtes maintenant inscrit(e) à notre newsletter.';
-            emailInput.value = '';
-          } else {
-            throw new Error('Subscription failed');
-          }
-        } catch (error) {
-          messageDiv.className = 'newsletter-message error';
-          messageDiv.textContent = 'Une erreur est survenue. Veuillez réessayer.';
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Soumettre';
-        }
-      });
-    }
-  });
-</script>
