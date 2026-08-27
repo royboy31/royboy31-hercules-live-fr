@@ -69,7 +69,9 @@ jobs:
           WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY }}
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET }}
           WORKER_URL: https://hercules-product-sync-fr.gilles-86d.workers.dev
-          IS_STAGING: 'true'
+          # PUBLIC_ prefix is required: Astro's default envPrefix is 'PUBLIC_', so a bare
+          # IS_STAGING never reaches import.meta.env in BaseLayout.astro.
+          PUBLIC_IS_STAGING: 'true'
 
       - name: Build Astro site (production)
         if: steps.target.outputs.env == 'production'
@@ -78,7 +80,50 @@ jobs:
           WC_CONSUMER_KEY: ${{ secrets.WC_CONSUMER_KEY_PROD }}
           WC_CONSUMER_SECRET: ${{ secrets.WC_CONSUMER_SECRET_PROD }}
           WORKER_URL: https://hercules-product-sync-fr-prod.gilles-86d.workers.dev
-          IS_STAGING: 'false'
+          PUBLIC_IS_STAGING: 'false'
+
+      # Fail closed before anything ships. The staging artifact must be unindexable on
+      # EVERY host that can serve it, including the raw hercules-fr-staging.pages.dev
+      # alias, which never passes through the edge router and so gets none of the
+      # hostname-based noindex. The inverse gate stops a staging noindex from ever
+      # reaching the live site: both targets build from the same source tree.
+      - name: Verify artifact indexability
+        run: |
+          set -u
+          target='${{ steps.target.outputs.env }}'
+          total=$(find dist -name '*.html' | wc -l | tr -d ' ')
+          if [ "$total" -eq 0 ]; then
+            echo "::error::dist/ contains no HTML — refusing to deploy"
+            exit 1
+          fi
+          echo "Scanning $total HTML file(s) for target '$target'"
+
+          if [ "$target" = 'staging' ]; then
+            missing=$(grep -rLF '<meta name="robots" content="noindex' --include='*.html' dist || true)
+            if [ -n "$missing" ]; then
+              echo "::error::staging artifact has indexable pages — PUBLIC_IS_STAGING is not reaching the build"
+              echo "$missing" | head -20
+              exit 1
+            fi
+            echo "OK: all $total staging page(s) are noindex"
+          else
+            for p in dist/index.html dist/products/maillot-de-football-personnalise/index.html; do
+              if [ ! -f "$p" ]; then
+                echo "::error::expected production page missing from artifact: $p"
+                exit 1
+              fi
+              if ! grep -qF 'content="index, follow' "$p"; then
+                echo "::error::production page is not indexable — a staging noindex reached the production build: $p"
+                grep -oE '<meta name="robots"[^>]*>' "$p" || true
+                exit 1
+              fi
+            done
+            if grep -qxF 'Disallow: /' dist/robots.txt; then
+              echo "::error::production robots.txt carries a site-wide 'Disallow: /'"
+              exit 1
+            fi
+            echo "OK: production artifact is indexable"
+          fi
 
       - name: Deploy Product Sync Worker (staging)
         if: steps.target.outputs.env == 'staging'

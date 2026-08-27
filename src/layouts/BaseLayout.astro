@@ -92,8 +92,11 @@ if (shouldNoindex && nofollow) {
 } else if (nofollow) {
   robotsMeta = robotsConfig.nofollow;
 }
-// Staging: always noindex, nofollow (IS_STAGING=true in .env, not set in production GitHub Actions)
-if (import.meta.env.IS_STAGING === 'true') robotsMeta = robotsConfig.none;
+// Staging: always noindex, nofollow. Must keep the PUBLIC_ prefix — Astro's default
+// envPrefix is 'PUBLIC_', so a bare IS_STAGING set on the CI build step never reaches
+// import.meta.env and this guard silently never fires (it did not, from its introduction
+// until 2026-08-27). Set only on the staging build step in deploy.yml.
+if (import.meta.env.PUBLIC_IS_STAGING === 'true') robotsMeta = robotsConfig.none;
 
 // Build hreflang URLs - use provided custom URLs or get from mapping
 let hreflangs: Record<Locale, string>;
