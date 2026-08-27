@@ -50,6 +50,10 @@ const socialLinks = [
   { platform: 'youtube', label: 'YouTube', href: '' },
 ];
 
+// Only render the "Suivez-nous" block once real profile URLs exist.
+// Fill in the hrefs above to bring it back — no markup change needed.
+const activeSocialLinks = socialLinks.filter((social) => social.href);
+
 const phones = [
   { tel: '+33973030295', display: '+33 9 73 03 02 95' },
   { tel: '+3228087090', display: '+32 2 808 70 90' },
@@ -135,10 +139,12 @@ const phones = [
             </a>
           ))}
         </div>
+        {activeSocialLinks.length > 0 && (
+        <Fragment>
         <h3 class="footer-heading follow-heading">Suivez-nous</h3>
         <div class="social-icons">
-          {socialLinks.map((social) => (
-            <a href={social.href || '#'} class="social-icon" aria-label={social.label} target="_blank" rel="noopener">
+          {activeSocialLinks.map((social) => (
+            <a href={social.href} class="social-icon" aria-label={social.label} target="_blank" rel="noopener">
               {social.platform === 'linkedin' && (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
               )}
@@ -154,6 +160,8 @@ const phones = [
             </a>
           ))}
         </div>
+        </Fragment>
+        )}
         <ContactFormPopup client:visible triggerType="button" triggerText="Contactez-nous" triggerClassName="footer-cta-popup" />
       </div>
     </div>
