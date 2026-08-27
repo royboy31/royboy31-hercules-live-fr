@@ -68,6 +68,22 @@ try {
   console.error('Error fetching category products:', error);
 }
 
+// Collections where the football shirt is promoted into the first related slot.
+// Positive allowlist: only football and supporter-gear collections, so an unrelated
+// future collection never inherits the promotion. Collections that already contain
+// the product (football, equipements-personnalises, fabrique-en-europe) are excluded
+// by the category-membership filter below and are deliberately absent here.
+const FOOTBALL_PROMO_COLLECTIONS = [
+  'accessoires-de-football', 'articles-de-supporters', 'ballons', 'basket-ball',
+  'bonnets-personnalises-football', 'cadeaux', 'chaussettes-et-claquettes',
+  'couvre-chefs', 'drapeaux-personnalises', 'durable', 'echarpes-de-football',
+  'echarpes-personnalisees', 'enfants', 'ete', 'fanions-personnalises-football',
+  'fitness', 'handball', 'hiver', 'hockey-sur-gazon', 'petits-prix', 'rugby',
+  'running', 'sacs-de-sport-personnalises', 'serviettes-personnalisees',
+  'tenues-de-sport', 'textile-sport-personnalise', 'tifo', 'volleyball',
+];
+const PROMOTED_SLUG = 'maillot-de-football-personnalise';
+
 // Fetch related products (products NOT in this category) for "Other customers also liked" section
 let relatedProducts: any[] = [];
 try {
@@ -78,9 +94,16 @@ try {
     const otherProducts = allProducts.filter((p: any) =>
       !p.categories?.includes(slug)
     );
+    // Promote the football shirt into the first slot on allowlisted collections only
+    const promoted = FOOTBALL_PROMO_COLLECTIONS.includes(slug)
+      ? otherProducts.filter((p: any) => p.slug === PROMOTED_SLUG)
+      : [];
+    const rest = promoted.length
+      ? otherProducts.filter((p: any) => p.slug !== PROMOTED_SLUG)
+      : otherProducts;
     // Shuffle and take 5 random products
-    const shuffled = otherProducts.sort(() => Math.random() - 0.5);
-    relatedProducts = shuffled.slice(0, 5);
+    const shuffled = rest.sort(() => Math.random() - 0.5);
+    relatedProducts = [...promoted, ...shuffled].slice(0, 5);
   }
 } catch (error) {
   console.error('Error fetching related products:', error);

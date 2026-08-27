@@ -294,6 +294,30 @@ jsonLdSchemas.push(getBreadcrumbSchema([
             </div>
           </div>
 
+          <!-- Best Seller -->
+          <div class="bestseller-box">
+            <div class="bestseller-content">
+              <h2 class="bestseller-heading">Notre meilleure vente</h2>
+              <a href="/products/maillot-de-football-personnalise/" class="bestseller-visual">
+                <img
+                  src={`${WORKER_URL}/image/maillot-de-football-personnalise`}
+                  alt="Maillot de foot personnalisé"
+                  width="300"
+                  height="300"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <h3 class="bestseller-title">Maillot de foot personnalisé</h3>
+              <p class="bestseller-description">Créez le maillot de votre club avec notre configurateur : couleurs, flocage, badges et devis immédiat.</p>
+              <a href="/products/maillot-de-football-personnalise/" class="bestseller-button">
+                <img src="/images/menu/teamwear-1.svg" alt="" class="cta-cat-icon" />
+                <span>Configurer mon maillot</span>
+                <span class="cta-cat-arrow"><svg width="10" height="10" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="#10C99E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </a>
+            </div>
+          </div>
+
           <!-- Related Posts -->
           {relatedPosts.length > 0 && (
             <div class="sidebar-related">
@@ -745,6 +769,108 @@ jsonLdSchemas.push(getBreadcrumbSchema([
     .cta-buttons {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* Sidebar Best Seller — same shell as the CTA box above */
+  .bestseller-box {
+    background-image: url('/images/blog/sidebar-cta-bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bestseller-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 28, 58, 0.73);
+  }
+
+  .bestseller-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  .bestseller-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin: 0 0 25px;
+  }
+
+  .bestseller-visual {
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    margin: 0 0 22px;
+  }
+
+  .bestseller-visual img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+  }
+
+  .bestseller-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  .bestseller-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #fff;
+    margin: 0 0 30px;
+  }
+
+  .bestseller-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #10C99E;
+    border-radius: 100px;
+    padding: 8px 8px 8px 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 0;
+  }
+
+  .bestseller-button:hover {
+    background: #0eb88e;
+  }
+
+  /* Single full-width pill, so the label is centred at 13px rather than the
+     11px left-aligned label the two-column CTA grid above uses. */
+  .bestseller-button span:not(.cta-cat-arrow) {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
   }
 
   /* Sidebar Related Posts */
