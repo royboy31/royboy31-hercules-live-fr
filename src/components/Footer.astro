@@ -533,12 +533,16 @@ const phones = [
     margin-top: 30px;
   }
 
-  /* The social block above this button is hidden while the profile URLs are empty,
+  /* The social block above the contact CTA is hidden while the profile URLs are empty,
      which takes .follow-heading's 30px top margin and .social-icons' 25px bottom margin
-     with it and leaves the CTA flush against the phone numbers. Adjacent-sibling so it
-     applies ONLY in that state - restoring the social block cannot double the gap. */
-  .footer-phone + .footer-cta-popup {
-    margin-top: 25px;
+     with it, leaving the CTA flush against the phone numbers. The gap goes on
+     .footer-phone rather than an adjacent-sibling selector, because on Astro the button
+     is wrapped in <astro-island> and so is NOT the adjacent sibling (it is on the WP
+     port, which is why a sibling selector worked there and not here). .footer-column is
+     display:block, so if the social block returns this collapses with .follow-heading's
+     30px instead of adding to it. */
+  .footer-phone {
+    margin-bottom: 25px;
   }
 
   .social-icons {
