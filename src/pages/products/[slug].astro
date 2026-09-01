@@ -20,6 +20,7 @@ import { maillotClusterFaq } from '../../data/maillot-cluster-faq';
 import { getProductSeoOverride } from '../../config/seo-overrides';
 import { getGooglePlaceData } from '../../lib/google-places';
 import { normalizeInternalLinks } from '../../lib/cleanHtml';
+import { ga4ItemId, lowestTierPrice } from '../../lib/tracking';
 
 const WORKER_URL = import.meta.env.WORKER_URL || 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev';
 
@@ -491,6 +492,16 @@ if (product) {
 // Maillot cluster FAQ (plain HTML Q&A for SEO internal linking)
 // Schema for these questions is merged into the main FAQPage block above.
 const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
+
+// GA4 view_item payload - pushed by the script at the bottom of this page.
+// price is the "À partir de" entry price, the one the page displays.
+const ga4Item = product ? {
+  item_id: ga4ItemId(product.sku, product.id),
+  item_name: product.name,
+  item_category: breadcrumbCat?.name,
+  price: startingPrice ?? lowestTierPrice(product.variations, product.price),
+  quantity: 1,
+} : null;
 ---
 
 <BaseLayout
@@ -520,7 +531,7 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
     }
   ] : undefined}
 >
-  <div class="product-page">
+  <div class="product-page" data-ga4-item={ga4Item ? JSON.stringify(ga4Item) : undefined}>
     {error ? (
       <div class="error-container">
         <h1>Product not found</h1>
@@ -664,6 +675,8 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
                 <ProductConfigurator
                   productSlug={slug as string}
                   workerUrl={WORKER_URL}
+                  productSku={product.sku}
+                  productCategory={breadcrumbCat?.name}
                   client:idle
                 />
 
@@ -3160,4 +3173,18 @@ const clusterFaq = slug ? maillotClusterFaq[slug] : undefined;
 
   // Also listen for distributor store changes (handles first login when the store populates)
   window.addEventListener('hercules:distributor-changed', applyDistributorPrices);
+</script>
+
+<script>
+  import { pushEcommerce } from '../../lib/tracking';
+
+  const el = document.querySelector<HTMLElement>('.product-page[data-ga4-item]');
+  if (el?.dataset.ga4Item) {
+    try {
+      const item = JSON.parse(el.dataset.ga4Item);
+      pushEcommerce('view_item', { value: item.price, items: [item] });
+    } catch {
+      // malformed payload: no event rather than a broken one
+    }
+  }
 </script>

@@ -13,12 +13,14 @@
  * - Graceful degradation: CSS flexbox works if JS fails
  */
 import WishlistButton from './WishlistButton.tsx';
+import { ga4ItemId, lowestTierPrice } from '../lib/tracking';
 
 interface Props {
   product: {
     id: number;
     name: string;
     slug: string;
+    sku?: string;
     price: string;
     regular_price?: string;
     on_sale?: boolean;
@@ -93,9 +95,18 @@ const isMadeInUk = product.made_in_uk === true;
 
 // Card features (USP list)
 const cardFeatures = product.card_features || [];
+
+// GA4 list payload - read back by src/lib/tracking.ts for view_item_list and select_item
+const ga4Item = {
+  item_id: ga4ItemId(product.sku, product.id),
+  item_name: product.name,
+  item_category: product.categories?.[0]?.name,
+  price: lowestTierPrice(product.variations, product.price),
+  quantity: 1,
+};
 ---
 
-<li class="product">
+<li class="product" data-ga4-item={JSON.stringify(ga4Item)} data-ga4-index={index}>
   <!-- Wishlist Button - positioned top-right -->
   <div class="kd-wishlist-wrapper">
     <WishlistButton
@@ -448,6 +459,8 @@ const cardFeatures = product.card_features || [];
 </style>
 
 <script>
+  import { initListTracking } from '../lib/tracking';
+
   /**
    * Progressive Image Loading
    * - Loads Worker cached image (361x361) first for fast initial paint
@@ -580,6 +593,7 @@ const cardFeatures = product.card_features || [];
 
   // Initialize
   function init() {
+    initListTracking();
     setupThumbnailClickHandlers();
     setupProgressiveImageLoading();
     setupLazyThumbnails();

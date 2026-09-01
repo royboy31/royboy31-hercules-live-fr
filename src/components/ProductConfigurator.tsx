@@ -4,6 +4,7 @@ import ExpressDeliveryPopup from './ExpressDeliveryPopup';
 import ContactFormPopup from './ContactFormPopup';
 import { cartStore } from '../lib/cartStore';
 import { distributorStore } from '../lib/distributorStore';
+import { ga4ItemId, pushEcommerce } from '../lib/tracking';
 
 // Types matching the API response
 interface TermInfo {
@@ -96,6 +97,9 @@ interface ProductConfig {
 interface ProductConfiguratorProps {
   productSlug: string;
   workerUrl?: string;
+  /** From the catalogue, not the WP config endpoint: it exposes neither field. */
+  productSku?: string;
+  productCategory?: string;
 }
 
 // Helper to parse float safely (handles German comma decimal separator)
@@ -226,7 +230,7 @@ function getInterpolatedPriceWithAddons(
   return combinedTiers[0]?.price || 0;
 }
 
-export default function ProductConfigurator({ productSlug, workerUrl = 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev' }: ProductConfiguratorProps) {
+export default function ProductConfigurator({ productSlug, workerUrl = 'https://hercules-product-sync-fr-prod.gilles-86d.workers.dev', productSku, productCategory }: ProductConfiguratorProps) {
   const [config, setConfig] = useState<ProductConfig | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -765,6 +769,20 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       const result = await response.json();
 
       if (result.success) {
+        // GA4 add_to_cart on the server-confirmed response only, never on click.
+        // Spec: PLANS/HERCULES_TRACKING_EVENT_SPEC_2026_09_01.md §3
+        pushEcommerce('add_to_cart', {
+          value: Number((finalPricePerPiece * quantitySelected).toFixed(2)),
+          items: [{
+            item_id: ga4ItemId(productSku, config.product_id),
+            item_name: config.product_name,
+            item_category: productCategory,
+            item_variant: String(matchedVariation.variation_id),
+            price: Number(finalPricePerPiece.toFixed(2)),
+            quantity: quantitySelected,
+          }],
+        });
+
         // Update cart in localStorage
         if (result.cart) {
           // Full cart data from API - save to localStorage

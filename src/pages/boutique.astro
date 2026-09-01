@@ -71,7 +71,7 @@ const preloadImages = lcpImageUrl ? [lcpImageUrl] : [];
 
       <!-- Product Grid -->
       {products.length > 0 ? (
-        <ul class="products">
+        <ul class="products" data-ga4-list-id="boutique" data-ga4-list-name="Boutique">
           {products.map((product: any, index: number) => (
             <CategoryProductCard product={product} index={index} />
           ))}
