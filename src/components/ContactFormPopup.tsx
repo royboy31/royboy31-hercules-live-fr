@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { pushGenerateLead } from '../lib/tracking';
 
 interface ContactFormPopupProps {
   triggerType?: 'button' | 'icon' | 'link';
@@ -144,6 +145,7 @@ export default function ContactFormPopup({
         throw new Error('Submission failed');
       }
 
+      pushGenerateLead('contact');
       setSubmittedData({ ...formData });
       setIsSuccess(true);
     } catch (err) {

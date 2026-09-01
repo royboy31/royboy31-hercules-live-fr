@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { pushGenerateLead } from '../lib/tracking';
 
 interface ProductConfig {
   addons?: Array<{ id: number; name?: string; title?: string }>;
@@ -196,6 +197,7 @@ export default function QuantityRequestPopup({
         throw new Error('Submission failed');
       }
 
+      pushGenerateLead('contact');
       setIsSuccess(true);
     } catch (err) {
       setError('Une erreur est survenue. Veuillez réessayer.');
