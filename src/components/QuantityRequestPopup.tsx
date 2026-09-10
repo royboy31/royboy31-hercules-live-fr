@@ -197,7 +197,7 @@ export default function QuantityRequestPopup({
         throw new Error('Submission failed');
       }
 
-      pushGenerateLead('contact');
+      pushGenerateLead('quantity_request');
       setIsSuccess(true);
     } catch (err) {
       setError('Une erreur est survenue. Veuillez réessayer.');

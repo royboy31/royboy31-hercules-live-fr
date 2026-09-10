@@ -145,7 +145,7 @@ export default function ContactFormPopup({
         throw new Error('Submission failed');
       }
 
-      pushGenerateLead('contact');
+      pushGenerateLead('contact_popup');
       setSubmittedData({ ...formData });
       setIsSuccess(true);
     } catch (err) {

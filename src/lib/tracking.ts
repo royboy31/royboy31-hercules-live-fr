@@ -3,7 +3,16 @@
 // click, so the counts match the forms actually delivered.
 // Spec: PLANS/HERCULES_TRACKING_EVENT_SPEC_2026_09_01.md §2 and §3
 
-export type LeadType = 'contact' | 'express_delivery';
+// One value per enquiry surface: GTM reads `lead_type` and Emmanuel wants a single
+// conversion pot with the surface kept as a dimension, not as separate actions.
+// `quote_generator` is produced WordPress-side on the quote confirmation, not here;
+// it is listed so the vocabulary has one definition.
+export type LeadType =
+  | 'contact_popup'
+  | 'contact_page'
+  | 'quantity_request'
+  | 'express_delivery'
+  | 'quote_generator';
 
 export interface Ga4Item {
   item_id: string;
@@ -30,11 +39,11 @@ const CURRENCY = 'EUR';
 // view, so list events carry the first slice only. Documented, not silent.
 const LIST_ITEM_LIMIT = 30;
 
-const pushed = new Set<LeadType>();
-
+// One accepted submission, one event. Every call site already sits behind the
+// `/api/contact` success response, so a per-page-load cap would only drop a second
+// genuine enquiry.
 export function pushGenerateLead(leadType: LeadType): void {
-  if (typeof window === 'undefined' || pushed.has(leadType)) return;
-  pushed.add(leadType);
+  if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: 'generate_lead', lead_type: leadType });
 }
