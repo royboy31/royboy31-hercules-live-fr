@@ -34,7 +34,10 @@ export const siteConfig = {
       { day: 'Sunday', time: '09:00-17:00' }
     ],
     sameAs: [
-      // TODO: Add verified social profile URLs (confirm with owner before adding)
+      // Profile URLs supplied by the owner (monday "Social media links", 2026-09-14)
+      'https://www.facebook.com/profile.php?id=61593699995234',
+      'https://www.instagram.com/hercules.merchandising/',
+      'https://www.linkedin.com/company/hercules-merchandise'
     ]
   },
 
