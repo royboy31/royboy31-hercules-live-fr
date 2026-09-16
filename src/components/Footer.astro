@@ -530,7 +530,7 @@ const phones = [
   }
 
   .follow-heading {
-    margin-top: 30px;
+    margin-top: 25px;
   }
 
   /* The social block above the contact CTA is hidden while the profile URLs are empty,
@@ -545,10 +545,12 @@ const phones = [
     margin-bottom: 25px;
   }
 
+  /* 25px -> 15px (with .follow-heading 30 -> 25) lifts the CTA 15px so its bottom edge
+     lines up with the last link row of the other columns instead of hanging below it. */
   .social-icons {
     display: flex;
     gap: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   .social-icon {
@@ -574,29 +576,24 @@ const phones = [
     color: #10C99E;
   }
 
-  /* Footer Contact Popup Trigger */
-  .footer-cta-popup :global(.contact-trigger-button) {
-    display: block;
-    width: 100%;
-    max-width: 210px;
+  /* Footer Contact Popup Trigger.
+     ContactFormPopup puts triggerClassName on the SAME element as .contact-trigger-button,
+     so a descendant selector (.footer-cta-popup .contact-trigger-button) never matches and
+     the button falls back to the component's generic style (min-width 152px + 30px side
+     padding = 192px), sticking out past the phone numbers and social icons. Anchor the rule
+     on .help-column (a template element, so it carries the scope attribute) instead.
+     158px = the phone line (20px icon + 10px gap + "+33 9 73 03 02 95"), which is also the
+     width of the icon row (3 x 44px + 2 x 12px = 156px). Colours stay with the component,
+     whose !important background/colour win regardless. */
+  .help-column :global(.contact-trigger-button) {
+    display: inline-flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 158px;
+    min-width: 0;
+    padding: 10px 0;
     text-align: center;
-    padding: 13px 30px;
-    font-family: 'Jost', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #10C99E;
-    border: 1px solid #10C99E;
     border-radius: 100px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .footer-cta-popup :global(.contact-trigger-button:hover) {
-    background-color: transparent;
-    color: #10C99E;
   }
 
   /* Bottom Footer */
