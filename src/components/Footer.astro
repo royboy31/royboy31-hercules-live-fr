@@ -448,6 +448,9 @@ const phones = [
     font-family: 'Jost', sans-serif;
     font-size: 18px;
     font-weight: 500;
+    /* Pinned so the WP port matches: Astro inherits 1.1 from global.css, Hello Elementor
+       gives h3 1.2, which made every WP heading 1.8px taller and shifted the columns. */
+    line-height: 1.1;
     text-transform: uppercase;
     color: #253461;
     margin: 0 0 22px 0;
@@ -484,6 +487,10 @@ const phones = [
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
+    /* The inline-block sits on the li's baseline strut; on WP the li font is the theme's
+       system stack, whose metrics make each row 25px instead of 24. Top-aligning the link
+       takes the strut out of the equation on both sides. */
+    vertical-align: top;
   }
 
   .footer-links a:hover {
