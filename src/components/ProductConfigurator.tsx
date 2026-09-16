@@ -771,17 +771,21 @@ export default function ProductConfigurator({ productSlug, workerUrl = 'https://
       if (result.success) {
         // GA4 add_to_cart on the server-confirmed response only, never on click.
         // Spec: PLANS/HERCULES_TRACKING_EVENT_SPEC_2026_09_01.md §3
-        pushEcommerce('add_to_cart', {
-          value: Number((finalPricePerPiece * quantitySelected).toFixed(2)),
-          items: [{
-            item_id: ga4ItemId(productSku, config.product_id),
-            item_name: config.product_name,
-            item_category: productCategory,
-            item_variant: String(matchedVariation.variation_id),
-            price: Number(finalPricePerPiece.toFixed(2)),
-            quantity: quantitySelected,
-          }],
-        });
+        // Not on the quote button: the cart add only feeds the quote generator,
+        // which reports its own generate_lead (same rule as WordPress steps.js).
+        if (redirectTo !== 'quote') {
+          pushEcommerce('add_to_cart', {
+            value: Number((finalPricePerPiece * quantitySelected).toFixed(2)),
+            items: [{
+              item_id: ga4ItemId(productSku, config.product_id),
+              item_name: config.product_name,
+              item_category: productCategory,
+              item_variant: String(matchedVariation.variation_id),
+              price: Number(finalPricePerPiece.toFixed(2)),
+              quantity: quantitySelected,
+            }],
+          });
+        }
 
         // Update cart in localStorage
         if (result.cart) {
