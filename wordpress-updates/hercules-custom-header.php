@@ -1241,7 +1241,7 @@ function hercules_custom_header_html() {
             <div class="herc-main-inner">
                 <div class="herc-logo-wrap">
                     <a href="/">
-                        <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandise" width="172" height="76" />
+                        <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandising" width="172" height="76" />
                     </a>
                 </div>
                 <div class="herc-search-wrap">
@@ -1344,7 +1344,7 @@ function hercules_custom_header_html() {
         <div class="herc-mobile-inner">
             <div class="herc-mobile-logo-wrap">
                 <a href="/">
-                    <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandise" width="140" height="63" />
+                    <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandising" width="140" height="63" />
                 </a>
             </div>
             <div class="herc-mobile-actions">
@@ -1401,7 +1401,7 @@ function hercules_custom_header_html() {
             <!-- Main Menu Panel -->
             <div class="herc-menu-panel herc-main-panel" id="herc-main-panel">
                 <div class="herc-mobile-menu-header">
-                    <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandise" width="176" height="78" />
+                    <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandising" width="176" height="78" />
                     <button id="herc-mobile-menu-close" class="herc-menu-close-btn" aria-label="Close menu">
                         <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>

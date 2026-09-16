@@ -42,7 +42,7 @@ function hercules_sticky_header_html() {
                     <!-- Dropdown Navigation -->
                     <nav class="sticky-dropdown-nav" id="sticky-dropdown-nav">
                         <div class="dropdown-logo-header">
-                            <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandise" class="dropdown-logo" width="176" height="78" />
+                            <img src="<?php echo esc_url($logo_url); ?>" alt="Hercules Merchandising" class="dropdown-logo" width="176" height="78" />
                         </div>
                         <div class="dropdown-content">
                             <div class="dropdown-left-column">
