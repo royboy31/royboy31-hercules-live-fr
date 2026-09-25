@@ -375,12 +375,13 @@ if (jsonLd) {
         if(phase1) return;
         phase1=true;
 
-        // 1. Google Tag Manager
+        // 1. Google Tag Manager, served first-party through Cloudflare Google Tag Gateway
+        //    (/hmmesure). Falls back to googletagmanager.com if the gateway path fails.
         inIdle(function(){
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          '/hmmesure/gtm.js?id='+i+dl;j.onerror=function(){var k=d.createElement(s);k.async=true;k.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(k,f);};f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-N7NM77N');
         });
 
