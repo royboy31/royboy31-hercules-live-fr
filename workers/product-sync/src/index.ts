@@ -1050,7 +1050,11 @@ async function deleteProduct(env: Env, productId: number): Promise<string | null
 }
 
 // Sync a single product (for webhook updates)
-async function syncSingleProduct(env: Env, productId: number): Promise<SyncedProduct | null> {
+async function syncSingleProduct(
+  env: Env,
+  productId: number,
+  onIndexUpdated?: () => Promise<void>
+): Promise<SyncedProduct | null> {
   const client = new WooCommerceClient(
     env.WC_STORE_URL,
     env.WC_CONSUMER_KEY,
@@ -1121,6 +1125,13 @@ async function syncSingleProduct(env: Env, productId: number): Promise<SyncedPro
   // before the index was written - leaving renamed products listed under their old slug
   // (their new URL 404ed and the old one showed stale data).
   await updateProductIndex(env, product, syncedProduct);
+  if (onIndexUpdated) {
+    try {
+      await onIndexUpdated();
+    } catch (error) {
+      console.error(`onIndexUpdated failed for product ${productId}:`, error);
+    }
+  }
 
   // If images were reordered or replaced, delete ALL stale image KV entries first.
   // This prevents old cached images (from a previous order) lingering at the wrong index.
@@ -2021,9 +2032,15 @@ export default {
         console.log(`Webhook received: syncing product ${productId}`);
 
         // Run sync FIRST, then trigger rebuild after sync completes
-        // This ensures the build always fetches the latest data
+        // This ensures the build always fetches the latest data.
+        // The rebuild is also triggered as soon as the index is written (before image caching):
+        // image-heavy products can die inside the image loop and would otherwise never rebuild.
+        // The second trigger below is then a no-op thanks to the 60s debounce.
         ctx.waitUntil(
-          syncSingleProduct(env, productId)
+          syncSingleProduct(env, productId, async () => {
+            const early = await triggerSiteRebuild(env);
+            console.log(`Early rebuild result for product ${productId}: ${early.reason}`);
+          })
             .then(result => {
               console.log(`Product ${productId} sync complete`);
               return triggerSiteRebuild(env);
