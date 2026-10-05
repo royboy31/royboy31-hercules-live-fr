@@ -37,21 +37,6 @@ const productSeoOverrides: Record<string, ProductSeoOverride> = {
     introHtml: `
 <p>Créez des claquettes personnalisables aux couleurs de votre club, de votre équipe ou de votre association. Ajoutez votre logo en impression quadri ou en relief et choisissez la couleur de semelle adaptée à votre identité.</p>
 <p>Disponibles du 24 au 48 et commandables dès 20 paires, nos claquettes personnalisées sont conçues pour les vestiaires, les déplacements, les événements et la boutique de votre club. Notre équipe réalise le design avec vous avant le lancement de la production.</p>`,
-    seoBlockHtml: `
-<h2>Claquettes personnalisées pour clubs, équipes et associations</h2>
-<p>Les claquettes personnalisées permettent à un club de prolonger son identité bien au-delà du terrain. Elles peuvent être utilisées dans les vestiaires, au bord de la piscine, pendant les déplacements ou comme article de merchandising dans la boutique du club. Chaque paire est fabriquée sur mesure avec les couleurs et le logo de l'équipe.</p>
-<p>La personnalisation peut être réalisée avec un logo imprimé en quadri, idéal pour les visuels détaillés et multicolores, ou avec un logo en relief pour un rendu plus tactile. Notre équipe vérifie la qualité du fichier et prépare un design avant production.</p>
-<h2>Une gamme de tailles adaptée à toute l'équipe</h2>
-<p>Les pointures disponibles vont du 24 au 48, ce qui permet d'équiper les équipes de jeunes, les adultes, les entraîneurs et les membres du staff. Plusieurs couleurs de semelle sont proposées afin d'approcher au mieux la charte graphique du club.</p>
-<p>La quantité minimale est de 20 paires et les tarifs deviennent progressivement plus avantageux lorsque la quantité augmente. Le tableau de prix vous permet d'évaluer rapidement votre budget avant de demander un devis.</p>
-<h2>Douze couleurs de semelle aux couleurs de votre club</h2>
-<p>La semelle de vos claquettes personnalisées est disponible en douze couleurs : blanc, noir, jaune, vert, bleu royal, bleu marine, rouge, gris, orange, violet, marron et rose. Cette palette permet d'assortir chaque paire à la charte graphique du club, du maillot au vestiaire.</p>
-<h2>Une matière PVC pensée pour durer</h2>
-<p>Chaque paire est fabriquée à partir de matériaux 100 % PVC de première qualité, garantissant durabilité et longévité, à l'entraînement, au bord de la piscine ou en déplacement.</p>
-<p>Pour les grandes commandes, des extras sont possibles dès 500 pièces : étiquettes volantes, étiquettes tissées ou cartes d'en-tête, utiles pour la revente en boutique de club.</p>
-<h2>Un accompagnement du design à la livraison</h2>
-<p>Après réception de votre logo, Hercules prépare une proposition graphique et vérifie la faisabilité du marquage. Une fois le design validé, la production est lancée. Le délai standard est de 4 à 6 semaines.</p>
-<p>Pour une date de tournoi, un événement ou une ouverture de boutique, indiquez votre échéance dès la demande : notre équipe confirme la solution réalisable et le calendrier avant validation de la commande.</p>`,
   },
 
   'casquette-personnalisee': {
