@@ -368,6 +368,15 @@ export default {
     if (pathname === '/my-account' || pathname === '/my-account/') {
       return Response.redirect(new URL('/mon-compte/', url.origin).toString(), 301);
     }
+    // Quote PDFs and emails sent before 2026-10-08 link to /my-account/offers/?quote_id=...,
+    // an English account slug this site never had, so every one of those links 404s. The
+    // generator now asks WooCommerce for the slug, but the dead links are already in
+    // customers' inboxes. The query string carries the quote id, so it is preserved.
+    if (pathname.startsWith('/my-account/')) {
+      const accountTarget = new URL(pathname.replace('/my-account/', '/mon-compte/'), url.origin);
+      accountTarget.search = url.search;
+      return Response.redirect(accountTarget.toString(), 301);
+    }
 
     // Old English collection slugs -> French slugs
     if (pathname === '/collections/football-scarves' || pathname === '/collections/football-scarves/') {
