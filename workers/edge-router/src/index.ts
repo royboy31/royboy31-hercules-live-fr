@@ -110,6 +110,11 @@ function shouldBypassCache(pathname: string, search: string): boolean {
     return true;
   }
 
+  // The CRM address-request form (/?hercules-address=<id>&key=<key>) is per-order
+  if (search.includes('hercules-address')) {
+    return true;
+  }
+
   // Check no-cache paths
   for (const path of NO_CACHE_PATHS) {
     if (pathname === path || pathname.startsWith(path + '/')) {
@@ -123,6 +128,12 @@ function shouldBypassCache(pathname: string, search: string): boolean {
 function shouldRouteToWordPress(pathname: string, search: string): boolean {
   // Check for WooCommerce AJAX calls
   if (search.includes('wc-ajax')) {
+    return true;
+  }
+
+  // /?hercules-address=<id>&key=<key> is the CRM address-request form, served by a
+  // WordPress mu-plugin; the bare '/' path would otherwise go to Astro's homepage.
+  if (search.includes('hercules-address')) {
     return true;
   }
 
