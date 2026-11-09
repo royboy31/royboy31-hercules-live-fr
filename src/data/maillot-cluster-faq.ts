@@ -301,7 +301,7 @@ export const maillotClusterFaq: Record<string, { question: string; answer: strin
     },
     {
       question: 'Quel est le prix d\u2019un maillot de football personnalis\u00e9 ?',
-      answer: '<p>Le prix par maillot d\u00e9pend de la quantit\u00e9 command\u00e9e et des options choisies : les tarifs sont d\u00e9gressifs et affich\u00e9s dans le tableau de prix de la page, d\u00e8s 5 pi\u00e8ces. Demandez un devis gratuit pour une offre pr\u00e9cise adapt\u00e9e \u00e0 votre \u00e9quipe.</p>',
+      answer: '<p>Le prix par maillot d\u00e9pend de la quantit\u00e9 command\u00e9e et des options choisies : les tarifs sont d\u00e9gressifs et affich\u00e9s dans le tableau de prix de la page, d\u00e8s 10 pi\u00e8ces. Demandez un devis gratuit pour une offre pr\u00e9cise adapt\u00e9e \u00e0 votre \u00e9quipe.</p>',
     },
     {
       question: 'Livrez-vous les maillots personnalis\u00e9s partout en Europe ?',
