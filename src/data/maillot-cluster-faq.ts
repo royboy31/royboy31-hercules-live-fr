@@ -289,7 +289,7 @@ export const maillotClusterFaq: Record<string, { question: string; answer: strin
     },
     {
       question: 'Quels sont les volumes de commande minimum et maximum ?',
-      answer: '<p>Le volume minimum est de 5 maillots par commande. Pour des volumes importants, au-del\u00e0 de 100 unit\u00e9s, nous proposons des tarifs d\u00e9gressifs et des options sp\u00e9cifiques. N\'h\u00e9sitez pas \u00e0 nous contacter pour discuter des commandes en gros.</p>',
+      answer: '<p>Le volume minimum est de 10 maillots par commande. Pour des volumes importants, au-del\u00e0 de 100 unit\u00e9s, nous proposons des tarifs d\u00e9gressifs et des options sp\u00e9cifiques. N\'h\u00e9sitez pas \u00e0 nous contacter pour discuter des commandes en gros.</p>',
     },
     {
       question: 'Comment entretenir les maillots personnalis\u00e9s pour une durabilit\u00e9 maximale ?',
