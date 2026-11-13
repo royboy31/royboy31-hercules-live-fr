@@ -299,6 +299,64 @@ if (jsonLd) {
     })();
   </script>
 
+  <!-- Hercules enquiry source (tracking lot 3). Same logic and same cookie as the WordPress
+       file mu-plugins/hercules-enquiry-id.php: keeps gclid / gbraid / wbraid / utm_* from the
+       landing URL in the first-party cookie hercules_attr (90 days), only once the visitor
+       consents to statistics or marketing. A refusal removes it. WordPress reads the cookie
+       when the quote form is submitted. -->
+  <script is:inline>
+    (function () {
+      try {
+        var keys = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        var query = new URLSearchParams(window.location.search);
+        var found = {};
+        var count = 0;
+        var cookie = 'hercules_attr';
+
+        keys.forEach(function (key) {
+          var value = query.get(key);
+          if (value) {
+            found[key] = String(value).slice(0, 200);
+            count += 1;
+          }
+        });
+
+        function read(name) {
+          var parts = document.cookie.split(';');
+          for (var i = 0; i < parts.length; i += 1) {
+            var part = parts[i].trim();
+            if (part.indexOf(name + '=') === 0) {
+              return part.substring(name.length + 1);
+            }
+          }
+          return '';
+        }
+
+        function sync() {
+          var allowed = read('cmplz_statistics') === 'allow' || read('cmplz_marketing') === 'allow';
+          var secure = window.location.protocol === 'https:' ? ';Secure' : '';
+
+          if (!allowed) {
+            if (read(cookie)) {
+              document.cookie = cookie + '=;path=/;max-age=0;SameSite=Lax' + secure;
+            }
+            return;
+          }
+          if (count) {
+            document.cookie = cookie + '=' + encodeURIComponent(JSON.stringify(found))
+              + ';path=/;max-age=' + (90 * 24 * 60 * 60) + ';SameSite=Lax' + secure;
+          }
+        }
+
+        sync();
+        // The banner is answered on this page (src/components/CookieConsent.tsx).
+        window.addEventListener('cmplz_consent_updated', function () { setTimeout(sync, 0); });
+      } catch (error) {
+        // Never let source capture break a page.
+      }
+    })();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
