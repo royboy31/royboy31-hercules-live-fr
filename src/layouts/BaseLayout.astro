@@ -302,7 +302,8 @@ if (jsonLd) {
   <!-- Hercules enquiry source (tracking lot 3). Same logic and same cookie as the WordPress
        file mu-plugins/hercules-enquiry-id.php: keeps gclid / gbraid / wbraid / utm_* from the
        landing URL in the first-party cookie hercules_attr (90 days), only once the visitor
-       consents to statistics or marketing. A refusal removes it. WordPress reads the cookie
+       consents to statistics or marketing. Click IDs are kept only with marketing consent.
+       A refusal removes it. WordPress reads the cookie
        when the quote form is submitted. -->
   <script is:inline>
     (function () {
@@ -312,6 +313,7 @@ if (jsonLd) {
         var found = {};
         var count = 0;
         var cookie = 'hercules_attr';
+        var clickKeys = ['gclid', 'gbraid', 'wbraid'];
 
         keys.forEach(function (key) {
           var value = query.get(key);
@@ -333,19 +335,68 @@ if (jsonLd) {
         }
 
         function sync() {
-          var allowed = read('cmplz_statistics') === 'allow' || read('cmplz_marketing') === 'allow';
+          var statistics = read('cmplz_statistics') === 'allow';
+          var marketing = read('cmplz_marketing') === 'allow';
           var secure = window.location.protocol === 'https:' ? ';Secure' : '';
+          var next = {};
+          var size = 0;
 
-          if (!allowed) {
+          function drop() {
             if (read(cookie)) {
               document.cookie = cookie + '=;path=/;max-age=0;SameSite=Lax' + secure;
             }
+          }
+
+          if (!statistics && !marketing) {
+            drop();
             return;
           }
-          if (count) {
-            document.cookie = cookie + '=' + encodeURIComponent(JSON.stringify(found))
-              + ';path=/;max-age=' + (90 * 24 * 60 * 60) + ';SameSite=Lax' + secure;
+
+          // Click IDs are advertising identifiers: stored only with marketing consent.
+          keys.forEach(function (key) {
+            if (found[key] && (marketing || clickKeys.indexOf(key) === -1)) {
+              next[key] = found[key];
+              size += 1;
+            }
+          });
+
+          if (!size) {
+            if (marketing) {
+              return;
+            }
+            // Marketing refused or withdrawn: remove click IDs already stored, keep the UTMs.
+            var stored;
+            var stripped = false;
+            try {
+              stored = JSON.parse(decodeURIComponent(read(cookie)));
+            } catch (error) {
+              return;
+            }
+            if (!stored || typeof stored !== 'object') {
+              return;
+            }
+            keys.forEach(function (key) {
+              if (!stored[key]) {
+                return;
+              }
+              if (clickKeys.indexOf(key) !== -1) {
+                stripped = true;
+              } else {
+                next[key] = String(stored[key]).slice(0, 200);
+                size += 1;
+              }
+            });
+            if (!stripped) {
+              return;
+            }
+            if (!size) {
+              drop();
+              return;
+            }
           }
+
+          document.cookie = cookie + '=' + encodeURIComponent(JSON.stringify(next))
+            + ';path=/;max-age=' + (90 * 24 * 60 * 60) + ';SameSite=Lax' + secure;
         }
 
         sync();
