@@ -44,6 +44,15 @@ export default function CookieConsent() {
     setIsVisible(false);
     document.body.style.overflow = '';
     window.dispatchEvent(new CustomEvent('cmplz_consent_updated', { detail: newPreferences }));
+    // Robin point 7: one dataLayer event per banner choice, pushed after the consent update above.
+    const w = window as any;
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({
+      event: 'cookie_consent_update',
+      consent_choice: acceptAll ? 'accept_all' : denyAll ? 'reject_all' : 'custom',
+      consent_analytics: newPreferences.statistics ? 'granted' : 'denied',
+      consent_marketing: newPreferences.marketing ? 'granted' : 'denied',
+    });
   };
 
   if (!isVisible) return null;
