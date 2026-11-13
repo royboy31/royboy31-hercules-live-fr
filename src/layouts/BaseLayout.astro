@@ -380,24 +380,12 @@ if (jsonLd) {
       '/hmmesure/gtm.js?id='+i+dl;j.onerror=function(){var k=d.createElement(s);k.async=true;k.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(k,f);};f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-N7NM77N');
 
-      // Phase 1: Google Ads (direct tag) — 5s or user interaction
+      // Phase 1: hands over to Phase 2 — 5s or user interaction
       function loadPhase1(){
         if(phase1) return;
         phase1=true;
 
-        // 2. Google Ads Conversion Tracking — staggered 1.5s after GTM
-        setTimeout(function(){
-          inIdle(function(){
-            var gads=document.createElement('script');
-            gads.async=true;
-            gads.src='https://www.googletagmanager.com/gtag/js?id=AW-10841250326';
-            document.head.appendChild(gads);
-            gads.onload=function(){
-              gtag('js', new Date());
-              gtag('config', 'AW-10841250326');
-            };
-          });
-        }, 1500);
+        // Google Ads is no longer loaded here: the container fires the Ads tag (Robin point 3).
 
         // Trigger Phase 2 after Phase 1 settles
         setTimeout(loadPhase2, 3000);
