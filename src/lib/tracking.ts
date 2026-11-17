@@ -48,7 +48,7 @@ const LIST_ITEM_LIMIT = 30;
 // - a browser carrying the cookie hercules_ads_email_test=1 gets it regardless, for testing;
 // - only when the visitor accepted marketing cookies (cmplz_marketing=allow);
 // - trimmed and lower-cased, never hashed here (GTM does that for the Ads tags), and never stored.
-const ADS_EMAIL_LIVE = false;
+const ADS_EMAIL_LIVE = true;
 
 function hasCookie(pair: string): boolean {
   return ('; ' + document.cookie + ';').includes('; ' + pair + ';');
