@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { pushGenerateLead } from '../lib/tracking';
+import { enquiryIdFrom, pushGenerateLead } from '../lib/tracking';
 
 interface ProductConfig {
   product_id: number;
@@ -227,7 +227,7 @@ export default function ExpressDeliveryPopup({
         throw new Error('Submission failed');
       }
 
-      pushGenerateLead('express_delivery');
+      pushGenerateLead('express_delivery', await enquiryIdFrom(response), formData.email);
       setIsSuccess(true);
     } catch (err) {
       console.error('Urgent request failed:', err);
